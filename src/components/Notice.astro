@@ -1,0 +1,16 @@
+---
+interface Props {
+  tone?: "note" | "warning" | "danger";
+  title: string;
+}
+const { tone = "note", title } = Astro.props;
+const labels = { note: "NOTE", warning: "CHECK FIRST", danger: "CAUTION" };
+---
+
+<aside class:list={["notice", `notice--${tone}`]} aria-label={title}>
+  <p class="notice-label">{labels[tone]}</p>
+  <strong>{title}</strong>
+  <div>
+    <slot />
+  </div>
+</aside>

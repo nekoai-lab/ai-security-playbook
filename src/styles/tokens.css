@@ -1,0 +1,36 @@
+/* FIELD NOTES — approved design tokens. See docs/DESIGN_SYSTEM.md. */
+:root {
+  --color-paper: #f5f1e6;
+  --color-paper-light: #fbf8f0;
+  --color-ink: #191919;
+  --color-muted: #5b584f;
+  --color-line: #b9b4a7;
+  --color-line-strong: #79766c;
+  --color-orange: #ff4b00;
+  --color-orange-ink: #b33300;
+  --color-orange-soft: #fff0e4;
+  --color-blue: #265b78;
+  --color-green: #286044;
+  --color-warning: #805300;
+  --color-warning-bg: #fff3d0;
+  --color-danger: #9b2923;
+  --color-danger-bg: #fff0eb;
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic",
+    Meiryo, sans-serif;
+  --font-serif: "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius: 2px;
+  --content-width: 1320px;
+  --reading-width: 760px;
+  --focus-ring: 3px solid var(--color-blue);
+}

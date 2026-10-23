@@ -1,0 +1,17 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  number?: string;
+}
+const { eyebrow, title, number } = Astro.props;
+---
+
+<div class="section-heading">
+  <p class="eyebrow">
+    {number && <span class="section-number">{number} / </span>}
+    {eyebrow}
+  </p>
+  <h2>{title}</h2>
+  <slot />
+</div>

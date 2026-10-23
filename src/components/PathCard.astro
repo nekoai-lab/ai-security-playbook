@@ -1,0 +1,38 @@
+---
+import FieldIcon from "./FieldIcon.astro";
+import type { learningPaths } from "../data/learning-paths";
+interface Props {
+  path: (typeof learningPaths)[number];
+  lessons: { id: string; data: { title: string } }[];
+}
+const { path, lessons } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<article class:list={["path-card", `path-card--${path.num}`]}>
+  <div class="path-card-heading">
+    <span class="path-number">{path.num}</span>
+    <h3>{path.label}</h3>
+  </div>
+  <p class="path-title">{path.title}</p>
+  <FieldIcon kind={path.kind} class="path-illustration" />
+  <p class="path-description">{path.text}</p>
+  <ol>
+    {path.ids.map((id) => (
+      <li>
+        <a href={`${base}/learn/${id}/`}>
+          {lessons.find((l) => l.id === id)?.data.title}
+        </a>
+      </li>
+    ))}
+  </ol>
+  <div class="path-card-bottom">
+    <span>{path.time}</span>
+    <a
+      href={`${base}/learn/${path.ids[0]}/`}
+      aria-label={`${path.label}ルートをはじめる`}
+    >
+      はじめる <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>

@@ -14,7 +14,7 @@ async function walk(dir) {
   ).flat();
 }
 const pages = (await walk(root)).filter((f) => f.endsWith(".html"));
-assert(pages.length >= 6, "Expected homepage and five lessons");
+assert(pages.length >= 7, "Expected homepage, five lessons and design system");
 for (const file of pages) {
   const html = await readFile(file, "utf8");
   assert(html.includes('lang="ja"'), `${file}: missing language`);
