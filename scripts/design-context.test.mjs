@@ -5,12 +5,14 @@ import { reviewContext } from "./design-context.mjs";
 const map = JSON.parse(
   readFileSync(new URL("../design/review-map.json", import.meta.url), "utf8"),
 );
-test("lesson review includes its page and index while release always covers seven pages", () => {
+test("lesson review includes its page and index while release covers all mapped pages", () => {
   const c = reviewContext(["src/content/lessons/commands.mdx"], map);
   assert.equal(c.diagnostic.coverage, "selected");
-  assert.equal(c.diagnostic.pages.length, 2);
+  assert.equal(c.diagnostic.pages.length, 4);
   assert(c.diagnostic.pages.includes("/ai-security-playbook/learn/commands/"));
-  assert.equal(c.release.pages.length, 7);
+  assert(c.diagnostic.pages.includes("/ai-security-playbook/library/"));
+  assert(c.diagnostic.pages.includes("/ai-security-playbook/updates/"));
+  assert.equal(c.release.pages.length, map.pages.length);
   assert.equal(c.diagnostic.releaseReady, false);
 });
 test("unknown, deleted/new lesson and empty changes fail back to all routes", () => {
@@ -22,7 +24,7 @@ test("unknown, deleted/new lesson and empty changes fail back to all routes", ()
   ]) {
     const c = reviewContext(files, map);
     assert.equal(c.diagnostic.coverage, "full-fallback");
-    assert.equal(c.diagnostic.pages.length, 7);
+    assert.equal(c.diagnostic.pages.length, map.pages.length);
   }
 });
 test("reference map paths and guide sections exist", () => {

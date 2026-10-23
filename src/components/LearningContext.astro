@@ -1,0 +1,127 @@
+---
+import { getCollection } from "astro:content";
+import { seriesFor } from "../data/catalog";
+import { learningPaths } from "../data/learning-paths";
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+const group = seriesFor(id);
+const lessons = await getCollection("lessons");
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const index = group?.ids.indexOf(id) ?? -1;
+const next = group?.ids[index + 1];
+const title = (key: string) =>
+  lessons.find((l) => l.id === key)?.data.title ?? key;
+const routes = learningPaths.map((p) => ({
+  id: p.id,
+  label: p.label,
+  ids: p.ids,
+}));
+---
+
+{group && (
+  <section
+    class="learning-context"
+    data-learning-context
+    data-lesson-id={id}
+    data-base={base}
+    data-paths={JSON.stringify(routes)}
+    data-titles={JSON.stringify(
+      Object.fromEntries(lessons.map((l) => [l.id, l.data.title])),
+    )}
+  >
+    <p class="catalog-meta" data-context-label>
+      シリーズ · {index + 1} / {group.ids.length}
+    </p>
+    <a
+      class="context-title"
+      data-context-title
+      href={`${base}/series/${group.id}/`}
+    >
+      {group.title}
+    </a>
+    <details>
+      <summary>読む順番を見る</summary>
+      <ol data-context-list>
+        {group.ids.map((key) => (
+          <li>
+            <a
+              href={`${base}/learn/${key}/`}
+              aria-current={key === id ? "page" : undefined}
+            >
+              {title(key)}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </details>
+    <a
+      class="next-lesson"
+      data-context-next
+      href={next ? `${base}/learn/${next}/` : `${base}/series/${group.id}/`}
+    >
+      <span data-next-label>
+        {next ? "このシリーズの次の教材 →" : "シリーズを振り返る →"}
+      </span>
+      <strong data-next-title>{next ? title(next) : group.title}</strong>
+    </a>
+  </section>
+)}
+<script>
+  const context = document.querySelector<HTMLElement>(
+    "[data-learning-context]",
+  );
+  if (context) {
+    const routes = JSON.parse(context.dataset.paths ?? "[]") as {
+      id: string;
+      label: string;
+      ids: string[];
+    }[];
+    const id = context.dataset.lessonId!;
+    const route = routes.find(
+      (p) =>
+        p.id === new URL(location.href).searchParams.get("route") &&
+        p.ids.includes(id),
+    );
+    if (route) {
+      const base = context.dataset.base!;
+      const titles = JSON.parse(context.dataset.titles ?? "{}") as Record<
+        string,
+        string
+      >;
+      const index = route.ids.indexOf(id),
+        next = route.ids[index + 1];
+      context.querySelector("[data-context-label]")!.textContent =
+        `学習ルート · ${index + 1} / ${route.ids.length}`;
+      const title = context.querySelector<HTMLAnchorElement>(
+        "[data-context-title]",
+      )!;
+      title.textContent = route.label;
+      title.href = `${base}/paths/${route.id}/`;
+      const list = context.querySelector("[data-context-list]")!;
+      list.replaceChildren();
+      for (const key of route.ids) {
+        const li = document.createElement("li"),
+          a = document.createElement("a");
+        a.href = `${base}/learn/${key}/?route=${route.id}`;
+        a.textContent = titles[key];
+        if (key === id) a.setAttribute("aria-current", "page");
+        li.append(a);
+        list.append(li);
+      }
+      const link = context.querySelector<HTMLAnchorElement>(
+        "[data-context-next]",
+      )!;
+      link.href = next
+        ? `${base}/learn/${next}/?route=${route.id}`
+        : `${base}/paths/${route.id}/`;
+      context.querySelector("[data-next-label]")!.textContent = next
+        ? "このルートの次の教材 →"
+        : "ルートを振り返る →";
+      context.querySelector("[data-next-title]")!.textContent = next
+        ? titles[next]
+        : route.label;
+    }
+  }
+</script>

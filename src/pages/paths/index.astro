@@ -1,0 +1,33 @@
+---
+import Shell from "../../layouts/Shell.astro";
+import ExplorerNote from "../../components/ExplorerNote.astro";
+import { learningPaths } from "../../data/learning-paths";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Shell title="学習ルート">
+  <div class="wrap hub-page">
+    <header class="hub-header">
+      <p class="eyebrow">LEARNING ROUTES</p>
+      <h1>目的から、学びを選ぶ。</h1>
+      <p>必要な教材を、迷わず順番に。</p>
+    </header>
+    <ExplorerNote title="どこから読むか迷ったら。" compact>
+      初めて実行環境を確かめる方は「環境を確かめる」から。いま取り組みたい目的でルートを選べます。
+    </ExplorerNote>
+    <div class="route-grid">
+      {learningPaths.map((path) => (
+        <a class="route-card" href={`${base}/paths/${path.id}/`}>
+          <p class="eyebrow">
+            ROUTE {path.num} · {path.audience}
+          </p>
+          <h2>{path.label}</h2>
+          <p>{path.text}</p>
+          <span class="catalog-meta">
+            {path.ids.length}教材 · {path.time} →
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</Shell>

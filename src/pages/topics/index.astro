@@ -1,0 +1,19 @@
+---
+import Shell from "../../layouts/Shell.astro";
+import TopicCards from "../../components/TopicCards.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Shell title="テーマから探す">
+  <div class="wrap hub-page">
+    <header class="hub-header">
+      <p class="eyebrow">EXPLORE TOPICS</p>
+      <h1>テーマから探す</h1>
+      <p>知りたい分野から、解説と実践へ。</p>
+    </header>
+    <TopicCards />
+    <p class="hub-action">
+      <a href={`${base}/library/`}>すべての教材を検索する →</a>
+    </p>
+  </div>
+</Shell>

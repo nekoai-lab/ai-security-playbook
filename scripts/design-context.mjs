@@ -26,6 +26,8 @@ export function reviewContext(files, map) {
         if (route && map.pages.includes(route)) {
           affected.add(route);
           affected.add("");
+          for (const index of ["library/", "updates/"])
+            if (map.pages.includes(index)) affected.add(index);
           references.add(file);
         } else fallback = true;
       } else if (s.name === "guide") affected.add("design-system/");

@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { topicTitle } from "../data/catalog";
+interface Props {
+  lesson: CollectionEntry<"lessons">;
+  route?: string;
+  headingLevel?: "h2" | "h3";
+}
+const { lesson, route, headingLevel: Heading = "h2" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const href = `${base}/learn/${lesson.id}/${route ? `?route=${encodeURIComponent(route)}` : ""}`;
+---
+
+<article
+  class="catalog-card"
+  data-catalog-item
+  data-topic={lesson.data.topic}
+  data-level={lesson.data.level}
+  data-type={lesson.data.format}
+  data-search={[
+    lesson.data.title,
+    lesson.data.summary,
+    ...lesson.data.keywords,
+  ].join(" ")}
+>
+  <p class="catalog-meta">
+    {topicTitle(lesson.data.topic)} · {lesson.data.format}
+  </p>
+  <Heading>
+    <a href={href}>
+      {lesson.data.title}
+      <span aria-hidden="true"> ↗</span>
+    </a>
+  </Heading>
+  <p>{lesson.data.summary}</p>
+  <p class="catalog-meta">
+    {lesson.data.level} · 約{lesson.data.minutes}分 · 情報確認{" "}
+    <time datetime={lesson.data.reviewed}>{lesson.data.reviewed}</time>
+  </p>
+</article>

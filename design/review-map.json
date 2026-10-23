@@ -1,7 +1,10 @@
 {
   "version": 1,
   "entry": "design/AI_GUIDE.md",
-  "contract": ["design/DESIGN.md", "design/design-rules.json"],
+  "contract": [
+    "design/DESIGN.md",
+    "design/design-rules.json"
+  ],
   "basePath": "/ai-security-playbook/",
   "pages": [
     "",
@@ -10,9 +13,24 @@
     "learn/node-october-2026/",
     "learn/commands/",
     "learn/checklist/",
-    "learn/operations/"
+    "learn/operations/",
+    "library/",
+    "topics/",
+    "topics/development/",
+    "topics/operations/",
+    "paths/",
+    "paths/environment/",
+    "paths/node-update/",
+    "paths/update-operations/",
+    "series/node-security/",
+    "updates/",
+    "about/"
   ],
-  "representatives": ["", "design-system/", "learn/node-october-2026/"],
+  "representatives": [
+    "",
+    "library/",
+    "learn/node-october-2026/"
+  ],
   "sections": [
     {
       "name": "identity",
@@ -21,7 +39,10 @@
         "src/components/BrandMark.astro",
         "src/components/Explorer"
       ],
-      "anchors": ["identity", "imagery"],
+      "anchors": [
+        "identity",
+        "imagery"
+      ],
       "references": [
         "src/components/BrandMark.astro",
         "src/components/ExplorerCat.astro",
@@ -37,25 +58,55 @@
         "src/components/",
         "src/data/",
         "src/pages/index.astro",
-        "src/pages/learn/"
+        "src/pages/learn/",
+        "src/pages/library.astro",
+        "src/pages/topics/",
+        "src/pages/paths/",
+        "src/pages/series/",
+        "src/pages/updates.astro",
+        "src/pages/about.astro",
+        "src/content.config.ts"
       ],
-      "anchors": ["color", "type", "layout", "responsive"],
+      "anchors": [
+        "color",
+        "type",
+        "layout",
+        "responsive"
+      ],
       "references": [
         "src/styles/tokens.css",
         "src/layouts/Shell.astro",
-        "docs/DESIGN_SYSTEM.md"
+        "docs/DESIGN_SYSTEM.md",
+        "src/data/catalog.ts",
+        "src/data/learning-paths.ts",
+        "src/styles/library.css"
       ]
     },
     {
       "name": "guide",
-      "prefixes": ["src/pages/design-system.astro", "docs/DESIGN_SYSTEM.md"],
-      "anchors": ["authoring", "quality"],
-      "references": ["src/pages/design-system.astro", "docs/DESIGN_SYSTEM.md"]
+      "prefixes": [
+        "src/pages/design-system.astro",
+        "docs/DESIGN_SYSTEM.md"
+      ],
+      "anchors": [
+        "authoring",
+        "quality"
+      ],
+      "references": [
+        "src/pages/design-system.astro",
+        "docs/DESIGN_SYSTEM.md"
+      ]
     },
     {
       "name": "lesson",
-      "prefixes": ["src/content/lessons/"],
-      "anchors": ["diagrams", "notices", "authoring"],
+      "prefixes": [
+        "src/content/lessons/"
+      ],
+      "anchors": [
+        "diagrams",
+        "notices",
+        "authoring"
+      ],
       "references": [
         "docs/AUTHORING.md",
         "src/components/Flow.astro",

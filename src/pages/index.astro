@@ -4,12 +4,14 @@ import ExplorerNote from "../components/ExplorerNote.astro";
 import FieldButton from "../components/FieldButton.astro";
 import FieldIcon from "../components/FieldIcon.astro";
 import SectionHeading from "../components/SectionHeading.astro";
-import PathCard from "../components/PathCard.astro";
+import TopicCards from "../components/TopicCards.astro";
 import { learningPaths } from "../data/learning-paths";
 import { getCollection } from "astro:content";
 const lessons = (await getCollection("lessons")).sort(
-  (a, b) => a.data.order - b.data.order,
+  (a, b) =>
+    b.data.updated.localeCompare(a.data.updated) || a.id.localeCompare(b.id),
 );
+const recent = lessons.slice(0, 3);
 const featuredLesson = lessons.find(
   (lesson) => lesson.id === "node-october-2026",
 );
@@ -35,7 +37,7 @@ const link = (id: string) => `${base}/learn/${id}/`;
         <br />
         確かめながら学ぶプレイブック。
       </p>
-      <FieldButton href="#paths">学びをはじめる</FieldButton>
+      <FieldButton href={`${base}/library/`}>教材を探す</FieldButton>
     </div>
     <figure class="hero-art">
       <img
@@ -62,32 +64,39 @@ const link = (id: string) => `${base}/learn/${id}/`;
       </div>
     </div>
   </div>
-  <div class="wrap">
-    <ExplorerNote title="自分の現在地から、探究をはじめよう。" compact>
-      初学者・経験者・上級者の3ルート。今の自分に合う入口を選べます。
-    </ExplorerNote>
-  </div>
-  <section id="paths" class="wrap routes-section">
+  <section id="library" class="wrap home-topics">
+    <SectionHeading
+      eyebrow="EXPLORE THE FIELD"
+      title="テーマから、知りたいことへ。"
+      number="01"
+    />
+    <TopicCards headingLevel="h3" />
+    <p class="hub-action">
+      <a href={`${base}/library/`}>教材を検索する →</a>
+    </p>
+  </section>
+  <section id="paths" class="wrap home-paths">
     <SectionHeading
       eyebrow="LEARNING ROUTES"
-      title="目的に合わせて、最適なルートで学べます。"
-    >
-      <p>
-        基礎から実践まで、レベル別に体系化。
-        <br />
-        あなたのペースで、確かなスキルを。
-      </p>
-      <FieldIcon kind="compass" />
-      <span class="side-note">
-        A SAFER AI.
-        <br />A BRIGHTER TOMORROW.
-      </span>
-    </SectionHeading>
-    <div class="path-grid">
+      title="目的に合わせて、読み進める。"
+      number="02"
+    />
+    <ExplorerNote title="はじめての方は、ここから。" compact>
+      実行環境の違いを知りたい方は「環境を確かめる」へ。更新や運用など、目的に合うルートも選べます。
+    </ExplorerNote>
+    <div class="home-route-links">
       {learningPaths.map((path) => (
-        <PathCard path={path} lessons={lessons} />
+        <a href={`${base}/paths/${path.id}/`}>
+          <span class="catalog-meta">
+            {path.audience} · {path.time}
+          </span>
+          <strong>{path.label} →</strong>
+        </a>
       ))}
     </div>
+    <p class="hub-action">
+      <a href={`${base}/paths/`}>学習ルートを見る →</a>
+    </p>
   </section>
   <section id="latest" class="wrap featured-section">
     <div class="featured-heading">
@@ -137,59 +146,24 @@ const link = (id: string) => `${base}/learn/${id}/`;
       </div>
     </a>
   </section>
-  <section id="library" class="wrap library-section">
-    <div class="library-heading">
-      <SectionHeading
-        eyebrow="THE FIELD LIBRARY"
-        title="読む。確かめる。実践する。"
-        number="02"
-      />
-      <span class="mono">
-        {String(lessons.length).padStart(2, "0")} FIELD NOTES
-      </span>
-    </div>
-    <div class="lesson-list">
-      {lessons.map((l, i) => (
-        <a class="lesson-row" href={link(l.id)}>
-          <span class="lesson-num">{String(i + 1).padStart(2, "0")}</span>
-          <div>
-            <span class="category">
-              {l.data.category} / {l.data.minutes}分
-            </span>
-            <h3>{l.data.title}</h3>
-            <p>{l.data.summary}</p>
-          </div>
-          <span class="lesson-arrow" aria-hidden="true">
-            ↗
-          </span>
-        </a>
+  <section class="wrap home-updates">
+    <SectionHeading eyebrow="FIELD UPDATES" title="新着・更新" number="03" />
+    <ol class="update-list compact-updates">
+      {recent.map((lesson) => (
+        <li>
+          <p class="catalog-meta">
+            <time datetime={lesson.data.updated}>{lesson.data.updated}</time> ·{" "}
+            {lesson.data.updated === lesson.data.published ? "公開" : "更新"}
+          </p>
+          <h3>
+            <a href={link(lesson.id)}>{lesson.data.title} →</a>
+          </h3>
+          <p>{lesson.data.changes[0]?.summary ?? lesson.data.summary}</p>
+        </li>
       ))}
-    </div>
-  </section>
-  <section class="wrap future-section">
-    <div>
-      <p class="eyebrow">NEXT EXPEDITIONS</p>
-      <h2>
-        まだ知らない仕組みを、
-        <br />
-        次の学びへ。
-      </h2>
-      <p>
-        MCP・AIエージェント・クラウド。
-        <br />
-        このフィールドノートは、少しずつ広がります。
-      </p>
-    </div>
-    <div class="future-topics">
-      <span>
-        <b>01</b> MCP <small>教材を追加予定</small>
-      </span>
-      <span>
-        <b>02</b> AIエージェント <small>教材を追加予定</small>
-      </span>
-      <span>
-        <b>03</b> クラウド <small>教材を追加予定</small>
-      </span>
-    </div>
+    </ol>
+    <p class="hub-action">
+      <a href={`${base}/updates/`}>新着・更新をすべて見る →</a>
+    </p>
   </section>
 </Shell>

@@ -10,7 +10,7 @@ npm run preview -- --host 127.0.0.1 --port 4387
 DESIGN_HARNESS_DIR=/path/to/ai-dev-harness npm run design:audit
 ```
 
-通常は全7画面を契約の4幅で測定する。代表3画面の途中診断はdesign:audit:quickで行う。個別URL・幅を指定した実行はCUSTOMとなる。--out/--baselineで保存先と比較元を指定できる。
+通常はreview-mapの全画面を契約の4幅で測定する。代表3画面の途中診断はdesign:audit:quickで行う。個別URL・幅を指定した実行はCUSTOMとなる。--out/--baselineで保存先と比較元を指定できる。
 
 ```sh
 npm run design:audit -- --out design/audit/2026-10-24/after --baseline design/audit/2026-10-24/before/measure.json http://127.0.0.1:4387/ai-security-playbook/
@@ -37,7 +37,7 @@ GitHubの共通ハーネス origin/main `839e06f` を確認し、同じ版を一
 出力は参照ファイル、ガイドの該当節、影響画面。未知の変更は全画面確認へ戻す。ルールを本文へ複製せず、rulesとtokensを正本にする。
 
 `npm run design:audit:quick` は代表3画面×375/1280pxの6条件で、作業中の診断だけを行う。
-`npm run design:audit` は全7画面×契約の4幅、28条件を確認する。個別URLや幅を指定した実行はCUSTOMと表示し、公開確認の代用にはしない。
+`npm run design:audit` はreview-mapの全画面×契約の4幅を確認する。個別URLや幅を指定した実行はCUSTOMと表示し、公開確認の代用にはしない。
 新しい教材を追加したらreview-map.jsonのpagesも更新する。テストがcontent collectionとの不一致を検出する。
 古い合格結果のキャッシュで現在の変更を承認しない。参照量と検査範囲は削減できるが、AIの判断時間や精度の改善率は実測まで断定しない。
 

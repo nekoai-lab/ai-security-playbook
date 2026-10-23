@@ -3,6 +3,8 @@ import { getCollection, render } from "astro:content";
 import Shell from "../../layouts/Shell.astro";
 import ExplorerNote from "../../components/ExplorerNote.astro";
 import DataTable from "../../components/DataTable.astro";
+import LearningContext from "../../components/LearningContext.astro";
+import { topicTitle, seriesFor } from "../../data/catalog";
 export async function getStaticPaths() {
   return (await getCollection("lessons")).map((lesson) => ({
     params: { id: lesson.id },
@@ -12,20 +14,33 @@ export async function getStaticPaths() {
 const { lesson } = Astro.props;
 const { Content, headings } = await render(lesson);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-const all = (await getCollection("lessons")).sort(
-  (a, b) => a.data.order - b.data.order,
-);
-const next = all[all.findIndex((l) => l.id === lesson.id) + 1];
+const all = await getCollection("lessons");
+const group = seriesFor(lesson.id);
+const nextId = group?.ids[group.ids.indexOf(lesson.id) + 1];
+const related = all
+  .filter(
+    (l) =>
+      l.data.topic === lesson.data.topic &&
+      l.id !== lesson.id &&
+      l.id !== nextId,
+  )
+  .slice(0, 2);
 ---
 
 <Shell title={lesson.data.title} description={lesson.data.summary}>
   <div class="wrap article-wrap">
-    <a class="breadcrumb" href={`${base}/#library`}>
-      ← 教材一覧
-    </a>
+    <nav class="crumbs" aria-label="パンくず">
+      <a href={`${base}/library/`}>教材一覧</a>
+      <span aria-hidden="true">/</span>
+      <a href={`${base}/topics/${lesson.data.topic}/`}>
+        {topicTitle(lesson.data.topic)}
+      </a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{lesson.data.title}</span>
+    </nav>
     <header class="article-header">
       <p class="eyebrow">
-        {lesson.data.category} / {lesson.data.minutes} MIN READ
+        {lesson.data.format} / 約{lesson.data.minutes}分
       </p>
       <h1>{lesson.data.title}</h1>
       <p>{lesson.data.summary}</p>
@@ -39,10 +54,27 @@ const next = all[all.findIndex((l) => l.id === lesson.id) + 1];
           </ul>
         </section>
       )}
+      <p class="lesson-prerequisite">
+        前提知識：{lesson.data.level}。
+        {lesson.id === "basics" ? (
+          "実行環境の違いから説明します。"
+        ) : (
+          <a href={`${base}/learn/basics/`}>実行環境の基本を確認する →</a>
+        )}
+      </p>
       <p class="metadata">
-        最終更新{" "}
-        <time datetime={lesson.data.updated}>{lesson.data.updated}</time> ·
-        情報の確認日も同日
+        <span>
+          公開{" "}
+          <time datetime={lesson.data.published}>{lesson.data.published}</time>
+        </span>
+        <span>
+          内容更新{" "}
+          <time datetime={lesson.data.updated}>{lesson.data.updated}</time>
+        </span>
+        <span>
+          情報確認{" "}
+          <time datetime={lesson.data.reviewed}>{lesson.data.reviewed}</time>
+        </span>
       </p>
     </header>
     <div class="article-grid">
@@ -61,12 +93,20 @@ const next = all[all.findIndex((l) => l.id === lesson.id) + 1];
         <ExplorerNote title="読んだことを、ひとつ確かめよう。" compact>
           気になった項目を実際の環境で確認し、分かったことと未確認のことを分けて残しましょう。
         </ExplorerNote>
-        {next && (
-          <a class="next-lesson" href={`${base}/learn/${next.id}/`}>
-            <span>次の教材 →</span>
-            <strong>{next.data.title}</strong>
-          </a>
+        <LearningContext id={lesson.id} />
+        {related.length > 0 && (
+          <section class="related-lessons">
+            <h2>関連する教材</h2>
+            {related.map((l) => (
+              <a href={`${base}/learn/${l.id}/`}>{l.data.title} →</a>
+            ))}
+          </section>
         )}
+        <p class="hub-action">
+          <a href={`${base}/topics/${lesson.data.topic}/`}>
+            {topicTitle(lesson.data.topic)}の教材へ戻る →
+          </a>
+        </p>
         <p class="edit-link">
           <a
             href={`https://github.com/nekoai-lab/ai-security-playbook/blob/main/src/content/lessons/${lesson.id}.mdx`}

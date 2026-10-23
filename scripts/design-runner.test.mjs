@@ -1,6 +1,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import {
+  mkdtempSync,
+  mkdirSync,
+  writeFileSync,
+  rmSync,
+  readFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -26,7 +32,10 @@ test("full and quick coverage stay distinct, and failures are propagated", () =>
     assert.equal(full.status, 0);
     assert.match(full.stdout, /FULL:/);
     const fullArgs = JSON.parse(full.stdout.trim().split("\n").at(-1));
-    assert.equal(fullArgs.filter((a) => a.startsWith("http")).length, 7);
+    assert.equal(
+      fullArgs.filter((a) => a.startsWith("http")).length,
+      JSON.parse(readFileSync("design/review-map.json", "utf8")).pages.length,
+    );
     assert(!fullArgs.includes("--widths"));
     const quick = run(["--quick"]);
     assert.equal(quick.status, 0);
