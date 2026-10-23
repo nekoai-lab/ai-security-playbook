@@ -29,6 +29,16 @@ const next = all[all.findIndex((l) => l.id === lesson.id) + 1];
       </p>
       <h1>{lesson.data.title}</h1>
       <p>{lesson.data.summary}</p>
+      {lesson.data.outcomes && (
+        <section class="lesson-goals" aria-labelledby="lesson-goals-title">
+          <h2 id="lesson-goals-title">この教材でできるようになること</h2>
+          <ul>
+            {lesson.data.outcomes.map((goal) => (
+              <li>{goal}</li>
+            ))}
+          </ul>
+        </section>
+      )}
       <p class="metadata">
         最終更新{" "}
         <time datetime={lesson.data.updated}>{lesson.data.updated}</time> ·

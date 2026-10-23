@@ -1,0 +1,26 @@
+[
+  {
+    "route": "",
+    "brand": true,
+    "companion": true,
+    "imagesLoaded": true,
+    "keyboardSkip": true,
+    "text200NoOverflow": true
+  },
+  {
+    "route": "design-system/",
+    "brand": true,
+    "companion": true,
+    "imagesLoaded": true,
+    "keyboardSkip": true,
+    "text200NoOverflow": true
+  },
+  {
+    "route": "learn/node-october-2026/",
+    "brand": true,
+    "companion": true,
+    "imagesLoaded": true,
+    "keyboardSkip": true,
+    "text200NoOverflow": true
+  }
+]

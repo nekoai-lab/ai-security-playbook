@@ -1,0 +1,65 @@
+{
+  "cases": [
+    {
+      "width": 320,
+      "goals": true,
+      "practiceLink": true,
+      "keyboard": true,
+      "emptyBlocked": true,
+      "unknownOnlyExport": true,
+      "knownAndUnknownExport": true,
+      "literalTextSafe": true,
+      "networkOnInputOrExport": 0,
+      "storageEntries": 0,
+      "axeViolations": 0,
+      "noOverflow": true,
+      "text200": "not-applicable"
+    },
+    {
+      "width": 375,
+      "goals": true,
+      "practiceLink": true,
+      "keyboard": true,
+      "emptyBlocked": true,
+      "unknownOnlyExport": true,
+      "knownAndUnknownExport": true,
+      "literalTextSafe": true,
+      "networkOnInputOrExport": 0,
+      "storageEntries": 0,
+      "axeViolations": 0,
+      "noOverflow": true,
+      "text200": "pass"
+    },
+    {
+      "width": 768,
+      "goals": true,
+      "practiceLink": true,
+      "keyboard": true,
+      "emptyBlocked": true,
+      "unknownOnlyExport": true,
+      "knownAndUnknownExport": true,
+      "literalTextSafe": true,
+      "networkOnInputOrExport": 0,
+      "storageEntries": 0,
+      "axeViolations": 0,
+      "noOverflow": true,
+      "text200": "not-applicable"
+    },
+    {
+      "width": 1280,
+      "goals": true,
+      "practiceLink": true,
+      "keyboard": true,
+      "emptyBlocked": true,
+      "unknownOnlyExport": true,
+      "knownAndUnknownExport": true,
+      "literalTextSafe": true,
+      "networkOnInputOrExport": 0,
+      "storageEntries": 0,
+      "axeViolations": 0,
+      "noOverflow": true,
+      "text200": "not-applicable"
+    }
+  ],
+  "noJavaScriptFallback": true
+}

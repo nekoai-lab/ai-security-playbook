@@ -1,0 +1,137 @@
+---
+interface Props {
+  recordId: string;
+  topic: string;
+}
+const { recordId, topic } = Astro.props;
+---
+
+<details
+  class="lesson-record"
+  data-lesson-record
+  data-topic={topic}
+  data-record-id={recordId}
+>
+  <summary>確認できたこと・未確認のことを記録する</summary>
+  <div class="lesson-record-body">
+    <p id={`${recordId}-privacy`} class="record-help">
+      入力はこのページで保存・送信しません。ページを閉じると消えます。必要な記録はテキストで手元に残せます。
+    </p>
+    <fieldset>
+      <legend>自分の確認結果</legend>
+      <p id={`${recordId}-help`} class="record-help">
+        自分用の呼び名だけで十分です。パスワード・トークン・内部パス・ログ全文は書かないでください。
+      </p>
+      <label for={`${recordId}-target`}>対象の呼び名</label>
+      <input
+        id={`${recordId}-target`}
+        data-record-target
+        type="text"
+        maxlength="80"
+        placeholder="例：手元の開発用Node"
+        autocomplete="off"
+        aria-describedby={`${recordId}-help`}
+      />
+      <label for={`${recordId}-known`}>
+        確認できたこと（根拠・確認日も添える）
+      </label>
+      <textarea
+        id={`${recordId}-known`}
+        data-record-known
+        rows="4"
+        maxlength="2000"
+        autocomplete="off"
+        aria-describedby={`${recordId}-privacy`}
+      ></textarea>
+      <label for={`${recordId}-unknown`}>未確認のこと・次に確認すること</label>
+      <textarea
+        id={`${recordId}-unknown`}
+        data-record-unknown
+        rows="4"
+        maxlength="2000"
+        autocomplete="off"
+        aria-describedby={`${recordId}-privacy`}
+      ></textarea>
+    </fieldset>
+    <p class="record-help">
+      未確認だけの記録でも構いません。空欄は「安全を確認した」という意味にはなりません。
+    </p>
+    <button type="button" data-record-download disabled>
+      記録をダウンロード
+    </button>
+    <p
+      class="record-status"
+      data-record-status
+      role="status"
+      aria-live="polite"
+    ></p>
+    <noscript>
+      <p>
+        書き出しにはJavaScriptが必要です。使わない場合は、上の3項目を自分のメモへ写して記録できます。
+      </p>
+    </noscript>
+  </div>
+</details>
+
+<script>
+  for (const record of document.querySelectorAll<HTMLDetailsElement>(
+    "[data-lesson-record]",
+  )) {
+    const target = record.querySelector<HTMLInputElement>(
+      "[data-record-target]",
+    );
+    const known = record.querySelector<HTMLTextAreaElement>(
+      "[data-record-known]",
+    );
+    const unknown = record.querySelector<HTMLTextAreaElement>(
+      "[data-record-unknown]",
+    );
+    const button = record.querySelector<HTMLButtonElement>(
+      "[data-record-download]",
+    );
+    const status = record.querySelector<HTMLParagraphElement>(
+      "[data-record-status]",
+    );
+    if (!target || !known || !unknown || !button || !status) continue;
+    button.disabled = false;
+    button.addEventListener("click", () => {
+      if (!known.value.trim() && !unknown.value.trim()) {
+        status.textContent =
+          "確認できたこと、または未確認のことを一つ記入してください。";
+        known.focus();
+        return;
+      }
+      const now = new Date();
+      const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+      const text = [
+        `${record.dataset.topic} 学習記録`,
+        `記録日：${date}`,
+        "",
+        "対象の呼び名",
+        target.value.trim() || "未記入",
+        "",
+        "確認できたこと（根拠・確認日）",
+        known.value.trim() || "未記録",
+        "",
+        "未確認のこと・次に確認すること",
+        unknown.value.trim() || "未記録",
+        "",
+        "この記録は手入力のメモです。空欄や版の一致だけでは、安全性・影響・更新完了を判断できません。",
+        "",
+      ].join("\n");
+      const url = URL.createObjectURL(
+        new Blob([text], { type: "text/plain;charset=utf-8" }),
+      );
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${record.dataset.recordId}-notes.txt`;
+      link.hidden = true;
+      document.body.append(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      status.textContent =
+        "記録の書き出しを開始しました。保存先はブラウザで確認してください。";
+    });
+  }
+</script>

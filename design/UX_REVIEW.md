@@ -63,3 +63,7 @@ mainの23eaa34も同じ測定v2・同じ契約・全28条件で再測定した�
 ## 保存先
 
 当初のbefore/finalは経緯として保持。最新の公開前判断はrelease/、同条件の旧mainはmain-v2/、今回の人による確認と限界はこの文書を参照する。READMEとLICENSE、教材の事実内容は変更していない。
+
+## Node教材の完成見本
+
+同日の追加実装はNODE_LESSON_REVIEW.mdを参照する。目標・確認・手元の記録をつなぎ、追加のcritical L01–L05は5/5確認。公開前の全28条件は引き続きerror 0。最新の証拠はaudit/2026-10-24/node-lessonとnode-lesson-openに保存する。
