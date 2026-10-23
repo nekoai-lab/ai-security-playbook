@@ -10,7 +10,7 @@ npm run preview -- --host 127.0.0.1 --port 4387
 DESIGN_HARNESS_DIR=/path/to/ai-dev-harness npm run design:audit
 ```
 
-通常はホーム・デザインガイド・代表教材を測定する。追加URLや--out/--baselineは引数で指定できる。
+通常は全7画面を契約の4幅で測定する。代表3画面の途中診断はdesign:audit:quickで行う。個別URL・幅を指定した実行はCUSTOMとなる。--out/--baselineで保存先と比較元を指定できる。
 
 ```sh
 npm run design:audit -- --out design/audit/2026-10-24/after --baseline design/audit/2026-10-24/before/measure.json http://127.0.0.1:4387/ai-security-playbook/

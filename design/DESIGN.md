@@ -35,7 +35,7 @@ rules: ./design-rules.json
 
 GitHub最新のai-dev-harnessの設計契約→生成→機械検品→目視レビューの流れを採用。
 非公開の検査エンジンはこの公開repoへ転載せず、npm run design:auditで手元のcheckoutを呼ぶ。
-320/375/768/1280pxでホーム・ガイド・代表教材を測り、before/afterを保存する。
+公開前は320/375/768/1280pxで全7画面を測り、before/afterを保存する。途中のQUICK診断は代表3画面に絞る。
 読みやすさのしきい値は緩めず、数値の指摘と目視の確認を分ける。
 
 forbiddenTextはTBDとLorem ipsumに限定する。教材では「未確認」「要確認」「ダミー」等が安全な確認や架空例の説明として必要であり、文脈を見ずに穴埋めと判定すると誤検出になるため。実際の空欄や未完成UIはSPEC_TRACEと目視で確認する。
