@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Shell from "../../layouts/Shell.astro";
+import DataTable from "../../components/DataTable.astro";
 export async function getStaticPaths() {
   return (await getCollection("lessons")).map((lesson) => ({
     params: { id: lesson.id },
@@ -45,7 +46,7 @@ const next = all[all.findIndex((l) => l.id === lesson.id) + 1];
         </nav>
       </aside>
       <article class="prose">
-        <Content />
+        <Content components={{ table: DataTable }} />
         {next && (
           <a class="next-lesson" href={`${base}/learn/${next.id}/`}>
             次の教材 → {next.data.title}
