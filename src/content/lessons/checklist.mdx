@@ -1,0 +1,127 @@
+---
+title: "更新を完了させるチェックリスト"
+summary: "PC・MCP・CI・本番を確認し、対応済みと未確認を分けて残す。"
+category: "Node.js"
+updated: "2026-10-23"
+order: 4
+minutes: 5
+---
+
+## このリストの使い方
+
+チェックはこのページを開いている間だけ有効です。保存や外部送信はしません。対象がない項目は手元の記録に「対象外」と理由を残してください。チェックを付けただけで、安全性が自動判定されるわけではありません。
+
+## 作業前：対象と戻し方を決める
+
+<ul className="checklist">
+  <li>
+    <label>
+      <input type="checkbox" />
+      持っているPC、AIツール、MCP、CI、本番サービスを洗い出した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      ランタイムの系列と版、導入方法、管理者を記録した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      公式発表で対象系列・修正版・サポート期間を確認した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      外部入力を扱う処理と、まだ分からない範囲を区別した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      互換性テスト、作業保存、停止影響、戻し方を確認した
+    </label>
+  </li>
+</ul>
+
+## 更新：それぞれの管理経路で反映する
+
+<ul className="checklist">
+  <li>
+    <label>
+      <input type="checkbox" />
+      導入方法に合った公式の手順でランタイムを更新した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      アプリ本体とアプリ同梱ランタイムの更新情報を別に確認した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      対象のMCP・開発サーバーと、それらを起動した親を確認して再起動した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      CIの版指定と実行ログを確認した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      必要な本番イメージを再ビルドし、検証後に再デプロイした
+    </label>
+  </li>
+</ul>
+
+## 作業後：動いているものを確認する
+
+<ul className="checklist">
+  <li>
+    <label>
+      <input type="checkbox" />
+      新しく起動した処理が、想定のランタイムを使っていることを確認した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      稼働リビジョンとイメージを照合し、正常動作を確認した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      未更新・未確認の対象に、担当者と次の確認日を設定した
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" />
+      記録・通知に引数やトークンを含めていない
+    </label>
+  </li>
+</ul>
+
+## 残す記録の例
+
+| 対象         | 更新前 → 更新後        | 実行版の確認                    | 状態と次の行動           |
+| ------------ | ---------------------- | ------------------------------- | ------------------------ |
+| 開発PCのNode | 24.14.0 → 24.22.1      | 新規プロセスとMCPの再起動を確認 | 対応済み・確認日を記録   |
+| アプリ同梱版 | 版を記録               | 修正取り込みは未確認            | ベンダー告知を次回確認   |
+| 本番サービス | イメージの識別子を記録 | 稼働リビジョンと照合            | テスト結果・更新日を記録 |
+
+これは書式の例で、読者の環境を診断した結果ではありません。
+
+## 完了の基準
+
+「更新を入れた」だけでなく、実行環境への反映と正常動作を確認した状態を、対象ごとに記録します。確認できないアプリの影響や修正状況は、対応済みと混ぜず「未確認」に残します。
+
+参考：[Node.js公式セキュリティ発表](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases)

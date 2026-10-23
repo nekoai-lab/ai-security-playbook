@@ -1,0 +1,89 @@
+---
+title: "安全に調べる確認コマンド"
+summary: "変更や停止をせず、Nodeの版・プロセス・設定を読み取る。"
+category: "Node.js"
+updated: "2026-10-23"
+order: 3
+minutes: 8
+---
+
+## 実行する前に
+
+以下は確認のためのコマンドです。更新、削除、プロセス停止は行いません。自分が管理する環境で実行してください。結果にユーザー名や内部パスが含まれる場合は、共有前に伏せます。
+
+> プロセスの全引数や環境変数は表示しません。引数にはパスワード、トークン、直接渡したコードが含まれることがあります。`ps` の `command` / `args` 列や環境変数の一括出力を、そのまま通知やチャットへ貼らないでください。
+
+## 手元のNodeを確認する
+
+macOS / Linux：
+
+```sh
+command -v node
+node --version
+node -p 'JSON.stringify({version:process.version,execPath:process.execPath})'
+```
+
+Windows PowerShell：
+
+```powershell
+Get-Command node -All | Select-Object Source
+node --version
+node -p 'JSON.stringify({version:process.version,execPath:process.execPath})'
+```
+
+例：`v24.22.1` は今回の24系の修正版です。コマンドが見つからない場合は、PATH上にない可能性があります。アプリ同梱版やDocker、本番にNodeがないことの証明にはなりません。
+
+`process.execPath` は、このコマンドで新しく起動したNodeの場所です。ほかの起動中プロセスの版を証明するものではありません。
+
+## 起動中のプロセスを確認する
+
+macOS：
+
+```sh
+ps -axo pid=,ppid=,lstart=,comm=
+```
+
+Linux：
+
+```sh
+ps -eo pid=,ppid=,lstart=,comm=
+```
+
+全プロセスの一覧から、`node`、`next-server`、利用中のAIツール名などを手元で確認します。`comm` は引数を含まない実行名です。表示名が変わる場合があるため、この一覧だけでは全対象を検出できません。
+
+Windows PowerShell：
+
+```powershell
+Get-Process node -ErrorAction SilentlyContinue |
+  Select-Object Id, StartTime, Path
+```
+
+権限の違いなどでPathが読めないことがあります。空欄は「問題なし」ではありません。
+
+起動時刻が更新より前なら、旧版が動いている可能性を調べます。時刻だけで脆弱性の有無は確定できません。対応するアプリの作業を保存し、再起動後に版と動作を確認します。一括停止は避けます。
+
+## リポジトリの指定を確認する
+
+macOS / Linuxで、調べたいリポジトリのルートに移動して実行します。`rg`（ripgrep）が必要です。
+
+```sh
+rg -n --hidden -g '!node_modules/**' -g '!.git/**' -g '!dist/**' \
+  -g 'Dockerfile*' -g '*.yml' -g '*.yaml' -g 'package.json' \
+  'FROM[[:space:]]+node:|node-version:|"node"[[:space:]]*:' .
+rg --files --hidden -g '!.git/**' -g '!node_modules/**' \
+  -g '.nvmrc' -g '.node-version'
+```
+
+2行目の検索で出たファイルは、エディタで版指定を読みます。`rg` は見つからないと終了コード1になります。出力なしは、検索対象内で見つからなかったことだけを意味します。別名の設定やマルチステージビルド、外部CI設定も確認が必要です。
+
+## 本番を確認する
+
+本番の版は、そのサービスの管理画面、既存の監視、起動時に記録するランタイム情報で確認します。版確認のために公開診断エンドポイントを新設したり、秘密を含む設定をログへ出したりしないでください。
+
+Dockerfileの`FROM node:24`や、CIの指定だけでは、現在動いているイメージの版は分かりません。イメージの識別子と稼働リビジョンを記録し、対応付けます。
+
+## 参考資料
+
+- [Node.js process.execPath（一次資料）](https://nodejs.org/api/process.html#processexecpath)
+- [Node.js process.version（一次資料）](https://nodejs.org/api/process.html#processversion)
+- [元記事：更新後にも古いプロセスが残った実例](https://zenn.dev/nekoai_lab/articles/dc4359e2169538)

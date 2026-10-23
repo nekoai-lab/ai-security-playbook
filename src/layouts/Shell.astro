@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+interface Props {
+  title: string;
+  description?: string;
+}
+const {
+  title,
+  description = "AIを使う人と作る人のための、日本語セキュリティ実践ガイド。",
+} = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | AI Security Playbook</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <meta name="theme-color" content="#154f43" />
+  </head>
+  <body>
+    <a class="skip" href="#main">
+      本文へスキップ
+    </a>
+    <header class="header">
+      <a class="brand" href={`${base}/`}>
+        <span class="brand-icon" aria-hidden="true">
+          盾
+        </span>
+        <span>
+          AI Security<span class="brand-sub">PLAYBOOK / 日本語</span>
+        </span>
+      </a>
+      <nav aria-label="メイン">
+        <a href={`${base}/#paths`}>学習ルート</a>
+        <a href={`${base}/#library`}>教材一覧</a>
+        <a
+          class="repo"
+          href="https://github.com/nekoai-lab/ai-security-playbook"
+        >
+          GitHub ↗
+        </a>
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer>
+      <span>
+        AI Security Playbook <span class="muted">by Tsukineko</span>
+      </span>
+      <span>
+        <a href="https://github.com/nekoai-lab/ai-security-playbook/blob/main/LICENSE">
+          MIT License
+        </a>{" "}
+        · 一次資料とともに学ぶ
+      </span>
+    </footer>
+  </body>
+</html>
