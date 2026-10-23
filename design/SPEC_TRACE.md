@@ -11,3 +11,5 @@
 | R07 critical | 320px・文字200%・キーボードを確認 | 既存ハーネス | 代表画面と操作 | ブラウザ検証記録 |
 
 確認状況の集計と画像パスはUX_REVIEW.mdに残す。未確認は完了として扱わない。
+
+R01–R07はUX_REVIEW.mdの対応表とrelease/の証拠で確認済み。追加R08（AIの参照負担削減）はAI_GUIDE.md・review-map.json・context/runnerの5テストで確認。速度改善率は未測定。

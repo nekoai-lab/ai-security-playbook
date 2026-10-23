@@ -742,7 +742,7 @@ footer {
 .prose :not(pre) > code {
   background: #e7dfd0;
   padding: 4px 4px;
-  font-size: 0.9em;
+  font-size: 14px;
   overflow-wrap: anywhere;
   border: 1px solid #cec5b5;
 }
@@ -1963,4 +1963,27 @@ li,
 figcaption,
 .explorer-note-copy {
   text-wrap: pretty;
+}
+
+/* Balance list items and callouts where inline links can leave a short tail. */
+.prose li,
+.design-rules li,
+.notice > div:last-child {
+  text-wrap: balance;
+}
+.prose .notice {
+  max-width: 34em;
+}
+
+.checklist p {
+  text-wrap: balance;
+}
+
+.path-card li,
+.checklist label {
+  text-wrap: balance;
+}
+
+.prose blockquote p {
+  max-width: 38em;
 }

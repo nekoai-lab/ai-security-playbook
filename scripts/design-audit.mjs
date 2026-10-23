@@ -1,37 +1,48 @@
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
-// The private harness is executed locally; its source is never copied here.
 const dir =
   process.env.DESIGN_HARNESS_DIR ??
   join(homedir(), "Projects", "ai-dev-harness");
 const command = join(dir, "bin", "design-audit");
 if (!existsSync(command)) {
   console.error(
-    "Design harness not found. Set DESIGN_HARNESS_DIR to your local harness checkout. See design/README.md.",
+    "Design harness not found. Set DESIGN_HARNESS_DIR. See design/README.md.",
   );
   process.exit(2);
 }
-const args = process.argv.slice(2);
-const base = "http://127.0.0.1:4387/ai-security-playbook/";
+const map = JSON.parse(
+  readFileSync(new URL("../design/review-map.json", import.meta.url), "utf8"),
+);
+const quick = process.argv.includes("--quick");
+const args = process.argv.slice(2).filter((a) => a !== "--quick");
+if (args.includes("--rules")) {
+  console.error("Use the project design/design-rules.json contract.");
+  process.exit(2);
+}
 const positional = args.filter(
   (arg, i) =>
     !arg.startsWith("--") &&
-    !["--out", "--baseline", "--widths", "--rules"].includes(args[i - 1]),
+    !["--out", "--baseline", "--widths"].includes(args[i - 1]),
 );
+const custom = positional.length > 0 || args.includes("--widths");
+const mode = quick ? "QUICK" : custom ? "CUSTOM" : "FULL";
+console.log(
+  `${mode}: ${mode === "FULL" ? "all routes and contract widths; visual/keyboard/text review still required" : "diagnostics only; not a release approval"}`,
+);
+const base = (
+  process.env.DESIGN_PREVIEW_URL ??
+  "http://127.0.0.1:4387/ai-security-playbook/"
+).replace(/\/?$/, "/");
+const defaults = (quick ? map.representatives : map.pages).map((p) => base + p);
 const targets =
-  positional.length || args.includes("--help")
-    ? args
-    : [
-        ...args,
-        base,
-        base + "design-system/",
-        base + "learn/node-october-2026/",
-      ];
+  positional.length || args.includes("--help") ? args : [...args, ...defaults];
+const quickWidths =
+  quick && !args.includes("--widths") ? ["--widths", "375,1280"] : [];
 const result = spawnSync(
   command,
-  ["--rules", "design/design-rules.json", ...targets],
+  ["--rules", "design/design-rules.json", ...quickWidths, ...targets],
   { stdio: "inherit", env: process.env },
 );
 if (result.error) {

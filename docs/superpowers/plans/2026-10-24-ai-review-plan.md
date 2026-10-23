@@ -13,10 +13,10 @@ Tech stack: Node built-ins, Astro, existing Playwright harness.
 
 ## Tasks
 
-- [ ] Isolate the private harness branch. Add regressions for independent columns, inline fragments, real sibling offsets and real orphan lines. Implement scoped measurements and actionable selectors. Run existing and new tests.
-- [ ] Add a short AI entry, a route/reference map, and a context command that defaults to full review for unknown changes. Validate known and unknown change routing. Keep public guide detailed but link directly to relevant sections.
-- [ ] Separate explicit quick diagnostics from default full checks, with all seven routes in full mode. Print the mode and preserve the engine exit status.
-- [ ] Run site audit. Fix genuine visual findings, without changing the contract. Save machine reports and visual review. Re-run affected browser checks once changes settle.
-- [ ] Commit and review the private harness change, attach its PR; update public PR with engine revision, gate results and limitations. Publish only when automatic errors and required visual checks are resolved.
+- [x] Isolate the private harness branch. Add regressions for independent columns, inline fragments, real sibling offsets and real orphan lines. Implement scoped measurements and actionable selectors. Run existing and new tests.
+- [x] Add a short AI entry, a route/reference map, and a context command that defaults to full review for unknown changes. Validate known and unknown change routing. Keep public guide detailed but link directly to relevant sections.
+- [x] Separate explicit quick diagnostics from default full checks, with all seven routes in full mode. Print the mode and preserve the engine exit status.
+- [x] Run site audit. Fix genuine visual findings, without changing the contract. Save machine reports and visual review. Re-run affected browser checks once changes settle.
+- [x] Commit and review the private harness change, attach its PR; update public PR with engine revision, gate results and limitations. Release preparation gates passed (automatic errors zero and required visual checks reviewed); publication follows the passing GitHub checks. See GitHub Actions for actual deployment status.
 
 Self-review: the design preserves the user-approved look, source privacy, release coverage and clear failure states. No cache or new model service is required; those would add stale-result risk and unmeasured overhead.

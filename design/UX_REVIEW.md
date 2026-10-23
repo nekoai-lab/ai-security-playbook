@@ -1,51 +1,65 @@
-# FIELD NOTES v1.1 — review record (2026-10-24)
+# FIELD NOTES v1.1 公開前の確認記録
 
-Status: **draft; design gate has not passed; do not merge/deploy yet**.
-Implementation and all verification ran on Mac mini. README and LICENSE are unchanged.
+確認日 2026-10-24。mini上で実装・確認。技術面の公開前条件を満たし、利用者が承認したAのロゴとCの案内役を維持した。実際の公開状態はGitHub Actionsを正本とする。
 
-## Requirements and evidence
+## 要件と証拠
 
-| ID | Implementation | Evidence | Status |
-|---|---|---|---|
-| R01 | Guide expanded to 12 sections, with identity, page patterns, responsive layouts, MDX authoring and quality workflow | `src/pages/design-system.astro`; 12 navigation links clicked | implemented, visual final approval pending |
-| R02 | A compass cat in header/favicon; size, clear space and monochrome examples | `BrandMark.astro`, `public/brand/`; identity screenshots | implemented |
-| R03 | C backpack cat at learning entry and lesson completion | `ExplorerNote.astro`; companion/lesson-end screenshots | implemented |
-| R04 | Existing design contract and actual local harness execution | DESIGN.md, design-rules.json, runner; before/final raw reports | integrated; **gate failing** |
-| R05 | Ivory/ink/orange FIELD NOTES shell retained | before/final screenshots, unchanged approved hero image | implemented, final visual review pending |
-| R06 | No brain/organ imagery introduced | production source assets; identity/companion screenshots | verified |
-| R07 | 320/375/768/1280; 200% text; keyboard and primary interactions | browser.json, brand-browser.json | automated checks pass |
+| 要件 | 実装と確認 | 証拠 |
+|---|---|---|
+| R01 ガイドの拡充 | 12節、ページ構成・スマホ・MDX制作・品質。12リンクを実際に操作 | design-system.astro、ブラウザ記録 |
+| R02 正式ロゴA | ヘッダー・favicon、縮小・単色・余白の見本。画像読込確認 | BrandMark、public/brand、identity画像 |
+| R03 案内役C | 学習入口・教材末尾。主要操作を妨げない配置を確認 | ExplorerNote、companion/lesson-end画像 |
+| R04 既存ハーネス | 契約・要件追跡・実行コマンド・before/after。全28条件のerror 0 | release/VALIDATION.md |
+| R05 FIELD NOTES維持 | 紙・黒・朱色、承認済みの機械イラスト。入口・教材・制作ガイドの3型 | before/after、各画面の目視 |
+| R06 脳・臓器を使わない | 承認済み機械イラストとA/Cのみ追加。教材の根拠は文章で提示 | docs/IMAGE_ASSETS.md、元画像 |
+| R07 小画面・拡大・キーボード | 全7画面×4幅、代表3画面で文字200%と本文スキップ、チェック操作 | browser.json、brand-browser.json |
+| R08 AIの参照負担を減らす | 約825文字の入口、変更→参照先の対応表。未知の変更は全画面へ。途中診断と公開前確認を分離 | AI_GUIDE、review-map、5つの回帰テスト |
 
-All 7 critical requirements have implementation/evidence, but **7/7 completion is not claimed**: R04 gate and final visual review remain open.
+当初のcritical 7/7と、追加のR08を確認。ここでいう達成は仕様・操作・画面の確認であり、学習効果やAIの速度改善の実証を意味しない。
 
-## Automated results
+## 機械検査
 
-- Astro check: 0 errors / 0 warnings / 0 hints (20 files).
-- Build and site validation: 7 pages; base paths, assets and anchors pass.
-- Browser: 7 routes × 4 widths = 28 combinations. No page overflow, browser errors or axe WCAG A/AA violations. Read-only tables retain their own local scroll region.
-- Brand images and companion images load on 3 representative pages. All 12 guide navigation links work. Checklist toggles and learning entry links work.
-- Keyboard skip link reaches main. Text sizes doubled from computed px values at 375px on home, guide and Node lesson: no page overflow. This is text resizing, not a claim of exhaustive screen-reader or browser-zoom certification.
-- Design harness origin/main revision: `839e06f`. No engine source or authentication material is included in this public repository.
-- Final raw design-audit: **166 passed / 26 failed (error 16) / 24 review**. Exit status 1 is preserved.
-- Before: **85 passed / 59 failed (error 52) / 24 review**, across 9 combinations. Final has 12 combinations (768px added), so aggregate totals must not be treated as a like-for-like improvement percentage. Raw measurements include matching-width comparisons.
+- 型検査 0 errors / 0 warnings / 0 hints。7ページのビルド、base・資産・内部リンク・アンカー検査成功。
+- AI参照先の選択・不明変更時の全画面への復帰・教材一覧との整合・FULL/QUICKの分離・終了コード伝播の5テスト成功。
+- 7画面×320/375/768/1280pxの28条件で横はみ出し、ブラウザエラー、axe WCAG A/AA違反0。
+- ロゴ・猫の画像読込、12ガイドリンク、教材チェックリスト、学習入口、キーボードの本文スキップを確認。
+- 代表3画面の375px幅で、計算済みの文字サイズを2倍にしてページの横はみ出し0。すべてのスクリーンリーダーやズーム環境の網羅検証ではない。
+- 全体のdesign-audit: **436 passed / 12 failed（error 0） / 56 review**。12件はすべて色数のwarning。raw出力のreview 56件は機械では判定しない項目で、下の目視確認と分けて保存した。
+- QUICKは3代表画面×2幅の6条件。FULLは全7画面×4幅の28条件。QUICK/CUSTOMは公開承認の代わりにしない。
 
-## Corrections made
+## 測定方法の修正と前後比較
 
-Small 8–11px labels raised to at least 12px; body text to 16px. Type, leading, letter spacing and vertical spacing consolidated. Header links and checklist controls have 44px targets. Guide code example now has keyboard focus for horizontal scrolling. Featured content accepts long text without forcing its grid beyond the viewport at 200% text. Superseded CSS declarations were removed before formatting.
+共通ハーネスの測定v2を使用。検証commit 77538fa、mainへの統合32f1d1b。非公開エンジンのコードはこの公開repoへ含めない。
 
-## Open design gate
+旧判定は、文中の強調・コード・別の段組みを同じx座標の束として扱っていた。同じ親要素に属する文字ブロックを比較し、指摘へ親・対象のDOMセレクターを付けるよう修正した。コードの明示改行と文中断片を、段落末尾の孤立行と混同しない。旧measure.jsonは元の判定を保つ。
 
-- 12 left-edge failures compare global text coordinates, including inline elements and independent columns. Some appear to be measurement false positives, but **none are waived or counted as passed**. Next review should identify each flagged DOM element and distinguish intended column/inline positions from actual misalignment. Do not distort unrelated columns merely to match a global x coordinate.
-- Remaining orphan-line failures require checking actual wrapped text at the recorded widths. Code with explicit newlines and prose must be distinguished. Do not disable the rule or silently lower its threshold.
-- Color-count warnings remain on home and the palette guide. The guide intentionally displays semantic warning/danger colors and all learning-route colors. Keep labels and primary action color distinct; consolidate any redundant colors after visual review.
-- A line-length warning is retained in the raw report; confirm the specific element rather than claiming all text passed.
-- The 24 manual-review entries remain raw, unchecked findings. Direction, single main CTA, hierarchy, image/text balance and final phone/tablet/desktop review must be signed off separately from build success.
+本当の兄弟要素の2px差と短い最終行を引き続き検出する回帰を含む18テスト、共通ハーネスのCI成功を確認。しきい値と有効ルールは変更していない。旧16件の指摘減少を、すべて画面改善による効果とは扱わない。
 
-## Evidence locations
+mainの23eaa34も同じ測定v2・同じ契約・全28条件で再測定した。main-v2は291 passed / 157 failed（error 137） / 56 review、導入案は436 / 12（error 0） / 56。条件ごとの判定数であり、137個の独立した不具合ではない。以前の9/12条件の集計と直接比較しない。
 
-`design/audit/2026-10-24/before/` and `final/` retain raw results and measurements. Screenshots stay on the authoring Mac mini under each audit's `screenshots/` directory (ignored by Git).
-Additional browser screenshots are in `/tmp/ai-security-playbook-qa/screenshots/`: `identity-{375,768,1280}.png`, `companion-{375,768,1280}.png`, `lesson-end-{375,768,1280}.png`, full-page route screenshots and 200pct screenshots.
-Exported review images are attached to the Codex chat. They are **local preview**, not evidence of production deployment.
+## 目視と判断
 
-## Release decision
+共通シェルはPC・タブレット・スマホで確認。ホーム、制作ガイド、5教材の先頭・本文・末尾、表・コード・チェックリストの代表箇所を確認。画像はminiの各audit/screenshotsと /tmp/ai-security-playbook-qa/screenshots に保持する。ブラウザ確認に対応したスクリーンショットを優先し、ビルド成功を見た目の成功へ読み替えない。
 
-Create a draft PR with the above results. Keep production unchanged while the design gate fails. The existing workflow does not execute the private harness in public CI; a green build alone cannot override this record.
+| 観点 | 確認した内容 |
+|---|---|
+| 最初の画面 | ホームの学習開始、教材の題名と目次、ガイドの制作入口が分かる |
+| 主な操作 | ホームの朱色ボタンを主操作にする。読了後は次の教材へ進める |
+| 階層 | 見出し・本文・補助文字、目次と本文、出典と操作を区別する |
+| バランス | Cを各カードへ反復せず、入口と読了位置に限定する |
+| 世界観 | 承認済みの紙・インク・朱色・機械図を維持。脳や臓器を追加しない |
+| 内容 | 教材の事実、確認日、一次資料、未確認範囲を変更しない |
+| 文言 | 次の行動を文字で伝える。未実装の検索やログインを追加しない |
+| 画像 | 写真は使用せず、ユーザーが承認した図像と生成条件を保持する |
+
+主観的な好みと学習成果は機械判定と別である。ユーザーの今回の採用判断を方向性の承認とし、利用者テスト済みとは表現しない。
+
+## 残すwarningと負担
+
+色数warningはホーム4条件、ガイド4条件、確認コマンド4条件。学習レベルの識別・意味のある注意/危険色、ガイド内のパレット見本、コードの構文色を保つために残した。ブランドの強調色は朱色。warningの基準値は緩めていない。
+
+スマホでは文字拡大とCの案内でスクロールが増える。詳細ガイド自体をAIの入力として毎回読む運用にはせず、短い入口から正本と必要な節へ進む。AIの参照量は減らせるが、判断時間・品質の改善率、読了率、回遊率は未測定。私的エンジンは公開CIでは実行せず、ローカル確認と公開CIを分ける制約も残る。
+
+## 保存先
+
+当初のbefore/finalは経緯として保持。最新の公開前判断はrelease/、同条件の旧mainはmain-v2/、今回の人による確認と限界はこの文書を参照する。READMEとLICENSE、教材の事実内容は変更していない。

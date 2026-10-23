@@ -27,4 +27,16 @@ GitHubの共通ハーネス origin/main `839e06f` を確認し、同じ版を一
 追加の設計ワークフローも確認し、DESIGN / SPEC_TRACE / before-after / UX_REVIEWへ反映。
 検査エンジンのソースはこのrepoへ含めない。
 数値検査にerrorが残る限り、型・ビルドが成功しても合格や公開済みとは扱わない。
+測定v2の修正を共通ハーネスmain 32f1d1bへ統合済み。最新の全体確認はaudit/2026-10-24/release/、同条件の導入前はmain-v2/。古いbefore/finalは履歴として保持する。
 実際の集計と残課題はUX_REVIEW.mdを参照。
+
+
+## AIの参照量を減らす
+
+最初にAI_GUIDE.mdを読み、`npm run design:context -- src/content/lessons/commands.mdx` のように変更ファイルを渡す。
+出力は参照ファイル、ガイドの該当節、影響画面。未知の変更は全画面確認へ戻す。ルールを本文へ複製せず、rulesとtokensを正本にする。
+
+`npm run design:audit:quick` は代表3画面×375/1280pxの6条件で、作業中の診断だけを行う。
+`npm run design:audit` は全7画面×契約の4幅、28条件を確認する。個別URLや幅を指定した実行はCUSTOMと表示し、公開確認の代用にはしない。
+新しい教材を追加したらreview-map.jsonのpagesも更新する。テストがcontent collectionとの不一致を検出する。
+古い合格結果のキャッシュで現在の変更を承認しない。参照量と検査範囲は削減できるが、AIの判断時間や精度の改善率は実測まで断定しない。
