@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "entry": "design/AI_GUIDE.md",
+  "contract": ["design/DESIGN.md", "design/design-rules.json"],
+  "basePath": "/ai-security-playbook/",
+  "pages": [
+    "",
+    "design-system/",
+    "learn/basics/",
+    "learn/node-october-2026/",
+    "learn/commands/",
+    "learn/checklist/",
+    "learn/operations/"
+  ],
+  "representatives": ["", "design-system/", "learn/node-october-2026/"],
+  "sections": [
+    {
+      "name": "identity",
+      "prefixes": [
+        "public/brand/",
+        "src/components/BrandMark.astro",
+        "src/components/Explorer"
+      ],
+      "anchors": ["identity", "imagery"],
+      "references": [
+        "src/components/BrandMark.astro",
+        "src/components/ExplorerCat.astro",
+        "src/components/ExplorerNote.astro",
+        "docs/IMAGE_ASSETS.md"
+      ]
+    },
+    {
+      "name": "shared-ui",
+      "prefixes": [
+        "src/styles/",
+        "src/layouts/",
+        "src/components/",
+        "src/data/",
+        "src/pages/index.astro",
+        "src/pages/learn/"
+      ],
+      "anchors": ["color", "type", "layout", "responsive"],
+      "references": [
+        "src/styles/tokens.css",
+        "src/layouts/Shell.astro",
+        "docs/DESIGN_SYSTEM.md"
+      ]
+    },
+    {
+      "name": "guide",
+      "prefixes": ["src/pages/design-system.astro", "docs/DESIGN_SYSTEM.md"],
+      "anchors": ["authoring", "quality"],
+      "references": ["src/pages/design-system.astro", "docs/DESIGN_SYSTEM.md"]
+    },
+    {
+      "name": "lesson",
+      "prefixes": ["src/content/lessons/"],
+      "anchors": ["diagrams", "notices", "authoring"],
+      "references": [
+        "docs/AUTHORING.md",
+        "src/components/Flow.astro",
+        "src/components/Notice.astro",
+        "src/components/DataTable.astro"
+      ]
+    }
+  ]
+}

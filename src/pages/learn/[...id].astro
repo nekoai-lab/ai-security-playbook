@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Shell from "../../layouts/Shell.astro";
+import ExplorerNote from "../../components/ExplorerNote.astro";
 import DataTable from "../../components/DataTable.astro";
 export async function getStaticPaths() {
   return (await getCollection("lessons")).map((lesson) => ({
@@ -47,9 +48,13 @@ const next = all[all.findIndex((l) => l.id === lesson.id) + 1];
       </aside>
       <article class="prose">
         <Content components={{ table: DataTable }} />
+        <ExplorerNote title="読んだことを、ひとつ確かめよう。" compact>
+          気になった項目を実際の環境で確認し、分かったことと未確認のことを分けて残しましょう。
+        </ExplorerNote>
         {next && (
           <a class="next-lesson" href={`${base}/learn/${next.id}/`}>
-            次の教材 → {next.data.title}
+            <span>次の教材 →</span>
+            <strong>{next.data.title}</strong>
           </a>
         )}
         <p class="edit-link">

@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import FieldIcon from "../components/FieldIcon.astro";
+import BrandMark from "../components/BrandMark.astro";
 interface Props {
   title: string;
   description?: string;
@@ -20,7 +21,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <title>{title} | AI Security Playbook</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
-    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <link
+      rel="icon"
+      type="image/png"
+      href={`${base}/brand/compass-cat-32.png`}
+    />
+    <link rel="apple-touch-icon" href={`${base}/brand/compass-cat-180.png`} />
     <meta name="theme-color" content="#f5f1e6" />
   </head>
   <body>
@@ -29,7 +35,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </a>
     <header class="header">
       <a class="brand" href={`${base}/`}>
-        <FieldIcon kind="cat" class="brand-cat" />
+        <BrandMark size={64} class="brand-cat" />
         <span>
           AI Security
           <br />

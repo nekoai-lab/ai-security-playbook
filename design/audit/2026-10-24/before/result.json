@@ -1,0 +1,1528 @@
+{
+  "rules": "default",
+  "widths": [
+    375,
+    320,
+    1280
+  ],
+  "summary": {
+    "passed": 85,
+    "failed": 59,
+    "review": 24,
+    "errors": 52
+  },
+  "results": [
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "failed",
+      "evidence": [
+        "375px: 12px 未満が 38 個: 8px「by nekoai lab」 / 10px「GitHub ↗」 / 9px「FIELD NOTES / VOL. 01」 / 10px「by nekoai lab」 / 8px「日本語 / 無料・オープンソース」 / 8px「OBSERVE / VERIFY / PROTE」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 64 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "failed",
+      "evidence": [
+        "375px: 44px 未満 1 個: 24×44「教材」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "failed",
+      "evidence": [
+        "375px: 余白 17 種類、段階の外 10 種類: 5px×4, 6px×2, 10px×1, 14px×7, 18px×18, 20px×18, 22px×5, 28px×2, 30px×1, 34px×1"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "failed",
+      "evidence": [
+        "375px: 左揃えの文字の左端 19 か所、揃っていない束 4: 41〜47px（3本）, 74〜75px（2本）, 290〜297px（4本）, 306〜309px（2本）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "375px: 「…を、ともに探究する。」（最終行 2字）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "failed",
+      "evidence": [
+        "375px: 文字サイズ 16 種類（上限 6）、行間 11 種類（上限 3）、字間 15 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "375px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "failed",
+      "evidence": [
+        "320px: 12px 未満が 38 個: 8px「by nekoai lab」 / 10px「GitHub ↗」 / 9px「FIELD NOTES / VOL. 01」 / 10px「by nekoai lab」 / 8px「日本語 / 無料・オープンソース」 / 8px「OBSERVE / VERIFY / PROTE」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 64 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "failed",
+      "evidence": [
+        "320px: 44px 未満 1 個: 24×44「教材」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "failed",
+      "evidence": [
+        "320px: 余白 17 種類、段階の外 10 種類: 5px×4, 6px×2, 10px×1, 14px×7, 18px×18, 20px×18, 22px×5, 28px×2, 30px×1, 34px×1"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "failed",
+      "evidence": [
+        "320px: 左揃えの文字の左端 19 か所、揃っていない束 4: 41〜47px（3本）, 74〜75px（2本）, 235〜242px（4本）, 251〜254px（2本）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "320px: 「…も、動いているのは？」（最終行 2字） / 「…階的な自動化を学ぶ。」（最終行 2字）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "failed",
+      "evidence": [
+        "320px: 文字サイズ 16 種類（上限 6）、行間 11 種類（上限 3）、字間 14 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "320px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "failed",
+      "evidence": [
+        "1280px: 12px 未満が 51 個: 9px「by nekoai lab」 / 11px「by nekoai lab」 / 9px「日本語 / 無料・オープンソース」 / 10px「OBSERVE / VERIFY / PROTE」 / 10px「仕組みを見渡す、最初の一歩。」 / 11px「技術・リスク・実践 ― 現場で使える知識を、一つ」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 65 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "failed",
+      "evidence": [
+        "1280px: 44px 未満 1 個: 26×44「教材」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "failed",
+      "evidence": [
+        "1280px: 余白 23 種類、段階の外 12 種類: 5px×1, 6px×1, 7px×18, 10px×2, 14px×3, 15px×2, 18px×7, 20px×21, 22px×5, 26px×10, 28px×3, 36px×4"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "failed",
+      "evidence": [
+        "1280px: 左揃えの文字の左端 39 か所、揃っていない束 4: 108〜110px（2本）, 372〜374px（2本）, 672〜676px（2本）, 1170〜1173px（2本）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "failed",
+      "evidence": [
+        "1280px: 文字サイズ 15 種類（上限 6）、行間 10 種類（上限 3）、字間 16 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "1280px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "failed",
+      "evidence": [
+        "375px: 12px 未満が 25 個: 8px「by nekoai lab」 / 10px「GitHub ↗」 / 9px「DESIGN SYSTEM / VERSION 」 / 11px「Paper#f5f1e6読むための背景」 / 11px「Paper」 / 11px「Ink#191919見出し・本文」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 36 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "failed",
+      "evidence": [
+        "375px: 44px 未満 1 個: 24×44「教材」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "failed",
+      "evidence": [
+        "375px: 余白 21 種類、段階の外 13 種類: 5px×4, 6px×1, 10px×7, 13px×18, 14px×8, 15px×3, 18px×10, 18.72px×1, 20px×4, 22px×2, 26px×2, 28px×2"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "failed",
+      "evidence": [
+        "375px: 左揃えの文字の左端 20 か所、揃っていない束 1: 31〜41px（7本）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "375px: 「…見出しで区切ります。」（最終行 2字）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "failed",
+      "evidence": [
+        "375px: 文字サイズ 15 種類（上限 6）、行間 9 種類（上限 3）、字間 10 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "375px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "failed",
+      "evidence": [
+        "320px: 12px 未満が 25 個: 8px「by nekoai lab」 / 10px「GitHub ↗」 / 9px「DESIGN SYSTEM / VERSION 」 / 11px「Paper#f5f1e6読むための背景」 / 11px「Paper」 / 11px「Ink#191919見出し・本文」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 36 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "failed",
+      "evidence": [
+        "320px: 44px 未満 1 個: 24×44「教材」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "failed",
+      "evidence": [
+        "320px: 余白 21 種類、段階の外 13 種類: 5px×4, 6px×1, 10px×7, 13px×18, 14px×8, 15px×3, 18px×10, 18.72px×1, 20px×4, 22px×2, 26px×2, 28px×2"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "failed",
+      "evidence": [
+        "320px: 左揃えの文字の左端 20 か所、揃っていない束 1: 31〜41px（7本）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "320px: 「…行き先につなぎます。」（最終行 2字） / 「…の説明と整合させる。」（最終行 2字）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "failed",
+      "evidence": [
+        "320px: 文字サイズ 15 種類（上限 6）、行間 9 種類（上限 3）、字間 10 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "320px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "failed",
+      "evidence": [
+        "1280px: 12px 未満が 30 個: 9px「by nekoai lab」 / 10px「DESIGN SYSTEM / VERSION 」 / 11px「Paper#f5f1e6読むための背景」 / 11px「Paper」 / 11px「Ink#191919見出し・本文」 / 11px「Ink」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 36 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "failed",
+      "evidence": [
+        "1280px: 44px 未満 1 個: 26×44「教材」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "failed",
+      "evidence": [
+        "1280px: 余白 21 種類、段階の外 12 種類: 5px×1, 7px×6, 10px×8, 13px×18, 14px×3, 15px×7, 18px×2, 18.72px×1, 20px×9, 22px×3, 26px×2, 28px×4"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "failed",
+      "evidence": [
+        "1280px: 左揃えの文字の左端 33 か所、揃っていない束 3: 53〜68px（7本）, 108〜110px（2本）, 391〜395px（2本）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "failed",
+      "evidence": [
+        "1280px: 文字サイズ 13 種類（上限 6）、行間 9 種類（上限 3）、字間 10 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "1280px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "failed",
+      "evidence": [
+        "375px: 12px 未満が 10 個: 8px「by nekoai lab」 / 10px「GitHub ↗」 / 9px「Node.js / 10 MIN READ」 / 9px「ON THIS PAGE」 / 11px「脆弱なコードへ入力が届くかを調べます。インターネ」 / 10px「AI SECURITY PLAYBOOK仕組みを」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 52 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "failed",
+      "evidence": [
+        "375px: 44px 未満 1 個: 24×44「教材」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "failed",
+      "evidence": [
+        "375px: 余白 19 種類、段階の外 13 種類: 3px×4, 5px×4, 6px×1, 10px×4, 13px×78, 14px×17, 18px×3, 20px×11, 22px×5, 26px×8, 28px×3, 30px×1"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "failed",
+      "evidence": [
+        "375px: 左揃えの文字の左端 19 か所、揃っていない束 3: 32〜41px（6本）, 56〜58px（2本）, 75〜80px（3本）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "375px: 「…同系列の修正版以降へ」（最終行 2字） / 「…同系列の修正版以降へ」（最終行 2字） / 「…同系列の修正版以降へ」（最終行 2字） / 「…取得処理も含みます。」（最終行 2字） / 「…イルを展開する処理。」（最終行 2字） / 「…eや起動中MCPの版」（最終行 2字） / 「…確認できていません。」（最終行 2字） / 「…の実行版を記録する。」（最終行 2字）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "failed",
+      "evidence": [
+        "375px: 文字サイズ 13 種類（上限 6）、行間 7 種類（上限 3）、字間 8 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 色 12 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "failed",
+      "evidence": [
+        "320px: 12px 未満が 10 個: 8px「by nekoai lab」 / 10px「GitHub ↗」 / 9px「Node.js / 10 MIN READ」 / 9px「ON THIS PAGE」 / 11px「脆弱なコードへ入力が届くかを調べます。インターネ」 / 10px「AI SECURITY PLAYBOOK仕組みを」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 52 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "failed",
+      "evidence": [
+        "320px: 44px 未満 1 個: 24×44「教材」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "failed",
+      "evidence": [
+        "320px: 余白 19 種類、段階の外 13 種類: 3px×4, 5px×4, 6px×1, 10px×4, 13px×78, 14px×17, 18px×3, 20px×11, 22px×5, 26px×8, 28px×3, 30px×1"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "failed",
+      "evidence": [
+        "320px: 左揃えの文字の左端 21 か所、揃っていない束 3: 32〜41px（6本）, 56〜58px（2本）, 75〜80px（3本）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "320px: 「…ないことが大切です。」（最終行 2字） / 「…同系列の修正版以降へ」（最終行 2字） / 「…同系列の修正版以降へ」（最終行 2字） / 「…同系列の修正版以降へ」（最終行 2字） / 「…な処理への到達可能性」（最終行 2字） / 「…害の有無、攻撃の成立」（最終行 1字） / 「…に調べる確認コマンド」（最終行 1字）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "failed",
+      "evidence": [
+        "320px: 文字サイズ 13 種類（上限 6）、行間 7 種類（上限 3）、字間 8 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 色 12 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "failed",
+      "evidence": [
+        "1280px: 12px 未満が 9 個: 9px「by nekoai lab」 / 10px「Node.js / 10 MIN READ」 / 9px「ON THIS PAGE」 / 11px「脆弱なコードへ入力が届くかを調べます。インターネ」 / 10px「AI SECURITY PLAYBOOK仕組みを」 / 10px「仕組みを知ることが、守る力になる。」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 59 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "failed",
+      "evidence": [
+        "1280px: 44px 未満 1 個: 26×44「教材」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "failed",
+      "evidence": [
+        "1280px: 余白 21 種類、段階の外 12 種類: 3px×4, 5px×1, 10px×5, 13px×76, 14px×1, 15px×17, 18px×3, 20px×7, 22px×4, 26px×8, 28px×5, 30px×1"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "failed",
+      "evidence": [
+        "1280px: 左揃えの文字の左端 27 か所、揃っていない束 3: 108〜110px（2本）, 338〜341px（2本）, 347〜349px（2本）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "1280px: 「…けでは分かりません。」（最終行 2字）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "failed",
+      "evidence": [
+        "1280px: 文字サイズ 12 種類（上限 6）、行間 7 種類（上限 3）、字間 7 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "failed",
+      "evidence": [
+        "1280px: 1行 40 字超 8 か所: 50字「2026年10月21日の公式発表に掲載された修正」 / 51字「情報の確認日：2026年10月23日。対象の脆弱」 / 50字「残る6件は中・低深刻度で、HTTPのkeep-a」 / 50字「Brotliはデータの圧縮形式です。公式はこの問」"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 色 11 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    }
+  ]
+}

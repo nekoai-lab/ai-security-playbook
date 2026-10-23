@@ -31,6 +31,18 @@
   --space-24: 96px;
   --radius: 2px;
   --content-width: 1320px;
-  --reading-width: 760px;
+  --reading-width: 40em;
   --focus-ring: 3px solid var(--color-blue);
+}
+
+:root {
+  --text-small: 12px;
+  --text-label: 14px;
+  --text-body: 16px;
+  --text-heading: 24px;
+  --text-title: 32px;
+  --text-display: 80px;
+  --leading-tight: 1.4;
+  --leading-ui: 1.6;
+  --leading-reading: 1.9;
 }

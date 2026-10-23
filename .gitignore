@@ -2,3 +2,6 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+
+# Full screenshots remain on the authoring machine; reports are versioned.
+design/audit/**/screenshots/

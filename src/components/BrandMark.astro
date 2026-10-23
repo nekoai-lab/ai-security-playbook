@@ -1,0 +1,19 @@
+---
+interface Props {
+  size?: number;
+  monochrome?: boolean;
+  class?: string;
+}
+const { size = 64, monochrome = false, class: className = "" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<img
+  class:list={["brand-mark", { "brand-mark--mono": monochrome }, className]}
+  src={`${base}/brand/compass-cat-128.webp`}
+  srcset={`${base}/brand/compass-cat-128.webp 128w, ${base}/brand/compass-cat-512.webp 512w`}
+  sizes={`${size}px`}
+  width={size}
+  height={size}
+  alt=""
+/>

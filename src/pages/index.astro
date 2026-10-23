@@ -1,5 +1,6 @@
 ---
 import Shell from "../layouts/Shell.astro";
+import ExplorerNote from "../components/ExplorerNote.astro";
 import FieldButton from "../components/FieldButton.astro";
 import FieldIcon from "../components/FieldIcon.astro";
 import SectionHeading from "../components/SectionHeading.astro";
@@ -62,6 +63,11 @@ const link = (id: string) => `${base}/learn/${id}/`;
       </div>
       <span class="band-code">OBSERVE / VERIFY / PROTECT</span>
     </div>
+  </div>
+  <div class="wrap">
+    <ExplorerNote title="自分の現在地から、探究をはじめよう。" compact>
+      初学者・経験者・上級者の3ルート。今の自分に合う入口を選べます。
+    </ExplorerNote>
   </div>
   <section id="paths" class="wrap routes-section">
     <SectionHeading
