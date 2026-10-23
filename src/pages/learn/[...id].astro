@@ -1,0 +1,65 @@
+---
+import { getCollection, render } from "astro:content";
+import Shell from "../../layouts/Shell.astro";
+import DataTable from "../../components/DataTable.astro";
+export async function getStaticPaths() {
+  return (await getCollection("lessons")).map((lesson) => ({
+    params: { id: lesson.id },
+    props: { lesson },
+  }));
+}
+const { lesson } = Astro.props;
+const { Content, headings } = await render(lesson);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const all = (await getCollection("lessons")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const next = all[all.findIndex((l) => l.id === lesson.id) + 1];
+---
+
+<Shell title={lesson.data.title} description={lesson.data.summary}>
+  <div class="wrap article-wrap">
+    <a class="breadcrumb" href={`${base}/#library`}>
+      ← 教材一覧
+    </a>
+    <header class="article-header">
+      <p class="eyebrow">
+        {lesson.data.category} / {lesson.data.minutes} MIN READ
+      </p>
+      <h1>{lesson.data.title}</h1>
+      <p>{lesson.data.summary}</p>
+      <p class="metadata">
+        最終更新{" "}
+        <time datetime={lesson.data.updated}>{lesson.data.updated}</time> ·
+        情報の確認日も同日
+      </p>
+    </header>
+    <div class="article-grid">
+      <aside>
+        <nav aria-label="この教材の目次">
+          <p class="eyebrow">ON THIS PAGE</p>
+          {headings
+            .filter((h) => h.depth === 2)
+            .map((h) => (
+              <a href={`#${h.slug}`}>{h.text}</a>
+            ))}
+        </nav>
+      </aside>
+      <article class="prose">
+        <Content components={{ table: DataTable }} />
+        {next && (
+          <a class="next-lesson" href={`${base}/learn/${next.id}/`}>
+            次の教材 → {next.data.title}
+          </a>
+        )}
+        <p class="edit-link">
+          <a
+            href={`https://github.com/nekoai-lab/ai-security-playbook/blob/main/src/content/lessons/${lesson.id}.mdx`}
+          >
+            この教材のソース・修正提案 ↗
+          </a>
+        </p>
+      </article>
+    </div>
+  </div>
+</Shell>
