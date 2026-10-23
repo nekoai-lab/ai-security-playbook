@@ -22,3 +22,10 @@ H2は自動で目次に表示される。Flow.astroはstepsとcaptionを受け�
 `npm run check && npm run build && npm test` を実行し、320px/375pxとデスクトップで表示を確認する。
 トップの教材一覧と詳細ページは自動追加。学習ルートへの追加は src/pages/index.astro の paths を編集する。
 更新日は実際に再確認した日に変更し、何を確認したかを本文に明記する。
+
+## FIELD NOTESデザインシステム
+
+[共通ルール](DESIGN_SYSTEM.md)と公開サイトの `/design-system/` を参照してください。
+見出し・図解・表は共通スタイルに従い、各教材で独自の配色を追加しません。
+注意書きには `src/components/Notice.astro` をimportして使えます。
+脳・臓器は使わず、幾何学的なチップや機械部品で表現します。

@@ -1,0 +1,154 @@
+---
+import Shell from "../layouts/Shell.astro";
+import FieldButton from "../components/FieldButton.astro";
+import FieldIcon from "../components/FieldIcon.astro";
+import Notice from "../components/Notice.astro";
+import PathCard from "../components/PathCard.astro";
+import Flow from "../components/Flow.astro";
+import DataTable from "../components/DataTable.astro";
+import { learningPaths } from "../data/learning-paths";
+import { getCollection } from "astro:content";
+const lessons = await getCollection("lessons");
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const colors = [
+  { name: "Paper", color: "#f5f1e6", role: "読むための背景" },
+  { name: "Ink", color: "#191919", role: "見出し・本文" },
+  { name: "Signal orange", color: "#ff4b00", role: "帯・主な操作" },
+  { name: "Orange ink", color: "#b33300", role: "リンク・小さな文字" },
+  { name: "Blueprint blue", color: "#265b78", role: "経験者・補助情報" },
+  { name: "Field green", color: "#286044", role: "上級者の識別" },
+];
+---
+
+<Shell
+  title="FIELD NOTES デザインガイド"
+  description="AI Security Playbookの色・文字・図解・共通部品をまとめたデザインシステム。"
+>
+  <div class="wrap">
+    <header class="design-intro">
+      <p class="eyebrow">DESIGN SYSTEM / VERSION 1.0</p>
+      <h1>
+        FIELD NOTES<span style="color:var(--color-orange-ink)">.</span>
+      </h1>
+      <p>
+        仕組みを解き明かす、探究のフィールドノート。
+        <br />
+        紙の温度、インクの輪郭、オレンジの道しるべ。
+        <br />
+        教材が増えても、読み方と見た目をそろえるためのガイドです。
+      </p>
+    </header>
+    <section class="design-section">
+      <h2>01 / 色の役割</h2>
+      <div class="swatch-grid">
+        {colors.map((c) => (
+          <div class="swatch">
+            <div class="swatch-color" style={`background:${c.color}`}></div>
+            <p>
+              <b>{c.name}</b>
+              {c.color}
+              <br />
+              {c.role}
+            </p>
+          </div>
+        ))}
+      </div>
+      <p>
+        オレンジはブランドの道しるべです。危険度や修正済みの判定とは分け、状態は言葉と一緒に伝えます。
+      </p>
+    </section>
+    <section class="design-section design-type">
+      <h2>02 / 文字の階層</h2>
+      <p class="eyebrow">FIELD NOTES / SECTION LABEL</p>
+      <h3>AIの安全を、解き明かそう。</h3>
+      <p>
+        本文は静かに、見出しは力強く。日本語を主役にし、英語は短い補助ラベルに使います。教材の本文は1行を長くしすぎず、図解と見出しで区切ります。
+      </p>
+      <p class="mono">2026.10.23 / 10 MIN READ / SOURCE VERIFIED</p>
+    </section>
+    <section class="design-section">
+      <h2>03 / リンクと操作</h2>
+      <div class="design-buttons">
+        <FieldButton href={`${base}/#paths`}>学びをはじめる</FieldButton>
+        <FieldButton href={`${base}/#library`} variant="text">
+          教材一覧へ
+        </FieldButton>
+      </div>
+      <p>
+        主な操作は朱色の面、補助操作は文字と線。すべて実際の行き先につなぎます。
+      </p>
+    </section>
+    <section class="design-section">
+      <h2>04 / 学習ルート</h2>
+      <div class="design-examples">
+        <PathCard path={learningPaths[0]} lessons={lessons} />
+        <div>
+          <h3>番号・見出し・絵・読み順</h3>
+          <p>
+            初学者はオレンジ、経験者は青、上級者は緑。色だけに頼らず、番号と名称を必ず併記します。所要時間と次の行動まで一つのカードにまとめます。
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="design-section">
+      <h2>05 / 図解と表</h2>
+      <div class="prose">
+        <Flow
+          steps={["見る", "確かめる", "記録する"]}
+          caption="図解は意味を持つ順番で並べ、スマートフォンでは縦につなぎます。"
+        />
+        <DataTable>
+          <thead>
+            <tr>
+              <th>区分</th>
+              <th>役割</th>
+              <th>表現</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>確認できた事実</td>
+              <td>根拠を残す</td>
+              <td>一次資料・確認日を添える</td>
+            </tr>
+            <tr>
+              <td>未確認</td>
+              <td>調査範囲を区切る</td>
+              <td>分からない点を言葉で記載する</td>
+            </tr>
+          </tbody>
+        </DataTable>
+      </div>
+    </section>
+    <section class="design-section">
+      <h2>06 / 注意書き</h2>
+      <Notice title="補足情報">読む前提や補助情報をまとめます。</Notice>
+      <Notice tone="warning" title="実行前に確認すること">
+        対象環境、停止の影響、保存状況を確認します。
+      </Notice>
+      <Notice tone="danger" title="公開してはいけない情報">
+        認証情報やプロセスの全引数を、そのままログや通知へ出さないでください。
+      </Notice>
+    </section>
+    <section class="design-section">
+      <h2>07 / イラストの言語</h2>
+      <div class="design-icons">
+        <FieldIcon kind="book" />
+        <FieldIcon kind="terminal" />
+        <FieldIcon kind="layers" />
+        <FieldIcon kind="compass" />
+        <FieldIcon kind="cat" />
+      </div>
+      <ul class="design-rules">
+        <li>黒の細い線、分解図、技術的な注釈、オレンジの接続を基本にする。</li>
+        <li>
+          脳・臓器・生体の描写は使わず、幾何学的なチップや機械部品で表現する。
+        </li>
+        <li>猫は探究の案内役。図解の意味や本文の読みやすさを優先する。</li>
+        <li>
+          生成イラストは世界観の表現。正確な構造を伝える図は、本文の説明と整合させる。
+        </li>
+      </ul>
+    </section>
+  </div>
+</Shell>

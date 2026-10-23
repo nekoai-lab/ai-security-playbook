@@ -1,163 +1,149 @@
 ---
 import Shell from "../layouts/Shell.astro";
+import FieldButton from "../components/FieldButton.astro";
+import FieldIcon from "../components/FieldIcon.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import PathCard from "../components/PathCard.astro";
+import { learningPaths } from "../data/learning-paths";
 import { getCollection } from "astro:content";
 const lessons = (await getCollection("lessons")).sort(
   (a, b) => a.data.order - b.data.order,
 );
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const link = (id: string) => `${base}/learn/${id}/`;
-const paths = [
-  {
-    label: "初学者",
-    num: "01",
-    title: "まず、自分の環境を知る。",
-    text: "AIツールを使っているけれど、NodeやMCPはまだ詳しくない方へ。",
-    ids: ["basics", "commands", "checklist"],
-    time: "約20分",
-  },
-  {
-    label: "経験者",
-    num: "02",
-    title: "影響を見極め、更新する。",
-    text: "開発環境や公開サービスを持つ方へ。実際の実行環境まで確認します。",
-    ids: ["node-october-2026", "commands", "checklist"],
-    time: "約25分",
-  },
-  {
-    label: "上級者",
-    num: "03",
-    title: "確認を、運用の仕組みに。",
-    text: "チーム・CI・クラウドを管理する方へ。継続的な確認と証跡を設計します。",
-    ids: ["node-october-2026", "operations", "checklist"],
-    time: "約30分",
-  },
-];
 ---
 
-<Shell title="安全に使う。その先へ。">
+<Shell title="AIの安全を、解き明かそう。">
   <section class="hero wrap">
-    <div>
-      <p class="eyebrow">KNOW THE RISK. BUILD WITH CONFIDENCE.</p>
+    <div class="hero-copy">
+      <p class="eyebrow hero-kicker">FIELD NOTES / VOL. 01</p>
       <h1>
-        AIを使う。
+        AIの安全を、
         <br />
-        安全も、<span>自分の手に。</span>
+        <em>解き明かそう。</em>
       </h1>
-      <p class="intro">
-        「更新したから大丈夫」で終わらせない。
+      <p class="hero-description">
+        AIを安心して使いこなすための、
         <br />
-        AIツールから、MCP、クラウドまで。
+        実践的なセキュリティ知識を。
         <br />
-        仕組みを知り、確かめ、守るための実践ガイド。
+        仕組みからリスク、対策まで、
+        <br />
+        確かめながら学ぶプレイブック。
       </p>
-      <div class="hero-actions">
-        <a class="button" href="#paths">
-          自分に合うルートを探す <span>↓</span>
-        </a>
-        <a class="text-link" href={link("node-october-2026")}>
-          最新の教材を読む ↗
-        </a>
+      <FieldButton href="#paths">学びをはじめる</FieldButton>
+      <div class="hero-byline">
+        <strong>by nekoai lab</strong>
+        <span>日本語 / 無料・オープンソース</span>
       </div>
-      <p class="hero-note">日本語 / 無料・オープンソース / 一次資料を重視</p>
     </div>
-    <div
-      class="hero-diagram"
-      aria-label="確認する3つの層：PC、リポジトリ、本番"
-    >
-      <div class="diagram-top">
-        <span class="live-dot"></span> SECURITY IS A PROCESS
-      </div>
-      <div class="diagram-row">
-        <span>01</span>
-        <div>
-          <strong>あなたのPC</strong>
-          <small>AIツール・Node・MCP</small>
-        </div>
-        <span class="circle">✓</span>
-      </div>
-      <div class="connector">↓ 実行環境をたどる</div>
-      <div class="diagram-row">
-        <span>02</span>
-        <div>
-          <strong>リポジトリ</strong>
-          <small>依存関係・設定・CI</small>
-        </div>
-        <span class="circle">✓</span>
-      </div>
-      <div class="connector">↓ 動いている版を確かめる</div>
-      <div class="diagram-row">
-        <span>03</span>
-        <div>
-          <strong>本番環境</strong>
-          <small>イメージ・プロセス・再起動</small>
-        </div>
-        <span class="circle">✓</span>
-      </div>
-      <p class="diagram-bottom">インストール ≠ 実行中のバージョン</p>
-    </div>
+    <figure class="hero-art">
+      <img
+        src={`${base}/images/field-notes-hero-1536.webp`}
+        srcset={`${base}/images/field-notes-hero-768.webp 768w, ${base}/images/field-notes-hero-1536.webp 1536w`}
+        sizes="(max-width: 760px) 100vw, 62vw"
+        width="1536"
+        height="1024"
+        alt="幾何学的なプロセッサー、ツール、記憶装置をオレンジの配線でつないだ分解図と、山から見渡す猫の探検家"
+        fetchpriority="high"
+      />
+      <figcaption>
+        <span>OBSERVE / VERIFY / PROTECT</span>
+        <span>仕組みを見渡す、最初の一歩。</span>
+      </figcaption>
+    </figure>
   </section>
-  <div class="update-band">
+  <div class="manifesto-band">
     <div class="wrap">
-      <span class="pill">最新教材</span>
-      <a href={link("node-october-2026")}>
-        Node.js 2026年10月セキュリティ更新{" "}
-        <span>更新しても、古いプロセスは残る。</span> ↗
-      </a>
-      <time datetime="2026-10-23">2026.10.23</time>
+      <FieldIcon kind="compass" />
+      <div>
+        <strong>AIと社会のこれからを、ともに探究する。</strong>
+        <p>技術・リスク・実践 ― 現場で使える知識を、一つずつ。</p>
+      </div>
+      <span class="band-code">OBSERVE / VERIFY / PROTECT</span>
     </div>
   </div>
-  <section id="paths" class="wrap section">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">START WHERE YOU ARE</p>
-        <h2>あなたに合った、はじめ方。</h2>
-      </div>
+  <section id="paths" class="wrap routes-section">
+    <SectionHeading
+      eyebrow="LEARNING ROUTES"
+      title="目的に合わせて、最適なルートで学べます。"
+    >
       <p>
-        知識に合わせて選べる3つのルート。
+        基礎から実践まで、レベル別に体系化。
         <br />
-        必要なところから読み進められます。
+        あなたのペースで、確かなスキルを。
       </p>
-    </div>
+      <FieldIcon kind="compass" />
+      <span class="side-note">
+        A SAFER AI.
+        <br />A BRIGHTER TOMORROW.
+      </span>
+    </SectionHeading>
     <div class="path-grid">
-      {paths.map((p) => (
-        <article class="path-card">
-          <div class="card-top">
-            <span class="pill">{p.label}</span>
-            <span class="large-num">{p.num}</span>
-          </div>
-          <h3>{p.title}</h3>
-          <p>{p.text}</p>
-          <ol>
-            {p.ids.map((id) => (
-              <li>
-                <a href={link(id)}>
-                  {lessons.find((l) => l.id === id)?.data.title}
-                </a>
-              </li>
-            ))}
-          </ol>
-          <div class="card-bottom">
-            <span>{p.time}</span>
-            <a href={link(p.ids[0])} aria-label={`${p.label}ルートをはじめる`}>
-              はじめる →
-            </a>
-          </div>
-        </article>
+      {learningPaths.map((path) => (
+        <PathCard path={path} lessons={lessons} />
       ))}
     </div>
   </section>
-  <section id="library" class="wrap section">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">THE PLAYBOOK</p>
-        <h2>読む。確かめる。実践する。</h2>
+  <section id="latest" class="wrap featured-section">
+    <div class="featured-heading">
+      <p class="eyebrow">FEATURED LESSON / 01</p>
+      <time datetime="2026-10-23">2026.10.23 更新</time>
+    </div>
+    <a class="featured-card" href={link("node-october-2026")}>
+      <div class="featured-art">
+        <div class="featured-art-copy">
+          <span class="eyebrow">RUNTIME / SECURITY</span>
+          <strong>Node.js</strong>
+          <span>
+            2026年10月
+            <br />
+            セキュリティ更新
+          </span>
+        </div>
+        <img
+          src={`${base}/images/field-notes-hero-768.webp`}
+          width="768"
+          height="512"
+          loading="lazy"
+          alt=""
+        />
       </div>
-      <span class="muted">{lessons.length} LESSONS</span>
+      <div class="featured-copy">
+        <span class="tag">注目のレッスン</span>
+        <h2>
+          更新した。
+          <br />
+          でも、動いているのは？
+        </h2>
+        <p>
+          Node.js 2026年10月セキュリティ更新。
+          <br />
+          PC・MCP・本番の実行環境をたどり、
+          <br />
+          確認すべき場所を見つけます。
+        </p>
+        <span class="feature-link">
+          教材を読む <span aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
+  </section>
+  <section id="library" class="wrap library-section">
+    <div class="library-heading">
+      <SectionHeading
+        eyebrow="THE FIELD LIBRARY"
+        title="読む。確かめる。実践する。"
+        number="02"
+      />
+      <span class="mono">
+        {String(lessons.length).padStart(2, "0")} FIELD NOTES
+      </span>
     </div>
     <div class="lesson-list">
       {lessons.map((l, i) => (
         <a class="lesson-row" href={link(l.id)}>
-          <span class="lesson-num">0{i + 1}</span>
+          <span class="lesson-num">{String(i + 1).padStart(2, "0")}</span>
           <div>
             <span class="category">
               {l.data.category} / {l.data.minutes}分
@@ -165,26 +151,36 @@ const paths = [
             <h3>{l.data.title}</h3>
             <p>{l.data.summary}</p>
           </div>
-          <span class="arrow">↗</span>
+          <span class="lesson-arrow" aria-hidden="true">
+            ↗
+          </span>
         </a>
       ))}
     </div>
   </section>
-  <section class="wrap future section">
+  <section class="wrap future-section">
     <div>
-      <p class="eyebrow">GROWING KNOWLEDGE BASE</p>
-      <h2>学びは、ここから広がる。</h2>
-      <p>同じ形式で、テーマを少しずつ追加していきます。</p>
+      <p class="eyebrow">NEXT EXPEDITIONS</p>
+      <h2>
+        まだ知らない仕組みを、
+        <br />
+        次の学びへ。
+      </h2>
+      <p>
+        MCP・AIエージェント・クラウド。
+        <br />
+        このフィールドノートは、少しずつ広がります。
+      </p>
     </div>
     <div class="future-topics">
       <span>
-        MCP <small>追加予定</small>
+        <b>01</b> MCP <small>教材を追加予定</small>
       </span>
       <span>
-        AIエージェント <small>追加予定</small>
+        <b>02</b> AIエージェント <small>教材を追加予定</small>
       </span>
       <span>
-        クラウド <small>追加予定</small>
+        <b>03</b> クラウド <small>教材を追加予定</small>
       </span>
     </div>
   </section>
