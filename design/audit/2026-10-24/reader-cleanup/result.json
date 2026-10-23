@@ -1,0 +1,4553 @@
+{
+  "rules": "design/design-rules.json",
+  "widths": [
+    375,
+    320,
+    768,
+    1280
+  ],
+  "summary": {
+    "passed": 436,
+    "failed": 12,
+    "review": 56,
+    "errors": 0
+  },
+  "results": [
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 60 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "375px: 左端 12 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "375px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 60 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "320px: 左端 13 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "320px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "768px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "768px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "768px: OK（画像・グラデーションの上など判定できない文字 61 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "768px: 左端 28 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "768px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 768,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 62 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "1280px: 左端 28 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "1280px: 色 13 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 102 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "375px: 左端 23 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "375px: 色 14 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 102 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "320px: 左端 23 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "320px: 色 14 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "768px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "768px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "768px: OK（画像・グラデーションの上など判定できない文字 103 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "768px: 左端 33 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "768px: 色 14 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 768,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 103 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "1280px: 左端 40 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "1280px: 色 14 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 37 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "375px: 左端 10 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 色 9 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 37 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "320px: 左端 12 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 色 9 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "768px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "768px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "768px: OK（画像・グラデーションの上など判定できない文字 44 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "768px: 左端 14 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 色 8 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 768,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 44 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "1280px: 左端 16 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 色 8 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 64 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "375px: 左端 19 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 色 12 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 1 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 64 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "320px: 左端 18 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 色 12 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 1 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "768px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "768px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "768px: OK（画像・グラデーションの上など判定できない文字 73 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "768px: 左端 21 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 色 11 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 768,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 影 1 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 73 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "1280px: 左端 23 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 色 11 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 1 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 43 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "375px: 左端 49 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "375px: 色 17 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 1 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 43 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "320px: 左端 50 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "320px: 色 17 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 1 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "768px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "768px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "768px: OK（画像・グラデーションの上など判定できない文字 51 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "768px: 左端 50 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "768px: 色 16 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 768,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 影 1 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 51 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "1280px: 左端 53 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "failed",
+      "evidence": [
+        "1280px: 色 16 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 1 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 55 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "375px: 左端 12 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 色 9 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 55 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "320px: 左端 12 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 色 9 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "768px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "768px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "768px: OK（画像・グラデーションの上など判定できない文字 63 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "768px: 左端 12 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 色 8 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 768,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 63 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "1280px: 左端 14 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 色 8 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 0 種類（上限 3）: "
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "375px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "375px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "375px: OK（画像・グラデーションの上など判定できない文字 38 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "375px: 左端 15 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "375px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 色 11 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 375,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "375px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "320px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "320px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "320px: OK（画像・グラデーションの上など判定できない文字 38 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "320px: 左端 15 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "320px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 色 11 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 320,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "320px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "768px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "768px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "768px: OK（画像・グラデーションの上など判定できない文字 46 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "768px: 左端 17 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "768px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 色 10 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 768,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "768px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "layout.no-horizontal-scroll",
+      "status": "passed",
+      "evidence": [
+        "1280px: はみ出しなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "fonts.loaded",
+      "status": "passed",
+      "evidence": [
+        "1280px: 読めたフォント: （Web フォントなし）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "type.min-size",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "a11y.contrast",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK（画像・グラデーションの上など判定できない文字 46 個）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "a11y.tap-target",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "a11y.img-alt",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "structure.headings",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "content.placeholder",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "rhythm.spacing-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "rhythm.left-edges",
+      "status": "passed",
+      "evidence": [
+        "1280px: 左端 19 か所でズレなし"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "rhythm.type-scale",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "rhythm.line-length",
+      "status": "passed",
+      "evidence": [
+        "1280px: OK"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "style.color-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 色 10 種類（上限 12）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "style.radius-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 角丸 1 種類（上限 3）: 2px"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": 1280,
+      "id": "style.shadow-count",
+      "status": "passed",
+      "evidence": [
+        "1280px: 影 0 種類（上限 3）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_design-system",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_basics",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_node-october-2026",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_commands",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_checklist",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": null,
+      "id": "direction.first-view",
+      "status": "review",
+      "evidence": [
+        "最初の画面で「何の・誰のための・何をすればいいか」が3秒でわかる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": null,
+      "id": "direction.single-cta",
+      "status": "review",
+      "evidence": [
+        "主要な行動は1つ。強い色のボタンを並べない"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": null,
+      "id": "direction.hierarchy",
+      "status": "review",
+      "evidence": [
+        "情報の優先順位が見た目の強さと一致している"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": null,
+      "id": "visual.balance",
+      "status": "review",
+      "evidence": [
+        "余白・写真・文字の比率が整い、セクションごとに景色が変わる"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": null,
+      "id": "visual.ai-look",
+      "status": "review",
+      "evidence": [
+        "AI っぽい定番の飾りがない（DESIGN.md の「やらないこと」）"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": null,
+      "id": "copy.specific",
+      "status": "review",
+      "evidence": [
+        "どこにでも言える文を書かない。事実は入力データにあるものだけ"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": null,
+      "id": "copy.ui-writing",
+      "status": "review",
+      "evidence": [
+        "ボタン・見出し・説明の文言の決まり"
+      ]
+    },
+    {
+      "target": "127.0.0.1_4387_ai-security-playbook_learn_operations",
+      "width": null,
+      "id": "visual.photo",
+      "status": "review",
+      "evidence": [
+        "写真の質と使い方（解像度・トリミング・統一感）"
+      ]
+    }
+  ]
+}

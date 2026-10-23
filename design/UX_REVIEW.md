@@ -67,3 +67,9 @@ mainの23eaa34も同じ測定v2・同じ契約・全28条件で再測定した�
 ## Node教材の完成見本
 
 同日の追加実装はNODE_LESSON_REVIEW.mdを参照する。目標・確認・手元の記録をつなぎ、追加のcritical L01–L05は5/5確認。公開前の全28条件は引き続きerror 0。最新の証拠はaudit/2026-10-24/node-lessonとnode-lesson-openに保存する。
+
+## 2026-10-24 ヘッダー更新
+
+サイト名の1行表示と操作が分かるナビを実装。最新の検査・警告理由・目視・トレードオフは [HEADER_REVIEW.md](./HEADER_REVIEW.md)。
+
+追加の公開文面整理・記録機能撤去・帯の文字改善後はHEADER_REVIEWの最終版とaudit/2026-10-24/reader-cleanupを参照。旧記録機能の検証記述は履歴。
