@@ -1,0 +1,14 @@
+{
+  "widths": [375, 320, 768, 1280],
+  "thresholds": {
+    "spaceScale": [4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 80, 96, 128, 160],
+    "minFontPx": 12,
+    "minTapPx": 44,
+    "maxFontSizes": 6,
+    "maxLineHeights": 3,
+    "maxLetterSpacings": 3,
+    "maxColors": 12
+  },
+  "forbiddenText": ["TBD", "Lorem ipsum", "lorem ipsum"],
+  "disable": []
+}

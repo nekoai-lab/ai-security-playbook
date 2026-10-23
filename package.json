@@ -11,7 +11,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node scripts/check-site.mjs"
+    "test": "node scripts/check-site.mjs",
+    "design:audit": "node scripts/design-audit.mjs"
   },
   "dependencies": {
     "astro": "7.4.2",

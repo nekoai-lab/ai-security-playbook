@@ -1,0 +1,19 @@
+---
+import ExplorerCat from "./ExplorerCat.astro";
+interface Props {
+  title: string;
+  compact?: boolean;
+}
+const { title, compact = false } = Astro.props;
+---
+
+<aside class:list={["explorer-note", { "explorer-note--compact": compact }]}>
+  <ExplorerCat size={compact ? 80 : 112} />
+  <div>
+    <p class="eyebrow">FIELD COMPANION</p>
+    <strong>{title}</strong>
+    <div class="explorer-note-copy">
+      <slot />
+    </div>
+  </div>
+</aside>

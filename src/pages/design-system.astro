@@ -1,5 +1,8 @@
 ---
 import Shell from "../layouts/Shell.astro";
+import BrandMark from "../components/BrandMark.astro";
+import ExplorerCat from "../components/ExplorerCat.astro";
+import ExplorerNote from "../components/ExplorerNote.astro";
 import FieldButton from "../components/FieldButton.astro";
 import FieldIcon from "../components/FieldIcon.astro";
 import Notice from "../components/Notice.astro";
@@ -10,6 +13,20 @@ import { learningPaths } from "../data/learning-paths";
 import { getCollection } from "astro:content";
 const lessons = await getCollection("lessons");
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const guideSections = [
+  ["identity", "ロゴと猫"],
+  ["color", "色"],
+  ["type", "文字"],
+  ["actions", "操作"],
+  ["routes", "ルート"],
+  ["diagrams", "図表"],
+  ["notices", "注意書き"],
+  ["imagery", "画像"],
+  ["layout", "ページ構成"],
+  ["responsive", "スマホ"],
+  ["authoring", "教材制作"],
+  ["quality", "品質の守り方"],
+];
 const colors = [
   { name: "Paper", color: "#f5f1e6", role: "読むための背景" },
   { name: "Ink", color: "#191919", role: "見出し・本文" },
@@ -26,7 +43,7 @@ const colors = [
 >
   <div class="wrap">
     <header class="design-intro">
-      <p class="eyebrow">DESIGN SYSTEM / VERSION 1.0</p>
+      <p class="eyebrow">DESIGN SYSTEM / VERSION 1.1</p>
       <h1>
         FIELD NOTES<span style="color:var(--color-orange-ink)">.</span>
       </h1>
@@ -38,7 +55,79 @@ const colors = [
         教材が増えても、読み方と見た目をそろえるためのガイドです。
       </p>
     </header>
-    <section class="design-section">
+    <nav class="guide-nav" aria-label="デザインガイドの目次">
+      {guideSections.map(([id, label]) => (
+        <a href={`#${id}`}>{label}</a>
+      ))}
+    </nav>
+    <section class="design-section" id="identity">
+      <p class="eyebrow">BRAND IDENTITY</p>
+      <h2>00 / 発行者の印と、探究の案内役</h2>
+      <p class="guide-lead">
+        羅針盤の猫は「このサイトの印」。リュックの猫は「学びの案内役」。役割を分けて、両方を使います。
+      </p>
+      <div class="identity-grid">
+        <figure class="identity-tile">
+          <BrandMark size={176} />
+          <figcaption>
+            <b>A / 正式ロゴ</b>ヘッダー、サイトアイコン、発行者の表示。
+          </figcaption>
+        </figure>
+        <figure class="identity-tile">
+          <ExplorerCat size={176} />
+          <figcaption>
+            <b>C / フィールド・コンパニオン</b>
+            ルートの入口、教材の終わり、次の学びへの案内。
+          </figcaption>
+        </figure>
+      </div>
+      <div class="logo-lockup">
+        <BrandMark size={64} />
+        <strong>
+          AI Security
+          <br />
+          Playbook<small>by nekoai lab</small>
+        </strong>
+      </div>
+      <div class="logo-usage">
+        <div>
+          <h3>余白と最小サイズ</h3>
+          <p>
+            ロゴの周囲は表示サイズの1/4を空けます。ヘッダーは48–64px、サイトアイコンは32pxを基準にします。小さな用途では、縮小版を目視で確かめます。
+          </p>
+          <div class="logo-size-samples">
+            <figure>
+              <BrandMark size={64} />
+              <figcaption>64px</figcaption>
+            </figure>
+            <figure>
+              <BrandMark size={48} />
+              <figcaption>48px</figcaption>
+            </figure>
+            <figure>
+              <BrandMark size={32} />
+              <figcaption>32px</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div>
+          <h3>単色と使わない例</h3>
+          <div class="logo-monochrome">
+            <BrandMark size={80} monochrome />
+            <p>単色は黒で。余白を保ち、明るい無地の面に置きます。</p>
+          </div>
+          <ul class="design-rules">
+            <li>縦横を変形しない。方位の向きも変えない。</li>
+            <li>写真や文字に重ねない。影や光彩を足さない。</li>
+            <li>猫Cをロゴの代わりにしない。全カードへ繰り返さない。</li>
+          </ul>
+        </div>
+      </div>
+      <ExplorerNote title="ここから先へ、一緒に確かめよう。" compact>
+        猫の役目は次の行動へ案内すること。安全性の保証や、確認結果の代わりには使いません。
+      </ExplorerNote>
+    </section>
+    <section class="design-section" id="color">
       <h2>01 / 色の役割</h2>
       <div class="swatch-grid">
         {colors.map((c) => (
@@ -57,7 +146,7 @@ const colors = [
         オレンジはブランドの道しるべです。危険度や修正済みの判定とは分け、状態は言葉と一緒に伝えます。
       </p>
     </section>
-    <section class="design-section design-type">
+    <section class="design-section design-type" id="type">
       <h2>02 / 文字の階層</h2>
       <p class="eyebrow">FIELD NOTES / SECTION LABEL</p>
       <h3>AIの安全を、解き明かそう。</h3>
@@ -66,7 +155,7 @@ const colors = [
       </p>
       <p class="mono">2026.10.23 / 10 MIN READ / SOURCE VERIFIED</p>
     </section>
-    <section class="design-section">
+    <section class="design-section" id="actions">
       <h2>03 / リンクと操作</h2>
       <div class="design-buttons">
         <FieldButton href={`${base}/#paths`}>学びをはじめる</FieldButton>
@@ -78,7 +167,7 @@ const colors = [
         主な操作は朱色の面、補助操作は文字と線。すべて実際の行き先につなぎます。
       </p>
     </section>
-    <section class="design-section">
+    <section class="design-section" id="routes">
       <h2>04 / 学習ルート</h2>
       <div class="design-examples">
         <PathCard path={learningPaths[0]} lessons={lessons} />
@@ -90,7 +179,7 @@ const colors = [
         </div>
       </div>
     </section>
-    <section class="design-section">
+    <section class="design-section" id="diagrams">
       <h2>05 / 図解と表</h2>
       <div class="prose">
         <Flow
@@ -120,7 +209,7 @@ const colors = [
         </DataTable>
       </div>
     </section>
-    <section class="design-section">
+    <section class="design-section" id="notices">
       <h2>06 / 注意書き</h2>
       <Notice title="補足情報">読む前提や補助情報をまとめます。</Notice>
       <Notice tone="warning" title="実行前に確認すること">
@@ -130,14 +219,14 @@ const colors = [
         認証情報やプロセスの全引数を、そのままログや通知へ出さないでください。
       </Notice>
     </section>
-    <section class="design-section">
+    <section class="design-section" id="imagery">
       <h2>07 / イラストの言語</h2>
       <div class="design-icons">
         <FieldIcon kind="book" />
         <FieldIcon kind="terminal" />
         <FieldIcon kind="layers" />
         <FieldIcon kind="compass" />
-        <FieldIcon kind="cat" />
+        <BrandMark size={96} />
       </div>
       <ul class="design-rules">
         <li>黒の細い線、分解図、技術的な注釈、オレンジの接続を基本にする。</li>
@@ -149,6 +238,227 @@ const colors = [
           生成イラストは世界観の表現。正確な構造を伝える図は、本文の説明と整合させる。
         </li>
       </ul>
+    </section>
+    <section class="design-section" id="layout">
+      <p class="eyebrow">CONTENT PATTERNS</p>
+      <h2>08 / ページは、目的に合う型で組む</h2>
+      <div class="pattern-grid">
+        <article>
+          <span class="pattern-index">01 / 入口</span>
+          <h3>どこから学ぶかを決める</h3>
+          <ol class="page-map">
+            <li>何を学べるか</li>
+            <li>一つの主な行動</li>
+            <li>レベル別の読み順</li>
+            <li>注目教材と一覧</li>
+          </ol>
+          <p>
+            トップと学習ルートに使用。大きな絵で興味を引き、次の行動は迷わせません。
+          </p>
+        </article>
+        <article>
+          <span class="pattern-index">02 / 実践教材</span>
+          <h3>調べて、確かめる</h3>
+          <ol class="page-map">
+            <li>結論・対象・更新日</li>
+            <li>目次と前提</li>
+            <li>図解・確認手順</li>
+            <li>チェック・一次資料</li>
+          </ol>
+          <p>
+            安全確認の教材に使用。装飾より、実行前の条件と結果の読み方を優先します。
+          </p>
+        </article>
+        <article>
+          <span class="pattern-index">03 / 制作ガイド</span>
+          <h3>作り方をそろえる</h3>
+          <ol class="page-map">
+            <li>目的と原則</li>
+            <li>ルールと実物の見本</li>
+            <li>使う場面・避ける場面</li>
+            <li>公開前の確認</li>
+          </ol>
+          <p>
+            このページや執筆ルールに使用。どう使うかを見本と一緒に伝えます。
+          </p>
+        </article>
+      </div>
+    </section>
+    <section class="design-section" id="responsive">
+      <p class="eyebrow">RESPONSIVE &amp; READING</p>
+      <h2>09 / 小さな画面でも、読む順番を守る</h2>
+      <div class="responsive-grid">
+        <article>
+          <h3>PC / 1280px</h3>
+          <div class="layout-sample layout-sample--desktop" aria-hidden="true">
+            <span>ヘッダー</span>
+            <div>
+              <b>目次</b>
+              <b>本文・図解・確認</b>
+            </div>
+          </div>
+          <p>目次と本文を並べ、本文の幅は40em以内。行を長くしすぎません。</p>
+        </article>
+        <article>
+          <h3>タブレット / 768px</h3>
+          <div class="layout-sample" aria-hidden="true">
+            <span>ヘッダー</span>
+            <b>目次</b>
+            <b>本文・図解・確認</b>
+          </div>
+          <p>
+            狭くなったら単列に切り替えます。文字を小さくして詰め込みません。
+          </p>
+        </article>
+        <article>
+          <h3>スマホ / 320–375px</h3>
+          <div class="layout-sample layout-sample--phone" aria-hidden="true">
+            <span>ナビ</span>
+            <b>見出し → 目次</b>
+            <b>本文 → 次の教材</b>
+          </div>
+          <p>
+            表とコードだけ横へスクロールできます。ページ全体は横にはみ出させません。
+          </p>
+        </article>
+      </div>
+      <ul class="design-rules">
+        <li>
+          本文16px、補助情報も12px以上。文字を大きくした状態でも確認します。
+        </li>
+        <li>
+          独立したリンクやボタンは44px以上の操作領域。キーボードの位置を青い線で示します。
+        </li>
+        <li>色だけで分類しません。レベルの名称と番号を併記します。</li>
+      </ul>
+    </section>
+    <section class="design-section" id="authoring">
+      <p class="eyebrow">MAKE A FIELD NOTE</p>
+      <h2>10 / 教材を一つ作るときの手順</h2>
+      <Flow
+        steps={[
+          "目的と読み手を決める",
+          "確認の流れを組む",
+          "根拠と更新日を添える",
+        ]}
+        caption="共通部品から組み、教材ごとに新しい見た目を増やしません。"
+      />
+      <div class="authoring-pair">
+        <div>
+          <h3>図解・表・注意書きの選び方</h3>
+          <ul class="design-rules">
+            <li>順番を伝えるならフロー図。</li>
+            <li>条件や違いを比べるなら表。</li>
+            <li>実行前の前提は注意書き。</li>
+            <li>補助情報は通常のノート。</li>
+            <li>情報漏えいや危険な操作の条件だけ、危険の表示。</li>
+          </ul>
+          <p>
+            「未確認」は危険とも安全とも断定しない状態です。確認できた事実と分けて書きます。
+          </p>
+        </div>
+        <div class="prose">
+          <h3>共通部品を使うMDXの例</h3>
+          <pre
+            tabindex="0"
+            aria-label="MDXの制作例"
+          ><code>{`import Notice from '../../components/Notice.astro';
+import Flow from '../../components/Flow.astro';
+
+## まず何を確認する？
+
+<Notice tone="warning" title="実行する前に">
+対象環境と作業の保存状況を確認します。
+</Notice>
+
+<Flow steps={['版を読む', '影響を調べる', '記録する']}
+  caption="分かったことと未確認を分けます。" />`}</code></pre>
+        </div>
+      </div>
+      <h3>イラストを作るとき</h3>
+      <p class="guide-lead">
+        黒いペン画、紙の背景、朱色の配線、幾何学的な機械部品。猫Cは探究の案内役として添えます。正確な仕組みを説明する図と、世界観を伝える絵は使い分けます。
+      </p>
+      <ul class="design-rules">
+        <li>見出しやボタンは画像にせず、文字として読める状態にする。</li>
+        <li>
+          素材の由来と生成条件を残す。背景透過、余白、縮小時の見え方を確かめる。
+        </li>
+        <li>脳・臓器・生体の表現、恐怖をあおる写真は使わない。</li>
+      </ul>
+    </section>
+    <section class="design-section" id="quality">
+      <p class="eyebrow">DESIGN HARNESS</p>
+      <h2>11 / 好きな見た目を、継続して守る</h2>
+      <p class="guide-lead">
+        既存のデザインハーネスに合わせて、「設計契約 → 制作 → 機械で測る →
+        目で見る」を一つの流れにします。
+      </p>
+      <Flow
+        steps={["設計を言葉にする", "画面を作り、測る", "目で確認して直す"]}
+        caption="機械の合格は、デザインの良さそのものではありません。"
+      />
+      <div class="quality-grid">
+        <article>
+          <h3>機械が確認すること</h3>
+          <ul class="design-rules">
+            <li>横はみ出し、最小の文字サイズ</li>
+            <li>コントラストと操作領域</li>
+            <li>余白・文字の段階と折り返し</li>
+            <li>画像の説明、見出しの順序</li>
+          </ul>
+        </article>
+        <article>
+          <h3>目で判断すること</h3>
+          <ul class="design-rules">
+            <li>何を学べるか、次に何をするか</li>
+            <li>余白と絵と文字のバランス</li>
+            <li>猫が読書や操作を邪魔していないか</li>
+            <li>根拠のない断定や、使えない操作がないか</li>
+          </ul>
+        </article>
+      </div>
+      <div class="guide-checks">
+        <h3>公開前の確認</h3>
+        <ul class="checklist">
+          <li>
+            <label>
+              <input type="checkbox" />
+              PC・タブレット・スマホで代表画面を見た
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" />
+              文字を大きくしても情報と操作が残る
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" />
+              リンク・表のスクロール・チェック操作を実際に試した
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" />
+              機械の指摘を直し、目視の判断と分けて記録した
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" />
+              正式ロゴAと、案内役Cを使い分けている
+            </label>
+          </li>
+        </ul>
+        <p>このページのチェックは保存・送信されません。確認用の見本です。</p>
+      </div>
+      <p>
+        <a href="https://github.com/nekoai-lab/ai-security-playbook/blob/main/design/DESIGN.md">
+          実装契約と制作ルールを見る ↗
+        </a>
+      </p>
     </section>
   </div>
 </Shell>
