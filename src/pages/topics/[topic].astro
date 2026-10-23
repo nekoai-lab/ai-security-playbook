@@ -1,0 +1,59 @@
+---
+import Shell from "../../layouts/Shell.astro";
+import LessonCard from "../../components/LessonCard.astro";
+import { getCollection } from "astro:content";
+import { topics, series } from "../../data/catalog";
+export async function getStaticPaths() {
+  const all = await getCollection("lessons");
+  return topics
+    .filter((t) => all.some((l) => l.data.topic === t.id))
+    .map((topic) => ({ params: { topic: topic.id }, props: { topic } }));
+}
+const { topic } = Astro.props;
+const lessons = (await getCollection("lessons"))
+  .filter((l) => l.data.topic === topic.id)
+  .sort(
+    (a, b) =>
+      b.data.updated.localeCompare(a.data.updated) || a.id.localeCompare(b.id),
+  );
+const groups = series.filter((s) =>
+  s.ids.some((id) => lessons.some((l) => l.id === id)),
+);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Shell title={topic.title} description={topic.summary}>
+  <div class="wrap hub-page">
+    <nav class="crumbs" aria-label="パンくず">
+      <a href={`${base}/`}>ホーム</a>
+      <span aria-hidden="true">/</span>
+      <a href={`${base}/topics/`}>テーマ</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{topic.title}</span>
+    </nav>
+    <header class="hub-header">
+      <p class="eyebrow">TOPIC / {lessons.length} LESSONS</p>
+      <h1>{topic.title}</h1>
+      <p>{topic.summary}</p>
+    </header>
+    <section class="hub-callout">
+      <h2>シリーズで読む</h2>
+      {groups.map((s) => (
+        <p>
+          <a href={`${base}/series/${s.id}/`}>{s.title} →</a>
+        </p>
+      ))}
+    </section>
+    <h2 class="hub-section-title">このテーマの教材</h2>
+    <div class="catalog-list">
+      {lessons.map((lesson) => (
+        <LessonCard headingLevel="h3" lesson={lesson} />
+      ))}
+    </div>
+    <p class="hub-action">
+      <a href={`${base}/library/?topic=${topic.id}`}>
+        このテーマの教材を絞り込む →
+      </a>
+    </p>
+  </div>
+</Shell>

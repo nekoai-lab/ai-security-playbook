@@ -48,3 +48,5 @@ I04: 既存URL維持、シリーズとルートの次を区別し、関連と所
 I05: 公開/内容更新/情報確認日と変更要約、過去事例の現在確認先。
 I06: 全生成ページを検査対象にし、安全上の留保・デザイン・LICENSEを維持。
 正本: docs/superpowers/specs/2026-10-24-growing-library-design.md。実装計画は同日growing-library.md。
+
+I01–I06の実装・検証・残課題はdesign/LIBRARY_REVIEW.md。全生成ルートとFULL検査対象の一致を必須化。初回公開日はgit初出、更新日は内容変更、確認日は根拠照合の日を使用し、分類だけの変更で確認日を進めない。

@@ -1,0 +1,52 @@
+---
+import Shell from "../layouts/Shell.astro";
+import { getCollection } from "astro:content";
+const all = await getCollection("lessons");
+const events = all
+  .flatMap((l) => [
+    {
+      lesson: l,
+      date: l.data.published,
+      kind: "公開",
+      summary: l.data.summary,
+    },
+    ...l.data.changes
+      .filter((c) => c.date !== l.data.published)
+      .map((c) => ({
+        lesson: l,
+        date: c.date,
+        kind: "更新",
+        summary: c.summary,
+      })),
+  ])
+  .sort(
+    (a, b) =>
+      b.date.localeCompare(a.date) || a.lesson.id.localeCompare(b.lesson.id),
+  );
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Shell title="新着・更新">
+  <div class="wrap hub-page">
+    <header class="hub-header">
+      <p class="eyebrow">FIELD UPDATES</p>
+      <h1>新着・更新</h1>
+      <p>新しい教材と、読み直したい変更を。</p>
+    </header>
+    <ol class="update-list">
+      {events.map((event) => (
+        <li>
+          <p class="catalog-meta">
+            <time datetime={event.date}>{event.date}</time> · {event.kind}
+          </p>
+          <h2>
+            <a href={`${base}/learn/${event.lesson.id}/`}>
+              {event.lesson.data.title} →
+            </a>
+          </h2>
+          <p>{event.summary}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Shell>

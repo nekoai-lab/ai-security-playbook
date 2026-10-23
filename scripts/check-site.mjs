@@ -50,3 +50,17 @@ for (const file of pages) {
 console.log(
   `Verified ${pages.length} pages: Japanese metadata, base paths, local assets and anchors.`,
 );
+
+const reviewMap = JSON.parse(await readFile("design/review-map.json", "utf8"));
+assert.deepEqual(
+  pages
+    .map((f) =>
+      f
+        .slice(root.length + 1)
+        .replace(/index\.html$/, "")
+        .trim(),
+    )
+    .sort(),
+  [...reviewMap.pages].sort(),
+  "Every generated route must be included in FULL design review",
+);

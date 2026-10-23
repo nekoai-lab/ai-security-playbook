@@ -1,0 +1,229 @@
+---
+import { getCollection } from "astro:content";
+import { topics, levels, formats } from "../data/catalog";
+const lessons = await getCollection("lessons");
+const published = topics.filter((t) =>
+  lessons.some((l) => l.data.topic === t.id),
+);
+---
+
+<form
+  class="catalog-search"
+  id="catalog-search"
+  role="search"
+  aria-label="教材を検索"
+  method="get"
+>
+  <div class="search-primary">
+    <label>
+      教材を検索
+      <input
+        name="q"
+        type="search"
+        maxlength="200"
+        placeholder="例：Node.js、MCP、更新"
+        disabled
+      />
+    </label>
+    <label>
+      テーマ
+      <select name="topic" disabled>
+        <option value="">すべてのテーマ</option>
+        {published.map((t) => (
+          <option value={t.id}>{t.title}</option>
+        ))}
+      </select>
+    </label>
+    <button type="submit" disabled>
+      検索する
+    </button>
+  </div>
+  <p class="catalog-meta">
+    教材名・説明・キーワードから検索できます。空白で区切ると、すべての語を含む教材を探します。
+  </p>
+  <details id="advanced-filters">
+    <summary>前提知識・教材の種類で絞る</summary>
+    <div class="search-secondary">
+      <label>
+        前提知識
+        <select name="level" disabled>
+          <option value="">指定なし</option>
+          {levels.map((v) => (
+            <option>{v}</option>
+          ))}
+        </select>
+      </label>
+      <label>
+        教材の種類
+        <select name="type" disabled>
+          <option value="">すべての種類</option>
+          {formats.map((v) => (
+            <option>{v}</option>
+          ))}
+        </select>
+      </label>
+    </div>
+  </details>
+  <div class="search-status">
+    <p id="catalog-count" aria-live="polite" role="status">
+      {lessons.length}件の教材
+    </p>
+    <button type="button" id="catalog-reset" disabled>
+      条件をすべて解除
+    </button>
+  </div>
+  <p id="catalog-conditions" class="catalog-meta" hidden></p>
+  <noscript>
+    <p>すべての教材を表示しています。テーマのリンクからも探せます。</p>
+  </noscript>
+</form>
+<p id="catalog-empty" hidden>
+  条件に合う教材がありません。検索語を短くするか、絞り込み条件を解除してください。
+</p>
+<script>
+  import { matchesSearch } from "../data/catalog";
+  const form = document.querySelector<HTMLFormElement>("#catalog-search");
+  if (form) {
+    const items = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-catalog-item]"),
+    );
+    const count = document.querySelector<HTMLElement>("#catalog-count")!;
+    const conditions = document.querySelector<HTMLElement>(
+      "#catalog-conditions",
+    )!;
+    const empty = document.querySelector<HTMLElement>("#catalog-empty")!;
+    const pager = document.querySelector<HTMLElement>("#catalog-pagination")!;
+    const keys = ["q", "topic", "level", "type"] as const;
+    const controls = Object.fromEntries(
+      keys.map((k) => [k, form.elements.namedItem(k)]),
+    ) as Record<(typeof keys)[number], HTMLInputElement | HTMLSelectElement>;
+    form
+      .querySelectorAll<
+        HTMLInputElement | HTMLSelectElement | HTMLButtonElement
+      >("[disabled]")
+      .forEach((e) => (e.disabled = false));
+    let currentPage = 1;
+    const size = 12;
+    function readURL() {
+      const params = new URL(location.href).searchParams;
+      for (const key of keys) {
+        const value = params.get(key) ?? "";
+        const control = controls[key];
+        control.value =
+          control instanceof HTMLSelectElement &&
+          !Array.from(control.options).some((o) => o.value === value)
+            ? ""
+            : value.slice(0, 200);
+      }
+      currentPage = Math.max(
+        1,
+        Number.parseInt(params.get("page") ?? "1", 10) || 1,
+      );
+      if (controls.level.value || controls.type.value)
+        (form!.querySelector("details") as HTMLDetailsElement).open = true;
+    }
+    function updateURL(mode: "push" | "replace") {
+      const url = new URL(location.href);
+      for (const key of keys) {
+        const v = controls[key].value.trim();
+        if (v) url.searchParams.set(key, v);
+        else url.searchParams.delete(key);
+      }
+      if (currentPage > 1) url.searchParams.set("page", String(currentPage));
+      else url.searchParams.delete("page");
+      if (url.href !== location.href)
+        history[mode === "push" ? "pushState" : "replaceState"](null, "", url);
+    }
+    function render() {
+      const matches = items.filter(
+        (item) =>
+          matchesSearch(item.dataset.search ?? "", controls.q.value) &&
+          ["topic", "level", "type"].every(
+            (k) =>
+              !controls[k as "topic"].value ||
+              item.dataset[k] === controls[k as "topic"].value,
+          ),
+      );
+      const pages = Math.max(1, Math.ceil(matches.length / size));
+      currentPage = Math.min(currentPage, pages);
+      const visible = new Set(
+        matches.slice((currentPage - 1) * size, currentPage * size),
+      );
+      for (const item of items) item.hidden = !visible.has(item);
+      count.textContent = matches.length
+        ? `${matches.length}件中 ${(currentPage - 1) * size + 1}–${Math.min(currentPage * size, matches.length)}件`
+        : "0件の教材";
+      empty.hidden = matches.length > 0;
+      const labels = keys.flatMap((key) => {
+        const c = controls[key];
+        return c.value
+          ? [
+              c instanceof HTMLSelectElement
+                ? (c.selectedOptions[0].textContent ?? "")
+                : `「${c.value}」`,
+            ]
+          : [];
+      });
+      conditions.hidden = !labels.length;
+      conditions.textContent = `検索条件：${labels.join(" / ")}`;
+      pager.replaceChildren();
+      pager.hidden = pages <= 1;
+      if (pages > 1) {
+        const add = (text: string, page: number, disabled: boolean) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.textContent = text;
+          button.disabled = disabled;
+          button.addEventListener("click", () => {
+            currentPage = page;
+            render();
+            updateURL("push");
+            document.querySelector<HTMLElement>("#catalog-results")?.focus();
+          });
+          pager.append(button);
+        };
+        add("前のページ", currentPage - 1, currentPage === 1);
+        const label = document.createElement("span");
+        label.textContent = `${currentPage} / ${pages}ページ`;
+        pager.append(label);
+        add("次のページ", currentPage + 1, currentPage === pages);
+      }
+    }
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      currentPage = 1;
+      render();
+      updateURL("push");
+    });
+    form.addEventListener("change", () => {
+      currentPage = 1;
+      render();
+      updateURL("push");
+    });
+    let timer: ReturnType<typeof setTimeout>;
+    controls.q.addEventListener("input", () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        currentPage = 1;
+        render();
+        updateURL("replace");
+      }, 150);
+    });
+    document.querySelector("#catalog-reset")!.addEventListener("click", () => {
+      clearTimeout(timer);
+      for (const key of keys) controls[key].value = "";
+      currentPage = 1;
+      render();
+      updateURL("push");
+      controls.q.focus();
+    });
+    window.addEventListener("popstate", () => {
+      clearTimeout(timer);
+      readURL();
+      render();
+    });
+    readURL();
+    render();
+    updateURL("replace");
+  }
+</script>

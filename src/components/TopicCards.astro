@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import { topics } from "../data/catalog";
+import FieldIcon from "./FieldIcon.astro";
+interface Props {
+  headingLevel?: "h2" | "h3";
+}
+const { headingLevel: Heading = "h2" } = Astro.props;
+const lessons = await getCollection("lessons");
+const published = topics.filter((t) =>
+  lessons.some((l) => l.data.topic === t.id),
+);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<div class="topic-grid">
+  {published.map((t) => (
+    <a class="topic-card" href={`${base}/topics/${t.id}/`}>
+      <FieldIcon kind={t.kind} />
+      <Heading>{t.title}</Heading>
+      <p>{t.summary}</p>
+      <span class="catalog-meta">
+        {lessons.filter((l) => l.data.topic === t.id).length}教材{" "}
+        <span aria-hidden="true">→</span>
+      </span>
+    </a>
+  ))}
+</div>

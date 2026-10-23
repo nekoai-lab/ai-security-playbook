@@ -6,7 +6,7 @@
 2. `design/DESIGN.md` と `design/design-rules.json` を読み、返された部品とガイドの該当節だけ確認する。
 3. 既存部品を使い、変更する理由・必須要件・証拠を `design/SPEC_TRACE.md` に残してから実装する。
 4. `npm run design:audit:quick` は3代表画面×375/1280pxの途中診断。合格しても公開可とは扱わない。
-5. 公開前は `npm run design:audit`（全7画面×320/375/768/1280px）、型・ビルド・リンク、キーボード・文字200%・目視を確認する。
+5. 公開前は `npm run design:audit`（review-mapにある全画面×320/375/768/1280px）、型・ビルド・リンク、キーボード・文字200%・目視を確認する。
 
 ## 変えない判断
 

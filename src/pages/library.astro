@@ -1,0 +1,51 @@
+---
+import Shell from "../layouts/Shell.astro";
+import { topics } from "../data/catalog";
+import LessonCard from "../components/LessonCard.astro";
+import CatalogSearch from "../components/CatalogSearch.astro";
+import { getCollection } from "astro:content";
+const lessons = (await getCollection("lessons")).sort(
+  (a, b) =>
+    b.data.updated.localeCompare(a.data.updated) || a.id.localeCompare(b.id),
+);
+---
+
+<Shell
+  title="教材を探す"
+  description="テーマ、前提知識、教材の種類からAIセキュリティの教材を探す。"
+>
+  <div class="wrap hub-page">
+    <header class="hub-header">
+      <p class="eyebrow">THE FIELD LIBRARY</p>
+      <h1>教材を探す</h1>
+      <p>気になるテーマから。必要な知識から。</p>
+    </header>
+    <nav class="catalog-topic-links" aria-label="テーマから探す">
+      {topics
+        .filter((t) => lessons.some((l) => l.data.topic === t.id))
+        .map((t) => (
+          <a href={`${import.meta.env.BASE_URL}topics/${t.id}/`}>{t.title} →</a>
+        ))}
+    </nav>
+    <CatalogSearch />
+    <h2 class="hub-section-title" id="all-lessons">
+      すべての教材
+    </h2>
+    <div
+      id="catalog-results"
+      class="catalog-list"
+      tabindex="-1"
+      aria-label="教材の検索結果"
+    >
+      {lessons.map((lesson) => (
+        <LessonCard headingLevel="h3" lesson={lesson} />
+      ))}
+    </div>
+    <nav
+      id="catalog-pagination"
+      class="catalog-pagination"
+      aria-label="検索結果のページ"
+      hidden
+    ></nav>
+  </div>
+</Shell>
