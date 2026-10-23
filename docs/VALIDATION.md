@@ -22,3 +22,10 @@ Nodeの版だけでAIツールの影響を断定せず、記事当時の設計�
 本番サービスや利用者の端末を、このサイト制作のために更新・停止する操作は行っていない。
 
 GitHub側ではPRのcheck / build / link検証後、mainのActionsでPagesへ公開する。
+
+## 公開確認
+
+PR #1をマージし、Actions run 39880329623のbuild/deploy成功を確認。
+https://nekoai-lab.github.io/ai-security-playbook/ と全5教材・faviconのHTTP 200をMac miniから確認した。
+Pagesのbuild_typeはworkflow。base付きURLで公開できている。
+初回公開時の旧Node向けAction警告に対応し、公式の現行ActionをコミットSHAで固定する。
