@@ -72,3 +72,28 @@ test("search normalizes fullwidth and case, combines terms and treats punctuatio
   assert(matchesSearch("Node.js MCP", "   "));
   assert(!matchesSearch("Node.js MCP", "<script>"));
 });
+
+test("prerequisites and related lesson IDs resolve and prerequisites have no cycles", () => {
+  const links = new Map(
+    records.map((r) => [
+      r.id,
+      JSON.parse(/^prerequisites: (.+)$/m.exec(r.text)?.[1] ?? "[]"),
+    ]),
+  );
+  for (const r of records)
+    for (const key of ["prerequisites", "related"]) {
+      const ids = JSON.parse(
+        new RegExp(`^${key}: (.+)$`, "m").exec(r.text)?.[1] ?? "[]",
+      );
+      for (const id of ids)
+        assert(
+          id !== r.id && records.some((item) => item.id === id),
+          `${r.id}: ${id}`,
+        );
+    }
+  const visit = (id, seen = new Set()) => {
+    assert(!seen.has(id), `Prerequisite cycle: ${id}`);
+    for (const next of links.get(id) ?? []) visit(next, new Set([...seen, id]));
+  };
+  for (const id of links.keys()) visit(id);
+});

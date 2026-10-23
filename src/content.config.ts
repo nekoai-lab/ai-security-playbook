@@ -23,6 +23,9 @@ const lessons = defineCollection({
       )
       .default([]),
     minutes: z.number(),
+    qualityVersion: z.literal(1).optional(),
+    prerequisites: z.array(z.string()).default([]),
+    related: z.array(z.string()).default([]),
     outcomes: z.array(z.string().trim().min(1)).min(1).max(4).optional(),
   }),
 });

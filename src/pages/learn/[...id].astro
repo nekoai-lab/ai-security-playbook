@@ -17,14 +17,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const all = await getCollection("lessons");
 const group = seriesFor(lesson.id);
 const nextId = group?.ids[group.ids.indexOf(lesson.id) + 1];
-const related = all
-  .filter(
-    (l) =>
-      l.data.topic === lesson.data.topic &&
-      l.id !== lesson.id &&
-      l.id !== nextId,
-  )
-  .slice(0, 2);
+const related = lesson.data.related.length
+  ? lesson.data.related
+      .map((id: string) => all.find((l) => l.id === id))
+      .filter((l): l is NonNullable<typeof l> => Boolean(l) && l!.id !== nextId)
+      .slice(0, 2)
+  : all
+      .filter(
+        (l) =>
+          l.data.topic === lesson.data.topic &&
+          l.id !== lesson.id &&
+          l.id !== nextId,
+      )
+      .slice(0, 2);
+const prerequisites = lesson.data.prerequisites.map((id: string) =>
+  all.find((l) => l.id === id)!,
+);
 ---
 
 <Shell title={lesson.data.title} description={lesson.data.summary}>
@@ -54,14 +62,15 @@ const related = all
           </ul>
         </section>
       )}
-      <p class="lesson-prerequisite">
-        前提知識：{lesson.data.level}。
-        {lesson.id === "basics" ? (
-          "実行環境の違いから説明します。"
-        ) : (
-          <a href={`${base}/learn/basics/`}>実行環境の基本を確認する →</a>
-        )}
-      </p>
+      <p class="lesson-prerequisite">前提知識：{lesson.data.level}。</p>
+      {prerequisites.length > 0 && (
+        <nav class="lesson-prerequisites" aria-label="先に読むと役立つ教材">
+          <span>先に読むと役立つ教材</span>
+          {prerequisites.map((l) => (
+            <a href={`${base}/learn/${l.id}/`}>{l.data.title} →</a>
+          ))}
+        </nav>
+      )}
       <p class="metadata">
         <span>
           公開{" "}
