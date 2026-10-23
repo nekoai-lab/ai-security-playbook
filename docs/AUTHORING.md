@@ -6,7 +6,7 @@
 ---
 title: "MCPの権限を確認する"
 summary: "連携前に実行範囲と認証情報の渡し方を確かめる。"
-topic: "mcp"
+topic: "connections"
 level: "基本知識が必要"
 format: "手順"
 published: "2026-10-24"
@@ -15,6 +15,9 @@ reviewed: "2026-10-24"
 keywords: ["MCP", "権限", "認証", "連携"]
 changes: []
 minutes: 10
+qualityVersion: 1
+prerequisites: ["api-keys"]
+related: ["agent-permissions"]
 ---
 ```
 
@@ -37,3 +40,5 @@ minutes: 10
 ## 内容の品質（必読）
 
 新規教材は[CONTENT_STANDARD.md](./CONTENT_STANDARD.md)に従う。想定リスク、事例の事実と限界、役割別の確認、根拠を伴うチェックリストを必須とする。見出しが揃っただけで内容レビューの代わりにしない。
+
+新規教材はqualityVersion: 1を指定する。prerequisitesとrelatedは教材IDの配列で、Nodeの入門を一律に前提としない。8分野の定義はcatalog.tsを正本とし、実際に扱う内容へ分類する。

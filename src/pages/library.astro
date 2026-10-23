@@ -1,6 +1,5 @@
 ---
 import Shell from "../layouts/Shell.astro";
-import { topics } from "../data/catalog";
 import LessonCard from "../components/LessonCard.astro";
 import CatalogSearch from "../components/CatalogSearch.astro";
 import { getCollection } from "astro:content";
@@ -21,11 +20,7 @@ const lessons = (await getCollection("lessons")).sort(
       <p>気になるテーマから。必要な知識から。</p>
     </header>
     <nav class="catalog-topic-links" aria-label="テーマから探す">
-      {topics
-        .filter((t) => lessons.some((l) => l.data.topic === t.id))
-        .map((t) => (
-          <a href={`${import.meta.env.BASE_URL}topics/${t.id}/`}>{t.title} →</a>
-        ))}
+      <a href={`${import.meta.env.BASE_URL}topics/`}>8つのテーマから探す →</a>
     </nav>
     <CatalogSearch />
     <h2 class="hub-section-title" id="all-lessons">

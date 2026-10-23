@@ -13,7 +13,7 @@ const lessons = (await getCollection("lessons")).sort(
 );
 const recent = lessons.slice(0, 3);
 const featuredLesson = lessons.find(
-  (lesson) => lesson.id === "node-october-2026",
+  (lesson) => lesson.id === "php-october-2026",
 );
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const link = (id: string) => `${base}/learn/${id}/`;
@@ -82,10 +82,10 @@ const link = (id: string) => `${base}/learn/${id}/`;
       number="02"
     />
     <ExplorerNote title="はじめての方は、ここから。" compact>
-      実行環境の違いを知りたい方は「環境を確かめる」へ。更新や運用など、目的に合うルートも選べます。
+      「AIで個人開発をはじめる」から、情報・仕組み・秘密の扱いを学べます。公開前やAI連携の確認も、目的別に選べます。
     </ExplorerNote>
     <div class="home-route-links">
-      {learningPaths.map((path) => (
+      {learningPaths.slice(0, 3).map((path) => (
         <a href={`${base}/paths/${path.id}/`}>
           <span class="catalog-meta">
             {path.audience} · {path.time}
@@ -107,11 +107,11 @@ const link = (id: string) => `${base}/learn/${id}/`;
         </time>
       )}
     </div>
-    <a class="featured-card" href={link("node-october-2026")}>
+    <a class="featured-card" href={link("php-october-2026")}>
       <div class="featured-art">
         <div class="featured-art-copy">
           <span class="eyebrow">RUNTIME / SECURITY</span>
-          <strong>Node.js</strong>
+          <strong>PHP</strong>
           <span>
             2026年10月
             <br />
@@ -129,16 +129,16 @@ const link = (id: string) => `${base}/learn/${id}/`;
       <div class="featured-copy">
         <span class="tag">注目のレッスン</span>
         <h2>
-          更新した。
+          そのサイト、
           <br />
-          でも、動いているのは？
+          どのPHPで動いている？
         </h2>
         <p>
-          Node.js 2026年10月セキュリティ更新。
+          PHPの2026年10月セキュリティ更新。
           <br />
-          PC・MCP・本番の実行環境をたどり、
+          提供元の対応と実行環境を照合し、
           <br />
-          確認すべき場所を見つけます。
+          自分のサイトで確認する場所を見つけます。
         </p>
         <span class="feature-link">
           教材を読む <span aria-hidden="true">→</span>
