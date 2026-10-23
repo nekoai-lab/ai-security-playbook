@@ -1,0 +1,12 @@
+import {createServer} from 'node:http';
+// Test-only state fixture; production files are never modified.
+createServer(async(req,res)=>{
+ try{
+  const path=new URL(req.url,'http://127.0.0.1').pathname;
+  const source=await fetch('http://127.0.0.1:4387'+path);
+  const type=source.headers.get('content-type')??'application/octet-stream';
+  res.writeHead(source.status,{'content-type':type});
+  if(type.includes('text/html'))res.end((await source.text()).replace(/<details ([^>]*data-lesson-record[^>]*)>/g,'<details open $1>'));
+  else res.end(Buffer.from(await source.arrayBuffer()));
+ }catch{res.writeHead(502);res.end('Preview unavailable')}
+}).listen(4390,'127.0.0.1',()=>console.log('Test-only open-record state at 4390'));

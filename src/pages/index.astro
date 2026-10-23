@@ -10,6 +10,9 @@ import { getCollection } from "astro:content";
 const lessons = (await getCollection("lessons")).sort(
   (a, b) => a.data.order - b.data.order,
 );
+const featuredLesson = lessons.find(
+  (lesson) => lesson.id === "node-october-2026",
+);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const link = (id: string) => `${base}/learn/${id}/`;
 ---
@@ -94,7 +97,11 @@ const link = (id: string) => `${base}/learn/${id}/`;
   <section id="latest" class="wrap featured-section">
     <div class="featured-heading">
       <p class="eyebrow">FEATURED LESSON / 01</p>
-      <time datetime="2026-10-23">2026.10.23 更新</time>
+      {featuredLesson && (
+        <time datetime={featuredLesson.data.updated}>
+          {featuredLesson.data.updated.replaceAll("-", ".")} 更新
+        </time>
+      )}
     </div>
     <a class="featured-card" href={link("node-october-2026")}>
       <div class="featured-art">

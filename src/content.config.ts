@@ -10,6 +10,7 @@ const lessons = defineCollection({
     updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     order: z.number(),
     minutes: z.number(),
+    outcomes: z.array(z.string().trim().min(1)).min(1).max(4).optional(),
   }),
 });
 export const collections = { lessons };
