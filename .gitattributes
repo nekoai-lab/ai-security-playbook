@@ -1,0 +1,3 @@
+# Raw measurements stay available; keep generated evidence out of source diffs.
+design/audit/**/measure.json -diff linguist-generated=true
+design/audit/**/result.json linguist-generated=true
