@@ -36,3 +36,6 @@ L01–L05はNODE_LESSON_REVIEW.mdの証拠で5/5確認済み。目標はoutcomes
 - H04: Aの猫とFIELD NOTES、既存教材・LICENSEを維持する。
 - 設計: 単一行のワードマーク、区切られた3リンク、ハッシュと一致した項目のみaria-current。ガイド見本も同期する。
 - 検証証拠: design/HEADER_REVIEW.md に記録する。
+
+## 公開読者向けの整理（追加指示）
+署名・無料表記、非公開原稿名・照合履歴・転載方針を公開ページから削除。LessonRecord部品・書き出し処理・専用CSSを撤去。一次資料と安全判断に必要な留保は維持。帯は朱色を維持し、補足文を12→16px・太字にして英語の装飾ラベルを削除。証拠はHEADER_REVIEWの追記とreader-cleanup検査。
