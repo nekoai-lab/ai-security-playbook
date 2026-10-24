@@ -1,0 +1,9 @@
+{
+  "id": "github-gate-scene",
+  "title": "公開前の差分を点検する猫",
+  "prompt": "Create ONE landscape 3:2 editorial illustration for a Japanese AI Security Playbook. Same black explorer cat as reference, tapered muzzle, natural eyes, triangular ears, fine engraved pen-and-ink fur, orange backpack and rolled mat. Warm ivory paper, elegant detailed black hatching with restrained orange accents, mature friendly field notebook style. Cat at a wooden workbench inspecting a folder of two distinct draft sheets with a magnifying glass. A small wooden gate separates the workbench from a neatly wrapped finished booklet on a shelf beyond. The gate is a metaphor for checking a proposed change before publishing, no locks or safety guarantees. Laptop at left, distant calm mountain landscape. Spacious thoughtful scene, no readable words, letters, numbers, code, brand logos, rubber stamps, brains, arrows, contact sheet or panels. Do not make a round baby cat.",
+  "referenceRoles": [
+    "api-key-setting-illustration.png: canonical character and field-notes scene"
+  ],
+  "usage": "github-guards本文と回遊カード。設定の実効性や安全性の証拠ではない概念的な場面。"
+}

@@ -79,6 +79,7 @@ export const series = [
       "api-keys",
       "access-control",
       "release-artifacts",
+      "github-guards",
       "launch-checklist",
       "external-service-failures",
       "incident-response",

@@ -627,6 +627,19 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3445015
+    },
+    {
+      "id": "github-gate-scene",
+      "title": "公開前の差分を点検する猫",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/github-gate-scene.png",
+      "preview": "public/images/github-gate-scene-480.webp",
+      "usage": "github-guards本文と回遊カード。設定の実効性や安全性の証拠ではない概念的な場面。",
+      "sha256": "c6dbf483082a959934cf1c63f6dc8b6bad829318d41bae0a9e05ef4e7bf7db2c",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3916644
     }
   ]
 }
