@@ -1,0 +1,10 @@
+---
+import LessonDiagram from "./LessonDiagram.astro";
+import { guardDiagrams, type GuardDiagramKind } from "../data/guard-diagrams";
+interface Props {
+  kind: GuardDiagramKind;
+}
+const { kind } = Astro.props;
+---
+
+<LessonDiagram spec={guardDiagrams[kind]} name={`guard-${kind}`} />

@@ -57,10 +57,9 @@ export const topicGuides = {
         anchor: "request",
       },
       {
-        title: "プレビューなら本番に影響しない？",
-        text: "名前だけでなく、公開URL、接続するDB、APIのテスト設定を照合します。",
-        lesson: "app-architecture",
-        anchor: "environments",
+        title: "緑のチェックがあれば、公開していい？",
+        text: "検査した差分、必須の条件、検査と公開の権限を分けて確認します。",
+        lesson: "github-guards",
       },
     ],
     related: ["secrets", "access"],

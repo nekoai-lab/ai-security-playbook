@@ -1,0 +1,38 @@
+---
+const cases = [
+  {
+    title: "前の差分が成功している",
+    result: "今の変更への確認は別",
+    detail:
+      "追加の修正後に必要な検査があるかを見ます。古い成功の表示だけで終えません。",
+  },
+  {
+    title: "必要な検査がない",
+    result: "成功と数えない",
+    detail:
+      "実行条件や省略、名前の設定を調べます。チェックの不在を、問題なしへ置き換えません。",
+  },
+  {
+    title: "今の検査記録がそろった",
+    result: "確認した内容を見て次へ",
+    detail:
+      "検査した範囲と出所、レビュー、反映先も確認します。全体の安全が保証されたという意味ではありません。",
+  },
+];
+---
+
+<figure class="lesson-diagram failure-comparison" data-guard-comparison>
+  <p class="diagram-title">同じ緑の表示でも、足りない確認は違う</p>
+  {cases.map((c, i) => (
+    <details open={i === 0}>
+      <summary>{c.title}</summary>
+      <p>
+        <strong>{c.result}</strong>
+      </p>
+      <p>{c.detail}</p>
+    </details>
+  ))}
+  <figcaption>
+    架空の検査記録の比較です。GitHubの全マージ条件を判定する機能ではありません。
+  </figcaption>
+</figure>

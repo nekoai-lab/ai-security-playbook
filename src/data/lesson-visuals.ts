@@ -1,3 +1,4 @@
+import { guardDiagrams } from "./guard-diagrams";
 import { updateDiagrams } from "./update-diagrams";
 import { serviceFailureDiagrams } from "./service-failure-diagrams";
 import { practiceDiagrams } from "./practice-diagrams";
@@ -44,6 +45,13 @@ const d = (
   caption: string,
 ): DiagramSpec => ({ title, layout, nodes, caption });
 export const lessonVisuals = {
+  "github-guards": {
+    image: "github-gate-scene",
+    question: "そのチェックは、今の変更を確かめた結果？",
+    situation: "AIの修正をGitHubから公開する前に",
+    pose: "think",
+    diagrams: [guardDiagrams.flow, guardDiagrams.permissions],
+  },
   "dependency-updates": {
     image: "dependency-update-scene",
     question: "部品を直した。その更新は、本番まで届いた？",

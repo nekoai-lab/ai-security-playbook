@@ -8,8 +8,8 @@
 | 公開物・配布物の検査 | 公開済み | release-artifacts |
 | ガードの効く範囲 | 既存記事へ反映済み | agent-permissions / operations |
 | 外部サービス停止への備え | 公開済み（PR17/Pages40084134651、最終レビューでHTTP表示を補正） | external-service-failures |
-| 依存の継続管理 | 記事実装・検証済み（第2本、公開はActionsとURL確認） | dependency-updates |
-| GitHubの保護とCI権限 | 未追加 | 独立した解説・実践を予定 |
+| 依存の継続管理 | 公開済み（第2本、PR19/Pages40085878055、URL確認済み） | dependency-updates |
+| GitHubの保護とCI権限 | 記事実装・検証済み（第3本、公開はActionsとURL確認） | github-guards |
 | 秘密の切り替えと失効 | 一部補足済み、独立実践は未追加 | APIキー/初動の先の実践を予定 |
 | 開発者自身の公開情報 | 未追加 | 履歴/プロフィール/画像の確認を予定 |
 

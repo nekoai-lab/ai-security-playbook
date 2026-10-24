@@ -72,3 +72,5 @@
 service-fallback-sceneは承認された黒猫の派生場面。外部の画像が届かなくても紙の案内を使う、という概念的な挿絵。PNG原本とservice-fallback-prompt.json、catalogに保存。外部依存・空/失敗・代替・再試行・結果不明・復旧はServiceFailureVisualのHTML図で説明し、架空の表示比較はFailureStateComparisonでJSなしでも開ける。think/point/peek-sideを本文で使い分ける。
 
 依存更新の記事: dependency-update-sceneは部品の更新を稼働先までたどる概念的な派生場面。原本・prompt・catalogを保存し、6図と比較表示はHTML、think/laptop/peek-sideを本文で使用。
+
+GitHub保護の記事: github-gate-sceneは変更を公開前に点検する概念的な派生場面。生成指示/原本/catalogを保存。6図と比較はHTML、think/point/peek-sideを使う。

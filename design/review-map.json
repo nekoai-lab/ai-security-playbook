@@ -48,7 +48,8 @@
     "learn/ai-work-logs/",
     "learn/release-artifacts/",
     "learn/external-service-failures/",
-    "learn/dependency-updates/"
+    "learn/dependency-updates/",
+    "learn/github-guards/"
   ],
   "representatives": [
     "",

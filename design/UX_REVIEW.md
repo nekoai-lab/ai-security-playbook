@@ -131,3 +131,7 @@ mainの23eaa34も同じ測定v2・同じ契約・全28条件で再測定した�
 ## 依存管理の第2本（2026-10-24）
 18教材/42ルート。6図+3状態比較+新場面+猫3。根拠と限界はDEPENDENCY_UPDATES_REVIEW.md。運用の共通入口を新記事へ、update-operationsルート35分。LearningContextはシリーズ優先でpath fallbackを追加。
 FULL: dependency-updates-full、2680 passed/error0/既存色数warning8/manual-review336。基準変更/除外なし。全42×4幅axe/pageerror/はみ出し、全42ページ375px文字200%成功。新記事4幅の画像/図/比較/全展開200%/キーボード/JSなし/検索/テーマ/次画像、全18記事の回遊をJS有無で確認。型67ファイル0件、build42、31テストとリンク/base/アンカー成功。公開はCI/Pages/URL確認後。
+
+## GitHub公開前ゲートの第3本（2026-10-24）
+19記事/43ルート。6図+3比較+新場面+猫3。根拠と限界はGITHUB_GUARDS_REVIEW.md。開発テーマ/公開前シリーズ/関連に接続。
+FULL github-guards-fullは2744passed/error0/既存色数warning8/manual-review344、基準変更と除外なし。全43×4幅axe/pageerror/はみ出し、全43ページ375px文字200%成功。新記事4幅の画像/図/比較/全展開200%/キーボード/JSなし、URL反映後の検索、テーマと前後の次画像を確認。型71ファイル0件、build43、34テストとリンク/base/アンカー成功。公開はCI/Pages/URL後。

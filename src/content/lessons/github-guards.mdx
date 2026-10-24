@@ -1,0 +1,216 @@
+---
+title: "緑のチェックが付いた。その変更を公開していい？"
+shortTitle: "GitHubの検査と公開の境界"
+summary: "AIの修正をGitHubで確認する人へ。検査した差分、必須のチェック、回避できる権限、Actionsの実行条件を分けて考える。"
+topic: "development"
+level: "入門"
+format: "解説"
+published: "2026-10-24"
+updated: "2026-10-24"
+reviewed: "2026-10-24"
+minutes: 20
+qualityVersion: 2
+prerequisites: ["app-architecture"]
+related: ["agent-permissions", "dependency-updates", "launch-checklist", "incident-response"]
+keywords: ["GitHub", "PR", "CI", "Actions", "ルールセット", "権限", "SHA", "個人開発"]
+outcomes: ["検査結果が、どの差分と条件に対するものかを確認する。", "指示とGitHub側の強制ルール、検査と公開の権限を分ける。", "外部Actionを固定する意味と、残る確認を説明する。"]
+reviewSections:
+  audience: "導入"
+  mechanism: "修正・検査・反映を、別の仕事として見る"
+  risks: "検査する処理にも、使える権限がある"
+  case: "検査に使う外部部品が、秘密の露出につながった事故"
+  roles: "自分のリポジトリでは、3つの役割で確かめる"
+  exercise: "古い差分の成功では、今の変更を確認したことにならない"
+  checklist: "公開へ進める前に確かめる"
+  next: "次は、公開する中身と運用へ"
+  sources: "一次資料と参考記事"
+changes:
+  - date: "2026-10-24"
+    summary: "差分・必須検査・実行権限・外部Actionの境界を図と架空の検査記録で解説。"
+---
+
+import LessonScene from "../../components/LessonScene.astro";
+import GuardVisual from "../../components/GuardVisual.astro";
+import GuardComparison from "../../components/GuardComparison.astro";
+import CatGuide from "../../components/CatGuide.astro";
+
+AIに修正してもらった変更を、GitHubで確認しています。テストには緑のチェック。差分も見て、問題なさそうです。
+
+その後、AIがもう一か所だけ直しました。さっきの緑のチェックは、その追加の修正まで確認した結果でしょうか。
+
+この記事は、**AIとコードを作り、GitHubの変更提案や自動検査を使って公開する人**に向けたものです。「テストをしましょう」の先にある、何を検査し、どの条件で反映を止め、誰が公開できるかを整理します。
+
+<LessonScene id="github-guards" />
+
+<span id="flow"></span>
+
+## 修正・検査・反映を、別の仕事として見る
+
+**リポジトリ**は、コードと変更履歴などを管理する場所です。**ブランチ**は、変更を分けて進めるための流れ。例えば公開用の`main`とは別のブランチで、修正を作ります。
+
+**プルリクエスト（PR）**は、その変更を取り込むための提案です。**コミット**は、変更を記録した単位で、どの状態を見ているかを識別できます。
+
+**CI**は、変更に合わせてビルドやテストなどを自動実行する仕組みです。GitHub Actionsでは、実行する条件と処理を**ワークフロー**に記述します。
+
+<GuardVisual kind="flow" />
+
+PRがあること、CIが実行されたこと、必要な検査が成功したこと、本番へ公開したことは、それぞれ違う状態です。まとめて「GitHubが緑だから大丈夫」と判断しません。
+
+## AIへの約束と、GitHubが止めるルールを分ける
+
+AIへ「mainへ直接入れず、PRを作って」と伝えるのは、作業の方針です。実際にその操作を制限するには、GitHub側のルールと権限も確認します。
+
+**ルールセット**では、対象のブランチにPRや検査を要求する、削除や履歴の強制的な書き換えを制限する、といった条件を設定できます。ただし、ルールを作っただけでなく、適用状態、対象、回避できる相手も見る必要があります。[GitHub公式：利用できるルール](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets)
+
+<GuardVisual kind="rules" />
+
+PRを必須にすることと、誰かの承認を必須にすることも別です。一人の開発では、自分のPRを自分で承認できない制約なども考え、実際に運用できる条件を選びます。AIのレビュー文が付いたことだけで、GitHubの要求する承認を満たしたとは判断しません。
+
+まず自分が管理する検証用のリポジトリで、対象の変更が本当に止まり、必要な手順を通れば進めるかを確かめます。この教材を読んだだけで、現在の公開リポジトリの設定を一括変更する必要はありません。
+
+<span id="checks"></span>
+
+## 実行されたチェックと、必須のチェックは同じとは限らない
+
+自動検査の一覧に緑の項目があっても、それが公開前に必要な検査をすべて含むとは限りません。テストがあるファイルだけ走る設定や、条件により省略するジョブもあります。
+
+**必須チェック**は、反映の前に満たすと決めた検査です。どの名前のチェックを要求し、どのアプリからの結果を信用するか、現在の差分に対する結果かを確認します。
+
+<GuardVisual kind="checks" />
+
+省略された、実行されなかった、検査が始まらなかった。これらを、必要な検査が成功したことへ自動で置き換えません。ワークフローの実行条件や、失敗を許容する設定も確認対象です。
+
+<CatGuide pose="think" title="緑のチェックに、何を確かめてもらった？">
+ビルドだけの成功と、権限やデータ操作まで試したテストの成功は違います。検査名だけでなく、実行した処理と、確認していない範囲を見ます。
+</CatGuide>
+
+## 古い差分の成功では、今の変更を確認したことにならない
+
+次は、架空の検査記録です。`change-A`と`change-B`は、コードの状態を表す仮の識別子。現在確認したいのは`change-B`で、必要な検査は`build`と`test`です。
+
+ローカルのNode.jsの練習用ファイルで試す想定です。GitHubへの通信や、実際のマージ・公開は行いません。
+
+```js
+function evidence(head, required, results) {
+  if (!head || !required.length) return "検査条件が未確認";
+  const current = required.map(name =>
+    results.find(r => r.name === name && r.commit === head));
+  if (current.some(result => !result)) return "必要な記録が足りない";
+  if (current.some(result => result.state !== "success")) return "検査は未完了";
+  return "この差分の検査記録がそろった";
+}
+const required = ["build", "test"];
+const old = required.map(name => ({ name, commit: "change-A", state: "success" }));
+const fresh = required.map(name => ({ name, commit: "change-B", state: "success" }));
+console.log("古い成功:", evidence("change-B", required, old));
+console.log("今の成功:", evidence("change-B", required, fresh));
+console.log("testがない:", evidence("change-B", required, fresh.slice(0, 1)));
+```
+
+```text
+古い成功: 必要な記録が足りない
+今の成功: この差分の検査記録がそろった
+testがない: 必要な記録が足りない
+```
+
+必要な項目がそろっているかと、どの差分の結果かを分けて見ています。この例は「成功」の状態だけを照合する練習です。実際のGitHubには、検査の状態や対象コミットの種類について仕様があり、そのすべてを再現するコードではありません。
+
+記録がそろったことは、コードが安全だという保証でもありません。実際には、検査元、検査内容、レビュー、反映先なども確認します。
+
+<GuardComparison />
+
+<span id="permissions"></span>
+
+## 検査する処理にも、使える権限がある
+
+CIは、ただコードを眺める場所ではありません。依存を取得し、プログラムやテストを実行することがあります。その処理が秘密や公開権限を使えると、検査するコードの影響も広がります。
+
+例えば次は、GitHub Actionsの`GITHUB_TOKEN`に、リポジトリの内容を読む権限を指定する設定の一部です。完成したワークフローではなく、権限を読むための最小例です。
+
+```yaml
+permissions:
+  contents: read
+```
+
+`read`は、このトークンでの読み取りを示します。これだけで、処理が外部へ通信できなくなるわけでも、別に渡した秘密が見えなくなるわけでもありません。ジョブが必要とする権限と、秘密を受け取る範囲は別に見ます。[GitHub公式：Actionsの安全な利用](https://docs.github.com/en/actions/reference/security/secure-use)
+
+<GuardVisual kind="permissions" />
+
+検査と公開の処理を分け、公開に必要な権限をすべての検査へ広げないようにします。外部から来たPRのコードや設定を、強い権限や秘密がある処理でそのまま実行しない設計も重要です。
+
+「外部PRでも検査したいから」と、実行条件や秘密への制限を安易に緩めません。使うイベント、チェックアウトするコード、実行するスクリプト、参照する設定を合わせて確認します。レビューを起動する場所の考え方は[AIに任せる権限の教材](../agent-permissions/)も参考になります。
+
+## 検査に使う外部部品が、秘密の露出につながった事故
+
+**分類：事故の公表。** `tj-actions/changed-files`では、2025年3月の侵害により、ワークフローのログへ秘密が出る問題が報告されました。管理者の3月22日公開の[当事者アドバイザリ](https://github.com/tj-actions/changed-files/security/advisories/GHSA-mw4p-6x4p-x5m5)と、[GitHubの公表情報](https://github.com/advisories/GHSA-mrrh-fwg8-r2c3)に記録されています。
+
+これは、すべてのGitHub Actions利用者に漏えいがあったという意味ではありません。ここでは悪性コードや秘密を読み出す手順を転載せず、利用していた部品と実行した時期・内容を調べる必要がある事例として扱います。
+
+アプリ本体だけでなく、**検査する道具も外部の部品**です。誰の、どの内容を、どんな権限で実行するかを考えます。
+
+<span id="actions"></span>
+
+## SHAで固定することと、固定した内容を信頼すること
+
+Actionのタグは、同じ名前でも参照先が変わる可能性があります。完全なコミットSHAで指定するのは、どのコミットを使うかを固定するための方法です。[GitHub公式：外部Actionの利用](https://docs.github.com/en/actions/reference/security/secure-use)
+
+ただし、固定する相手の提供元や内容が信頼できるかは別です。問題を含むコミットを固定すれば、その問題も残ります。また、Actionの中で実行時に外から取得するスクリプトやイメージまで、同じ指定で固定されたとは限りません。
+
+<GuardVisual kind="actions" />
+
+固定した後も、新しい修正を取り込む流れが必要です。更新の提案とレビュー、検査、実行した内容をたどれるようにします。通知と更新PRの違いや本番確認は、[依存更新の教材](../dependency-updates/)へつながります。
+
+<CatGuide pose="point" title="「固定した」は、確認した範囲の説明にもなる。">
+Action本体を固定したのか、そこから取得する別の部品も確認したのか。何を調べたかと、まだ変わり得るものを分けておくと、過信を防げます。
+</CatGuide>
+
+## 公開リポジトリの実践から、方針を選ぶ
+
+2026年10月21日公開の[mayabotさんの公開リポジトリ保護の記事](https://zenn.dev/shoyomayabot/articles/public-repo-free-guardrails)では、ルールセット、秘密の検出、Actionの固定、更新などを役割ごとに整理しています。これは運用の実践報告として参照します。
+
+本教材では、原記事のmainへ直接pushする方針をそのまま採用せず、PRを通じて差分と検査を確かめる流れで説明しています。守りの設定は、作業する人や権限、使える機能に合わせて選び、実際の適用結果を確かめます。
+
+`SECURITY.md`などで非公開の報告経路を案内する場合も、その窓口が実際に使えるかを確認します。存在しない窓口を文章だけで案内したり、秘密を含む詳細を公開Issueへ貼るよう促したりしません。
+
+## 自分のリポジトリでは、3つの役割で確かめる
+
+### 作る人：差分と検査対象をそろえる
+
+AIが変えたファイル、依存、ワークフローや権限の差分を見ます。検査後に追加の変更があれば、その状態への検査があるかを確認します。AIの要約だけで、含まれる変更の範囲を確定しません。
+
+### 検査する人：実行条件と結果を見る
+
+どのイベントで、どのコードと設定を使い、どの検査を実行したかを確認します。省略や未実行、失敗を許容した条件がないかも見ます。秘密や強い権限が不要な検査へ渡っていないかを調べます。
+
+### 管理・公開する人：適用ルールと反映先を確認する
+
+ルールの対象、適用状態、必須チェック、回避できる相手を設定で確かめます。すべてを一人で兼ねる場合も、その区別は残します。マージと公開を分け、公開したリリースと実際のURL・動作を照合します。
+
+<GuardVisual kind="publish" />
+
+<CatGuide pose="peek-side" title="設定ファイルを置いただけで、効いたことにはしない。">
+ルールや検査は、対象の変更で実際に働くかを見ます。条件が足りないときに止まることと、正しい手順で進めることの両方を、管理する検証環境で確かめます。
+</CatGuide>
+
+## 公開へ進める前に確かめる
+
+- **差分：** 公開するコードの状態と、検査・レビューの対象を照合した。
+- **必須検査：** 必要な検査が実行され、その結果・出所・未確認範囲を説明できる。
+- **強制ルール：** 対象ブランチ、適用状態、必須チェック、回避できる人やアプリを確認した。
+- **権限と秘密：** 検査と公開の仕事を分け、不要な権限や秘密を渡していないことを確認した。
+- **外部部品：** Actionの提供元と固定した内容、実行時の取得先、更新の確認方法を整理した。
+- **公開結果：** マージしただけでなく、意図したリリースと公開先の動作を確かめた。
+
+## 次は、公開する中身と運用へ
+
+[公開前の確認](../launch-checklist/)でサービス全体を見ます。部品の更新は[依存管理](../dependency-updates/)、秘密の露出が疑われる場合は[異常時の対応](../incident-response/)へ進みます。
+
+## 一次資料と参考記事
+
+情報確認日：2026年10月24日。ルールやActionsの機能・プラン・状態の扱いは、利用する環境の公式資料で確認してください。
+
+- [mayabotさん：AIと作る公開リポジトリの守り方](https://zenn.dev/shoyomayabot/articles/public-repo-free-guardrails) — 役割ごとの保護策を整理した実践報告。本文の検査記録は独自の架空例です。
+- [GitHub公式：ルールセットで利用できるルール](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets) — PR・検査・回避権限などの仕様。
+- [GitHub公式：Actionsの安全な利用](https://docs.github.com/en/actions/reference/security/secure-use) — 最小権限、信頼できないコード、外部Actionと秘密。
+- [GitHub公式：ワークフロー構文](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax) — 実行条件と権限。
+- [changed-files当事者のアドバイザリ](https://github.com/tj-actions/changed-files/security/advisories/GHSA-mw4p-6x4p-x5m5)、[GitHub Advisory Database](https://github.com/advisories/GHSA-mrrh-fwg8-r2c3) — 2025年3月の問題と対応範囲。
