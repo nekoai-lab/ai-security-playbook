@@ -13,6 +13,7 @@ const records = new Map(
       return [
         f.slice(0, -4),
         {
+          topic: /^topic: "([^"]+)"$/m.exec(header)?.[1],
           level: /^level: "([^"]+)"$/m.exec(header)?.[1],
           note: /^prerequisiteNote: "([^"]+)"$/m.exec(header)?.[1],
         },
@@ -64,8 +65,40 @@ test("production routes include reader hubs and exclude guide while preview cove
   assert(!map.pages.includes("design-system/"));
   assert.deepEqual(map.guidePreview.pages, ["design-system/"]);
   const home = readFileSync("dist/index.html", "utf8");
-  assert.equal((home.match(/data-reader-entry=/g) || []).length, 3);
-  assert.equal((home.match(/data-featured-lesson=/g) || []).length, 8);
+  assert.equal((home.match(/data-reader-entry=/g) || []).length, 0);
+  assert.equal((home.match(/data-discovery-topic=/g) || []).length, 8);
+  assert.equal((home.match(/data-home-default="true"/g) || []).length, 3);
+  assert.equal((home.match(/data-home-update/g) || []).length, 5);
+  assert(home.includes("data-inline-discovery"));
+  assert(
+    home
+      .replace(/<[^>]+>/g, "")
+      .replace(/\s+/g, "")
+      .includes("AIと社会のこれからを、ともに探究する。"),
+  );
+  assert.equal((home.match(/data-featured-lesson=/g) || []).length, 9);
   assert(!home.includes("home-reading-title"));
   assert(!home.includes('href="/ai-security-playbook/design-system/"'));
+});
+
+test("every theme lists all of its real lessons before the deeper questions", () => {
+  const linked = new Set();
+  for (const topic of new Set([...records.values()].map((r) => r.topic))) {
+    const html = readFileSync(`dist/topics/${topic}/index.html`, "utf8");
+    const actual = [
+      ...html.matchAll(/data-discovery-lesson[^>]*data-id="([^"]+)"/g),
+    ].map((m) => m[1]);
+    const expected = [...records]
+      .filter(([, r]) => r.topic === topic)
+      .map(([id]) => id);
+    assert.deepEqual([...actual].sort(), expected.sort(), topic);
+    assert.equal(new Set(actual).size, actual.length, topic);
+    assert(
+      html.indexOf('id="topic-articles"') <
+        html.indexOf('id="topic-questions"'),
+      topic,
+    );
+    actual.forEach((id) => linked.add(id));
+  }
+  assert.deepEqual([...linked].sort(), [...records.keys()].sort());
 });

@@ -1,0 +1,118 @@
+---
+import type { CollectionEntry } from "astro:content";
+import LessonArt from "./LessonArt.astro";
+import type { LessonVisualId } from "../data/lesson-visuals";
+interface Props {
+  lesson: CollectionEntry<"lessons">;
+  headingLevel?: "h3" | "h4";
+}
+const { lesson, headingLevel: Heading = "h3" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<article
+  class="discovery-lesson"
+  data-discovery-lesson
+  data-id={lesson.id}
+  data-topic={lesson.data.topic}
+  data-level={lesson.data.level}
+  data-search={[
+    lesson.data.title,
+    lesson.data.summary,
+    lesson.data.prerequisiteNote,
+    ...lesson.data.keywords,
+  ].join(" ")}
+>
+  <LessonArt
+    id={lesson.id as LessonVisualId}
+    sizes="(max-width:760px) 120px,144px"
+  />
+  <div>
+    <p class="lesson-meta">
+      <strong>{lesson.data.level}</strong> · 約{lesson.data.minutes}分
+    </p>
+    <Heading>
+      <a href={`${base}/learn/${lesson.id}/`}>
+        {lesson.data.title} <span aria-hidden="true">→</span>
+      </a>
+    </Heading>
+    <p class="lesson-benefit">{lesson.data.summary}</p>
+    <p class="lesson-prerequisite">
+      読む前の目安：{lesson.data.prerequisiteNote}
+    </p>
+    <p class="lesson-meta">
+      <time datetime={lesson.data.updated}>
+        {lesson.data.updated.replaceAll("-", ".")}
+      </time>{" "}
+      更新
+    </p>
+  </div>
+</article>
+<style>
+  .discovery-lesson {
+    display: grid;
+    grid-template-columns: 144px minmax(0, 1fr);
+    gap: 24px;
+    padding: 24px;
+    background: var(--color-paper-light);
+    min-width: 0;
+  }
+  .discovery-lesson > div {
+    max-width: 40em;
+    min-width: 0;
+  }
+  h3,
+  h4 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+  h3 a,
+  h4 a {
+    display: block;
+    min-height: 44px;
+    padding-block: 8px;
+    text-decoration: none;
+  }
+  h3 a:hover,
+  h4 a:hover {
+    text-decoration: underline;
+  }
+  .lesson-meta {
+    margin: 0 0 8px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+  .lesson-meta strong {
+    color: var(--color-ink);
+  }
+  .lesson-benefit {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 1.9;
+    text-wrap: balance;
+  }
+  .lesson-prerequisite {
+    margin: 8px 0 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-muted);
+    text-wrap: balance;
+  }
+  @media (max-width: 760px) {
+    .discovery-lesson {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 16px;
+    }
+    .discovery-lesson :global(img) {
+      width: 120px;
+    }
+    h3,
+    h4 {
+      font-size: 24px;
+    }
+  }
+</style>

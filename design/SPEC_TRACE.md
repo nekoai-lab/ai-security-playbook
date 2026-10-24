@@ -238,3 +238,7 @@ Release completed 2026-10-25: PR #34, merge f7ba4fc99d662ae6366b43f88402aa7a5eee
 | AR05 | 320/375/768/1280px・200%・キーボード・JSなし | 新記事と全ルート | ai-review-full と article-report.json |
 
 AR01–AR05は確認済み。挿絵は承認済みreview-workbench-sceneの再利用で、新しい画像は追加していない。
+
+## 2026-10-25 / Approved theme-first design proposal
+
+User approved outputs/site-design-proposal.html and its journey map, then explicitly asked to implement while retaining existing FIELD NOTES styling. Inline level filters, informative topic cards and direct article names replace mandatory reader gateways on the homepage. Original strong orange band and five recent updates required. Theme destinations must expose actual lessons immediately. Preserve IDs, article bodies, new AI review lesson, source guide and old bookmarks; use existing tokens and full public/guide validation. Plan: docs/superpowers/plans/2026-10-25-theme-first-home.md.

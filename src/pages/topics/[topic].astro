@@ -1,6 +1,6 @@
 ---
 import Shell from "../../layouts/Shell.astro";
-import LessonCard from "../../components/LessonCard.astro";
+import LessonDiscovery from "../../components/LessonDiscovery.astro";
 import LessonArt from "../../components/LessonArt.astro";
 import { getCollection } from "astro:content";
 import { topics } from "../../data/catalog";
@@ -13,20 +13,16 @@ export async function getStaticPaths() {
 }
 const { topic } = Astro.props;
 const guide: TopicGuideData = topicGuides[topic.id];
-const lessons = (await getCollection("lessons"))
-  .filter((l) => l.data.topic === topic.id)
-  .sort(
-    (a, b) =>
-      b.data.updated.localeCompare(a.data.updated) || a.id.localeCompare(b.id),
-  );
-const feature = lessons.find((l) => l.id === guide.feature);
-if (!feature) throw new Error(`Missing featured lesson for ${topic.id}`);
-const remaining = lessons.filter((l) => l.id !== feature.id);
+const lessons = (await getCollection("lessons")).filter(
+  (l) => l.data.topic === topic.id,
+);
+if (!lessons.some((l) => l.id === guide.feature))
+  throw new Error(`Missing featured lesson for ${topic.id}`);
 const neighbors = guide.related.map((id) => topics.find((t) => t.id === id)!);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<Shell title={topic.title} description={guide.intro}>
+<Shell title={topic.title} description={topic.summary}>
   <div class="wrap hub-page topic-guide">
     <nav class="crumbs" aria-label="パンくず">
       <a href={`${base}/`}>ホーム</a>
@@ -35,32 +31,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       <span aria-hidden="true">/</span>
       <span aria-current="page">{topic.title}</span>
     </nav>
-    <header class="hub-header">
-      <p class="eyebrow">TOPIC / {lessons.length} LESSONS</p>
-      <h1>{topic.title}</h1>
-      <p>{guide.intro}</p>
-    </header>
-    <section class="topic-feature" aria-labelledby="topic-first">
-      <LessonArt id={guide.feature} sizes="(max-width: 760px) 100vw, 480px" />
+    <header class="hub-header topic-heading">
       <div>
-        <p class="catalog-meta">
-          まず、この解説から · 約{feature.data.minutes}分
-        </p>
-        <h2 id="topic-first">{feature.data.title}</h2>
-        <p>{feature.data.summary}</p>
-        <a
-          class="topic-read"
-          href={`${base}/learn/${feature.id}/`}
-          data-topic-first
-        >
-          解説を読む <span aria-hidden="true">→</span>
-        </a>
+        <p class="eyebrow">TOPIC / {lessons.length} LESSONS</p>
+        <h1>{topic.title}</h1>
+        <p>{topic.summary}</p>
       </div>
+      <LessonArt id={guide.feature} sizes="(max-width:760px) 160px,240px" />
+    </header>
+    <section aria-labelledby="topic-articles">
+      <h2 id="topic-articles" class="hub-section-title">
+        このテーマで読める記事
+      </h2>
+      <LessonDiscovery topic={topic.id} />
     </section>
-    <section aria-labelledby="topic-questions">
+    <section class="topic-background" aria-labelledby="topic-questions">
       <h2 id="topic-questions" class="hub-section-title">
         気になっていることから読む
       </h2>
+      <p class="topic-intro">{guide.intro}</p>
       <div class="topic-questions">
         {guide.questions.map((q) => (
           <article class="topic-question">
@@ -75,18 +64,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         ))}
       </div>
     </section>
-    {remaining.length > 0 && (
-      <section aria-labelledby="topic-more">
-        <h2 id="topic-more" class="hub-section-title">
-          続けて理解を深める
-        </h2>
-        <div class="catalog-list">
-          {remaining.map((lesson) => (
-            <LessonCard headingLevel="h3" lesson={lesson} />
-          ))}
-        </div>
-      </section>
-    )}
     <section aria-labelledby="topic-neighbors">
       <h2 id="topic-neighbors" class="hub-section-title">
         あわせて考えたいテーマ
@@ -109,3 +86,35 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </p>
   </div>
 </Shell>
+<style>
+  .topic-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 24px;
+    align-items: center;
+  }
+  .topic-heading h1 {
+    text-wrap: balance;
+  }
+  .topic-heading p,
+  .topic-intro {
+    font-size: 16px;
+    line-height: 1.9;
+    text-wrap: balance;
+  }
+  .topic-background {
+    margin-top: 48px;
+  }
+  .topic-intro {
+    margin: 0 0 24px;
+    max-width: 40em;
+  }
+  @media (max-width: 760px) {
+    .topic-heading {
+      grid-template-columns: 1fr;
+    }
+    .topic-heading :global(.lesson-art) {
+      width: 160px;
+    }
+  }
+</style>
