@@ -113,7 +113,8 @@ function message(result) {
   }
   if (status === 401 || status === 403) return "この情報を表示できません";
   if (status === 429) return "時間をおいて確認してください";
-  if (status < 200 || status >= 300) return "一時的に取得できません";
+  if (status === 503) return "一時的に取得できません";
+  if (status < 200 || status >= 300) return "取得できませんでした";
   if (!Array.isArray(items) ||
       !items.every(item => item && typeof item.title === "string")) {
     return "情報を読み取れませんでした";

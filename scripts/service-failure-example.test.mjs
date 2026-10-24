@@ -73,3 +73,14 @@ test("the new lesson retains nine coverage points and rejects missing diagrams, 
   ])
     assert(validateContent("future", bad).errors.length);
 });
+
+test("an unspecified HTTP failure is not labeled transient", () => {
+  const { message } = run();
+  for (const status of [400, 404, 409, 500]) {
+    assert.equal(message({ kind: "response", status }), "取得できませんでした");
+  }
+  assert.equal(
+    message({ kind: "response", status: 503 }),
+    "一時的に取得できません",
+  );
+});
