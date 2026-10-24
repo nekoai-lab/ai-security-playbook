@@ -11,7 +11,7 @@ reviewed: "2026-10-24"
 minutes: 12
 qualityVersion: 1
 prerequisites: ["ai-data-boundaries"]
-related: ["cloud-account-safety", "github-guards", "mcp-permissions", "launch-checklist"]
+related: ["cloud-account-safety", "github-guards", "mcp-permissions", "launch-checklist", "ai-review-trust"]
 keywords: ["AIエージェント", "権限", "承認", "プロンプトインジェクション", "自動化", "個人開発"]
 outcomes: ["指示と実際の権限を区別する。", "目的に必要な操作だけをまとめて許可する。", "公開・送信・削除の前に確認する内容を決める。"]
 changes:
@@ -101,7 +101,7 @@ import Flow from "../../components/Flow.astro";
 
 ## 次の行動
 
-[MCPの接続前確認](../mcp-permissions/)で連携先を点検します。本番へ反映する前には[公開前の確認](../launch-checklist/)を使い、AIの「完了」という報告と実際の結果を照合します。
+[MCPの接続前確認](../mcp-permissions/)で連携先を点検します。本番へ反映する前には[公開前の確認](../launch-checklist/)を使い、AIの「完了」という報告と実際の結果を照合します。別のAIのレビューの合格をマージの判断に使う場合は、[AIレビューの合格の教材](../ai-review-trust/)も参考にしてください。
 
 ## 一次資料
 

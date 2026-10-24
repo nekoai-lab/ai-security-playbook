@@ -178,3 +178,7 @@ Three purpose/audience entries with explicit prerequisite stages; recommendation
 ## 2026-10-25 / Reader navigation release confirmation
 
 Release completed 2026-10-25: PR #34, merge f7ba4fc99d662ae6366b43f88402aa7a5eeec125, CI 40140283928 and Pages 40140345680 succeeded. Live smoke passed all 49 public routes, all 23 prerequisite headers, 3 audience hubs / all stages, eight recommendations, four-width keyboard/text200/old-query checks and no-JS stage links. The public design-system URL returned HTTP404; its source, preview build, link checks and GUIDE FULL remain. See navigation-public-full/public-report.json.
+## AIレビューの合格と確認項目（2026-10-25）
+24教材48ルート。6図・3比較・表・場面（既存review-workbench-sceneを再利用）・猫3。内容と根拠・限界はAI_REVIEW_TRUST_REVIEW.md。型93ファイル0件/build48/51テスト成功（examples 37）。CUSTOM初回 ai-review-diagnostic-initial は320pxの孤立文字3箇所（本文2・比較の見出し1）をerrorとして指摘。文言を整え、再診断4幅でerror0。表の見出しも短くした。FULL ai-review-full は最終版で3064passed/error0/既存色数warning8（design-system・commandsの各4幅、従来と同じ）/manual-review384。しきい値変更・除外なし。
+全48×4幅のaxe（WCAG 2.0/2.1 A・AA）/pageerror/横はみ出しなし、全48ページ375px文字200%成功（browser-report.json）。新記事は4幅で図8（6図+比較+場面）・猫3・全画像デコード、Tab/Enterで比較の開閉とフォーカス表示位置、320/375pxでdetails全展開200%、JSなしで比較・表・結果が読める、URLのqによる検索、releaseテーマの疑問、シリーズ前後の次カードと画像（article-report.json）。320px・320px文字200%・1280pxの全体と各図を目視。表とコードは既存の横スクロール領域で、320pxでは3列目・長い行がスクロール先になる（既存教材と同じ挙動）。
+ブラウザ検査は私的ハーネスと別に、作業用の Playwright + axe-core スクリプトで実施（公開repoには入れていない）。自動検査とスクリーンショットは支援技術での完全な確認を意味しない。公開はCI/Pages/URL確認後。

@@ -1,0 +1,10 @@
+---
+import LessonDiagram from "./LessonDiagram.astro";
+import { reviewDiagrams, type ReviewDiagramKind } from "../data/review-diagrams";
+interface Props {
+  kind: ReviewDiagramKind;
+}
+const { kind } = Astro.props;
+---
+
+<LessonDiagram spec={reviewDiagrams[kind]} name={`review-${kind}`} />
