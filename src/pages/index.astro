@@ -1,5 +1,6 @@
 ---
 import Shell from "../layouts/Shell.astro";
+import ReadingCard from "../components/ReadingCard.astro";
 import ExplorerNote from "../components/ExplorerNote.astro";
 import FieldButton from "../components/FieldButton.astro";
 import FieldIcon from "../components/FieldIcon.astro";
@@ -64,6 +65,14 @@ const link = (id: string) => `${base}/learn/${id}/`;
       </div>
     </div>
   </div>
+  <section class="wrap home-reading" aria-labelledby="home-reading-title">
+    <p class="eyebrow">FIELD READING</p>
+    <h2 id="home-reading-title">こんな疑問、ありませんか？</h2>
+    <div class="reading-card-grid">
+      <ReadingCard id="api-keys" />
+      <ReadingCard id="node-october-2026" />
+    </div>
+  </section>
   <section id="library" class="wrap home-topics">
     <SectionHeading
       eyebrow="EXPLORE THE FIELD"

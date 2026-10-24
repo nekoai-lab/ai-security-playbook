@@ -1,0 +1,25 @@
+---
+import {
+  readingHighlights,
+  type ReadingHighlightId,
+} from "../data/reading-highlights";
+interface Props {
+  id: ReadingHighlightId;
+  sizes?: string;
+}
+const { id, sizes = "(max-width: 760px) 100vw, 640px" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const stem = readingHighlights[id].image;
+---
+
+<img
+  class="reading-art"
+  src={`${base}/images/${stem}-480.webp`}
+  srcset={`${base}/images/${stem}-480.webp 480w, ${base}/images/${stem}-960.webp 960w`}
+  sizes={sizes}
+  width="960"
+  height="640"
+  loading="lazy"
+  decoding="async"
+  alt=""
+/>

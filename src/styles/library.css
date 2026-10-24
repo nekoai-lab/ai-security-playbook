@@ -880,3 +880,130 @@ select:focus-visible {
     line-height: 1.6;
   }
 }
+/* Scene-specific reading artwork complements real-text mechanism diagrams. */
+.reading-art {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+}
+.home-reading {
+  padding-block: 48px;
+}
+.home-reading > h2 {
+  margin: 0 0 24px;
+  font-size: 32px;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+.reading-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.reading-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--color-line-strong);
+  background: var(--color-paper-light);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.reading-card:hover {
+  border-color: var(--color-orange-ink);
+  background: var(--color-orange-soft);
+}
+.reading-card:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 4px;
+}
+.reading-card-copy {
+  min-width: 0;
+  color: var(--color-ink);
+}
+.reading-card .reading-card-situation {
+  margin: 0 0 12px;
+  color: var(--color-orange-ink);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.reading-card h2,
+.reading-card h3 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  line-height: 1.6;
+  text-wrap: balance;
+  color: var(--color-ink);
+}
+.reading-card .reading-card-description {
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.9;
+  text-wrap: balance;
+}
+.reading-card .catalog-meta {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.reading-card-action {
+  display: block;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-orange-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.catalog-card--illustrated {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  column-gap: 24px;
+}
+.catalog-card--illustrated > .reading-art {
+  grid-column: 1;
+  grid-row: 1 / span 4;
+}
+.catalog-card--illustrated > :not(.reading-art) {
+  grid-column: 2;
+}
+.article-visual .visual-scene {
+  display: block;
+}
+.visual-scene > .reading-art,
+.visual-node-scene > .reading-art {
+  margin-bottom: 24px;
+}
+.article-narrative .reading-card {
+  margin-block: 24px;
+}
+@media (max-width: 1100px) {
+  .reading-card-grid .reading-card {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 760px) {
+  .home-reading {
+    padding-block: 32px;
+  }
+  .home-reading > h2 {
+    font-size: 24px;
+  }
+  .reading-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .reading-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .catalog-card--illustrated {
+    display: block;
+  }
+  .catalog-card--illustrated > .reading-art {
+    margin-bottom: 24px;
+  }
+}

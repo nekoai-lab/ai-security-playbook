@@ -1,12 +1,30 @@
 ---
-import ExplorerCat from "./ExplorerCat.astro";
+import ReadingArt from "./ReadingArt.astro";
 import FieldIcon from "./FieldIcon.astro";
 interface Props {
-  kind: "scene" | "types" | "build" | "boundary" | "inspect";
+  kind:
+    | "scene"
+    | "types"
+    | "build"
+    | "boundary"
+    | "inspect"
+    | "browser-secret"
+    | "limits"
+    | "rotation"
+    | "node-update";
 }
 const { kind } = Astro.props;
 const captions = {
-  scene: "画面が動くことと、キーの設定が適切なことは、別に確かめます。",
+  scene:
+    "ブラウザとサーバー、どこで使う？ 挿絵は迷う場面のイメージです。秘密の置き方は、この後の図で確かめます。",
+  "browser-secret":
+    "画面に表示しなくても、ブラウザへ送るプログラムや通信に含めた値は調べられます。架空の表示例です。",
+  limits:
+    "キーを隠すことと、代理する窓口の利用を制限することは別の確認です。これは対策の整理で、安全性の保証ではありません。",
+  rotation:
+    "消すだけで終わらせず、旧キーの失効・切り替え・利用履歴の調査を進めます。稼働中の処理への影響は提供元の手順で確認します。",
+  "node-update":
+    "歯車は実行環境を表すイメージです。インストールした版と、起動中の処理が使う版を分けて確かめます。",
   types:
     "まず発行元の説明で用途を確認。APIキーという名前だけでは、公開してよいか決まりません。",
   build:
@@ -24,7 +42,7 @@ const captions = {
 >
   {kind === "scene" && (
     <div class="visual-scene">
-      <ExplorerCat size={112} />
+      <ReadingArt id="api-keys" />
       <div>
         <p class="visual-kicker">こんなところで、迷っていませんか？</p>
         <p class="visual-speech">
@@ -150,6 +168,90 @@ const captions = {
         </div>
       </li>
     </ol>
+  )}
+
+  {kind === "browser-secret" && (
+    <div class="visual-pair">
+      <div class="visual-node">
+        <FieldIcon kind="terminal" />
+        <strong>画面で見えるもの</strong>
+        <p>要約ボタンと、要約の結果。</p>
+        <p class="visual-detail">キーの文字は表示していない。</p>
+      </div>
+      <div class="visual-node visual-node--accent">
+        <FieldIcon kind="layers" />
+        <strong>ブラウザに届くもの</strong>
+        <p>ボタンを動かすコードと通信。</p>
+        <p class="visual-value">中にキーがあれば、そこから読める。</p>
+      </div>
+    </div>
+  )}
+  {kind === "limits" && (
+    <div class="visual-stack">
+      <div class="visual-node">
+        <strong>キーはサーバー側に置けた</strong>
+        <p>利用者に秘密を渡さない。</p>
+      </div>
+      <p class="visual-transfer">↓ もう一つ確認する</p>
+      <div class="visual-node visual-node--accent">
+        <strong>この窓口を、誰が使える？</strong>
+        <p>利用者の権限と、回数・文章量の制限。</p>
+        <p class="visual-detail">
+          無制限に代理すれば、他人の利用で料金が増えることも。
+        </p>
+      </div>
+      <p class="visual-transfer">↓ 許可した範囲で処理する</p>
+      <div class="visual-node">
+        <strong>外部の要約サービスへ</strong>
+        <p>送る文章の扱いも、別に確認。</p>
+      </div>
+    </div>
+  )}
+  {kind === "rotation" && (
+    <ol class="visual-inspect">
+      <li>
+        <FieldIcon kind="compass" />
+        <div>
+          <strong>どのキーか特定する</strong>
+          <p class="visual-detail">値を相談文へ貼らず、発行元と用途を確認。</p>
+        </div>
+      </li>
+      <li>
+        <FieldIcon kind="layers" />
+        <div>
+          <strong>旧キーの失効・交換</strong>
+          <p class="visual-detail">
+            切り替え先と停止の影響を、公式手順で確認。
+          </p>
+        </div>
+      </li>
+      <li>
+        <FieldIcon kind="book" />
+        <div>
+          <strong>履歴と公開物を調べる</strong>
+          <p class="visual-detail">
+            不審な利用と、同じ漏えい経路が残らないかを確認。
+          </p>
+        </div>
+      </li>
+    </ol>
+  )}
+  {kind === "node-update" && (
+    <div class="visual-node-scene">
+      <ReadingArt id="node-october-2026" />
+      <div class="visual-pair">
+        <div class="visual-node">
+          <strong>新しく起動するNode</strong>
+          <p>導入先の版を確認する。</p>
+          <p class="visual-detail">更新した実行ファイルを使うか確認。</p>
+        </div>
+        <div class="visual-node visual-node--accent">
+          <strong>すでに動いている処理</strong>
+          <p>その処理の実行版を確認する。</p>
+          <p class="visual-detail">MCP・開発サーバー・本番を分ける。</p>
+        </div>
+      </div>
+    </div>
   )}
   <figcaption>{captions[kind]}</figcaption>
 </figure>

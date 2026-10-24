@@ -1,0 +1,130 @@
+[
+  {
+    "width": 320,
+    "route": "",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "library/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/api-keys/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/node-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 375,
+    "route": "",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "library/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/api-keys/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/node-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": true
+  },
+  {
+    "width": 768,
+    "route": "",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "library/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/api-keys/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/node-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "library/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/api-keys/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/node-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "imagesLoaded": true,
+    "text200": false
+  }
+]

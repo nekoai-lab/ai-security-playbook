@@ -85,3 +85,7 @@ mainの23eaa34も同じ測定v2・同じ契約・全28条件で再測定した�
 ## 2026-10-24 / 読み物と図解の改訂
 
 [READING_REVIEW.md](./READING_REVIEW.md)を現行のAPIキー教材・読了欄の確認記録とする。既存構成・資産を再利用し、5図と実コード例を追加。v2は固定見出しではなく9項目のcoverageを検査する。[FULL検査](./audit/2026-10-24/reading-final/VALIDATION.md)と同フォルダのブラウザ・操作結果を参照。旧5教材の内容移行や、全記事の読み物化まで完了したとは扱わない。
+
+## 2026-10-24 / 場面の挿絵とNode.jsカード
+
+[VISUALS_REVIEW.md](./VISUALS_REVIEW.md)に2つの新規挿絵、APIの8図、Node.jsのカード・比較図を記録。既存構成とPHP特集を残し、検索結果は14件のまま。[全幅FULL検査](./audit/2026-10-24/visuals-full/VALIDATION.md)とブラウザ・画像読み込み・操作結果を参照。挿絵を安全性の証拠や技術図として扱わない。

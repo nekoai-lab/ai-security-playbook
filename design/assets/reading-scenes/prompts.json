@@ -1,0 +1,6 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-24",
+  "api-key-scene": "Original editorial field-notes illustration, horizontal 3:2. Warm ivory paper, fine black pen-and-ink technical drawing, sparse orange accents. A friendly black explorer cat with orange backpack at a laptop workbench considers an orange key and browser/server destinations. Conceptual setup question, not a security guarantee. Uncluttered, approachable, no text/code/logos, no brains/organs/hacker imagery. Real explanatory text stays in HTML.",
+  "node-runtime-scene": "New companion scene using api-key-scene as style and character reference only. Same curious black explorer cat and orange backpack, engraved ink and ivory/orange palette. Cat with magnifying glass inspects a laptop and miniature running server machines, a new mechanical gear beside older gears still installed: conceptual installed-versus-running distinction. Thin orange cables, subtle mountain contours. No text, version labels, logos or security guarantees. Entirely mechanical, no brains/organs. Real diagrams explain the technical meaning."
+}
