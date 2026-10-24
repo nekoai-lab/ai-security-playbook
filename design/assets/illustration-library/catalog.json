@@ -130,6 +130,87 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 2736902
+    },
+    {
+      "id": "cat-investigate",
+      "title": "調べる猫：個別透過素材",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-investigate-cutout.png",
+      "preview": "public/brand/cat-investigate-320.webp",
+      "usage": "確認する記事の導入。承認済みポーズ06を元の顔立ちへ寄せて個別化。",
+      "sha256": "45c27149af81cdeb820c92ce419d571ff194cb277f34ac523ba3a67aa41108a0",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "bytes": 2807266,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-investigate-320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 29568
+        },
+        {
+          "path": "public/brand/cat-investigate-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 95592
+        }
+      ]
+    },
+    {
+      "id": "cat-peek",
+      "title": "上からのぞく猫：個別透過素材",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-peek-cutout.png",
+      "preview": "public/brand/cat-peek-320.webp",
+      "usage": "カード上の補足。修正版表情Aを参照。文字と重ならない余白を確保。",
+      "sha256": "f16367ca661053669a4ea7096b2ac5299a0fd7832303cae2e2fe462268ddf15a",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "bytes": 1920564,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-peek-320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 17600
+        },
+        {
+          "path": "public/brand/cat-peek-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 58852
+        }
+      ]
+    },
+    {
+      "id": "paw-orange",
+      "title": "オレンジの肉球：個別透過素材",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/paw-orange-cutout.png",
+      "preview": "public/brand/paw-orange-64.webp",
+      "usage": "節の区切りの装飾。完了や安全の保証にしない。",
+      "sha256": "22b474272845c80932206e166a8a89a6ecca8b93a2f0a8128939f677fa803b3d",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "bytes": 1273247,
+      "deliveries": [
+        {
+          "path": "public/brand/paw-orange-64.webp",
+          "width": 64,
+          "height": 64,
+          "bytes": 2686
+        },
+        {
+          "path": "public/brand/paw-orange-128.webp",
+          "width": 128,
+          "height": 128,
+          "bytes": 6810
+        }
+      ]
     }
   ]
 }

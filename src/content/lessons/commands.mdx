@@ -10,10 +10,17 @@ reviewed: "2026-10-23"
 keywords: ["Node.js", "Nodejs", "コマンド", "バージョン", "プロセス", "MCP", "確認"]
 changes:
   - date: "2026-10-24"
-    summary: "Node.js向けの確認手順であることをタイトルに明記しました。"
+    summary: "Node.js向けの確認手順を明記し、調べる猫とのぞく猫で対象の違いを案内しました。"
 prerequisites: ["basics"]
 minutes: 8
 ---
+
+import CatGuide from "../../components/CatGuide.astro";
+import PawDivider from "../../components/PawDivider.astro";
+
+<CatGuide title="まずは、一つの環境から調べよう。">
+  手元のNode、起動中の処理、リポジトリの指定、本番。それぞれ確認する場所が違います。まずは自分が管理する対象を一つ選んで読み進めましょう。
+</CatGuide>
 
 ## 実行する前に
 
@@ -41,7 +48,9 @@ node -p 'JSON.stringify({version:process.version,execPath:process.execPath})'
 
 例：`v24.22.1` は今回の24系の修正版です。コマンドが見つからない場合は、PATH上にない可能性があります。アプリ同梱版やDocker、本番にNodeがないことの証明にはなりません。
 
-`process.execPath` は、このコマンドで新しく起動したNodeの場所です。ほかの起動中プロセスの版を証明するものではありません。
+<CatGuide pose="peek" title="ここで分かるのは、新しく起動したNode。">
+  `process.execPath` は、このコマンドで新しく起動したNodeの場所です。ほかの起動中プロセスの版を証明するものではありません。
+</CatGuide>
 
 ## 起動中のプロセスを確認する
 
@@ -69,6 +78,8 @@ Get-Process node -ErrorAction SilentlyContinue |
 権限の違いなどでPathが読めないことがあります。空欄は「問題なし」ではありません。
 
 起動時刻が更新より前なら、旧版が動いている可能性を調べます。時刻だけで脆弱性の有無は確定できません。対応するアプリの作業を保存し、再起動後に版と動作を確認します。一括停止は避けます。
+
+<PawDivider />
 
 ## リポジトリの指定を確認する
 

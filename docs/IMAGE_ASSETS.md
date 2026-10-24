@@ -43,3 +43,14 @@ Prompts: design/assets/reading-scenes/prompts.json. Do not treat arrows or gears
 ## Approved reusable library / 2026-10-24
 
 [Illustration library](../design/assets/illustration-library/README.md) indexes existing canonical logo/companion/hero/scenes plus the approved pose, peeking, paw and corrected-expression boards. Original PNGs are preserved, lightweight WebP previews provided, and catalog.json records role, dimensions, alpha and SHA-256. The earlier rounded four-expression sheet is explicitly not a reuse reference. Usage and regeneration instructions: [ILLUSTRATION_GUIDE.md](./ILLUSTRATION_GUIDE.md). This addition stores assets/documentation; it does not add the sheets to the public website UI.
+
+
+## Article cat cutouts / 2026-10-24
+
+The built-in image generation tool produced three individual transparent assets derived from the approved corrected-expression, pose and peeking references: investigating cat, peeking cat, orange paw. Originals are in `design/assets/illustration-library/sources/`; the catalog records hashes and delivery dimensions. A separate background-removal image edit produced the final investigating source. All sources have an alpha channel and zero alpha at all four corners; visual review on the site's ivory background checks the rendered boundary as well.
+
+`public/brand/cat-{investigate,peek}-{320,640}.webp` and `paw-orange-{64,128}.webp` are sharp quality-88 responsive delivery encodings, preserving alpha. Regeneration specification below is a maintained reconstruction of the design intent, not a verbatim generation transcript:
+
+> Use the corrected explorer-cat face as identity; use the approved boards only for pose and placement. Black ink-engraved cat with tapered muzzle, natural eyes, triangular ears, fine fur, orange explorer backpack and rolled mat. Individual transparent cutout, no text, numbering, board, card frame or background. Investigating pose: crouch, magnifying glass and pawprint. Peeking pose: head and front paws visible over an implied edge. Paw: small orange ink stamp on transparency. Preserve original character and avoid a round baby face or a new mascot style.
+
+These are decorative reading guides, not technical diagrams or proof of a successful check. `CatGuide` and `PawDivider` first appear in the commands article; adjacent real text remains accessible without JavaScript or images.
