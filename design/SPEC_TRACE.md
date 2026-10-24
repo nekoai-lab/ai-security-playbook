@@ -223,3 +223,7 @@ Featured requirements implemented: typed six-card data and shared art, current m
 Approved by user: three audience/purpose entries (AI use, build apps, operate services) plus visible entry/practice/advanced prerequisites. Unify duplicated recommendation sections, retain article URLs and all eight recommended lessons, compact themes/updates. Keep the design guide source and assets, but omit its public route/footer link; validate it separately in a local-only preview without reducing thresholds. Plan: docs/superpowers/plans/2026-10-25-reader-navigation.md. General user is not synonymous with beginner. Do not change unrelated uploads work or #30/#31 content.
 
 Implementation/evidence: READER_NAVIGATION_REVIEW.md, navigation-public-full and navigation-guide-full. Three real audience hubs and 23 explicit prerequisite notes; all eight recommendations retained. Public49 routes/GUIDE1 route checked separately at all four widths. Production guide absent; source and CI preview retained.
+
+## 2026-10-25 / Reader navigation release confirmation
+
+Release completed 2026-10-25: PR #34, merge f7ba4fc99d662ae6366b43f88402aa7a5eeec125, CI 40140283928 and Pages 40140345680 succeeded. Live smoke passed all 49 public routes, all 23 prerequisite headers, 3 audience hubs / all stages, eight recommendations, four-width keyboard/text200/old-query checks and no-JS stage links. The public design-system URL returned HTTP404; its source, preview build, link checks and GUIDE FULL remain. See navigation-public-full/public-report.json.

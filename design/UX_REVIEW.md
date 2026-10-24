@@ -174,3 +174,7 @@ Publication: pending CI, exact-head merge, Pages and public six-card/link smoke 
 ## 2026-10-25 / Reader navigation
 
 Three purpose/audience entries with explicit prerequisite stages; recommendations unified. See READER_NAVIGATION_REVIEW.md. Public FULL errors 0/warnings4; separate GUIDE FULL errors0/warnings4. Browser200 route/width cases and focused keyboard/no-JS/text200 pass. Eight existing warnings remain across both scopes; no rules changed. 375px first guided choice y4309→887, document9693→6152; layout metrics are not user-test evidence. Article bodies and main #30/#31 preserved.
+
+## 2026-10-25 / Reader navigation release confirmation
+
+Release completed 2026-10-25: PR #34, merge f7ba4fc99d662ae6366b43f88402aa7a5eeec125, CI 40140283928 and Pages 40140345680 succeeded. Live smoke passed all 49 public routes, all 23 prerequisite headers, 3 audience hubs / all stages, eight recommendations, four-width keyboard/text200/old-query checks and no-JS stage links. The public design-system URL returned HTTP404; its source, preview build, link checks and GUIDE FULL remain. See navigation-public-full/public-report.json.

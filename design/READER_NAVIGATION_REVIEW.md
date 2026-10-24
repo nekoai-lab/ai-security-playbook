@@ -37,4 +37,4 @@ At 375px wide, the old first beginner-route section began around y4309 and recom
 ## Evidence and scope
 Reports in navigation-public-full and navigation-guide-full are versioned. Raw measure.json and full screenshots remain on mini; they are not needed to load the deployed site. Original README/LICENSE and unrelated uploads work are unchanged. This work improves navigation and prerequisite metadata; it does not rewrite all article bodies, generate more articles or newly certify five legacy lessons against later editorial rules.
 
-This document records pre-publication verification. CI, deployment and live smoke evidence will be recorded after release.
+Release completed 2026-10-25: PR #34, merge f7ba4fc99d662ae6366b43f88402aa7a5eeec125, CI 40140283928 and Pages 40140345680 succeeded. Live smoke passed all 49 public routes, all 23 prerequisite headers, 3 audience hubs / all stages, eight recommendations, four-width keyboard/text200/old-query checks and no-JS stage links. The public design-system URL returned HTTP404; its source, preview build, link checks and GUIDE FULL remain. See navigation-public-full/public-report.json.
