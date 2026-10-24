@@ -1,3 +1,4 @@
+import { rotationDiagrams } from "./rotation-diagrams";
 import { guardDiagrams } from "./guard-diagrams";
 import { updateDiagrams } from "./update-diagrams";
 import { serviceFailureDiagrams } from "./service-failure-diagrams";
@@ -45,6 +46,13 @@ const d = (
   caption: string,
 ): DiagramSpec => ({ title, layout, nodes, caption });
 export const lessonVisuals = {
+  "secret-rotation": {
+    image: "secret-rotation-scene",
+    question: "新しいキーは、動いているアプリまで届いた？",
+    situation: "外部APIのキーを更新するときに",
+    pose: "think",
+    diagrams: [rotationDiagrams.layers, rotationDiagrams.read],
+  },
   "github-guards": {
     image: "github-gate-scene",
     question: "そのチェックは、今の変更を確かめた結果？",

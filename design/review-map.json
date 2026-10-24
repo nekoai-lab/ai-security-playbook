@@ -49,7 +49,8 @@
     "learn/release-artifacts/",
     "learn/external-service-failures/",
     "learn/dependency-updates/",
-    "learn/github-guards/"
+    "learn/github-guards/",
+    "learn/secret-rotation/"
   ],
   "representatives": [
     "",

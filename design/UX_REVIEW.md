@@ -135,3 +135,6 @@ FULL: dependency-updates-full、2680 passed/error0/既存色数warning8/manual-r
 ## GitHub公開前ゲートの第3本（2026-10-24）
 19記事/43ルート。6図+3比較+新場面+猫3。根拠と限界はGITHUB_GUARDS_REVIEW.md。開発テーマ/公開前シリーズ/関連に接続。
 FULL github-guards-fullは2744passed/error0/既存色数warning8/manual-review344、基準変更と除外なし。全43×4幅axe/pageerror/はみ出し、全43ページ375px文字200%成功。新記事4幅の画像/図/比較/全展開200%/キーボード/JSなし、URL反映後の検索、テーマと前後の次画像を確認。型71ファイル0件、build43、34テストとリンク/base/アンカー成功。公開はCI/Pages/URL後。
+
+## キー更新の第4本（2026-10-24）
+20記事44ルート。6図・3比較・専用場面・猫3。SECRET_ROTATION_REVIEW.mdに内容と限界を記録。型75ファイル0件/build44/37テスト成功。初回320px本文2箇所の折り返しを整え、最終FULL2808passed/error0/既存warning8/manual352。全44×4幅axe/overflow/pageerrorと全44文字200%、記事4幅/全展開200%/キーボード/JSなし/検索/テーマ/前後画像を確認。閾値変更・除外なし。公開はCI/Pages/URL後。
