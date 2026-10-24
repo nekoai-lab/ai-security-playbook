@@ -199,9 +199,9 @@ export const topicGuides = {
         lesson: "node-october-2026",
       },
       {
-        title: "動いている版を、どこで確かめる？",
-        text: "PC・MCP・CI・本番を分け、変更しない確認から始めます。",
-        lesson: "commands",
+        title: "外部サービスが止まったら、どうする？",
+        text: "取得失敗と空の結果を分け、代替表示・再試行・結果不明の扱いを整理します。",
+        lesson: "external-service-failures",
       },
       {
         title: "更新を毎回の運用につなげるには？",

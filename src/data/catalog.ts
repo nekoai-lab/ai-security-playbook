@@ -80,6 +80,7 @@ export const series = [
       "access-control",
       "release-artifacts",
       "launch-checklist",
+      "external-service-failures",
       "incident-response",
     ],
   },

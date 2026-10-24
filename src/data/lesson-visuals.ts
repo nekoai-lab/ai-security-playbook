@@ -1,3 +1,4 @@
+import { serviceFailureDiagrams } from "./service-failure-diagrams";
 import { practiceDiagrams } from "./practice-diagrams";
 export type DiagramIcon =
   | "screen"
@@ -42,6 +43,16 @@ const d = (
   caption: string,
 ): DiagramSpec => ({ title, layout, nodes, caption });
 export const lessonVisuals = {
+  "external-service-failures": {
+    image: "service-fallback-scene",
+    question: "写真が届かなくても、案内は続けられる？",
+    situation: "外部の画像やAPIを使うアプリを公開する前に",
+    pose: "think",
+    diagrams: [
+      serviceFailureDiagrams.dependencies,
+      serviceFailureDiagrams.states,
+    ],
+  },
   "ai-work-logs": {
     image: "ai-log-copies-scene",
     question: "会話を閉じても、記録はどこかに残っている？",

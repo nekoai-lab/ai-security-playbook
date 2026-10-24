@@ -67,3 +67,6 @@
 - `release-package-scene`: 届ける紙を選ぶ場面。release-artifacts本文と関連記事カード。
 - 新しい顔やマスコットの正本ではなく、承認済みの黒猫を使った記事用の派生場面。元PNGはcatalog.jsonのsource、生成指示はlog-release-prompts.json。
 - 各記事の4図はPracticeVisualの実テキスト。場面の絵だけで保存先・権限・安全性を説明しない。think/concern/peek-side/pointを文脈で使い分ける。
+
+## 外部サービス停止の記事（2026-10-24）
+service-fallback-sceneは承認された黒猫の派生場面。外部の画像が届かなくても紙の案内を使う、という概念的な挿絵。PNG原本とservice-fallback-prompt.json、catalogに保存。外部依存・空/失敗・代替・再試行・結果不明・復旧はServiceFailureVisualのHTML図で説明し、架空の表示比較はFailureStateComparisonでJSなしでも開ける。think/point/peek-sideを本文で使い分ける。

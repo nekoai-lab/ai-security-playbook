@@ -115,3 +115,11 @@ mainの23eaa34も同じ測定v2・同じ契約・全28条件で再測定した�
 - 8テーマ/4記事×4幅、24疑問のリンクとアンカー、画像、キーボード、JSなし、4記事320/375px details全展開200%成功（topic-article-report.json）。テーマの4記事はそれぞれ4図+場面1+猫2。変更前後の4テーマ/4記事を375pxで比較、375/1280pxで主入口・図・猫・文字階層を目視（comparison.json）。
 - check59ファイル0件、build40ページ、24テスト成功。v2の出典map最終行を認識しない検査不具合も修正し、必須条件の欠落を拒否するテストを維持。
 - 既存5件のpre-policy状態は維持し、全教材の現行内容基準適合は主張しない。公開確認はCI/Pages後に実施。
+
+## 外部サービス停止の教材1本（2026-10-24）
+- external-service-failuresを追加し17記事/41ルート。6図+開いて比べる3状態+場面1+猫3。根拠・限界・内容の編集判断はSERVICE_FAILURES_REVIEW.md、候補の進捗はCONTENT_BACKLOG.md。
+- FULL: design/audit/2026-10-24/service-failures-full。2616 passed / error0 / 8既存色数warning / 328 manual-review。design-system14色・commands15色の各4幅のみ。新しいwarningなし。基準/除外の変更なし。
+- 全41ルート×4幅のaxe/pageerror/横はみ出し検査、全41ルート375px文字200%成功（browser-report.json）。
+- 新記事の4幅、画像デコード、3状態のキーボード開閉、JSなし、320/375px details全展開200%、検索/operationsテーマ/シリーズ次リンクと挿絵を確認（article-report.json）。375/1280pxの場面・状態図・比較・結果不明図・猫・次カードを目視。新しい絵は概念として扱い、本文とHTML図で説明。
+- check63ファイル0件、build41、27テストと全ローカルリンク/画像/アンカー/base成功。過去5記事のpre-policy状態は維持し、全教材の現行基準適合は主張しない。
+- 公開はPRのCI・Pagesと公開URLを確認して完了とする。

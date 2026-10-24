@@ -1,0 +1,8 @@
+{
+  "id": "service-fallback-scene",
+  "prompt": "Create ONE landscape 3:2 editorial illustration for AI Security Playbook. Use the reference as the same individual black explorer cat and same fine engraved pen-and-ink style: tapered muzzle, natural expressive eyes, triangular ears, orange backpack with rolled mat, never round baby cartoon. Warm ivory paper, black detailed ink, restrained vivid orange accents. A cozy wooden information desk outdoors in a mountain field-notes landscape. On the desk a laptop screen contains an empty framed picture area with a small faint disconnected-cloud pictogram, no words. The calm thoughtful cat places a small paper map and a simple standing illustrated information card beside the laptop, suggesting a practical alternative when an online picture cannot load. Composition clearly shows useful paper information still available; no broken computers, panic, locks, guarantee stamps, text, letters, digits, code, arrows, logos, brains or organs. Not a contact sheet. Cat is three-quarter facing right, one paw on map. Leave generous quiet space around distinct objects. Illustration is conceptual; technical diagrams will be separate HTML.",
+  "referenceRoles": [
+    "api-key-setting-illustration.png: approved cat identity and scene style"
+  ],
+  "purpose": "2026-10-24 user-authorized article expansion, derived scene not a new canonical mascot"
+}
