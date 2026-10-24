@@ -1,0 +1,114 @@
+[
+  {
+    "id": "data-sorting-scene",
+    "prompt": "Create ONE beautiful editorial illustration for a Japanese AI security learning website, landscape 3:2. References: first image is the approved scene style and character; second is canonical face identity ONLY, do not draw a sheet. Same individual black explorer cat, tapered muzzle, natural eyes, triangular ears, fine engraved pen-and-ink fur, orange backpack and rolled mat. Warm pale ivory background, black detailed ink linework, restrained vivid orange accents. Welcoming intelligent and curious, never childish or frightened. Elegant spacious composition, no panels or frames. No readable text, letters, digits, labels, brands, code, watermarks, arrows, locks implying guaranteed security, brains or organs. This is conceptual editorial art; diagrams and text are rendered separately. Cat at a tidy desk sorting several loose documents and a small photograph into two trays, pausing thoughtfully before placing a selected anonymous sheet into an open laptop. Small closed folder stays on the desk. Three-quarter left view. Emphasize choosing what to send; no real personal details. Gentle distant field-notes landscape, ample breathing room.",
+    "referenceRoles": [
+      "api-key-setting-illustration.png: style/character",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "access-gate-scene",
+    "prompt": "Create ONE beautiful editorial illustration for a Japanese AI security learning website, landscape 3:2. References: first image is the approved scene style and character; second is canonical face identity ONLY, do not draw a sheet. Same individual black explorer cat, tapered muzzle, natural eyes, triangular ears, fine engraved pen-and-ink fur, orange backpack and rolled mat. Warm pale ivory background, black detailed ink linework, restrained vivid orange accents. Welcoming intelligent and curious, never childish or frightened. Elegant spacious composition, no panels or frames. No readable text, letters, digits, labels, brands, code, watermarks, arrows, locks implying guaranteed security, brains or organs. This is conceptual editorial art; diagrams and text are rendered separately. Cat at a little wooden reception counter examining two different brass visitor tokens beside a set of separately compartmented filing drawers. One drawer is open showing only a few blank papers, other drawers stay closed. Simple symbolic illustration of checking whose record is requested, not a literal security architecture. Cat from three-quarter right, intent and calm, fine face like reference. Orange token accents.",
+    "referenceRoles": [
+      "api-key-setting-illustration.png: style/character",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "connection-map-scene",
+    "prompt": "Create ONE beautiful editorial illustration for a Japanese AI security learning website, landscape 3:2. References: first image is the approved scene style and character; second is canonical face identity ONLY, do not draw a sheet. Same individual black explorer cat, tapered muzzle, natural eyes, triangular ears, fine engraved pen-and-ink fur, orange backpack and rolled mat. Warm pale ivory background, black detailed ink linework, restrained vivid orange accents. Welcoming intelligent and curious, never childish or frightened. Elegant spacious composition, no panels or frames. No readable text, letters, digits, labels, brands, code, watermarks, arrows, locks implying guaranteed security, brains or organs. This is conceptual editorial art; diagrams and text are rendered separately. Cat kneels beside a low workbench with a laptop, small plain adapter hub, and three distinct cables ending at a file box, a compact server and a globe-shaped object. One cable is held unattached in the cat's paw while it examines the destination. Symbolizes choosing permissions before connecting an external tool. Fine sparse field landscape behind, no arrows or text.",
+    "referenceRoles": [
+      "api-key-setting-illustration.png: style/character",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "release-preparation-scene",
+    "prompt": "One editorial scene, landscape 3:2, same black explorer cat as reference 1 and face reference 2, fine engraved pen-and-ink fur, tapered natural face, restrained natural eyes, orange backpack with rolled mat. Ivory paper with black ink and selective orange accents. Welcoming, calm and intelligent, no baby proportions. Different composition from previous scene: use the requested view. No readable text, labels, code, numbers, logos, watermarks, arrows, brains/organs, victory/security checkmarks. Single image, not a contact sheet or panel. Conceptual illustration, not actual product UI. High three-quarter view of the cat at a broad desk preparing a small web project: laptop angled left, a notebook with blank squares but no ticks, a simple mechanical usage gauge and a neatly separated archive box with a small external drive. Cat paws carefully compare a paper with the open notebook. Background is mostly warm ivory and a very sparse mountain silhouette. Show deliberate preparation before sharing, not a celebration or guarantee of success.",
+    "referenceRoles": [
+      "api-key-setting-illustration.png: style/character",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "incident-notes-scene",
+    "prompt": "One editorial scene, landscape 3:2, same black explorer cat as reference 1 and face reference 2, fine engraved pen-and-ink fur, tapered natural face, restrained natural eyes, orange backpack with rolled mat. Ivory paper with black ink and selective orange accents. Welcoming, calm and intelligent, no baby proportions. Different composition from previous scene: use the requested view. No readable text, labels, code, numbers, logos, watermarks, arrows, brains/organs, victory/security checkmarks. Single image, not a contact sheet or panel. Conceptual illustration, not actual product UI. Side-on view: cat sits calmly at a desk looking at a laptop and writing a small note with an orange pencil beside a plain clock and a closed external backup drive. A few plain sheets are neatly laid out in separate groups; old cable resting unused. Warm little desk lamp at right. The scene communicates pausing, recording observed facts and seeking help, with no panic, alarm, red symbols, hackers, broken equipment or deleting gestures. Sparse ivory background, generous whitespace.",
+    "referenceRoles": [
+      "api-key-setting-illustration.png: style/character",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "review-workbench-scene",
+    "prompt": "One editorial scene, landscape 3:2, same black explorer cat as reference 1 and face reference 2, fine engraved pen-and-ink fur, tapered natural face, restrained natural eyes, orange backpack with rolled mat. Ivory paper with black ink and selective orange accents. Welcoming, calm and intelligent, no baby proportions. Different composition from previous scene: use the requested view. No readable text, labels, code, numbers, logos, watermarks, arrows, brains/organs, victory/security checkmarks. Single image, not a contact sheet or panel. Conceptual illustration, not actual product UI. Wider three-quarter view: the cat stands at an engineering workbench comparing two plain paper revisions with magnifying glass while a laptop and small runtime gear modules sit behind. One orange pencil lies between before/after sheets; no written marks or safety ticks. Orange backpack clearly visible, long tail curved behind. A restrained field-notes landscape fades into paper above. Communicate checking a change before deployment, no literal automated safety guarantee.",
+    "referenceRoles": [
+      "api-key-setting-illustration.png: style/character",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "cat-walk-right",
+    "prompt": "Prepare ONE production-ready individual transparent cutout from the APPROVED black explorer-cat pose library. Image1 is the approved pose composition reference, image2 is the corrected canonical face identity. Preserve fine engraved black ink fur, tapered muzzle, natural eyes, triangular ears, orange backpack and rolled mat. This is the same character in the selected existing pose, not a new design. True alpha transparent background, ample clear margin, no text, sheet numbering, border, scenery, card or extra symbols. Full subject intact. Use pose 02 in image1: full-body walking to the right, side view, tail upright and orange backpack visible. Match corrected face, not round baby features.",
+    "referenceRoles": [
+      "approved pose/placement sheet: composition",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "cat-think",
+    "prompt": "Prepare ONE production-ready individual transparent cutout from the APPROVED black explorer-cat pose library. Image1 is the approved pose composition reference, image2 is the corrected canonical face identity. Preserve fine engraved black ink fur, tapered muzzle, natural eyes, triangular ears, orange backpack and rolled mat. This is the same character in the selected existing pose, not a new design. True alpha transparent background, ample clear margin, no text, sheet numbering, border, scenery, card or extra symbols. Full subject intact. Use pose 05 in image1: sitting thoughtful with one paw near chin, head slightly tilted upward, tail curled. Quiet curiosity, not fear or a warning.",
+    "referenceRoles": [
+      "approved pose/placement sheet: composition",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "cat-laptop",
+    "prompt": "Prepare ONE production-ready individual transparent cutout from the APPROVED black explorer-cat pose library. Image1 is the approved pose composition reference, image2 is the corrected canonical face identity. Preserve fine engraved black ink fur, tapered muzzle, natural eyes, triangular ears, orange backpack and rolled mat. This is the same character in the selected existing pose, not a new design. True alpha transparent background, ample clear margin, no text, sheet numbering, border, scenery, card or extra symbols. Full subject intact. Use pose 07 in image1: crouching side-on at a small open laptop, paws near keyboard, orange backpack visible. Screen blank. Do not add desk/background.",
+    "referenceRoles": [
+      "approved pose/placement sheet: composition",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "cat-point",
+    "prompt": "Prepare ONE production-ready individual transparent cutout from the APPROVED black explorer-cat pose library. Image1 is the approved pose composition reference, image2 is the corrected canonical face identity. Preserve fine engraved black ink fur, tapered muzzle, natural eyes, triangular ears, orange backpack and rolled mat. This is the same character in the selected existing pose, not a new design. True alpha transparent background, ample clear margin, no text, sheet numbering, border, scenery, card or extra symbols. Full subject intact. Use pose 08 in image1: standing with one paw pointing left and looking in that direction. Preserve slender muzzle and natural eyes of image2.",
+    "referenceRoles": [
+      "approved pose/placement sheet: composition",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "cat-peek-side",
+    "prompt": "Extract/prepare ONE individual production transparent cutout from these approved explorer-cat designs. Image1 supplies the approved placement pose, image2 is the canonical corrected face. Same black engraved ink cat, tapered muzzle and natural eyes, orange backpack and mat. Do not invent another mascot. True transparent background, ample margin, no card/frame/labels/numbers/letters/scenery. Preserve all visible whiskers/paws/tail; no disconnected artifacts. Image1 pose03: head and front paws peeking sideways, body hidden behind an imaginary vertical edge on the LEFT side of the cat. Cat leans toward LEFT with head slightly tilted; head/paws/backpack only visible as on the reference. Do not render an edge or card. Correct facial proportions from image2.",
+    "referenceRoles": [
+      "approved pose/placement sheet: composition",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "cat-tail",
+    "prompt": "Extract/prepare ONE individual production transparent cutout from these approved explorer-cat designs. Image1 supplies the approved placement pose, image2 is the canonical corrected face. Same black engraved ink cat, tapered muzzle and natural eyes, orange backpack and mat. Do not invent another mascot. True transparent background, ample margin, no card/frame/labels/numbers/letters/scenery. Preserve all visible whiskers/paws/tail; no disconnected artifacts. Image1 pose05: ONLY the black curved bushy tail sticking upward, with its base entering from the bottom, fine engraved fur. No face, body, backpack, card, orange motion strokes or other objects.",
+    "referenceRoles": [
+      "approved pose/placement sheet: composition",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "cat-smile",
+    "prompt": "Extract/prepare ONE individual production transparent cutout from these approved explorer-cat designs. Image1 supplies the approved placement pose, image2 is the canonical corrected face. Same black engraved ink cat, tapered muzzle and natural eyes, orange backpack and mat. Do not invent another mascot. True transparent background, ample margin, no card/frame/labels/numbers/letters/scenery. Preserve all visible whiskers/paws/tail; no disconnected artifacts. Use image2 expression E: a single chest-up portrait of the cat with a gentle eyes-closed smile, orange backpack visible. Preserve exact mature muzzle, ear and fur proportions. No giant grin, tears, approval stamp, sparkles or safety indicators.",
+    "referenceRoles": [
+      "approved pose/placement sheet: composition",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  },
+  {
+    "id": "cat-concern",
+    "prompt": "Extract/prepare ONE individual production transparent cutout from these approved explorer-cat designs. Image1 supplies the approved placement pose, image2 is the canonical corrected face. Same black engraved ink cat, tapered muzzle and natural eyes, orange backpack and mat. Do not invent another mascot. True transparent background, ample margin, no card/frame/labels/numbers/letters/scenery. Preserve all visible whiskers/paws/tail; no disconnected artifacts. Use image2 expression D: one chest-up cat portrait, ears gently tilted and gaze down, thoughtful mild concern and empathy. Exact original muzzle, natural eyes, fine ink fur and orange backpack. No tears, exaggerated frown, warning symbols or fear.",
+    "referenceRoles": [
+      "approved pose/placement sheet: composition",
+      "explorer-cat-expressions-original-style.png: face identity"
+    ]
+  }
+]

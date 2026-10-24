@@ -92,7 +92,7 @@ export function validateContent(id, text) {
     sources = sections["一次資料"] ?? "";
     if ((roles.match(/^\|/gm) ?? []).length < 4)
       errors.push("Role-specific verification table is required");
-    if (!/<Flow\b/.test(body))
+    if (!/<(?:Flow|LessonDiagram)\b/.test(sections["仕組みをつかむ"] ?? ""))
       errors.push("Explain the mechanism with a diagram");
   }
   if (

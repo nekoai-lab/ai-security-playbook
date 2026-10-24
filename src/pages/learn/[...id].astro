@@ -4,6 +4,8 @@ import Shell from "../../layouts/Shell.astro";
 import ExplorerNote from "../../components/ExplorerNote.astro";
 import DataTable from "../../components/DataTable.astro";
 import LearningContext from "../../components/LearningContext.astro";
+import LessonArt from "../../components/LessonArt.astro";
+import type { LessonVisualId } from "../../data/lesson-visuals";
 import { topicTitle, seriesFor } from "../../data/catalog";
 export async function getStaticPaths() {
   return (await getCollection("lessons")).map((lesson) => ({
@@ -62,50 +64,25 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
       </p>
       <h1>{lesson.data.title}</h1>
       <p>{lesson.data.summary}</p>
-      {lesson.data.outcomes && lesson.data.qualityVersion !== 2 && (
-        <section class="lesson-goals" aria-labelledby="lesson-goals-title">
-          <h2 id="lesson-goals-title">この教材でできるようになること</h2>
+      <details class="article-preparation">
+        <summary>読む前の補足</summary>
+        <p>前提知識：{lesson.data.level}。</p>
+        {lesson.data.outcomes && (
           <ul>
             {lesson.data.outcomes.map((goal) => (
               <li>{goal}</li>
             ))}
           </ul>
-        </section>
-      )}
-      {lesson.data.qualityVersion === 2 ? (
-        <details class="article-preparation">
-          <summary>読む前の補足</summary>
-          <p>
-            前提知識：{lesson.data.level}
-            。コードは結果を読みながら進められます。
-          </p>
-          <ul>
-            {lesson.data.outcomes?.map((goal) => (
-              <li>{goal}</li>
+        )}
+        {prerequisites.length > 0 && (
+          <nav class="lesson-prerequisites" aria-label="先に読むと役立つ教材">
+            <span>仕組みから知りたいときは</span>
+            {prerequisites.map((l) => (
+              <a href={`${base}/learn/${l.id}/`}>{l.data.title} →</a>
             ))}
-          </ul>
-          {prerequisites.length > 0 && (
-            <nav class="lesson-prerequisites" aria-label="先に読むと役立つ教材">
-              <span>仕組みから知りたいときは</span>
-              {prerequisites.map((l) => (
-                <a href={`${base}/learn/${l.id}/`}>{l.data.title} →</a>
-              ))}
-            </nav>
-          )}
-        </details>
-      ) : (
-        <>
-          <p class="lesson-prerequisite">前提知識：{lesson.data.level}。</p>
-          {prerequisites.length > 0 && (
-            <nav class="lesson-prerequisites" aria-label="先に読むと役立つ教材">
-              <span>先に読むと役立つ教材</span>
-              {prerequisites.map((l) => (
-                <a href={`${base}/learn/${l.id}/`}>{l.data.title} →</a>
-              ))}
-            </nav>
-          )}
-        </>
-      )}
+          </nav>
+        )}
+      </details>
       <p class="metadata">
         <span>
           公開{" "}
@@ -124,7 +101,7 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
     <div class="article-grid">
       <aside
         class:list={{
-          "article-toc-optional": lesson.data.qualityVersion === 2,
+          "article-toc-optional": true,
         }}
       >
         <nav aria-label="この教材の目次">
@@ -142,7 +119,7 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
           { "article-narrative": lesson.data.qualityVersion === 2 },
         ]}
       >
-        {lesson.data.qualityVersion === 2 && (
+        {
           <details class="article-mobile-toc">
             <summary>この記事の目次</summary>
             <nav aria-label="この教材の目次">
@@ -153,7 +130,7 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
                 ))}
             </nav>
           </details>
-        )}
+        }
         <Content components={{ table: DataTable }} />
         {lesson.data.qualityVersion !== 2 && (
           <ExplorerNote title="読んだことを、ひとつ確かめよう。" compact>
@@ -165,7 +142,15 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
           <section class="related-lessons">
             <h2>関連する教材</h2>
             {related.map((l) => (
-              <a href={`${base}/learn/${l.id}/`}>{l.data.title} →</a>
+              <a class="related-card" href={`${base}/learn/${l.id}/`}>
+                <LessonArt id={l.id as LessonVisualId} sizes="112px" />
+                <div>
+                  <strong>{l.data.title} →</strong>
+                  <span>
+                    約{l.data.minutes}分 · {l.data.format}
+                  </span>
+                </div>
+              </a>
             ))}
           </section>
         )}

@@ -13,8 +13,14 @@ prerequisites: ["ai-data-boundaries"]
 related: ["access-control", "launch-checklist"]
 keywords: ["個人開発", "ブラウザ", "サーバー", "データベース", "API", "公開"]
 outcomes: ["アプリの処理を四つの場所に分ける。", "画面に隠しただけの情報や操作を見分ける。", "AIの説明を設定と実装の確認につなげる。"]
-changes: []
+changes:
+  - date: "2026-10-24"
+    summary: "場面の挿絵と、確認の違いが分かる図解を追加しました。"
 ---
+
+import LessonScene from "../../components/LessonScene.astro";
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
 
@@ -24,9 +30,13 @@ AIにアプリを作ってもらい、画面が動くところまで来た人向
 
 同じ事業者がこれらをまとめて提供する場合もあります。「どこが提供するか」と「どの役割か」を分けると、自分と提供元の担当が見えてきます。
 
+<LessonScene id="app-architecture" />
+
 ## 仕組みをつかむ
 
-<Flow steps={["ブラウザで操作", "サーバーで判断", "データ保存・外部API"]} caption="典型的な一例です。ブラウザからデータサービスへ直接つなぐ構成では、そのサービス側で権限を確認します。" />
+<LessonDiagram id="app-architecture" />
+
+典型的な一例です。ブラウザからデータサービスへ直接つなぐ構成では、そのサービス側で権限を確認します。
 
 会員向けメモアプリなら、画面はメモを表示し、保存する処理は「誰のメモを変更してよいか」を判断します。画面のボタンを隠しても、保存先の処理が誰からでも操作を受け付ければ、制限したことにはなりません。
 
@@ -57,9 +67,13 @@ AIにアプリを作ってもらい、画面が動くところまで来た人向
 
 ## 一つ確かめてみる
 
+<LessonDiagram id="app-architecture" part={1} />
+
 自分のアプリについて「画面」「処理」「保存」「外部サービス」を紙に書き、サービス名を一つずつ当てはめます。分からない場所は空欄を安全とせず、未確認とします。
 
+<CatGuide pose="point" title="説明の根拠も、一緒にたどろう。">
 AIへ説明を頼むなら、「どのファイルや管理画面を根拠にしているか」「秘密の値を表示せずに教えて」と添えます。説明された設定を実物と照合してください。理解できない本番設定を、説明だけで変更する必要はありません。
+</CatGuide>
 
 ## 確認チェックリスト
 

@@ -1,0 +1,35 @@
+---
+import DiagramGlyph from "./DiagramGlyph.astro";
+import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
+interface Props {
+  id: LessonVisualId;
+  part?: 0 | 1;
+}
+const { id, part = 0 } = Astro.props;
+const spec = lessonVisuals[id].diagrams[part];
+---
+
+<figure
+  class:list={["lesson-diagram", `lesson-diagram--${spec.layout}`]}
+  data-lesson-diagram={`${id}-${part}`}
+>
+  <p class="diagram-title">{spec.title}</p>
+  <ol class="diagram-nodes">
+    {spec.nodes.map((node, i) => (
+      <li class="diagram-node">
+        {spec.layout === "sequence" && i > 0 && (
+          <span class="diagram-arrow" aria-hidden="true">
+            ↓
+          </span>
+        )}
+        <DiagramGlyph kind={node.icon} />
+        <div>
+          <strong>{node.label}</strong>
+          <p>{node.detail}</p>
+          {node.example && <p class="diagram-example">{node.example}</p>}
+        </div>
+      </li>
+    ))}
+  </ol>
+  <figcaption>{spec.caption}</figcaption>
+</figure>

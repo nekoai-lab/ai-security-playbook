@@ -54,3 +54,12 @@ The built-in image generation tool produced three individual transparent assets 
 > Use the corrected explorer-cat face as identity; use the approved boards only for pose and placement. Black ink-engraved cat with tapered muzzle, natural eyes, triangular ears, fine fur, orange explorer backpack and rolled mat. Individual transparent cutout, no text, numbering, board, card frame or background. Investigating pose: crouch, magnifying glass and pawprint. Peeking pose: head and front paws visible over an implied edge. Paw: small orange ink stamp on transparency. Preserve original character and avoid a round baby face or a new mascot style.
 
 These are decorative reading guides, not technical diagrams or proof of a successful check. `CatGuide` and `PawDivider` first appear in the commands article; adjacent real text remains accessible without JavaScript or images.
+
+
+## All-article editorial expansion / 2026-10-24
+
+Six generated editorial scenes (data sorting, access token/drawers, tool connections, release preparation, incident notes, review workbench) and eight individual pose derivatives (walk-right, think, laptop, point, side-peek, tail, gentle smile, mild concern) are archived in the illustration library. The approved pose/placement boards supply composition; the corrected expression board supplies face identity. They are newly materialized individual assets based on approved designs, not untouched crops from the boards. Original approved boards and earlier production assets remain available.
+
+Exact generation prompts and reference roles: design/assets/illustration-library/article-expansion-prompts.json. Sources, hashes, dimensions, alpha and delivery sizes: catalog.json. Scenes use 480/960 WebP quality80; poses use 320/640 WebP quality85, fit inside a square transparent canvas so the full pose stays visible. This resize/padding is delivery preparation, not a character redesign. Source originals are not shipped into article resources.
+
+All fourteen articles use relevant illustrations and readable HTML figures; API/Node existing artwork is retained. Art is conceptual; technical meaning comes from adjacent text/diagrams. Empty alt and noninteractive decorative positioning avoid duplicate narration or blocked links. Usage matrix and current browser/design evidence: design/ARTICLE_VISUALS_REVIEW.md.

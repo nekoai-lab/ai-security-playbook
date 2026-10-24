@@ -13,8 +13,14 @@ prerequisites: []
 related: ["api-keys", "agent-permissions"]
 keywords: ["AI", "個人情報", "添付", "プライバシー", "データ", "入力"]
 outcomes: ["入力・添付・連携で情報がどこへ渡るかを説明する。", "実データを使わずに依頼内容を作り直す。", "送信を止める条件と相談先を決める。"]
-changes: []
+changes:
+  - date: "2026-10-24"
+    summary: "場面の挿絵と、確認の違いが分かる図解を追加しました。"
 ---
+
+import LessonScene from "../../components/LessonScene.astro";
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
 
@@ -24,9 +30,13 @@ AIに文章・画像・ファイルを渡す人向けです。コードを書か
 
 「学習に使われない」という設定と、「保存されない」「外部の連携先に渡らない」は同じ意味ではありません。契約、利用する機能、保存先を提供元の説明で確かめます。判断できない情報は、送ってから考えるのではなく、送信前に管理者へ確認します。
 
+<LessonScene id="ai-data-boundaries" />
+
 ## 仕組みをつかむ
 
-<Flow steps={["入力・画像・添付", "AIサービスと連携先", "回答・保存・共有"]} caption="入力欄だけでなく、添付、検索、ツール連携、回答の共有までを一つの経路として見ます。" />
+<LessonDiagram id="ai-data-boundaries" />
+
+入力欄だけでなく、添付、検索、ツール連携、回答の共有までを一つの経路として見ます。
 
 例えば顧客対応を手伝ってもらうなら、欲しいのは「返信の構成」かもしれません。顧客名・電話番号・注文番号を含む実際のメール全文まで必要かを分けます。名前を消しても、日時や所属などの組み合わせで個人を推測できることがあります。
 
@@ -55,9 +65,13 @@ AIに文章・画像・ファイルを渡す人向けです。コードを書か
 
 ## 一つ確かめてみる
 
+<LessonDiagram id="ai-data-boundaries" part={1} />
+
 架空の依頼「顧客Aへの日程変更の返信案」を作ります。実名、連絡先、契約内容を使わず、返信の目的と口調だけで案を作れるか考えてください。十分なら、実際の顧客メールを追加する必要はありません。
 
+<CatGuide pose="concern" title="送るか迷ったら、ここで一度止まろう。">
 実資料が必要な場合は、所有者の許可、送信先、保存条件が説明できるまで止めます。AIに「この情報を送って安全？」と聞くだけで、契約や権限の確認を代行したことにはなりません。
+</CatGuide>
 
 ## 確認チェックリスト
 

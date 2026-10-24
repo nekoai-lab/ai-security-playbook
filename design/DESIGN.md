@@ -47,3 +47,8 @@ forbiddenTextはTBDとLorem ipsumに限定する。教材では「未確認」�
 ## AIの参照と公開前確認
 
 AI_GUIDE.mdから始め、review-map.jsonとdesign:contextで変更に関係する正本だけ参照する。途中のQUICK診断とreview-mapにある全画面×4幅のFULL確認は分け、QUICK/CUSTOMの合格で公開しない。設計の数値を複数文書へ複製せず、未知の変更は全画面確認へ戻す。
+
+
+## 記事の罫線と挿絵 / 2026-10-24 追加指示
+
+見出し・図・案内・回遊の周りへ罫線を積み重ねない。余白・文字の階層・紙色・内容に合う挿絵を優先する。表、情報の境界、操作のフォーカスなど意味がある線は維持する。承認済みの複数ポーズや表情は、実際の配置先を記録して使い分ける。部品と割り当てはILLUSTRATION_GUIDEとARTICLE_VISUALS_REVIEWを参照。

@@ -1,0 +1,17 @@
+---
+import LessonArt from "./LessonArt.astro";
+import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
+interface Props {
+  id: LessonVisualId;
+}
+const { id } = Astro.props;
+const v = lessonVisuals[id];
+---
+
+<figure class="lesson-scene" data-lesson-scene={id}>
+  <LessonArt id={id} />
+  <figcaption>
+    <span>{v.situation}</span>
+    <strong>{v.question}</strong>
+  </figcaption>
+</figure>

@@ -13,8 +13,14 @@ prerequisites: []
 related: ["launch-checklist", "incident-response"]
 keywords: ["PHP", "PHP2Shell", "WordPress", "更新", "ホスティング", "ランタイム"]
 outcomes: ["2026年10月21日の修正と23日の追加案内を区別する。", "手元とWebサイトで動くPHPを分けて確認する。", "提供元の修正情報と更新後の動作を照合する。"]
-changes: []
+changes:
+  - date: "2026-10-24"
+    summary: "場面の挿絵と、確認の違いが分かる図解を追加しました。"
 ---
+
+import LessonScene from "../../components/LessonScene.astro";
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
 
@@ -24,9 +30,13 @@ PHPで動くサイトやアプリを管理する人向けです。AIにコード
 
 この教材は**2026年10月の更新事例**です。現在の対応は[PHPの公式発表](https://www.php.net/archive/2026.php)と利用する提供元の情報で確認してください。静的なファイル配信だけを、PHPを実行する環境と同じ対象として扱いません。
 
+<LessonScene id="php-october-2026" />
+
 ## 仕組みをつかむ
 
-<Flow steps={["利用中のサイトを特定", "稼働PHPと提供元を確認", "修正適用と動作を確認"]} caption="手元のPHPの版が分かっても、公開サイトや起動中の処理へ修正が反映された証明にはなりません。" />
+<LessonDiagram id="php-october-2026" />
+
+手元のPHPの版が分かっても、公開サイトや起動中の処理へ修正が反映された証明にはなりません。
 
 **ランタイム**はコードを実行する基盤です。アプリのコードを直すことと、PHP自体の修正を反映することは別の作業です。レンタルサーバー、OSのパッケージ、コンテナーなど、導入先に合う更新方法を選びます。
 
@@ -66,7 +76,11 @@ PHPで動くサイトやアプリを管理する人向けです。AIにコード
 
 ## 一つ確かめてみる
 
+<LessonDiagram id="php-october-2026" part={1} />
+
+<CatGuide pose="laptop" title="まず、提供元の情報から調べよう。">
 レンタルサーバーを使う人は、まず提供元の管理画面と今回の対応告知を確認します。「どのサイト・PHP系列・パッケージが対象で、どこまで反映済みか」が分からなければ、サポートへ確認します。秘密を含む設定全文を公開する必要はありません。
+</CatGuide>
 
 端末で文字を入力して操作するCLIに慣れた人が、自分の管理する端末で導入済みPHPを調べる場合は次の表示を使えます。PHPがなければ、この確認のためにインストールする必要はありません。
 

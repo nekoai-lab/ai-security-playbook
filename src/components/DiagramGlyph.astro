@@ -1,0 +1,37 @@
+---
+import type { DiagramIcon } from "../data/lesson-visuals";
+interface Props {
+  kind: DiagramIcon;
+}
+const { kind } = Astro.props;
+const paths: Record<DiagramIcon, string> = {
+  screen: "M8 12H56V44H8ZM20 54H44M32 44V54M14 18H50M15 25H32M15 31H42",
+  server:
+    "M14 8H50V56H14ZM14 24H50M14 40H50M21 16H26M21 32H26M21 48H26M42 16H44M42 32H44M42 48H44",
+  file: "M16 6H38L50 18V58H16ZM38 6V18H50M23 29H43M23 37H43M23 45H37",
+  person:
+    "M32 7A10 10 0 1 0 32 27A10 10 0 1 0 32 7M12 56V48C12 28 52 28 52 48V56M22 56V45M42 56V45",
+  key: "M24 12A12 12 0 1 0 24 36A12 12 0 1 0 24 12M34 32L56 54M46 44L52 38M51 49L57 43M20 21H24",
+  cloud:
+    "M18 48H48C65 48 63 24 49 26C46 7 18 7 16 27C0 28 2 48 18 48M26 36H38M32 30V54",
+  eye: "M4 32C18 10 46 10 60 32C46 54 18 54 4 32ZM32 23A9 9 0 1 0 32 41A9 9 0 1 0 32 23",
+  clock:
+    "M32 6A26 26 0 1 0 32 58A26 26 0 1 0 32 6M32 16V32L44 40M32 7V11M32 53V57M7 32H11M53 32H57",
+  box: "M8 22L32 10L56 22V48L32 60L8 48ZM8 22L32 34L56 22M32 34V60M20 16L44 28M16 37L24 41",
+  gauge:
+    "M10 52A26 26 0 1 1 54 52M32 40L46 20M32 35A5 5 0 1 0 32 45A5 5 0 1 0 32 35M10 32H16M48 32H54M32 8V14M14 15L19 20",
+};
+---
+
+<svg
+  class="diagram-glyph"
+  viewBox="0 0 64 64"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.6"
+  stroke-linejoin="round"
+  stroke-linecap="round"
+  aria-hidden="true"
+>
+  <path d={paths[kind]} />
+</svg>

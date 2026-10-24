@@ -94,3 +94,8 @@ mainの23eaa34も同じ測定v2・同じ契約・全28条件で再測定した�
 ## 2026-10-24 / 記事の猫ガイド
 
 [CAT_GUIDES_REVIEW.md](./CAT_GUIDES_REVIEW.md)に確認コマンド記事への初回配置、個別透過素材、部品化、効果と負担を記録。既存コマンド・一次資料・情報確認日は維持。[FULL検査](./audit/2026-10-24/cats-full/VALIDATION.md)は全38ページ×4幅、error 0。既存の色数警告8件は残す。装飾は読解を支える役割で、安全性の保証や実測した学習効果とは扱わない。
+
+
+## 2026-10-24 / 全記事の挿絵・図解と罫線の整理
+
+[ARTICLE_VISUALS_REVIEW.md](./ARTICLE_VISUALS_REVIEW.md)に14記事の配置一覧、承認済みポーズの採用、新しい場面、図解、回遊、変更前後と負担を記録。[最新FULL検査](./audit/2026-10-24/articles-full/VALIDATION.md)と同ディレクトリのブラウザ確認を参照。過去の検査を今回の合格へ流用せず、残る色数警告8件と内容移行前の5教材を明記。罫線多用を避けるルールをDESIGNとILLUSTRATION_GUIDEへ追加した。

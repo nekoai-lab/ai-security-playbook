@@ -50,3 +50,19 @@ test("only named pre-policy lessons are separate; migrated content still validat
   );
   assert.equal(validateContent("future", "").status, "failed");
 });
+
+test("v1 accepts real-text LessonDiagram but rejects missing mechanism diagrams", () => {
+  assert.deepEqual(validateContent("future", v1).errors, []);
+  const missing = v1.replace(/<(?:Flow|LessonDiagram)\b[\s\S]*?\/>/g, "");
+  assert(
+    validateContent("future", missing).errors.includes(
+      "Explain the mechanism with a diagram",
+    ),
+  );
+  const elsewhere = missing + '\n<LessonDiagram id="access-control" />';
+  assert(
+    validateContent("future", elsewhere).errors.includes(
+      "Explain the mechanism with a diagram",
+    ),
+  );
+});

@@ -10,6 +10,8 @@ reviewed: "2026-10-24"
 keywords: ["Node.js", "Nodejs", "Brotli", "MCP", "CVE", "圧縮", "更新", "セキュリティ"]
 changes:
   - date: "2026-10-24"
+    summary: "記事の内容に合う挿絵・猫の案内・図解を追加しました。"
+  - date: "2026-10-24"
     summary: "実行中の版を確かめる場面を挿絵と比較図で説明しました。"
 prerequisites: ["basics"]
 minutes: 12
@@ -18,6 +20,9 @@ outcomes:
   - "外部の圧縮データが、どの処理に届くかをたどる。"
   - "確認できた事実と、まだ分からない範囲を分けて残す。"
 ---
+
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
 import ArticleVisual from "../../components/ArticleVisual.astro";
@@ -28,6 +33,8 @@ import ArticleVisual from "../../components/ArticleVisual.astro";
 
 
 <div role="note" className="historical-note"><strong>2026年10月の更新事例です。</strong> 現在の対応を判断するときは、[Node.jsの最新リリース](https://nodejs.org/en/download/current)と[セキュリティ発表](https://nodejs.org/en/blog/vulnerability)も確認してください。</div>
+
+<LessonDiagram id="node-october-2026" />
 
 ## この教材の結論
 
@@ -90,11 +97,15 @@ Brotliはデータの圧縮形式です。公式はこの問題をリモート�
 
 ## 自分の環境を一つ確かめる
 
+<LessonDiagram id="node-october-2026" part={1} />
+
 1. **対象を分ける。** 手元のNode、起動中のMCP、CI、本番のうち一つを選びます。一つ分かっても、ほかの対象まで確認できたことにはなりません。
 2. **版を読む。** [安全に調べる確認コマンド](../commands/#手元のnodeを確認する)で、導入先と版を手元で調べます。この確認だけでは更新や停止を行いません。
 3. **入力経路を調べる。** 上のBrotliの図に沿い、入力元・展開する処理・そのランタイムを確かめます。実装や設定が追えない範囲は「未確認」とします。
 
+<CatGuide pose="walk-right" title="次は、起動中の対象を確かめよう。">
 手元で新しく起動したNodeの版は、起動中のMCPやアプリ同梱Nodeの版の証明にはなりません。必要な対象は[起動中プロセスの確認](../commands/#起動中のプロセスを確認する)へ進みます。ログや出力をそのまま共有する必要はありません。
+</CatGuide>
 
 ## 確認から対応まで
 

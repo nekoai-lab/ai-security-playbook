@@ -1,0 +1,212 @@
+[
+  {
+    "id": "access-control",
+    "before": {
+      "decorativeRuleBlocks": 13,
+      "figures": 1,
+      "images": 1,
+      "height": 5001
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 3,
+      "images": 5,
+      "height": 6520
+    }
+  },
+  {
+    "id": "agent-permissions",
+    "before": {
+      "decorativeRuleBlocks": 13,
+      "figures": 1,
+      "images": 1,
+      "height": 4926
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 3,
+      "images": 5,
+      "height": 6357
+    }
+  },
+  {
+    "id": "ai-data-boundaries",
+    "before": {
+      "decorativeRuleBlocks": 13,
+      "figures": 1,
+      "images": 1,
+      "height": 4807
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 3,
+      "images": 6,
+      "height": 6482
+    }
+  },
+  {
+    "id": "api-keys",
+    "before": {
+      "decorativeRuleBlocks": 19,
+      "figures": 8,
+      "images": 2,
+      "height": 18180
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 8,
+      "images": 5,
+      "height": 18731
+    }
+  },
+  {
+    "id": "app-architecture",
+    "before": {
+      "decorativeRuleBlocks": 13,
+      "figures": 1,
+      "images": 1,
+      "height": 4928
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 3,
+      "images": 6,
+      "height": 6684
+    }
+  },
+  {
+    "id": "basics",
+    "before": {
+      "decorativeRuleBlocks": 10,
+      "figures": 2,
+      "images": 1,
+      "height": 3539
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 5,
+      "images": 5,
+      "height": 5446
+    }
+  },
+  {
+    "id": "checklist",
+    "before": {
+      "decorativeRuleBlocks": 23,
+      "figures": 0,
+      "images": 1,
+      "height": 4005
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 3,
+      "images": 6,
+      "height": 5939
+    }
+  },
+  {
+    "id": "commands",
+    "before": {
+      "decorativeRuleBlocks": 10,
+      "figures": 0,
+      "images": 5,
+      "height": 4875
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 2,
+      "images": 9,
+      "height": 6252
+    }
+  },
+  {
+    "id": "incident-response",
+    "before": {
+      "decorativeRuleBlocks": 13,
+      "figures": 1,
+      "images": 1,
+      "height": 5140
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 3,
+      "images": 7,
+      "height": 6701
+    }
+  },
+  {
+    "id": "launch-checklist",
+    "before": {
+      "decorativeRuleBlocks": 13,
+      "figures": 1,
+      "images": 1,
+      "height": 5551
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 3,
+      "images": 6,
+      "height": 7312
+    }
+  },
+  {
+    "id": "mcp-permissions",
+    "before": {
+      "decorativeRuleBlocks": 13,
+      "figures": 1,
+      "images": 1,
+      "height": 4970
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 3,
+      "images": 6,
+      "height": 6618
+    }
+  },
+  {
+    "id": "node-october-2026",
+    "before": {
+      "decorativeRuleBlocks": 12,
+      "figures": 2,
+      "images": 2,
+      "height": 6956
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 4,
+      "images": 6,
+      "height": 8519
+    }
+  },
+  {
+    "id": "operations",
+    "before": {
+      "decorativeRuleBlocks": 10,
+      "figures": 1,
+      "images": 1,
+      "height": 4240
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 4,
+      "images": 6,
+      "height": 6095
+    }
+  },
+  {
+    "id": "php-october-2026",
+    "before": {
+      "decorativeRuleBlocks": 12,
+      "figures": 1,
+      "images": 1,
+      "height": 5590
+    },
+    "after": {
+      "decorativeRuleBlocks": 0,
+      "figures": 3,
+      "images": 5,
+      "height": 7071
+    }
+  }
+]
