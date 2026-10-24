@@ -26,10 +26,11 @@ reviewSections:
   sources: "一次資料"
 changes:
   - date: "2026-10-24"
-    summary: "はじめてキーを設定する場面から、5つの図解と実行結果で確認できる教材へ改訂。"
+    summary: "キーを設定する場面の挿絵と8つの図で、設定・利用制限・漏えい対応を確認できる教材へ改訂。"
 ---
 
 import ArticleVisual from "../../components/ArticleVisual.astro";
+import ReadingCard from "../../components/ReadingCard.astro";
 
 AIと一緒に、文章を短くまとめるアプリを作っている。画面ができて、次はAIサービスにつなぐところ。そこで、こんな案内が出てきました。
 
@@ -84,6 +85,8 @@ fetch('https://api.example.invalid/summarize', {
 ```
 
 `Authorization`は、サービスに利用資格を伝えるための通信の項目です。このコードでは、その値を組み立てるために、ブラウザが秘密のキーを知る必要があります。
+
+<ArticleVisual kind="browser-secret" />
 
 入力欄をパスワード表示にしたり、画面からキーの文字を隠したりしても、この構造は変わりません。利用者に渡すコードや通信に秘密のキーが入っていれば、そこから読み取られる可能性があります。
 
@@ -169,6 +172,8 @@ document.querySelector('#check').addEventListener('click', () => {
 
 ### サーバーを挟めば、だれでも呼べてよい？
 
+<ArticleVisual kind="limits" />
+
 ここで、もう一つ落とし穴があります。
 
 秘密のキーが見えなくても、自分のサーバーの要約窓口をだれでも無制限に呼べるなら、他人の利用で料金が増える可能性があります。
@@ -215,6 +220,8 @@ document.querySelector('#check').addEventListener('click', () => {
 
 GitHubも、認証情報が漏れた場合は、まず失効や交換を行うよう案内しています。履歴からの削除だけで終わらせないことが重要です。[GitHub公式：漏えい時の対応](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
 
+<ArticleVisual kind="rotation" />
+
 疑わしいときは、次の順で対応を進めます。
 
 1. どのサービスの、どのキーかを特定する。値を相談用のメッセージへ貼らない。
@@ -249,6 +256,12 @@ APIキーの設定で押さえたいのは、ファイル名を覚えること�
 **そのキーが何を許可し、どこで使われ、だれに届くかを追えること。** これが分かると、AIに設定を頼むときも、回答を確かめやすくなります。
 
 アプリにログインやデータの保存を加えたら、次は[ログインと、データを使う権限の違い](../access-control/)を見てみましょう。キーを隠せていても、別の利用者のデータが読めてしまう問題は、別の場所に残るからです。
+
+**Node.jsで動かしているなら、実行環境も確認する。**
+
+キーの設定とは別に、アプリを動かす実行環境にも更新が必要です。Node.jsやMCPを使っている場合は、2026年10月の更新事例で、導入した版と動いている版を確認する場所を整理できます。
+
+<ReadingCard id="node-october-2026" />
 
 ## 一次資料
 

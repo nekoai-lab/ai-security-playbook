@@ -10,7 +10,7 @@ reviewed: "2026-10-24"
 keywords: ["Node.js", "Nodejs", "Brotli", "MCP", "CVE", "圧縮", "更新", "セキュリティ"]
 changes:
   - date: "2026-10-24"
-    summary: "実行環境と入力経路を確かめる手順を整理しました。"
+    summary: "実行中の版を確かめる場面を挿絵と比較図で説明しました。"
 prerequisites: ["basics"]
 minutes: 12
 outcomes:
@@ -20,13 +20,11 @@ outcomes:
 ---
 
 import Flow from "../../components/Flow.astro";
+import ArticleVisual from "../../components/ArticleVisual.astro";
 
 まずは読むだけでも構いません。実践するときは、自分が管理する対象を一つ選びます。NodeやMCPが初めてなら、[実行環境の基本](../basics/)から読み始められます。
 
-<Flow
-  steps={["公式の基準を知る", "自分の対象を確かめる", "事実と未確認を記録する"]}
-  caption="更新番号を知ることから、自分の環境を確認することへ進みます。"
-/>
+<ArticleVisual kind="node-update" />
 
 
 <div role="note" className="historical-note"><strong>2026年10月の更新事例です。</strong> 現在の対応を判断するときは、[Node.jsの最新リリース](https://nodejs.org/en/download/current)と[セキュリティ発表](https://nodejs.org/en/blog/vulnerability)も確認してください。</div>

@@ -64,3 +64,7 @@ C01–C06の実装と内容照合はdesign/CONTENT_REVIEW.md。8分野の充足�
 ## 2026-10-24 / Reader-first API key article
 
 Approved: retain current site structure and assets; publish the approved API key narrative; increase useful inline diagrams/illustrations; simplify confusing read-next block. Evidence: article is framed for first-time external-service users, five figures show the situation, key types, build path, server boundary and inspection points. Existing compass logo / ExplorerCat / colors / URLs stay. Nine content requirements remain checked via explicit section coverage for narrative v2, not arbitrary fixed public headings. Verify dummy-key code, all routes/widths, route switching and final-step state, keyboard, text 200% and visual review. Results will be recorded in READING_REVIEW.md and UX_REVIEW.md.
+
+## 2026-10-24 / More editorial illustrations and Node.js cards
+
+User approved the key-setting scene and requested this illustration style throughout reading, plus a Node.js article card. Add two scenario artworks (API-key setting, runtime inspection), real-text mechanism diagrams, top-page reading cards and artwork on the existing library entries. Add one contextual Node.js card at the API article end, clearly a separate runtime concern. Maintain existing page structure and PHP feature; no new or duplicate search results. Validate responsive images/alt/CLS, explanatory text under zoom, links/search/route state and all pages/widths.

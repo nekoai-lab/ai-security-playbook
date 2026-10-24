@@ -48,3 +48,7 @@ related: ["agent-permissions"]
 api-keys.mdxは読者の迷う場面から入り、ArticleVisualでscene/types/build/boundary/inspectを示す。部品は本文を画像化せず、既存ExplorerCat/FieldIconと実テキストを使う。図の目的とcaptionをセットで確認する。記事の目次へ、検査用の項目名をそのまま並べる必要はない。reviewSectionsはCONTENT_STANDARD.md参照。
 
 読了欄の主リンクは次の記事。最後は習得や作業完了を推定せず「このルートはここまで」と表示し、関連する次のテーマへ案内する。順番とルートへの戻りは補助情報としてまとめる。queryのrouteは実在し、その教材を含むものだけ採用する。
+
+## 場面の挿絵と記事カード
+
+ReadingArtはreading-highlights.tsの2つの場面をsrcset付きで表示する。ReadingCardは同じデータから読む場面・記事名・説明・所要時間を示す。トップに選ぶ教材と、検索結果の件数を混同しない。LessonCardに挿絵を足してもdata-catalog-itemを複製しない。Node.jsカードは2026年10月の更新事例と明示し、APIキーの設定だけで実行環境の更新まで完了するとは扱わない。

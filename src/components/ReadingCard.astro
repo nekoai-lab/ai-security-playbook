@@ -1,0 +1,33 @@
+---
+import { getEntry } from "astro:content";
+import ReadingArt from "./ReadingArt.astro";
+import {
+  readingHighlights,
+  type ReadingHighlightId,
+} from "../data/reading-highlights";
+interface Props {
+  id: ReadingHighlightId;
+  headingLevel?: "h2" | "h3";
+}
+const { id, headingLevel: Heading = "h3" } = Astro.props;
+const entry = await getEntry("lessons", id);
+if (!entry) throw new Error(`Missing reading highlight: ${id}`);
+const highlight = readingHighlights[id];
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<a class="reading-card" data-reading-card={id} href={`${base}/learn/${id}/`}>
+  <ReadingArt id={id} sizes="(max-width: 760px) 100vw, 320px" />
+  <div class="reading-card-copy">
+    <p class="reading-card-situation">{highlight.situation}</p>
+    <Heading>{highlight.title}</Heading>
+    <p class="reading-card-description">{highlight.description}</p>
+    <p class="catalog-meta">
+      {id === "node-october-2026" ? "2026年10月の更新事例 · " : ""}約
+      {entry.data.minutes}分
+    </p>
+    <span class="reading-card-action">
+      記事を読む <span aria-hidden="true">→</span>
+    </span>
+  </div>
+</a>
