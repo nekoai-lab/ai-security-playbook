@@ -81,3 +81,27 @@ Node.jsカードと実行中の版の話題。機械の歯車は実行環境の�
 顔が大きく丸くなった旧「喜怒哀楽4種」は、現行の顔立ちの参照に使いません。修正版の6種を正本として扱います。
 
 機械向けの一覧・寸法・透過情報・SHA-256は[catalog.json](./catalog.json)を参照してください。採用判断の記録は[approval-record.md](./approval-record.md)。
+
+## 調べる猫：個別透過素材
+
+<img src="../../../public/brand/cat-investigate-320.webp" alt="調べる猫：個別透過素材" width="176" />
+
+確認する記事の導入。承認済みポーズ06を元の顔立ちへ寄せて個別化。
+
+[原本PNG](./sources/cat-investigate-cutout.png) · 個別素材化済み
+
+## 上からのぞく猫：個別透過素材
+
+<img src="../../../public/brand/cat-peek-320.webp" alt="上からのぞく猫：個別透過素材" width="176" />
+
+カード上の補足。修正版表情Aを参照。文字と重ならない余白を確保。
+
+[原本PNG](./sources/cat-peek-cutout.png) · 個別素材化済み
+
+## オレンジの肉球：個別透過素材
+
+<img src="../../../public/brand/paw-orange-64.webp" alt="オレンジの肉球：個別透過素材" width="176" />
+
+節の区切りの装飾。完了や安全の保証にしない。
+
+[原本PNG](./sources/paw-orange-cutout.png) · 個別素材化済み

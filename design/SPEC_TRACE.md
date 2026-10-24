@@ -72,3 +72,7 @@ User approved the key-setting scene and requested this illustration style throug
 ## 2026-10-24 / Approved illustration archive
 
 Store approved designs and usage guidance for future reuse, as requested. Nine records distinguish formal identity, adopted scenes, poses/layout references, stamps and corrected expressions. Old rounded faces are not the current character reference. No site UI changes; verify source hashes, preview links and identical dist output. Evidence: ILLUSTRATION_LIBRARY_REVIEW.md.
+
+## 2026-10-24 / Use approved cat designs in commands article
+
+User requests actual article use after approving the reusable library. Begin with commands: investigating pose at introduction, peeking neutral face on the execPath distinction, and paw decoration between sections. Create individual transparent assets from approved composition/face references, without sheet labels or drawn card borders. Commands, sources, caveats and evidence-review date remain. Preserve text/keyboard access and reserve art space under text zoom. Verify full routes/widths and actual publication.
