@@ -1,28 +1,194 @@
 ---
 import { getCollection } from "astro:content";
-import { topics } from "../data/catalog";
-import FieldIcon from "./FieldIcon.astro";
+import { topics, levels } from "../data/catalog";
+import { topicGuides } from "../data/topic-guides";
+import LessonArt from "./LessonArt.astro";
 interface Props {
   headingLevel?: "h2" | "h3";
 }
 const { headingLevel: Heading = "h2" } = Astro.props;
-const lessons = await getCollection("lessons");
-const published = topics.filter((t) =>
-  lessons.some((l) => l.data.topic === t.id),
+const lessons = (await getCollection("lessons")).sort(
+  (a, b) =>
+    levels.indexOf(a.data.level) - levels.indexOf(b.data.level) ||
+    a.data.prerequisites.length - b.data.prerequisites.length ||
+    a.id.localeCompare(b.id),
 );
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<div class="topic-grid">
-  {published.map((t) => (
-    <a class="topic-card" href={`${base}/topics/${t.id}/`}>
-      <FieldIcon kind={t.kind} />
-      <Heading>{t.title}</Heading>
-      <p>{t.summary}</p>
-      <span class="catalog-meta">
-        {lessons.filter((l) => l.data.topic === t.id).length}教材{" "}
-        <span aria-hidden="true">→</span>
-      </span>
-    </a>
-  ))}
+<div class="discovery-topics" data-discovery-topics>
+  {topics.map((topic) => {
+    const found = lessons.filter((l) => l.data.topic === topic.id);
+    if (!found.length) return null;
+    const href =
+      found.length === 1
+        ? `${base}/learn/${found[0].id}/`
+        : `${base}/topics/${topic.id}/`;
+    return (
+      <article
+        class="discovery-topic"
+        data-discovery-topic={topic.id}
+        data-topic-url={`${base}/topics/${topic.id}/`}
+      >
+        <div class="topic-heading">
+          <div>
+            <p class="topic-count">
+              <span data-topic-count>{found.length}</span>教材
+            </p>
+            <Heading>
+              <a data-topic-destination href={href}>
+                {topic.title}
+              </a>
+            </Heading>
+          </div>
+          <LessonArt id={topicGuides[topic.id].feature} sizes="96px" />
+        </div>
+        <p class="topic-benefit">{topic.summary}</p>
+        <ul class="topic-examples">
+          {found.map((l, i) => (
+            <li
+              hidden={i > 1}
+              data-topic-example
+              data-id={l.id}
+              data-level={l.data.level}
+              data-search={[
+                l.data.title,
+                l.data.summary,
+                l.data.prerequisiteNote,
+                ...l.data.keywords,
+              ].join(" ")}
+            >
+              <a href={`${base}/learn/${l.id}/`}>
+                {l.data.shortTitle ?? l.data.title}{" "}
+                <span aria-hidden="true">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a
+          class="topic-action"
+          data-topic-destination
+          data-topic-action
+          href={href}
+        >
+          {found.length === 1 ? "この記事を読む" : "このテーマを見る"}{" "}
+          <span aria-hidden="true">→</span>
+        </a>
+      </article>
+    );
+  })}
 </div>
+<style>
+  .discovery-topics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .discovery-topic {
+    min-width: 0;
+    padding: 24px;
+    background: var(--color-paper-light);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 12px;
+  }
+  .topic-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 96px;
+    gap: 16px;
+    align-items: center;
+    min-width: 0;
+  }
+  .topic-heading > div {
+    min-width: 0;
+  }
+  .topic-count {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-orange-ink);
+  }
+  h2,
+  h3 {
+    font-size: 24px;
+    line-height: 1.6;
+    margin: 0;
+    text-wrap: balance;
+  }
+  h2 a,
+  h3 a {
+    display: block;
+    min-height: 44px;
+    padding-block: 4px;
+    text-decoration: none;
+  }
+  .topic-benefit {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.9;
+    text-wrap: balance;
+  }
+  .topic-examples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .topic-examples a {
+    display: block;
+    min-height: 44px;
+    padding-block: 8px;
+    text-wrap: balance;
+  }
+  .topic-action {
+    display: block;
+    min-height: 44px;
+    padding-block: 8px;
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-orange-ink);
+    font-weight: 700;
+  }
+  .discovery-topics :global([hidden]) {
+    display: none !important;
+  }
+  @media (max-width: 760px) {
+    .discovery-topics {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .discovery-topic {
+      padding: 16px;
+    }
+    .topic-heading {
+      grid-template-columns: minmax(0, 1fr) 80px;
+      gap: 12px;
+    }
+  }
+</style>
+
+<style>
+  @media (max-width: 380px) {
+    .topic-heading {
+      grid-template-columns: minmax(0, 1fr) 64px;
+    }
+    .topic-heading > div {
+      display: contents;
+    }
+    .topic-count {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    h2,
+    h3 {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+    .topic-heading :global(.lesson-art) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+</style>

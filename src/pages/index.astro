@@ -1,16 +1,34 @@
 ---
 import Shell from "../layouts/Shell.astro";
-import ReaderEntryCards from "../components/ReaderEntryCards.astro";
+import LessonDiscovery from "../components/LessonDiscovery.astro";
 import FeaturedLessonCard from "../components/FeaturedLessonCard.astro";
 import { featuredLessons } from "../data/featured-lessons";
+import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
 import FieldButton from "../components/FieldButton.astro";
-import { topics } from "../data/catalog";
 import { getCollection } from "astro:content";
 const lessons = (await getCollection("lessons")).sort(
   (a, b) =>
     b.data.updated.localeCompare(a.data.updated) || a.id.localeCompare(b.id),
 );
-const recent = lessons.slice(0, 3);
+const recent = lessons.slice(0, 5);
+const picks = {
+  all: ["approved-ai-data", "api-keys", "node-october-2026"],
+  入門: ["ai-data-boundaries", "app-architecture", "ai-work-logs"],
+  実践: ["api-keys", "access-control", "node-october-2026"],
+  発展: ["approved-ai-data", "github-guards", "external-service-failures"],
+};
+const recommended = [...new Set(Object.values(picks).flat())].map((id) => {
+  const entry = lessons.find((l) => l.id === id)!;
+  const visual = lessonVisuals[id as LessonVisualId];
+  return (
+    featuredLessons.find((l) => l.id === id) ?? {
+      id: id as LessonVisualId,
+      question: visual.question,
+      situation: visual.situation,
+      takeaway: entry.data.summary,
+    }
+  );
+});
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
@@ -30,7 +48,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         <br />
         何を確かめるか、図と具体例で学ぶ。
       </p>
-      <FieldButton href="#start">自分に合う入口を選ぶ</FieldButton>
+      <FieldButton href="#catalog">気になることから探す</FieldButton>
     </div>
     <figure class="hero-art">
       <img
@@ -49,34 +67,50 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </figure>
   </section>
   <div class="entry-band">
-    <p class="wrap">AIを使う人も、作る人も。いまの場面と知識に合う教材へ。</p>
+    <div class="wrap">
+      <p class="band-title">
+        <span>AIと社会のこれからを、</span>
+        <span>ともに探究する。</span>
+      </p>
+      <p>技術・リスク・実践 — 現場で使える知識を、一つずつ。</p>
+    </div>
   </div>
-  <section id="start" class="wrap home-section" aria-labelledby="start-title">
-    <p class="eyebrow">START HERE</p>
-    <h2 id="start-title">いま、何を確かめたい？</h2>
-    <p class="section-intro">
-      まずは場面から。仕組みを知る入門から、実践・発展へ進めます。
-    </p>
+  <section
+    id="start"
+    class="wrap home-section"
+    aria-labelledby="discovery-title"
+  >
     <div id="paths">
-      <ReaderEntryCards />
+      <div id="library">
+        <div id="catalog">
+          <p class="eyebrow">FIND YOUR FIELD</p>
+          <h2 id="discovery-title">気になることから、見つけよう。</h2>
+          <p class="section-intro">
+            何が分かるかを見て、記事を選べます。知りたい言葉や、いまの知識から絞り込んでも。
+          </p>
+          <LessonDiscovery />
+        </div>
+      </div>
     </div>
   </section>
   <section
     id="latest"
     class="wrap home-section"
     aria-labelledby="featured-title"
+    data-home-picks={JSON.stringify(picks)}
   >
     <p class="eyebrow">FIELD READING</p>
     <h2 id="featured-title">こんな疑問から、読んでみる。</h2>
     <p class="section-intro">前提と分かることを見て、気になる1本を。</p>
-    <div class="reading-card-grid">
-      {featuredLessons.slice(0, 2).map((lesson) => (
-        <FeaturedLessonCard lesson={lesson} />
-      ))}
-    </div>
-    <div class="compact-reading">
-      {featuredLessons.slice(2).map((lesson) => (
-        <FeaturedLessonCard lesson={lesson} compact />
+    <div class="home-featured-grid">
+      {recommended.map((lesson) => (
+        <div
+          data-home-featured={lesson.id}
+          data-home-default={picks.all.includes(lesson.id) ? "true" : undefined}
+          hidden={!picks.all.includes(lesson.id)}
+        >
+          <FeaturedLessonCard lesson={lesson} stack />
+        </div>
       ))}
     </div>
     <p class="hub-action">
@@ -84,31 +118,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </p>
   </section>
   <section
-    id="library"
-    class="wrap home-section"
-    aria-labelledby="topics-title"
+    id="updates"
+    class="wrap home-section home-news"
+    aria-labelledby="updates-title"
   >
-    <p class="eyebrow">LOOK IT UP</p>
-    <h2 id="topics-title">調べたいテーマが決まっていたら。</h2>
-    <nav class="compact-topics" aria-label="テーマから探す">
-      {topics.map((topic) => (
-        <a href={`${base}/topics/${topic.id}/`}>
-          {topic.title}
-          <span aria-hidden="true">→</span>
-        </a>
-      ))}
-    </nav>
-  </section>
-  <section class="wrap home-section home-news" aria-labelledby="updates-title">
     <p class="eyebrow">UPDATES</p>
     <h2 id="updates-title">新着・更新</h2>
     <ul class="news-list">
       {recent.map((lesson) => (
-        <li>
+        <li data-home-update>
           <time datetime={lesson.data.updated}>{lesson.data.updated}</time>
-          <a href={`${base}/learn/${lesson.id}/`}>
-            {lesson.data.shortTitle ?? lesson.data.title} →
-          </a>
+          <div>
+            <a href={`${base}/learn/${lesson.id}/`}>
+              {lesson.data.shortTitle ?? lesson.data.title} →
+            </a>
+            <p>{lesson.data.summary}</p>
+          </div>
         </li>
       ))}
     </ul>
@@ -117,22 +142,55 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </p>
   </section>
 </Shell>
+<script>
+  import { normalizeLevel } from "../data/catalog";
+  const featured = document.querySelector<HTMLElement>("[data-home-picks]");
+  if (featured) {
+    const picks: Record<string, string[]> = JSON.parse(
+      featured.dataset.homePicks!,
+    );
+    const render = (level: string, query: string) => {
+      featured.hidden = !!query.trim();
+      const ids = picks[level] ?? picks.all;
+      featured
+        .querySelectorAll<HTMLElement>("[data-home-featured]")
+        .forEach(
+          (card) => (card.hidden = !ids.includes(card.dataset.homeFeatured!)),
+        );
+    };
+    document.addEventListener("lesson-discovery-change", (event) => {
+      const { level, query } = (
+        event as CustomEvent<{ level: string; query: string }>
+      ).detail;
+      render(level, query);
+    });
+    const params = new URLSearchParams(location.search);
+    render(normalizeLevel(params.get("level") ?? ""), params.get("q") ?? "");
+  }
+</script>
 <style>
   .entry-band {
     background: var(--color-orange);
     color: var(--color-ink);
-    padding-block: 16px;
+    padding-block: 24px;
   }
   .entry-band p {
-    margin-block: 0;
+    margin: 0;
     font-size: 16px;
     line-height: 1.9;
     text-wrap: balance;
   }
+  .entry-band .band-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
   .home-section {
     padding-block: 48px;
   }
-  .home-section > h2 {
+  h2,
+  #catalog > h2 {
     margin: 0 0 16px;
     font-size: 32px;
     line-height: 1.4;
@@ -144,41 +202,29 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     line-height: 1.9;
     text-wrap: balance;
   }
-  .compact-reading {
+  .home-featured-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
   }
-  .compact-topics {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px 24px;
-  }
-  .compact-topics a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
+  .home-featured-grid > div {
     min-width: 0;
-    padding-block: 12px;
-    min-height: 44px;
-    font-size: 16px;
-    line-height: 1.6;
-    text-decoration: none;
   }
-  .compact-topics a:hover {
-    text-decoration: underline;
+  :global([data-home-featured][hidden]),
+  :global([data-home-picks][hidden]) {
+    display: none !important;
   }
   .news-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: grid;
+    gap: 24px;
   }
   .news-list li {
     display: grid;
-    grid-template-columns: 112px minmax(0, 1fr);
-    gap: 16px;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 24px;
     align-items: baseline;
   }
   .news-list time {
@@ -187,35 +233,50 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     color: var(--color-muted);
   }
   .news-list a {
-    text-wrap: balance;
     display: block;
-    padding-block: 12px;
     min-height: 44px;
+    padding-block: 8px;
     font-size: 16px;
     line-height: 1.6;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  .news-list p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.9;
+    text-wrap: balance;
   }
   @media (max-width: 760px) {
     .home-section {
       padding-block: 32px;
     }
-    .home-section > h2 {
+    h2,
+    #catalog > h2 {
       font-size: 24px;
     }
-    .compact-reading {
+    .home-featured-grid {
       grid-template-columns: 1fr;
-    }
-    .compact-topics {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px 16px;
+      gap: 16px;
     }
     .news-list li {
       grid-template-columns: 1fr;
       gap: 0;
-      margin-bottom: 16px;
     }
-    .news-list a {
-      text-wrap: balance;
-      padding-top: 8px;
-    }
+  }
+</style>
+
+<style>
+  .band-title span {
+    display: inline-block;
+  }
+  .entry-band p:not(.band-title) {
+    text-wrap: pretty;
+  }
+</style>
+
+<style>
+  .news-list p {
+    max-width: 40em;
   }
 </style>
