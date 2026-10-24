@@ -57,3 +57,14 @@ test("dependency lesson keeps nine coverage points and requires diagrams, exerci
   ])
     assert(validateContent("future", bad).errors.length);
 });
+
+test("version choice example fixes every alert or reports a missing fix", () => {
+  const blocks = [...article.matchAll(/```js\n([\s\S]*?)```/g)].map((m) => m[1]);
+  assert.equal(blocks.length, 2);
+  const lines = [];
+  const c = { console: { log: (...args) => lines.push(args.join(" ")) } };
+  vm.runInNewContext(blocks[1], c, { timeout: 1000 });
+  assert.deepEqual(lines, ["13.0.0", "修正版がまだない通知がある"]);
+  assert.equal(c.versionFixingAll([{ fixedIn: "9.10.0" }, { fixedIn: "9.9.9" }]), "9.10.0");
+  assert.equal(c.versionFixingAll([{ fixedIn: "2.0.0" }, { fixedIn: "10.0.0" }]), "10.0.0");
+});
