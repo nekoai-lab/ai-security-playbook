@@ -60,3 +60,7 @@ C05: 各教材に対象・前提・学習目標・図・具体的な確認・判
 C06: 内容に合うテーマと目的別ルートを追加し、Node.js固有の前提を新教材へ押し付けない。全生成画面を検証対象に含める。
 
 C01–C06の実装と内容照合はdesign/CONTENT_REVIEW.md。8分野の充足範囲はdocs/CONTENT_MAP.md。新規9教材に品質v1、旧5教材は導入前として別表示。役割表・チェックリストの証拠・事故と実験の区別を検査と編集レビューへ分離した。
+
+## 2026-10-24 / Reader-first API key article
+
+Approved: retain current site structure and assets; publish the approved API key narrative; increase useful inline diagrams/illustrations; simplify confusing read-next block. Evidence: article is framed for first-time external-service users, five figures show the situation, key types, build path, server boundary and inspection points. Existing compass logo / ExplorerCat / colors / URLs stay. Nine content requirements remain checked via explicit section coverage for narrative v2, not arbitrary fixed public headings. Verify dummy-key code, all routes/widths, route switching and final-step state, keyboard, text 200% and visual review. Results will be recorded in READING_REVIEW.md and UX_REVIEW.md.

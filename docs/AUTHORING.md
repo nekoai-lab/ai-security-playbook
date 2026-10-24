@@ -41,4 +41,10 @@ related: ["agent-permissions"]
 
 新規教材は[CONTENT_STANDARD.md](./CONTENT_STANDARD.md)に従う。想定リスク、事例の事実と限界、役割別の確認、根拠を伴うチェックリストを必須とする。見出しが揃っただけで内容レビューの代わりにしない。
 
-新規教材はqualityVersion: 1を指定する。prerequisitesとrelatedは教材IDの配列で、Nodeの入門を一律に前提としない。8分野の定義はcatalog.tsを正本とし、実際に扱う内容へ分類する。
+既存v1の構成検査は継続する。具体例・コードと結果を通して学ぶ実践教材ではqualityVersion: 2とreviewSectionsを指定できる。prerequisitesとrelatedは教材IDの配列で、Nodeの入門を一律に前提としない。8分野の定義はcatalog.tsを正本とし、実際に扱う内容へ分類する。
+
+## 図を含む読み物の見本
+
+api-keys.mdxは読者の迷う場面から入り、ArticleVisualでscene/types/build/boundary/inspectを示す。部品は本文を画像化せず、既存ExplorerCat/FieldIconと実テキストを使う。図の目的とcaptionをセットで確認する。記事の目次へ、検査用の項目名をそのまま並べる必要はない。reviewSectionsはCONTENT_STANDARD.md参照。
+
+読了欄の主リンクは次の記事。最後は習得や作業完了を推定せず「このルートはここまで」と表示し、関連する次のテーマへ案内する。順番とルートへの戻りは補助情報としてまとめる。queryのrouteは実在し、その教材を含むものだけ採用する。
