@@ -1,3 +1,4 @@
+import { privacyDiagrams } from "./privacy-diagrams";
 import { rotationDiagrams } from "./rotation-diagrams";
 import { guardDiagrams } from "./guard-diagrams";
 import { updateDiagrams } from "./update-diagrams";
@@ -46,6 +47,13 @@ const d = (
   caption: string,
 ): DiagramSpec => ({ title, layout, nodes, caption });
 export const lessonVisuals = {
+  "developer-privacy": {
+    image: "developer-privacy-scene",
+    question: "本文の外にも、自分の情報が付いていない？",
+    situation: "個人開発を、選んだ名前で公開するときに",
+    pose: "think",
+    diagrams: [privacyDiagrams.surfaces, privacyDiagrams.git],
+  },
   "secret-rotation": {
     image: "secret-rotation-scene",
     question: "新しいキーは、動いているアプリまで届いた？",

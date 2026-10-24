@@ -138,3 +138,6 @@ FULL github-guards-fullは2744passed/error0/既存色数warning8/manual-review34
 
 ## キー更新の第4本（2026-10-24）
 20記事44ルート。6図・3比較・専用場面・猫3。SECRET_ROTATION_REVIEW.mdに内容と限界を記録。型75ファイル0件/build44/37テスト成功。初回320px本文2箇所の折り返しを整え、最終FULL2808passed/error0/既存warning8/manual352。全44×4幅axe/overflow/pageerrorと全44文字200%、記事4幅/全展開200%/キーボード/JSなし/検索/テーマ/前後画像を確認。閾値変更・除外なし。公開はCI/Pages/URL後。
+
+## 開発者自身の公開情報 / 第5本（2026-10-24）
+21記事45ルート。6図・3比較・専用場面・猫3。内容の根拠・原典の報告との区別・限界はDEVELOPER_PRIVACY_REVIEW.md。型79ファイル0件/build45/40テスト成功。初回の本文/比較見出しの孤立文字を修正し、最終FULL2872passed/error0/既存warning8/manual360。全45×4幅axe/pageerror/overflow、全45ページ375px文字200%、修正後記事4幅/全展開200%/キーボード/JSなし/検索URL反映/テーマ/前後画像成功。目視あり。しきい値変更と除外なし。公開はCI/Pages/URL後。

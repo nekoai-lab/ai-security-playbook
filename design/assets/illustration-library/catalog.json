@@ -653,6 +653,19 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3409587
+    },
+    {
+      "id": "developer-privacy-scene",
+      "title": "本文の裏の情報を調べる探検猫",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/developer-privacy-scene.png",
+      "preview": "public/images/developer-privacy-scene-480.webp",
+      "usage": "developer-privacyの導入と回遊。公開面を点検する架空の場面。",
+      "sha256": "b76d82b39ddd69ae2433fab8820230d65a5c65d195e1340c95c87a0e013a00e1",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3652103
     }
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "id": "developer-privacy-scene",
+  "title": "本文の裏の情報を調べる探検猫",
+  "usage": "developer-privacyの導入と回遊。公開面を点検する架空の場面。",
+  "prompt": "Generate a new illustration, reference image serves only as character and style reference. Same mature black explorer cat with tapered face, natural eyes, etched fine fur, orange backpack. Warm ivory FIELD NOTES paper, intricate black ink engraving, sparing orange, wide 3:2 landscape. Scene: cat on field workbench examining a folded document's reverse side with a magnifying glass; front of document plain, reverse has small purely abstract avatar silhouette and envelope pictograms, no text. Nearby a laptop and a small photo card show the same abstract portrait symbol, connected by a subtle dotted trail, symbolizing information on surfaces beyond visible code. Cat curious, not fearful. Background lightly sketched mountains and trees. Spacious legible composition, charming but not infantile, no locks/keys, no brain, no words, no letters/numbers, no logos, no fake UI details, no security checkmarks.",
+  "referenceRoles": {
+    "reference": "api-key-setting-illustration.png：画風と案内役Cの造形"
+  }
+}

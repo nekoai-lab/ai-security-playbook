@@ -1,0 +1,35 @@
+---
+const cases = [
+  {
+    title: "本文のメールを検索",
+    result: "本文の確認ができた",
+    detail: "作成者の記録や、プロフィールまで確認した意味ではありません。",
+  },
+  {
+    title: "今後の作成者設定を変更",
+    result: "過去の記録は別に確認",
+    detail: "設定変更だけで、以前のコミットが置き換わったとは判断しません。",
+  },
+  {
+    title: "公開プロフィールを更新",
+    result: "URLや他の写しも見る",
+    detail: "別の公開面、残るコピー、リンクの関係を整理します。",
+  },
+];
+---
+
+<figure class="lesson-diagram failure-comparison" data-privacy-comparison>
+  <p class="diagram-title">その確認で分かるのは、どこまで？</p>
+  {cases.map((c, i) => (
+    <details open={i === 0}>
+      <summary>{c.title}</summary>
+      <p>
+        <strong>{c.result}</strong>
+      </p>
+      <p>{c.detail}</p>
+    </details>
+  ))}
+  <figcaption>
+    公開面の違いを比べる例です。匿名性や情報の完全削除を判定するものではありません。
+  </figcaption>
+</figure>
