@@ -17,3 +17,5 @@ CVE-2025-32711はMicrosoft CNAのCVE記録（公表2025-06-11）とMSRCを照合
 既存warning8はdesign-system14色とcommands15色×4幅で今回変化なし。旧5記事を今回の品質契約で再認証したとはしない。全46ページブラウザ/200%と公開CI/Pages/URLは完了後に追記。次の深掘りは独立した候補として記録し、前回8候補の未完了と混同しない。
 
 全46×4幅axe/overflow/pageerror成功、全46ページ375px文字200%成功。公開はPRのCI/Pagesと新記事・入口記事のURLで確認する。
+
+公開完了: PR25、Pages40096505211（24ea42815adb3bb67f6065e212cbf4aadd25fdd8）。公開46ルート、記事の画像/6図/比較/検索/テーマ/次画像、入口の承認文言・図・リンク/defaultと短いrouteを確認。

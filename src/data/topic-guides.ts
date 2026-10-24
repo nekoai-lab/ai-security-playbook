@@ -81,10 +81,9 @@ export const topicGuides = {
         anchor: "ownership",
       },
       {
-        title: "画像や共有リンクも、同じ確認で足りる？",
-        text: "閲覧・編集・削除・共有と、別の保存先にあるファイルの権限を分けます。",
-        lesson: "access-control",
-        anchor: "matrix",
+        title: "デプロイ用の認証は、何ができる？",
+        text: "クラウドの所有者、日常の操作、アプリの実行と、それぞれの権限を分けます。",
+        lesson: "cloud-account-safety",
       },
     ],
     related: ["development", "release"],

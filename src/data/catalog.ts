@@ -83,6 +83,7 @@ export const series = [
       "release-artifacts",
       "developer-privacy",
       "github-guards",
+      "cloud-account-safety",
       "launch-checklist",
       "external-service-failures",
       "incident-response",

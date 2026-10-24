@@ -1,0 +1,40 @@
+{
+  "cases": [
+    {
+      "width": 320,
+      "figures": 8,
+      "catGuides": 3,
+      "axe": 0,
+      "keyboard": true,
+      "text200": true
+    },
+    {
+      "width": 375,
+      "figures": 8,
+      "catGuides": 3,
+      "axe": 0,
+      "keyboard": true,
+      "text200": true
+    },
+    {
+      "width": 768,
+      "figures": 8,
+      "catGuides": 3,
+      "axe": 0,
+      "keyboard": true,
+      "text200": false
+    },
+    {
+      "width": 1280,
+      "figures": 8,
+      "catGuides": 3,
+      "axe": 0,
+      "keyboard": true,
+      "text200": false
+    }
+  ],
+  "noJS": true,
+  "search": true,
+  "topic": true,
+  "seriesArtwork": true
+}

@@ -17,8 +17,8 @@
 
 ## CONTENT_MAPに基づく次の深掘り
 
-- approved-ai-data: 実装・検証済み、公開はCI/Pages/URL確認。企業で使う個人情報と、個人向け有料版/非学習の違い。ai-data-boundariesも改訂。
-- cloud-account-safety: 後続候補。個人開発のクラウド管理アカウント、MFA、日常権限、復旧と料金の分離。
+- approved-ai-data: 公開済み（PR25/Pages40096505211、記事と入口のURL確認済み）。企業で使う個人情報と、個人向け有料版/非学習の違い。ai-data-boundariesも改訂。
+- cloud-account-safety: 実装・検証済み、公開はCI/Pages/URL確認。個人開発のクラウド管理アカウント、MFA、日常権限、復旧と料金の分離。
 - uploads-and-input: 後続候補。入力と添付の保存先、種類/サイズ、公開権限、処理境界。
 - usage-and-billing: 後続候補。APIの利用量、予算通知と利用制限、異常時の停止と復旧。
 

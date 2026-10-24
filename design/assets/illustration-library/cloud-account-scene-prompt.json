@@ -1,0 +1,9 @@
+{
+  "id": "cloud-account-scene",
+  "title": "管理と日常操作と実行を見比べる探検猫",
+  "usage": "cloud-account-safetyの導入と回遊。主体を分ける架空の概念場面。",
+  "prompt": "Create a new wide 3:2 editorial illustration in the same mature black-ink engraved field-notes style as reference. The reference is character and style only. Same black explorer cat with tapered muzzle, naturally expressive eyes, fine fur hatching and orange backpack/rolled mat. Ivory paper and restrained orange accents. Scene: curious cat stands at a wooden field table comparing three clearly separate objects: a closed master key case set aside, a small temporary visitor badge near a laptop, and a small server cabinet with a simple cog pictogram and its own modest key tag. The cat points toward the visitor badge, not holding all keys. Distinguish ownership, daily operation and app execution without technical labels. Light mountains/trees, ample breathing room. No text, no letters/digits, no brand marks, no green checks, no shields certifying safety, no brain/hacker, not an infantile kitten. Warm, thoughtful, clear detailed ink illustration for a security lesson.",
+  "referenceRoles": {
+    "reference": "api-key-setting-illustration.png：画風と造形の正本"
+  }
+}

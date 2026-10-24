@@ -1,0 +1,213 @@
+---
+title: "AIにデプロイを頼んだ。その認証情報は、どこまでできる？"
+shortTitle: "クラウドの管理と実行の権限"
+summary: "AWSを使う個人開発者へ。所有者・日常の操作・アプリの実行を分け、MFA、短期の認証、信頼する相手、復旧先を具体的に確認する。"
+topic: "access"
+level: "入門"
+format: "解説"
+published: "2026-10-24"
+updated: "2026-10-24"
+reviewed: "2026-10-24"
+minutes: 20
+qualityVersion: 2
+prerequisites: ["app-architecture"]
+related: ["agent-permissions", "api-keys", "secret-rotation", "incident-response"]
+keywords: ["AWS", "クラウド", "IAM", "ロール", "MFA", "ルートユーザー", "認証情報", "復旧"]
+outcomes: ["所有者・人の日常操作・アプリの権限を分ける。", "実行に使う認証の主体と、できる操作を別に確認する。", "MFA、接続元、復旧先、料金通知を混同せずに準備する。"]
+reviewSections:
+  audience: "導入"
+  mechanism: "最初のアカウント、日常の操作、アプリの実行を分ける"
+  risks: "短期間の認証でも、できる操作が広ければ影響は大きい"
+  case: "ログインだけでは説明できない、クラウドへの不正アクセス"
+  roles: "一人でも、3つの役割で確かめる"
+  exercise: "今のコマンドは、どの主体として動く？"
+  checklist: "デプロイ前に残す確認結果"
+  next: "アクセスを失わず、古い権限を整理する"
+  sources: "一次資料"
+changes:
+  - date: "2026-10-24"
+    summary: "AWSの所有者・日常操作・アプリ実行を、6図と架空の主体確認で解説。"
+---
+
+import LessonScene from "../../components/LessonScene.astro";
+import CloudAccountVisual from "../../components/CloudAccountVisual.astro";
+import CloudAccountComparison from "../../components/CloudAccountComparison.astro";
+import CatGuide from "../../components/CatGuide.astro";
+
+AIと作ったアプリを、クラウドへ公開できました。次の修正も頼みたいので、同じ開発環境をそのまま使っています。
+
+その環境は、アプリを更新するだけでしょうか。データを読む、別のサーバーを作る、権限を変える、といった操作までできるのでしょうか。
+
+この記事は、**AWSで個人開発を公開し、人やAI、アプリが使う権限を自分で管理する人**に向けたものです。デプロイは、作ったアプリを実行先へ反映すること。公開できたという結果から、反映に使った認証と、その権限を一段掘り下げます。
+
+<LessonScene id="cloud-account-safety" />
+
+## 最初のアカウント、日常の操作、アプリの実行を分ける
+
+AWSで最初にアカウントを作ると、**ルートユーザー**という、アカウント全体へ強い権限を持つ主体ができます。これは、自分が作るWebアプリの「管理者アカウント」とは別です。
+
+**IAM**は、AWS上で誰が何をできるかを管理する仕組みです。AWSは、ルートユーザーを日常の作業に使わず、人やアプリのための認証を分けることを推奨しています。[AWS：ルートユーザーの管理](https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html)
+
+<CloudAccountVisual kind="identities" />
+
+個人開発でも、同じ人が3つの役割を兼ねることはできます。ただし、同じ強い認証を全作業で共有する必要はありません。
+
+例えば、所有者としてアカウントを管理する入口、必要なときにアプリを更新する操作、起動したアプリが画像を読む権限は、それぞれ目的が違います。アプリが画像を読むために、所有者の認証を持つ必要はありません。
+
+組織が管理するアカウントでは、ルートへのアクセスを集中管理する構成もあります。この教材では個人の管理するAWS利用を中心に扱い、組織の復旧手順やルート設定を勝手に変更する案内にはしません。
+
+<CatGuide pose="point" title="同じ人でも、同じ権限ではなくていい">
+所有者として必要な操作、日常の更新、アプリの実行を分けると、ひとつの環境に問題が起きたときの影響を考えやすくなります。
+</CatGuide>
+
+<span id="temporary"></span>
+
+## 人のログインと、アプリの認証を別に用意する
+
+**ロール**は、目的の権限を持たせ、条件に合う主体が引き受けて使う仕組みです。ロールのセッションでは、期限のある**一時的な認証情報**を使います。**IAMユーザー**は、名前や認証情報を持つ別の種類の主体です。
+
+AWSは、人のアクセスには連携した認証による一時的な認証情報を、アプリなどの実行にはIAMロールを使うことを推奨しています。IAM Identity Centerは、人のアクセスをまとめて管理する選択肢です。[AWS：IAMの推奨事項](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+
+<CloudAccountVisual kind="sessions" />
+
+アプリをAWS上で動かす場合は、実行環境へ必要なロールを割り当てられるかを確認します。外部のCIから反映する場合も、その提供元が対応する短期認証の連携を検討します。**CI**は、変更に合わせてビルドやテストなどを自動実行する仕組みです。
+
+使うサービスが長期のアクセスキーを必要とする場合は、その理由と利用先を確認します。長期キーをルートユーザーで作る手順を、そのままAIへ任せるものにはしません。既存のキーがある場合も、使っている処理を確認せずにまとめて消すと止まるため、切替と復旧を先に考えます。
+
+## 今のコマンドは、どの主体として動く？
+
+AWS CLIを設定済みなら、自分が管理する対象環境で、次の読み取りを行えます。AWS CLIは、端末からAWSを操作する道具です。**このコマンドはAWSへ問い合わせますが、設定・データ・権限を変更しません。** 新しい認証情報を作るための手順ではありません。
+
+```sh
+aws sts get-caller-identity --query '{Account:Account,Arn:Arn}' --output json
+```
+
+アカウントIDと**ARN**、つまりAWS内の主体や資源を識別する名前を確認します。出力を公開やAIへ貼る必要はありません。次は説明用の架空の結果です。
+
+```text
+{
+  "Account": "123456789012",
+  "Arn": "arn:aws:sts::123456789012:assumed-role/DemoDeploy/demo-session"
+}
+```
+
+この例は`DemoDeploy`というロールのセッションを示します。名前がDeployでも、デプロイだけに制限されているという証拠ではありません。対象アカウントと主体を照合し、実際の権限は別に確認します。[AWS：GetCallerIdentity](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html)
+
+次は、結果の読み方を比べる**架空のモデル**です。自分のPCのNode.jsで動かせます。実際のAWSへ接続せず、認証やファイルも読みません。ここでは通常のAWSのARN形式の例だけを扱い、全パーティションや全種類の識別子を判定するツールにはしません。
+
+```js
+function nextCheck({ Account, Arn }) {
+  if (!/^\d{12}$/.test(Account ?? "") || typeof Arn !== "string") {
+    return "主体を確認できない";
+  }
+  if (Arn === `arn:aws:iam::${Account}:root`) {
+    return "所有者の入口。日常操作の認証を分ける";
+  }
+  const prefix = `arn:aws:sts::${Account}:assumed-role/`;
+  if (Arn.startsWith(prefix) && /^.+\/.+$/.test(Arn.slice(prefix.length))) {
+    return "ロールのセッション。信頼先と権限を確認";
+  }
+  return "主体の種類と設定を確認";
+}
+for (const Arn of [
+  "arn:aws:iam::123456789012:root",
+  "arn:aws:sts::123456789012:assumed-role/DemoDeploy/demo-session",
+]) {
+  console.log(nextCheck({ Account: "123456789012", Arn }));
+}
+```
+
+```text
+所有者の入口。日常操作の認証を分ける
+ロールのセッション。信頼先と権限を確認
+```
+
+どちらも、次の確認を示す結果です。「安全」と判定していません。GetCallerIdentityが成功することは、他の操作の許可やMFAの状態を検査した意味でもありません。
+
+<CloudAccountComparison />
+
+<span id="permissions"></span>
+
+## 短期間の認証でも、できる操作が広ければ影響は大きい
+
+一時的な認証情報は期限がありますが、有効な間の権限が必要最小限になるわけではありません。**最小権限**は、その仕事に必要な操作・対象・条件へ絞る考え方です。
+
+<CloudAccountVisual kind="permissions" />
+
+例えば、今回更新する1つのアプリに対して必要な反映操作と、アカウント内のすべてのデータを読む操作は別です。「権限エラーが出たから管理者にする」前に、どの操作が、どの対象に、どの主体で失敗したかを確かめます。
+
+**ポリシー**は、権限の条件を記述する設定です。ロールでは、少なくとも「誰がそのロールを使えるか」という信頼の設定と、「使った後に何ができるか」という権限を分けて見ます。外部CIとの連携なら、対象のプロジェクトやブランチ等へ条件を絞れるかも確認します。利用する連携方式の仕様に合わせて設定します。[AWS：セキュリティ監査の確認項目](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-audit-guide.html)
+
+アプリが読むファイルの公開設定など、資源側の権限も別にあります。ロールを絞っただけで、ファイルが誰に公開されているかまで確認済みにはなりません。実際のアクセス判定には複数の設定が関係するため、この教材の短いコードでIAM全体を再現することはしません。
+
+<CloudAccountVisual kind="trust" />
+
+AIへ環境を渡す場合も、AIが使うツールやプロセスが、どの認証へ届くかを確認します。指示文で「このアプリだけ直して」と書くことと、実際にその範囲しか操作できないことは別です。[AIエージェントの権限](/ai-security-playbook/learn/agent-permissions/)も参照してください。
+
+## MFAと復旧の入口を、セットで守る
+
+**MFA**は、パスワードに加え別の要素も使って本人を確かめる仕組みです。AWSは、利用できる場合にパスキーやセキュリティキーなど、フィッシングに強い方式を推奨しています。ルートに設定したMFAが、別のユーザーやアプリの認証へ自動で引き継がれるわけではありません。[AWS：MFAの説明](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html)
+
+<CloudAccountVisual kind="recovery" />
+
+MFAを有効にしたら、端末を失ったときの復旧方法も確認します。AWSでは複数のMFAを登録できるため、利用状況に合う予備の方法を検討できます。すべて同じ端末に依存していないか、復旧に使うメールや連絡先へ自分がアクセスできるかを見ます。
+
+予備の認証や回復に必要な情報は、AIの会話や公開リポジトリへ保存しません。組織のアカウントなら管理者の復旧手順に合わせます。復旧できることを確かめるために、現在使える唯一のMFAを解除したり、所有者の認証を消したりする必要はありません。
+
+<CatGuide pose="concern" title="守った後も、自分が戻れるように">
+ログインを強くすることと、アプリの権限を絞ることは別の対策です。必要な操作と復旧先を見てから、古い認証を整理しましょう。
+</CatGuide>
+
+## ログインだけでは説明できない、クラウドへの不正アクセス
+
+**分類：事故の公表。** 米司法省は2022年6月17日の公表で、設定不備のあるAWS環境を悪用し、Capital Oneなどのデータを取得した事件の有罪評決を報告しています。一部の不正アクセスでは、計算資源も暗号資産の採掘へ使われました。摘発は2019年です。[米司法省の公表](https://www.justice.gov/usao-wdwa/pr/former-seattle-tech-worker-convicted-wire-fraud-and-computer-intrusions)
+
+ここから学ぶのは、守る対象がログイン画面だけではなく、資源へのアクセスや、使える計算能力にも及ぶということです。この公表だけで、各被害者のルート認証やMFAの設定まで判断できません。「MFAを付けていれば防げた」「ルートユーザーが原因だった」とは断定しません。
+
+## 一人でも、3つの役割で確かめる
+
+### 所有者：強い入口と、復旧先を管理する
+
+ルートに必要な保護、普段使う認証との分離、メール・連絡先・予備の復旧方法を確認します。組織管理の設定は管理者へ確認し、見よう見まねで所有者の認証を変更しません。
+
+### 開発する人：反映する環境と主体を照合する
+
+対象のアカウントと、実行に使うロールを確認します。実行先がテストか本番か、必要な反映操作の範囲、AIやCIが使える認証を見ます。ロール名や成功メッセージだけで完了にしません。
+
+### 運用する人：アプリの権限と、異常の通知を追う
+
+実行ロールと資源側の公開範囲、不要な認証、アクセス記録を確認します。料金の通知先も確認しますが、予算通知は利用を必ず止める上限とは限りません。AWS Budgetsには通知の遅れがあり、通知後も費用が増える場合があります。[AWS：予算通知の留意点](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
+
+## デプロイ前に残す確認結果
+
+- **所有者：** ルートを日常作業から分け、MFAと連絡先・復旧方法を確認した。回復情報を公開していない。
+- **人の認証：** 対象アカウントと利用する主体が分かる。一時的な認証を使える構成と、長期キーが必要な理由を分けた。
+- **実行権限：** アプリやCIが使うロールの利用者、対象資源、操作、条件を確認した。名前だけで用途を判定していない。
+- **AIの到達範囲：** ツールやプロセスが使える認証を確認し、指示文だけの制限にしていない。
+- **資源側の公開：** ファイルやDBの公開・共有範囲も確認した。ロールの確認だけで全体を代表させていない。
+- **切替と復旧：** 古い認証の利用先と切替結果を追える。唯一の管理・復旧手段を先に消さない。
+- **異常時：** アクセスや料金の通知先、連絡先、対応する人が決まっている。通知を自動停止と混同していない。
+
+## アクセスを失わず、古い権限を整理する
+
+<CloudAccountVisual kind="migration" />
+
+今の権限が広いと分かったら、使う作業を絞り、新しい認証やロールで必要な操作を確認してから切り替えます。使われていないように見えても、夜間処理や別環境が参照している場合があります。[キー交換の教材](/ai-security-playbook/learn/secret-rotation/)へつなげて考えます。
+
+漏えいや不正利用を疑う根拠がある場合は、通常の整理とは別です。広がる利用を抑える判断、記録の保全、提供元や管理者への連絡を[異常時の対応](/ai-security-playbook/learn/incident-response/)で確認してください。
+
+<CatGuide pose="peek-side" title="公開できた、その次の確認へ">
+誰として動き、どの対象へ何ができるか。ここが分かると、AIへ任せる範囲と、アプリに必要な権限を具体的に分けられます。
+</CatGuide>
+
+## 一次資料
+
+情報確認日：2026年10月24日。AWSの例です。組織の構成や新しい管理画面で手順が異なる場合があります。別クラウドの権限体系を同じコマンドで扱うものではありません。
+
+- [AWS：ルートユーザーの管理](https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html) — 日常利用との分離と復旧の入口。
+- [AWS：IAMの推奨事項](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) — 人とアプリの一時認証、最小権限。
+- [AWS：MFA](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html) — 認証方式、主体ごとの設定、予備の方法。
+- [AWS：GetCallerIdentity](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html) — 現在の主体を読む操作。
+- [AWS：セキュリティ監査](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-audit-guide.html) — ロールの信頼先と権限の確認。
+- [AWS：予算通知](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) — 通知の遅れと利用継続の可能性。
+- [米司法省：クラウドへの不正アクセス事件の公表](https://www.justice.gov/usao-wdwa/pr/former-seattle-tech-worker-convicted-wire-fraud-and-computer-intrusions) — 2022年6月17日の有罪評決の公表。

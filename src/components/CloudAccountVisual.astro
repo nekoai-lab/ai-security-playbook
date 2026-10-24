@@ -1,0 +1,16 @@
+---
+import LessonDiagram from "./LessonDiagram.astro";
+import {
+  cloudAccountDiagrams,
+  type CloudAccountDiagramKind,
+} from "../data/cloud-account-diagrams";
+interface Props {
+  kind: CloudAccountDiagramKind;
+}
+const { kind } = Astro.props;
+---
+
+<LessonDiagram
+  spec={cloudAccountDiagrams[kind]}
+  name={`cloud-account-${kind}`}
+/>
