@@ -44,7 +44,9 @@
     "paths/before-launch/",
     "paths/ai-connections/",
     "series/solo-development/",
-    "series/ai-connections/"
+    "series/ai-connections/",
+    "learn/ai-work-logs/",
+    "learn/release-artifacts/"
   ],
   "representatives": [
     "",

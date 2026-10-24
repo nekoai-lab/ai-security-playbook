@@ -6,9 +6,11 @@ topic: "operations"
 level: "実務経験が必要"
 format: "解説"
 published: "2026-10-23"
-reviewed: "2026-10-23"
+reviewed: "2026-10-24"
 keywords: ["Node.js", "Nodejs", "Claude", "Codex", "AI", "レビュー", "通知", "運用", "更新", "自動化"]
 changes:
+  - date: "2026-10-24"
+    summary: "自作ガードの検証事例と、検知・権限・レビュー実行条件の境界を補足しました。"
   - date: "2026-10-24"
     summary: "記事の内容に合う挿絵・猫の案内・図解を追加しました。"
   - date: "2026-10-23"
@@ -19,6 +21,7 @@ minutes: 10
 
 import LessonScene from "../../components/LessonScene.astro";
 import LessonDiagram from "../../components/LessonDiagram.astro";
+import PracticeVisual from "../../components/PracticeVisual.astro";
 import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
@@ -76,6 +79,23 @@ PIDや実行ファイルの詳細は端末内で確認し、通知には必要�
 </CatGuide>
 
 自動停止は、保護対象や誤検知を検証してから段階的に導入します。
+
+## レビュー役が、何の設定で動くかも確かめる
+
+実装するAIとレビューするAIを分けるとき、もう一つ確認したいのが、レビュー役を起動する場所と設定です。
+
+[Tsukinekoのガード検証記事（2026年10月18日公開、10月24日更新）](https://zenn.dev/nekoai_lab/articles/013b347bc56ebb)では、レビュー対象のPR側にある設定を読み込んだままレビューを始める構成に、監査上の懸念を挙げています。記事で述べているのは追加検証が必要な懸念であり、この経路による攻撃の成立を確認したという報告ではありません。
+
+<PracticeVisual kind="review-trust" />
+
+学ぶ点は、変更され得るPRの内容と、レビューを動かす信頼済みの条件を分けることです。レビュー用の権限、秘密の受け渡し、ツールの起動元を確認し、PR内の設定を無条件に採用しません。具体的な設定方法は、使うレビュー製品とCIの公式資料に照らして決めます。
+
+- **実行条件：** どの場所から起動し、どの設定を読むかを実際の起動情報で確認する。
+- **権限：** レビューに不要な書き込み・公開・本番接続を付けない。
+- **対象：** レビューした差分の版と、反映する版が一致するかを確認する。
+- **記録：** レビューの出力へ秘密が混ざらないよう、残す項目を絞る。
+
+会話やツール出力に残る情報は、[AIの会話ログと秘密](../ai-work-logs/)でも整理できます。
 
 ## チーム・CI・クラウドへ広げる
 

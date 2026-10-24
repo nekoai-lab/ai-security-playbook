@@ -1,0 +1,13 @@
+---
+import LessonDiagram from "./LessonDiagram.astro";
+import {
+  practiceDiagrams,
+  type PracticeDiagramKind,
+} from "../data/practice-diagrams";
+interface Props {
+  kind: PracticeDiagramKind;
+}
+const { kind } = Astro.props;
+---
+
+<LessonDiagram spec={practiceDiagrams[kind]} name={kind} />

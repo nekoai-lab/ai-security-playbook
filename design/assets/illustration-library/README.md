@@ -194,3 +194,5 @@ Node.jsカードと実行中の版の話題。機械の歯車は実行環境の�
 ![cat-concern](../../../public/brand/cat-concern-320.webp)
 
 [原本](./sources/cat-concern.png)
+
+会話ログ・配布物の場面2点を追加。正本はcatalog.json、指示はlog-release-prompts.json。既存素材と顔を維持した記事用派生として保存。

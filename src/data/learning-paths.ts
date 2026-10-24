@@ -18,8 +18,8 @@ export const learningPaths = [
     kind: "layers" as const,
     title: "利用者のデータと、運用を守る。",
     text: "ログインと権限を分け、公開範囲・料金・復旧の備えを確かめたい方へ。",
-    ids: ["access-control", "launch-checklist"],
-    time: "約22分",
+    ids: ["access-control", "release-artifacts", "launch-checklist"],
+    time: "約34分",
   },
   {
     id: "ai-connections",
@@ -29,8 +29,8 @@ export const learningPaths = [
     kind: "compass" as const,
     title: "接続と、任せる操作を分ける。",
     text: "MCPやAIエージェントへ渡す情報と権限を、使う前に整理したい方へ。",
-    ids: ["mcp-permissions", "agent-permissions"],
-    time: "約24分",
+    ids: ["ai-work-logs", "mcp-permissions", "agent-permissions"],
+    time: "約36分",
   },
   {
     id: "environment",

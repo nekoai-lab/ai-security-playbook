@@ -1,3 +1,4 @@
+import { practiceDiagrams } from "./practice-diagrams";
 export type DiagramIcon =
   | "screen"
   | "server"
@@ -41,6 +42,23 @@ const d = (
   caption: string,
 ): DiagramSpec => ({ title, layout, nodes, caption });
 export const lessonVisuals = {
+  "ai-work-logs": {
+    image: "ai-log-copies-scene",
+    question: "会話を閉じても、記録はどこかに残っている？",
+    situation: "AIと設定やログを扱ったあとに",
+    pose: "think",
+    diagrams: [practiceDiagrams["log-map"], practiceDiagrams["log-fields"]],
+  },
+  "release-artifacts": {
+    image: "release-package-scene",
+    question: "この箱に、届けたいものだけ入っている？",
+    situation: "サイト・資料・ZIPを公開する前に",
+    pose: "point",
+    diagrams: [
+      practiceDiagrams["artifact-scope"],
+      practiceDiagrams["artifact-route"],
+    ],
+  },
   basics: {
     image: "node-runtime-scene",
     question: "Nodeは更新した。でも、AIツールも更新できた？",
