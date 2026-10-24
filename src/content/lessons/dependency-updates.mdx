@@ -6,14 +6,14 @@ topic: "operations"
 level: "入門"
 format: "解説"
 published: "2026-10-24"
-updated: "2026-10-24"
-reviewed: "2026-10-24"
+updated: "2026-10-25"
+reviewed: "2026-10-25"
 minutes: 20
 qualityVersion: 2
 prerequisites: ["app-architecture"]
 related: ["node-october-2026", "php-october-2026", "operations", "incident-response"]
-keywords: ["依存", "推移的依存", "ライブラリ", "脆弱性管理", "Dependabot", "lockfile", "更新", "個人開発"]
-outcomes: ["直接使うライブラリと、その先の依存を分けて読む。", "検知・影響判断・修正・本番確認の違いを説明する。", "未検査と検出0件を分け、次の確認を残す。"]
+keywords: ["依存", "推移的依存", "ライブラリ", "脆弱性管理", "Dependabot", "lockfile", "更新", "個人開発", "LTS", "メジャー更新"]
+outcomes: ["直接使うライブラリと、その先の依存を分けて読む。", "検知・影響判断・修正・本番確認の違いを説明する。", "未検査と検出0件を分け、次の確認を残す。", "更新先を、数字の新しさではなく提供元の予定と全部直る版で選ぶ。"]
 reviewSections:
   audience: "導入"
   mechanism: "自分のアプリには、誰かが作った部品も入っている"
@@ -25,6 +25,8 @@ reviewSections:
   next: "次は、更新を公開まで運ぶ仕組みへ"
   sources: "一次資料と参考記事"
 changes:
+  - date: "2026-10-25"
+    summary: "更新先の選び方（実行環境のサポート予定、セキュリティ更新でのメジャー更新、全部直る版、当面上げない設定）を追加。"
   - date: "2026-10-24"
     summary: "依存の地図、検知と判断、本番への反映を、架空記録と図解で学ぶ解説を公開。"
 ---
@@ -162,6 +164,78 @@ for (const record of targets) console.log(record.name + ": " + progress(record))
 AIに修正を頼むときは、変更理由、対象の部品、検証結果、未確認の範囲まで出してもらいます。マージした記録と、どの公開先へ反映したかを別に残すと、途中で止まった対象が分かります。
 </CatGuide>
 
+<span id="choose-version"></span>
+
+## 新しい版が、上げてよい版とは限らない
+
+更新の通知を見ると、「いちばん新しい版にすれば安心」と考えがちです。しかし、どの版へ進むかは、数字の大きさだけでは決められません。ここでは、更新先を選ぶときに見落としやすい4つの点を整理します。
+
+### 実行環境は、提供元のサポート予定で選ぶ
+
+**分類：提供元の方針の公表。** Node.jsでは、長く保守される版を**LTS**（Long Term Support）と呼びます。[Node.jsのリリース予定](https://github.com/nodejs/Release)によると、v25までは奇数の版がLTSにならず、短い期間で保守が終わっていました。v25の保守終了は2026年6月1日です。
+
+一方で、同じ資料には、v27からはすべての版がAlpha、Current、LTSの順に進むと書かれています。v27がLTSになる予定日は2027年10月20日で、資料にも「日付は変わる場合がある」と注記されています。
+
+つまり、「奇数の版は短命」という覚え方は、v25までは合っていても、v27以降には当てはまりません。経験則は、提供元の方針が変わると古くなります。AIに更新先を提案してもらうときも、記憶ではなく、提供元の予定表を確かめてから答えてもらいます。
+
+### セキュリティ更新でも、大きな変更の提案が来ることがある
+
+**分類：脆弱性の公表。** CSSの部品の一つであるpostcss-selector-parserでは、[GHSA-rj75-hqrm-r3gf](https://github.com/advisories/GHSA-rj75-hqrm-r3gf)（2026年10月5日公表、重大度は中）が公表され、修正版は7.1.6とされています。一方、Tailwind CSS 3は、この部品の6系を使う指定になっています。
+
+このように、推移的依存を直すには、それを使う親の部品ごと大きく上げるしかない場合があります。Dependabotのセキュリティ更新でも、メジャー更新（互換性のない変更を含みうる更新）の提案が届くことがあるのはこのためです。
+
+提案が届いたら、何の通知を直すための更新か、その更新で設定や書き方が変わるかを確かめます。ビルドが失敗したら、更新を無理に通さず、移行するか、別の方法で守るかを判断します。
+
+### 同じ部品に複数の通知があれば、全部直る版を見る
+
+一つの部品に、複数の脆弱性の通知が届くことがあります。通知ごとに修正版が違う場合、ある通知の修正版に上げても、別の通知は残ったままかもしれません。
+
+次の例は、架空の部品「demo-image」に届いた3件の通知から、すべての通知が直る版を求めるものです。手元のNode.jsで、練習用のファイルとして試せます。通信やインストールは行いません。
+
+```js
+const alerts = [
+  { id: "通知1", fixedIn: "12.3.0" },
+  { id: "通知2", fixedIn: "13.0.0" },
+  { id: "通知3", fixedIn: null },
+];
+function newer(a, b) {
+  const x = a.split(".").map(Number);
+  const y = b.split(".").map(Number);
+  for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return x[i] > y[i] ? a : b;
+  return a;
+}
+function versionFixingAll(list) {
+  if (list.some((a) => !a.fixedIn)) return "修正版がまだない通知がある";
+  return list.map((a) => a.fixedIn).reduce(newer);
+}
+console.log(versionFixingAll(alerts.slice(0, 2)));
+console.log(versionFixingAll(alerts));
+```
+
+```text
+13.0.0
+修正版がまだない通知がある
+```
+
+最初の結果は、12.3.0では通知2が残るため、全部が直るのは13.0.0だと示しています。2つ目は、修正版のない通知が1件でもあれば、版を上げるだけでは完了にできないことを示しています。その通知は、暫定的な対応と再確認日を決めて追います。
+
+### 「当面上げない」設定は、理由と見直す日を残す
+
+大きな変更を今は見送ると決めることもあります。Dependabotでは、設定ファイルの`ignore`で特定の更新を止められます。ただし、[GitHubの設定リファレンス](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference)では、`ignore`はセキュリティ更新の提案にも影響する設定として示されています。
+
+広く止めると、後で必要になる修正の提案まで届かなくなるおそれがあります。止める範囲は、版の範囲や更新の種類で絞ります。止める理由、根拠にした一次資料、見直す日も設定の近くに残します。設定で止まるのは提案（PR）で、通知そのものは別に確認できます。
+
+| 迷う場面 | 見るもの | 判断の注意 |
+| --- | --- | --- |
+| 実行環境の版を選ぶ | 提供元のリリース予定（LTSと保守終了日） | 「新しい」「偶数」などの覚え方で決めない |
+| 大きな変更の提案が来た | 元の通知、移行ガイド、依存先が対応している範囲 | セキュリティ更新だから安全な変更だと考えない |
+| 同じ部品に複数の通知 | 各通知の修正版 | 1件の修正版で全部直ったと数えない |
+| 当面上げないと決める | 止める範囲、理由、根拠、見直す日 | 修正の提案まで止めていないか確かめる |
+
+<CatGuide pose="concern" title="その覚え方、いつの情報？">
+版の選び方やサポート期間は、提供元の方針で変わります。AIや自分の記憶が「いつもこう」と言ったら、提供元の予定表や更新案内で、今の情報か確かめてから決めます。
+</CatGuide>
+
 ## 管理を整えた現場から、個人開発へ持ち帰る
 
 2026年10月22日公開の[anizozinaさん「脆弱性管理の仕組みを整えた」](https://zenn.dev/dress_code/articles/be5550254695cd)は、検知、判断、修復、本番での確認をつなぐ運用の報告です。事故の被害報告として紹介しているわけではありません。
@@ -220,9 +294,12 @@ AIに修正を頼むときは、変更理由、対象の部品、検証結果、
 
 ## 一次資料と参考記事
 
-情報確認日：2026年10月24日。対象の部品・版・機能について、最新の提供元の公表と利用するツールの仕様を確認してください。
+情報確認日：2026年10月25日。対象の部品・版・機能について、最新の提供元の公表と利用するツールの仕様を確認してください。
 
 - [anizozinaさん：脆弱性管理の仕組みを整えた](https://zenn.dev/dress_code/articles/be5550254695cd) — 継続する検知・判断・修復・確認の運用報告。本文の記録とコードは本教材用の架空例です。
 - [Apache Logging Services：Security](https://logging.apache.org/security.html) — Log4jを含む脆弱性の一次情報。
 - [GitHub公式：Dependabot alerts](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts) — 通知の契機、対象と限界。
 - [npm公式：audit](https://docs.npmjs.com/cli/v11/commands/npm-audit/) — 依存情報の照合と送信、修正を伴う操作との違い。
+- [Node.js：Release](https://github.com/nodejs/Release) — 各版のLTS開始日と保守終了日、v27からのリリース方針。
+- [GitHub Advisory：GHSA-rj75-hqrm-r3gf](https://github.com/advisories/GHSA-rj75-hqrm-r3gf) — postcss-selector-parserの脆弱性と修正版。
+- [GitHub公式：Dependabot options reference](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference) — `ignore`などの設定と、セキュリティ更新への影響。
