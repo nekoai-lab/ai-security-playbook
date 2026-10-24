@@ -150,3 +150,23 @@ FULL github-guards-fullは2744passed/error0/既存色数warning8/manual-review34
 
 ## クラウドの管理と実行の権限（2026-10-24）
 23教材47ルート。6図/比較3/専用場面/猫3、access/series/関連へ接続。型87ファイル0件/build47/46テスト成功。CUSTOMの320px折り返し2箇所を修正、再診断128passed/error0。FULL cloud-account-full3000passed/error0/既存warning8/manual376、全47×4幅axe/pageerror/overflowと全47ページ375px文字200%成功。記事4幅/全展開200%/JSなし/キーボード/検索/テーマ/前後画像を確認し目視あり。構成テストのコード欠落変異をshとjsの実構成へ合わせ、検査基準の緩和はない。内容はCLOUD_ACCOUNT_REVIEW.md。公開はCI/Pages/URL後。
+
+## 2026-10-24 / Featured lessons
+
+## Evidence
+- npm run check: 89 files, 0 errors/warnings/hints.
+- npm run build: 47 static routes.
+- npm test: design 5, catalog 4, content 5 and examples 32 = 46 passing tests.
+- Final FULL: design/audit/2026-10-24/featured-final-full, all 47 routes × 320/375/768/1280. 3000 passed, errors 0, warnings 8, manual review prompts 376.
+- The 8 existing color-count warnings remain on design-system and commands at four widths each. No thresholds or exclusions changed.
+- Browser report: 188 route/width cases, no axe WCAG A/AA violations, page errors or horizontal overflow; all 47 routes at 200% text on 375px.
+- Focused report: six unique selected lesson IDs, six real destinations, metadata and decoded images at four widths; correct one/two-column layout; Tab/Enter; homepage 200% text at all four widths; six cards without JavaScript.
+- Visual review: final six-card section at 375/1280 and existing guide at 320px/200%. Ivory/ink/orange contrast, heading hierarchy, image composition, reading order and no repeated border decoration reviewed.
+
+## Failure resolved
+The first focused 320px/200% run exposed an existing home-paths ExplorerNote overflow (360px document at 320px viewport), outside the new cards. Its grid text child kept its automatic minimum width. A homepage-scoped min-width:0 and overflow-wrap:anywhere produced 320px document width in a minimal browser experiment, then passed the final focused run. No overflow was hidden. Final FULL and browser reports were rerun on the rebuilt final version.
+
+## Scope and limitations
+README/LICENSE, lesson facts and article bodies unchanged. The separate uploads-and-input working tree was not altered or published. Five legacy lessons are not newly certified against the newer editorial contract. Automated accessibility and screenshots do not establish complete assistive-technology coverage. The final reports use the isolated mini preview on port 4389; earlier diagnostics are not release evidence.
+
+Publication: pending CI, exact-head merge, Pages and public six-card/link smoke verification.

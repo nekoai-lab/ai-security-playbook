@@ -26,3 +26,5 @@
 読み物改訂では、場面→図→具体例と結果→確認→次の判断を優先する。固定見出しへ押し込まず、CONTENT_STANDARDのv2 coverageで必須事項を保つ。見本はapi-keys.mdx / ArticleVisual.astro。
 
 イラストを使うときはdocs/ILLUSTRATION_GUIDE.mdとdesign/assets/illustration-library/catalog.jsonを先に参照。正本、承認済みの構図、旧不採用の顔を区別する。見本シートをそのまま本番カードへ貼らない。
+
+読者が冒頭で読む価値を判断できるよう、場面・得られる判断・対象と前提・早い段階の全体図を案内する。長文を連続させず、関係は図、要点は箇条書き、違いは表、動きは例と結果へ。条件と根拠を省略しない。詳細はCONTENT_STANDARDの冒頭案内と形式選択の節。
