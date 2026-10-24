@@ -2,16 +2,20 @@
 import DiagramGlyph from "./DiagramGlyph.astro";
 import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
 interface Props {
-  id: LessonVisualId;
+  id?: LessonVisualId;
+  spec?: import("../data/lesson-visuals").DiagramSpec;
+  name?: string;
   part?: 0 | 1;
 }
-const { id, part = 0 } = Astro.props;
-const spec = lessonVisuals[id].diagrams[part];
+const { id, part = 0, spec: supplied, name } = Astro.props;
+const spec: import("../data/lesson-visuals").DiagramSpec | undefined =
+  supplied ?? (id ? lessonVisuals[id].diagrams[part] : undefined);
+if (!spec) throw new Error("A diagram specification is required");
 ---
 
 <figure
   class:list={["lesson-diagram", `lesson-diagram--${spec.layout}`]}
-  data-lesson-diagram={`${id}-${part}`}
+  data-lesson-diagram={name ?? `${id}-${part}`}
 >
   <p class="diagram-title">{spec.title}</p>
   <ol class="diagram-nodes">

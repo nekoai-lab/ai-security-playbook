@@ -15,11 +15,14 @@ keywords: ["AIエージェント", "権限", "承認", "プロンプトインジ
 outcomes: ["指示と実際の権限を区別する。", "目的に必要な操作だけをまとめて許可する。", "公開・送信・削除の前に確認する内容を決める。"]
 changes:
   - date: "2026-10-24"
+    summary: "自作ガードの検証事例と、検知・権限・レビュー実行条件の境界を補足しました。"
+  - date: "2026-10-24"
     summary: "場面の挿絵と、確認の違いが分かる図解を追加しました。"
 ---
 
 import LessonScene from "../../components/LessonScene.astro";
 import LessonDiagram from "../../components/LessonDiagram.astro";
+import PracticeVisual from "../../components/PracticeVisual.astro";
 import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
@@ -56,6 +59,18 @@ import Flow from "../../components/Flow.astro";
 **分類：再現実験。** [Invariant Labsの2025-05-26の報告](https://invariantlabs.ai/blog/mcp-github-vulnerability)は、外部Issueを読む通常の依頼から、非公開情報を公開PRへ出す流れを再現しています。攻撃文の転載や実行を、ここでの確認手順にはしません。
 
 この実験は現在の全製品で同じように成功する証拠ではありません。学ぶ点は、読んだ文章を操作の許可として扱わず、情報を読む権限と公開する権限を分けることです。
+
+## フックは、どこまで見ている？
+
+「危ない操作を止めるフックを入れたから、秘密には触れないはず」。そう思っていても、文字列を検知する仕組みと、実際に読める権限は別です。フックは、実行前後の決まったタイミングで処理を確認する仕組みですが、見ている範囲には限界があります。
+
+[Tsukinekoの2026年10月18日公開の記事](https://zenn.dev/nekoai_lab/articles/013b347bc56ebb)では、自作ガードが検知する呼び出し方と、別の方法で同じ情報へ触れる経路とのずれを確認しています。これは著者自身の検証報告です。実際の認証情報を読む手順を、ここで再現する必要はありません。
+
+<PracticeVisual kind="guard-boundary" />
+
+自分の環境では、まず「読んでよい練習用ファイル」と「触れてはいけないダミーの練習用ファイル」を分け、管理者が用意した検証環境で権限を確かめます。本物の秘密が入ったフォルダーを、抜け道の実験に使いません。フックが止めたという結果だけでなく、実行アカウントにどこまで権限があるかも確認します。
+
+ガードの抜けを見つけても、AIへの指示を強くするだけで終えず、読める場所・使えるツール・送信先を必要な範囲へ狭めます。
 
 ## 誰が何を確認するか
 

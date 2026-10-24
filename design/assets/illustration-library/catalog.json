@@ -575,6 +575,32 @@
           "height": 640
         }
       ]
+    },
+    {
+      "id": "ai-log-copies-scene",
+      "title": "会話の写しを調べる猫",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/ai-log-copies-scene.png",
+      "preview": "public/images/ai-log-copies-scene-480.webp",
+      "usage": "新規教材の場面と、関連・次の記事のカード。説明はHTML本文で提供。",
+      "sha256": "ec7529593511aab477f9d29ae0813eaa36976b5bd819dcd4ac21cd6907eb831e",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3847570
+    },
+    {
+      "id": "release-package-scene",
+      "title": "届ける紙を選ぶ猫",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/release-package-scene.png",
+      "preview": "public/images/release-package-scene-480.webp",
+      "usage": "新規教材の場面と、関連・次の記事のカード。説明はHTML本文で提供。",
+      "sha256": "30bfb605bce02e09c5b6909cf0e92fde0a2d4a7f88c4883762f4fa09988ecfc7",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3516376
     }
   ]
 }

@@ -99,3 +99,11 @@ mainの23eaa34も同じ測定v2・同じ契約・全28条件で再測定した�
 ## 2026-10-24 / 全記事の挿絵・図解と罫線の整理
 
 [ARTICLE_VISUALS_REVIEW.md](./ARTICLE_VISUALS_REVIEW.md)に14記事の配置一覧、承認済みポーズの採用、新しい場面、図解、回遊、変更前後と負担を記録。[最新FULL検査](./audit/2026-10-24/articles-full/VALIDATION.md)と同ディレクトリのブラウザ確認を参照。過去の検査を今回の合格へ流用せず、残る色数警告8件と内容移行前の5教材を明記。罫線多用を避けるルールをDESIGNとILLUSTRATION_GUIDEへ追加した。
+
+## 会話ログ・公開ファイル教材（2026-10-24）
+- 2本追加し16教材・40ルート。編集・出典・安全境界はLOG_RELEASE_REVIEW.md、計画はdocs/superpowers/plans/2026-10-24-log-release-guides.md。
+- FULL: `design/audit/2026-10-24/log-release-full`。2552 passed / 8 warning failed / error 0 / 320 manual-review。全40ルート×4幅。以前と同じdesign-system（14色）とcommands（15色）の色数警告が各4幅残る。新規警告・除外・基準緩和はない。完全無警告とはしない。
+- 全40ルート×4幅のaxe・表示・pageerror・はみ出し検査成功、全40ルート375px文字200%成功（browser-report.json）。
+- 全16記事×4幅、画像デコード、axe、キーボード、320/375px details全展開200%、JSなしでの本文・図解・次記事を確認（article-report.json、64ケース、既存10ポーズ継続）。
+- 新規記事は4図+場面1+猫案内2をそれぞれ実DOMで確認。検索2語と3つのルート別次記事・画像を確認。375/1280pxの導入・場面・図・猫・次カードを目視し、文字・主題欠けなし。画像は480/960WebP、PNG原本は設計資産。
+- 型55ファイル0件、40ページビルド/内部リンク、18テスト成功。公開URL確認はデプロイ後に実施。

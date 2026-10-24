@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ai-log-copies-scene",
+    "prompt": "Create ONE landscape 3:2 editorial illustration for AI Security Playbook. Match referenced black explorer cat exactly: natural tapered muzzle, pointed ears, engraved pen-and-ink fur, expressive natural eyes, orange hiking backpack. Fine hand drawn hatching, warm ivory paper, black ink and restrained vivid orange accents. Mature cozy field notebook illustration, not cartoon baby style. No words, labels, lettering, stamps, brains, UI text, contact sheet. Conceptual scene, not technical architecture. Cat thoughtfully checking a notebook beside a laptop on a wooden desk. Several separate copies of paper notes are visible, one in a small archive box, another beside an external drive. A closed orange envelope on desk suggests information to keep private. Calm curious mood, generous clear composition, distinct objects, no arrows. ",
+    "referenceRoles": [
+      "api-key-setting-illustration.png: approved character and scene style"
+    ],
+    "purpose": "2026-10-24 user-authorized article expansion; derived illustration, not a new canonical mascot"
+  },
+  {
+    "id": "release-package-scene",
+    "prompt": "Create ONE landscape 3:2 editorial illustration for AI Security Playbook. Match referenced black explorer cat exactly: natural tapered muzzle, pointed ears, engraved pen-and-ink fur, expressive natural eyes, orange hiking backpack. Fine hand drawn hatching, warm ivory paper, black ink and restrained vivid orange accents. Mature cozy field notebook illustration, not cartoon baby style. No words, labels, lettering, stamps, brains, UI text, contact sheet. Conceptual scene, not technical architecture. Cat carefully selecting just two clean sheets into an open small shipping parcel on right, while a thick closed working notebook and extra rough papers remain on left beside a laptop. Orange backpack on cat. Proud attentive expression. Show intentional selection, friendly inviting scene, plenty of breathing room, no arrows. ",
+    "referenceRoles": [
+      "api-key-setting-illustration.png: approved character and scene style"
+    ],
+    "purpose": "2026-10-24 user-authorized article expansion; derived illustration, not a new canonical mascot"
+  }
+]

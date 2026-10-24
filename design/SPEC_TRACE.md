@@ -89,3 +89,11 @@ Repeated separators around article headings, figure exteriors, notes, checklist 
 Architecture: per-lesson typed visual data; LessonArt responsive imagery; LessonScene situation/reader question; LessonDiagram layouts for sequence, comparisons and scoped boundaries; existing CatGuide extended with approved poses. LearningContext gets a route-aware image that follows the same target as its link; related articles use compact illustrated cards. Do not copy the same cat into every paragraph.
 
 Verification: matrix of lesson → illustration/pose/figures and insertion point, file/hash/provenance index, check/build/test, commands/URLs invariant comparison, actual image decode, four widths, expanded details, 200% text, no-JS, route-next state, keyboard, axe, screenshots, FULL audit all 38 pages. Record warning reasons/limitations; no threshold changes or excluded failures. Check communication costs and mobile vertical space. Preserve README/LICENSE and existing navigation/URLs.
+
+## 会話ログ・配布物の教材追加（承認済み）
+Z01: 2本の読者向けv2教材、各4図以上・挿絵・具体例と観察結果。
+Z02: 参考著者の報告と架空演習を区別、原典へリンク。ログ保持と漏えい対応、実配布物の照合を説明。
+Z03: 既存ルートとシリーズへ接続、既存ガード事例の限界を補強。
+Z04: 全ルートFULL、例の実行、スマホ・文字200%・キーボード・公開URL確認。
+計画: docs/superpowers/plans/2026-10-24-log-release-guides.md。証拠はUX_REVIEWへ追記。
+Z01–Z04: LOG_RELEASE_REVIEW.md / UX_REVIEW.mdとlog-release-fullの証拠で確認。公開はCI/Pages後に別途確認する。

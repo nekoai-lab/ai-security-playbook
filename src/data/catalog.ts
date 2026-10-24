@@ -78,6 +78,7 @@ export const series = [
       "app-architecture",
       "api-keys",
       "access-control",
+      "release-artifacts",
       "launch-checklist",
       "incident-response",
     ],
@@ -85,8 +86,8 @@ export const series = [
   {
     id: "ai-connections",
     title: "AI連携の権限を決める",
-    summary: "MCPの接続前確認と、エージェントに任せる範囲を学ぶ。",
-    ids: ["mcp-permissions", "agent-permissions"],
+    summary: "会話ログに残る情報から、MCPの接続とエージェントの権限まで学ぶ。",
+    ids: ["ai-work-logs", "mcp-permissions", "agent-permissions"],
   },
   {
     id: "node-security",

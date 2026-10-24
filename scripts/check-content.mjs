@@ -65,7 +65,11 @@ export function validateContent(id, text) {
       if (!heading || !content[key].trim())
         errors.push(`Missing narrative coverage: ${key}`);
     }
-    if (!/<ArticleVisual\b/.test(content.mechanism ?? ""))
+    if (
+      !/<(?:ArticleVisual|PracticeVisual|LessonDiagram)\b/.test(
+        content.mechanism ?? "",
+      )
+    )
       errors.push("Mechanism section needs an explanatory figure");
     if (
       !/```(?:js|javascript|ts|typescript|sh|bash|python)\b/.test(
