@@ -141,3 +141,6 @@ FULL github-guards-fullは2744passed/error0/既存色数warning8/manual-review34
 
 ## 開発者自身の公開情報 / 第5本（2026-10-24）
 21記事45ルート。6図・3比較・専用場面・猫3。内容の根拠・原典の報告との区別・限界はDEVELOPER_PRIVACY_REVIEW.md。型79ファイル0件/build45/40テスト成功。初回の本文/比較見出しの孤立文字を修正し、最終FULL2872passed/error0/既存warning8/manual360。全45×4幅axe/pageerror/overflow、全45ページ375px文字200%、修正後記事4幅/全展開200%/キーボード/JSなし/検索URL反映/テーマ/前後画像成功。目視あり。しきい値変更と除外なし。公開はCI/Pages/URL後。
+
+## 追加5本の公開確認完了（2026-10-24）
+1本ずつCI/Pages/公開URLを確認。第5本はPR23/Pages40094595449、公開45ルート成功。全8候補の対応先と各回の証拠はCANDIDATE_PUBLICATION_REVIEW.mdとdocs/CONTENT_BACKLOG.md。今回の完了記録はdocs/designのみ、実装・教材・基準変更なし。
