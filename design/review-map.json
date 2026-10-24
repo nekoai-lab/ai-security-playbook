@@ -50,7 +50,8 @@
     "learn/external-service-failures/",
     "learn/dependency-updates/",
     "learn/github-guards/",
-    "learn/secret-rotation/"
+    "learn/secret-rotation/",
+    "learn/developer-privacy/"
   ],
   "representatives": [
     "",

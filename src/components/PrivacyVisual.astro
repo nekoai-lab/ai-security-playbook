@@ -1,0 +1,13 @@
+---
+import LessonDiagram from "./LessonDiagram.astro";
+import {
+  privacyDiagrams,
+  type PrivacyDiagramKind,
+} from "../data/privacy-diagrams";
+interface Props {
+  kind: PrivacyDiagramKind;
+}
+const { kind } = Astro.props;
+---
+
+<LessonDiagram spec={privacyDiagrams[kind]} name={`privacy-${kind}`} />

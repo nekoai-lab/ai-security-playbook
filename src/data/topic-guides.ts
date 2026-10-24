@@ -178,10 +178,9 @@ export const topicGuides = {
         lesson: "launch-checklist",
       },
       {
-        title: "ログインが付いていれば、データは分かれる？",
-        text: "本人と別の利用者、未ログインで、許可と拒否の結果を確かめます。",
-        lesson: "access-control",
-        anchor: "verification",
+        title: "本文にない名前やメールは、どこから出る？",
+        text: "コミット、プロフィール、画像や配布物の公開面を分けて見ます。",
+        lesson: "developer-privacy",
       },
     ],
     related: ["access", "response"],
