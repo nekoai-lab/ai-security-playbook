@@ -36,6 +36,7 @@ export const readerJourneys = [
       "cloud-account-safety",
       "dependency-updates",
       "github-guards",
+      "ai-review-trust",
       "external-service-failures",
     ],
   },
