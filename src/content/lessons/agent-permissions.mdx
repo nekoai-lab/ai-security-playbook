@@ -13,8 +13,14 @@ prerequisites: ["ai-data-boundaries"]
 related: ["mcp-permissions", "launch-checklist"]
 keywords: ["AIエージェント", "権限", "承認", "プロンプトインジェクション", "自動化", "個人開発"]
 outcomes: ["指示と実際の権限を区別する。", "目的に必要な操作だけをまとめて許可する。", "公開・送信・削除の前に確認する内容を決める。"]
-changes: []
+changes:
+  - date: "2026-10-24"
+    summary: "場面の挿絵と、確認の違いが分かる図解を追加しました。"
 ---
+
+import LessonScene from "../../components/LessonScene.astro";
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
 
@@ -24,9 +30,13 @@ import Flow from "../../components/Flow.astro";
 
 **プロンプトインジェクション**は、読ませた文章などに含まれる指示によって、AIが本来の依頼と違う行動へ誘導される問題です。[OWASPの説明](https://genai.owasp.org/llmrisk/llm01-prompt-injection/)にあるように、外部データも入口になります。
 
+<LessonScene id="agent-permissions" />
+
 ## 仕組みをつかむ
 
-<Flow steps={["目的と許可範囲を決める", "範囲内で作業する", "境界を越える前に確認"]} caption="すべての操作で同じ確認を繰り返すより、任せる範囲と人が判断する境界を具体化します。" />
+<LessonDiagram id="agent-permissions" />
+
+すべての操作で同じ確認を繰り返すより、任せる範囲と人が判断する境界を具体化します。
 
 「削除しないで」という指示は有用ですが、削除権限そのものを外すこととは違います。保存先の権限、使えるツール、ネットワークの制限など、仕組み側でも範囲を狭めます。[OWASPのExcessive Agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/)は、過剰な機能・権限・自律性を分けて扱っています。
 
@@ -57,9 +67,13 @@ import Flow from "../../components/Flow.astro";
 
 ## 一つ確かめてみる
 
+<LessonDiagram id="agent-permissions" part={1} />
+
 架空の作業「案内ページの誤字を直す」を考えます。テスト用の複製で、対象ページの編集とローカル確認まではまとめて任せられます。一方、本番公開、顧客への通知、他の資料の削除は、この依頼に自動で含めません。
 
+<CatGuide pose="think" title="確かめるのは、具体的な結果。">
 承認が必要な場面では、「続けてよい？」だけでなく、変更箇所・宛先・公開範囲・取り消し方法が分かる結果を確認します。すでに明確に許可した範囲の操作について、同じ確認を繰り返す設計にする必要はありません。
+</CatGuide>
 
 ## 確認チェックリスト
 

@@ -1,0 +1,35 @@
+---
+export type CatPoseName =
+  | "investigate"
+  | "peek"
+  | "walk-right"
+  | "think"
+  | "laptop"
+  | "point"
+  | "peek-side"
+  | "tail"
+  | "smile"
+  | "concern";
+interface Props {
+  pose?: CatPoseName;
+  class?: string;
+}
+const { pose = "think", class: className } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const old = pose === "investigate" || pose === "peek";
+const stem = old ? `cat-${pose}` : `cat-${pose}`;
+---
+
+<img
+  class:list={["cat-pose", className]}
+  data-cat-pose={pose}
+  src={`${base}/brand/${stem}-320.webp`}
+  srcset={`${base}/brand/${stem}-320.webp 320w, ${base}/brand/${stem}-640.webp 640w`}
+  sizes="(max-width: 760px) 112px, 144px"
+  width={old ? 640 : 320}
+  height={old ? 427 : 320}
+  loading="lazy"
+  decoding="async"
+  alt=""
+  aria-hidden="true"
+/>

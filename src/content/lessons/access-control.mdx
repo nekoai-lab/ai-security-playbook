@@ -13,8 +13,14 @@ prerequisites: ["app-architecture"]
 related: ["api-keys", "launch-checklist"]
 keywords: ["認証", "認可", "ログイン", "データベース", "権限", "個人開発"]
 outcomes: ["認証と認可の違いを説明する。", "利用者と操作ごとの許可表を作る。", "架空データとテスト用アカウントで確認する。"]
-changes: []
+changes:
+  - date: "2026-10-24"
+    summary: "場面の挿絵と、確認の違いが分かる図解を追加しました。"
 ---
+
+import LessonScene from "../../components/LessonScene.astro";
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
 
@@ -24,9 +30,13 @@ import Flow from "../../components/Flow.astro";
 
 ログイン画面があることや、自分のアカウントで動くことだけでは、他人のデータを読めない・書き換えられない確認にはなりません。判断は画面だけでなく、要求を受けるサーバーやデータサービスで行います。[OWASPの認可ガイド](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)は、すべての要求で権限を検証する原則を示しています。
 
+<LessonScene id="access-control" />
+
 ## 仕組みをつかむ
 
-<Flow steps={["本人か確かめる", "対象と操作を照合", "許可した結果だけ返す"]} caption="ログイン済みでも、別の人の記録を要求したら許可しない設計が必要です。" />
+<LessonDiagram id="access-control" />
+
+ログイン済みでも、別の人の記録を要求したら許可しない設計が必要です。
 
 例えば「自分のメモを編集する」は、ログイン済みかに加えて、そのメモの所有者と編集権限を確認します。識別番号を推測しにくくするだけでは、この確認の代わりになりません。[OWASPのIDOR対策](https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html)も参照してください。
 
@@ -55,6 +65,8 @@ import Flow from "../../components/Flow.astro";
 
 ## 一つ確かめてみる
 
+<LessonDiagram id="access-control" part={1} />
+
 自分が管理するテスト環境に、架空の利用者AとB、架空のメモを用意します。自分が所有するテスト用アカウントだけを使い、次の結果になるか確認します。
 
 | 操作 | 期待する結果 |
@@ -64,7 +76,9 @@ import Flow from "../../components/Flow.astro";
 | 未ログインでAのメモを読む | 内容が返らない |
 | BがAのメモを編集・削除する | 許可されない |
 
+<CatGuide pose="peek-side" title="分からないところは、未確認で大丈夫。">
 画面操作だけで裏側の拒否まで確かめられない場合は、その範囲を未確認とし、実装をレビューできる人へ依頼します。実在する他人のデータや、管理していないサービスで試す手順ではありません。
+</CatGuide>
 
 ## 確認チェックリスト
 

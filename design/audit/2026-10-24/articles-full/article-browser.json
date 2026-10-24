@@ -1,0 +1,522 @@
+{
+  "cases": [
+    {
+      "id": "access-control",
+      "width": 320,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "agent-permissions",
+      "width": 320,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "ai-data-boundaries",
+      "width": 320,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "api-keys",
+      "width": 320,
+      "figures": 8,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "app-architecture",
+      "width": 320,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "basics",
+      "width": 320,
+      "figures": 5,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "checklist",
+      "width": 320,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "commands",
+      "width": 320,
+      "figures": 2,
+      "images": 9,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "incident-response",
+      "width": 320,
+      "figures": 3,
+      "images": 7,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "launch-checklist",
+      "width": 320,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "mcp-permissions",
+      "width": 320,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "node-october-2026",
+      "width": 320,
+      "figures": 4,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "operations",
+      "width": 320,
+      "figures": 4,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "php-october-2026",
+      "width": 320,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "access-control",
+      "width": 375,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "agent-permissions",
+      "width": 375,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "ai-data-boundaries",
+      "width": 375,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "api-keys",
+      "width": 375,
+      "figures": 8,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "app-architecture",
+      "width": 375,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "basics",
+      "width": 375,
+      "figures": 5,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "checklist",
+      "width": 375,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "commands",
+      "width": 375,
+      "figures": 2,
+      "images": 9,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "incident-response",
+      "width": 375,
+      "figures": 3,
+      "images": 7,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "launch-checklist",
+      "width": 375,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "mcp-permissions",
+      "width": 375,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "node-october-2026",
+      "width": 375,
+      "figures": 4,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "operations",
+      "width": 375,
+      "figures": 4,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "php-october-2026",
+      "width": 375,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": true
+    },
+    {
+      "id": "access-control",
+      "width": 768,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "agent-permissions",
+      "width": 768,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "ai-data-boundaries",
+      "width": 768,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "api-keys",
+      "width": 768,
+      "figures": 8,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "app-architecture",
+      "width": 768,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "basics",
+      "width": 768,
+      "figures": 5,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "checklist",
+      "width": 768,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "commands",
+      "width": 768,
+      "figures": 2,
+      "images": 9,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "incident-response",
+      "width": 768,
+      "figures": 3,
+      "images": 7,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "launch-checklist",
+      "width": 768,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "mcp-permissions",
+      "width": 768,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "node-october-2026",
+      "width": 768,
+      "figures": 4,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "operations",
+      "width": 768,
+      "figures": 4,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "php-october-2026",
+      "width": 768,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "access-control",
+      "width": 1280,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "agent-permissions",
+      "width": 1280,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "ai-data-boundaries",
+      "width": 1280,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "api-keys",
+      "width": 1280,
+      "figures": 8,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "app-architecture",
+      "width": 1280,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "basics",
+      "width": 1280,
+      "figures": 5,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "checklist",
+      "width": 1280,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "commands",
+      "width": 1280,
+      "figures": 2,
+      "images": 9,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "incident-response",
+      "width": 1280,
+      "figures": 3,
+      "images": 7,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "launch-checklist",
+      "width": 1280,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "mcp-permissions",
+      "width": 1280,
+      "figures": 3,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "node-october-2026",
+      "width": 1280,
+      "figures": 4,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "operations",
+      "width": 1280,
+      "figures": 4,
+      "images": 6,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    },
+    {
+      "id": "php-october-2026",
+      "width": 1280,
+      "figures": 3,
+      "images": 5,
+      "axe": 0,
+      "overflow": false,
+      "text200": false
+    }
+  ],
+  "usedPoses": [
+    "peek-side",
+    "think",
+    "concern",
+    "smile",
+    "point",
+    "investigate",
+    "peek",
+    "tail",
+    "walk-right",
+    "laptop"
+  ],
+  "routeArtwork": true,
+  "noJS": true
+}

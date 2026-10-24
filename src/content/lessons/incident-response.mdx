@@ -13,8 +13,14 @@ prerequisites: []
 related: ["api-keys", "launch-checklist"]
 keywords: ["事故", "漏えい", "復旧", "バックアップ", "不正利用", "料金", "個人開発"]
 outcomes: ["確認した事実と推測を分けて記録する。", "事故の種類に応じて相談と拡大防止を選ぶ。", "復元したことと原因を解消したことを区別する。"]
-changes: []
+changes:
+  - date: "2026-10-24"
+    summary: "場面の挿絵と、確認の違いが分かる図解を追加しました。"
 ---
+
+import LessonScene from "../../components/LessonScene.astro";
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
 
@@ -24,9 +30,13 @@ import Flow from "../../components/Flow.astro";
 
 ここで示すのは初動の考え方です。侵害が疑われる本番環境で、自己判断の一括削除・初期化・復元を繰り返す手順ではありません。業務や第三者の情報が関係する場合は、組織の窓口や提供元へ早く相談します。
 
+<LessonScene id="incident-response" />
+
 ## 仕組みをつかむ
 
-<Flow steps={["拡大を防ぎ事実を残す", "担当者と原因を調べる", "復旧して再確認"]} caption="原因の調査と復旧を区別します。元に戻って見えるだけでは、盗まれた鍵や侵入口が無効になったとは限りません。" />
+<LessonDiagram id="incident-response" />
+
+原因の調査と復旧を区別します。元に戻って見えるだけでは、盗まれた鍵や侵入口が無効になったとは限りません。
 
 例えばAPIキーが漏れた場合、アプリを再起動しても、その鍵が失効するとは限りません。発行元で有効性を確認し、影響する処理を把握して失効・交換へ進めます。[OWASPの秘密管理](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)も参照します。
 
@@ -57,9 +67,13 @@ import Flow from "../../components/Flow.astro";
 
 ## 一つ確かめてみる
 
+<LessonDiagram id="incident-response" part={1} />
+
 架空の例「昨日公開したデモのAPI利用量が急増した」を考えます。まず、どのプロジェクト、どの時間帯、どのAPIかを管理画面で確かめます。「誰かに攻撃された」は、その時点では推測です。
 
+<CatGuide pose="concern" title="対象を絞って、支援を求めよう。">
 次に、料金やアクセスを管理する提供元へ相談する経路と、自分が安全に制限できる範囲を確認します。停止すると利用者やデータにどう影響するか分からない場合は、具体的な対象を伝えて支援を求めます。キー全文や個人情報を公開の質問欄へ貼らないでください。
+</CatGuide>
 
 復旧では、まず隔離した復旧先が使えるか確認し、戻す時点から現在まで失う更新と、DB以外の画像・設定の範囲も把握します。アプリのコードだけを元に戻しても、盗まれた鍵や外部のデータまで元に戻るわけではありません。
 

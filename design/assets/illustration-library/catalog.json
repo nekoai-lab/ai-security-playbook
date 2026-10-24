@@ -211,6 +211,370 @@
           "bytes": 6810
         }
       ]
+    },
+    {
+      "id": "data-sorting-scene",
+      "title": "data-sorting-scene",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/data-sorting-scene.png",
+      "preview": "public/images/data-sorting-scene-480.webp",
+      "sha256": "efb7fa01f7c519f7db4798d6d0693282e116ee983758b9ff0848e699389dbed1",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3432534,
+      "deliveries": [
+        {
+          "path": "public/images/data-sorting-scene-480.webp",
+          "bytes": 40180,
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/data-sorting-scene-960.webp",
+          "bytes": 162730,
+          "width": 960,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "access-gate-scene",
+      "title": "access-gate-scene",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/access-gate-scene.png",
+      "preview": "public/images/access-gate-scene-480.webp",
+      "sha256": "0a9b0c893002e8e12bd14632a06502b4abd1be3d11c48293c9c522d964614d3f",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3647310,
+      "deliveries": [
+        {
+          "path": "public/images/access-gate-scene-480.webp",
+          "bytes": 46708,
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/access-gate-scene-960.webp",
+          "bytes": 186430,
+          "width": 960,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "connection-map-scene",
+      "title": "connection-map-scene",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/connection-map-scene.png",
+      "preview": "public/images/connection-map-scene-480.webp",
+      "sha256": "a9df9fac5cfba701d410b4e49f83599faa9aba043ae9a5e2c71fd73ad4f52702",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3589253,
+      "deliveries": [
+        {
+          "path": "public/images/connection-map-scene-480.webp",
+          "bytes": 42460,
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/connection-map-scene-960.webp",
+          "bytes": 173626,
+          "width": 960,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "release-preparation-scene",
+      "title": "release-preparation-scene",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/release-preparation-scene.png",
+      "preview": "public/images/release-preparation-scene-480.webp",
+      "sha256": "27d84b2caad51740ab05b074b906f810e43bfc9c50ba12472d20e234185b4268",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3681257,
+      "deliveries": [
+        {
+          "path": "public/images/release-preparation-scene-480.webp",
+          "bytes": 40646,
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/release-preparation-scene-960.webp",
+          "bytes": 170058,
+          "width": 960,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "incident-notes-scene",
+      "title": "incident-notes-scene",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/incident-notes-scene.png",
+      "preview": "public/images/incident-notes-scene-480.webp",
+      "sha256": "60794f5c17060d21d836fec01b1db53ac5d7fe8f1152b97b7d98e239abc1e53d",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3568773,
+      "deliveries": [
+        {
+          "path": "public/images/incident-notes-scene-480.webp",
+          "bytes": 40764,
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/incident-notes-scene-960.webp",
+          "bytes": 172344,
+          "width": 960,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "review-workbench-scene",
+      "title": "review-workbench-scene",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/review-workbench-scene.png",
+      "preview": "public/images/review-workbench-scene-480.webp",
+      "sha256": "4f76f1fcac00464256cb2e74520eeb53769b10a9fea0bacaadf39ad617a0ba10",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3622535,
+      "deliveries": [
+        {
+          "path": "public/images/review-workbench-scene-480.webp",
+          "bytes": 47282,
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/review-workbench-scene-960.webp",
+          "bytes": 190204,
+          "width": 960,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "cat-walk-right",
+      "title": "cat-walk-right",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-walk-right.png",
+      "preview": "public/brand/cat-walk-right-320.webp",
+      "sha256": "1ea5b85d081d558715505e9efbed3aa98b24c912eb4ccd71caad745c39469243",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "bytes": 2143391,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-walk-right-320.webp",
+          "bytes": 18582,
+          "width": 320,
+          "height": 320
+        },
+        {
+          "path": "public/brand/cat-walk-right-640.webp",
+          "bytes": 64116,
+          "width": 640,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "cat-think",
+      "title": "cat-think",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-think.png",
+      "preview": "public/brand/cat-think-320.webp",
+      "sha256": "f771971162a86857da8321ac15f101d143743d77778b58a45178f0053c2c8000",
+      "width": 1312,
+      "height": 1199,
+      "hasAlpha": true,
+      "bytes": 2130252,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-think-320.webp",
+          "bytes": 29750,
+          "width": 320,
+          "height": 320
+        },
+        {
+          "path": "public/brand/cat-think-640.webp",
+          "bytes": 105486,
+          "width": 640,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "cat-laptop",
+      "title": "cat-laptop",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-laptop.png",
+      "preview": "public/brand/cat-laptop-320.webp",
+      "sha256": "34cb8fe4218b4c43a1badedcdd2274a644a2a9b8207c0731d6e452fd72bd503d",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "bytes": 2348048,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-laptop-320.webp",
+          "bytes": 18940,
+          "width": 320,
+          "height": 320
+        },
+        {
+          "path": "public/brand/cat-laptop-640.webp",
+          "bytes": 66568,
+          "width": 640,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "cat-point",
+      "title": "cat-point",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-point.png",
+      "preview": "public/brand/cat-point-320.webp",
+      "sha256": "f356c85b5da5b0339e4aa5794b00b4eb0fd5a0f9baa665d1e8762eec11406380",
+      "width": 1222,
+      "height": 1287,
+      "hasAlpha": true,
+      "bytes": 1947622,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-point-320.webp",
+          "bytes": 30534,
+          "width": 320,
+          "height": 320
+        },
+        {
+          "path": "public/brand/cat-point-640.webp",
+          "bytes": 106060,
+          "width": 640,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "cat-peek-side",
+      "title": "cat-peek-side",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-peek-side.png",
+      "preview": "public/brand/cat-peek-side-320.webp",
+      "sha256": "6d5ea182ffa0a6bcf72969d579bb8ecec5400d4ecd0574e2f115c3971246edd5",
+      "width": 1208,
+      "height": 1302,
+      "hasAlpha": true,
+      "bytes": 1606053,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-peek-side-320.webp",
+          "bytes": 24450,
+          "width": 320,
+          "height": 320
+        },
+        {
+          "path": "public/brand/cat-peek-side-640.webp",
+          "bytes": 85824,
+          "width": 640,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "cat-tail",
+      "title": "cat-tail",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-tail.png",
+      "preview": "public/brand/cat-tail-320.webp",
+      "sha256": "f42efdda5ce4e7c724563348d6cea27901d2530d5f0a70cb7cf88089c2d73d6a",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": true,
+      "bytes": 1691548,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-tail-320.webp",
+          "bytes": 14852,
+          "width": 320,
+          "height": 320
+        },
+        {
+          "path": "public/brand/cat-tail-640.webp",
+          "bytes": 51546,
+          "width": 640,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "cat-smile",
+      "title": "cat-smile",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-smile.png",
+      "preview": "public/brand/cat-smile-320.webp",
+      "sha256": "f1e01c24914e6298866da75e55e9539bee5784f24a59fa2d26914876fa9d3ec8",
+      "width": 1308,
+      "height": 1202,
+      "hasAlpha": true,
+      "bytes": 2262633,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-smile-320.webp",
+          "bytes": 34348,
+          "width": 320,
+          "height": 320
+        },
+        {
+          "path": "public/brand/cat-smile-640.webp",
+          "bytes": 121220,
+          "width": 640,
+          "height": 640
+        }
+      ]
+    },
+    {
+      "id": "cat-concern",
+      "title": "cat-concern",
+      "status": "production-derived-from-approved-design",
+      "source": "design/assets/illustration-library/sources/cat-concern.png",
+      "preview": "public/brand/cat-concern-320.webp",
+      "sha256": "873ffac450df3517224b0038b5f24a0fdc782839e8f4a8295334b6acd378bf3b",
+      "width": 1190,
+      "height": 1322,
+      "hasAlpha": true,
+      "bytes": 2304718,
+      "deliveries": [
+        {
+          "path": "public/brand/cat-concern-320.webp",
+          "bytes": 35002,
+          "width": 320,
+          "height": 320
+        },
+        {
+          "path": "public/brand/cat-concern-640.webp",
+          "bytes": 124358,
+          "width": 640,
+          "height": 640
+        }
+      ]
     }
   ]
 }

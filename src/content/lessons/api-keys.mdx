@@ -26,8 +26,12 @@ reviewSections:
   sources: "一次資料"
 changes:
   - date: "2026-10-24"
+    summary: "記事の内容に合う挿絵・猫の案内・図解を追加しました。"
+  - date: "2026-10-24"
     summary: "キーを設定する場面の挿絵と8つの図で、設定・利用制限・漏えい対応を確認できる教材へ改訂。"
 ---
+
+import CatGuide from "../../components/CatGuide.astro";
 
 import ArticleVisual from "../../components/ArticleVisual.astro";
 import ReadingCard from "../../components/ReadingCard.astro";
@@ -236,6 +240,10 @@ GitHubも、認証情報が漏れた場合は、まず失効や交換を行う�
 **分類：事故の公表。** 2022年4月、GitHubは、HerokuとTravis CIに発行されていたOAuthトークンが盗まれ、リポジトリへの不正アクセスに使われたことを公表しました。OAuthトークンは、サービス連携でアクセスを許可する認証情報の一種です。[GitHubによる公表](https://github.blog/news-insights/company-news/security-alert-stolen-oauth-user-tokens/)
 
 これは、この記事の「ブラウザ用コードへAPIキーを入れた」という経路の事故ではありません。ただ、認証情報が漏れたときには、画面の修正だけではなく、その情報が与えるアクセスを止め、利用された範囲を調べる必要があることが分かります。
+
+<CatGuide pose="smile" title="自分のアプリに当てはめてみよう。">
+図の中の発行元・アプリ・公開先を、自分が使うサービスへ置き換えてみましょう。分からないところは、次の確認に残せます。
+</CatGuide>
 
 ## 公開前に、ここまで説明できる？
 

@@ -105,3 +105,92 @@ Node.jsカードと実行中の版の話題。機械の歯車は実行環境の�
 節の区切りの装飾。完了や安全の保証にしない。
 
 [原本PNG](./sources/paw-orange-cutout.png) · 個別素材化済み
+
+
+## 全記事への採用素材 / 2026-10-24
+
+承認済みのポーズ・配置・修正版表情から個別素材を作り、実際の記事に配置。新しい場面の挿絵も併用。配置先は [記事別一覧](../../ARTICLE_VISUALS_REVIEW.md)。
+
+### data-sorting-scene
+
+![data-sorting-scene](../../../public/images/data-sorting-scene-480.webp)
+
+[原本](./sources/data-sorting-scene.png)
+
+### access-gate-scene
+
+![access-gate-scene](../../../public/images/access-gate-scene-480.webp)
+
+[原本](./sources/access-gate-scene.png)
+
+### connection-map-scene
+
+![connection-map-scene](../../../public/images/connection-map-scene-480.webp)
+
+[原本](./sources/connection-map-scene.png)
+
+### release-preparation-scene
+
+![release-preparation-scene](../../../public/images/release-preparation-scene-480.webp)
+
+[原本](./sources/release-preparation-scene.png)
+
+### incident-notes-scene
+
+![incident-notes-scene](../../../public/images/incident-notes-scene-480.webp)
+
+[原本](./sources/incident-notes-scene.png)
+
+### review-workbench-scene
+
+![review-workbench-scene](../../../public/images/review-workbench-scene-480.webp)
+
+[原本](./sources/review-workbench-scene.png)
+
+### cat-walk-right
+
+![cat-walk-right](../../../public/brand/cat-walk-right-320.webp)
+
+[原本](./sources/cat-walk-right.png)
+
+### cat-think
+
+![cat-think](../../../public/brand/cat-think-320.webp)
+
+[原本](./sources/cat-think.png)
+
+### cat-laptop
+
+![cat-laptop](../../../public/brand/cat-laptop-320.webp)
+
+[原本](./sources/cat-laptop.png)
+
+### cat-point
+
+![cat-point](../../../public/brand/cat-point-320.webp)
+
+[原本](./sources/cat-point.png)
+
+### cat-peek-side
+
+![cat-peek-side](../../../public/brand/cat-peek-side-320.webp)
+
+[原本](./sources/cat-peek-side.png)
+
+### cat-tail
+
+![cat-tail](../../../public/brand/cat-tail-320.webp)
+
+[原本](./sources/cat-tail.png)
+
+### cat-smile
+
+![cat-smile](../../../public/brand/cat-smile-320.webp)
+
+[原本](./sources/cat-smile.png)
+
+### cat-concern
+
+![cat-concern](../../../public/brand/cat-concern-320.webp)
+
+[原本](./sources/cat-concern.png)

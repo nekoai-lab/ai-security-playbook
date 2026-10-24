@@ -10,10 +10,20 @@ reviewed: "2026-10-23"
 keywords: ["Node.js", "Nodejs", "更新", "再起動", "CI", "本番", "MCP", "チェックリスト"]
 changes:
   - date: "2026-10-24"
+    summary: "記事の内容に合う挿絵・猫の案内・図解を追加しました。"
+  - date: "2026-10-24"
     summary: "Node.js更新向けのチェックリストであることをタイトルに明記しました。"
 prerequisites: ["basics"]
 minutes: 5
 ---
+
+import LessonScene from "../../components/LessonScene.astro";
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
+
+<LessonScene id="checklist" />
+
+<LessonDiagram id="checklist" />
 
 ## このリストの使い方
 
@@ -91,6 +101,8 @@ minutes: 5
 
 ## 作業後：動いているものを確認する
 
+<LessonDiagram id="checklist" part={1} />
+
 <ul className="checklist">
   <li>
     <label>
@@ -130,6 +142,8 @@ minutes: 5
 
 ## 完了の基準
 
+<CatGuide pose="smile" title="確かめた範囲を、一つずつ。">
 「更新を入れた」だけでなく、実行環境への反映と正常動作を確認した状態を、対象ごとに記録します。確認できないアプリの影響や修正状況は、対応済みと混ぜず「未確認」に残します。
+</CatGuide>
 
 参考：[Node.js公式セキュリティ発表](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases)

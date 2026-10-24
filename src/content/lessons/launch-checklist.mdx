@@ -13,8 +13,14 @@ prerequisites: ["api-keys", "access-control"]
 related: ["incident-response", "php-october-2026"]
 keywords: ["公開", "個人開発", "クラウド", "料金", "バックアップ", "チェックリスト"]
 outcomes: ["公開前に確認する対象を列挙する。", "料金の通知と利用を止める仕組みを区別する。", "未確認の項目を残して公開範囲を判断する。"]
-changes: []
+changes:
+  - date: "2026-10-24"
+    summary: "場面の挿絵と、確認の違いが分かる図解を追加しました。"
 ---
+
+import LessonScene from "../../components/LessonScene.astro";
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
 
@@ -24,9 +30,13 @@ AIで作ったWebサービスを、他人が使える状態にする人向けで
 
 まず、公開するサービス名、本番のURL、管理するアカウントを一つ選びます。プレビューと本番、テスト用と利用者用のデータを混ぜないことから始めます。
 
+<LessonScene id="launch-checklist" />
+
 ## 仕組みをつかむ
 
-<Flow steps={["公開する範囲を決める", "設定と拒否を確認", "小さく公開して監視"]} caption="確認できた範囲から公開します。未確認を、問題なしの印に置き換えません。" />
+<LessonDiagram id="launch-checklist" />
+
+確認できた範囲から公開します。未確認を、問題なしの印に置き換えません。
 
 AIへレビューを依頼する場合も、「セキュリティを見て」だけで終えず、下表の対象と根拠を示してもらいます。管理画面の実物やテスト結果と照合できない説明は、確認済みにしません。
 
@@ -54,9 +64,13 @@ AIへレビューを依頼する場合も、「セキュリティを見て」だ
 | 作る人 | 権限・秘密・入力処理・依存 | 設定、実装、テストの照合 |
 | 運用する人 | 料金、通知、バックアップ、停止・復旧 | 各提供元の管理画面と手順 |
 
+<CatGuide pose="point" title="一人でも、見る役割を切り替えよう。">
 一人で兼任していても、役割ごとに対象を切り替えて確認します。分からない設定をAIの説明だけで変更せず、提供元やレビューできる人に確認します。
+</CatGuide>
 
 ## 一つ確かめてみる
+
+<LessonDiagram id="launch-checklist" part={1} />
 
 **料金は「通知」と「上限」を分けます。** 例えばGoogle Cloudは、通知だけの予算と、対象サービスで使える支出上限を区別しています。[公式資料](https://docs.cloud.google.com/billing/docs/how-to/budgets)に従い、自分の契約で何が対象かを確認します。他サービスでも同じ停止条件とは限りません。利用量の反映遅延や、対象外の料金も確認します。
 

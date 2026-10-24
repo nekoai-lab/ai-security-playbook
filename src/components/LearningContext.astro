@@ -1,5 +1,7 @@
 ---
 import { getCollection } from "astro:content";
+import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
+import CatPose from "./CatPose.astro";
 import { seriesFor } from "../data/catalog";
 import { learningPaths } from "../data/learning-paths";
 interface Props {
@@ -16,8 +18,14 @@ const next = group?.ids[index + 1];
 const target = next ?? follow;
 const item = (key: string) => lessons.find((l) => l.id === key)!;
 const title = (key: string) => item(key)?.data.title ?? key;
+const visual = (key: string) =>
+  lessonVisuals[key as LessonVisualId] ?? lessonVisuals.basics;
+const art = visual(target ?? id);
 const catalog = Object.fromEntries(
-  lessons.map((l) => [l.id, { title: l.data.title, summary: l.data.summary }]),
+  lessons.map((l) => [
+    l.id,
+    { title: l.data.title, summary: l.data.summary, image: visual(l.id).image },
+  ]),
 );
 ---
 
@@ -44,21 +52,43 @@ const catalog = Object.fromEntries(
       data-context-next
       href={target ? `${base}/learn/${target}/` : `${base}/library/`}
     >
-      <span data-next-label>
-        {next ? "次に読む" : target ? "次のテーマへ" : "ほかの教材を探す"}
-        <span aria-hidden="true"> →</span>
-      </span>
-      <strong data-next-title>
-        {target ? title(target) : "別の教材を探す"}
-      </strong>
-      <span class="reading-next-reason" data-next-reason>
-        {target
-          ? item(target).data.summary
-          : "テーマや検索から、次に確かめたいことを選べます。"}
+      <img
+        class="reading-next-art"
+        data-next-art
+        src={`${base}/images/${art.image}-480.webp`}
+        srcset={`${base}/images/${art.image}-480.webp 480w, ${base}/images/${art.image}-960.webp 960w`}
+        sizes="(max-width: 760px) 192px, 160px"
+        width="960"
+        height="640"
+        loading="lazy"
+        decoding="async"
+        alt=""
+      />
+      <span class="reading-next-copy">
+        <span data-next-label>
+          {next ? "次に読む" : target ? "次のテーマへ" : "ほかの教材を探す"}
+          <span aria-hidden="true"> →</span>
+        </span>
+        <strong data-next-title>
+          {target ? title(target) : "別の教材を探す"}
+        </strong>
+        <span class="reading-next-reason" data-next-reason>
+          {target
+            ? item(target).data.summary
+            : "テーマや検索から、次に確かめたいことを選べます。"}
+        </span>
       </span>
     </a>
     <details>
-      <summary>読む順番・ルートを見る</summary>
+      <summary class="reading-route-end">
+        読む順番・ルートを見る
+        {[
+          "commands",
+          "mcp-permissions",
+          "launch-checklist",
+          "incident-response",
+        ].includes(id) && <CatPose pose="tail" />}
+      </summary>
       <a
         class="context-title"
         data-context-title
@@ -101,7 +131,7 @@ const catalog = Object.fromEntries(
       const base = context.dataset.base!;
       const items = JSON.parse(context.dataset.items ?? "{}") as Record<
         string,
-        { title: string; summary: string }
+        { title: string; summary: string; image: string }
       >;
       const follow = JSON.parse(context.dataset.follow ?? "[]") as string[];
       const index = route.ids.indexOf(id),
@@ -144,6 +174,10 @@ const catalog = Object.fromEntries(
       context.querySelector("[data-next-title]")!.textContent = target
         ? items[target].title
         : "別の教材を探す";
+      const art = context.querySelector<HTMLImageElement>("[data-next-art]")!;
+      const image = items[target ?? id].image;
+      art.srcset = `${base}/images/${image}-480.webp 480w, ${base}/images/${image}-960.webp 960w`;
+      art.src = `${base}/images/${image}-480.webp`;
       context.querySelector("[data-next-reason]")!.textContent = target
         ? items[target].summary
         : "テーマや検索から、次に確かめたいことを選べます。";

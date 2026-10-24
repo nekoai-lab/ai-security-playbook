@@ -15,6 +15,8 @@ prerequisites: ["basics"]
 minutes: 8
 ---
 
+import LessonDiagram from "../../components/LessonDiagram.astro";
+
 import CatGuide from "../../components/CatGuide.astro";
 import PawDivider from "../../components/PawDivider.astro";
 
@@ -27,6 +29,8 @@ import PawDivider from "../../components/PawDivider.astro";
 以下は確認のためのコマンドです。更新、削除、プロセス停止は行いません。自分が管理する環境で実行してください。結果にユーザー名や内部パスが含まれる場合は、共有前に伏せます。
 
 > プロセスの全引数や環境変数は表示しません。引数にはパスワード、トークン、直接渡したコードが含まれることがあります。`ps` の `command` / `args` 列や環境変数の一括出力を、そのまま通知やチャットへ貼らないでください。
+
+<LessonDiagram id="commands" />
 
 ## 手元のNodeを確認する
 
@@ -96,6 +100,8 @@ rg --files --hidden -g '!.git/**' -g '!node_modules/**' \
 2行目の検索で出たファイルは、エディタで版指定を読みます。`rg` は見つからないと終了コード1になります。出力なしは、検索対象内で見つからなかったことだけを意味します。別名の設定やマルチステージビルド、外部CI設定も確認が必要です。
 
 ## 本番を確認する
+
+<LessonDiagram id="commands" part={1} />
 
 本番の版は、そのサービスの管理画面、既存の監視、起動時に記録するランタイム情報で確認します。版確認のために公開診断エンドポイントを新設したり、秘密を含む設定をログへ出したりしないでください。
 

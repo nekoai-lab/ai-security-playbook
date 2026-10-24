@@ -13,8 +13,14 @@ prerequisites: ["api-keys"]
 related: ["agent-permissions", "incident-response"]
 keywords: ["MCP", "連携", "権限", "OAuth", "ツール", "トークン"]
 outcomes: ["AIアプリ・MCPサーバー・連携先を区別する。", "接続前に確認する権限と送信先を整理する。", "不明な起動方法や過剰な権限で接続を止める。"]
-changes: []
+changes:
+  - date: "2026-10-24"
+    summary: "場面の挿絵と、確認の違いが分かる図解を追加しました。"
 ---
+
+import LessonScene from "../../components/LessonScene.astro";
+import LessonDiagram from "../../components/LessonDiagram.astro";
+import CatGuide from "../../components/CatGuide.astro";
 
 import Flow from "../../components/Flow.astro";
 
@@ -24,9 +30,13 @@ AIアプリにファイル、GitHub、メールなどの外部機能をつなぐ
 
 [公式の構成説明](https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture)では、AIアプリであるホストがクライアントを介してMCPサーバーへ接続します。「サーバー」は手元で動くプログラムの場合も、遠隔のサービスの場合もあります。
 
+<LessonScene id="mcp-permissions" />
+
 ## 仕組みをつかむ
 
-<Flow steps={["AIアプリがツールを選ぶ", "MCPサーバーが処理", "ファイル・外部APIへアクセス"]} caption="ツールが使える範囲は、接続先へ与えたアカウント・ファイル・ネットワークの実際の権限で決まります。" />
+<LessonDiagram id="mcp-permissions" />
+
+ツールが使える範囲は、接続先へ与えたアカウント・ファイル・ネットワークの実際の権限で決まります。
 
 接続画面の説明と、実際にできる操作を分けます。「読み取り専用」と表示されても、その結果をどこへ返すかは別の問題です。公式の[Tools仕様](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)でも、信頼できないサーバーからの注釈を安全性の根拠として扱わないよう求めています。
 
@@ -57,9 +67,13 @@ AIアプリにファイル、GitHub、メールなどの外部機能をつなぐ
 
 ## 一つ確かめてみる
 
+<LessonDiagram id="mcp-permissions" part={1} />
+
 接続する前に「この連携で何を読み、何を変更し、どこへ送るか」を一つずつ確認します。メールの要約だけなら、送信・削除・全フォルダーへのアクセスまで必要かを検討します。
 
+<CatGuide pose="peek-side" title="最初は、テスト用の資料から。">
 実データではなく、自分で作ったテスト用の資料と狭い範囲のアカウントで始めます。起動コマンドの意味や送信先が分からなければ、見知らぬ手順を貼り付けて実行せず、接続元の管理者や提供元へ確認します。
+</CatGuide>
 
 ## 確認チェックリスト
 

@@ -1,0 +1,28 @@
+---
+import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
+interface Props {
+  id: LessonVisualId;
+  sizes?: string;
+  class?: string;
+}
+const {
+  id,
+  sizes = "(max-width: 760px) 100vw, 640px",
+  class: className,
+} = Astro.props;
+const stem = lessonVisuals[id].image;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<img
+  class:list={["lesson-art", className]}
+  data-lesson-art={id}
+  src={`${base}/images/${stem}-480.webp`}
+  srcset={`${base}/images/${stem}-480.webp 480w, ${base}/images/${stem}-960.webp 960w`}
+  sizes={sizes}
+  width="960"
+  height="640"
+  loading="lazy"
+  decoding="async"
+  alt=""
+/>
