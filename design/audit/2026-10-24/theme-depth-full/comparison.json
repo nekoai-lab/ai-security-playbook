@@ -1,0 +1,122 @@
+[
+  {
+    "route": "topics/access/",
+    "before": {
+      "figures": 0,
+      "catGuides": 0,
+      "questionLinks": 0,
+      "featured": 0
+    },
+    "after": {
+      "figures": 0,
+      "catGuides": 0,
+      "questionLinks": 3,
+      "featured": 1
+    }
+  },
+  {
+    "route": "topics/development/",
+    "before": {
+      "figures": 0,
+      "catGuides": 0,
+      "questionLinks": 0,
+      "featured": 0
+    },
+    "after": {
+      "figures": 0,
+      "catGuides": 0,
+      "questionLinks": 3,
+      "featured": 1
+    }
+  },
+  {
+    "route": "topics/ai-tools/",
+    "before": {
+      "figures": 0,
+      "catGuides": 0,
+      "questionLinks": 0,
+      "featured": 0
+    },
+    "after": {
+      "figures": 0,
+      "catGuides": 0,
+      "questionLinks": 3,
+      "featured": 1
+    }
+  },
+  {
+    "route": "topics/response/",
+    "before": {
+      "figures": 0,
+      "catGuides": 0,
+      "questionLinks": 0,
+      "featured": 0
+    },
+    "after": {
+      "figures": 0,
+      "catGuides": 0,
+      "questionLinks": 3,
+      "featured": 1
+    }
+  },
+  {
+    "route": "learn/access-control/",
+    "before": {
+      "figures": 3,
+      "catGuides": 1,
+      "questionLinks": 0,
+      "featured": 0
+    },
+    "after": {
+      "figures": 5,
+      "catGuides": 2,
+      "questionLinks": 0,
+      "featured": 0
+    }
+  },
+  {
+    "route": "learn/app-architecture/",
+    "before": {
+      "figures": 3,
+      "catGuides": 1,
+      "questionLinks": 0,
+      "featured": 0
+    },
+    "after": {
+      "figures": 5,
+      "catGuides": 2,
+      "questionLinks": 0,
+      "featured": 0
+    }
+  },
+  {
+    "route": "learn/ai-data-boundaries/",
+    "before": {
+      "figures": 3,
+      "catGuides": 1,
+      "questionLinks": 0,
+      "featured": 0
+    },
+    "after": {
+      "figures": 5,
+      "catGuides": 2,
+      "questionLinks": 0,
+      "featured": 0
+    }
+  },
+  {
+    "route": "learn/incident-response/",
+    "before": {
+      "figures": 3,
+      "catGuides": 1,
+      "questionLinks": 0,
+      "featured": 0
+    },
+    "after": {
+      "figures": 5,
+      "catGuides": 2,
+      "questionLinks": 0,
+      "featured": 0
+    }
+  }
+]

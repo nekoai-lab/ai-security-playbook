@@ -1,0 +1,13 @@
+---
+import LessonDiagram from "./LessonDiagram.astro";
+import {
+  foundationDiagrams,
+  type FoundationDiagramKind,
+} from "../data/foundation-diagrams";
+interface Props {
+  kind: FoundationDiagramKind;
+}
+const { kind } = Astro.props;
+---
+
+<LessonDiagram spec={foundationDiagrams[kind]} name={kind} />

@@ -1,8 +1,10 @@
 ---
 import Shell from "../../layouts/Shell.astro";
 import LessonCard from "../../components/LessonCard.astro";
+import LessonArt from "../../components/LessonArt.astro";
 import { getCollection } from "astro:content";
-import { topics, series } from "../../data/catalog";
+import { topics } from "../../data/catalog";
+import { type TopicGuideData, topicGuides } from "../../data/topic-guides";
 export async function getStaticPaths() {
   const all = await getCollection("lessons");
   return topics
@@ -10,20 +12,22 @@ export async function getStaticPaths() {
     .map((topic) => ({ params: { topic: topic.id }, props: { topic } }));
 }
 const { topic } = Astro.props;
+const guide: TopicGuideData = topicGuides[topic.id];
 const lessons = (await getCollection("lessons"))
   .filter((l) => l.data.topic === topic.id)
   .sort(
     (a, b) =>
       b.data.updated.localeCompare(a.data.updated) || a.id.localeCompare(b.id),
   );
-const groups = series.filter((s) =>
-  s.ids.some((id) => lessons.some((l) => l.id === id)),
-);
+const feature = lessons.find((l) => l.id === guide.feature);
+if (!feature) throw new Error(`Missing featured lesson for ${topic.id}`);
+const remaining = lessons.filter((l) => l.id !== feature.id);
+const neighbors = guide.related.map((id) => topics.find((t) => t.id === id)!);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<Shell title={topic.title} description={topic.summary}>
-  <div class="wrap hub-page">
+<Shell title={topic.title} description={guide.intro}>
+  <div class="wrap hub-page topic-guide">
     <nav class="crumbs" aria-label="パンくず">
       <a href={`${base}/`}>ホーム</a>
       <span aria-hidden="true">/</span>
@@ -34,26 +38,74 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <header class="hub-header">
       <p class="eyebrow">TOPIC / {lessons.length} LESSONS</p>
       <h1>{topic.title}</h1>
-      <p>{topic.summary}</p>
+      <p>{guide.intro}</p>
     </header>
-    <section class="hub-callout">
-      <h2>シリーズで読む</h2>
-      {groups.map((s) => (
-        <p>
-          <a href={`${base}/series/${s.id}/`}>{s.title} →</a>
+    <section class="topic-feature" aria-labelledby="topic-first">
+      <LessonArt id={guide.feature} sizes="(max-width: 760px) 100vw, 480px" />
+      <div>
+        <p class="catalog-meta">
+          まず、この解説から · 約{feature.data.minutes}分
         </p>
-      ))}
+        <h2 id="topic-first">{feature.data.title}</h2>
+        <p>{feature.data.summary}</p>
+        <a
+          class="topic-read"
+          href={`${base}/learn/${feature.id}/`}
+          data-topic-first
+        >
+          解説を読む <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </section>
-    <h2 class="hub-section-title">このテーマの教材</h2>
-    <div class="catalog-list">
-      {lessons.map((lesson) => (
-        <LessonCard headingLevel="h3" lesson={lesson} />
-      ))}
-    </div>
+    <section aria-labelledby="topic-questions">
+      <h2 id="topic-questions" class="hub-section-title">
+        気になっていることから読む
+      </h2>
+      <div class="topic-questions">
+        {guide.questions.map((q) => (
+          <article class="topic-question">
+            <h3>{q.title}</h3>
+            <p>{q.text}</p>
+            <a
+              href={`${base}/learn/${q.lesson}/${q.anchor ? `#${q.anchor}` : ""}`}
+            >
+              この疑問の解説を読む <span aria-hidden="true">→</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+    {remaining.length > 0 && (
+      <section aria-labelledby="topic-more">
+        <h2 id="topic-more" class="hub-section-title">
+          続けて理解を深める
+        </h2>
+        <div class="catalog-list">
+          {remaining.map((lesson) => (
+            <LessonCard headingLevel="h3" lesson={lesson} />
+          ))}
+        </div>
+      </section>
+    )}
+    <section aria-labelledby="topic-neighbors">
+      <h2 id="topic-neighbors" class="hub-section-title">
+        あわせて考えたいテーマ
+      </h2>
+      <div class="topic-neighbors">
+        {neighbors.map((t) => (
+          <article>
+            <h3>
+              <a href={`${base}/topics/${t.id}/`}>
+                {t.title} <span aria-hidden="true">→</span>
+              </a>
+            </h3>
+            <p>{t.summary}</p>
+          </article>
+        ))}
+      </div>
+    </section>
     <p class="hub-action">
-      <a href={`${base}/library/?topic=${topic.id}`}>
-        このテーマの教材を絞り込む →
-      </a>
+      <a href={`${base}/library/`}>すべての教材から探す →</a>
     </p>
   </div>
 </Shell>
