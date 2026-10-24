@@ -25,10 +25,9 @@ export const topicGuides = {
         anchor: "minimize",
       },
       {
-        title: "学習に使わないなら、保存もされない？",
-        text: "学習利用、保持、外部ツールへの送信、共有する人は、それぞれ確認する条件です。",
-        lesson: "ai-data-boundaries",
-        anchor: "destinations",
+        title: "会社のAIなら、個人情報を使える？",
+        text: "使える業務と情報、契約対象の作業場所をそろえ、必要な実データを扱う条件を見ます。",
+        lesson: "approved-ai-data",
       },
       {
         title: "画像や添付で、何を見落としやすい？",

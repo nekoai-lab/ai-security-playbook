@@ -666,6 +666,19 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3652103
+    },
+    {
+      "id": "approved-ai-data-scene",
+      "title": "業務ごとに必要な情報を選ぶ探検猫",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/approved-ai-data-scene.png",
+      "preview": "public/images/approved-ai-data-scene-480.webp",
+      "usage": "approved-ai-dataの導入と回遊。承認された用途に必要な情報を選ぶ架空の場面。",
+      "sha256": "8765131307d43d60dfbd9e0b84cdd315997ed98417d5ffcb37c6e455e8bf9203",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3187609
     }
   ]
 }

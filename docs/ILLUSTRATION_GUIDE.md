@@ -78,3 +78,5 @@ GitHub保護の記事: github-gate-sceneは変更を公開前に点検する概�
 キー交換の記事: secret-rotation-sceneは保存と稼働の違いを表す概念場面。原本・prompt・catalogを保存。6図・3比較はHTML、think/point/peek-sideを配置。
 
 開発者プライバシーの記事: developer-privacy-sceneは本文以外の公開面を調べる概念場面。原本/prompt/catalogを保存。6図と3比較はHTML、think/laptop/peek-sideを配置。
+
+企業向けAIの記事: approved-ai-data-sceneは用途別に必要情報を選ぶ概念的な場面。原本/prompt/catalogと480/960WebPを保存。6図/比較はHTML、point/think/peek-sideを本文に配置。

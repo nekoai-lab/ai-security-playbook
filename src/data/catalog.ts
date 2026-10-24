@@ -75,6 +75,7 @@ export const series = [
       "情報の扱いとアプリの仕組みから、秘密・権限・公開前確認・異常時対応まで。",
     ids: [
       "ai-data-boundaries",
+      "approved-ai-data",
       "app-architecture",
       "api-keys",
       "secret-rotation",

@@ -1,5 +1,23 @@
 import type { DiagramSpec } from "./lesson-visuals";
 export const foundationDiagrams = {
+  "input-approval": {
+    title: "目的と条件に合う、必要な情報を選ぶ",
+    layout: "compare",
+    nodes: [
+      {
+        label: "実データが必要な業務",
+        detail: "承認された配送先の照合など。必要な宛名や住所を使う。",
+        icon: "box",
+      },
+      {
+        label: "加工だけで足りる作業",
+        detail: "返信の下書きなど。目的と口調から案を作る。",
+        icon: "file",
+      },
+    ],
+    caption:
+      "承認の範囲と必要性を確認します。非学習だけで全データの利用可とは判断しません。",
+  },
   "input-minimize": {
     title: "名前の置換と、情報の選び直しは違う",
     layout: "compare",
