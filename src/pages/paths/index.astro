@@ -1,6 +1,6 @@
 ---
 import Shell from "../../layouts/Shell.astro";
-import ExplorerNote from "../../components/ExplorerNote.astro";
+import ReaderEntryCards from "../../components/ReaderEntryCards.astro";
 import { learningPaths } from "../../data/learning-paths";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
@@ -9,12 +9,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <div class="wrap hub-page">
     <header class="hub-header">
       <p class="eyebrow">LEARNING ROUTES</p>
-      <h1>目的から、学びを選ぶ。</h1>
-      <p>必要な教材を、迷わず順番に。</p>
+      <h1>場面と知識から、学びを選ぶ。</h1>
+      <p>AIを使う方も、作る方も。自分に合う段階から読めます。</p>
     </header>
-    <ExplorerNote title="どこから読むか迷ったら。" compact>
-      初めての方は「AIで個人開発をはじめる」から。公開前、AI連携、実行環境の更新など、いまの目的で選べます。
-    </ExplorerNote>
+    <h2 class="hub-section-title">場面と段階から探す</h2>
+    <ReaderEntryCards />
+    <h2 class="hub-section-title">順番に学びたいときの短いルート</h2>
+    <p>取り組む作業が決まっている方は、関連する教材を順番に読めます。</p>
     <div class="route-grid">
       {learningPaths.map((path) => (
         <a class="route-card" href={`${base}/paths/${path.id}/`}>

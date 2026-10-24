@@ -217,3 +217,9 @@ DOJ2022-06-17公表を参照し、2019摘発と評決公表を区別。設定不
 User approved six illustrated homepage lessons, concise visual-first explanations and an opening that establishes reader value. Preserve #latest, existing top reading cards, new/updated feed and FIELD NOTES. See docs/superpowers/specs/2026-10-24-featured-lessons.md. Implement in isolated mini worktree; full mapped audit and browser review required before publication.
 
 Featured requirements implemented: typed six-card data and shared art, current metadata, #latest preserved, reader-first opening/format rules. Evidence: design/FEATURED_LESSONS_REVIEW.md and featured-final-full. Final FULL errors 0; eight unchanged color warnings. 320px/200% existing guide overflow fixed without hiding content.
+
+## 2026-10-25 / Reader-first navigation and authoring-only design guide
+
+Approved by user: three audience/purpose entries (AI use, build apps, operate services) plus visible entry/practice/advanced prerequisites. Unify duplicated recommendation sections, retain article URLs and all eight recommended lessons, compact themes/updates. Keep the design guide source and assets, but omit its public route/footer link; validate it separately in a local-only preview without reducing thresholds. Plan: docs/superpowers/plans/2026-10-25-reader-navigation.md. General user is not synonymous with beginner. Do not change unrelated uploads work or #30/#31 content.
+
+Implementation/evidence: READER_NAVIGATION_REVIEW.md, navigation-public-full and navigation-guide-full. Three real audience hubs and 23 explicit prerequisite notes; all eight recommendations retained. Public49 routes/GUIDE1 route checked separately at all four widths. Production guide absent; source and CI preview retained.

@@ -17,7 +17,7 @@
 - 指摘は画面幅・DOMの場所・比較対象・根拠を確認して直す。しきい値を緩めたり、失敗を除外して合格にしない。
 - 過去の検査結果を再利用して現在の変更を合格扱いにしない。AIの読解量削減と判定速度向上は別で、時間の効果は実測するまで断定しない。
 
-詳細: `design/README.md`。人が見本を探す場合は `/ai-security-playbook/design-system/`。
+詳細: `design/README.md`。見本は通常公開しない。`npm run dev:design` で制作時だけ開く。静的検査は `npm run build:design` → `npm run preview:design` → `npm run design:audit:guide`。公開画面のFULLとは別に、制作見本も全幅で検査する。
 
 結果はVALIDATION.mdとresult.jsonの集計・失敗項目から読む。measure.jsonの全量は、指摘された要素を調べるときだけ参照する。
 

@@ -1,0 +1,127 @@
+---
+import Shell from "../../layouts/Shell.astro";
+import LessonCard from "../../components/LessonCard.astro";
+import { readerJourneys } from "../../data/reader-journeys";
+import { levels, levelDetails } from "../../data/catalog";
+import { getCollection } from "astro:content";
+export function getStaticPaths() {
+  return readerJourneys.map((journey) => ({
+    params: { audience: journey.id },
+    props: { journey },
+  }));
+}
+const { journey } = Astro.props;
+const all = await getCollection("lessons");
+const selected = journey.ids.map((id: string) => {
+  const lesson = all.find((l) => l.id === id);
+  if (!lesson) throw new Error(`Missing journey lesson: ${id}`);
+  return lesson;
+});
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Shell
+  title={`${journey.label}：知識に合わせて読む`}
+  description={journey.summary}
+>
+  <div class="wrap hub-page reader-hub" data-reader-hub={journey.id}>
+    <nav class="crumbs" aria-label="パンくず">
+      <a href={`${base}/`}>トップ</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{journey.label}</span>
+    </nav>
+    <header class="hub-header">
+      <p class="eyebrow">YOUR NEXT STEP</p>
+      <h1>{journey.label}</h1>
+      <p>{journey.summary}</p>
+      <p>人ではなく、教材の前提で分けています。自分に合う段階から読めます。</p>
+    </header>
+    <nav class="stage-links" aria-label="読む段階を選ぶ">
+      {levels.map((level, i) => (
+        <a href={`#stage-${i + 1}`}>
+          <strong>{level}</strong>
+          <span>{levelDetails[level].label}</span>
+        </a>
+      ))}
+    </nav>
+    {levels.map((level, i) => (
+      <section id={`stage-${i + 1}`} class="reader-stage" data-stage={level}>
+        <h2>
+          {level}：{levelDetails[level].label}
+        </h2>
+        <p class="stage-note">{levelDetails[level].prerequisite}</p>
+        <div class="catalog-list">
+          {selected
+            .filter((l) => l.data.level === level)
+            .map((lesson) => (
+              <LessonCard lesson={lesson} headingLevel="h3" />
+            ))}
+        </div>
+      </section>
+    ))}
+    <nav class="other-readers" aria-label="ほかの場面から選ぶ">
+      <h2>ほかの場面も確かめる</h2>
+      {readerJourneys
+        .filter((j) => j.id !== journey.id)
+        .map((j) => (
+          <a href={`${base}/start/${j.id}/`}>{j.label} →</a>
+        ))}
+      <a href={`${base}/library/`}>すべての教材を検索する →</a>
+    </nav>
+  </div>
+</Shell>
+<style>
+  .stage-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .stage-links a {
+    display: grid;
+    padding: 16px;
+    background: var(--color-paper-light);
+    text-decoration: none;
+    min-width: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .stage-links strong {
+    color: var(--color-orange-ink);
+  }
+  .reader-stage {
+    padding-top: 48px;
+    scroll-margin-top: 24px;
+  }
+  .reader-stage h2,
+  .other-readers h2 {
+    margin: 0 0 16px;
+    font-size: 24px;
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+  .stage-note {
+    max-width: 40em;
+    font-size: 16px;
+    line-height: 1.9;
+    text-wrap: balance;
+  }
+  .other-readers {
+    padding-block: 32px;
+  }
+  .other-readers a {
+    display: block;
+    min-height: 44px;
+    padding-block: 12px;
+  }
+  @media (max-width: 760px) {
+    .stage-links {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .stage-links a {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+</style>

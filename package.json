@@ -11,11 +11,16 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node scripts/check-site.mjs && node --test scripts/design-context.test.mjs scripts/design-runner.test.mjs && node --test scripts/catalog.test.mjs && node scripts/check-content.mjs && node --test scripts/content.test.mjs && node --test scripts/api-key-example.test.mjs scripts/log-release-example.test.mjs scripts/foundation.test.mjs scripts/service-failure-example.test.mjs scripts/dependency-update-example.test.mjs scripts/github-guard-example.test.mjs scripts/secret-rotation-example.test.mjs scripts/developer-privacy-example.test.mjs scripts/approved-ai-data-example.test.mjs scripts/cloud-account-example.test.mjs",
+    "test": "node scripts/check-site.mjs && node --test scripts/design-context.test.mjs scripts/design-runner.test.mjs && node --test scripts/catalog.test.mjs && node scripts/check-content.mjs && node --test scripts/content.test.mjs && node --test scripts/api-key-example.test.mjs scripts/log-release-example.test.mjs scripts/foundation.test.mjs scripts/service-failure-example.test.mjs scripts/dependency-update-example.test.mjs scripts/github-guard-example.test.mjs scripts/secret-rotation-example.test.mjs scripts/developer-privacy-example.test.mjs scripts/approved-ai-data-example.test.mjs scripts/cloud-account-example.test.mjs && node --test scripts/reader-navigation.test.mjs",
     "design:audit": "node scripts/design-audit.mjs",
     "design:context": "node scripts/design-context.mjs",
     "design:audit:quick": "node scripts/design-audit.mjs --quick",
-    "test:design-context": "node --test scripts/design-context.test.mjs scripts/design-runner.test.mjs"
+    "test:design-context": "node --test scripts/design-context.test.mjs scripts/design-runner.test.mjs",
+    "dev:design": "DESIGN_PREVIEW=1 astro dev --port 4392",
+    "build:design": "DESIGN_PREVIEW=1 astro build --outDir .design-preview",
+    "preview:design": "astro preview --outDir .design-preview --host 127.0.0.1 --port 4392",
+    "check:design-preview": "node scripts/check-design-preview.mjs",
+    "design:audit:guide": "node scripts/design-audit.mjs --guide"
   },
   "dependencies": {
     "astro": "7.4.2",

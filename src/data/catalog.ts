@@ -58,7 +58,7 @@ export const topicIds = [
   "operations",
   "response",
 ] as const;
-export const levels = ["入門", "基本知識が必要", "実務経験が必要"] as const;
+export const levels = ["入門", "実践", "発展"] as const;
 export const formats = [
   "解説",
   "手順",
@@ -113,4 +113,30 @@ export function matchesSearch(text: string, query: string) {
     .split(/\s+/)
     .filter(Boolean)
     .every((word) => normalized.includes(word));
+}
+
+export const levelDetails = {
+  入門: {
+    label: "仕組みを知る",
+    prerequisite: "専門知識なしで、用語やリスク、確認する場所を知る。",
+  },
+  実践: {
+    label: "自分の環境で確かめる",
+    prerequisite: "基本の仕組みを知ったら、管理する設定や結果を確認する。",
+  },
+  発展: {
+    label: "設計・運用を見直す",
+    prerequisite:
+      "実装や業務の管理を担う方が、権限・契約・失敗時の備えを掘り下げる。",
+  },
+} as const;
+export function normalizeLevel(value: string): string {
+  return (
+    (
+      { 基本知識が必要: "実践", 実務経験が必要: "発展" } as Record<
+        string,
+        string
+      >
+    )[value] ?? value
+  );
 }

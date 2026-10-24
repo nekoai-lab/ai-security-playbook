@@ -11,6 +11,7 @@ const lessons = defineCollection({
     updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     topic: z.enum(topicIds),
     level: z.enum(levels),
+    prerequisiteNote: z.string().trim().min(1),
     format: z.enum(formats),
     published: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     reviewed: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),

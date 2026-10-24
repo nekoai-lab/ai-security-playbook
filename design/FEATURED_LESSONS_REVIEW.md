@@ -23,4 +23,4 @@ The first focused 320px/200% run exposed an existing home-paths ExplorerNote ove
 ## Scope and limitations
 README/LICENSE, lesson facts and article bodies unchanged. The separate uploads-and-input working tree was not altered or published. Five legacy lessons are not newly certified against the newer editorial contract. Automated accessibility and screenshots do not establish complete assistive-technology coverage. The final reports use the isolated mini preview on port 4389; earlier diagnostics are not release evidence.
 
-Publication: pending CI, exact-head merge, Pages and public six-card/link smoke verification.
+Publication completed 2026-10-24: PR #29, merge 82576b5656967a28e4ebf9496b769bc07eacfa21, CI 40103075077 and Pages 40103146489 succeeded. Public six-card/link smoke passed at four widths, including no-JS and text200. This records that historical release; the 2026-10-25 navigation supersedes its six-card layout.

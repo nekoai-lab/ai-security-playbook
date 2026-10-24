@@ -1,0 +1,98 @@
+---
+import { getCollection } from "astro:content";
+import { readerJourneys } from "../data/reader-journeys";
+import LessonArt from "./LessonArt.astro";
+const all = await getCollection("lessons");
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<div class="reader-entries">
+  {readerJourneys.map((journey) => {
+    const first = all.find((l) => l.id === journey.firstLesson);
+    if (!first) throw new Error(`Missing reader entry: ${journey.firstLesson}`);
+    return (
+      <article class="reader-entry" data-reader-entry={journey.id}>
+        <div class="entry-title">
+          <LessonArt id={journey.art} sizes="96px" />
+          <h3>{journey.label}</h3>
+        </div>
+        <p>{journey.summary}</p>
+        <p class="first-label">入門の最初の1本</p>
+        <a class="first-lesson" href={`${base}/learn/${first.id}/`}>
+          {journey.firstLabel} →
+        </a>
+        <a class="entry-action" href={`${base}/start/${journey.id}/`}>
+          入門・実践・発展から選ぶ →
+        </a>
+      </article>
+    );
+  })}
+</div>
+<style>
+  .reader-entries {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .reader-entry {
+    min-width: 0;
+    padding: 24px;
+    background: var(--color-paper-light);
+  }
+  .entry-title {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+  }
+  h3 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+  p {
+    margin: 16px 0;
+    font-size: 16px;
+    line-height: 1.9;
+    text-wrap: balance;
+  }
+  .first-label {
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+  a {
+    display: block;
+    padding-block: 12px;
+    min-height: 44px;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  .entry-action {
+    color: var(--color-orange-ink);
+    font-weight: 700;
+  }
+  @media (max-width: 1000px) {
+    .reader-entries {
+      grid-template-columns: 1fr;
+    }
+    .reader-entry {
+      padding: 16px;
+    }
+  }
+</style>
+
+<style>
+  @media (max-width: 360px) {
+    .entry-title {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .entry-title :global(img) {
+      width: 80px;
+    }
+  }
+</style>
