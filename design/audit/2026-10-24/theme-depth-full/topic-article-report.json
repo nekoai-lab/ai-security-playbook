@@ -1,0 +1,342 @@
+{
+  "cases": [
+    {
+      "topic": "ai-tools",
+      "width": 320,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "development",
+      "width": 320,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "secrets",
+      "width": 320,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "access",
+      "width": 320,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "connections",
+      "width": 320,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "release",
+      "width": 320,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "operations",
+      "width": 320,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "response",
+      "width": 320,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "lesson": "ai-data-boundaries",
+      "width": 320,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": true
+    },
+    {
+      "lesson": "app-architecture",
+      "width": 320,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": true
+    },
+    {
+      "lesson": "access-control",
+      "width": 320,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": true
+    },
+    {
+      "lesson": "incident-response",
+      "width": 320,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": true
+    },
+    {
+      "topic": "ai-tools",
+      "width": 375,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "development",
+      "width": 375,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "secrets",
+      "width": 375,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "access",
+      "width": 375,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "connections",
+      "width": 375,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "release",
+      "width": 375,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "operations",
+      "width": 375,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "response",
+      "width": 375,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "lesson": "ai-data-boundaries",
+      "width": 375,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": true
+    },
+    {
+      "lesson": "app-architecture",
+      "width": 375,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": true
+    },
+    {
+      "lesson": "access-control",
+      "width": 375,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": true
+    },
+    {
+      "lesson": "incident-response",
+      "width": 375,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": true
+    },
+    {
+      "topic": "ai-tools",
+      "width": 768,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "development",
+      "width": 768,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "secrets",
+      "width": 768,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "access",
+      "width": 768,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "connections",
+      "width": 768,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "release",
+      "width": 768,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "operations",
+      "width": 768,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "response",
+      "width": 768,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "lesson": "ai-data-boundaries",
+      "width": 768,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": false
+    },
+    {
+      "lesson": "app-architecture",
+      "width": 768,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": false
+    },
+    {
+      "lesson": "access-control",
+      "width": 768,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": false
+    },
+    {
+      "lesson": "incident-response",
+      "width": 768,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": false
+    },
+    {
+      "topic": "ai-tools",
+      "width": 1280,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "development",
+      "width": 1280,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "secrets",
+      "width": 1280,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "access",
+      "width": 1280,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "connections",
+      "width": 1280,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "release",
+      "width": 1280,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "operations",
+      "width": 1280,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "topic": "response",
+      "width": 1280,
+      "questions": 3,
+      "imageLoaded": true,
+      "axe": 0
+    },
+    {
+      "lesson": "ai-data-boundaries",
+      "width": 1280,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": false
+    },
+    {
+      "lesson": "app-architecture",
+      "width": 1280,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": false
+    },
+    {
+      "lesson": "access-control",
+      "width": 1280,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": false
+    },
+    {
+      "lesson": "incident-response",
+      "width": 1280,
+      "diagrams": 4,
+      "catGuides": 2,
+      "text200": false
+    }
+  ],
+  "noJS": true,
+  "keyboard": true
+}

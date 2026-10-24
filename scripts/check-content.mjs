@@ -47,7 +47,7 @@ export function validateContent(id, text) {
   let history, roles, checklist, sources;
   if (version === "2") {
     const mapBlock =
-      /^reviewSections:\n((?:  [^\n]+\n)+)/m.exec(front)?.[1] ?? "";
+      /^reviewSections:\n((?:  [^\n]+\n)+)/m.exec(`${front}\n`)?.[1] ?? "";
     const map = Object.fromEntries(
       [...mapBlock.matchAll(/^  (\w+): "([^"]+)"$/gm)].map((m) => [m[1], m[2]]),
     );
@@ -66,7 +66,7 @@ export function validateContent(id, text) {
         errors.push(`Missing narrative coverage: ${key}`);
     }
     if (
-      !/<(?:ArticleVisual|PracticeVisual|LessonDiagram)\b/.test(
+      !/<(?:ArticleVisual|PracticeVisual|FoundationVisual|LessonDiagram)\b/.test(
         content.mechanism ?? "",
       )
     )

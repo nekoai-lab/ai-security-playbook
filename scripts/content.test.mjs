@@ -2,13 +2,13 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { validateContent, coverageKeys } from "./check-content.mjs";
-const v1 = readFileSync("src/content/lessons/access-control.mdx", "utf8");
+const v1 = readFileSync("src/content/lessons/mcp-permissions.mdx", "utf8");
 const v2 = readFileSync("src/content/lessons/api-keys.mdx", "utf8");
 test("v1 still requires roles, classified evidence and concrete checklist", () => {
   assert.deepEqual(validateContent("future", v1).errors, []);
   for (const bad of [
     v1.replace("## 誰が何を確認するか", "## その他"),
-    v1.replace("**分類：脆弱性の公表。**", ""),
+    v1.replace(/\*\*分類：[^\n]+?。\*\*/, ""),
     v1.replace("qualityVersion: 1", ""),
     v1.replace(/^- \*\*.+?：\*\*.*$/gm, ""),
   ])

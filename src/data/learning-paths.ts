@@ -8,7 +8,7 @@ export const learningPaths = [
     title: "情報と仕組みから、確かめる。",
     text: "AIに渡す情報、アプリの動く場所、APIキーの扱いを順に学びたい方へ。",
     ids: ["ai-data-boundaries", "app-architecture", "api-keys"],
-    time: "約35分",
+    time: "約52分",
   },
   {
     id: "before-launch",
@@ -19,7 +19,7 @@ export const learningPaths = [
     title: "利用者のデータと、運用を守る。",
     text: "ログインと権限を分け、公開範囲・料金・復旧の備えを確かめたい方へ。",
     ids: ["access-control", "release-artifacts", "launch-checklist"],
-    time: "約34分",
+    time: "約42分",
   },
   {
     id: "ai-connections",

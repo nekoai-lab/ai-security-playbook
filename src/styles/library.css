@@ -1090,3 +1090,103 @@ select:focus-visible {
     padding: 24px 16px;
   }
 }
+
+/* A topic teaches what to look for before handing off to its lessons. */
+.topic-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+  background: var(--color-paper-light);
+  padding: 32px;
+  margin: 0 0 48px;
+}
+.topic-feature > div {
+  min-width: 0;
+}
+.topic-feature h2 {
+  font-size: 24px;
+  line-height: 1.6;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+.topic-feature p:not(.catalog-meta) {
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 0 0 24px;
+}
+.topic-read {
+  display: inline-flex;
+  gap: 16px;
+  min-height: 44px;
+  align-items: center;
+  padding: 12px 24px;
+  color: var(--color-paper-light);
+  background: var(--color-orange-ink);
+  font-size: 16px;
+  line-height: 1.6;
+  text-decoration: none;
+  font-weight: 750;
+}
+.topic-read:hover {
+  text-decoration: underline;
+}
+.topic-questions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.topic-question,
+.topic-neighbors > article {
+  min-width: 0;
+}
+.topic-question h3,
+.topic-neighbors h3 {
+  font-size: 24px;
+  line-height: 1.6;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+.topic-question p,
+.topic-neighbors p {
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 0 0 16px;
+}
+.topic-question a,
+.topic-neighbors a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.topic-neighbors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+@media (max-width: 760px) {
+  .topic-feature {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 24px;
+    gap: 24px;
+  }
+  .topic-questions,
+  .topic-neighbors {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+.topic-guide .hub-header {
+  max-width: 40em;
+}
+.topic-neighbors a {
+  letter-spacing: 0;
+}
