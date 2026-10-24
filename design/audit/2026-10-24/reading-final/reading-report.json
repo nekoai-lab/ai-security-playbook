@@ -1,0 +1,42 @@
+[
+  {
+    "width": 320,
+    "figures": 5,
+    "codeBlocks": 6,
+    "routeSequence": true,
+    "finalState": true,
+    "invalidRouteFallback": true,
+    "keyboard": true,
+    "search": true
+  },
+  {
+    "width": 375,
+    "figures": 5,
+    "codeBlocks": 6,
+    "routeSequence": true,
+    "finalState": true,
+    "invalidRouteFallback": true,
+    "keyboard": true,
+    "search": true
+  },
+  {
+    "width": 768,
+    "figures": 5,
+    "codeBlocks": 6,
+    "routeSequence": true,
+    "finalState": true,
+    "invalidRouteFallback": true,
+    "keyboard": true,
+    "search": true
+  },
+  {
+    "width": 1280,
+    "figures": 5,
+    "codeBlocks": 6,
+    "routeSequence": true,
+    "finalState": true,
+    "invalidRouteFallback": true,
+    "keyboard": true,
+    "search": true
+  }
+]

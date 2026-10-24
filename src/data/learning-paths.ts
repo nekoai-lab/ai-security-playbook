@@ -8,7 +8,7 @@ export const learningPaths = [
     title: "情報と仕組みから、確かめる。",
     text: "AIに渡す情報、アプリの動く場所、APIキーの扱いを順に学びたい方へ。",
     ids: ["ai-data-boundaries", "app-architecture", "api-keys"],
-    time: "約27分",
+    time: "約35分",
   },
   {
     id: "before-launch",

@@ -1,0 +1,155 @@
+---
+import ExplorerCat from "./ExplorerCat.astro";
+import FieldIcon from "./FieldIcon.astro";
+interface Props {
+  kind: "scene" | "types" | "build" | "boundary" | "inspect";
+}
+const { kind } = Astro.props;
+const captions = {
+  scene: "画面が動くことと、キーの設定が適切なことは、別に確かめます。",
+  types:
+    "まず発行元の説明で用途を確認。APIキーという名前だけでは、公開してよいか決まりません。",
+  build:
+    ".envファイルを配らなくても、ブラウザ用コードへ参照した値が組み込まれる経路があります。Viteの標準設定の例です。",
+  boundary:
+    "秘密のキーはサーバーで使い、ブラウザへ返しません。外部サービスには、処理する文章も送られます。",
+  inspect:
+    "設定を確認する場所は3つ。一人で兼任していても、それぞれ別に見ます。画面は架空の説明用です。",
+};
+---
+
+<figure
+  class:list={["article-visual", `article-visual--${kind}`]}
+  data-article-visual={kind}
+>
+  {kind === "scene" && (
+    <div class="visual-scene">
+      <ExplorerCat size={112} />
+      <div>
+        <p class="visual-kicker">こんなところで、迷っていませんか？</p>
+        <p class="visual-speech">
+          「APIキーを設定して」
+          <br />
+          と言われたけれど……
+        </p>
+        <p class="visual-detail">
+          どこに書く？
+          <br />
+          公開するときも、このまま？
+        </p>
+      </div>
+    </div>
+  )}
+  {kind === "types" && (
+    <div class="visual-pair">
+      <div class="visual-node">
+        <FieldIcon kind="book" />
+        <strong>公開を想定したキー</strong>
+        <p>ブラウザでの使用を、提供元が認めている。</p>
+        <p class="visual-detail">データへの権限設定は、別に必要。</p>
+      </div>
+      <div class="visual-node visual-node--accent">
+        <FieldIcon kind="layers" />
+        <strong>サーバー専用の秘密</strong>
+        <p>利用者へ配るコードに含めず、管理する側で使う。</p>
+        <p class="visual-detail">今回の要約アプリで扱うのはこちら。</p>
+      </div>
+    </div>
+  )}
+  {kind === "build" && (
+    <div class="visual-stack">
+      <div class="visual-node">
+        <strong>開発するPCの .env</strong>
+        <p class="visual-detail">VITE_SUMMARY_KEY</p>
+        <p class="visual-value">DEMO_PUBLIC_12345</p>
+      </div>
+      <p class="visual-transfer">
+        <span aria-hidden="true">↓</span> ビルド：公開用ファイルを作る
+      </p>
+      <div class="visual-node">
+        <strong>公開用のJavaScript</strong>
+        <p>参照した設定値がコードに入る。</p>
+        <p class="visual-value">DEMO_PUBLIC_12345</p>
+      </div>
+      <p class="visual-transfer">
+        <span aria-hidden="true">↓</span> ファイルを配信
+      </p>
+      <div class="visual-node">
+        <strong>利用者のブラウザ</strong>
+        <p>届いたコードの中身を調べられる。</p>
+      </div>
+    </div>
+  )}
+  {kind === "boundary" && (
+    <div class="visual-stack">
+      <div class="visual-node">
+        <strong>利用者のブラウザ</strong>
+        <p>秘密のキーは持たない。</p>
+      </div>
+      <div class="visual-exchange">
+        <p>
+          <span aria-hidden="true">↓</span> 文章
+        </p>
+        <p>
+          <span aria-hidden="true">↑</span> 結果
+        </p>
+      </div>
+      <div class="visual-node visual-node--accent">
+        <strong>自分の管理するサーバー</strong>
+        <p>誰が・どれだけ使えるかを確認。</p>
+        <p class="visual-value">秘密のキーはここで使う</p>
+        <p class="visual-detail">ブラウザへの応答には含めない。</p>
+      </div>
+      <div class="visual-exchange">
+        <p>
+          <span aria-hidden="true">↓</span> 文章＋キー
+        </p>
+        <p>
+          <span aria-hidden="true">↑</span> 結果
+        </p>
+      </div>
+      <div class="visual-node">
+        <strong>外部の要約サービス</strong>
+        <p>文章を処理して、結果を返す。</p>
+      </div>
+    </div>
+  )}
+  {kind === "inspect" && (
+    <ol class="visual-inspect">
+      <li>
+        <FieldIcon kind="compass" />
+        <div>
+          <strong>発行元で、種類を見る</strong>
+          <p class="visual-detail">
+            キーの種類：サーバー専用
+            <br />
+            用途・権限を公式の説明と照合。
+          </p>
+        </div>
+      </li>
+      <li>
+        <FieldIcon kind="terminal" />
+        <div>
+          <strong>コードで、実行場所を見る</strong>
+          <p class="visual-detail">
+            変数名：SUMMARY_API_KEY
+            <br />
+            値を出さず、参照ファイルを確認。
+          </p>
+        </div>
+      </li>
+      <li>
+        <FieldIcon kind="layers" />
+        <div>
+          <strong>公開先で、渡る範囲を見る</strong>
+          <p class="visual-detail">
+            保存先：サーバー用の設定
+            <br />
+            配信物と通信も確認。
+          </p>
+        </div>
+      </li>
+    </ol>
+  )}
+  <figcaption>{captions[kind]}</figcaption>
+</figure>

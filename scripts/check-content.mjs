@@ -1,7 +1,6 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
-// Migration baseline: pre-policy lessons are reported, never silently counted as compliant.
 export const legacyLessons = new Set([
   "basics",
   "node-october-2026",
@@ -20,42 +19,97 @@ export const requiredSections = [
   "次の行動",
   "一次資料",
 ];
+export const coverageKeys = [
+  "audience",
+  "mechanism",
+  "risks",
+  "case",
+  "roles",
+  "exercise",
+  "checklist",
+  "next",
+  "sources",
+];
 export function validateContent(id, text) {
   const errors = [];
-  const [front, body] = text.replace(/^---\s*\n/, "").split(/\n---\s*\n/, 2);
-  if (legacyLessons.has(id) && !/^qualityVersion: 1$/m.test(front ?? ""))
+  const [front, body = ""] = text
+    .replace(/^---\s*\n/, "")
+    .split(/\n---\s*\n/, 2);
+  const version = /^qualityVersion: ([12])$/m.exec(front ?? "")?.[1];
+  if (legacyLessons.has(id) && !version)
     return { id, status: "legacy-review", errors: [] };
-  if (!/^qualityVersion: 1$/m.test(front ?? ""))
-    errors.push("qualityVersion: 1 is required");
+  if (!version) errors.push("qualityVersion: 1 or 2 is required");
   const sections = Object.fromEntries(
-    [
-      ...(body ?? "").matchAll(/^## (.+)\n([\s\S]*?)(?=^## |$(?![\s\S]))/gm),
-    ].map((m) => [m[1], m[2]]),
+    [...body.matchAll(/^## (.+)\n([\s\S]*?)(?=^## |$(?![\s\S]))/gm)].map(
+      (m) => [m[1], m[2]],
+    ),
   );
-  for (const heading of requiredSections)
-    if (!sections[heading]?.trim()) errors.push(`Missing section: ${heading}`);
-  const history = sections["過去の事例から学ぶ"] ?? "";
+  let history, roles, checklist, sources;
+  if (version === "2") {
+    const mapBlock =
+      /^reviewSections:\n((?:  [^\n]+\n)+)/m.exec(front)?.[1] ?? "";
+    const map = Object.fromEntries(
+      [...mapBlock.matchAll(/^  (\w+): "([^"]+)"$/gm)].map((m) => [m[1], m[2]]),
+    );
+    const intro = body
+      .split(/^## /m)[0]
+      .replace(/^import .*;\s*$/gm, "")
+      .trim();
+    const content = {};
+    for (const key of coverageKeys) {
+      const heading = map[key];
+      content[key] =
+        heading === "導入" && key === "audience"
+          ? intro
+          : (sections[heading] ?? "");
+      if (!heading || !content[key].trim())
+        errors.push(`Missing narrative coverage: ${key}`);
+    }
+    if (!/<ArticleVisual\b/.test(content.mechanism ?? ""))
+      errors.push("Mechanism section needs an explanatory figure");
+    if (
+      !/```(?:js|javascript|ts|typescript|sh|bash|python)\b/.test(
+        content.exercise ?? "",
+      ) ||
+      !/```text\b/.test(content.exercise ?? "")
+    )
+      errors.push("Worked example needs code and an observable result");
+    if ((content.roles?.match(/^### /gm) ?? []).length < 3)
+      errors.push(
+        "Role-specific verification needs distinct inspection points",
+      );
+    history = content.case;
+    roles = content.roles;
+    checklist = content.checklist;
+    sources = content.sources;
+  } else {
+    for (const heading of requiredSections)
+      if (!sections[heading]?.trim())
+        errors.push(`Missing section: ${heading}`);
+    history = sections["過去の事例から学ぶ"] ?? "";
+    roles = sections["誰が何を確認するか"] ?? "";
+    checklist = sections["確認チェックリスト"] ?? "";
+    sources = sections["一次資料"] ?? "";
+    if ((roles.match(/^\|/gm) ?? []).length < 4)
+      errors.push("Role-specific verification table is required");
+    if (!/<Flow\b/.test(body))
+      errors.push("Explain the mechanism with a diagram");
+  }
   if (
     !/\*\*分類：(事故の公表|脆弱性の公表|再現実験|確認できる事例なし)。\*\*/.test(
-      history,
+      history ?? "",
     )
   )
     errors.push("Case classification is required");
   if (
-    !history.includes("確認できる事例なし") &&
-    (!/https:\/\//.test(history) || !/[12]\d{3}/.test(history))
+    !history?.includes("確認できる事例なし") &&
+    (!/https:\/\//.test(history ?? "") || !/[12]\d{3}/.test(history ?? ""))
   )
     errors.push("Case needs dated evidence");
-  const roles = sections["誰が何を確認するか"] ?? "";
-  if ((roles.match(/^\|/gm) ?? []).length < 4)
-    errors.push("Role-specific verification table is required");
-  const checklist = sections["確認チェックリスト"] ?? "";
-  if ((checklist.match(/^- \*\*.+?：\*\*/gm) ?? []).length < 3)
+  if ((checklist?.match(/^- \*\*.+?：\*\*/gm) ?? []).length < 3)
     errors.push("Checklist needs at least three concrete evidence points");
-  if (!/https:\/\//.test(sections["一次資料"] ?? ""))
+  if (!/https:\/\//.test(sources ?? ""))
     errors.push("Primary references are required");
-  if (!/<Flow\b/.test(body ?? ""))
-    errors.push("Explain the mechanism with a diagram");
   return {
     id,
     status: errors.length ? "failed" : "structured-review-required",

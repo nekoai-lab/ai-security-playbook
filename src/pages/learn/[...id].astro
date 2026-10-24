@@ -16,7 +16,10 @@ const { Content, headings } = await render(lesson);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const all = await getCollection("lessons");
 const group = seriesFor(lesson.id);
-const nextId = group?.ids[group.ids.indexOf(lesson.id) + 1];
+const nextId = group
+  ? (group.ids[group.ids.indexOf(lesson.id) + 1] ??
+    lesson.data.related.find((id: string) => !group.ids.includes(id)))
+  : undefined;
 const related = lesson.data.related.length
   ? lesson.data.related
       .map((id: string) => all.find((l) => l.id === id))
@@ -44,15 +47,22 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
         {topicTitle(lesson.data.topic)}
       </a>
       <span aria-hidden="true">/</span>
-      <span aria-current="page">{lesson.data.title}</span>
+      <span aria-current="page">
+        {lesson.data.shortTitle ?? lesson.data.title}
+      </span>
     </nav>
-    <header class="article-header">
+    <header
+      class:list={[
+        "article-header",
+        { "article-header--narrative": lesson.data.qualityVersion === 2 },
+      ]}
+    >
       <p class="eyebrow">
         {lesson.data.format} / 約{lesson.data.minutes}分
       </p>
       <h1>{lesson.data.title}</h1>
       <p>{lesson.data.summary}</p>
-      {lesson.data.outcomes && (
+      {lesson.data.outcomes && lesson.data.qualityVersion !== 2 && (
         <section class="lesson-goals" aria-labelledby="lesson-goals-title">
           <h2 id="lesson-goals-title">この教材でできるようになること</h2>
           <ul>
@@ -62,14 +72,39 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
           </ul>
         </section>
       )}
-      <p class="lesson-prerequisite">前提知識：{lesson.data.level}。</p>
-      {prerequisites.length > 0 && (
-        <nav class="lesson-prerequisites" aria-label="先に読むと役立つ教材">
-          <span>先に読むと役立つ教材</span>
-          {prerequisites.map((l) => (
-            <a href={`${base}/learn/${l.id}/`}>{l.data.title} →</a>
-          ))}
-        </nav>
+      {lesson.data.qualityVersion === 2 ? (
+        <details class="article-preparation">
+          <summary>読む前の補足</summary>
+          <p>
+            前提知識：{lesson.data.level}
+            。コードは結果を読みながら進められます。
+          </p>
+          <ul>
+            {lesson.data.outcomes?.map((goal) => (
+              <li>{goal}</li>
+            ))}
+          </ul>
+          {prerequisites.length > 0 && (
+            <nav class="lesson-prerequisites" aria-label="先に読むと役立つ教材">
+              <span>仕組みから知りたいときは</span>
+              {prerequisites.map((l) => (
+                <a href={`${base}/learn/${l.id}/`}>{l.data.title} →</a>
+              ))}
+            </nav>
+          )}
+        </details>
+      ) : (
+        <>
+          <p class="lesson-prerequisite">前提知識：{lesson.data.level}。</p>
+          {prerequisites.length > 0 && (
+            <nav class="lesson-prerequisites" aria-label="先に読むと役立つ教材">
+              <span>先に読むと役立つ教材</span>
+              {prerequisites.map((l) => (
+                <a href={`${base}/learn/${l.id}/`}>{l.data.title} →</a>
+              ))}
+            </nav>
+          )}
+        </>
       )}
       <p class="metadata">
         <span>
@@ -87,7 +122,11 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
       </p>
     </header>
     <div class="article-grid">
-      <aside>
+      <aside
+        class:list={{
+          "article-toc-optional": lesson.data.qualityVersion === 2,
+        }}
+      >
         <nav aria-label="この教材の目次">
           <p class="eyebrow">ON THIS PAGE</p>
           {headings
@@ -97,11 +136,30 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
             ))}
         </nav>
       </aside>
-      <article class="prose">
+      <article
+        class:list={[
+          "prose",
+          { "article-narrative": lesson.data.qualityVersion === 2 },
+        ]}
+      >
+        {lesson.data.qualityVersion === 2 && (
+          <details class="article-mobile-toc">
+            <summary>この記事の目次</summary>
+            <nav aria-label="この教材の目次">
+              {headings
+                .filter((h) => h.depth === 2)
+                .map((h) => (
+                  <a href={`#${h.slug}`}>{h.text}</a>
+                ))}
+            </nav>
+          </details>
+        )}
         <Content components={{ table: DataTable }} />
-        <ExplorerNote title="読んだことを、ひとつ確かめよう。" compact>
-          気になった項目を実際の環境で確認し、分かったことと未確認のことを分けて残しましょう。
-        </ExplorerNote>
+        {lesson.data.qualityVersion !== 2 && (
+          <ExplorerNote title="読んだことを、ひとつ確かめよう。" compact>
+            気になった項目を実際の環境で確認し、分かったことと未確認のことを分けて残しましょう。
+          </ExplorerNote>
+        )}
         <LearningContext id={lesson.id} />
         {related.length > 0 && (
           <section class="related-lessons">
