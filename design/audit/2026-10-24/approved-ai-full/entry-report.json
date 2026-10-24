@@ -1,0 +1,14 @@
+[
+  {
+    "javaScript": true,
+    "entryApproval": true,
+    "seriesNext": true,
+    "shortPath": true
+  },
+  {
+    "javaScript": false,
+    "entryApproval": true,
+    "seriesNext": true,
+    "shortPath": false
+  }
+]

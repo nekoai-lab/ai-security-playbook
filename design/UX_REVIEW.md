@@ -144,3 +144,6 @@ FULL github-guards-fullは2744passed/error0/既存色数warning8/manual-review34
 
 ## 追加5本の公開確認完了（2026-10-24）
 1本ずつCI/Pages/公開URLを確認。第5本はPR23/Pages40094595449、公開45ルート成功。全8候補の対応先と各回の証拠はCANDIDATE_PUBLICATION_REVIEW.mdとdocs/CONTENT_BACKLOG.md。今回の完了記録はdocs/designのみ、実装・教材・基準変更なし。
+
+## 企業向けAIと実データ利用（2026-10-24）
+22教材46ルート。既存入口に一律禁止でない旨と承認/必要性の図、独立解説に6図/比較3/専用場面/猫3。型83ファイル0件/build46/43テスト成功。CUSTOM初回の320px折り返し3箇所を文言で直し、再診断128passed/error0。FULL approved-ai-full2936passed/error0/既存色数warning8/manual368。全46×4幅axe/overflow/pageerror、全46ページ375px文字200%成功。記事4幅/全展開200%/JSなし/キーボード/検索/テーマ/前後画像と入口の明示/本文リンク/短い既存route画像を確認。目視あり。基準変更と除外なし。内容と未確認範囲はAPPROVED_AI_DATA_REVIEW.md。公開はCI/Pages/URL後。

@@ -1,3 +1,4 @@
+import { enterpriseDiagrams } from "./enterprise-diagrams";
 import { privacyDiagrams } from "./privacy-diagrams";
 import { rotationDiagrams } from "./rotation-diagrams";
 import { guardDiagrams } from "./guard-diagrams";
@@ -47,6 +48,13 @@ const d = (
   caption: string,
 ): DiagramSpec => ({ title, layout, nodes, caption });
 export const lessonVisuals = {
+  "approved-ai-data": {
+    image: "approved-ai-data-scene",
+    question: "認められた仕事で、どの情報を使う？",
+    situation: "会社のAIで顧客情報を扱う前に",
+    pose: "think",
+    diagrams: [enterpriseDiagrams.scope, enterpriseDiagrams.handling],
+  },
   "developer-privacy": {
     image: "developer-privacy-scene",
     question: "本文の外にも、自分の情報が付いていない？",

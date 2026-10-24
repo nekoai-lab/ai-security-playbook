@@ -1,0 +1,9 @@
+{
+  "id": "approved-ai-data-scene",
+  "title": "業務ごとに必要な情報を選ぶ探検猫",
+  "usage": "approved-ai-dataの導入と回遊。承認された用途に必要な情報を選ぶ架空の場面。",
+  "prompt": "New editorial illustration for AI Security Playbook. Reference image is CHARACTER AND STYLE reference only. Same black explorer cat: tapered muzzle, natural eyes, fine engraved black ink fur, orange backpack with rolled mat, mature curious expression, not a round baby kitten. Landscape 3:2 warm ivory paper and fine black pen hatching with small orange accents. Scene: cat working at a tidy wooden field desk, thoughtfully sorting a small set of abstract document cards into two trays, one tray has a simple parcel pictogram and envelope card, the other has a simple blank speech bubble card. Laptop alongside showing only abstract workspace window shapes. The visual explains selecting necessary information for different approved work tasks, not forbidding data. Light mountains/background vegetation, ample breathing room, no words, no numbers, no real names/addresses, no green checks or safety shields, no brain or hackers. Friendly and calm, the exact same field notes illustration language as reference.",
+  "referenceRoles": {
+    "reference": "api-key-setting-illustration.png：造形と画風の正本"
+  }
+}

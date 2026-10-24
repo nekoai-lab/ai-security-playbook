@@ -1,0 +1,12 @@
+---
+const cases=[
+ {title:"承認済み業務で使う",result:"必要な実データを使える場合がある",detail:"対象の情報・機能・出力先も範囲内なら、決めた手順で進めます。"},
+ {title:"個人の有料版で学習オフ",result:"会社の許可は別に確認",detail:"設定は非学習の条件。仕事の情報を移してよいかは、それだけで決まりません。"},
+ {title:"新しい外部ツールを追加",result:"増える経路を確認",detail:"元の作業が承認済みでも、新しい送信先が同じ条件とは限りません。"},
+];
+---
+<figure class="lesson-diagram failure-comparison" data-enterprise-comparison>
+<p class="diagram-title">同じ「学習しない」でも、確認は変わる</p>
+{cases.map((c,i)=><details open={i===0}><summary>{c.title}</summary><p><strong>{c.result}</strong></p><p>{c.detail}</p></details>)}
+<figcaption>承認範囲を考える例です。入力の可否や法令適合を判定する機能ではありません。</figcaption>
+</figure>
