@@ -1,0 +1,210 @@
+{
+  "checkedAt": "2026-10-24T23:45:46.521Z",
+  "base": "https://nekoai-lab.github.io/ai-security-playbook/",
+  "results": [
+    {
+      "route": "",
+      "status": 200
+    },
+    {
+      "route": "learn/basics/",
+      "status": 200
+    },
+    {
+      "route": "learn/node-october-2026/",
+      "status": 200
+    },
+    {
+      "route": "learn/commands/",
+      "status": 200
+    },
+    {
+      "route": "learn/checklist/",
+      "status": 200
+    },
+    {
+      "route": "learn/operations/",
+      "status": 200
+    },
+    {
+      "route": "library/",
+      "status": 200
+    },
+    {
+      "route": "topics/",
+      "status": 200
+    },
+    {
+      "route": "topics/development/",
+      "status": 200
+    },
+    {
+      "route": "topics/operations/",
+      "status": 200
+    },
+    {
+      "route": "paths/",
+      "status": 200
+    },
+    {
+      "route": "paths/environment/",
+      "status": 200
+    },
+    {
+      "route": "paths/node-update/",
+      "status": 200
+    },
+    {
+      "route": "paths/update-operations/",
+      "status": 200
+    },
+    {
+      "route": "series/node-security/",
+      "status": 200
+    },
+    {
+      "route": "updates/",
+      "status": 200
+    },
+    {
+      "route": "about/",
+      "status": 200
+    },
+    {
+      "route": "learn/ai-data-boundaries/",
+      "status": 200
+    },
+    {
+      "route": "learn/app-architecture/",
+      "status": 200
+    },
+    {
+      "route": "learn/api-keys/",
+      "status": 200
+    },
+    {
+      "route": "learn/access-control/",
+      "status": 200
+    },
+    {
+      "route": "learn/mcp-permissions/",
+      "status": 200
+    },
+    {
+      "route": "learn/agent-permissions/",
+      "status": 200
+    },
+    {
+      "route": "learn/launch-checklist/",
+      "status": 200
+    },
+    {
+      "route": "learn/php-october-2026/",
+      "status": 200
+    },
+    {
+      "route": "learn/incident-response/",
+      "status": 200
+    },
+    {
+      "route": "topics/ai-tools/",
+      "status": 200
+    },
+    {
+      "route": "topics/secrets/",
+      "status": 200
+    },
+    {
+      "route": "topics/access/",
+      "status": 200
+    },
+    {
+      "route": "topics/connections/",
+      "status": 200
+    },
+    {
+      "route": "topics/release/",
+      "status": 200
+    },
+    {
+      "route": "topics/response/",
+      "status": 200
+    },
+    {
+      "route": "paths/solo-development/",
+      "status": 200
+    },
+    {
+      "route": "paths/before-launch/",
+      "status": 200
+    },
+    {
+      "route": "paths/ai-connections/",
+      "status": 200
+    },
+    {
+      "route": "series/solo-development/",
+      "status": 200
+    },
+    {
+      "route": "series/ai-connections/",
+      "status": 200
+    },
+    {
+      "route": "learn/ai-work-logs/",
+      "status": 200
+    },
+    {
+      "route": "learn/release-artifacts/",
+      "status": 200
+    },
+    {
+      "route": "learn/external-service-failures/",
+      "status": 200
+    },
+    {
+      "route": "learn/dependency-updates/",
+      "status": 200
+    },
+    {
+      "route": "learn/github-guards/",
+      "status": 200
+    },
+    {
+      "route": "learn/secret-rotation/",
+      "status": 200
+    },
+    {
+      "route": "learn/developer-privacy/",
+      "status": 200
+    },
+    {
+      "route": "learn/approved-ai-data/",
+      "status": 200
+    },
+    {
+      "route": "learn/cloud-account-safety/",
+      "status": 200
+    },
+    {
+      "route": "start/use-ai/",
+      "status": 200
+    },
+    {
+      "route": "start/build-apps/",
+      "status": 200
+    },
+    {
+      "route": "start/operate-services/",
+      "status": 200
+    },
+    {
+      "route": "learn/ai-review-trust/",
+      "status": 200
+    }
+  ],
+  "themeCards": 8,
+  "defaultRecommendations": 3,
+  "updates": 5,
+  "guide404": true
+}
