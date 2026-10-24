@@ -46,7 +46,8 @@
     "series/solo-development/",
     "series/ai-connections/",
     "learn/ai-work-logs/",
-    "learn/release-artifacts/"
+    "learn/release-artifacts/",
+    "learn/external-service-failures/"
   ],
   "representatives": [
     "",

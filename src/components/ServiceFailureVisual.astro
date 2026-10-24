@@ -1,0 +1,13 @@
+---
+import LessonDiagram from "./LessonDiagram.astro";
+import {
+  serviceFailureDiagrams,
+  type ServiceFailureKind,
+} from "../data/service-failure-diagrams";
+interface Props {
+  kind: ServiceFailureKind;
+}
+const { kind } = Astro.props;
+---
+
+<LessonDiagram spec={serviceFailureDiagrams[kind]} name={`service-${kind}`} />

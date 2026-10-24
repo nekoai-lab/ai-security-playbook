@@ -1,0 +1,39 @@
+---
+const examples = [
+  {
+    title: "取得できて、0件だった",
+    display: "掲載はありません",
+    meaning:
+      "結果が空であることを確認できた状態です。今回の検索や対象の範囲に対する結果です。",
+  },
+  {
+    title: "時間内に取得できなかった",
+    display: "取得できませんでした",
+    meaning:
+      "掲載があるかは未確認です。0件と表示せず、確認できなかったことを伝えます。",
+  },
+  {
+    title: "アクセス条件の不一致",
+    display: "この情報を表示できません",
+    meaning:
+      "ログインや接続設定などを確認する場面です。取得できないからと権限を緩めません。",
+  },
+];
+---
+
+<figure class="lesson-diagram failure-comparison" data-failure-comparison>
+  <p class="diagram-title">同じ空白の画面でも、案内は変わる</p>
+  <p>状況を開いて、利用者に見せる案内を見比べてください。通信は行いません。</p>
+  {examples.map((e, i) => (
+    <details open={i === 0}>
+      <summary>{e.title}</summary>
+      <p>
+        <strong>表示例：{e.display}</strong>
+      </p>
+      <p>{e.meaning}</p>
+    </details>
+  ))}
+  <figcaption>
+    架空の表示例です。実際の文言は機能や利用者に合わせて決めます。
+  </figcaption>
+</figure>

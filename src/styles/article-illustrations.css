@@ -306,3 +306,29 @@
     margin-inline: auto;
   }
 }
+
+.prose .failure-comparison > p:not(.diagram-title) {
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 0 0 24px;
+}
+.prose .failure-comparison details {
+  border: 0;
+  background: var(--color-paper);
+  padding: 16px;
+  margin: 16px 0;
+}
+.prose .failure-comparison summary {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-weight: 750;
+  min-height: 44px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+.prose .failure-comparison details p {
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 16px 0 0;
+}

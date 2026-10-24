@@ -601,6 +601,19 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3516376
+    },
+    {
+      "id": "service-fallback-scene",
+      "title": "外部の画像が届かないときの代替案内",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/service-fallback-scene.png",
+      "preview": "public/images/service-fallback-scene-480.webp",
+      "usage": "external-service-failures本文と回遊カード。仕組みはHTML図で説明。",
+      "sha256": "92fef77d24e12ba7f4253b16116fa3cc6fe3a804ede46dead6c19f15aaea973d",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3526507
     }
   ]
 }
