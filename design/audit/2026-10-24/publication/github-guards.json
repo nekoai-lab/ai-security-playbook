@@ -1,0 +1,184 @@
+{
+  "base": "https://nekoai-lab.github.io/ai-security-playbook/",
+  "routes": [
+    {
+      "route": "",
+      "status": 200
+    },
+    {
+      "route": "design-system/",
+      "status": 200
+    },
+    {
+      "route": "learn/basics/",
+      "status": 200
+    },
+    {
+      "route": "learn/node-october-2026/",
+      "status": 200
+    },
+    {
+      "route": "learn/commands/",
+      "status": 200
+    },
+    {
+      "route": "learn/checklist/",
+      "status": 200
+    },
+    {
+      "route": "learn/operations/",
+      "status": 200
+    },
+    {
+      "route": "library/",
+      "status": 200
+    },
+    {
+      "route": "topics/",
+      "status": 200
+    },
+    {
+      "route": "topics/development/",
+      "status": 200
+    },
+    {
+      "route": "topics/operations/",
+      "status": 200
+    },
+    {
+      "route": "paths/",
+      "status": 200
+    },
+    {
+      "route": "paths/environment/",
+      "status": 200
+    },
+    {
+      "route": "paths/node-update/",
+      "status": 200
+    },
+    {
+      "route": "paths/update-operations/",
+      "status": 200
+    },
+    {
+      "route": "series/node-security/",
+      "status": 200
+    },
+    {
+      "route": "updates/",
+      "status": 200
+    },
+    {
+      "route": "about/",
+      "status": 200
+    },
+    {
+      "route": "learn/ai-data-boundaries/",
+      "status": 200
+    },
+    {
+      "route": "learn/app-architecture/",
+      "status": 200
+    },
+    {
+      "route": "learn/api-keys/",
+      "status": 200
+    },
+    {
+      "route": "learn/access-control/",
+      "status": 200
+    },
+    {
+      "route": "learn/mcp-permissions/",
+      "status": 200
+    },
+    {
+      "route": "learn/agent-permissions/",
+      "status": 200
+    },
+    {
+      "route": "learn/launch-checklist/",
+      "status": 200
+    },
+    {
+      "route": "learn/php-october-2026/",
+      "status": 200
+    },
+    {
+      "route": "learn/incident-response/",
+      "status": 200
+    },
+    {
+      "route": "topics/ai-tools/",
+      "status": 200
+    },
+    {
+      "route": "topics/secrets/",
+      "status": 200
+    },
+    {
+      "route": "topics/access/",
+      "status": 200
+    },
+    {
+      "route": "topics/connections/",
+      "status": 200
+    },
+    {
+      "route": "topics/release/",
+      "status": 200
+    },
+    {
+      "route": "topics/response/",
+      "status": 200
+    },
+    {
+      "route": "paths/solo-development/",
+      "status": 200
+    },
+    {
+      "route": "paths/before-launch/",
+      "status": 200
+    },
+    {
+      "route": "paths/ai-connections/",
+      "status": 200
+    },
+    {
+      "route": "series/solo-development/",
+      "status": 200
+    },
+    {
+      "route": "series/ai-connections/",
+      "status": 200
+    },
+    {
+      "route": "learn/ai-work-logs/",
+      "status": 200
+    },
+    {
+      "route": "learn/release-artifacts/",
+      "status": 200
+    },
+    {
+      "route": "learn/external-service-failures/",
+      "status": 200
+    },
+    {
+      "route": "learn/dependency-updates/",
+      "status": 200
+    },
+    {
+      "route": "learn/github-guards/",
+      "status": 200
+    }
+  ],
+  "lesson": "github-guards",
+  "diagrams": 6,
+  "comparison": true,
+  "imagesDecoded": true,
+  "sourceCredit": true,
+  "search": true,
+  "next": true
+}

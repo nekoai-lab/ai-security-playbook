@@ -10,4 +10,4 @@ Constraints: 本文16px/注記12px/操作44px。実インストール・実秘�
 - [x] operationsテーマの主記事、update-operationsルート、Node/PHP/operations関連、lesson-visualsとreview-mapに接続。backlog更新。
 - [x] 演習コードを抽出実行し、成功0件/検査失敗/稼働版違い/未確認を検証。構造の欠落拒否を維持。
 - [x] check/build/test、CUSTOM→FULL42ルート×4幅、全ブラウザと文字200%、記事画像/図/比較/キーボード/JSなし/検索/回遊/目視。
-- [ ] レビュー証拠を残しPR/CI/Pages/公開。第2本と残り3本を区別。
+- [x] レビュー証拠を残しPR/CI/Pages/公開。第2本と残り3本を区別。
