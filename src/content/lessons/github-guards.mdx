@@ -12,7 +12,7 @@ reviewed: "2026-10-24"
 minutes: 20
 qualityVersion: 2
 prerequisites: ["app-architecture"]
-related: ["cloud-account-safety", "agent-permissions", "dependency-updates", "launch-checklist", "incident-response"]
+related: ["ai-review-trust", "cloud-account-safety", "agent-permissions", "dependency-updates", "launch-checklist", "incident-response"]
 keywords: ["GitHub", "PR", "CI", "Actions", "ルールセット", "権限", "SHA", "個人開発"]
 outcomes: ["検査結果が、どの差分と条件に対するものかを確認する。", "指示とGitHub側の強制ルール、検査と公開の権限を分ける。", "外部Actionを固定する意味と、残る確認を説明する。"]
 reviewSections:
@@ -65,7 +65,7 @@ AIへ「mainへ直接入れず、PRを作って」と伝えるのは、作業の
 
 <GuardVisual kind="rules" />
 
-PRを必須にすることと、誰かの承認を必須にすることも別です。一人の開発では、自分のPRを自分で承認できない制約なども考え、実際に運用できる条件を選びます。AIのレビュー文が付いたことだけで、GitHubの要求する承認を満たしたとは判断しません。
+PRを必須にすることと、誰かの承認を必須にすることも別です。一人の開発では、自分のPRを自分で承認できない制約なども考え、実際に運用できる条件を選びます。AIのレビュー文が付いたことだけで、GitHubの要求する承認を満たしたとは判断しません。AIのレビューの合格が何を確かめた結果かは、[AIレビューの合格の教材](../ai-review-trust/)で扱います。
 
 まず自分が管理する検証用のリポジトリで、対象の変更が本当に止まり、必要な手順を通れば進めるかを確かめます。この教材を読んだだけで、現在の公開リポジトリの設定を一括変更する必要はありません。
 

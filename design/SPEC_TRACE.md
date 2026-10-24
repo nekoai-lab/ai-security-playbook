@@ -227,3 +227,14 @@ Implementation/evidence: READER_NAVIGATION_REVIEW.md, navigation-public-full and
 ## 2026-10-25 / Reader navigation release confirmation
 
 Release completed 2026-10-25: PR #34, merge f7ba4fc99d662ae6366b43f88402aa7a5eeec125, CI 40140283928 and Pages 40140345680 succeeded. Live smoke passed all 49 public routes, all 23 prerequisite headers, 3 audience hubs / all stages, eight recommendations, four-width keyboard/text200/old-query checks and no-JS stage links. The public design-system URL returned HTTP404; its source, preview build, link checks and GUIDE FULL remain. See navigation-public-full/public-report.json.
+## AIレビューの合格と確認項目（2026-10-25）
+
+| ID | critical要件 | 対象 | 確認方法 |
+|---|---|---|---|
+| AR01 | 1回の合格が保証しないことを、場面→図→事例→演習でつなぐ | ai-review-trust.mdx | 9coverageと内容レビュー（AI_REVIEW_TRUST_REVIEW.md） |
+| AR02 | 再現実験の数字と限界をresearchと一致させる | 事例の節・表 | README/prereg/scoring/aggregate.jsonと照合、2回の組み合わせは再計算 |
+| AR03 | 既存部品で図と比較を作る | ReviewVisual / ReviewComparison / review-diagrams.ts | LessonDiagramとfailure-comparisonの再利用、FULLと目視 |
+| AR04 | 固有名・家族構成・再現手順を載せない | 本文 | 目視の読み直し |
+| AR05 | 320/375/768/1280px・200%・キーボード・JSなし | 新記事と全ルート | ai-review-full と article-report.json |
+
+AR01–AR05は確認済み。挿絵は承認済みreview-workbench-sceneの再利用で、新しい画像は追加していない。

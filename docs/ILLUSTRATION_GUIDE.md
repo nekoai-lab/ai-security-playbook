@@ -82,3 +82,5 @@ GitHub保護の記事: github-gate-sceneは変更を公開前に点検する概�
 企業向けAIの記事: approved-ai-data-sceneは用途別に必要情報を選ぶ概念的な場面。原本/prompt/catalogと480/960WebPを保存。6図/比較はHTML、point/think/peek-sideを本文に配置。
 
 クラウド権限の記事: cloud-account-sceneは所有者・人・アプリの分離を描く概念場面。原本/prompt/catalogと480/960WebPを保存。6図/比較はHTML、point/concern/peek-sideを配置。
+
+AIレビューの記事: 新しい場面は作らず、承認済みのreview-workbench-scene（2枚の紙をルーペで見比べる）を再利用。同じ版への複数回のレビューを見比べる概念の挿絵で、レビューの品質や安全性の証明ではない。6図と比較はHTML（ReviewVisual/ReviewComparison）、think/point/peek-sideを本文に配置。
