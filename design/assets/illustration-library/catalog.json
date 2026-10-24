@@ -679,6 +679,19 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3187609
+    },
+    {
+      "id": "cloud-account-scene",
+      "title": "管理と日常操作と実行を見比べる探検猫",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/cloud-account-scene.png",
+      "preview": "public/images/cloud-account-scene-480.webp",
+      "usage": "cloud-account-safetyの導入と回遊。主体を分ける架空の概念場面。",
+      "sha256": "a66dcb4433675e3ea5fd80e776768483d8dbb056b05a0ca824d2a0751486aae7",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3385130
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { cloudAccountDiagrams } from "./cloud-account-diagrams";
 import { enterpriseDiagrams } from "./enterprise-diagrams";
 import { privacyDiagrams } from "./privacy-diagrams";
 import { rotationDiagrams } from "./rotation-diagrams";
@@ -48,6 +49,16 @@ const d = (
   caption: string,
 ): DiagramSpec => ({ title, layout, nodes, caption });
 export const lessonVisuals = {
+  "cloud-account-safety": {
+    image: "cloud-account-scene",
+    question: "公開に使った認証は、どの範囲を動かせる？",
+    situation: "AIやCIからクラウドへ反映するときに",
+    pose: "think",
+    diagrams: [
+      cloudAccountDiagrams.identities,
+      cloudAccountDiagrams.permissions,
+    ],
+  },
   "approved-ai-data": {
     image: "approved-ai-data-scene",
     question: "認められた仕事で、どの情報を使う？",

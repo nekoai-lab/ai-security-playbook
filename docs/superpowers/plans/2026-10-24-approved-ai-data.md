@@ -8,4 +8,4 @@ Tech stack: Astro/MDX/TypeScript。既存FIELD NOTES、本文16px/注記12px/操
 - [x] approved-ai-data.mdxと6図/比較3/専用挿絵/猫3を追加。架空の用途別項目選択と出力、未登録/欠落の境界テスト。
 - [x] ai-data-boundariesを一律禁止と読まれない導入へ改訂。topic/series/related/review-map/CONTENT_MAP/backlog/素材集へ接続。
 - [x] 型/build/test、CUSTOMからFULL46×4、全ページbrowser/200%、記事JSなし/キーボード/画像/検索/回遊/目視。
-- [ ] 内容レビューと証拠を記録、PR/CI/Pages/public。既存8テーマの完了と今後の深掘りを区別。
+- [x] 内容レビューと証拠を記録、PR/CI/Pages/public。既存8テーマの完了と今後の深掘りを区別。

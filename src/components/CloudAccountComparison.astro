@@ -1,0 +1,36 @@
+---
+const cases = [
+  {
+    title: "所有者の認証で作業",
+    result: "日常操作の入口を分ける",
+    detail: "ルートが必要な作業と、普段の更新を分けて設計します。",
+  },
+  {
+    title: "人のMFAを設定",
+    result: "アプリの権限は別に確認",
+    detail:
+      "人のログインの保護だけで、別主体の認証やできる操作まで決まるわけではありません。",
+  },
+  {
+    title: "短期間の認証を使う",
+    result: "期限と操作の範囲を見る",
+    detail: "有効な間に何ができ、誰が新しいセッションを使えるかを確認します。",
+  },
+];
+---
+
+<figure class="lesson-diagram failure-comparison" data-cloud-account-comparison>
+  <p class="diagram-title">強くしたのは、どの部分？</p>
+  {cases.map((c, i) => (
+    <details open={i === 0}>
+      <summary>{c.title}</summary>
+      <p>
+        <strong>{c.result}</strong>
+      </p>
+      <p>{c.detail}</p>
+    </details>
+  ))}
+  <figcaption>
+    対策の対象を分ける比較です。実際のIAMや認証の安全性を判定する機能ではありません。
+  </figcaption>
+</figure>

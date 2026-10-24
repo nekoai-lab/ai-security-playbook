@@ -80,3 +80,5 @@ GitHub保護の記事: github-gate-sceneは変更を公開前に点検する概�
 開発者プライバシーの記事: developer-privacy-sceneは本文以外の公開面を調べる概念場面。原本/prompt/catalogを保存。6図と3比較はHTML、think/laptop/peek-sideを配置。
 
 企業向けAIの記事: approved-ai-data-sceneは用途別に必要情報を選ぶ概念的な場面。原本/prompt/catalogと480/960WebPを保存。6図/比較はHTML、point/think/peek-sideを本文に配置。
+
+クラウド権限の記事: cloud-account-sceneは所有者・人・アプリの分離を描く概念場面。原本/prompt/catalogと480/960WebPを保存。6図/比較はHTML、point/concern/peek-sideを配置。
