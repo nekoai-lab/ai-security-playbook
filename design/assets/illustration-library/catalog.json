@@ -614,6 +614,19 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3526507
+    },
+    {
+      "id": "dependency-update-scene",
+      "title": "部品の更新を稼働先までたどる猫",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/dependency-update-scene.png",
+      "preview": "public/images/dependency-update-scene-480.webp",
+      "usage": "dependency-updatesの場面と回遊カード。仕組みはHTML図で説明。",
+      "sha256": "1e1c551a5e16d61addaed78c57c5c87304a8464f647a2fc8fe3f0aa53b59f2ec",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3445015
     }
   ]
 }

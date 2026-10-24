@@ -189,14 +189,14 @@ export const topicGuides = {
     related: ["access", "response"],
   },
   operations: {
-    feature: "node-october-2026",
+    feature: "dependency-updates",
     intro:
       "更新は、通知を読んだだけでも、インストールしただけでも終わりません。実際に動く版、対象の環境、更新後の結果と、次回の担当までつなぎます。",
     questions: [
       {
-        title: "この更新は、自分にも関係する？",
-        text: "対象系列と修正版、入力経路、アプリ同梱の環境を分けて判断します。",
-        lesson: "node-october-2026",
+        title: "知らない部品の通知は、自分に関係する？",
+        text: "直接・推移的な依存から、検知の対象と影響の判断をたどります。",
+        lesson: "dependency-updates",
       },
       {
         title: "外部サービスが止まったら、どうする？",

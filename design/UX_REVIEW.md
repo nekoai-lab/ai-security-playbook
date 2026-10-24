@@ -127,3 +127,7 @@ mainの23eaa34も同じ測定v2・同じ契約・全28条件で再測定した�
 ### 外部停止教材の最終内容レビュー補正
 未分類HTTP失敗も一時的と表示する例を補正。503の分岐を明示し、400/404/409/500等は原因や回復を断定しない一般的な取得失敗へ。回帰テストを先に追加して失敗、修正後28テスト成功。check63ファイル0件、build41、全内部リンク/アンカー成功。
 補正後FULLはservice-failures-finalで2616 passed/error0/既存色数warning8/manual-review328。新記事4幅の全画像/比較操作/axe/文字200%/JSなし/検索/回遊も再確認。全41×4幅のブラウザ検査は補正前service-failures-fullに記録し、この補正では本文の表示コードと回帰テスト、記録のみを変更。補正後の公開URLはデプロイ後に再確認する。
+
+## 依存管理の第2本（2026-10-24）
+18教材/42ルート。6図+3状態比較+新場面+猫3。根拠と限界はDEPENDENCY_UPDATES_REVIEW.md。運用の共通入口を新記事へ、update-operationsルート35分。LearningContextはシリーズ優先でpath fallbackを追加。
+FULL: dependency-updates-full、2680 passed/error0/既存色数warning8/manual-review336。基準変更/除外なし。全42×4幅axe/pageerror/はみ出し、全42ページ375px文字200%成功。新記事4幅の画像/図/比較/全展開200%/キーボード/JSなし/検索/テーマ/次画像、全18記事の回遊をJS有無で確認。型67ファイル0件、build42、31テストとリンク/base/アンカー成功。公開はCI/Pages/URL確認後。

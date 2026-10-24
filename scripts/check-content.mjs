@@ -66,7 +66,7 @@ export function validateContent(id, text) {
         errors.push(`Missing narrative coverage: ${key}`);
     }
     if (
-      !/<(?:ArticleVisual|PracticeVisual|FoundationVisual|ServiceFailureVisual|LessonDiagram)\b/.test(
+      !/<(?:ArticleVisual|PracticeVisual|FoundationVisual|ServiceFailureVisual|UpdateVisual|LessonDiagram)\b/.test(
         content.mechanism ?? "",
       )
     )

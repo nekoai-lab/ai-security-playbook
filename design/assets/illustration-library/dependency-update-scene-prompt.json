@@ -1,0 +1,9 @@
+{
+  "id": "dependency-update-scene",
+  "title": "部品の更新を稼働先までたどる猫",
+  "prompt": "ONE landscape 3:2 editorial illustration, matching the reference black explorer cat exactly, tapered muzzle, natural eyes, triangular ears, fine engraved pen-and-ink fur, orange backpack and rolled mat. Warm ivory paper, detailed black hatching, restrained orange accents, mature field-notebook feeling, not baby cartoon. A thoughtful cat at a wooden desk compares a small stack of interlocking plain component blocks and a handwritten-looking blank checklist with a laptop and a small distant server box on the right. One orange replacement block sits beside the stack, the cat is checking rather than smashing or removing anything. Convey following one updated component through to the running service. Distinct cozy composition, gentle mountain landscape, generous breathing room. No readable text, digits, labels, code, logo, arrows, safety stamps, brains, panels or contact sheet. Same individual character as reference; this is conceptual editorial art, not an architecture diagram.",
+  "referenceRoles": [
+    "api-key-setting-illustration.png: canonical character and field-notes scene"
+  ],
+  "usage": "dependency-updatesの場面と回遊カード。仕組みはHTML図で説明。"
+}
