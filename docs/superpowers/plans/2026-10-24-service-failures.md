@@ -11,4 +11,4 @@ Constraints: 本文16px、注記12px、操作44px。安全を猫や色で保証�
 - [x] lesson-visualsへ新ID、review-mapへ新URL、シリーズと関連とoperationsテーマへ接続。CONTENT_BACKLOGで残候補を明示。
 - [x] scripts/service-failure-example.test.mjsで原文コードを抽出し、成功/空/HTTP/通信/不正形式の結果を検証。構造欠落も不合格、既存検査維持。
 - [x] check/build/test、CUSTOM診断→FULL41ルート×4幅、全ルートaxe/文字200%、新記事の全画像・キーボード・JSなし・図/コード出力・目視。レビュー文書に根拠/限界/警告を記録。
-- [ ] PR/CI/マージ/Pages/公開確認。第1本公開と残り4候補を区別して報告。
+- [x] PR/CI/マージ/Pages/公開確認。第1本公開と残り4候補を区別して報告。

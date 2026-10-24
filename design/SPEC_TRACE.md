@@ -137,3 +137,5 @@ Z01–Z04: LOG_RELEASE_REVIEW.md / UX_REVIEW.mdとlog-release-fullの証拠で�
 進捗の正本: docs/CONTENT_BACKLOG.mdに最初の8テーマの実装状況を記載。この1本の完了を、残り全部の完了と報告しない。
 
 外部停止の第1本はSERVICE_FAILURES_REVIEW.md、UX_REVIEW.md、service-failures-fullの証拠で検証。残り4候補と区別して報告する。
+
+外部停止の最終レビュー: 503以外の未分類HTTP失敗を一時的と断定しない。回帰テストで区別し、記事のコードを修正。
