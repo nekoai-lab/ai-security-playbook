@@ -211,3 +211,9 @@ DOJ2022-06-17公表を参照し、2019摘発と評決公表を区別。設定不
 6実テキスト図/比較3/専用猫場面/猫3、担当3と証拠付きチェック。accessテーマとsoloシリーズ、関連とreview-mapへ追加。README/LICENSE/URL/基準維持。次のuploads/billing等は独立した未完了候補として区別。
 
 型87/build47/46テスト予定、機構/コード/結果欠落とダミー主体の不正/別account/不明形式を検査。CUSTOM診断後FULL47×4、全ブラウザ/200%、記事4幅/キーボード/JSなし/画像/検索/テーマ/前後画像/目視、CI/Pages/public。
+
+## 2026-10-24 / Featured lessons and reader-first openings
+
+User approved six illustrated homepage lessons, concise visual-first explanations and an opening that establishes reader value. Preserve #latest, existing top reading cards, new/updated feed and FIELD NOTES. See docs/superpowers/specs/2026-10-24-featured-lessons.md. Implement in isolated mini worktree; full mapped audit and browser review required before publication.
+
+Featured requirements implemented: typed six-card data and shared art, current metadata, #latest preserved, reader-first opening/format rules. Evidence: design/FEATURED_LESSONS_REVIEW.md and featured-final-full. Final FULL errors 0; eight unchanged color warnings. 320px/200% existing guide overflow fixed without hiding content.

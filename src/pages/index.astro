@@ -1,5 +1,7 @@
 ---
 import Shell from "../layouts/Shell.astro";
+import FeaturedLessonCard from "../components/FeaturedLessonCard.astro";
+import { featuredLessons } from "../data/featured-lessons";
 import ReadingCard from "../components/ReadingCard.astro";
 import ExplorerNote from "../components/ExplorerNote.astro";
 import FieldButton from "../components/FieldButton.astro";
@@ -13,9 +15,6 @@ const lessons = (await getCollection("lessons")).sort(
     b.data.updated.localeCompare(a.data.updated) || a.id.localeCompare(b.id),
 );
 const recent = lessons.slice(0, 3);
-const featuredLesson = lessons.find(
-  (lesson) => lesson.id === "php-october-2026",
-);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const link = (id: string) => `${base}/learn/${id}/`;
 ---
@@ -107,53 +106,24 @@ const link = (id: string) => `${base}/learn/${id}/`;
       <a href={`${base}/paths/`}>学習ルートを見る →</a>
     </p>
   </section>
-  <section id="latest" class="wrap featured-section">
-    <div class="featured-heading">
-      <p class="eyebrow">FEATURED LESSON / 01</p>
-      {featuredLesson && (
-        <time datetime={featuredLesson.data.updated}>
-          {featuredLesson.data.updated.replaceAll("-", ".")} 更新
-        </time>
-      )}
+  <section
+    id="latest"
+    class="wrap home-featured"
+    aria-labelledby="featured-title"
+  >
+    <p class="eyebrow">FEATURED LESSONS</p>
+    <h2 id="featured-title">いま読んでおきたい教材</h2>
+    <p class="featured-intro">
+      仕事のAI利用から、アプリの公開・運用まで。いまの疑問に合う一冊を。
+    </p>
+    <div class="reading-card-grid">
+      {featuredLessons.map((lesson) => (
+        <FeaturedLessonCard lesson={lesson} />
+      ))}
     </div>
-    <a class="featured-card" href={link("php-october-2026")}>
-      <div class="featured-art">
-        <div class="featured-art-copy">
-          <span class="eyebrow">RUNTIME / SECURITY</span>
-          <strong>PHP</strong>
-          <span>
-            2026年10月
-            <br />
-            セキュリティ更新
-          </span>
-        </div>
-        <img
-          src={`${base}/images/field-notes-hero-768.webp`}
-          width="768"
-          height="512"
-          loading="lazy"
-          alt=""
-        />
-      </div>
-      <div class="featured-copy">
-        <span class="tag">注目のレッスン</span>
-        <h2>
-          そのサイト、
-          <br />
-          どのPHPで動いている？
-        </h2>
-        <p>
-          PHPの2026年10月セキュリティ更新。
-          <br />
-          提供元の対応と実行環境を照合し、
-          <br />
-          自分のサイトで確認する場所を見つけます。
-        </p>
-        <span class="feature-link">
-          教材を読む <span aria-hidden="true">→</span>
-        </span>
-      </div>
-    </a>
+    <p class="hub-action">
+      <a href={`${base}/library/`}>すべての教材から探す →</a>
+    </p>
   </section>
   <section class="wrap home-updates">
     <SectionHeading eyebrow="FIELD UPDATES" title="新着・更新" number="03" />
@@ -176,3 +146,33 @@ const link = (id: string) => `${base}/learn/${id}/`;
     </p>
   </section>
 </Shell>
+
+<style>
+  .home-paths :global(.explorer-note > div) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .home-featured {
+    padding-block: 64px;
+  }
+  .home-featured > h2 {
+    margin: 0 0 16px;
+    font-size: 32px;
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+  .featured-intro {
+    margin: 0 0 32px;
+    font-size: 16px;
+    line-height: 1.9;
+    text-wrap: balance;
+  }
+  @media (max-width: 760px) {
+    .home-featured {
+      padding-block: 32px;
+    }
+    .home-featured > h2 {
+      font-size: 24px;
+    }
+  }
+</style>

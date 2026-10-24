@@ -1,0 +1,101 @@
+---
+import { getEntry } from "astro:content";
+import LessonArt from "./LessonArt.astro";
+import type { FeaturedLesson } from "../data/featured-lessons";
+interface Props {
+  lesson: FeaturedLesson;
+}
+const { lesson } = Astro.props;
+const entry = await getEntry("lessons", lesson.id);
+if (!entry) throw new Error(`Missing featured lesson: ${lesson.id}`);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<a
+  class="featured-lesson"
+  data-featured-lesson={lesson.id}
+  href={`${base}/learn/${lesson.id}/`}
+>
+  <LessonArt
+    id={lesson.id}
+    sizes="(max-width: 760px) calc(100vw - 64px), (max-width: 1100px) 42vw, 240px"
+  />
+  <div class="featured-lesson-copy">
+    <p class="situation">{lesson.situation}</p>
+    <h3>{lesson.question}</h3>
+    <p class="takeaway">{lesson.takeaway}</p>
+    <p class="metadata">
+      約{entry.data.minutes}分 ·{" "}
+      <time datetime={entry.data.updated}>
+        {entry.data.updated.replaceAll("-", ".")} 更新
+      </time>
+    </p>
+    <span class="action">
+      教材を読む <span aria-hidden="true">→</span>
+    </span>
+  </div>
+</a>
+<style>
+  .featured-lesson {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 24px;
+    align-items: start;
+    padding: 24px;
+    min-width: 0;
+    background: var(--color-paper-light);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .featured-lesson:hover {
+    background: var(--color-orange-soft);
+  }
+  .featured-lesson:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 4px;
+  }
+  .featured-lesson-copy {
+    min-width: 0;
+  }
+  p,
+  h3 {
+    margin: 0 0 12px;
+  }
+  .situation {
+    color: var(--color-orange-ink);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+  .takeaway {
+    font-size: 16px;
+    line-height: 1.9;
+    text-wrap: balance;
+  }
+  .metadata {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+  .action {
+    display: block;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-orange-ink);
+  }
+  @media (max-width: 1100px) {
+    .featured-lesson {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 760px) {
+    .featured-lesson {
+      padding: 16px;
+      gap: 16px;
+    }
+  }
+</style>
