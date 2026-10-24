@@ -24,3 +24,5 @@
 教材を追加・大幅改訂するときはdocs/CONTENT_STANDARD.mdも読む。リスク・事故/脆弱性/実験の区別・役割別確認・証拠のあるチェックリストを確認する。
 
 読み物改訂では、場面→図→具体例と結果→確認→次の判断を優先する。固定見出しへ押し込まず、CONTENT_STANDARDのv2 coverageで必須事項を保つ。見本はapi-keys.mdx / ArticleVisual.astro。
+
+イラストを使うときはdocs/ILLUSTRATION_GUIDE.mdとdesign/assets/illustration-library/catalog.jsonを先に参照。正本、承認済みの構図、旧不採用の顔を区別する。見本シートをそのまま本番カードへ貼らない。

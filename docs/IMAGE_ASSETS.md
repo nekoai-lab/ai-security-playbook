@@ -39,3 +39,7 @@ Two original scenes were generated with the built-in image_gen tool. User approv
 - Adjacent real text/captions convey the meaning; artwork has empty alt as decorative content. width/height reserve the aspect ratio; lazy loading and responsive sizes keep the scenes from blocking initial reading.
 
 Prompts: design/assets/reading-scenes/prompts.json. Do not treat arrows or gears in artwork as a literal architecture or completed update. Real-text diagrams carry the technical distinctions.
+
+## Approved reusable library / 2026-10-24
+
+[Illustration library](../design/assets/illustration-library/README.md) indexes existing canonical logo/companion/hero/scenes plus the approved pose, peeking, paw and corrected-expression boards. Original PNGs are preserved, lightweight WebP previews provided, and catalog.json records role, dimensions, alpha and SHA-256. The earlier rounded four-expression sheet is explicitly not a reuse reference. Usage and regeneration instructions: [ILLUSTRATION_GUIDE.md](./ILLUSTRATION_GUIDE.md). This addition stores assets/documentation; it does not add the sheets to the public website UI.
