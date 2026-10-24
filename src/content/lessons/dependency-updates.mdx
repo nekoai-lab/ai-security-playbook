@@ -26,6 +26,8 @@ reviewSections:
   sources: "一次資料と参考記事"
 changes:
   - date: "2026-10-25"
+    summary: "postcss-selector-parserの6系へのバックポート（6.1.5）を追記し、メジャー更新の提案より小さい直し方がある場合を示した。"
+  - date: "2026-10-25"
     summary: "更新先の選び方（実行環境のサポート予定、セキュリティ更新でのメジャー更新、全部直る版、当面上げない設定）を追加。"
   - date: "2026-10-24"
     summary: "依存の地図、検知と判断、本番への反映を、架空記録と図解で学ぶ解説を公開。"
@@ -180,11 +182,13 @@ AIに修正を頼むときは、変更理由、対象の部品、検証結果、
 
 ### セキュリティ更新でも、大きな変更の提案が来ることがある
 
-**分類：脆弱性の公表。** CSSの部品の一つであるpostcss-selector-parserでは、[GHSA-rj75-hqrm-r3gf](https://github.com/advisories/GHSA-rj75-hqrm-r3gf)（2026年10月5日公表、重大度は中）が公表され、修正版は7.1.6とされています。一方、Tailwind CSS 3は、この部品の6系を使う指定になっています。
+**分類：脆弱性の公表。** CSSの部品の一つであるpostcss-selector-parserでは、[GHSA-rj75-hqrm-r3gf](https://github.com/advisories/GHSA-rj75-hqrm-r3gf)（2026年10月5日公表、重大度は中）が公表されました。アドバイザリの記録では、修正版は7.1.6です。一方、Tailwind CSS 3が指定しているのは、この部品の6系です。
 
-このように、推移的依存を直すには、それを使う親の部品ごと大きく上げるしかない場合があります。Dependabotのセキュリティ更新でも、メジャー更新（互換性のない変更を含みうる更新）の提案が届くことがあるのはこのためです。
+そのため、Dependabotのセキュリティ更新は、Tailwind CSSごと4へ上げるメジャー更新（互換性のない変更を含みうる更新）を提案することがあります。中の部品を直すために、それを使う親の部品ごと大きく上げる提案です。
 
-提案が届いたら、何の通知を直すための更新か、その更新で設定や書き方が変わるかを確かめます。ビルドが失敗したら、更新を無理に通さず、移行するか、別の方法で守るかを判断します。
+ただし、この件には続きがあります。[postcss-selector-parserのリリース](https://github.com/postcss/postcss-selector-parser/releases)では、2026年10月19日に6.1.5が出て、同じ脆弱性の修正が6系にも移植（バックポート）されています。6.1.5はTailwind CSS 3の指定範囲に入るので、親を上げずに直せる場合があります。アドバイザリの記録が、この6.1.5をまだ修正版として載せていなかったのです。
+
+提案が届いたら、何の通知を直すための更新か、その更新で設定や書き方が変わるかを確かめます。メジャー更新の前に、その部品のリリースノートで、今の系列への修正版が出ていないかも見ます。ビルドが失敗したら、更新を無理に通さず、移行するか、別の方法で守るかを判断します。
 
 ### 同じ部品に複数の通知があれば、全部直る版を見る
 
@@ -228,7 +232,7 @@ console.log(versionFixingAll(alerts));
 | 迷う場面 | 見るもの | 判断の注意 |
 | --- | --- | --- |
 | 実行環境の版を選ぶ | 提供元のリリース予定（LTSと保守終了日） | 「新しい」「偶数」などの覚え方で決めない |
-| 大きな変更の提案が来た | 元の通知、移行ガイド、依存先が対応している範囲 | セキュリティ更新だから安全な変更だと考えない |
+| 大きな変更の提案が来た | 元の通知、移行ガイド、依存先が対応している範囲、今の系列への修正版（バックポート） | 提案がいちばん小さい直し方だと考えない |
 | 同じ部品に複数の通知 | 各通知の修正版 | 1件の修正版で全部直ったと数えない |
 | 当面上げないと決める | 止める範囲、理由、根拠、見直す日 | 修正の提案まで止めていないか確かめる |
 
@@ -301,5 +305,6 @@ console.log(versionFixingAll(alerts));
 - [GitHub公式：Dependabot alerts](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts) — 通知の契機、対象と限界。
 - [npm公式：audit](https://docs.npmjs.com/cli/v11/commands/npm-audit/) — 依存情報の照合と送信、修正を伴う操作との違い。
 - [Node.js：Release](https://github.com/nodejs/Release) — 各版のLTS開始日と保守終了日、v27からのリリース方針。
-- [GitHub Advisory：GHSA-rj75-hqrm-r3gf](https://github.com/advisories/GHSA-rj75-hqrm-r3gf) — postcss-selector-parserの脆弱性と修正版。
+- [GitHub Advisory：GHSA-rj75-hqrm-r3gf](https://github.com/advisories/GHSA-rj75-hqrm-r3gf) — postcss-selector-parserの脆弱性と、アドバイザリに記録された修正版。
+- [postcss-selector-parser：Releases](https://github.com/postcss/postcss-selector-parser/releases) — 7.1.6と、6系へのバックポートの6.1.5。
 - [GitHub公式：Dependabot options reference](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference) — `ignore`などの設定と、セキュリティ更新への影響。
