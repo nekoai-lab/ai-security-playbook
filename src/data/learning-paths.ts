@@ -61,8 +61,8 @@ export const learningPaths = [
     num: "06",
     kind: "layers" as const,
     title: "確認を、日々の仕組みに。",
-    text: "Node.js更新の実例から、通知・AIレビュー・継続的な確認を考えたい方へ。",
-    ids: ["operations", "checklist"],
-    time: "約15分",
+    text: "依存の更新を、通知・AIレビュー・本番での確認へつなげたい方へ。",
+    ids: ["dependency-updates", "operations", "checklist"],
+    time: "約35分",
   },
 ];

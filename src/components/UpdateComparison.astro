@@ -1,0 +1,38 @@
+---
+const states = [
+  {
+    title: "PRをマージした",
+    result: "本番の反映は、まだ別の確認",
+    detail:
+      "リポジトリの変更が終わっても、ビルド・公開・起動中の版が変わったとは限りません。",
+  },
+  {
+    title: "検査結果が不明",
+    result: "検出0件とは扱わない",
+    detail:
+      "検査のエラーや対象外を確認します。未確認のまま、問題なしの記録にはしません。",
+  },
+  {
+    title: "稼働先まで照合した",
+    result: "その対象の反映を確認",
+    detail:
+      "確認したリリースと動作、元の問題の条件を照合します。ほかの環境や未知の問題まで保証するものではありません。",
+  },
+];
+---
+
+<figure class="lesson-diagram failure-comparison" data-update-comparison>
+  <p class="diagram-title">どこまで終わった状態か、開いて比べる</p>
+  {states.map((s, i) => (
+    <details open={i === 0}>
+      <summary>{s.title}</summary>
+      <p>
+        <strong>{s.result}</strong>
+      </p>
+      <p>{s.detail}</p>
+    </details>
+  ))}
+  <figcaption>
+    完了と数える対象を分けるための比較です。実際のプロジェクトの状態を判定する機能ではありません。
+  </figcaption>
+</figure>

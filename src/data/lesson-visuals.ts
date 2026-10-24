@@ -1,3 +1,4 @@
+import { updateDiagrams } from "./update-diagrams";
 import { serviceFailureDiagrams } from "./service-failure-diagrams";
 import { practiceDiagrams } from "./practice-diagrams";
 export type DiagramIcon =
@@ -43,6 +44,13 @@ const d = (
   caption: string,
 ): DiagramSpec => ({ title, layout, nodes, caption });
 export const lessonVisuals = {
+  "dependency-updates": {
+    image: "dependency-update-scene",
+    question: "部品を直した。その更新は、本番まで届いた？",
+    situation: "公開したアプリに更新通知が来たら",
+    pose: "think",
+    diagrams: [updateDiagrams["dependency-map"], updateDiagrams.delivery],
+  },
   "external-service-failures": {
     image: "service-fallback-scene",
     question: "写真が届かなくても、案内は続けられる？",
