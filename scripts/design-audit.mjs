@@ -15,8 +15,11 @@ if (!existsSync(command)) {
 const map = JSON.parse(
   readFileSync(new URL("../design/review-map.json", import.meta.url), "utf8"),
 );
+const guide = process.argv.includes("--guide");
 const quick = process.argv.includes("--quick");
-const args = process.argv.slice(2).filter((a) => a !== "--quick");
+const args = process.argv
+  .slice(2)
+  .filter((a) => a !== "--quick" && a !== "--guide");
 if (args.includes("--rules")) {
   console.error("Use the project design/design-rules.json contract.");
   process.exit(2);
@@ -29,13 +32,17 @@ const positional = args.filter(
 const custom = positional.length > 0 || args.includes("--widths");
 const mode = quick ? "QUICK" : custom ? "CUSTOM" : "FULL";
 console.log(
-  `${mode}: ${mode === "FULL" ? "all routes and contract widths; visual/keyboard/text review still required" : "diagnostics only; not a release approval"}`,
+  `${guide ? "GUIDE " : ""}${mode}: ${mode === "FULL" ? "all routes and contract widths; visual/keyboard/text review still required" : "diagnostics only; not a release approval"}`,
 );
 const base = (
   process.env.DESIGN_PREVIEW_URL ??
-  "http://127.0.0.1:4387/ai-security-playbook/"
+  (guide
+    ? map.guidePreview.baseUrl
+    : "http://127.0.0.1:4387/ai-security-playbook/")
 ).replace(/\/?$/, "/");
-const defaults = (quick ? map.representatives : map.pages).map((p) => base + p);
+const defaults = (
+  guide ? map.guidePreview.pages : quick ? map.representatives : map.pages
+).map((p) => base + p);
 const targets =
   positional.length || args.includes("--help") ? args : [...args, ...defaults];
 const quickWidths =

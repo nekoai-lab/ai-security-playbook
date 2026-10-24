@@ -2,7 +2,7 @@ export const learningPaths = [
   {
     id: "solo-development",
     label: "AIで個人開発をはじめる",
-    audience: "入門",
+    audience: "入門から実践へ",
     num: "01",
     kind: "book" as const,
     title: "情報と仕組みから、確かめる。",
@@ -13,7 +13,7 @@ export const learningPaths = [
   {
     id: "before-launch",
     label: "公開前の確認を進める",
-    audience: "入門",
+    audience: "実践",
     num: "02",
     kind: "layers" as const,
     title: "利用者のデータと、運用を守る。",
@@ -24,7 +24,7 @@ export const learningPaths = [
   {
     id: "ai-connections",
     label: "AI連携の権限を決める",
-    audience: "入門",
+    audience: "入門から実践へ",
     num: "03",
     kind: "compass" as const,
     title: "接続と、任せる操作を分ける。",
@@ -35,7 +35,7 @@ export const learningPaths = [
   {
     id: "environment",
     label: "環境を確かめる",
-    audience: "入門",
+    audience: "入門から実践へ",
     num: "04",
     kind: "book" as const,
     title: "AIツールの実行環境を知る。",
@@ -46,7 +46,7 @@ export const learningPaths = [
   {
     id: "node-update",
     label: "Node.js更新に対応する",
-    audience: "基本知識が必要",
+    audience: "実践",
     num: "05",
     kind: "terminal" as const,
     title: "影響を見極め、更新する。",
@@ -57,7 +57,7 @@ export const learningPaths = [
   {
     id: "update-operations",
     label: "更新を運用につなげる",
-    audience: "実務経験が必要",
+    audience: "実践から発展へ",
     num: "06",
     kind: "layers" as const,
     title: "確認を、日々の仕組みに。",

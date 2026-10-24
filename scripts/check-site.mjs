@@ -13,8 +13,9 @@ async function walk(dir) {
     )
   ).flat();
 }
+await access(join(root,"design-system/index.html")).then(()=>assert.fail("Authoring guide must not be built into dist"),()=>{});
 const pages = (await walk(root)).filter((f) => f.endsWith(".html"));
-assert(pages.length >= 7, "Expected homepage, five lessons and design system");
+assert(pages.length >= 7, "Expected public learning pages");
 for (const file of pages) {
   const html = await readFile(file, "utf8");
   assert(html.includes('lang="ja"'), `${file}: missing language`);

@@ -1,14 +1,10 @@
 ---
 import Shell from "../layouts/Shell.astro";
+import ReaderEntryCards from "../components/ReaderEntryCards.astro";
 import FeaturedLessonCard from "../components/FeaturedLessonCard.astro";
 import { featuredLessons } from "../data/featured-lessons";
-import ReadingCard from "../components/ReadingCard.astro";
-import ExplorerNote from "../components/ExplorerNote.astro";
 import FieldButton from "../components/FieldButton.astro";
-import FieldIcon from "../components/FieldIcon.astro";
-import SectionHeading from "../components/SectionHeading.astro";
-import TopicCards from "../components/TopicCards.astro";
-import { learningPaths } from "../data/learning-paths";
+import { topics } from "../data/catalog";
 import { getCollection } from "astro:content";
 const lessons = (await getCollection("lessons")).sort(
   (a, b) =>
@@ -16,37 +12,34 @@ const lessons = (await getCollection("lessons")).sort(
 );
 const recent = lessons.slice(0, 3);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-const link = (id: string) => `${base}/learn/${id}/`;
 ---
 
 <Shell title="AIの安全を、解き明かそう。">
   <section class="hero wrap">
     <div class="hero-copy">
-      <p class="eyebrow hero-kicker">FIELD NOTES / VOL. 01</p>
+      <p class="eyebrow hero-kicker">AI SECURITY PLAYBOOK</p>
       <h1>
         AIの安全を、
         <br />
         <em>解き明かそう。</em>
       </h1>
       <p class="hero-description">
-        AIを安心して使いこなすための、
+        AIに情報を渡すときも、
         <br />
-        実践的なセキュリティ知識を。
+        アプリを作って公開するときも。
         <br />
-        仕組みからリスク、対策まで、
-        <br />
-        確かめながら学ぶプレイブック。
+        何を確かめるか、図と具体例で学ぶ。
       </p>
-      <FieldButton href={`${base}/library/`}>教材を探す</FieldButton>
+      <FieldButton href="#start">自分に合う入口を選ぶ</FieldButton>
     </div>
     <figure class="hero-art">
       <img
         src={`${base}/images/field-notes-hero-1536.webp`}
         srcset={`${base}/images/field-notes-hero-768.webp 768w, ${base}/images/field-notes-hero-1536.webp 1536w`}
-        sizes="(max-width: 760px) 100vw, 62vw"
+        sizes="(max-width:760px) 100vw,62vw"
         width="1536"
         height="1024"
-        alt="幾何学的なプロセッサー、ツール、記憶装置をオレンジの配線でつないだ分解図と、山から見渡す猫の探検家"
+        alt="道具や情報のつながりを見渡す、黒猫の探検家"
         fetchpriority="high"
       />
       <figcaption>
@@ -55,124 +48,174 @@ const link = (id: string) => `${base}/learn/${id}/`;
       </figcaption>
     </figure>
   </section>
-  <div class="manifesto-band">
-    <div class="wrap">
-      <FieldIcon kind="compass" />
-      <div>
-        <strong>AIと社会のこれからを、ともに探究する。</strong>
-        <p>技術・リスク・実践 ― 現場で使える知識を、一つずつ。</p>
-      </div>
-    </div>
+  <div class="entry-band">
+    <p class="wrap">AIを使う人も、作る人も。いまの場面と知識に合う教材へ。</p>
   </div>
-  <section class="wrap home-reading" aria-labelledby="home-reading-title">
-    <p class="eyebrow">FIELD READING</p>
-    <h2 id="home-reading-title">こんな疑問、ありませんか？</h2>
-    <div class="reading-card-grid">
-      <ReadingCard id="api-keys" />
-      <ReadingCard id="node-october-2026" />
-    </div>
-  </section>
-  <section id="library" class="wrap home-topics">
-    <SectionHeading
-      eyebrow="EXPLORE THE FIELD"
-      title="テーマから、知りたいことへ。"
-      number="01"
-    />
-    <TopicCards headingLevel="h3" />
-    <p class="hub-action">
-      <a href={`${base}/library/`}>教材を検索する →</a>
+  <section id="start" class="wrap home-section" aria-labelledby="start-title">
+    <p class="eyebrow">START HERE</p>
+    <h2 id="start-title">いま、何を確かめたい？</h2>
+    <p class="section-intro">
+      まずは場面から。仕組みを知る入門から、実践・発展へ進めます。
     </p>
-  </section>
-  <section id="paths" class="wrap home-paths">
-    <SectionHeading
-      eyebrow="LEARNING ROUTES"
-      title="目的に合わせて、読み進める。"
-      number="02"
-    />
-    <ExplorerNote title="はじめての方は、ここから。" compact>
-      「AIで個人開発をはじめる」から、情報・仕組み・秘密の扱いを学べます。公開前やAI連携の確認も、目的別に選べます。
-    </ExplorerNote>
-    <div class="home-route-links">
-      {learningPaths.slice(0, 3).map((path) => (
-        <a href={`${base}/paths/${path.id}/`}>
-          <span class="catalog-meta">
-            {path.audience} · {path.time}
-          </span>
-          <strong>{path.label} →</strong>
-        </a>
-      ))}
+    <div id="paths">
+      <ReaderEntryCards />
     </div>
-    <p class="hub-action">
-      <a href={`${base}/paths/`}>学習ルートを見る →</a>
-    </p>
   </section>
   <section
     id="latest"
-    class="wrap home-featured"
+    class="wrap home-section"
     aria-labelledby="featured-title"
   >
-    <p class="eyebrow">FEATURED LESSONS</p>
-    <h2 id="featured-title">いま読んでおきたい教材</h2>
-    <p class="featured-intro">
-      仕事のAI利用から、アプリの公開・運用まで。いまの疑問に合う一冊を。
-    </p>
+    <p class="eyebrow">FIELD READING</p>
+    <h2 id="featured-title">こんな疑問から、読んでみる。</h2>
+    <p class="section-intro">前提と分かることを見て、気になる1本を。</p>
     <div class="reading-card-grid">
-      {featuredLessons.map((lesson) => (
+      {featuredLessons.slice(0, 2).map((lesson) => (
         <FeaturedLessonCard lesson={lesson} />
+      ))}
+    </div>
+    <div class="compact-reading">
+      {featuredLessons.slice(2).map((lesson) => (
+        <FeaturedLessonCard lesson={lesson} compact />
       ))}
     </div>
     <p class="hub-action">
       <a href={`${base}/library/`}>すべての教材から探す →</a>
     </p>
   </section>
-  <section class="wrap home-updates">
-    <SectionHeading eyebrow="FIELD UPDATES" title="新着・更新" number="03" />
-    <ol class="update-list compact-updates">
+  <section
+    id="library"
+    class="wrap home-section"
+    aria-labelledby="topics-title"
+  >
+    <p class="eyebrow">LOOK IT UP</p>
+    <h2 id="topics-title">調べたいテーマが決まっていたら。</h2>
+    <nav class="compact-topics" aria-label="テーマから探す">
+      {topics.map((topic) => (
+        <a href={`${base}/topics/${topic.id}/`}>
+          {topic.title}
+          <span aria-hidden="true">→</span>
+        </a>
+      ))}
+    </nav>
+  </section>
+  <section class="wrap home-section home-news" aria-labelledby="updates-title">
+    <p class="eyebrow">UPDATES</p>
+    <h2 id="updates-title">新着・更新</h2>
+    <ul class="news-list">
       {recent.map((lesson) => (
         <li>
-          <p class="catalog-meta">
-            <time datetime={lesson.data.updated}>{lesson.data.updated}</time> ·{" "}
-            {lesson.data.updated === lesson.data.published ? "公開" : "更新"}
-          </p>
-          <h3>
-            <a href={link(lesson.id)}>{lesson.data.title} →</a>
-          </h3>
-          <p>{lesson.data.changes[0]?.summary ?? lesson.data.summary}</p>
+          <time datetime={lesson.data.updated}>{lesson.data.updated}</time>
+          <a href={`${base}/learn/${lesson.id}/`}>
+            {lesson.data.shortTitle ?? lesson.data.title} →
+          </a>
         </li>
       ))}
-    </ol>
+    </ul>
     <p class="hub-action">
-      <a href={`${base}/updates/`}>新着・更新をすべて見る →</a>
+      <a href={`${base}/updates/`}>更新一覧を見る →</a>
     </p>
   </section>
 </Shell>
-
 <style>
-  .home-paths :global(.explorer-note > div) {
-    min-width: 0;
-    overflow-wrap: anywhere;
+  .entry-band {
+    background: var(--color-orange);
+    color: var(--color-ink);
+    padding-block: 16px;
   }
-  .home-featured {
-    padding-block: 64px;
+  .entry-band p {
+    margin-block: 0;
+    font-size: 16px;
+    line-height: 1.9;
+    text-wrap: balance;
   }
-  .home-featured > h2 {
+  .home-section {
+    padding-block: 48px;
+  }
+  .home-section > h2 {
     margin: 0 0 16px;
     font-size: 32px;
     line-height: 1.4;
     text-wrap: balance;
   }
-  .featured-intro {
-    margin: 0 0 32px;
+  .section-intro {
+    margin: 0 0 24px;
     font-size: 16px;
     line-height: 1.9;
     text-wrap: balance;
   }
+  .compact-reading {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .compact-topics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px 24px;
+  }
+  .compact-topics a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding-block: 12px;
+    min-height: 44px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-decoration: none;
+  }
+  .compact-topics a:hover {
+    text-decoration: underline;
+  }
+  .news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .news-list li {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 16px;
+    align-items: baseline;
+  }
+  .news-list time {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-muted);
+  }
+  .news-list a {
+    text-wrap: balance;
+    display: block;
+    padding-block: 12px;
+    min-height: 44px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
   @media (max-width: 760px) {
-    .home-featured {
+    .home-section {
       padding-block: 32px;
     }
-    .home-featured > h2 {
+    .home-section > h2 {
       font-size: 24px;
+    }
+    .compact-reading {
+      grid-template-columns: 1fr;
+    }
+    .compact-topics {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 16px;
+    }
+    .news-list li {
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-bottom: 16px;
+    }
+    .news-list a {
+      text-wrap: balance;
+      padding-top: 8px;
     }
   }
 </style>

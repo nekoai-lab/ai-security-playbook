@@ -42,10 +42,10 @@ const published = topics.filter((t) =>
     教材名・説明・キーワードから検索できます。空白で区切ると、すべての語を含む教材を探します。
   </p>
   <details id="advanced-filters">
-    <summary>前提知識・教材の種類で絞る</summary>
+    <summary>段階・教材の種類で絞る</summary>
     <div class="search-secondary">
       <label>
-        前提知識
+        読む段階
         <select name="level" disabled>
           <option value="">指定なし</option>
           {levels.map((v) => (
@@ -81,7 +81,7 @@ const published = topics.filter((t) =>
   条件に合う教材がありません。検索語を短くするか、絞り込み条件を解除してください。
 </p>
 <script>
-  import { matchesSearch } from "../data/catalog";
+  import { matchesSearch, normalizeLevel } from "../data/catalog";
   const form = document.querySelector<HTMLFormElement>("#catalog-search");
   if (form) {
     const items = Array.from(
@@ -107,7 +107,8 @@ const published = topics.filter((t) =>
     function readURL() {
       const params = new URL(location.href).searchParams;
       for (const key of keys) {
-        const value = params.get(key) ?? "";
+        const raw = params.get(key) ?? "";
+        const value = key === "level" ? normalizeLevel(raw) : raw;
         const control = controls[key];
         control.value =
           control instanceof HTMLSelectElement &&

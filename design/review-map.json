@@ -8,7 +8,6 @@
   "basePath": "/ai-security-playbook/",
   "pages": [
     "",
-    "design-system/",
     "learn/basics/",
     "learn/node-october-2026/",
     "learn/commands/",
@@ -53,7 +52,10 @@
     "learn/secret-rotation/",
     "learn/developer-privacy/",
     "learn/approved-ai-data/",
-    "learn/cloud-account-safety/"
+    "learn/cloud-account-safety/",
+    "start/use-ai/",
+    "start/build-apps/",
+    "start/operate-services/"
   ],
   "representatives": [
     "",
@@ -66,7 +68,8 @@
       "prefixes": [
         "public/brand/",
         "src/components/BrandMark.astro",
-        "src/components/Explorer"
+        "src/components/Explorer",
+        "src/pages/start/"
       ],
       "anchors": [
         "identity",
@@ -114,15 +117,16 @@
     {
       "name": "guide",
       "prefixes": [
-        "src/pages/design-system.astro",
-        "docs/DESIGN_SYSTEM.md"
+        "src/design/",
+        "docs/DESIGN_SYSTEM.md",
+        "src/pages/[...designPreview].astro"
       ],
       "anchors": [
         "authoring",
         "quality"
       ],
       "references": [
-        "src/pages/design-system.astro",
+        "src/design/DesignSystem.astro",
         "docs/DESIGN_SYSTEM.md"
       ]
     },
@@ -143,5 +147,15 @@
         "src/components/DataTable.astro"
       ]
     }
-  ]
+  ],
+  "guidePreview": {
+    "source": "src/design/DesignSystem.astro",
+    "baseUrl": "http://127.0.0.1:4392/ai-security-playbook/",
+    "pages": [
+      "design-system/"
+    ],
+    "buildCommand": "npm run build:design",
+    "previewCommand": "npm run preview:design",
+    "auditCommand": "npm run design:audit:guide"
+  }
 }

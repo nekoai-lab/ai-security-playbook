@@ -29,7 +29,7 @@ test("unknown, deleted/new lesson and empty changes fail back to all routes", ()
 });
 test("reference map paths and guide sections exist", () => {
   const guide = readFileSync(
-    new URL("../src/pages/design-system.astro", import.meta.url),
+    new URL("../src/design/DesignSystem.astro", import.meta.url),
     "utf8",
   );
   for (const p of [
@@ -54,4 +54,11 @@ test("release map covers the current lesson collection", () => {
     routes,
     "Update review-map.json when adding a lesson",
   );
+});
+
+test("guide changes keep separate authoring coverage without a public guide route",()=>{
+ const c=reviewContext(["src/design/DesignSystem.astro"],map);
+ assert(c.guidePreview.pages.includes("design-system/"));
+ assert(!c.release.pages.some(p=>p.endsWith("/design-system/")));
+ assert(c.guideSections.every(p=>p.startsWith(c.guidePreview.baseUrl)));
 });

@@ -7,10 +7,23 @@ export interface FeaturedLesson {
 }
 export const featuredLessons = [
   {
+    id: "api-keys",
+    situation: "外部サービスをつなぐとき",
+    question: "APIキー、どこに入れるのが正解？",
+    takeaway: "設定して動いた。その値がどこへ届くかを確かめる。",
+  },
+
+  {
     id: "approved-ai-data",
     situation: "仕事の情報をAIで扱うとき",
     question: "「学習しない」設定なら、どこまで使える？",
     takeaway: "入力できる範囲を、契約・保存・連携先から整理する。",
+  },
+  {
+    id: "node-october-2026",
+    situation: "AIツールやMCPの実行環境を確かめるとき",
+    question: "Node.jsの更新、確認するのはどこ？",
+    takeaway: "PC・MCP・CI・本番で、更新した版と動いている版を確認する。",
   },
   {
     id: "access-control",

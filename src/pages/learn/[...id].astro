@@ -64,9 +64,10 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
       </p>
       <h1>{lesson.data.title}</h1>
       <p>{lesson.data.summary}</p>
+      <p class="reading-readiness" data-reading-readiness><strong>{lesson.data.level}</strong> · {lesson.data.prerequisiteNote}</p>
       <details class="article-preparation">
         <summary>読む前の補足</summary>
-        <p>前提知識：{lesson.data.level}。</p>
+
         {lesson.data.outcomes && (
           <ul>
             {lesson.data.outcomes.map((goal) => (
@@ -170,3 +171,7 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
     </div>
   </div>
 </Shell>
+
+<style>
+.reading-readiness { font-size:16px; line-height:1.9; max-width:40em; text-wrap:balance; }
+</style>

@@ -47,6 +47,7 @@ const href = `${base}/learn/${lesson.id}/${route ? `?route=${encodeURIComponent(
     </a>
   </Heading>
   <p>{lesson.data.summary}</p>
+  <p class="catalog-meta">前提：{lesson.data.prerequisiteNote}</p>
   <p class="catalog-meta">
     {lesson.data.level} · 約{lesson.data.minutes}分 · 情報確認{" "}
     <time datetime={lesson.data.reviewed}>{lesson.data.reviewed}</time>
