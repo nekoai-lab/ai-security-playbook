@@ -42,3 +42,12 @@ JavaScriptなしでも全テーマ・記事のリンクと初期おすすめを�
 - 既存のcommands（15色）、制作見本（14色）の色数注意は各4幅で残る。今回解消したと扱わない。旧5教材の編集基準移行も別課題。
 
 結果の正本は `design/audit/2026-10-25/theme-home-*-full/{result.json,VALIDATION.md}` と同日の focused/states/browser report。画像・詳細計測はminiの作業環境へ保管する。
+
+
+## 公開確認
+
+- 実装PR：[#37](https://github.com/nekoai-lab/ai-security-playbook/pull/37)。実装head `675a4df65d1d83faebf6e466e18fd0d0aa882c23` の[CI 40143826582](https://github.com/nekoai-lab/ai-security-playbook/actions/runs/40143826582)成功後、exact-head指定でマージ。
+- 公開コミット：`db2565b3c45f1da2ec5821df7c3c767879c1f618`。[Pages 40143893066](https://github.com/nekoai-lab/ai-security-playbook/actions/runs/40143893066)成功。
+- 公開先：https://nekoai-lab.github.io/ai-security-playbook/
+- 公開URLの50ページHTTP200、テーマ8・初期おすすめ3・説明付き新着5、制作見本HTTP404。4幅でレベル・検索・履歴・単一記事直リンク・段階継承・キーボード・JavaScriptなしを再確認。
+- 公開結果：`theme-home-public-routes.json` / `theme-home-public-interactions.json`。実装のFULLと公開後の確認を分けて保存。
