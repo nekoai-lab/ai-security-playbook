@@ -68,3 +68,7 @@ Approved: retain current site structure and assets; publish the approved API key
 ## 2026-10-24 / More editorial illustrations and Node.js cards
 
 User approved the key-setting scene and requested this illustration style throughout reading, plus a Node.js article card. Add two scenario artworks (API-key setting, runtime inspection), real-text mechanism diagrams, top-page reading cards and artwork on the existing library entries. Add one contextual Node.js card at the API article end, clearly a separate runtime concern. Maintain existing page structure and PHP feature; no new or duplicate search results. Validate responsive images/alt/CLS, explanatory text under zoom, links/search/route state and all pages/widths.
+
+## 2026-10-24 / Approved illustration archive
+
+Store approved designs and usage guidance for future reuse, as requested. Nine records distinguish formal identity, adopted scenes, poses/layout references, stamps and corrected expressions. Old rounded faces are not the current character reference. No site UI changes; verify source hashes, preview links and identical dist output. Evidence: ILLUSTRATION_LIBRARY_REVIEW.md.

@@ -52,3 +52,5 @@ api-keys.mdxは読者の迷う場面から入り、ArticleVisualでscene/types/b
 ## 場面の挿絵と記事カード
 
 ReadingArtはreading-highlights.tsの2つの場面をsrcset付きで表示する。ReadingCardは同じデータから読む場面・記事名・説明・所要時間を示す。トップに選ぶ教材と、検索結果の件数を混同しない。LessonCardに挿絵を足してもdata-catalog-itemを複製しない。Node.jsカードは2026年10月の更新事例と明示し、APIキーの設定だけで実行環境の更新まで完了するとは扱わない。
+
+挿絵を選ぶ・増やすときは[ILLUSTRATION_GUIDE.md](./ILLUSTRATION_GUIDE.md)から承認済み素材を参照する。顔立ちの正本とポーズ・配置の参考は別。旧表情の丸顔へ戻さない。

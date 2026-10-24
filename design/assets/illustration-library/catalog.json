@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "updated": "2026-10-24",
+  "generator": "built-in image_gen",
+  "guide": "docs/ILLUSTRATION_GUIDE.md",
+  "characterReference": [
+    "api-key-scene",
+    "explorer-cat-expressions-original-style"
+  ],
+  "notApprovedForReuse": [
+    {
+      "file": "explorer-cat-emotions.png",
+      "reason": "顔と目の比率が元の黒猫から変わった旧表情集。採用素材へ入れず、現行表情集を参照する。"
+    }
+  ],
+  "assets": [
+    {
+      "id": "formal-compass-cat",
+      "title": "正式ロゴA：羅針盤と猫",
+      "status": "canonical-logo",
+      "source": "design/assets/cat-compass-logo-source.png",
+      "preview": "public/brand/compass-cat-128.webp",
+      "usage": "ヘッダー・ファビコン・発行主体の表示。表情キャラで置き換えない。",
+      "sha256": "5e12aa288aabcc0316df977fd912aa9ac7908faaba879bb30fd28547c76060b6",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "bytes": 524362
+    },
+    {
+      "id": "explorer-companion",
+      "title": "既存の案内役C：後ろ姿とリュック",
+      "status": "canonical-existing-companion",
+      "source": "design/assets/explorer-cat-companion-source.png",
+      "preview": "public/brand/explorer-cat-256.webp",
+      "usage": "既存の入口・案内に使う後ろ姿。正式ロゴとは役割が違う。",
+      "sha256": "9bb6ebc9ce8abf02606837ad4a364dcb79dd328781deafbf996a3169ad3dde48",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "bytes": 498540
+    },
+    {
+      "id": "field-notes-hero",
+      "title": "FIELD NOTES：機械の分解図",
+      "status": "approved-scene",
+      "source": "design/assets/field-notes-hero.png",
+      "preview": "public/images/field-notes-hero-768.webp",
+      "usage": "サイトの世界観。脳を除いた承認済みの機械版を使う。",
+      "sha256": "228ca0b3dbb8d59e1a46330e1abab14c23cd87a61648bb910cd102bfbf7af7df",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 2986179
+    },
+    {
+      "id": "api-key-scene",
+      "title": "APIキーを設定する場面",
+      "status": "canonical-editorial-character",
+      "source": "design/assets/reading-scenes/api-key-scene.png",
+      "preview": "public/images/api-key-scene-480.webp",
+      "usage": "記事用の黒猫の顔立ち・毛並み・リュックの参照元。矢印は場面のイメージ。",
+      "sha256": "fcd3e98e6177e4d6f4f507529d39edd50fab8b63829d5bc00da478e8b9de1aa5",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3324780
+    },
+    {
+      "id": "node-runtime-scene",
+      "title": "実行環境を調べる場面",
+      "status": "approved-scene",
+      "source": "design/assets/reading-scenes/node-runtime-scene.png",
+      "preview": "public/images/node-runtime-scene-480.webp",
+      "usage": "Node.jsカードと実行中の版の話題。機械の歯車は実行環境の比喩。",
+      "sha256": "f58dfc3c25a4d77f24a7fd009b55d13e25cc58e1a58009ae7ae57afa8c089edb",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3424265
+    },
+    {
+      "id": "explorer-cat-nine-poses",
+      "title": "ポーズ9種",
+      "status": "approved-pose-reference",
+      "source": "design/assets/illustration-library/sources/explorer-cat-nine-poses.png",
+      "preview": "design/assets/illustration-library/previews/explorer-cat-nine-poses.webp",
+      "usage": "構図と向きの参考。顔立ちは修正版表情とAPIキー挿絵に合わせる。",
+      "sha256": "4fef14695d1aa76d30c26f798cee1e4f28e234f3eac6219d8f7e04d27df04f01",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "bytes": 2077708
+    },
+    {
+      "id": "explorer-cat-peeking-cards",
+      "title": "カードからのぞく6種",
+      "status": "approved-layout-reference",
+      "source": "design/assets/illustration-library/sources/explorer-cat-peeking-cards.png",
+      "preview": "design/assets/illustration-library/previews/explorer-cat-peeking-cards.webp",
+      "usage": "上・左右・尻尾・後ろ姿。カード枠や番号は配置の見本で、画像ごと記事へ貼らない。",
+      "sha256": "12822bdf8624e6c4e7456edfcd60111e8084cd8ae1dbb339d49e21e5c49ae726",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 1634119
+    },
+    {
+      "id": "explorer-cat-paw-stamps",
+      "title": "肉球スタンプ6種",
+      "status": "approved-decoration-reference",
+      "source": "design/assets/illustration-library/sources/explorer-cat-paw-stamps.png",
+      "preview": "design/assets/illustration-library/previews/explorer-cat-paw-stamps.webp",
+      "usage": "黒・朱色・足跡・丸枠。安全や対応完了を保証する印にはしない。",
+      "sha256": "4ace8f250e3cbaaa5e14767f4debf02dac8ddf7923352e8bb94cbe24c653a8bd",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "bytes": 857430
+    },
+    {
+      "id": "explorer-cat-expressions-original-style",
+      "title": "元の顔立ちに寄せた表情6種",
+      "status": "approved-expression-reference",
+      "source": "design/assets/illustration-library/sources/explorer-cat-expressions-original-style.png",
+      "preview": "design/assets/illustration-library/previews/explorer-cat-expressions-original-style.webp",
+      "usage": "表情の現行基準。A/Fを基本、Eは穏やかな喜び。顔を丸くしすぎない。",
+      "sha256": "27af44d41c46eec8f9f25577545512ff9b1e1b5f50d00e5a405aff78c70a1493",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 2736902
+    }
+  ]
+}
