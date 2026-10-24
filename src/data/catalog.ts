@@ -77,6 +77,7 @@ export const series = [
       "ai-data-boundaries",
       "app-architecture",
       "api-keys",
+      "secret-rotation",
       "access-control",
       "release-artifacts",
       "github-guards",

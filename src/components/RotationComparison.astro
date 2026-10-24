@@ -1,0 +1,35 @@
+---
+const cases = [
+  {
+    title: "保存先だけBに更新",
+    result: "起動済みのAは残り得る",
+    detail: "新しい保存値と、アプリが読み込んだ値を分けて追います。",
+  },
+  {
+    title: "新しい起動がBで成功",
+    result: "古い実行は別に確認",
+    detail: "一つの成功だけで、旧リリースや定期処理まで確認済みにはしません。",
+  },
+  {
+    title: "発行元でAを失効",
+    result: "残るAは接続に失敗し得る",
+    detail: "新しい版での接続と、旧実行・次回の処理を確認します。",
+  },
+];
+---
+
+<figure class="lesson-diagram failure-comparison" data-rotation-comparison>
+  <p class="diagram-title">どこまで替わった？ 3つの状態を比べる</p>
+  {cases.map((c, i) => (
+    <details open={i === 0}>
+      <summary>{c.title}</summary>
+      <p>
+        <strong>{c.result}</strong>
+      </p>
+      <p>{c.detail}</p>
+    </details>
+  ))}
+  <figcaption>
+    架空の版A・Bの比較です。実際の再読込と失効の仕様はサービスで異なります。
+  </figcaption>
+</figure>

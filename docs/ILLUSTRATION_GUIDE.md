@@ -74,3 +74,5 @@ service-fallback-sceneは承認された黒猫の派生場面。外部の画像�
 依存更新の記事: dependency-update-sceneは部品の更新を稼働先までたどる概念的な派生場面。原本・prompt・catalogを保存し、6図と比較表示はHTML、think/laptop/peek-sideを本文で使用。
 
 GitHub保護の記事: github-gate-sceneは変更を公開前に点検する概念的な派生場面。生成指示/原本/catalogを保存。6図と比較はHTML、think/point/peek-sideを使う。
+
+キー交換の記事: secret-rotation-sceneは保存と稼働の違いを表す概念場面。原本・prompt・catalogを保存。6図・3比較はHTML、think/point/peek-sideを配置。

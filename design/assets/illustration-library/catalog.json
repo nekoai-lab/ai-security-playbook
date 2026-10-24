@@ -640,6 +640,19 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3916644
+    },
+    {
+      "id": "secret-rotation-scene",
+      "title": "保存先と二つの稼働先を見比べる探検猫",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/secret-rotation-scene.png",
+      "preview": "public/images/secret-rotation-scene-480.webp",
+      "usage": "secret-rotationの導入と回遊画像。概念的な場面、技術仕様の証明ではない。",
+      "sha256": "f43d4e03b0ed033deb13d20a71f242fcafabb6e1289d02f8ef11efbff387f472",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3409587
     }
   ]
 }

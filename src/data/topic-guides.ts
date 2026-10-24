@@ -132,10 +132,9 @@ export const topicGuides = {
         lesson: "ai-work-logs",
       },
       {
-        title: "公開された可能性があるときは？",
-        text: "キーの失効と交換、利用履歴、公開範囲を整理します。削除だけで終えません。",
-        lesson: "incident-response",
-        anchor: "key",
+        title: "キーを替えたのに、古いキーが動く？",
+        text: "保存先・稼働先・発行元を分け、旧実行と失効まで確認します。",
+        lesson: "secret-rotation",
       },
     ],
     related: ["development", "response"],

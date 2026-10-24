@@ -1,0 +1,13 @@
+---
+import LessonDiagram from "./LessonDiagram.astro";
+import {
+  rotationDiagrams,
+  type RotationDiagramKind,
+} from "../data/rotation-diagrams";
+interface Props {
+  kind: RotationDiagramKind;
+}
+const { kind } = Astro.props;
+---
+
+<LessonDiagram spec={rotationDiagrams[kind]} name={`rotation-${kind}`} />

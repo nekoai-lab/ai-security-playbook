@@ -171,3 +171,11 @@ github-guards、development、入門解説20分。19教材43ルート。題「�
 図6、比較3、新場面1、猫3。developmentテーマの質問1つを新記事へ、solo-developmentシリーズで公開前の間へ、関連とreview-mapに追加。既存URL/README/LICENSE/検査基準維持。source/date/9coverage/担当/チェックを必須。
 
 検証: 34テスト予定、原文コードの出力・空必須list/欠落/古いcommit/pending/failure、type/build/全43リンク/FULL43×4/全ブラウザ・文字200%/新記事の画像/JSなし/キーボード/検索と回遊/CI/Pages/public。
+
+# シークレット更新を稼働先まで追う / 第4本
+
+secret-rotation、secrets、入門解説20分。20教材44ルート。保存先を更新し新しい実行が成功しても、旧プロセス・定期ジョブ・発行元の旧キーが残る境界を説明する。通常更新と漏えい対応を分け、二重キー対応は提供元が許可した場合だけ。Cloud Runの環境変数は起動時、マウントは読取時という公式仕様を例にし、全クラウドへ一般化しない。
+
+原典numekudiの運用報告と、CircleCI2023-01-12事故報告を分離。架空の版名だけを使うNode演習、6つの実テキスト図、3状態比較、専用場面と猫3。値・実ログ・実キーを扱わず、実変更や失効は実行しない。ロールバック/暗号鍵の例外/次の定期実行までを扱う。
+
+soloシリーズでapi-keysの次へ、secretsテーマ・関連・review-mapへ接続。README/LICENSE/既存URL/検査基準維持。9coverage、コードと結果、担当と証拠付きチェック、一次資料と確認日。check/build/test、FULL44×4、全ページaxeと文字200%、新記事キーボード/JSなし/画像/検索/回遊/目視、CI/Pages/publicで確認。
