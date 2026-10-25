@@ -3,6 +3,7 @@ import "../styles/global.css";
 import "../styles/library.css";
 import "../styles/article-illustrations.css";
 import BrandMark from "../components/BrandMark.astro";
+import { mainNavigation, isNavigationCurrent } from "../data/site-navigation";
 import { lessonVisuals } from "../data/lesson-visuals";
 interface Props {
   title: string;
@@ -67,37 +68,18 @@ const socialAlt = articleId
         </span>
       </a>
       <nav aria-label="メイン">
-        <a
-          href={`${base}/library/`}
-          aria-current={
-            Astro.url.pathname.startsWith(`${base}/library/`) ||
-            Astro.url.pathname.startsWith(`${base}/topics/`) ||
-            Astro.url.pathname.startsWith(`${base}/series/`) ||
-            Astro.url.pathname.startsWith(`${base}/learn/`)
-              ? "page"
-              : undefined
-          }
-        >
-          教材を探す
-        </a>
-        <a
-          href={`${base}/paths/`}
-          aria-current={
-            Astro.url.pathname.startsWith(`${base}/paths/`) ? "page" : undefined
-          }
-        >
-          学習ルート
-        </a>
-        <a
-          href={`${base}/updates/`}
-          aria-current={
-            Astro.url.pathname.startsWith(`${base}/updates/`)
-              ? "page"
-              : undefined
-          }
-        >
-          新着・更新
-        </a>
+        {mainNavigation.map((item) => (
+          <a
+            href={`${base}${item.path}`}
+            aria-current={
+              isNavigationCurrent(Astro.url.pathname, base, item.sections)
+                ? "page"
+                : undefined
+            }
+          >
+            {item.label}
+          </a>
+        ))}
       </nav>
     </header>
     <main id="main">

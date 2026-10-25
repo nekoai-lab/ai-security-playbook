@@ -196,3 +196,30 @@ test("scene entry cards have one meaningful destination and stages remain on des
     for (const i of [1, 2, 3]) assert(hub.includes(`href="#stage-${i}"`));
   }
 });
+
+test("all built pages use one shared header/footer and reader hubs keep the route navigation active", () => {
+  const map = JSON.parse(readFileSync("design/review-map.json", "utf8"));
+  for (const route of map.pages) {
+    const html = readFileSync(`dist/${route}index.html`, "utf8");
+    assert.equal(
+      (html.match(/<header class="header"/g) || []).length,
+      1,
+      route,
+    );
+    assert.equal((html.match(/<footer[ >]/g) || []).length, 1, route);
+    const header = /<header class="header"[\s\S]*?<\/header>/.exec(html)[0];
+    assert.equal((header.match(/<nav /g) || []).length, 1, route);
+    assert(!header.includes("github.com"), route);
+    const selected = [
+      ...header.matchAll(/<a[^>]*aria-current="page"[^>]*>([\s\S]*?)<\/a>/g),
+    ].map((m) => m[1].trim());
+    const expected = /^(paths|start)\//.test(route)
+      ? ["学習ルート"]
+      : /^(library|topics|series|learn)\//.test(route)
+        ? ["教材を探す"]
+        : route === "updates/"
+          ? ["新着・更新"]
+          : [];
+    assert.deepEqual(selected, expected, route);
+  }
+});

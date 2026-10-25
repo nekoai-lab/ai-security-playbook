@@ -264,3 +264,6 @@ User approved outputs/site-design-proposal.html and its journey map, then explic
 
 ## 2026-10-25 ヘッダーのGitHubボタンを削除
 読者の主要な回遊に不要な右上のGitHubロゴ/リンクを共通Shellから削除。専用CSSを取り除き、サイト名とメインナビだけの配置へ。OGP・フッターのMIT License・記事の一次資料リンクは維持。全公開ルートと制作見本を最新ビルドで検証する。
+
+## 2026-10-25 サイト構造の確認
+全公開50ページと制作見本はShell経由でヘッダー/フッターを共通化済み。ナビの表示と所属先判定をsite-navigation.tsへ集約し、start/配下3ページの「学習ルート」選択漏れを修正。生成全ルートの共通枠一意性と選択状態を検査。CSSの大規模整理は公開条件にせず、保守上の課題として記録する。

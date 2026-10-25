@@ -239,3 +239,6 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - 今回の最終ビルドで公開FULL 3196 passed/error 0/warning 4、GUIDE FULL 60 passed/error 0/warning 4。既存のcommands/見本の色数警告は維持。基準の変更・検査対象の除外なし。
 - 全204画面でaxe/実行エラー/横はみ出し0。375pxで全50ページと制作見本の文字200%を確認。機械検査のmanual reviewは公開400/見本8であり、自動合格とは区別する。
 - 証拠:design/audit/2026-10-25/header-cleanup-*。画像:design/previews/card-composition/header-{desktop,mobile}.png。PR #41へ追加、未マージ・未公開。
+
+## 2026-10-25 共通枠・サイト構造の確認
+全50ページと制作見本は共通Shellを通ることを確認。ナビ定義をsite-navigation.tsへ集約し、start/3ページの学習ルート選択漏れを修正。109ファイルのcheck/build/testと公開/見本FULL、全204画面・文字200%を最新ビルドで再確認。新規error 0、既存色数warningのみ。構造・保守上の注意・検証範囲はSITE_STRUCTURE_REVIEW.md。
