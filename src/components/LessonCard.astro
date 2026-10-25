@@ -1,7 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import ReadingArt from "./ReadingArt.astro";
-import LessonArt from "./LessonArt.astro";
+import CardArt from "./CardArt.astro";
+import { lessonCardArt } from "../data/card-art";
 import LessonCardCopy from "./LessonCardCopy.astro";
 import {
   readingHighlights,
@@ -25,6 +26,8 @@ const href = `${base}/learn/${lesson.id}/${route ? `?route=${encodeURIComponent(
     {
       "catalog-card--illustrated": !poster && lesson.id in readingHighlights,
       "catalog-card--poster": poster,
+      "catalog-card--pose":
+        poster && lessonCardArt(lesson.id as LessonVisualId).kind === "pose",
     },
   ]}
   data-catalog-item
@@ -40,8 +43,8 @@ const href = `${base}/learn/${lesson.id}/${route ? `?route=${encodeURIComponent(
   {poster ? (
     <>
       {lesson.id in lessonVisuals && (
-        <LessonArt
-          id={lesson.id as LessonVisualId}
+        <CardArt
+          art={lessonCardArt(lesson.id as LessonVisualId)}
           sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw,400px"
         />
       )}
@@ -74,14 +77,20 @@ const href = `${base}/learn/${lesson.id}/${route ? `?route=${encodeURIComponent(
     flex-direction: column;
     min-width: 0;
   }
-  .catalog-card--poster :global(.lesson-art) {
+  .catalog-card--poster > :global(.card-art) {
     width: 100%;
-    height: auto;
-    aspect-ratio: 2/1;
-    object-fit: cover;
-    object-position: 50% 40%;
+    height: 128px;
     margin: 0;
     float: none;
+  }
+  .catalog-card--pose > :global(.card-art) {
+    width: 144px;
+    height: 128px;
+    align-self: flex-end;
+    margin: 12px 16px 0;
+  }
+  .catalog-card--pose:nth-child(even) > :global(.card-art) {
+    align-self: flex-start;
   }
   .catalog-card-content {
     padding: 24px;

@@ -193,3 +193,24 @@ Release completed 2026-10-25: PR #34, merge f7ba4fc99d662ae6366b43f88402aa7a5eee
 24教材48ルート。6図・3比較・表・場面（既存review-workbench-sceneを再利用）・猫3。内容と根拠・限界はAI_REVIEW_TRUST_REVIEW.md。型93ファイル0件/build48/51テスト成功（examples 37）。CUSTOM初回 ai-review-diagnostic-initial は320pxの孤立文字3箇所（本文2・比較の見出し1）をerrorとして指摘。文言を整え、再診断4幅でerror0。表の見出しも短くした。FULL ai-review-full は最終版で3064passed/error0/既存色数warning8（design-system・commandsの各4幅、従来と同じ）/manual-review384。しきい値変更・除外なし。 公開前の内容確認で、猫の見出しと使い回しの1文の言い切りを弱めた（記録と合わない強さ）。この worktree で preview を別ポート（4395）に立ててFULLを再実行し、3064passed/error0/既存warning8で同じ。既定ポート4387に残っていた別作業の古い preview で測ると新記事が404になり誤判定するため、DESIGN_PREVIEW_URL で自分のpreviewを指す。 main の読者導線（#34・#35）の後に載せ直し：level を「発展」、prerequisiteNote を追加、reader-journeys の build-apps に github-guards の次として登録。check/build/test 成功、FULL（自分の preview）3196passed/error0/既存warning4。
 全48×4幅のaxe（WCAG 2.0/2.1 A・AA）/pageerror/横はみ出しなし、全48ページ375px文字200%成功（browser-report.json）。新記事は4幅で図8（6図+比較+場面）・猫3・全画像デコード、Tab/Enterで比較の開閉とフォーカス表示位置、320/375pxでdetails全展開200%、JSなしで比較・表・結果が読める、URLのqによる検索、releaseテーマの疑問、シリーズ前後の次カードと画像（article-report.json）。320px・320px文字200%・1280pxの全体と各図を目視。表とコードは既存の横スクロール領域で、320pxでは3列目・長い行がスクロール先になる（既存教材と同じ挙動）。
 ブラウザ検査は私的ハーネスと別に、作業用の Playwright + axe-core スクリプトで実施（公開repoには入れていない）。自動検査とスクリーンショットは支援技術での完全な確認を意味しない。公開はCI/Pages/URL確認後。
+
+## 2026-10-25 カードの密度・構図の再設計
+
+### 変更と意図
+- ユーザーは全面の大きな猫の反復を指摘。小さな図記号だけの案も余白が大きく魅力が下がるため不採用。最終承認は、場面画/のぞく/歩く/下部の場面画を混ぜる案。
+- トップとテーマ一覧8件に5構図。24教材とテーマ内教材は場面画と8種以上の既存ポーズ。おすすめ先頭3枚は指さす/APIキー場面/歩く。複数ポーズの使用を実際の配置まで確認した。
+- テーマの重複CTAを削除し、見出しと教材リンクを入口へ。段階で1教材なら直接記事へ。学習入口の汎用段階リンク3回反復も整理し、遷移先で段階を1組提示。
+
+### 最終ビルドの機械検査
+- check:104ファイル、error/warning/hint 0。build:50ページ。npm test:成功（reader-navigation 10項目含む）。GUIDE build:51ページ、専用check成功。
+- 公開FULL:3196 passed、error 0、色数warning 4、manual review 400。GUIDE FULL:60 passed、error 0、色数warning 4、manual review 8。基準・除外・検査対象を変更していない。
+- 既存warning:commandsの色数15と制作見本の色数14を4幅で検出。今回のカード由来の色数増加ではない。5本の旧教材の内容品質を、このUI検査で再認定したものではない。
+- 公開50ページ×320/375/768/1280＋制作見本4幅の204画面。axe、実行エラー、横はみ出し0。375pxで全50ページ＋制作見本の文字200%を確認。
+- MCP/MPC/ＭＰＣ/エムシーピー、0件から検索語を残して条件解除、履歴・キーボード、段階別の見出し遷移先、12件ページ送り、JSなしの24教材/8テーマを4幅で確認。
+- 最初に見つかった矢印のサイズ差と語尾の折り返し9件は修正。3ページCUSTOM診断と、その後の全件FULLで再確認。初回指摘はinitial-findings.jsonに残した。
+
+### 目視と実用面
+- topics-desktop/mobile、featured-desktop/mobile、library-desktop/mobile、entriesのPC/スマホを確認。原画と照合して最初の場面画の顔の位置を38%へ調整。本文と画像の間に空欄を増やすおすすめの行サイズも修正。
+- 顔・見出し・記事リンクの重なり、猫のポーズ/視線/構図の連続、白地の量と教材の密度を一覧で確認。これらは自動監査のmanual review項目とは別の目視記録であり、400件すべてを自動合格と表現しない。
+- 場面画とポーズを混ぜるため画面のリズムが変わる。画像を全カード上部へ統一する規則は採らず、IDごとの構図を維持し、追加時は検索後の並びも確認する。
+- 記録:design/audit/2026-10-25/card-composition-*。実装プレビュー:design/previews/card-composition/。本文・技術図・OGP・README/LICENSEは変更なし。公開はPRレビュー後。

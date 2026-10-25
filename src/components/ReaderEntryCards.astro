@@ -1,32 +1,28 @@
 ---
-import { getCollection } from "astro:content";
 import { readerJourneys } from "../data/reader-journeys";
-import LessonArt from "./LessonArt.astro";
-const all = await getCollection("lessons");
+import CatPose from "./CatPose.astro";
+const poses = ["peek-side", "walk-right", "investigate"] as const;
+const actions = [
+  "入力する情報と、任せる操作を確かめる",
+  "作り始めから公開までの教材を見る",
+  "更新・監視・復旧の教材を見る",
+];
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <div class="reader-entries">
-  {readerJourneys.map((journey) => {
-    const first = all.find((l) => l.id === journey.firstLesson);
-    if (!first) throw new Error(`Missing reader entry: ${journey.firstLesson}`);
-    return (
-      <article class="reader-entry" data-reader-entry={journey.id}>
-        <div class="entry-title">
-          <LessonArt id={journey.art} sizes="96px" />
-          <h3>{journey.label}</h3>
-        </div>
-        <p>{journey.summary}</p>
-        <p class="first-label">入門の最初の1本</p>
-        <a class="first-lesson" href={`${base}/learn/${first.id}/`}>
-          {journey.firstLabel} →
-        </a>
-        <a class="entry-action" href={`${base}/start/${journey.id}/`}>
-          入門・実践・発展から選ぶ →
-        </a>
-      </article>
-    );
-  })}
+  {readerJourneys.map((journey, i) => (
+    <article class="reader-entry" data-reader-entry={journey.id}>
+      <div class="entry-title">
+        <CatPose pose={poses[i]} />
+        <h3>{journey.label}</h3>
+      </div>
+      <p>{journey.summary}</p>
+      <a class="entry-action" href={`${base}/start/${journey.id}/`}>
+        {actions[i]} →
+      </a>
+    </article>
+  ))}
 </div>
 <style>
   .reader-entries {
@@ -38,6 +34,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     min-width: 0;
     padding: 24px;
     background: var(--color-paper-light);
+  }
+  .entry-title :global(.cat-pose) {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
   }
   .entry-title {
     display: grid;
@@ -57,12 +58,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     line-height: 1.9;
     text-wrap: balance;
   }
-  .first-label {
-    margin-bottom: 0;
-    font-size: 12px;
-    line-height: 1.6;
-    color: var(--color-muted);
-  }
   a {
     display: block;
     padding-block: 12px;
@@ -72,6 +67,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     overflow-wrap: anywhere;
   }
   .entry-action {
+    text-wrap: balance;
     color: var(--color-orange-ink);
     font-weight: 700;
   }

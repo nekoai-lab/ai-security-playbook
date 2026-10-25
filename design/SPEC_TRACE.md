@@ -247,3 +247,13 @@ AR01–AR05は確認済み。挿絵は承認済みreview-workbench-sceneの再�
 ## 2026-10-25 / Approved theme-first design proposal
 
 User approved outputs/site-design-proposal.html and its journey map, then explicitly asked to implement while retaining existing FIELD NOTES styling. Inline level filters, informative topic cards and direct article names replace mandatory reader gateways on the homepage. Original strong orange band and five recent updates required. Theme destinations must expose actual lessons immediately. Preserve IDs, article bodies, new AI review lesson, source guide and old bookmarks; use existing tokens and full public/guide validation. Plan: docs/superpowers/plans/2026-10-25-theme-first-home.md.
+
+## 2026-10-25 カードの密度と構図
+承認済みの文章主役/側面挿絵を実装。8テーマのポーズ/道具・向き・左右を明示指定し、教材一覧/おすすめ/場面入口にも分散。既存本文とOGPは維持。新規の全幅監査と検索/操作/目視を記録してからレビューへ。
+
+### 最終承認の反映
+- 文字＋脇の絵に全カードを揃える案、図記号と小さな尻尾中心の案は不採用。2026-10-25に場面画/のぞく/歩く/下部の場面画を混ぜる密度のある案を承認。
+- トップとテーマ一覧8件へ5構図、教材一覧全24件とテーマ内教材へ承認済み素材、おすすめ先頭3件へ指さす/場面画/歩くを割り当てる。新規画像生成・左右反転はしない。
+- すべてのテーマの教材/検索用データを維持。重複する汎用CTAを削り、テーマ見出しと代表教材を入口とする。1教材のテーマや絞り込み結果1件はその記事へ直接移動。
+- 学習ルート3入口は3ポーズと場面固有リンク1つ。段階リンクは移動先のページで1組だけ提示。
+- 機械証拠: `scripts/reader-navigation.test.mjs`。検証/目視記録は `design/UX_REVIEW.md` と `design/audit/2026-10-25/card-composition-*`。

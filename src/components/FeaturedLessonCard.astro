@@ -1,6 +1,8 @@
 ---
 import { getEntry } from "astro:content";
 import LessonArt from "./LessonArt.astro";
+import CardArt from "./CardArt.astro";
+import { lessonCardArt, type CardArt as CardArtData } from "../data/card-art";
 import type { FeaturedLesson } from "../data/featured-lessons";
 interface Props {
   lesson: FeaturedLesson;
@@ -11,6 +13,12 @@ const { lesson, compact = false, stack = false } = Astro.props;
 const entry = await getEntry("lessons", lesson.id);
 if (!entry) throw new Error(`Missing featured lesson: ${lesson.id}`);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const art: CardArtData =
+  lesson.id === "approved-ai-data"
+    ? { kind: "pose", pose: "point" }
+    : lesson.id === "node-october-2026"
+      ? { kind: "pose", pose: "walk-right" }
+      : lessonCardArt(lesson.id);
 ---
 
 <a
@@ -21,14 +29,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   data-featured-lesson={lesson.id}
   href={`${base}/learn/${lesson.id}/`}
 >
-  <LessonArt
-    id={lesson.id}
-    sizes={
-      compact
-        ? "80px"
-        : "(max-width:760px) calc(100vw - 64px), (max-width:1100px) 42vw,240px"
-    }
-  />
+  {lesson.id !== "api-keys" ? (
+    <CardArt art={art} />
+  ) : (
+    <LessonArt
+      id={lesson.id}
+      sizes={
+        compact
+          ? "80px"
+          : "(max-width:760px) calc(100vw - 64px), (max-width:1100px) 42vw,240px"
+      }
+    />
+  )}
   <div class="featured-lesson-copy">
     <p class="situation">{lesson.situation}</p>
     <h3>{lesson.question}</h3>
@@ -140,6 +152,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   .featured-lesson--compact .featured-lesson-copy {
     display: contents;
   }
+  .featured-lesson > :global(.card-art) {
+    height: 144px;
+  }
+  .featured-lesson--compact > :global(.card-art) {
+    height: 80px;
+  }
+  .featured-lesson--compact :global(.card-art),
   .featured-lesson--compact :global(.lesson-art) {
     grid-column: 1;
     grid-row: 1;
@@ -160,7 +179,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 <style>
   .featured-lesson--stack {
+    grid-template-rows: auto 1fr;
     grid-template-columns: 1fr;
     height: 100%;
+  }
+</style>
+
+<style>
+  .featured-lesson--stack > :global(.card-art--pose) {
+    width: 160px;
+    justify-self: end;
   }
 </style>

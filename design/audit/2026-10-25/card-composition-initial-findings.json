@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "passed": 3187,
+    "failed": 13,
+    "review": 400,
+    "errors": 9
+  },
+  "fixedFindings": [
+    {
+      "target": "127.0.0.1_55943_ai-security-playbook",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "375px: 「…AIに渡す情報↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…アプリの仕組み↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…の、動く場所を知る→」（最終行 2字） [#themes > div:nth-child(1) > article:nth-child(2) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(2)] / 「…の、動く場所を知る→」（最終行 2字） [#themes > div:nth-child(1) > article:nth-child(2) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(2) > a:nth-child(1)] / 「…ログインと権限↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…AIに任せる操作↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…公開前の確認↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…異常に気づいたら↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(8) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)]"
+      ]
+    },
+    {
+      "target": "127.0.0.1_55943_ai-security-playbook",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "320px: 「…AIに渡す情報↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…AIに渡す情報↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2) > a:nth-child(1)] / 「…アプリの仕組み↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…アプリの仕組み↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2) > a:nth-child(1)] / 「…ログインと権限↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…を使う権限を分ける→」（最終行 2字） [#themes > div:nth-child(1) > article:nth-child(4) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(1)] / 「…を使う権限を分ける→」（最終行 2字） [#themes > div:nth-child(1) > article:nth-child(4) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(1)] / 「…AIに任せる操作↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)]"
+      ]
+    },
+    {
+      "target": "127.0.0.1_55943_ai-security-playbook",
+      "width": 768,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "768px: 「…AIに渡す情報↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…AIに渡す情報↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2) > a:nth-child(1)] / 「…アプリの仕組み↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…ログインと権限↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…AIに任せる操作↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…認する操作を分ける→」（最終行 2字） [#themes > div:nth-child(1) > article:nth-child(5) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(1)] / 「…認する操作を分ける→」（最終行 2字） [#themes > div:nth-child(1) > article:nth-child(5) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(1)] / 「…渡す権限を確かめる→」（最終行 2字） [#themes > div:nth-child(1) > article:nth-child(5) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(2)]"
+      ]
+    },
+    {
+      "target": "127.0.0.1_55943_ai-security-playbook",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "1280px: 「…AIに渡す情報↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…アプリの仕組み↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…キー・会話・データ↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…ログインと権限↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…AIに任せる操作↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…公開前の確認↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…更新・公開後の運用↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(7) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)] / 「…異常に気づいたら↗」（最終行 1字） [#themes > div:nth-child(1) > article:nth-child(8) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)]"
+      ]
+    },
+    {
+      "target": "127.0.0.1_55943_ai-security-playbook_topics",
+      "width": 375,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "375px: 「…AIに渡す情報↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…アプリの仕組み↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…の、動く場所を知る→」（最終行 2字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(2) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(2)] / 「…の、動く場所を知る→」（最終行 2字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(2) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(2) > a:nth-child(1)] / 「…ログインと権限↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…AIに任せる操作↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…公開前の確認↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…異常に気づいたら↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(8) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)]"
+      ]
+    },
+    {
+      "target": "127.0.0.1_55943_ai-security-playbook_topics",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "320px: 「…AIに渡す情報↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…AIに渡す情報↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2) > a:nth-child(1)] / 「…アプリの仕組み↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…アプリの仕組み↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2) > a:nth-child(1)] / 「…ログインと権限↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…を使う権限を分ける→」（最終行 2字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(4) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(1)] / 「…を使う権限を分ける→」（最終行 2字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(4) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(1)] / 「…AIに任せる操作↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)]"
+      ]
+    },
+    {
+      "target": "127.0.0.1_55943_ai-security-playbook_topics",
+      "width": 768,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "768px: 「…AIに渡す情報↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…AIに渡す情報↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2) > a:nth-child(1)] / 「…アプリの仕組み↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…ログインと権限↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…AIに任せる操作↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…認する操作を分ける→」（最終行 2字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(5) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(1)] / 「…認する操作を分ける→」（最終行 2字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(5) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(1)] / 「…渡す権限を確かめる→」（最終行 2字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(5) > div:nth-child(2) > ul:nth-child(3) > li:nth-child(2)]"
+      ]
+    },
+    {
+      "target": "127.0.0.1_55943_ai-security-playbook_topics",
+      "width": 1280,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "1280px: 「…AIに渡す情報↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…アプリの仕組み↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…キー・会話・データ↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…ログインと権限↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…AIに任せる操作↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…公開前の確認↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(6) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…更新・公開後の運用↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(7) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)] / 「…異常に気づいたら↗」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(2) > article:nth-child(8) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(2)]"
+      ]
+    },
+    {
+      "target": "127.0.0.1_55943_ai-security-playbook_paths",
+      "width": 320,
+      "id": "rhythm.orphans",
+      "status": "failed",
+      "evidence": [
+        "320px: 「…開までの教材を見る→」（最終行 1字） [#main > div:nth-child(1) > div:nth-child(3) > article:nth-child(2) > a:nth-child(3)]"
+      ]
+    }
+  ]
+}

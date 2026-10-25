@@ -103,10 +103,10 @@ test("every theme lists all of its real lessons before the deeper questions", ()
   assert.deepEqual([...linked].sort(), [...records.keys()].sort());
 });
 
-test("library provides one full scene per lesson without duplicating search records or a publisher signature", () => {
+test("library provides one illustration per lesson without duplicating search records or a publisher signature", () => {
   const html = readFileSync("dist/library/index.html", "utf8");
   assert.equal((html.match(/data-catalog-item/g) || []).length, records.size);
-  assert.equal((html.match(/data-lesson-art=/g) || []).length, records.size);
+  assert.equal((html.match(/data-card-art=/g) || []).length, records.size);
   assert.equal(
     (html.match(/<article[^>]*catalog-card--poster/g) || []).length,
     records.size,
@@ -131,4 +131,68 @@ test("the publisher is identified in the shared footer, not repeated in topic ca
     /<article[^>]*data-discovery-topic[\s\S]*?<\/article>/g,
   ))
     assert(!card.includes("Tsukineko"));
+});
+
+test("theme compositions mix scenes and approved poses without repeating a single template", () => {
+  const html = readFileSync("dist/index.html", "utf8");
+  const cards = [
+    ...html.matchAll(/<article[^>]*data-discovery-topic[\s\S]*?<\/article>/g),
+  ].map((m) => m[0]);
+  assert.equal(cards.length, 8);
+  const layouts = cards.map((c) => /composition--([a-z-]+)/.exec(c)?.[1]);
+  assert(new Set(layouts).size >= 5);
+  const arts = cards.map((c) => /data-card-art="([^"]+)"/.exec(c)?.[1]);
+  assert.equal(new Set(arts).size, 8);
+  assert.equal(cards.filter((c) => c.includes("data-cat-pose=")).length, 5);
+  for (const card of cards) {
+    assert(!card.includes("data-topic-action"));
+    assert.equal((card.match(/data-topic-destination/g) || []).length, 1);
+    assert.equal((card.match(/<img /g) || []).length, 1);
+  }
+});
+
+test("all library illustrations come from approved deliveries, with varied poses and real links", () => {
+  const catalog = JSON.parse(
+    readFileSync("design/assets/illustration-library/catalog.json", "utf8"),
+  );
+  const approved = new Set(
+    catalog.assets
+      .flatMap((a) => [a.preview, ...(a.deliveries ?? []).map((d) => d.path)])
+      .filter(Boolean),
+  );
+  const html = readFileSync("dist/library/index.html", "utf8");
+  const cards = [
+    ...html.matchAll(/<article[^>]*data-catalog-item[\s\S]*?<\/article>/g),
+  ].map((m) => m[0]);
+  const poses = new Set();
+  for (const card of cards) {
+    assert.equal((card.match(/data-card-art=/g) || []).length, 1);
+    const src = /<img[^>]*src="([^"]+)"/.exec(card)?.[1];
+    assert(src);
+    const file = "public/" + src.replace("/ai-security-playbook/", "");
+    assert(approved.has(file), file);
+    assert(readFileSync(file).length > 0);
+    const pose = /data-cat-pose="([^"]+)"/.exec(card)?.[1];
+    if (pose) poses.add(pose);
+    assert(/href="\/ai-security-playbook\/learn\/[^"#]+\//.test(card));
+  }
+  assert(poses.size >= 8);
+});
+
+test("scene entry cards have one meaningful destination and stages remain on destination hubs", () => {
+  const html = readFileSync("dist/paths/index.html", "utf8");
+  const cards = [
+    ...html.matchAll(/<article[^>]*data-reader-entry[\s\S]*?<\/article>/g),
+  ].map((m) => m[0]);
+  assert.equal(cards.length, 3);
+  assert.equal(
+    new Set(cards.map((c) => /data-cat-pose="([^"]+)"/.exec(c)?.[1])).size,
+    3,
+  );
+  cards.forEach((c) => assert.equal((c.match(/<a /g) || []).length, 1));
+  assert(!html.includes("入門・実践・発展から選ぶ"));
+  for (const j of readerJourneys) {
+    const hub = readFileSync(`dist/start/${j.id}/index.html`, "utf8");
+    for (const i of [1, 2, 3]) assert(hub.includes(`href="#stage-${i}"`));
+  }
 });
