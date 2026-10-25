@@ -306,3 +306,6 @@ User approved outputs/site-design-proposal.html and its journey map, then explic
 - 画像枠はdata-card-mediaで検査し、肉球を記事の場面画と混同しない。キーボード、フォーカス、全4幅、文字200%、公開/見本FULLを確認する。
 
 - 追加点検でLearningContextの「次に読む」に旧画像枠/旧参照元が残っていたため、共通CardArtとlessonCardSourceへ統合。ルート変更のクライアント処理はタイトル本文だけを更新し、肉球を消さない。個別記事でなく一覧へ戻る場合は肉球を非表示にする。
+
+## 2026-10-25 フッターからトップへ戻る
+- 共通Shellのフッターロゴとサイト名を、baseを含むトップへのリンクにする。見た目を保ち、キーボード操作と44px以上の領域を確認する。全ページに同じリンクを出す。
