@@ -1,17 +1,20 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { topicTitle } from "../data/catalog";
 import ReadingArt from "./ReadingArt.astro";
+import LessonArt from "./LessonArt.astro";
+import LessonCardCopy from "./LessonCardCopy.astro";
 import {
   readingHighlights,
   type ReadingHighlightId,
 } from "../data/reading-highlights";
+import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
 interface Props {
   lesson: CollectionEntry<"lessons">;
   route?: string;
   headingLevel?: "h2" | "h3";
+  poster?: boolean;
 }
-const { lesson, route, headingLevel: Heading = "h2" } = Astro.props;
+const { lesson, route, headingLevel = "h2", poster = false } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const href = `${base}/learn/${lesson.id}/${route ? `?route=${encodeURIComponent(route)}` : ""}`;
 ---
@@ -19,7 +22,10 @@ const href = `${base}/learn/${lesson.id}/${route ? `?route=${encodeURIComponent(
 <article
   class:list={[
     "catalog-card",
-    { "catalog-card--illustrated": lesson.id in readingHighlights },
+    {
+      "catalog-card--illustrated": !poster && lesson.id in readingHighlights,
+      "catalog-card--poster": poster,
+    },
   ]}
   data-catalog-item
   data-topic={lesson.data.topic}
@@ -31,25 +37,75 @@ const href = `${base}/learn/${lesson.id}/${route ? `?route=${encodeURIComponent(
     ...lesson.data.keywords,
   ].join(" ")}
 >
-  {lesson.id in readingHighlights && (
-    <ReadingArt
-      id={lesson.id as ReadingHighlightId}
-      sizes="(max-width: 760px) 100vw, 240px"
-    />
+  {poster ? (
+    <>
+      {lesson.id in lessonVisuals && (
+        <LessonArt
+          id={lesson.id as LessonVisualId}
+          sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw,400px"
+        />
+      )}
+      <div class="catalog-card-content">
+        <LessonCardCopy
+          lesson={lesson}
+          href={href}
+          headingLevel={headingLevel}
+        />
+      </div>
+    </>
+  ) : (
+    <>
+      {lesson.id in readingHighlights && (
+        <ReadingArt
+          id={lesson.id as ReadingHighlightId}
+          sizes="(max-width:760px) 100vw,240px"
+        />
+      )}
+      <LessonCardCopy lesson={lesson} href={href} headingLevel={headingLevel} />
+    </>
   )}
-  <p class="catalog-meta">
-    {topicTitle(lesson.data.topic)} · {lesson.data.format}
-  </p>
-  <Heading>
-    <a href={href}>
-      {lesson.data.title}
-      <span aria-hidden="true"> ↗</span>
-    </a>
-  </Heading>
-  <p>{lesson.data.summary}</p>
-  <p class="catalog-meta">前提：{lesson.data.prerequisiteNote}</p>
-  <p class="catalog-meta">
-    {lesson.data.level} · 約{lesson.data.minutes}分 · 情報確認{" "}
-    <time datetime={lesson.data.reviewed}>{lesson.data.reviewed}</time>
-  </p>
 </article>
+<style>
+  .catalog-card--poster {
+    padding: 0;
+    border: 0;
+    background: var(--color-paper-light);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .catalog-card--poster :global(.lesson-art) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    object-position: 50% 40%;
+    margin: 0;
+    float: none;
+  }
+  .catalog-card-content {
+    padding: 24px;
+    min-width: 0;
+  }
+  .catalog-card-content :global(p:not(.catalog-meta)) {
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  .catalog-card-content :global(.catalog-meta) {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-muted);
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  .catalog-card-content :global(.catalog-meta:last-child) {
+    margin: 0;
+  }
+  @media (max-width: 760px) {
+    .catalog-card-content {
+      padding: 16px;
+    }
+  }
+</style>

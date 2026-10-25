@@ -30,50 +30,55 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         data-discovery-topic={topic.id}
         data-topic-url={`${base}/topics/${topic.id}/`}
       >
-        <div class="topic-heading">
-          <div>
-            <p class="topic-count">
-              <span data-topic-count>{found.length}</span>教材
-            </p>
-            <Heading>
-              <a data-topic-destination href={href}>
-                {topic.title}
-              </a>
-            </Heading>
+        <LessonArt
+          id={topicGuides[topic.id].feature}
+          sizes="(max-width:760px) calc(100vw - 32px),600px"
+        />
+        <div class="topic-copy">
+          <div class="topic-heading">
+            <div>
+              <p class="topic-count">
+                <span data-topic-count>{found.length}</span>教材
+              </p>
+              <Heading>
+                <a data-topic-destination href={href}>
+                  {topic.title}
+                </a>
+              </Heading>
+            </div>
           </div>
-          <LessonArt id={topicGuides[topic.id].feature} sizes="96px" />
+          <p class="topic-benefit">{topic.summary}</p>
+          <ul class="topic-examples">
+            {found.map((l, i) => (
+              <li
+                hidden={i > 1}
+                data-topic-example
+                data-id={l.id}
+                data-level={l.data.level}
+                data-search={[
+                  l.data.title,
+                  l.data.summary,
+                  l.data.prerequisiteNote,
+                  ...l.data.keywords,
+                ].join(" ")}
+              >
+                <a href={`${base}/learn/${l.id}/`}>
+                  {l.data.shortTitle ?? l.data.title}{" "}
+                  <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            class="topic-action"
+            data-topic-destination
+            data-topic-action
+            href={href}
+          >
+            {found.length === 1 ? "この記事を読む" : "このテーマを見る"}{" "}
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
-        <p class="topic-benefit">{topic.summary}</p>
-        <ul class="topic-examples">
-          {found.map((l, i) => (
-            <li
-              hidden={i > 1}
-              data-topic-example
-              data-id={l.id}
-              data-level={l.data.level}
-              data-search={[
-                l.data.title,
-                l.data.summary,
-                l.data.prerequisiteNote,
-                ...l.data.keywords,
-              ].join(" ")}
-            >
-              <a href={`${base}/learn/${l.id}/`}>
-                {l.data.shortTitle ?? l.data.title}{" "}
-                <span aria-hidden="true">→</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a
-          class="topic-action"
-          data-topic-destination
-          data-topic-action
-          href={href}
-        >
-          {found.length === 1 ? "この記事を読む" : "このテーマを見る"}{" "}
-          <span aria-hidden="true">→</span>
-        </a>
       </article>
     );
   })}
@@ -86,20 +91,29 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   }
   .discovery-topic {
     min-width: 0;
-    padding: 24px;
+    padding: 0;
     background: var(--color-paper-light);
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
-  .topic-heading {
+  .discovery-topic > :global(.lesson-art) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    object-position: 50% 40%;
+  }
+  .topic-copy {
+    flex: 1;
+    grid-template-rows: auto auto 1fr auto;
+    padding: 24px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 96px;
-    gap: 16px;
-    align-items: center;
+    gap: 12px;
     min-width: 0;
   }
-  .topic-heading > div {
+  .topic-heading {
     min-width: 0;
   }
   .topic-count {
@@ -134,6 +148,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     margin: 0;
     font-size: 16px;
     line-height: 1.6;
+    min-width: 0;
   }
   .topic-examples a {
     display: block;
@@ -145,7 +160,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     display: block;
     min-height: 44px;
     padding-block: 8px;
-    margin-top: 0;
+    margin: 0;
     font-size: 16px;
     line-height: 1.6;
     color: var(--color-orange-ink);
@@ -159,36 +174,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       grid-template-columns: 1fr;
       gap: 16px;
     }
-    .discovery-topic {
+    .topic-copy {
       padding: 16px;
-    }
-    .topic-heading {
-      grid-template-columns: minmax(0, 1fr) 80px;
-      gap: 12px;
-    }
-  }
-</style>
-
-<style>
-  @media (max-width: 380px) {
-    .topic-heading {
-      grid-template-columns: minmax(0, 1fr) 64px;
-    }
-    .topic-heading > div {
-      display: contents;
-    }
-    .topic-count {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    h2,
-    h3 {
-      grid-column: 1 / -1;
-      grid-row: 2;
-    }
-    .topic-heading :global(.lesson-art) {
-      grid-column: 2;
-      grid-row: 1;
     }
   }
 </style>

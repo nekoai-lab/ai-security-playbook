@@ -102,3 +102,33 @@ test("every theme lists all of its real lessons before the deeper questions", ()
   }
   assert.deepEqual([...linked].sort(), [...records.keys()].sort());
 });
+
+test("library provides one full scene per lesson without duplicating search records or a publisher signature", () => {
+  const html = readFileSync("dist/library/index.html", "utf8");
+  assert.equal((html.match(/data-catalog-item/g) || []).length, records.size);
+  assert.equal((html.match(/data-lesson-art=/g) || []).length, records.size);
+  assert.equal(
+    (html.match(/<article[^>]*catalog-card--poster/g) || []).length,
+    records.size,
+  );
+  const cards = [
+    ...html.matchAll(/<article[^>]*data-catalog-item[\s\S]*?<\/article>/g),
+  ];
+  assert.equal(cards.length, records.size);
+  for (const [card] of cards) assert(!card.includes("Tsukineko"));
+  assert(html.includes("data-site-publisher"));
+});
+
+test("the publisher is identified in the shared footer, not repeated in topic cards", () => {
+  const map = JSON.parse(readFileSync("design/review-map.json", "utf8"));
+  for (const route of map.pages) {
+    const html = readFileSync(`dist/${route}index.html`, "utf8");
+    assert.equal((html.match(/data-site-publisher/g) || []).length, 1, route);
+    assert(/data-site-publisher[^>]*>制作・運営：Tsukineko/.test(html), route);
+  }
+  const html = readFileSync("dist/index.html", "utf8");
+  for (const [card] of html.matchAll(
+    /<article[^>]*data-discovery-topic[\s\S]*?<\/article>/g,
+  ))
+    assert(!card.includes("Tsukineko"));
+});
