@@ -2,6 +2,10 @@
 import { getCollection } from "astro:content";
 import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
 import CatPose from "./CatPose.astro";
+import CardArt from "./CardArt.astro";
+import ArticleLabel from "./ArticleLabel.astro";
+import { lessonCardArt, lessonCardSource } from "../data/card-art";
+import illustrationCatalog from "../../design/assets/illustration-library/catalog.json";
 import { seriesFor } from "../data/catalog";
 import { learningPaths } from "../data/learning-paths";
 interface Props {
@@ -27,13 +31,29 @@ const next = group?.ids[index + 1];
 const target = next ?? follow;
 const item = (key: string) => lessons.find((l) => l.id === key)!;
 const title = (key: string) => item(key)?.data.title ?? key;
-const visual = (key: string) =>
-  lessonVisuals[key as LessonVisualId] ?? lessonVisuals.basics;
-const art = visual(target ?? id);
+const visual = (key: string) => {
+  const id = (key in lessonVisuals ? key : "basics") as LessonVisualId;
+  const image = lessonCardSource(id)
+    .replace("public/images/", "")
+    .replace("-960.webp", "");
+  const art = lessonCardArt(id);
+  const asset = illustrationCatalog.assets.find((a) => a.id === image);
+  if (!asset) throw new Error(`Missing next-card asset: ${image}`);
+  const delivery =
+    "deliveries" in asset
+      ? asset.deliveries?.find((d) => d.width === 960)
+      : undefined;
+  return {
+    image,
+    artKey: art.kind === "illustration" ? art.image : id,
+    width: 960,
+    height: delivery?.height ?? Math.round((960 * asset.height) / asset.width),
+  };
+};
 const catalog = Object.fromEntries(
   lessons.map((l) => [
     l.id,
-    { title: l.data.title, summary: l.data.summary, image: visual(l.id).image },
+    { title: l.data.title, summary: l.data.summary, ...visual(l.id) },
   ]),
 );
 ---
@@ -61,7 +81,7 @@ const catalog = Object.fromEntries(
       {contextKind} · 全{group.ids.length}記事のうち{index + 1}記事目
     </p>
     <a
-      class="reading-next"
+      class="reading-next image-card"
       data-context-next
       href={
         target
@@ -69,25 +89,22 @@ const catalog = Object.fromEntries(
           : `${base}/library/`
       }
     >
-      <img
-        class="reading-next-art"
-        data-next-art
-        src={`${base}/images/${art.image}-480.webp`}
-        srcset={`${base}/images/${art.image}-480.webp 480w, ${base}/images/${art.image}-960.webp 960w`}
-        sizes="(max-width: 760px) 192px, 160px"
-        width="960"
-        height="640"
-        loading="lazy"
-        decoding="async"
-        alt=""
+      <CardArt
+        art={lessonCardArt((target ?? id) as LessonVisualId)}
+        trackNext
+        sizes="(max-width:760px) calc(100vw - 32px),640px"
       />
-      <span class="reading-next-copy">
+      <span class="reading-next-copy card-copy">
         <span data-next-label>
           {next ? "次に読む" : target ? "次のテーマへ" : "ほかの教材を探す"}
           <span aria-hidden="true"> →</span>
         </span>
         <strong data-next-title>
-          {target ? title(target) : "別の教材を探す"}
+          <ArticleLabel article={Boolean(target)}>
+            <span data-next-title-text>
+              {target ? title(target) : "別の教材を探す"}
+            </span>
+          </ArticleLabel>
         </strong>
         <span class="reading-next-reason" data-next-reason>
           {target
@@ -148,7 +165,14 @@ const catalog = Object.fromEntries(
       const base = context.dataset.base!;
       const items = JSON.parse(context.dataset.items ?? "{}") as Record<
         string,
-        { title: string; summary: string; image: string }
+        {
+          title: string;
+          summary: string;
+          image: string;
+          width: number;
+          height: number;
+          artKey: string;
+        }
       >;
       const follow = JSON.parse(context.dataset.follow ?? "[]") as string[];
       const index = route.ids.indexOf(id),
@@ -188,10 +212,19 @@ const catalog = Object.fromEntries(
         : target
           ? "次のテーマへ →"
           : "ほかの教材を探す →";
-      context.querySelector("[data-next-title]")!.textContent = target
+      context.querySelector("[data-next-title-text]")!.textContent = target
         ? items[target].title
         : "別の教材を探す";
+      const titleLabel = context.querySelector<HTMLElement>(
+        "[data-next-title] [data-article-label]",
+      )!;
+      titleLabel.classList.toggle("article-label--plain", !target);
+      titleLabel.querySelector<HTMLImageElement>("img")!.hidden = !target;
       const art = context.querySelector<HTMLImageElement>("[data-next-art]")!;
+      art.width = items[target ?? id].width;
+      art.height = items[target ?? id].height;
+      context.querySelector<HTMLElement>("[data-next-media]")!.dataset.cardArt =
+        items[target ?? id].artKey;
       const image = items[target ?? id].image;
       art.srcset = `${base}/images/${image}-480.webp 480w, ${base}/images/${image}-960.webp 960w`;
       art.src = `${base}/images/${image}-480.webp`;

@@ -1,0 +1,58 @@
+---
+interface Props {
+  article?: boolean;
+}
+const { article = true } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<span
+  class:list={["article-label", { "article-label--plain": !article }]}
+  data-article-label
+>
+  <img
+    src={`${base}/brand/paw-orange-64.webp`}
+    width="20"
+    height="20"
+    hidden={!article}
+    alt=""
+    aria-hidden="true"
+    loading="lazy"
+    decoding="async"
+  />
+  <span class="article-title-text">
+    <slot />
+  </span>
+</span>
+<style>
+  .article-label {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 8px;
+    align-items: start;
+    min-width: 0;
+  }
+  .article-label--plain {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .article-label > img[hidden] {
+    display: none;
+  }
+  .article-label > img {
+    width: 20px;
+    height: 20px;
+    max-width: none;
+    margin: 4px 0 0;
+    padding: 0;
+    object-fit: contain;
+    float: none;
+    pointer-events: none;
+  }
+  .article-label > .article-title-text {
+    min-width: 0;
+    font: inherit;
+    color: inherit;
+    line-height: inherit;
+    text-wrap: balance;
+  }
+</style>

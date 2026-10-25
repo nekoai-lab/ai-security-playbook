@@ -1,0 +1,30 @@
+[
+  {
+    "width": 320,
+    "themeLinks": 8,
+    "pawMarkers": true,
+    "underlines": true,
+    "keyboard": true
+  },
+  {
+    "width": 375,
+    "themeLinks": 8,
+    "pawMarkers": true,
+    "underlines": true,
+    "keyboard": true
+  },
+  {
+    "width": 768,
+    "themeLinks": 8,
+    "pawMarkers": true,
+    "underlines": true,
+    "keyboard": true
+  },
+  {
+    "width": 1280,
+    "themeLinks": 8,
+    "pawMarkers": true,
+    "underlines": true,
+    "keyboard": true
+  }
+]

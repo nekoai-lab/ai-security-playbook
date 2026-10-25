@@ -1,4 +1,5 @@
 ---
+import ArticleLabel from "./ArticleLabel.astro";
 import { getEntry } from "astro:content";
 import CardArt from "./CardArt.astro";
 import { lessonCardArt } from "../data/card-art";
@@ -29,7 +30,9 @@ const art = lessonCardArt(lesson.id);
   />
   <div class="featured-lesson-copy card-copy">
     <p class="situation">{lesson.situation}</p>
-    <h3>{lesson.question}</h3>
+    <h3>
+      <ArticleLabel>{lesson.question}</ArticleLabel>
+    </h3>
     <p class="takeaway">{lesson.takeaway}</p>
     <p class="readiness">
       <strong>{entry.data.level}</strong> · {entry.data.prerequisiteNote}

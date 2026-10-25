@@ -6,8 +6,13 @@ import illustrationCatalog from "../../design/assets/illustration-library/catalo
 interface Props {
   art: CardArt;
   sizes?: string;
+  trackNext?: boolean;
 }
-const { art, sizes = "(max-width:760px) 160px,240px" } = Astro.props;
+const {
+  art,
+  sizes = "(max-width:760px) 160px,240px",
+  trackNext = false,
+} = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const assets = illustrationCatalog.assets as {
   id: string;
@@ -35,11 +40,12 @@ if (art.kind === "illustration" && !delivery)
   style={
     art.kind === "scene" ? `--card-art-position:${art.position}` : undefined
   }
+  data-next-media={trackNext ? true : undefined}
   data-card-media
   aria-hidden="true"
 >
   {art.kind === "scene" ? (
-    <LessonArt id={art.lesson} sizes={sizes} />
+    <LessonArt id={art.lesson} sizes={sizes} trackNext={trackNext} />
   ) : art.kind === "pose" ? (
     <CatPose pose={art.pose} />
   ) : (
@@ -51,6 +57,7 @@ if (art.kind === "illustration" && !delivery)
       height={delivery!.height}
       loading="lazy"
       decoding="async"
+      data-next-art={trackNext ? true : undefined}
       alt=""
     />
   )}
