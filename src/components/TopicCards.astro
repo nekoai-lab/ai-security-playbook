@@ -18,6 +18,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 <div class="discovery-topics" data-discovery-topics>
   {topics.map((topic) => {
+    const composition = topicCompositions[topic.id];
     const found = lessons.filter((l) => l.data.topic === topic.id);
     if (!found.length) return null;
     const href =
@@ -26,17 +27,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         : `${base}/topics/${topic.id}/`;
     return (
       <article
-        class:list={[
-          "discovery-topic",
-          `composition--${topicCompositions[topic.id].layout}`,
-        ]}
+        class:list={["discovery-topic", `composition--${composition.layout}`]}
         data-discovery-topic={topic.id}
         data-topic-url={`${base}/topics/${topic.id}/`}
       >
-        <CardArt
-          art={topicCompositions[topic.id].art}
-          sizes="(max-width:760px) 160px,240px"
-        />
+        <div class="topic-visual" data-topic-visual>
+          <CardArt
+            art={composition.art}
+            sizes="(max-width:760px) 100vw,(max-width:1100px) 50vw,33vw"
+          />
+          {"cues" in composition && (
+            <ul class="topic-visual-cues" aria-hidden="true">
+              {composition.cues.map((cue) => (
+                <li>{cue}</li>
+              ))}
+            </ul>
+          )}
+        </div>
         <div class="topic-copy">
           <div class="topic-heading">
             <div>
@@ -80,19 +87,32 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 <style>
   .discovery-topics {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
   }
   .discovery-topic {
     min-width: 0;
-    position: relative;
-    overflow: hidden;
     background: var(--color-paper-light);
     display: flex;
     flex-direction: column;
   }
+  .topic-visual {
+    display: grid;
+    grid-template-columns: 1fr;
+    aspect-ratio: 3 / 2;
+    max-height: 224px;
+    padding: 12px 16px 0;
+    min-width: 0;
+  }
+  .topic-visual > :global(.card-art) {
+    min-height: 0;
+  }
+  .topic-visual :global(img) {
+    object-fit: contain;
+    object-position: center;
+  }
   .topic-copy {
-    padding: 24px;
+    padding: 16px 24px 24px;
     min-width: 0;
   }
   .topic-heading {
@@ -154,73 +174,54 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   .topic-examples span {
     color: var(--color-orange-ink);
   }
-  .discovery-topic > :global(.card-art) {
-    flex-shrink: 0;
+  .topic-visual:has(.topic-visual-cues) {
+    aspect-ratio: auto;
+    max-height: none;
+    min-height: 224px;
   }
-  .composition--scene-side {
-    display: grid;
-    grid-template-columns: 58% 42%;
-  }
-  .composition--scene-side > :global(.card-art) {
-    grid-column: 2;
-    grid-row: 1;
-    height: 100%;
-  }
-  .composition--scene-side > .topic-copy {
-    grid-column: 1;
-    grid-row: 1;
-    padding-right: 16px;
-  }
-  .composition--scene-bottom > :global(.card-art) {
-    height: 112px;
-    order: 2;
-  }
-  .composition--scene-bottom .topic-copy {
-    padding-bottom: 12px;
-  }
-  .composition--walk {
-    display: grid;
-    grid-template-columns: 32% 68%;
-  }
-  .composition--walk > :global(.card-art) {
+  .topic-visual:has(.topic-visual-cues) > :global(.card-art) {
+    height: 192px;
     align-self: center;
-    height: 224px;
   }
-  .composition--walk > .topic-copy {
-    padding-left: 12px;
+  .topic-visual-cues {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+    display: grid;
+    gap: 12px;
+    color: var(--color-muted);
+    font-size: 14px;
+    line-height: 1.6;
   }
-  .composition--peek > :global(.card-art) {
-    position: absolute;
-    right: 0;
-    top: 16px;
-    width: 144px;
-    height: 176px;
+  .topic-visual-cues li {
+    background: var(--color-paper);
+    padding: 8px 12px;
   }
-  .composition--peek h2,
-  .composition--peek h3,
-  .composition--peek .topic-count {
-    margin-right: 128px;
+  .composition--map .topic-visual,
+  .composition--inspect .topic-visual {
+    grid-template-columns: 56% 44%;
   }
-  .composition--peek .topic-benefit {
-    text-wrap: balance;
-    padding-right: 128px;
+  .composition--map :global(.card-art),
+  .composition--inspect :global(.card-art) {
+    padding: 16px 8px 16px 0;
   }
-  .composition--desk > :global(.card-art) {
-    height: 128px;
-    width: 176px;
-    position: absolute;
-    bottom: 24px;
-    left: 16px;
+  .composition--boundary .topic-visual,
+  .composition--desk .topic-visual {
+    grid-template-columns: 52% 48%;
   }
-  .composition--desk .topic-examples {
-    margin-left: 160px;
-    min-height: 112px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .composition--boundary :global(.card-art),
+  .composition--desk :global(.card-art) {
+    order: 2;
+    padding: 16px 0 16px 8px;
   }
   .discovery-topics :global([hidden]) {
     display: none !important;
+  }
+  @media (max-width: 1100px) {
+    .discovery-topics {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
   @media (max-width: 760px) {
     .discovery-topics {
@@ -229,42 +230,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     }
     .topic-copy {
       padding: 16px;
-    }
-    .composition--scene-side {
-      grid-template-columns: 62% 38%;
-    }
-    .composition--walk {
-      grid-template-columns: 28% 72%;
-    }
-    .composition--walk > :global(.card-art) {
-      height: 160px;
-    }
-    .composition--walk > .topic-copy {
-      padding-left: 8px;
-    }
-    .composition--peek > :global(.card-art) {
-      width: 104px;
-      height: 144px;
-      top: 16px;
-    }
-    .composition--peek h2,
-    .composition--peek h3,
-    .composition--peek .topic-count {
-      margin-right: 88px;
-    }
-    .composition--peek .topic-benefit {
-      text-wrap: balance;
-      padding-right: 88px;
-    }
-    .composition--scene-bottom > :global(.card-art) {
-      height: 112px;
-    }
-    .composition--desk > :global(.card-art) {
-      width: 112px;
-      height: 96px;
-    }
-    .composition--desk .topic-examples {
-      margin-left: 96px;
     }
   }
 </style>

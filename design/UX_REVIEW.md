@@ -242,3 +242,15 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 
 ## 2026-10-25 共通枠・サイト構造の確認
 全50ページと制作見本は共通Shellを通ることを確認。ナビ定義をsite-navigation.tsへ集約し、start/3ページの学習ルート選択漏れを修正。109ファイルのcheck/build/testと公開/見本FULL、全204画面・文字200%を最新ビルドで再確認。新規error 0、既存色数warningのみ。構造・保守上の注意・検証範囲はSITE_STRUCTURE_REVIEW.md。
+
+## 2026-10-25 テーマカードを3列で見渡す
+
+- 要求はPCの3列化、テーマに合う絵、顔の切れの解消。8テーマを保持して3・3・2、768pxは2列、320/375pxは1列。空カードで数合わせしない。
+- 構成は絵→教材数→見出し→説明→実記事リンク。絵を4場面と4ポーズ＋HTMLのテーマ手掛かりに分ける。人物・猫の頭を帯で切り取らず、承認済み画像の全体をcontainで見せる。
+- 代案の2列継続は一覧が長くなる。全カードを大きな場面画にする案は以前の反復感が再発する。採用案は共通の読み順を保ちつつ絵の内容を変える。3列では折り返しが増えるが、本文16px・操作44pxを維持し、タイトルやリンクを省略しない。
+- 初稿の文字200%で3枚の図ラベルが見出し領域へ出ることを実測。図領域の固定上限を外し、ポーズ寸法を保持しながらラベルに応じて高さが伸びるよう修正した。全4幅の100%/200%でラベルと本文の境界を再測定して解消。
+- checkは109ファイルでerror/warning/hint 0。buildは50ページ、npm test成功、制作見本のbuild/checkも成功。
+- 今回の最終ビルドの公開FULLは3196 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存のcommandsと制作見本の色数警告のみ。規則や検査範囲は変更していない。
+- 段階別リンク・12件ページ送り・履歴・キーボード・画像デコード・JSなしの24教材/8テーマを4幅で再確認。3/2/1列、全画像contain、100%/200%のラベル領域も実測。
+- 目視はPCとスマホの8枚全体で、顔/耳/尻尾・道具の表示、文章順、リンク配置を確認。公開FULLの400件と見本8件のmanual review全件を自動合格と表現しない。最終のデザイン採用はユーザー確認へ。
+- 証拠はthree-column-final-{public,guide}-full、three-column-layout.json、three-column-interactions.jsonとdesign/previews/three-column-cards。教材の事実・OGP・正式ロゴ・README/LICENSEは変更なし。

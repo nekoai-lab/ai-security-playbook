@@ -133,7 +133,7 @@ test("the publisher is identified in the shared footer, not repeated in topic ca
     assert(!card.includes("Tsukineko"));
 });
 
-test("theme compositions mix scenes and approved poses without repeating a single template", () => {
+test("theme cards preserve eight themes and pair full scenes with contextual poses", () => {
   const html = readFileSync("dist/index.html", "utf8");
   const cards = [
     ...html.matchAll(/<article[^>]*data-discovery-topic[\s\S]*?<\/article>/g),
@@ -143,7 +143,16 @@ test("theme compositions mix scenes and approved poses without repeating a singl
   assert(new Set(layouts).size >= 5);
   const arts = cards.map((c) => /data-card-art="([^"]+)"/.exec(c)?.[1]);
   assert.equal(new Set(arts).size, 8);
-  assert.equal(cards.filter((c) => c.includes("data-cat-pose=")).length, 5);
+  assert.equal(cards.filter((c) => c.includes("data-cat-pose=")).length, 4);
+  assert.equal(
+    cards.filter((c) => c.includes('class="topic-visual-cues"')).length,
+    4,
+  );
+  const source = readFileSync("src/components/TopicCards.astro", "utf8");
+  assert(source.includes("repeat(3, minmax(0, 1fr))"));
+  assert(source.includes("object-fit: contain"));
+  assert(!source.includes("object-fit: cover"));
+  assert(!source.includes("position: absolute"));
   for (const card of cards) {
     assert(!card.includes("data-topic-action"));
     assert.equal((card.match(/data-topic-destination/g) || []).length, 1);
