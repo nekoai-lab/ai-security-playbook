@@ -106,7 +106,11 @@ export const series = [
 ];
 export const seriesFor = (id: string) => series.find((s) => s.ids.includes(id));
 export const normalizeSearch = (s: string) =>
-  s.normalize("NFKC").toLocaleLowerCase("ja");
+  s
+    .normalize("NFKC")
+    .toLocaleLowerCase("ja")
+    .replace(/\bmpc\b/g, "mcp")
+    .replace(/エムシーピー/g, "mcp");
 export function matchesSearch(text: string, query: string) {
   const normalized = normalizeSearch(text);
   return normalizeSearch(query)

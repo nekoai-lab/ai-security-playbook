@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { topicTitle } from "../data/catalog";
+interface Props {
+  lesson: CollectionEntry<"lessons">;
+  href: string;
+  headingLevel?: "h2" | "h3";
+}
+const { lesson, href, headingLevel: Heading = "h2" } = Astro.props;
+---
+
+<p class="catalog-meta">
+  {topicTitle(lesson.data.topic)} · {lesson.data.format}
+</p>
+<Heading>
+  <a href={href}>
+    {lesson.data.title}
+    <span aria-hidden="true"> ↗</span>
+  </a>
+</Heading>
+<p>{lesson.data.summary}</p>
+<p class="catalog-meta">前提：{lesson.data.prerequisiteNote}</p>
+<p class="catalog-meta">
+  {lesson.data.level} · 約{lesson.data.minutes}分 · 情報確認{" "}
+  <time datetime={lesson.data.reviewed}>{lesson.data.reviewed}</time>
+</p>

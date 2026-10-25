@@ -86,6 +86,12 @@ const lessons = (await getCollection("lessons"))
     <p>
       条件に合う教材がありません。検索語を短くするか、条件を解除してください。
     </p>
+    <div data-discovery-broaden hidden>
+      <p data-discovery-broaden-count></p>
+      <button type="button" data-discovery-all-levels>
+        検索語を残して、すべての段階で探す
+      </button>
+    </div>
     <button type="button" data-discovery-reset>
       条件を解除する
     </button>
@@ -172,6 +178,18 @@ const lessons = (await getCollection("lessons"))
       const themeGrid = root.querySelector<HTMLElement>("#themes");
       if (themeGrid) themeGrid.hidden = !!q;
       empty.hidden = count > 0;
+      const broaden = root.querySelector<HTMLElement>(
+        "[data-discovery-broaden]",
+      )!;
+      const keywordCount = q
+        ? lessons.filter((item) => matchesSearch(item.dataset.search ?? "", q))
+            .length
+        : 0;
+      broaden.hidden = count > 0 || keywordCount === 0;
+      root.querySelector<HTMLElement>(
+        "[data-discovery-broaden-count]",
+      )!.textContent =
+        `同じ検索語で、すべての段階なら${keywordCount}件見つかります。`;
       status.textContent =
         (level ? `${level} · ` : "") +
         (q ? `「${q}」に合う${count}件` : `${count}件の教材`);
@@ -237,6 +255,15 @@ const lessons = (await getCollection("lessons"))
         clearTimeout(timer);
         level = "";
         if (query) query.value = "";
+        render();
+        writeURL(true);
+        query?.focus();
+      });
+    root
+      .querySelector("[data-discovery-all-levels]")
+      ?.addEventListener("click", () => {
+        clearTimeout(timer);
+        level = "";
         render();
         writeURL(true);
         query?.focus();

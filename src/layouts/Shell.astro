@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import "../styles/library.css";
 import "../styles/article-illustrations.css";
-import FieldIcon from "../components/FieldIcon.astro";
 import BrandMark from "../components/BrandMark.astro";
 interface Props {
   title: string;
@@ -98,9 +97,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </main>
     <footer>
       <div class="footer-brand">
-        <FieldIcon kind="compass" />
+        <BrandMark size={48} />
         <p>
           AI SECURITY PLAYBOOK<small>仕組みを知ることが、守る力になる。</small>
+          <small data-site-publisher>制作・運営：Tsukineko</small>
         </p>
       </div>
       <div class="footer-links">
@@ -112,3 +112,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </footer>
   </body>
 </html>
+
+<style>
+  .footer-brand {
+    gap: 12px;
+  }
+</style>

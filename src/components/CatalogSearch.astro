@@ -80,6 +80,12 @@ const published = topics.filter((t) =>
 <p id="catalog-empty" hidden>
   条件に合う教材がありません。検索語を短くするか、絞り込み条件を解除してください。
 </p>
+<div id="catalog-broaden" hidden>
+  <p id="catalog-broaden-count"></p>
+  <button type="button" id="catalog-broaden-button" disabled>
+    検索語を残して、絞り込みを解除
+  </button>
+</div>
 <script>
   import { matchesSearch, normalizeLevel } from "../data/catalog";
   const form = document.querySelector<HTMLFormElement>("#catalog-search");
@@ -93,6 +99,11 @@ const published = topics.filter((t) =>
     )!;
     const empty = document.querySelector<HTMLElement>("#catalog-empty")!;
     const pager = document.querySelector<HTMLElement>("#catalog-pagination")!;
+    const broaden = document.querySelector<HTMLElement>("#catalog-broaden")!;
+    const broadenButton = document.querySelector<HTMLButtonElement>(
+      "#catalog-broaden-button",
+    )!;
+    broadenButton.disabled = false;
     const keys = ["q", "topic", "level", "type"] as const;
     const controls = Object.fromEntries(
       keys.map((k) => [k, form.elements.namedItem(k)]),
@@ -155,6 +166,16 @@ const published = topics.filter((t) =>
         ? `${matches.length}件中 ${(currentPage - 1) * size + 1}–${Math.min(currentPage * size, matches.length)}件`
         : "0件の教材";
       empty.hidden = matches.length > 0;
+      const keywordMatches = controls.q.value.trim()
+        ? items.filter((item) =>
+            matchesSearch(item.dataset.search ?? "", controls.q.value),
+          ).length
+        : 0;
+      broaden.hidden = matches.length > 0 || keywordMatches === 0;
+      document.querySelector<HTMLElement>(
+        "#catalog-broaden-count",
+      )!.textContent =
+        `同じ検索語で、ほかのテーマ・段階・種類を含めると${keywordMatches}件見つかります。`;
       const labels = keys.flatMap((key) => {
         const c = controls[key];
         return c.value
@@ -218,6 +239,15 @@ const published = topics.filter((t) =>
       updateURL("push");
       controls.q.focus();
     });
+    broadenButton.addEventListener("click", () => {
+      clearTimeout(timer);
+      for (const key of ["topic", "level", "type"] as const)
+        controls[key].value = "";
+      currentPage = 1;
+      render();
+      updateURL("push");
+      controls.q.focus();
+    });
     window.addEventListener("popstate", () => {
       clearTimeout(timer);
       readURL();
@@ -228,3 +258,30 @@ const published = topics.filter((t) =>
     updateURL("replace");
   }
 </script>
+
+<style>
+  #catalog-broaden {
+    padding: 16px;
+    background: var(--color-paper-light);
+    margin-block: 16px;
+  }
+  #catalog-broaden p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  #catalog-broaden-button {
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 44px;
+    padding: 8px 16px;
+    background: var(--color-ink);
+    color: var(--color-paper-light);
+    border: 0;
+  }
+  #catalog-broaden[hidden] {
+    display: none;
+  }
+</style>
