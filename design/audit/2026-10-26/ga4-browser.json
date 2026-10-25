@@ -1,0 +1,1490 @@
+[
+  {
+    "width": 320,
+    "route": "",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/basics/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/node-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/commands/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/checklist/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "library/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "topics/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "topics/development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "topics/operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "paths/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "paths/environment/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "paths/node-update/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "paths/update-operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "series/node-security/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "updates/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "about/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/ai-data-boundaries/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/app-architecture/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/api-keys/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/access-control/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/mcp-permissions/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/agent-permissions/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/launch-checklist/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/php-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/incident-response/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "topics/ai-tools/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "topics/secrets/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "topics/access/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "topics/connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "topics/release/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "topics/response/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "paths/solo-development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "paths/before-launch/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "paths/ai-connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "series/solo-development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "series/ai-connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/ai-work-logs/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/release-artifacts/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/external-service-failures/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/dependency-updates/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/github-guards/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/secret-rotation/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/developer-privacy/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/approved-ai-data/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/cloud-account-safety/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "start/use-ai/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "start/build-apps/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "start/operate-services/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "learn/ai-review-trust/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "terms/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "privacy/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 375,
+    "route": "",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/basics/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/node-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/commands/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/checklist/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "library/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "topics/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "topics/development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "topics/operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "paths/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "paths/environment/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "paths/node-update/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "paths/update-operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "series/node-security/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "updates/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "about/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/ai-data-boundaries/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/app-architecture/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/api-keys/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/access-control/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/mcp-permissions/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/agent-permissions/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/launch-checklist/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/php-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/incident-response/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "topics/ai-tools/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "topics/secrets/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "topics/access/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "topics/connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "topics/release/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "topics/response/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "paths/solo-development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "paths/before-launch/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "paths/ai-connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "series/solo-development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "series/ai-connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/ai-work-logs/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/release-artifacts/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/external-service-failures/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/dependency-updates/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/github-guards/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/secret-rotation/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/developer-privacy/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/approved-ai-data/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/cloud-account-safety/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "start/use-ai/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "start/build-apps/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "start/operate-services/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "learn/ai-review-trust/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "terms/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "route": "privacy/",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 768,
+    "route": "",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/basics/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/node-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/commands/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/checklist/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "library/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "topics/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "topics/development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "topics/operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "paths/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "paths/environment/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "paths/node-update/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "paths/update-operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "series/node-security/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "updates/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "about/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/ai-data-boundaries/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/app-architecture/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/api-keys/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/access-control/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/mcp-permissions/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/agent-permissions/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/launch-checklist/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/php-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/incident-response/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "topics/ai-tools/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "topics/secrets/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "topics/access/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "topics/connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "topics/release/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "topics/response/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "paths/solo-development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "paths/before-launch/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "paths/ai-connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "series/solo-development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "series/ai-connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/ai-work-logs/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/release-artifacts/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/external-service-failures/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/dependency-updates/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/github-guards/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/secret-rotation/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/developer-privacy/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/approved-ai-data/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/cloud-account-safety/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "start/use-ai/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "start/build-apps/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "start/operate-services/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "learn/ai-review-trust/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "terms/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "route": "privacy/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/basics/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/node-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/commands/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/checklist/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "library/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "topics/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "topics/development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "topics/operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "paths/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "paths/environment/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "paths/node-update/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "paths/update-operations/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "series/node-security/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "updates/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "about/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/ai-data-boundaries/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/app-architecture/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/api-keys/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/access-control/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/mcp-permissions/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/agent-permissions/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/launch-checklist/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/php-october-2026/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/incident-response/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "topics/ai-tools/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "topics/secrets/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "topics/access/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "topics/connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "topics/release/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "topics/response/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "paths/solo-development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "paths/before-launch/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "paths/ai-connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "series/solo-development/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "series/ai-connections/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/ai-work-logs/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/release-artifacts/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/external-service-failures/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/dependency-updates/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/github-guards/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/secret-rotation/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/developer-privacy/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/approved-ai-data/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/cloud-account-safety/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "start/use-ai/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "start/build-apps/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "start/operate-services/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/ai-review-trust/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "terms/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "privacy/",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "route": "design-system/",
+    "scope": "authoring",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 375,
+    "route": "design-system/",
+    "scope": "authoring",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 768,
+    "route": "design-system/",
+    "scope": "authoring",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "design-system/",
+    "scope": "authoring",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  }
+]

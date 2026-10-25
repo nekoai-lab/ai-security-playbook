@@ -231,6 +231,8 @@ const lessons = (await getCollection("lessons"))
       clearTimeout(timer);
       render();
       writeURL(true);
+      const searchTerm = query?.value.trim() ?? "";
+      if (searchTerm) document.dispatchEvent(new CustomEvent("playbook-search", { detail: { query: searchTerm } }));
     });
     query?.addEventListener("input", () => {
       clearTimeout(timer);

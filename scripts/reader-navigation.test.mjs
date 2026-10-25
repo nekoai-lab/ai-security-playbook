@@ -393,3 +393,52 @@ test("MIT text is retained while editorial scope, third-party terms and prior gr
   assert(terms.includes("旧版の許諾"));
   assert(terms.includes("https://marcrevix.com/contact/"));
 });
+
+import { runInNewContext } from "node:vm";
+
+test("every public page contains one GA4 initializer, without standalone duplicate tags", () => {
+  const map = JSON.parse(readFileSync("design/review-map.json", "utf8"));
+  assert(map.pages.includes("privacy/"));
+  for (const route of map.pages) {
+    const html = readFileSync(`dist/${route}index.html`, "utf8");
+    assert.equal((html.match(/<script\b[^>]*data-ga4\b/g) || []).length, 1, route);
+    assert(html.includes('href="/ai-security-playbook/privacy/"'), route);
+    assert(!/<script[^>]+src="https:\/\/www.googletagmanager.com/.test(html), route);
+  }
+});
+
+test("GA4 runs only on the production origin and base and respects the standard opt-out flag", () => {
+  const html = readFileSync("dist/index.html", "utf8");
+  const code = /<script\b[^>]*data-ga4\b[^>]*>([\s\S]*?)<\/script>/.exec(html)?.[1];
+  assert(code);
+  const evaluate = (origin, pathname, disabled = false) => {
+    const appended = [];
+    const listeners = {};
+    const window = { "ga-disable-G-Q83DQP6PS5": disabled };
+    runInNewContext(code, { window, location: { origin, pathname }, Date, document: { addEventListener: (name, fn) => { listeners[name] = fn; }, createElement: () => ({ dataset: {} }), head: { appendChild: (e) => appended.push(e) } } });
+    return { appended, calls: (window.dataLayer || []).map((a) => Array.from(a)), search: (query) => { listeners["playbook-search"]?.({ detail: { query } }); return (window.dataLayer || []).map((a) => Array.from(a)); } };
+  };
+  const prod = evaluate("https://nekoai-lab.github.io", "/ai-security-playbook/");
+  assert.equal(prod.appended.length, 1);
+  assert.equal(prod.appended[0].src, "https://www.googletagmanager.com/gtag/js?id=G-Q83DQP6PS5");
+  assert.equal(prod.appended[0].async, true);
+  assert.equal(prod.calls.length, 2);
+  assert.equal(prod.calls[1][0], "config");
+  assert.equal(prod.calls[1][1], "G-Q83DQP6PS5");
+  assert.equal(prod.calls[1][2].allow_google_signals, false);
+  assert.equal(prod.calls[1][2].allow_ad_personalization_signals, false);
+  assert(!("send_page_view" in prod.calls[1][2]));
+  assert.equal(prod.search("   ").length, 2);
+  assert.equal(prod.search(null).length, 2);
+  const searched = prod.search(" MCP ");
+  assert.equal(searched.length, 3);
+  assert.equal(searched[2][0], "event");
+  assert.equal(searched[2][1], "search");
+  assert.equal(searched[2][2].search_term, "MCP");
+  assert.equal(prod.search("a".repeat(250))[3][2].search_term.length, 200);
+  for (const sample of [["http://localhost:4321", "/ai-security-playbook/"], ["https://preview.example", "/ai-security-playbook/"], ["https://nekoai-lab.github.io", "/other/"], ["https://nekoai-lab.github.io", "/ai-security-playbook-other/"], ["https://nekoai-lab.github.io", "/ai-security-playbook/", true]]) {
+    const result = evaluate(...sample);
+    assert.equal(result.appended.length, 0, sample.join(" "));
+    assert.equal(result.calls.length, 0);
+  }
+});

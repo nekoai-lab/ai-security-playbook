@@ -310,3 +310,14 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - 最終公開FULLは3260 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存commands/見本の色数警告のみ、しきい値・規則・対象除外なし。manual review 408/8件は自動合格と表現しない。
 - 全208画面でaxe/実行エラー/横はみ出し0、全51ページの375px文字200%を確認。320/375/768/1280/1920で4外部リンクの正確な行き先・縦横44px・キーボードフォーカス、記事からプロフィール/利用条件へのEnter遷移、元記事URLとauthor metadata、選択可能な本文を確認。PCの紹介・利用条件、スマホの紹介・記事著者欄・フッターを目視。
 - 証拠:creator-final-public-full、creator-final-guide-full、creator-links.json、creator-browser.json、design/previews/creator-rights。
+
+## 2026-10-26 GA4の流入・閲覧・検索語
+
+- ユーザー提供のG-Q83DQP6PS5を共通Shellに1回設置。本番buildかつAstro.siteのorigin/baseに一致するときだけasyncタグを読む。開発/localhost/別origin/制作見本と標準オプトアウトでは通信しない。Googleシグナル・広告パーソナライズ向けシグナルはfalse。検索計測はユーザー指定でONを維持する。
+- 実タグで、q付きURLの初期訪問はview_search_resultsが届くが、画面内検索の履歴変更では検索語イベントが届かないことを確認。トップ/一覧の検索ボタン・Enterで確定した非空の語だけを推奨searchイベントで補完。手動page_view/view_search_resultsは重ねず、searchとview_search_resultsは別に集計する。空/型不正/200字上限も検査。
+- privacyページとフッター/紹介からのリンクを追加し、目的・Cookie・URL/参照元/検索語/端末情報・Googleでの処理・オプトアウト方法を表示。ユーザーが無効化を望まない検索機能やストリーム設定は変更しない。教材・画像・OGP・ライセンスは維持。
+- 最初の型検査でAstro内のprocess参照を検出しimport.meta.envへ修正。初回FULLのprivacyリンク末尾の折り返しを短い表示名へ修正。失敗を除外せず最終ビルドを再検査した。
+- checkは116ファイルerror/warning/hint 0。build52ページ、npm test成功（読者導線19・OGP5を含む）、制作見本build/check成功。最終公開FULL3324 passed/error 0/warning 4、GUIDE FULL60 passed/error 0/warning 4。既存色数警告のみ、規則・しきい値・対象除外の変更なし。manual review416/8件は自動合格と表現しない。
+- 全212画面でaxe/実行エラー/横はみ出し0、52ページ375px文字200%を確認。解析案内へのキーボード遷移を4幅で確認、スマホ/PCの案内とフッターを目視。
+- 本番URLをローカル成果物に結び実Googleタグで検証。初期page_viewは1回、UTM維持、URL訪問の検索語MCP、トップ確定PHP/一覧EnterのAPIキーは各1回。collectは途中で遮断し公開前のテストを実集計へ送らない。local/guide/opt-out通信0、タグ遮断時も本文表示と操作を維持。GA管理画面の受信・レポート表示は未確認で、タグ通信検証と区別する。
+- 証拠:ga4-final-public-full、ga4-final-guide-full、ga4-functional.json、ga4-browser.json、design/previews/ga4。
