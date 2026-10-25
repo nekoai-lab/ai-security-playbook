@@ -1,0 +1,65 @@
+{
+  "base": "http://127.0.0.1:55943/ai-security-playbook/",
+  "results": [
+    {
+      "width": 320,
+      "aliases": [
+        "MCP",
+        "MPC",
+        "ＭＰＣ",
+        "エムシーピー"
+      ],
+      "count": "5件中 1–5件",
+      "broadenPreservesQuery": true,
+      "history": true,
+      "keyboard": true,
+      "axe": 0,
+      "text200": false
+    },
+    {
+      "width": 375,
+      "aliases": [
+        "MCP",
+        "MPC",
+        "ＭＰＣ",
+        "エムシーピー"
+      ],
+      "count": "5件中 1–5件",
+      "broadenPreservesQuery": true,
+      "history": true,
+      "keyboard": true,
+      "axe": 0,
+      "text200": true
+    },
+    {
+      "width": 768,
+      "aliases": [
+        "MCP",
+        "MPC",
+        "ＭＰＣ",
+        "エムシーピー"
+      ],
+      "count": "5件中 1–5件",
+      "broadenPreservesQuery": true,
+      "history": true,
+      "keyboard": true,
+      "axe": 0,
+      "text200": false
+    },
+    {
+      "width": 1280,
+      "aliases": [
+        "MCP",
+        "MPC",
+        "ＭＰＣ",
+        "エムシーピー"
+      ],
+      "count": "5件中 1–5件",
+      "broadenPreservesQuery": true,
+      "history": true,
+      "keyboard": true,
+      "axe": 0,
+      "text200": false
+    }
+  ]
+}

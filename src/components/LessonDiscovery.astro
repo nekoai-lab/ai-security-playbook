@@ -170,9 +170,6 @@ const lessons = (await getCollection("lessons"))
           "[data-topic-destination]",
         ))
           a.setAttribute("href", destination);
-        const action = card.querySelector<HTMLElement>("[data-topic-action]")!;
-        action.textContent =
-          (matches.length === 1 ? "この記事を読む" : "このテーマを見る") + " →";
       }
       if (results) results.hidden = !q;
       const themeGrid = root.querySelector<HTMLElement>("#themes");

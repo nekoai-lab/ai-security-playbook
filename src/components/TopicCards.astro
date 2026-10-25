@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import { topics, levels } from "../data/catalog";
-import { topicGuides } from "../data/topic-guides";
-import LessonArt from "./LessonArt.astro";
+import CardArt from "./CardArt.astro";
+import { topicCompositions } from "../data/card-art";
 interface Props {
   headingLevel?: "h2" | "h3";
 }
@@ -26,13 +26,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         : `${base}/topics/${topic.id}/`;
     return (
       <article
-        class="discovery-topic"
+        class:list={[
+          "discovery-topic",
+          `composition--${topicCompositions[topic.id].layout}`,
+        ]}
         data-discovery-topic={topic.id}
         data-topic-url={`${base}/topics/${topic.id}/`}
       >
-        <LessonArt
-          id={topicGuides[topic.id].feature}
-          sizes="(max-width:760px) calc(100vw - 32px),600px"
+        <CardArt
+          art={topicCompositions[topic.id].art}
+          sizes="(max-width:760px) 160px,240px"
         />
         <div class="topic-copy">
           <div class="topic-heading">
@@ -42,7 +45,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               </p>
               <Heading>
                 <a data-topic-destination href={href}>
-                  {topic.title}
+                  {topic.title} <span aria-hidden="true">↗</span>
                 </a>
               </Heading>
             </div>
@@ -69,15 +72,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               </li>
             ))}
           </ul>
-          <a
-            class="topic-action"
-            data-topic-destination
-            data-topic-action
-            href={href}
-          >
-            {found.length === 1 ? "この記事を読む" : "このテーマを見る"}{" "}
-            <span aria-hidden="true">→</span>
-          </a>
         </div>
       </article>
     );
@@ -91,26 +85,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   }
   .discovery-topic {
     min-width: 0;
-    padding: 0;
+    position: relative;
+    overflow: hidden;
     background: var(--color-paper-light);
     display: flex;
     flex-direction: column;
-    gap: 0;
-  }
-  .discovery-topic > :global(.lesson-art) {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 2/1;
-    object-fit: cover;
-    object-position: 50% 40%;
   }
   .topic-copy {
-    flex: 1;
-    grid-template-rows: auto auto 1fr auto;
     padding: 24px;
-    display: grid;
-    gap: 12px;
     min-width: 0;
   }
   .topic-heading {
@@ -126,7 +108,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   h3 {
     font-size: 24px;
     line-height: 1.6;
-    margin: 0;
+    margin: 0 0 8px;
     text-wrap: balance;
   }
   h2 a,
@@ -136,35 +118,106 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     padding-block: 4px;
     text-decoration: none;
   }
+  h2 a:hover,
+  h3 a:hover {
+    text-decoration: underline;
+  }
+  h2 span,
+  h3 span {
+    font-size: inherit;
+    color: var(--color-orange-ink);
+  }
   .topic-benefit {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.9;
     text-wrap: balance;
+    margin: 0 0 12px;
+    font-size: 16px;
+    line-height: 1.6;
   }
   .topic-examples {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     min-width: 0;
   }
   .topic-examples a {
-    display: block;
-    min-height: 44px;
-    padding-block: 8px;
     text-wrap: balance;
-  }
-  .topic-action {
     display: block;
     min-height: 44px;
-    padding-block: 8px;
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.6;
+    padding-block: 12px;
+    text-decoration: none;
+  }
+  .topic-examples a:hover {
+    text-decoration: underline;
+  }
+  .topic-examples span {
     color: var(--color-orange-ink);
-    font-weight: 700;
+  }
+  .discovery-topic > :global(.card-art) {
+    flex-shrink: 0;
+  }
+  .composition--scene-side {
+    display: grid;
+    grid-template-columns: 58% 42%;
+  }
+  .composition--scene-side > :global(.card-art) {
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
+  }
+  .composition--scene-side > .topic-copy {
+    grid-column: 1;
+    grid-row: 1;
+    padding-right: 16px;
+  }
+  .composition--scene-bottom > :global(.card-art) {
+    height: 112px;
+    order: 2;
+  }
+  .composition--scene-bottom .topic-copy {
+    padding-bottom: 12px;
+  }
+  .composition--walk {
+    display: grid;
+    grid-template-columns: 32% 68%;
+  }
+  .composition--walk > :global(.card-art) {
+    align-self: center;
+    height: 224px;
+  }
+  .composition--walk > .topic-copy {
+    padding-left: 12px;
+  }
+  .composition--peek > :global(.card-art) {
+    position: absolute;
+    right: 0;
+    top: 16px;
+    width: 144px;
+    height: 176px;
+  }
+  .composition--peek h2,
+  .composition--peek h3,
+  .composition--peek .topic-count {
+    margin-right: 128px;
+  }
+  .composition--peek .topic-benefit {
+    text-wrap: balance;
+    padding-right: 128px;
+  }
+  .composition--desk > :global(.card-art) {
+    height: 128px;
+    width: 176px;
+    position: absolute;
+    bottom: 24px;
+    left: 16px;
+  }
+  .composition--desk .topic-examples {
+    margin-left: 160px;
+    min-height: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .discovery-topics :global([hidden]) {
     display: none !important;
@@ -176,6 +229,42 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     }
     .topic-copy {
       padding: 16px;
+    }
+    .composition--scene-side {
+      grid-template-columns: 62% 38%;
+    }
+    .composition--walk {
+      grid-template-columns: 28% 72%;
+    }
+    .composition--walk > :global(.card-art) {
+      height: 160px;
+    }
+    .composition--walk > .topic-copy {
+      padding-left: 8px;
+    }
+    .composition--peek > :global(.card-art) {
+      width: 104px;
+      height: 144px;
+      top: 16px;
+    }
+    .composition--peek h2,
+    .composition--peek h3,
+    .composition--peek .topic-count {
+      margin-right: 88px;
+    }
+    .composition--peek .topic-benefit {
+      text-wrap: balance;
+      padding-right: 88px;
+    }
+    .composition--scene-bottom > :global(.card-art) {
+      height: 112px;
+    }
+    .composition--desk > :global(.card-art) {
+      width: 112px;
+      height: 96px;
+    }
+    .composition--desk .topic-examples {
+      margin-left: 96px;
     }
   }
 </style>

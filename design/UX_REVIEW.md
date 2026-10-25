@@ -206,3 +206,39 @@ Shell headと教材のarticle指定を追加。50ページで全OGP・twitter:ca
 check（105ファイル0件）/build（50ページ）/test成功。制作見本build/check成功。公開FULL3196passed/error0/既存color warning4/manual400、GUIDE FULL60passed/error0/既存color warning4/manual8。全204画面のaxe・横はみ出し・実行エラー0、375pxの全50ページ＋見本文字200%成功。キーボードでトップ段階・一覧検索を確認。変更前後の全50ページbodyが完全一致。ローカルHTTPで25画像200、公開用ビルドの見本404・制作見本200。しきい値変更・検査除外なし。
 
 ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5教材の編集基準移行未了と既存8件の色数注意は今回解消した扱いにしない。マージ・公開はしていない。request-qaレビュー後の公開画像URL200と各共有サービスでの表示/キャッシュ確認は未実施。Issueの公開後条件はそこで確認する。
+
+## 2026-10-25 カードの密度・構図の再設計
+
+### 変更と意図
+- ユーザーは全面の大きな猫の反復を指摘。小さな図記号だけの案も余白が大きく魅力が下がるため不採用。最終承認は、場面画/のぞく/歩く/下部の場面画を混ぜる案。
+- トップとテーマ一覧8件に5構図。24教材とテーマ内教材は場面画と8種以上の既存ポーズ。おすすめ先頭3枚は指さす/APIキー場面/歩く。複数ポーズの使用を実際の配置まで確認した。
+- テーマの重複CTAを削除し、見出しと教材リンクを入口へ。段階で1教材なら直接記事へ。学習入口の汎用段階リンク3回反復も整理し、遷移先で段階を1組提示。
+
+### 最終ビルドの機械検査
+- check:108ファイル、error/warning/hint 0。build:50ページ。npm test:成功（reader-navigation 10項目含む）。GUIDE build:51ページ、専用check成功。
+- 公開FULL:3196 passed、error 0、色数warning 4、manual review 400。GUIDE FULL:60 passed、error 0、色数warning 4、manual review 8。基準・除外・検査対象を変更していない。
+- 既存warning:commandsの色数15と制作見本の色数14を4幅で検出。今回のカード由来の色数増加ではない。5本の旧教材の内容品質を、このUI検査で再認定したものではない。
+- 公開50ページ×320/375/768/1280＋制作見本4幅の204画面。axe、実行エラー、横はみ出し0。375pxで全50ページ＋制作見本の文字200%を確認。
+- MCP/MPC/ＭＰＣ/エムシーピー、0件から検索語を残して条件解除、履歴・キーボード、段階別の見出し遷移先、12件ページ送り、JSなしの24教材/8テーマを4幅で確認。
+- 最初に見つかった矢印のサイズ差と語尾の折り返し9件は修正。3ページCUSTOM診断と、その後の全件FULLで再確認。初回指摘はinitial-findings.jsonに残した。
+
+### 目視と実用面
+- topics-desktop/mobile、featured-desktop/mobile、library-desktop/mobile、entriesのPC/スマホを確認。原画と照合して最初の場面画の顔の位置を38%へ調整。本文と画像の間に空欄を増やすおすすめの行サイズも修正。
+- 顔・見出し・記事リンクの重なり、猫のポーズ/視線/構図の連続、白地の量と教材の密度を一覧で確認。これらは自動監査のmanual review項目とは別の目視記録であり、400件すべてを自動合格と表現しない。
+- 場面画とポーズを混ぜるため画面のリズムが変わる。画像を全カード上部へ統一する規則は採らず、IDごとの構図を維持し、追加時は検索後の並びも確認する。
+- 記録:design/audit/2026-10-25/card-composition-*。実装プレビュー:design/previews/card-composition/。本文・技術図・OGP・README/LICENSEは変更なし。公開はPRレビュー後。
+
+### OGP公開版との統合確認
+作業中にmainへ入った#39（8df7fff）を取り込み、SPEC_TRACEとUX_REVIEWの双方の追記を保持して競合解消。OGP生成とその4テストを含めてcheck/build/test、制作専用build/checkを再実行。公開FULL 3196 passed/error 0/warning 4、GUIDE FULL 60 passed/error 0/warning 4、204画面のaxe/実行エラー/はみ出し0と全ページ文字200%、検索/段階/ページ送り/履歴/JSなしも統合後に再確認。OGP画像・本文の仕様変更なし。UIの実装プレビューも統合後に更新。
+
+## 2026-10-25 ヘッダーのGitHubボタン削除
+- 右上のGitHubロゴ/リンクを全ページ共通のShellから削除し、使わなくなる専用CSSを削除。デスクトップのメインナビにmargin-left:autoを移し、ロゴとサイト内ナビの配置へ。
+- フッターのMIT License、記事のGitHub参照、OGPを維持。全50ページのヘッダーにGitHubリンクがないこと、各メインナビが3リンク、ロゴが1リンクであることを確認。
+- 320/375/768/1280でスキップ→ロゴ→教材を探す→学習ルート→新着・更新のTab移動、はみ出しなしを確認。375/1280の通常表示スクリーンショットを目視。
+- check:108ファイル、error/warning/hint 0。build:50ページ。npm test成功（OGP4テスト含む）。制作専用build:51ページ/check成功。
+- 今回の最終ビルドで公開FULL 3196 passed/error 0/warning 4、GUIDE FULL 60 passed/error 0/warning 4。既存のcommands/見本の色数警告は維持。基準の変更・検査対象の除外なし。
+- 全204画面でaxe/実行エラー/横はみ出し0。375pxで全50ページと制作見本の文字200%を確認。機械検査のmanual reviewは公開400/見本8であり、自動合格とは区別する。
+- 証拠:design/audit/2026-10-25/header-cleanup-*。画像:design/previews/card-composition/header-{desktop,mobile}.png。PR #41へ追加、未マージ・未公開。
+
+## 2026-10-25 共通枠・サイト構造の確認
+全50ページと制作見本は共通Shellを通ることを確認。ナビ定義をsite-navigation.tsへ集約し、start/3ページの学習ルート選択漏れを修正。109ファイルのcheck/build/testと公開/見本FULL、全204画面・文字200%を最新ビルドで再確認。新規error 0、既存色数warningのみ。構造・保守上の注意・検証範囲はSITE_STRUCTURE_REVIEW.md。

@@ -1,0 +1,46 @@
+---
+import CatPose from "./CatPose.astro";
+import LessonArt from "./LessonArt.astro";
+import type { CardArt } from "../data/card-art";
+interface Props {
+  art: CardArt;
+  sizes?: string;
+}
+const { art, sizes = "(max-width:760px) 160px,240px" } = Astro.props;
+---
+
+<div
+  class:list={["card-art", `card-art--${art.kind}`]}
+  data-card-art={art.kind === "pose" ? art.pose : art.lesson}
+  style={
+    art.kind === "scene" ? `--card-art-position:${art.position}` : undefined
+  }
+  aria-hidden="true"
+>
+  {art.kind === "scene" ? (
+    <LessonArt id={art.lesson} sizes={sizes} />
+  ) : (
+    <CatPose pose={art.pose} />
+  )}
+</div>
+<style>
+  .card-art {
+    min-width: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+  .card-art :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    float: none;
+  }
+  .card-art--pose :global(img) {
+    object-fit: contain;
+  }
+  .card-art--scene :global(img) {
+    object-fit: cover;
+    object-position: var(--card-art-position, 50% 10%);
+  }
+</style>
