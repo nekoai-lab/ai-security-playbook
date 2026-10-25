@@ -1,0 +1,396 @@
+{
+  "version": 1,
+  "width": 1200,
+  "height": 630,
+  "tokensHash": "21914e4b7eb21741a765b49b351717af739c5f0d8e498a9b19d52e7ccef799d1",
+  "font": {
+    "file": "design/ogp/fonts/NotoSansJP.ttf",
+    "sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+    "sourceCommit": "66a36c8c94b1a5d992ee4e7f392fccfe4945767c",
+    "license": "SIL OFL 1.1",
+    "fallbackFor": "-apple-system, BlinkMacSystemFont, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\",\n    Meiryo, sans-serif"
+  },
+  "fallbacks": [],
+  "cards": [
+    {
+      "id": "default",
+      "file": "public/ogp/default.png",
+      "title": "AIの安全を、\n解き明かそう。",
+      "lines": [
+        "AIの安全を、",
+        "解き明かそう。"
+      ],
+      "fontSize": 64,
+      "theme": "FIELD NOTES",
+      "source": "design/assets/cat-compass-logo-source.png",
+      "position": "centre",
+      "sourceHash": "5e12aa288aabcc0316df977fd912aa9ac7908faaba879bb30fd28547c76060b6",
+      "pngHash": "9c0c16d8616b3063b9a3217ccf44df275c82497e691601aad06b422bf69728b9"
+    },
+    {
+      "id": "access-control",
+      "file": "public/ogp/access-control.png",
+      "title": "ログインと、データを使う権限を分ける",
+      "lines": [
+        "ログインと、データ",
+        "を使う権限を分ける"
+      ],
+      "fontSize": 64,
+      "theme": "ログインと権限",
+      "source": "public/images/access-gate-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "c56c5a62b7c8efc128eb0e24049686b93e0d91daea463c94d457c310ff6a1edc",
+      "pngHash": "67679d2c2d9de0ab2839b6ead0c6b6339d57a57bd737a38c38484ea6d58ee42e"
+    },
+    {
+      "id": "agent-permissions",
+      "file": "public/ogp/agent-permissions.png",
+      "title": "AIに任せる操作と、確認する操作を分ける",
+      "lines": [
+        "AIに任せる操作と、",
+        "確認する操作を分け",
+        "る"
+      ],
+      "fontSize": 64,
+      "theme": "AIに任せる操作",
+      "source": "public/images/review-workbench-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "12b4686dc0c320fd5326ef88166a4898fedc742eb4fe2fc4616a0ae62ddc9da2",
+      "pngHash": "8be15fc43a64ef0307b6b230e411f79c1d0f2ff62c6b4d0d5d42e473a1870924"
+    },
+    {
+      "id": "ai-data-boundaries",
+      "file": "public/ogp/ai-data-boundaries.png",
+      "title": "AIに渡す情報を、送る前に分ける",
+      "lines": [
+        "AIに渡す情報を、送",
+        "る前に分ける"
+      ],
+      "fontSize": 64,
+      "theme": "AIに渡す情報",
+      "source": "public/images/data-sorting-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "dd03c6d01921bd02c4596f15066f2cdc4791b6c7b1d516f4332112bea557c6bb",
+      "pngHash": "4445dfee06823c2f9fb8d5450d28bc2bc8c3a3c357ffb873824563c5b7c6905f"
+    },
+    {
+      "id": "ai-review-trust",
+      "file": "public/ogp/ai-review-trust.png",
+      "title": "AIレビューの合格と確認項目",
+      "lines": [
+        "AIレビューの合格と",
+        "確認項目"
+      ],
+      "fontSize": 64,
+      "theme": "公開前の確認",
+      "source": "public/images/review-workbench-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "12b4686dc0c320fd5326ef88166a4898fedc742eb4fe2fc4616a0ae62ddc9da2",
+      "pngHash": "0fdbf1dc037ba9264253560cea3434491849efb8a914e82e1e29f7417367c198"
+    },
+    {
+      "id": "ai-work-logs",
+      "file": "public/ogp/ai-work-logs.png",
+      "title": "AIの会話ログと秘密",
+      "lines": [
+        "AIの会話ログと秘密"
+      ],
+      "fontSize": 64,
+      "theme": "APIキー・会話・データ",
+      "source": "public/images/ai-log-copies-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "e22e7da6cf435addbd55182954ed553bc2eb656cc2fb14193a39ccdf3b86bd25",
+      "pngHash": "b1e1ac4e7ee5bc4508f492777cb9e8c8428453dcd8006b24d20a28fec618a414"
+    },
+    {
+      "id": "api-keys",
+      "file": "public/ogp/api-keys.png",
+      "title": "APIキーの設定",
+      "lines": [
+        "APIキーの設定"
+      ],
+      "fontSize": 64,
+      "theme": "APIキー・会話・データ",
+      "source": "public/images/api-key-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "5f72436b17895da29e54f8598b097315c22dc6a46ad89f7da50a95e947481a7f",
+      "pngHash": "3568d740a90c9192aeb44f7109bf711a6f319b6730031b858baa2da6bc828b53"
+    },
+    {
+      "id": "app-architecture",
+      "file": "public/ogp/app-architecture.png",
+      "title": "AIで作ったアプリの、動く場所を知る",
+      "lines": [
+        "AIで作ったアプリ",
+        "の、動く場所を知る"
+      ],
+      "fontSize": 64,
+      "theme": "アプリの仕組み",
+      "source": "public/images/connection-map-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "6849580ef6989f6232b4252158e9315d2490b0bb6eef11462f6b00690e50f72a",
+      "pngHash": "6cdd2a7c0cfd658b8cda72dfb03f738994d8c1b35246a991bd5598780c4444eb"
+    },
+    {
+      "id": "approved-ai-data",
+      "file": "public/ogp/approved-ai-data.png",
+      "title": "企業向けAIと個人情報の利用条件",
+      "lines": [
+        "企業向けAIと個人情",
+        "報の利用条件"
+      ],
+      "fontSize": 64,
+      "theme": "AIに渡す情報",
+      "source": "public/images/approved-ai-data-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "cad02490f8c0e2876ac7ceb9aab82fdc6c9498dcbde81e9db70ed86d33bb1fe6",
+      "pngHash": "9a0a530bbcafee47f77e276b11e58fae75ba31e8cce8ef70d9c1fab3dba6fb6b"
+    },
+    {
+      "id": "basics",
+      "file": "public/ogp/basics.png",
+      "title": "AIツールと実行環境の基本",
+      "lines": [
+        "AIツールと実行環境",
+        "の基本"
+      ],
+      "fontSize": 64,
+      "theme": "アプリの仕組み",
+      "source": "public/images/node-runtime-scene-960.webp",
+      "position": "left",
+      "sourceHash": "6474846d87401ce0a6079ba828b06a4717e9052e3ec7df9a88bf46f7d2b59fb4",
+      "pngHash": "1edbf22a6800b713632ef1b532c8c4fd1f8262c460dde9373aa183c7936ad85d"
+    },
+    {
+      "id": "checklist",
+      "file": "public/ogp/checklist.png",
+      "title": "Node.jsの更新を完了させるチェックリスト",
+      "lines": [
+        "Node.jsの更新を完",
+        "了させるチェックリ",
+        "スト"
+      ],
+      "fontSize": 64,
+      "theme": "更新・公開後の運用",
+      "source": "public/images/release-preparation-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "8db28518087b5fba9f4aab3f1ec5f1812dafe26d845d8779f840d019d1e51560",
+      "pngHash": "dd9eeab33b40fc09322d5e5e494f4edbe1c5d0f8364f494d66f5d6e2d2358479"
+    },
+    {
+      "id": "cloud-account-safety",
+      "file": "public/ogp/cloud-account-safety.png",
+      "title": "クラウドの管理と実行の権限",
+      "lines": [
+        "クラウドの管理と実",
+        "行の権限"
+      ],
+      "fontSize": 64,
+      "theme": "ログインと権限",
+      "source": "public/images/cloud-account-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "54bf8419f011f213a8fd8720138aee886a34b289b6de11278882d418d51ece7e",
+      "pngHash": "af6b60a8b752ee90db1f31c679f13f627f7bd1fbfde05e0ec2dd350fb50c0e94"
+    },
+    {
+      "id": "commands",
+      "file": "public/ogp/commands.png",
+      "title": "Node.jsを安全に調べる確認コマンド",
+      "lines": [
+        "Node.jsを安全に調",
+        "べる確認コマンド"
+      ],
+      "fontSize": 64,
+      "theme": "更新・公開後の運用",
+      "source": "public/images/node-runtime-scene-960.webp",
+      "position": "left",
+      "sourceHash": "6474846d87401ce0a6079ba828b06a4717e9052e3ec7df9a88bf46f7d2b59fb4",
+      "pngHash": "1c147b95d68241895747d3e7ece0550f9ac701f50f608493ca0c927d34fe8bac"
+    },
+    {
+      "id": "dependency-updates",
+      "file": "public/ogp/dependency-updates.png",
+      "title": "依存ライブラリの更新と確認",
+      "lines": [
+        "依存ライブラリの更",
+        "新と確認"
+      ],
+      "fontSize": 64,
+      "theme": "更新・公開後の運用",
+      "source": "public/images/dependency-update-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "28b9955b93467d92a1ca1e4342098dccfa4b8ef049a30d37e2a9dd41db2e3a5e",
+      "pngHash": "adca72a817fc0e0a675acc9fc8004145fa11a05c8b83a136c91623c2ae0013aa"
+    },
+    {
+      "id": "developer-privacy",
+      "file": "public/ogp/developer-privacy.png",
+      "title": "開発者自身の公開情報を整える",
+      "lines": [
+        "開発者自身の公開情",
+        "報を整える"
+      ],
+      "fontSize": 64,
+      "theme": "公開前の確認",
+      "source": "public/images/developer-privacy-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "cef6e23a62c76f4556a407966f99372c004251c01b83773d69d0f8f4ae0aab73",
+      "pngHash": "db2f0b3ee2f4a0c8cf5b457f6b8e9039fb762a06cfba6280bcd74697b4666ec8"
+    },
+    {
+      "id": "external-service-failures",
+      "file": "public/ogp/external-service-failures.png",
+      "title": "外部サービス停止への備え",
+      "lines": [
+        "外部サービス停止へ",
+        "の備え"
+      ],
+      "fontSize": 64,
+      "theme": "更新・公開後の運用",
+      "source": "public/images/service-fallback-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "eec6c98f9965709cc4afb12d54f4bd953e295c18cedc8bbb700cf0ea2ed116c3",
+      "pngHash": "6ccb7a660a007a5f1f6a96f047727f0e7f9968293411fd453e57a6c44615baba"
+    },
+    {
+      "id": "github-guards",
+      "file": "public/ogp/github-guards.png",
+      "title": "GitHubの検査と公開の境界",
+      "lines": [
+        "GitHubの検査と公",
+        "開の境界"
+      ],
+      "fontSize": 64,
+      "theme": "アプリの仕組み",
+      "source": "public/images/github-gate-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "0a6ca8dcd62981327295dfb148266a9a29e01737ecf96660088add2dd720c462",
+      "pngHash": "42021e0fe84904a579296dd8f9e16bca20cd98f36ce92fdb009edbdb5306957d"
+    },
+    {
+      "id": "incident-response",
+      "file": "public/ogp/incident-response.png",
+      "title": "漏えい・異常・消失に気づいたとき、最初にすること",
+      "lines": [
+        "漏えい・異常・消失",
+        "に気づいたとき、最",
+        "初にすること"
+      ],
+      "fontSize": 64,
+      "theme": "異常に気づいたら",
+      "source": "public/images/incident-notes-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "22cf274b6ce42f092a7a7bb1a16aced8adb5b89dcc99dfb33ed90368688fdea7",
+      "pngHash": "43b6a202abc84f9e941216ba676710db37c880b457d5bb70d5197a03f1ef199d"
+    },
+    {
+      "id": "launch-checklist",
+      "file": "public/ogp/launch-checklist.png",
+      "title": "AIで作ったサービスを、公開する前に確かめる",
+      "lines": [
+        "AIで作ったサービス",
+        "を、公開する前に確",
+        "かめる"
+      ],
+      "fontSize": 64,
+      "theme": "公開前の確認",
+      "source": "public/images/release-preparation-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "8db28518087b5fba9f4aab3f1ec5f1812dafe26d845d8779f840d019d1e51560",
+      "pngHash": "14df0ee4a3e97452157cb5ac8ed3bb02ec612537cce756318f2930f17678a8a7"
+    },
+    {
+      "id": "mcp-permissions",
+      "file": "public/ogp/mcp-permissions.png",
+      "title": "MCPをつなぐ前に、渡す権限を確かめる",
+      "lines": [
+        "MCPをつなぐ前",
+        "に、渡す権限を確か",
+        "める"
+      ],
+      "fontSize": 64,
+      "theme": "AIに任せる操作",
+      "source": "public/images/connection-map-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "6849580ef6989f6232b4252158e9315d2490b0bb6eef11462f6b00690e50f72a",
+      "pngHash": "822c4e608e73f93239bd531987f18ebf116cf1517a3cb12ae389da540ce68e3a"
+    },
+    {
+      "id": "node-october-2026",
+      "file": "public/ogp/node-october-2026.png",
+      "title": "Node.js 2026年10月のセキュリティ更新",
+      "lines": [
+        "Node.js 2026年10",
+        "月のセキュリティ更",
+        "新"
+      ],
+      "fontSize": 64,
+      "theme": "更新・公開後の運用",
+      "source": "public/images/node-runtime-scene-960.webp",
+      "position": "left",
+      "sourceHash": "6474846d87401ce0a6079ba828b06a4717e9052e3ec7df9a88bf46f7d2b59fb4",
+      "pngHash": "4c67093d360f1e16f944d456fb10f8854d63cd066a71f66cd027f80841bb7504"
+    },
+    {
+      "id": "operations",
+      "file": "public/ogp/operations.png",
+      "title": "更新とAIレビューを運用につなげる",
+      "lines": [
+        "更新とAIレビューを",
+        "運用につなげる"
+      ],
+      "fontSize": 64,
+      "theme": "更新・公開後の運用",
+      "source": "public/images/review-workbench-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "12b4686dc0c320fd5326ef88166a4898fedc742eb4fe2fc4616a0ae62ddc9da2",
+      "pngHash": "a6a6a9b760cf27cc2d776d42d759b4c8b0cb6a0c8631dd09b3b986a936143b15"
+    },
+    {
+      "id": "php-october-2026",
+      "file": "public/ogp/php-october-2026.png",
+      "title": "PHPの緊急更新、自分のサイトは何を確認する？",
+      "lines": [
+        "PHPの緊急更新、",
+        "自分のサイトは何を",
+        "確認する？"
+      ],
+      "fontSize": 64,
+      "theme": "更新・公開後の運用",
+      "source": "public/images/review-workbench-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "12b4686dc0c320fd5326ef88166a4898fedc742eb4fe2fc4616a0ae62ddc9da2",
+      "pngHash": "8b7ac99cdec98a58bd4989be28d95a618fc41598d1017376333bd784300f48e9"
+    },
+    {
+      "id": "release-artifacts",
+      "file": "public/ogp/release-artifacts.png",
+      "title": "公開するファイルの確認",
+      "lines": [
+        "公開するファイルの",
+        "確認"
+      ],
+      "fontSize": 64,
+      "theme": "公開前の確認",
+      "source": "public/images/release-package-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "af4459cfe49d679e58b1ae210528042e635f0c25cb70ad6d6f2bb653d9585245",
+      "pngHash": "ce12c348c7fd121df76896cd84658cdcae4a1ecc27ad13d534c8f3d0d6ffbf4a"
+    },
+    {
+      "id": "secret-rotation",
+      "file": "public/ogp/secret-rotation.png",
+      "title": "キーの更新を稼働先まで届ける",
+      "lines": [
+        "キーの更新を稼働先",
+        "まで届ける"
+      ],
+      "fontSize": 64,
+      "theme": "APIキー・会話・データ",
+      "source": "public/images/secret-rotation-scene-960.webp",
+      "position": "centre",
+      "sourceHash": "5949dc67cfb8f2d596bafc685988b03692fce50975ddb29b68f86b929318c1cf",
+      "pngHash": "5a3b46ba50251a1bbc3cf63011a2cf64a4131f6aee3cc7d5bbbd95ff27f2050c"
+    }
+  ]
+}

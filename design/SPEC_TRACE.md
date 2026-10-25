@@ -248,6 +248,10 @@ AR01–AR05は確認済み。挿絵は承認済みreview-workbench-sceneの再�
 
 User approved outputs/site-design-proposal.html and its journey map, then explicitly asked to implement while retaining existing FIELD NOTES styling. Inline level filters, informative topic cards and direct article names replace mandatory reader gateways on the homepage. Original strong orange band and five recent updates required. Theme destinations must expose actual lessons immediately. Preserve IDs, article bodies, new AI review lesson, source guide and old bookmarks; use existing tokens and full public/guide validation. Plan: docs/superpowers/plans/2026-10-25-theme-first-home.md.
 
+
+## Issue #36 / OGP（2026-10-25）
+ユーザー指定のFIELD NOTESカード仕様を実装。Shell headへ全ページのOGP、教材はtitle/summary/article、他は既存title/description/website。URLはsite/base。生成PNG1200×630は既存ロゴA・LessonSceneの承認素材から作り、紙・黒・オレンジ帯のみ。日本語ゴシックはsans-serif fallbackをNoto Sans JP（OFL）で固定しglyph path化、画面のtokens/CSSは不変。全HTML/画像/本文の不変・check/build/test・FULLとGUIDE FULL・目視を記録。1コミットでPR、マージ/公開はrequest-qa後に別途。
+
 ## 2026-10-25 カードの密度と構図
 承認済みの文章主役/側面挿絵を実装。8テーマのポーズ/道具・向き・左右を明示指定し、教材一覧/おすすめ/場面入口にも分散。既存本文とOGPは維持。新規の全幅監査と検索/操作/目視を記録してからレビューへ。
 

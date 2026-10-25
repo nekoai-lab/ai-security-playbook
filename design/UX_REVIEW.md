@@ -194,6 +194,19 @@ Release completed 2026-10-25: PR #34, merge f7ba4fc99d662ae6366b43f88402aa7a5eee
 全48×4幅のaxe（WCAG 2.0/2.1 A・AA）/pageerror/横はみ出しなし、全48ページ375px文字200%成功（browser-report.json）。新記事は4幅で図8（6図+比較+場面）・猫3・全画像デコード、Tab/Enterで比較の開閉とフォーカス表示位置、320/375pxでdetails全展開200%、JSなしで比較・表・結果が読める、URLのqによる検索、releaseテーマの疑問、シリーズ前後の次カードと画像（article-report.json）。320px・320px文字200%・1280pxの全体と各図を目視。表とコードは既存の横スクロール領域で、320pxでは3列目・長い行がスクロール先になる（既存教材と同じ挙動）。
 ブラウザ検査は私的ハーネスと別に、作業用の Playwright + axe-core スクリプトで実施（公開repoには入れていない）。自動検査とスクリーンショットは支援技術での完全な確認を意味しない。公開はCI/Pages/URL確認後。
 
+
+## Issue #36 / OGP共有カード（2026-10-25）
+
+本体のpreflightは未コミット28件・レーン記載なし・main先行の注意。ユーザー指定どおり本体を修復/変更せず、origin/main 4b24d2dからfeat/ogp-cardsの指定worktreeで作業。.envファイルは開いていない。
+
+Shell headと教材のarticle指定を追加。50ページで全OGP・twitter:card、frontmatter/既存titleとdescriptionの一致、絶対URL/site/base、PNG/JPEG・1200×630を検査。25 PNGを承認済みの正式ロゴA / LessonSceneから生成。見出し64px、3行まで・長い場合shortTitle、summaryなし。ロゴA＋Tsukineko、中央1000×500に重要要素。紙・墨の濃淡と上端12pxの橙色だけ。Node.jsの場面は左へ寄せて顔を保つ。全25枚の猫と文字を目視、トップ・AIレビュー・共通一覧用をPRで提示。
+
+日本語ゴシックfallbackをOFLのNoto Sans JPへ固定し、字形pathへ変換してPNG化。画面用CSS/トークンは変えない。OSフォントへの黙った代替・新しいイラスト生成・原稿/README/LICENSEの変更なし。取得commit/hash/ライセンスと再生成手順はdesign/ogp。
+
+check（105ファイル0件）/build（50ページ）/test成功。制作見本build/check成功。公開FULL3196passed/error0/既存color warning4/manual400、GUIDE FULL60passed/error0/既存color warning4/manual8。全204画面のaxe・横はみ出し・実行エラー0、375pxの全50ページ＋見本文字200%成功。キーボードでトップ段階・一覧検索を確認。変更前後の全50ページbodyが完全一致。ローカルHTTPで25画像200、公開用ビルドの見本404・制作見本200。しきい値変更・検査除外なし。
+
+ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5教材の編集基準移行未了と既存8件の色数注意は今回解消した扱いにしない。マージ・公開はしていない。request-qaレビュー後の公開画像URL200と各共有サービスでの表示/キャッシュ確認は未実施。Issueの公開後条件はそこで確認する。
+
 ## 2026-10-25 カードの密度・構図の再設計
 
 ### 変更と意図
