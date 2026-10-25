@@ -1,0 +1,251 @@
+{
+  "before": {
+    "pages": 52,
+    "status200": 52,
+    "h1Single": 52,
+    "structuredData": 0,
+    "duplicateTitles": [
+      {
+        "value": "AI連携の権限を決める | AI Security Playbook",
+        "routes": [
+          "paths/ai-connections/",
+          "series/ai-connections/"
+        ]
+      }
+    ],
+    "duplicateDescriptions": [
+      {
+        "value": "AIを使う人と作る人のための、日本語セキュリティ実践ガイド。",
+        "routes": [
+          "",
+          "topics/",
+          "paths/",
+          "updates/",
+          "about/"
+        ]
+      }
+    ],
+    "unreachable": [],
+    "maxDepth": 2
+  },
+  "previewAfter": {
+    "pages": 52,
+    "status200": 52,
+    "h1Single": 52,
+    "structuredData": 52,
+    "duplicateTitles": [],
+    "duplicateDescriptions": [],
+    "unreachable": [],
+    "maxDepth": 2
+  },
+  "beforeRobots": [
+    {
+      "url": "https://nekoai-lab.github.io/robots.txt",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'\">\n    <title>Site not found &middot; GitHub Pages</title>\n    <style type=\"text/css\" media=\"screen\">\n      body {\n        background-color: #f1f1f1;\n        margin: 0;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      }\n\n      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }\n\n      a { color: #4183c4; text-decoration: none; }\n      a:hover { text-decoration: underline; }\n\n      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }\n      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }\n\n      ul { list-style: none; margin: 25px 0; padding: 0; }\n      li { display: table-cell; font-weight: bold; width: 1%; }\n\n      .logo { display: inline-block; margin-top: 35px; }\n      .logo-img-2x { display: none; }\n      @media\n      only screen and (-webkit-min-devi"
+    },
+    {
+      "url": "https://nekoai-lab.github.io/ai-security-playbook/robots.txt",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'\">\n    <title>Page not found &middot; GitHub Pages</title>\n    <style type=\"text/css\" media=\"screen\">\n      body {\n        background-color: #f1f1f1;\n        margin: 0;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      }\n\n      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }\n\n      a { color: #4183c4; text-decoration: none; }\n      a:hover { text-decoration: underline; }\n\n      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }\n      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }\n\n      ul { list-style: none; margin: 25px 0; padding: 0; }\n      li { display: table-cell; font-weight: bold; width: 1%; }\n\n      .logo { display: inline-block; margin-top: 35px; }\n      .logo-img-2x { display: none; }\n      @media\n      only screen and (-webkit-min-devi"
+    },
+    {
+      "url": "https://nekoai-lab.github.io/ai-security-playbook/sitemap.xml",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'\">\n    <title>Page not found &middot; GitHub Pages</title>\n    <style type=\"text/css\" media=\"screen\">\n      body {\n        background-color: #f1f1f1;\n        margin: 0;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      }\n\n      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }\n\n      a { color: #4183c4; text-decoration: none; }\n      a:hover { text-decoration: underline; }\n\n      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }\n      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }\n\n      ul { list-style: none; margin: 25px 0; padding: 0; }\n      li { display: table-cell; font-weight: bold; width: 1%; }\n\n      .logo { display: inline-block; margin-top: 35px; }\n      .logo-img-2x { display: none; }\n      @media\n      only screen and (-webkit-min-devi"
+    },
+    {
+      "url": "https://nekoai-lab.github.io/ai-security-playbook/sitemap-index.xml",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'\">\n    <title>Page not found &middot; GitHub Pages</title>\n    <style type=\"text/css\" media=\"screen\">\n      body {\n        background-color: #f1f1f1;\n        margin: 0;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      }\n\n      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }\n\n      a { color: #4183c4; text-decoration: none; }\n      a:hover { text-decoration: underline; }\n\n      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }\n      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }\n\n      ul { list-style: none; margin: 25px 0; padding: 0; }\n      li { display: table-cell; font-weight: bold; width: 1%; }\n\n      .logo { display: inline-block; margin-top: 35px; }\n      .logo-img-2x { display: none; }\n      @media\n      only screen and (-webkit-min-devi"
+    },
+    {
+      "url": "https://nekoai-lab.github.io/ai-security-playbook/this-page-does-not-exist-seo-audit/",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'\">\n    <title>Page not found &middot; GitHub Pages</title>\n    <style type=\"text/css\" media=\"screen\">\n      body {\n        background-color: #f1f1f1;\n        margin: 0;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      }\n\n      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }\n\n      a { color: #4183c4; text-decoration: none; }\n      a:hover { text-decoration: underline; }\n\n      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }\n      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }\n\n      ul { list-style: none; margin: 25px 0; padding: 0; }\n      li { display: table-cell; font-weight: bold; width: 1%; }\n\n      .logo { display: inline-block; margin-top: 35px; }\n      .logo-img-2x { display: none; }\n      @media\n      only screen and (-webkit-min-devi"
+    }
+  ],
+  "previewAfterRobots": [
+    {
+      "url": "https://nekoai-lab.github.io/robots.txt",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'\">\n    <title>Site not found &middot; GitHub Pages</title>\n    <style type=\"text/css\" media=\"screen\">\n      body {\n        background-color: #f1f1f1;\n        margin: 0;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      }\n\n      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }\n\n      a { color: #4183c4; text-decoration: none; }\n      a:hover { text-decoration: underline; }\n\n      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }\n      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }\n\n      ul { list-style: none; margin: 25px 0; padding: 0; }\n      li { display: table-cell; font-weight: bold; width: 1%; }\n\n      .logo { display: inline-block; margin-top: 35px; }\n      .logo-img-2x { display: none; }\n      @media\n      only screen and (-webkit-min-devi"
+    },
+    {
+      "url": "http://127.0.0.1:51164/ai-security-playbook/robots.txt",
+      "status": 404,
+      "contentType": "text/plain",
+      "body": "Not found"
+    },
+    {
+      "url": "http://127.0.0.1:51164/ai-security-playbook/sitemap.xml",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/</loc></url>\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/about/</loc></url>\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/learn/access-control/</loc><lastmod>2026-10-24</lastmod></url>\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/learn/agent-permissions/</loc><lastmod>2026-10-24</lastmod></url>\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/learn/ai-data-boundaries/</loc><lastmod>2026-10-24</lastmod></url>\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/learn/ai-review-trust/</loc><lastmod>2026-10-25</lastmod></url>\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/learn/ai-work-logs/</loc><lastmod>2026-10-24</lastmod></url>\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/learn/api-keys/</loc><lastmod>2026-10-24</lastmod></url>\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/learn/app-architecture/</loc><lastmod>2026-10-24</lastmod></url>\n  <url><loc>https://nekoai-lab.github.io/ai-security-playbook/learn"
+    },
+    {
+      "url": "http://127.0.0.1:51164/ai-security-playbook/sitemap-index.xml",
+      "status": 404,
+      "contentType": "text/plain",
+      "body": "Not found"
+    },
+    {
+      "url": "http://127.0.0.1:51164/ai-security-playbook/this-page-does-not-exist-seo-audit/",
+      "status": 404,
+      "contentType": "text/plain",
+      "body": "Not found"
+    }
+  ],
+  "javascriptDisabled": [
+    {
+      "route": "",
+      "textLength": 6215,
+      "h1": 1,
+      "links": 78
+    },
+    {
+      "route": "library/",
+      "textLength": 3757,
+      "h1": 1,
+      "links": 25
+    },
+    {
+      "route": "learn/api-keys/",
+      "textLength": 10552,
+      "h1": 1,
+      "links": 59
+    },
+    {
+      "route": "learn/ai-review-trust/",
+      "textLength": 11708,
+      "h1": 1,
+      "links": 71
+    }
+  ],
+  "performanceBefore": [
+    {
+      "route": "",
+      "categories": {
+        "performance": 0.89,
+        "seo": 1
+      },
+      "LCP": 3800.425,
+      "CLS": 0,
+      "TBT": 7.5,
+      "failures": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.99,
+          "displayValue": "1.2 s"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.55,
+          "displayValue": "3.8 s"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.89,
+          "displayValue": "3.8 s"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 73 KiB"
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 1,074 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 1,054 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0.5
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "route": "learn/api-keys/",
+      "categories": {
+        "performance": 1,
+        "seo": 1
+      },
+      "LCP": 996.106,
+      "CLS": 0,
+      "TBT": 54,
+      "failures": [
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.92,
+          "displayValue": "120 ms"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.95,
+          "displayValue": "3.1 s"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0.5,
+          "displayValue": "Est savings of 73 KiB"
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0.5,
+          "displayValue": "Est savings of 164 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 152 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0.5
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "limitations": [
+    "No Search Console or Bing Webmaster access",
+    "No field Core Web Vitals",
+    "Lighthouse is a single lab run, not a ranking forecast",
+    "Root robots 404 is not a crawl block"
+  ]
+}

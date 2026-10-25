@@ -1,4 +1,5 @@
 ---
+import { avifSrcset } from "../data/avif";
 import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
 interface Props {
   id: LessonVisualId;
@@ -16,6 +17,8 @@ const stem = lessonVisuals[id].image;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
+<picture class="lesson-art-picture">
+<source type="image/avif" data-next-avif={trackNext ? true : undefined} srcset={avifSrcset(stem,base) ?? undefined} sizes={sizes} />
 <img
   class:list={["lesson-art", className]}
   data-lesson-art={id}
@@ -29,3 +32,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   decoding="async"
   alt=""
 />
+
+</picture>
+<style>.lesson-art-picture { display: contents; }</style>

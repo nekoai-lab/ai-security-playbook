@@ -48,6 +48,12 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
   title={lesson.data.title}
   description={lesson.data.summary}
   articleId={lesson.id}
+  articleMetadata={{published: lesson.data.published, updated: lesson.data.updated}}
+  breadcrumbs={[
+    {name: "教材一覧", path: `${base}/library/`},
+    {name: topicTitle(lesson.data.topic), path: `${base}/topics/${lesson.data.topic}/`},
+    {name: lesson.data.shortTitle ?? lesson.data.title, path: `${base}/learn/${lesson.id}/`},
+  ]}
 >
   <div class="wrap article-wrap">
     <nav class="crumbs" aria-label="パンくず">

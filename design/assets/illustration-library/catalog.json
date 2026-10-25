@@ -1011,5 +1011,6 @@
       "hasAlpha": false,
       "bytes": 3209717
     }
-  ]
+  ],
+  "deliveryManifest": "public/images/avif-delivery.json"
 }
