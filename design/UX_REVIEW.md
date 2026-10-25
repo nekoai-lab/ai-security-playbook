@@ -300,3 +300,13 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - check/build/test、制作見本build/check成功。今回の最終ビルドで公開FULLは3196 passed/error 0/warning 4、見本FULLは60 passed/error 0/warning 4。既存警告のみでしきい値や対象除外は変更なし。manual review 400/8件を自動合格と表現しない。
 - 全204画面でaxe/実行エラー/横はみ出し0、全50ページの375px文字200%を確認。8幅でPC中央1200px・左右中央配置・スクロール後の背景座標固定・スマホ画像リクエスト0・一覧に背景なしを実測。ホームは7幅の文字200%とスキップリンク操作も確認。PC上部/スクロール後とスマホを目視し、本文背後に山が透けず、左右が同一の風景として残ることを確認。
 - 証拠:mountain-public-full、mountain-guide-full、mountain-layout.json、mountain-browser.json、design/previews/mountain-backdrop。
+
+## 2026-10-25 発行者紹介・発信先・利用条件
+
+- ユーザー承認の案を実装。creator.tsを正本として、トップ末尾とaboutに紹介、全教材末尾に小さな著者欄・元記事URLを追加。共通フッターからnote/Zenn/X/問い合わせへ進め、トップへ戻る既存リンクも維持する。新しいロゴや外部送信・コピー制限は追加しない。
+- termsとLICENSE-CONTENTを追加。MIT本文は保持し、コード・自作サンプルと教材本文・独自図解・ブランド素材の適用範囲を区別。旧版の許諾を遡って取り消さず、第三者条件・法令上の引用・AI利用素材の権利範囲を明記。READMEは該当の一文だけ整合させ、AUTHORINGに共通管理のルールを追加。ドメインや公開範囲、教材の事実と日付、画像・OGPは変更しない。
+- 初回FULLでXリンクが27×44px、元記事URLの行が長い、about案内の末尾だけ折り返す問題を検出。Xを幅44px以上へ、URLを32emへ、案内リンクを独立段落へ修正し、最終ビルドで再検査した。初回結果を公開可の証拠として流用していない。
+- checkは114ファイルでerror/warning/hint 0。buildは51ページ、npm test成功（reader-navigation17テスト・OGP5テストを含む）。制作見本build/checkも成功。
+- 最終公開FULLは3260 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存commands/見本の色数警告のみ、しきい値・規則・対象除外なし。manual review 408/8件は自動合格と表現しない。
+- 全208画面でaxe/実行エラー/横はみ出し0、全51ページの375px文字200%を確認。320/375/768/1280/1920で4外部リンクの正確な行き先・縦横44px・キーボードフォーカス、記事からプロフィール/利用条件へのEnter遷移、元記事URLとauthor metadata、選択可能な本文を確認。PCの紹介・利用条件、スマホの紹介・記事著者欄・フッターを目視。
+- 証拠:creator-final-public-full、creator-final-guide-full、creator-links.json、creator-browser.json、design/previews/creator-rights。

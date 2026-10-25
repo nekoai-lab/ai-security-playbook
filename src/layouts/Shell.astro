@@ -4,6 +4,8 @@ import "../styles/library.css";
 import "../styles/article-illustrations.css";
 import "../styles/card-system.css";
 import "../styles/mountain-backdrop.css";
+import CreatorLinks from "../components/CreatorLinks.astro";
+import { creator } from "../data/creator";
 import BrandMark from "../components/BrandMark.astro";
 import { mainNavigation, isNavigationCurrent } from "../data/site-navigation";
 import { lessonVisuals } from "../data/lesson-visuals";
@@ -40,6 +42,7 @@ const socialAlt = articleId
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={creator.name} />
     <link rel="canonical" href={canonicalURL} />
     <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={description} />
@@ -106,9 +109,9 @@ const socialAlt = articleId
       </a>
       <div class="footer-links">
         <a href={`${base}/about/`}>このサイトについて</a>
-        <a href="https://github.com/nekoai-lab/ai-security-playbook/blob/main/LICENSE">
-          MIT License
-        </a>
+        <a href={`${base}/terms/`}>著作権・利用条件</a>
+        <CreatorLinks label="フッターの発信先・お問い合わせ" />
+        <small class="copyright">© 2026 Tsukineko</small>
       </div>
     </footer>
     </div>
@@ -116,6 +119,7 @@ const socialAlt = articleId
 </html>
 
 <style>
+  .copyright { font-size: 12px; color: var(--color-muted); }
   .footer-brand {
     gap: 12px;
     min-height: 44px;

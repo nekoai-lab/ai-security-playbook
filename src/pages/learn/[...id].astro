@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import CreatorProfile from "../../components/CreatorProfile.astro";
 import Shell from "../../layouts/Shell.astro";
 import ExplorerNote from "../../components/ExplorerNote.astro";
 import DataTable from "../../components/DataTable.astro";
@@ -18,6 +19,7 @@ export async function getStaticPaths() {
 const { lesson } = Astro.props;
 const { Content, headings } = await render(lesson);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const originalURL = new URL(Astro.url.pathname, Astro.site).href;
 const all = await getCollection("lessons");
 const group = seriesFor(lesson.id);
 const nextId = group
@@ -146,6 +148,8 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
             気になった項目を実際の環境で確認し、分かったことと未確認のことを分けて残しましょう。
           </ExplorerNote>
         )}
+        <CreatorProfile compact />
+        <p class="article-original" data-original-url>この記事のURL：<a href={originalURL}>{originalURL}</a></p>
         <LearningContext id={lesson.id} />
         {related.length > 0 && (
           <section class="related-lessons">
@@ -191,6 +195,8 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
 </Shell>
 
 <style>
+  .article-original { font-size: 12px; max-width: 32em; overflow-wrap: anywhere; }
+  .article-original a { display: inline-block; min-height: 44px; padding-block: 8px; max-width: 100%; }
   .reading-readiness {
     font-size: 16px;
     line-height: 1.9;

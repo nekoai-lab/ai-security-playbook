@@ -1,4 +1,5 @@
 ---
+import CreatorProfile from "../components/CreatorProfile.astro";
 import Shell from "../layouts/Shell.astro";
 import LessonDiscovery from "../components/LessonDiscovery.astro";
 import FeaturedLessonCard from "../components/FeaturedLessonCard.astro";
@@ -141,6 +142,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       <a href={`${base}/updates/`}>更新一覧を見る →</a>
     </p>
   </section>
+  <div class="wrap"><CreatorProfile /></div>
 </Shell>
 <script>
   import { normalizeLevel } from "../data/catalog";
