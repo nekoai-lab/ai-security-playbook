@@ -216,6 +216,8 @@ const published = topics.filter((t) =>
       currentPage = 1;
       render();
       updateURL("push");
+      const searchTerm = controls.q.value.trim();
+      if (searchTerm) document.dispatchEvent(new CustomEvent("playbook-search", { detail: { query: searchTerm } }));
     });
     form.addEventListener("change", () => {
       currentPage = 1;

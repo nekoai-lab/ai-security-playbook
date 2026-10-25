@@ -1,0 +1,36 @@
+---
+import Shell from "../layouts/Shell.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<Shell title="プライバシー・アクセス解析" description="AI Security PlaybookのGoogle Analytics利用目的、収集される情報、Cookieと解析を停止する方法について。">
+  <div class="wrap hub-page">
+    <header class="hub-header"><p class="eyebrow">PRIVACY &amp; ANALYTICS</p><h1>プライバシー・アクセス解析</h1><p>何を探して訪れ、どの教材を読んだかを、サイト改善のために確認しています。</p></header>
+    <div class="prose privacy-copy">
+      <p>制定：2026年10月26日 · 制作・運営：Tsukineko</p>
+      <h2>アクセス解析の目的</h2>
+      <p>当サイトはGoogle LLCが提供するGoogle Analytics 4を利用します。流入元、閲覧ページ、サイト内の検索語や操作の傾向を分析し、教材の充実と探しやすさの改善に役立てます。</p>
+      <h2>取得・送信される情報</h2>
+      <ul>
+        <li>閲覧ページのURL・タイトル、参照元やキャンペーン情報</li>
+        <li>サイト内の検索語、スクロールや外部リンクのクリック等（ストリーム設定に応じた拡張計測）</li>
+        <li>ブラウザ・端末情報、アクセス時刻、Cookie等の識別子を含むアクセス情報</li>
+      </ul>
+      <p>Googleのタグによって情報がGoogleへ送信・処理されます。検索欄に個人情報や秘密情報を入力しないでください。独自のUser-IDは使用していません。検索ボタンやEnterで確定した語は、検索の改善のために計測します。</p>
+      <p>サイト側のタグではGoogleシグナルと広告パーソナライズ向けのシグナルを無効にしています。サイト内検索の計測は有効にし、広告向けの機能と区別しています。</p>
+      <h2>Cookieと計測の停止</h2>
+      <p>Google AnalyticsはCookie等を利用します。対応ブラウザではGoogleのオプトアウトアドオンを利用できます。ブラウザのCookie・追跡防止設定によって制限する方法もあります。停止しても記事や図解は閲覧できます。</p>
+      <p><a href="https://tools.google.com/dlpage/gaoptout?hl=ja">解析を停止するアドオン ↗</a></p>
+      <h2>Googleの説明とお問い合わせ</h2>
+      <ul>
+        <li><a href="https://policies.google.com/technologies/partner-sites?hl=ja">Googleのサービスを使用するサイトから収集した情報の利用 ↗</a></li>
+        <li><a href="https://policies.google.com/privacy?hl=ja">Googleのプライバシーポリシー ↗</a></li>
+        <li><a href="https://marcrevix.com/contact/">当サイトへのお問い合わせ（MARCREVIX）↗</a></li>
+      </ul>
+    </div>
+    <p class="hub-action"><a href={`${base}/about/`}>このサイトについて →</a></p>
+  </div>
+</Shell>
+<style>
+  .privacy-copy { max-width: var(--reading-width); }
+  .hub-header > p:not(.eyebrow) { max-width: 40em; }
+</style>

@@ -1,0 +1,31 @@
+---
+const enabled = import.meta.env.PROD && import.meta.env.DESIGN_PREVIEW !== "1";
+const measurementId = "G-Q83DQP6PS5";
+const expectedOrigin = Astro.site?.origin;
+const basePath = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
+---
+{enabled && expectedOrigin && (
+  <script is:inline data-ga4 define:vars={{measurementId, expectedOrigin, basePath}}>
+    (() => {
+      if (location.origin !== expectedOrigin || !location.pathname.startsWith(basePath)) return;
+      if (window['ga-disable-' + measurementId]) return;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId, {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+      });
+      document.addEventListener("playbook-search", (event) => {
+        const query = event.detail?.query;
+        if (typeof query !== "string" || !query.trim()) return;
+        window.gtag("event", "search", { search_term: query.trim().slice(0, 200) });
+      });
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+      script.dataset.ga4Loader = '';
+      document.head.appendChild(script);
+    })();
+  </script>
+)}
