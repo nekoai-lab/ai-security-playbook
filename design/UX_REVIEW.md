@@ -290,3 +290,13 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - check/build/test、制作見本build/check成功。今回の最終ビルドで公開FULLは3196 passed/error 0/warning 4、見本FULLは60 passed/error 0/warning 4。既存警告のみで規則変更なし。manual review 400/8件は自動合格扱いしない。
 - 全50ページ×4幅でリンク先と操作領域、全204画面でaxe/横はみ出し/実行エラー0、375pxで文字200%を確認。記事の末尾からEnterでトップへ戻る動作を4幅で確認。スマホのフォーカス枠とロゴ・運営表記の配置を目視。
 - 証拠:footer-public-full、footer-guide-full、footer-browser.json、design/previews/footer/home-mobile.png。山岳背景案の本番実装は含まない。
+
+## 2026-10-25 PCのLP背面に固定山岳パノラマ
+
+- 承認された山岳背景の案を、トップ限定のmountainBackdrop propと専用CSSで実装。1280px以上は最大1200pxの不透明な紙面、背面の連続パノラマは画面固定。documentの通常スクロールを保ち、独立スクロールや追従JSは使わない。
+- 1280px未満はsite-frameをdisplay:contentsに戻して全幅の紙面を維持。picture/sourceのmediaで山岳画像の通信自体を止め、装飾は空alt・aria-hidden。記事/一覧には背景を出さない。
+- 最初のPC実画面で見出しが3行に折れたため、中央幅に合わせPCの見出しを64pxとし、承認案の2行へ修正。ヒーロー画像の拡張幅を紙面内に収めた。スマホのタイトル・本文・カードの幅は維持。
+- 原本PNGと生成指示を保存し、1920/2560 WebPは約320/423KB。台帳にSHA・寸法・派生の由来を記録。背景案そのもののユーザー承認と、背景単体の派生生成を区別する。既存カード・本文の絵・OGP・ロゴは変更しない。
+- check/build/test、制作見本build/check成功。今回の最終ビルドで公開FULLは3196 passed/error 0/warning 4、見本FULLは60 passed/error 0/warning 4。既存警告のみでしきい値や対象除外は変更なし。manual review 400/8件を自動合格と表現しない。
+- 全204画面でaxe/実行エラー/横はみ出し0、全50ページの375px文字200%を確認。8幅でPC中央1200px・左右中央配置・スクロール後の背景座標固定・スマホ画像リクエスト0・一覧に背景なしを実測。ホームは7幅の文字200%とスキップリンク操作も確認。PC上部/スクロール後とスマホを目視し、本文背後に山が透けず、左右が同一の風景として残ることを確認。
+- 証拠:mountain-public-full、mountain-guide-full、mountain-layout.json、mountain-browser.json、design/previews/mountain-backdrop。
