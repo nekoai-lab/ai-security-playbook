@@ -8,26 +8,31 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run ogp:generate && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node scripts/check-site.mjs && node --test scripts/design-context.test.mjs scripts/design-runner.test.mjs && node --test scripts/catalog.test.mjs && node scripts/check-content.mjs && node --test scripts/content.test.mjs && node --test scripts/api-key-example.test.mjs scripts/log-release-example.test.mjs scripts/foundation.test.mjs scripts/service-failure-example.test.mjs scripts/dependency-update-example.test.mjs scripts/github-guard-example.test.mjs scripts/secret-rotation-example.test.mjs scripts/developer-privacy-example.test.mjs scripts/approved-ai-data-example.test.mjs scripts/cloud-account-example.test.mjs scripts/ai-review-example.test.mjs && node --test scripts/reader-navigation.test.mjs",
+    "test": "node scripts/check-site.mjs && node --test scripts/design-context.test.mjs scripts/design-runner.test.mjs && node --test scripts/catalog.test.mjs && node scripts/check-content.mjs && node --test scripts/content.test.mjs && node --test scripts/api-key-example.test.mjs scripts/log-release-example.test.mjs scripts/foundation.test.mjs scripts/service-failure-example.test.mjs scripts/dependency-update-example.test.mjs scripts/github-guard-example.test.mjs scripts/secret-rotation-example.test.mjs scripts/developer-privacy-example.test.mjs scripts/approved-ai-data-example.test.mjs scripts/cloud-account-example.test.mjs scripts/ai-review-example.test.mjs && node --test scripts/reader-navigation.test.mjs && node --test scripts/ogp.test.mjs",
     "design:audit": "node scripts/design-audit.mjs",
     "design:context": "node scripts/design-context.mjs",
     "design:audit:quick": "node scripts/design-audit.mjs --quick",
     "test:design-context": "node --test scripts/design-context.test.mjs scripts/design-runner.test.mjs",
     "dev:design": "DESIGN_PREVIEW=1 astro dev --port 4392",
-    "build:design": "DESIGN_PREVIEW=1 astro build --outDir .design-preview",
+    "build:design": "npm run ogp:generate && DESIGN_PREVIEW=1 astro build --outDir .design-preview",
     "preview:design": "astro preview --outDir .design-preview --host 127.0.0.1 --port 4392",
     "check:design-preview": "node scripts/check-design-preview.mjs",
-    "design:audit:guide": "node scripts/design-audit.mjs --guide"
+    "design:audit:guide": "node scripts/design-audit.mjs --guide",
+    "ogp:generate": "tsx scripts/generate-ogp.mjs"
   },
   "dependencies": {
-    "astro": "7.4.2",
-    "@astrojs/mdx": "8.1.1"
+    "@astrojs/mdx": "8.1.1",
+    "astro": "7.4.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "typescript": "^5.9.3"
+    "fontkit": "2.0.4",
+    "sharp": "0.35.5",
+    "tsx": "4.23.15",
+    "typescript": "^5.9.3",
+    "yaml": "2.9.1"
   }
 }

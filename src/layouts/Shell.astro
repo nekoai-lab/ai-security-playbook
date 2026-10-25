@@ -3,15 +3,29 @@ import "../styles/global.css";
 import "../styles/library.css";
 import "../styles/article-illustrations.css";
 import BrandMark from "../components/BrandMark.astro";
+import { lessonVisuals } from "../data/lesson-visuals";
 interface Props {
   title: string;
   description?: string;
+  articleId?: string;
 }
 const {
   title,
+  articleId,
   description = "AIを使う人と作る人のための、日本語セキュリティ実践ガイド。",
 } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+if (!Astro.site) throw new Error("OGP requires astro.config site");
+const pageTitle = `${title} | AI Security Playbook`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const socialTitle = articleId ? title : pageTitle;
+const socialImage = new URL(
+  `${base}/ogp/${articleId && Object.hasOwn(lessonVisuals, articleId) ? articleId : "default"}.png`,
+  Astro.site,
+).href;
+const socialAlt = articleId
+  ? `${title} — AI Security Playbookの教材カード`
+  : "AIの安全を、解き明かそう。羅針盤と猫のロゴ：AI Security Playbook";
 ---
 
 <!doctype html>
@@ -19,9 +33,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{title} | AI Security Playbook</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="AI Security Playbook" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content={articleId ? "article" : "website"} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={socialAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link
       rel="icon"
       type="image/png"
