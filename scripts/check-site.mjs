@@ -14,7 +14,24 @@ async function walk(dir) {
   ).flat();
 }
 await access(join(root,"design-system/index.html")).then(()=>assert.fail("Authoring guide must not be built into dist"),()=>{});
-const pages = (await walk(root)).filter((f) => f.endsWith(".html"));
+// Google ownership proof is a fixed protocol response, not a reader-facing HTML page.
+// Validate this exact file before separating it from the page/metadata review.
+const verificationName = "googlee620038b07449b77.html";
+const verificationFile = join(root, verificationName);
+const verification = await readFile(verificationFile);
+assert.equal(
+  verification.toString("utf8"),
+  `google-site-verification: ${verificationName}`,
+  "Search Console ownership proof must preserve Google's exact response",
+);
+assert.deepEqual(
+  verification,
+  await readFile(join("public", verificationName)),
+  "Build must copy the supplied ownership proof without alteration",
+);
+const pages = (await walk(root)).filter(
+  (f) => f.endsWith(".html") && f !== verificationFile,
+);
 assert(pages.length >= 7, "Expected public learning pages");
 for (const file of pages) {
   const html = await readFile(file, "utf8");
