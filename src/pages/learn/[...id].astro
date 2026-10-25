@@ -5,6 +5,7 @@ import ExplorerNote from "../../components/ExplorerNote.astro";
 import DataTable from "../../components/DataTable.astro";
 import LearningContext from "../../components/LearningContext.astro";
 import CardArt from "../../components/CardArt.astro";
+import ArticleLabel from "../../components/ArticleLabel.astro";
 import { lessonCardArt } from "../../data/card-art";
 import type { LessonVisualId } from "../../data/lesson-visuals";
 import { topicTitle, seriesFor } from "../../data/catalog";
@@ -160,7 +161,9 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
                     sizes="(max-width:760px) calc(100vw - 32px),320px"
                   />
                   <div class="card-copy">
-                    <strong>{l.data.title} →</strong>
+                    <strong>
+                      <ArticleLabel>{l.data.title} →</ArticleLabel>
+                    </strong>
                     <span>
                       約{l.data.minutes}分 · {l.data.format}
                     </span>

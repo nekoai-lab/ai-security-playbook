@@ -159,7 +159,7 @@ test("theme cards show eight complete approved worlds without pose-only placehol
   for (const card of cards) {
     assert(!card.includes("data-topic-action"));
     assert.equal((card.match(/data-topic-destination/g) || []).length, 1);
-    assert.equal((card.match(/<img /g) || []).length, 1);
+    assert.equal((card.match(/data-card-media/g) || []).length, 1);
   }
 });
 
@@ -187,14 +187,24 @@ test("all library illustrations come from approved deliveries, with full scenes 
     assert(approved.has(file), file);
     assert(readFileSync(file).length > 0);
     imageFiles.add(file);
-    imageHashes.add(createHash("sha256").update(readFileSync(file)).digest("hex"));
+    imageHashes.add(
+      createHash("sha256").update(readFileSync(file)).digest("hex"),
+    );
     assert(!card.includes("data-cat-pose="));
     scenes.add(/data-card-art="([^"]+)"/.exec(card)?.[1]);
     assert(/href="\/ai-security-playbook\/learn\/[^"#]+\//.test(card));
   }
   assert.equal(scenes.size, records.size);
-  assert.equal(imageFiles.size, records.size, "each lesson needs its own illustration");
-  assert.equal(imageHashes.size, records.size, "renaming a duplicate image does not make a unique lesson illustration");
+  assert.equal(
+    imageFiles.size,
+    records.size,
+    "each lesson needs its own illustration",
+  );
+  assert.equal(
+    imageHashes.size,
+    records.size,
+    "renaming a duplicate image does not make a unique lesson illustration",
+  );
 });
 
 test("scene entry cards have one meaningful destination and stages remain on destination hubs", () => {
@@ -321,4 +331,32 @@ test("card illustration attributes match the registered delivery dimensions", as
       target,
     );
   }
+});
+
+test("individual article links carry a decorative paw without marking theme navigation", () => {
+  const html = readFileSync("dist/index.html", "utf8");
+  for (const card of html.matchAll(
+    /<article[^>]*data-discovery-topic[\s\S]*?<\/article>/g,
+  )) {
+    const destination = /<a[^>]*data-topic-destination[\s\S]*?<\/a>/.exec(
+      card[0],
+    )[0];
+    assert(!destination.includes("data-article-label"));
+    for (const example of card[0].matchAll(
+      /<li[^>]*data-topic-example[\s\S]*?<\/li>/g,
+    )) {
+      assert(example[0].includes("data-article-label"));
+      assert(example[0].includes("/brand/paw-orange-64.webp"));
+    }
+  }
+  const label = readFileSync("src/components/ArticleLabel.astro", "utf8");
+  assert(label.includes('alt=""'));
+  assert(label.includes('aria-hidden="true"'));
+  for (const route of ["library/", "topics/development/", "learn/api-keys/"])
+    assert(
+      readFileSync(`dist/${route}index.html`, "utf8").includes(
+        "data-article-label",
+      ),
+      route,
+    );
 });

@@ -428,15 +428,6 @@ select:focus-visible {
 .learning-context .catalog-meta {
   margin: 8px 0 16px;
 }
-.learning-context .reading-next {
-  display: grid;
-  gap: 8px;
-  padding: 16px;
-  border-left: 3px solid var(--color-orange-ink);
-  background: var(--color-paper-light);
-  text-decoration: none;
-  min-height: 44px;
-}
 .reading-next > span:first-child {
   font-size: 12px;
 }

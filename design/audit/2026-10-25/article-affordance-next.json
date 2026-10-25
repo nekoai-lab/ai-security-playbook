@@ -1,0 +1,546 @@
+[
+  {
+    "width": 320,
+    "route": "solo-development",
+    "id": "ai-data-boundaries",
+    "target": "app-architecture",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "solo-development",
+    "id": "app-architecture",
+    "target": "api-keys",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "solo-development",
+    "id": "api-keys",
+    "target": "secret-rotation",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "before-launch",
+    "id": "access-control",
+    "target": "release-artifacts",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "before-launch",
+    "id": "release-artifacts",
+    "target": "launch-checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "before-launch",
+    "id": "launch-checklist",
+    "target": "github-guards",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "ai-connections",
+    "id": "ai-work-logs",
+    "target": "mcp-permissions",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "ai-connections",
+    "id": "mcp-permissions",
+    "target": "agent-permissions",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "ai-connections",
+    "id": "agent-permissions",
+    "target": "cloud-account-safety",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "environment",
+    "id": "basics",
+    "target": "commands",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "environment",
+    "id": "commands",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "node-update",
+    "id": "node-october-2026",
+    "target": "commands",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "node-update",
+    "id": "commands",
+    "target": "checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "node-update",
+    "id": "checklist",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "update-operations",
+    "id": "dependency-updates",
+    "target": "operations",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "update-operations",
+    "id": "operations",
+    "target": "checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 320,
+    "route": "update-operations",
+    "id": "checklist",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "solo-development",
+    "id": "ai-data-boundaries",
+    "target": "app-architecture",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "solo-development",
+    "id": "app-architecture",
+    "target": "api-keys",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "solo-development",
+    "id": "api-keys",
+    "target": "secret-rotation",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "before-launch",
+    "id": "access-control",
+    "target": "release-artifacts",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "before-launch",
+    "id": "release-artifacts",
+    "target": "launch-checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "before-launch",
+    "id": "launch-checklist",
+    "target": "github-guards",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "ai-connections",
+    "id": "ai-work-logs",
+    "target": "mcp-permissions",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "ai-connections",
+    "id": "mcp-permissions",
+    "target": "agent-permissions",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "ai-connections",
+    "id": "agent-permissions",
+    "target": "cloud-account-safety",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "environment",
+    "id": "basics",
+    "target": "commands",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "environment",
+    "id": "commands",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "node-update",
+    "id": "node-october-2026",
+    "target": "commands",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "node-update",
+    "id": "commands",
+    "target": "checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "node-update",
+    "id": "checklist",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "update-operations",
+    "id": "dependency-updates",
+    "target": "operations",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "update-operations",
+    "id": "operations",
+    "target": "checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 375,
+    "route": "update-operations",
+    "id": "checklist",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "solo-development",
+    "id": "ai-data-boundaries",
+    "target": "app-architecture",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "solo-development",
+    "id": "app-architecture",
+    "target": "api-keys",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "solo-development",
+    "id": "api-keys",
+    "target": "secret-rotation",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "before-launch",
+    "id": "access-control",
+    "target": "release-artifacts",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "before-launch",
+    "id": "release-artifacts",
+    "target": "launch-checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "before-launch",
+    "id": "launch-checklist",
+    "target": "github-guards",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "ai-connections",
+    "id": "ai-work-logs",
+    "target": "mcp-permissions",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "ai-connections",
+    "id": "mcp-permissions",
+    "target": "agent-permissions",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "ai-connections",
+    "id": "agent-permissions",
+    "target": "cloud-account-safety",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "environment",
+    "id": "basics",
+    "target": "commands",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "environment",
+    "id": "commands",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "node-update",
+    "id": "node-october-2026",
+    "target": "commands",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "node-update",
+    "id": "commands",
+    "target": "checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "node-update",
+    "id": "checklist",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "update-operations",
+    "id": "dependency-updates",
+    "target": "operations",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "update-operations",
+    "id": "operations",
+    "target": "checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 768,
+    "route": "update-operations",
+    "id": "checklist",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "solo-development",
+    "id": "ai-data-boundaries",
+    "target": "app-architecture",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "solo-development",
+    "id": "app-architecture",
+    "target": "api-keys",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "solo-development",
+    "id": "api-keys",
+    "target": "secret-rotation",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "before-launch",
+    "id": "access-control",
+    "target": "release-artifacts",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "before-launch",
+    "id": "release-artifacts",
+    "target": "launch-checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "before-launch",
+    "id": "launch-checklist",
+    "target": "github-guards",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "ai-connections",
+    "id": "ai-work-logs",
+    "target": "mcp-permissions",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "ai-connections",
+    "id": "mcp-permissions",
+    "target": "agent-permissions",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "ai-connections",
+    "id": "agent-permissions",
+    "target": "cloud-account-safety",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "environment",
+    "id": "basics",
+    "target": "commands",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "environment",
+    "id": "commands",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "node-update",
+    "id": "node-october-2026",
+    "target": "commands",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "node-update",
+    "id": "commands",
+    "target": "checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "node-update",
+    "id": "checklist",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "update-operations",
+    "id": "dependency-updates",
+    "target": "operations",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "update-operations",
+    "id": "operations",
+    "target": "checklist",
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  },
+  {
+    "width": 1280,
+    "route": "update-operations",
+    "id": "checklist",
+    "target": null,
+    "markerPreserved": true,
+    "sharedImageFrame": true
+  }
+]

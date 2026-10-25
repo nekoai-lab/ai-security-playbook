@@ -275,3 +275,11 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - 最終版の公開FULLは3196 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存のcommands/制作見本の色数警告のみ。規則・しきい値・検査対象の除外なし。
 - 全204画面でaxe/実行エラー/横はみ出し0、375pxで全ページの文字200%を確認。全カード種別を7代表ページ×4幅で実測し、画像幅=カード幅、上端/左右の内側余白0、1280:670比率を確認。検索表記揺れ・段階別遷移・キーボード・ページ送り・履歴・JSなしも4幅で確認。
 - PCの24教材（12件×2ページ）、8テーマ、おすすめ3件、スマホの関連記事、全OGPを比較して目視。公開400/見本8のmanual reviewを自動合格と表現しない。証拠:card-release-*、design/previews/card-standard。本文の事実・README/LICENSE・デザインガイド非公開は維持。
+
+## 2026-10-25 個別記事リンクを肉球で明示
+
+- 個別記事の見出しに承認済み肉球を添えるArticleLabelを共通化。テーマカードの記事リンクは16pxと下線を併用する。テーマ・一覧へのリンクには付けず、肉球を安全判定や完了表示に使わない。装飾画像は空altとaria-hiddenで読み上げの重複を防ぐ。
+- 教材一覧・おすすめ・関連記事も共通マークを使用。読了後の「次に読む」に旧画像枠が残っていたためCardArtへ統一し、ルート変更時も記事名・画像・肉球の表示が保持されるよう更新した。
+- checkは110ファイルでerror/warning/hint 0、50ページbuild、npm test、制作見本build/check成功。最終公開FULLは3196 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存警告のみで規則・しきい値・除外は変更なし。manual review 400/8件は自動合格と表現しない。
+- 全204画面でaxe・実行エラー・横はみ出し0、全50ページの375px文字200%を確認。4幅で記事リンクの16px・下線・44px操作領域とキーボード遷移を確認。「次に読む」は4幅×17組、計68組でリンク先・肉球・原画像・寸法・共通比率を検査した。
+- 証拠:article-affordance-public-full、article-affordance-guide-full、article-affordance-browser.json、article-affordance-links.json、article-affordance-next.json、design/previews/article-links。画像原本や教材の事実、OGPの内容は変更なし。
