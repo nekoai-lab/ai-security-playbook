@@ -125,10 +125,40 @@ async function duotone(image, tokens) {
     .png()
     .toBuffer();
 }
-async function monochrome(bytes, width, height, position = "centre", tokens) {
-  // Mechanical delivery derivative only: preserve approved line art; no new orange accents.
+async function monochrome(
+  bytes,
+  width,
+  height,
+  position = "centre",
+  tokens,
+  focalX,
+) {
+  // Deterministic delivery crop: preserve the chosen subject within the portrait art slot.
+  let image = sharp(bytes);
+  if (focalX !== undefined) {
+    if (!Number.isFinite(focalX) || focalX < 0 || focalX > 1)
+      throw Error("Invalid OGP focal point");
+    const meta = await image.metadata();
+    const cropWidth = Math.min(
+      meta.width,
+      Math.floor((meta.height * width) / height),
+    );
+    const left = Math.max(
+      0,
+      Math.min(
+        meta.width - cropWidth,
+        Math.round(meta.width * focalX - cropWidth / 2),
+      ),
+    );
+    image = image.extract({
+      left,
+      top: 0,
+      width: cropWidth,
+      height: meta.height,
+    });
+  }
   return duotone(
-    sharp(bytes).resize(width, height, { fit: "cover", position }),
+    image.resize(width, height, { fit: "cover", position }),
     tokens,
   );
 }
@@ -140,6 +170,7 @@ export async function renderCard({
   title,
   theme,
   position = "centre",
+  focalX,
 }) {
   const selected = chooseTitle(title.text, title.shortTitle, fonts.bold);
   const brand = textPaths(
@@ -169,7 +200,7 @@ export async function renderCard({
   );
   const smallLogo = await duotone(sharp(logo).resize(64, 64), tokens);
   const art = scene
-    ? await monochrome(scene, 480, 630, position, tokens)
+    ? await monochrome(scene, 480, 630, position, tokens, focalX)
     : await duotone(sharp(logo).resize(360, 360), tokens);
   const output = await sharp(background)
     .composite([

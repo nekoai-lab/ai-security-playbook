@@ -1,8 +1,7 @@
 ---
 import { getEntry } from "astro:content";
-import LessonArt from "./LessonArt.astro";
 import CardArt from "./CardArt.astro";
-import { lessonCardArt, type CardArt as CardArtData } from "../data/card-art";
+import { lessonCardArt } from "../data/card-art";
 import type { FeaturedLesson } from "../data/featured-lessons";
 interface Props {
   lesson: FeaturedLesson;
@@ -13,35 +12,22 @@ const { lesson, compact = false, stack = false } = Astro.props;
 const entry = await getEntry("lessons", lesson.id);
 if (!entry) throw new Error(`Missing featured lesson: ${lesson.id}`);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-const art: CardArtData =
-  lesson.id === "approved-ai-data"
-    ? { kind: "pose", pose: "point" }
-    : lesson.id === "node-october-2026"
-      ? { kind: "pose", pose: "walk-right" }
-      : lessonCardArt(lesson.id);
+const art = lessonCardArt(lesson.id);
 ---
 
 <a
   class:list={[
-    "featured-lesson",
+    "featured-lesson image-card",
     { "featured-lesson--compact": compact, "featured-lesson--stack": stack },
   ]}
   data-featured-lesson={lesson.id}
   href={`${base}/learn/${lesson.id}/`}
 >
-  {lesson.id !== "api-keys" ? (
-    <CardArt art={art} />
-  ) : (
-    <LessonArt
-      id={lesson.id}
-      sizes={
-        compact
-          ? "80px"
-          : "(max-width:760px) calc(100vw - 64px), (max-width:1100px) 42vw,240px"
-      }
-    />
-  )}
-  <div class="featured-lesson-copy">
+  <CardArt
+    art={art}
+    sizes="(max-width:760px) calc(100vw - 32px), (max-width:1100px) 50vw,33vw"
+  />
+  <div class="featured-lesson-copy card-copy">
     <p class="situation">{lesson.situation}</p>
     <h3>{lesson.question}</h3>
     <p class="takeaway">{lesson.takeaway}</p>
@@ -61,15 +47,9 @@ const art: CardArtData =
 </a>
 <style>
   .featured-lesson {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
-    gap: 24px;
-    align-items: start;
-    padding: 24px;
-    min-width: 0;
-    background: var(--color-paper-light);
     color: var(--color-ink);
     text-decoration: none;
+    height: 100%;
   }
   .featured-lesson:hover {
     background: var(--color-orange-soft);
@@ -107,6 +87,10 @@ const art: CardArtData =
     color: var(--color-muted);
     text-wrap: balance;
   }
+  .readiness {
+    font-size: 16px;
+    line-height: 1.9;
+  }
   .readiness strong {
     color: var(--color-ink);
   }
@@ -115,79 +99,5 @@ const art: CardArtData =
     font-size: 16px;
     line-height: 1.6;
     color: var(--color-orange-ink);
-  }
-  .featured-lesson--compact {
-    grid-template-columns: 80px minmax(0, 1fr);
-    gap: 16px;
-    padding: 16px;
-  }
-  .featured-lesson--compact h3 {
-    font-size: 16px;
-  }
-  .featured-lesson--compact .situation,
-  .featured-lesson--compact .action {
-    display: none;
-  }
-  @media (max-width: 1100px) {
-    .featured-lesson:not(.featured-lesson--compact) {
-      grid-template-columns: 1fr;
-    }
-  }
-  @media (max-width: 760px) {
-    .featured-lesson:not(.featured-lesson--compact) {
-      padding: 16px;
-      gap: 16px;
-    }
-  }
-</style>
-
-<style>
-  .readiness {
-    font-size: 16px;
-    line-height: 1.9;
-  }
-  .featured-lesson--compact {
-    gap: 8px 16px;
-  }
-  .featured-lesson--compact .featured-lesson-copy {
-    display: contents;
-  }
-  .featured-lesson > :global(.card-art) {
-    height: 144px;
-  }
-  .featured-lesson--compact > :global(.card-art) {
-    height: 80px;
-  }
-  .featured-lesson--compact :global(.card-art),
-  .featured-lesson--compact :global(.lesson-art) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .featured-lesson--compact h3 {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-    align-self: center;
-  }
-  .featured-lesson--compact .takeaway,
-  .featured-lesson--compact .readiness,
-  .featured-lesson--compact .metadata {
-    grid-column: 1 / -1;
-    margin: 0;
-  }
-</style>
-
-<style>
-  .featured-lesson--stack {
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr;
-    height: 100%;
-  }
-</style>
-
-<style>
-  .featured-lesson--stack > :global(.card-art--pose) {
-    width: 160px;
-    justify-self: end;
   }
 </style>

@@ -163,3 +163,25 @@ test("logo transparency and the single orange band survive PNG composition", asy
       }
   }
 });
+
+test("every lesson OGP uses its own exact list-card scene and an explicit valid focal point", async () => {
+  const library = await readFile("dist/library/index.html", "utf8");
+  const sources = new Set();
+  for (const card of manifest.cards.filter((c) => c.id !== "default")) {
+    const block = [
+      ...library.matchAll(/<article[^>]*data-catalog-item[\s\S]*?<\/article>/g),
+    ].find((m) => m[0].includes(`/learn/${card.id}/`))?.[0];
+    assert(block, card.id);
+    const src = /<img[^>]*src="([^"]+)"/.exec(block)?.[1];
+    assert.equal(
+      "public/" +
+        src
+          .replace("/ai-security-playbook/", "")
+          .replace("-480.webp", "-960.webp"),
+      card.source,
+    );
+    assert(card.focalX >= 0 && card.focalX <= 1, card.id);
+    sources.add(card.source);
+  }
+  assert.equal(sources.size, manifest.cards.length - 1);
+});

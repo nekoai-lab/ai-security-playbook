@@ -1,5 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 import { readerJourneys } from "../src/data/reader-journeys.ts";
 import { levels, normalizeLevel } from "../src/data/catalog.ts";
@@ -152,8 +153,8 @@ test("theme cards show eight complete approved worlds without pose-only placehol
     assert(arts.includes(id), id);
   const source = readFileSync("src/components/TopicCards.astro", "utf8");
   assert(source.includes("repeat(3, minmax(0, 1fr))"));
-  assert(source.includes("object-fit: contain"));
-  assert(!source.includes("object-fit: cover"));
+  assert(!source.includes("object-fit:"));
+  assert(source.includes("image-card"));
   assert(!source.includes("position: absolute"));
   for (const card of cards) {
     assert(!card.includes("data-topic-action"));
@@ -162,7 +163,7 @@ test("theme cards show eight complete approved worlds without pose-only placehol
   }
 });
 
-test("all library illustrations come from approved deliveries, with varied poses and real links", () => {
+test("all library illustrations come from approved deliveries, with full scenes and real links", () => {
   const catalog = JSON.parse(
     readFileSync("design/assets/illustration-library/catalog.json", "utf8"),
   );
@@ -175,7 +176,9 @@ test("all library illustrations come from approved deliveries, with varied poses
   const cards = [
     ...html.matchAll(/<article[^>]*data-catalog-item[\s\S]*?<\/article>/g),
   ].map((m) => m[0]);
-  const poses = new Set();
+  const scenes = new Set();
+  const imageFiles = new Set();
+  const imageHashes = new Set();
   for (const card of cards) {
     assert.equal((card.match(/data-card-art=/g) || []).length, 1);
     const src = /<img[^>]*src="([^"]+)"/.exec(card)?.[1];
@@ -183,11 +186,15 @@ test("all library illustrations come from approved deliveries, with varied poses
     const file = "public/" + src.replace("/ai-security-playbook/", "");
     assert(approved.has(file), file);
     assert(readFileSync(file).length > 0);
-    const pose = /data-cat-pose="([^"]+)"/.exec(card)?.[1];
-    if (pose) poses.add(pose);
+    imageFiles.add(file);
+    imageHashes.add(createHash("sha256").update(readFileSync(file)).digest("hex"));
+    assert(!card.includes("data-cat-pose="));
+    scenes.add(/data-card-art="([^"]+)"/.exec(card)?.[1]);
     assert(/href="\/ai-security-playbook\/learn\/[^"#]+\//.test(card));
   }
-  assert(poses.size >= 8);
+  assert.equal(scenes.size, records.size);
+  assert.equal(imageFiles.size, records.size, "each lesson needs its own illustration");
+  assert.equal(imageHashes.size, records.size, "renaming a duplicate image does not make a unique lesson illustration");
 });
 
 test("scene entry cards have one meaningful destination and stages remain on destination hubs", () => {
@@ -197,7 +204,7 @@ test("scene entry cards have one meaningful destination and stages remain on des
   ].map((m) => m[0]);
   assert.equal(cards.length, 3);
   assert.equal(
-    new Set(cards.map((c) => /data-cat-pose="([^"]+)"/.exec(c)?.[1])).size,
+    new Set(cards.map((c) => /data-card-art="([^"]+)"/.exec(c)?.[1])).size,
     3,
   );
   cards.forEach((c) => assert.equal((c.match(/<a /g) || []).length, 1));
@@ -262,5 +269,56 @@ test("new world illustrations retain approved originals and responsive deliverie
       assert.equal(meta.height, (width * 2) / 3);
       assert.equal(meta.format, "webp");
     }
+  }
+});
+
+test("every image-bearing card uses the shared edge-to-edge media frame", async () => {
+  const { default: sharp } = await import("sharp");
+  const map = JSON.parse(readFileSync("design/review-map.json", "utf8"));
+  const files = new Set();
+  for (const route of map.pages) {
+    const html = readFileSync(`dist/${route}index.html`, "utf8");
+    for (const card of html.matchAll(
+      /<(?:article|a)[^>]*class="[^"]*image-card[^"]*"[\s\S]*?<\/(?:article|a)>/g,
+    )) {
+      assert.equal((card[0].match(/data-card-media/g) || []).length, 1, route);
+      assert(!card[0].includes("data-cat-pose="), route);
+      const src = /<img[^>]*src="([^"]+)"/.exec(card[0])?.[1];
+      assert(src, route);
+      files.add("public/" + src.replace("/ai-security-playbook/", ""));
+    }
+  }
+  assert(files.size >= 12);
+  for (const file of files) {
+    const meta = await sharp(file).metadata();
+    assert(meta.width >= 480 && meta.height > 0, file);
+  }
+  const media = readFileSync("src/components/CardArt.astro", "utf8");
+  assert(media.includes("aspect-ratio: 1280 / 670"));
+  assert(media.includes("object-fit: cover"));
+});
+
+test("card illustration attributes match the registered delivery dimensions", async () => {
+  const { default: sharp } = await import("sharp");
+  const html = readFileSync("dist/library/index.html", "utf8");
+  for (const match of html.matchAll(/<img[^>]*src="([^"]+)"[^>]*>/g)) {
+    const src = match[1];
+    if (!src.includes("/images/")) continue;
+    const target =
+      "public/" +
+      src
+        .replace("/ai-security-playbook/", "")
+        .replace("-480.webp", "-960.webp");
+    const meta = await sharp(target).metadata();
+    assert.equal(
+      Number(/width="(\d+)"/.exec(match[0])?.[1]),
+      meta.width,
+      target,
+    );
+    assert.equal(
+      Number(/height="(\d+)"/.exec(match[0])?.[1]),
+      meta.height,
+      target,
+    );
   }
 });

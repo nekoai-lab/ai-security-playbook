@@ -1,7 +1,12 @@
 ---
 import { readerJourneys } from "../data/reader-journeys";
-import CatPose from "./CatPose.astro";
-const poses = ["peek-side", "walk-right", "investigate"] as const;
+import CardArt from "./CardArt.astro";
+import { topicCompositions } from "../data/card-art";
+const arts = [
+  topicCompositions["ai-tools"].art,
+  topicCompositions.development.art,
+  topicCompositions.operations.art,
+];
 const actions = [
   "入力する情報と、任せる操作を確かめる",
   "作り始めから公開までの教材を見る",
@@ -12,15 +17,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 <div class="reader-entries">
   {readerJourneys.map((journey, i) => (
-    <article class="reader-entry" data-reader-entry={journey.id}>
-      <div class="entry-title">
-        <CatPose pose={poses[i]} />
-        <h3>{journey.label}</h3>
+    <article class="reader-entry image-card" data-reader-entry={journey.id}>
+      <CardArt art={arts[i]} sizes="(max-width:760px) 100vw,33vw" />
+      <div class="card-copy">
+        <div class="entry-title">
+          <h3>{journey.label}</h3>
+        </div>
+        <p>{journey.summary}</p>
+        <a class="entry-action" href={`${base}/start/${journey.id}/`}>
+          {actions[i]} →
+        </a>
       </div>
-      <p>{journey.summary}</p>
-      <a class="entry-action" href={`${base}/start/${journey.id}/`}>
-        {actions[i]} →
-      </a>
     </article>
   ))}
 </div>
@@ -29,22 +36,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
-  }
-  .reader-entry {
-    min-width: 0;
-    padding: 24px;
-    background: var(--color-paper-light);
-  }
-  .entry-title :global(.cat-pose) {
-    width: 96px;
-    height: 96px;
-    object-fit: contain;
-  }
-  .entry-title {
-    display: grid;
-    grid-template-columns: 96px minmax(0, 1fr);
-    gap: 16px;
-    align-items: center;
   }
   h3 {
     margin: 0;
@@ -71,24 +62,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     color: var(--color-orange-ink);
     font-weight: 700;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     .reader-entries {
-      grid-template-columns: 1fr;
-    }
-    .reader-entry {
-      padding: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-</style>
-
-<style>
-  @media (max-width: 360px) {
-    .entry-title {
+  @media (max-width: 760px) {
+    .reader-entries {
       grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    .entry-title :global(img) {
-      width: 80px;
     }
   }
 </style>

@@ -23,7 +23,6 @@
       "fontSize": 64,
       "theme": "FIELD NOTES",
       "source": "design/assets/cat-compass-logo-source.png",
-      "position": "centre",
       "sourceHash": "5e12aa288aabcc0316df977fd912aa9ac7908faaba879bb30fd28547c76060b6",
       "pngHash": "9c0c16d8616b3063b9a3217ccf44df275c82497e691601aad06b422bf69728b9"
     },
@@ -38,9 +37,9 @@
       "fontSize": 64,
       "theme": "ログインと権限",
       "source": "public/images/access-gate-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "c56c5a62b7c8efc128eb0e24049686b93e0d91daea463c94d457c310ff6a1edc",
-      "pngHash": "67679d2c2d9de0ab2839b6ead0c6b6339d57a57bd737a38c38484ea6d58ee42e"
+      "pngHash": "58c91e27d608bc132cf1a93a664ae408e684a9b1694e6237d9da4d504099547f"
     },
     {
       "id": "agent-permissions",
@@ -53,10 +52,10 @@
       ],
       "fontSize": 64,
       "theme": "AIに任せる操作",
-      "source": "public/images/review-workbench-scene-960.webp",
-      "position": "centre",
-      "sourceHash": "12b4686dc0c320fd5326ef88166a4898fedc742eb4fe2fc4616a0ae62ddc9da2",
-      "pngHash": "8be15fc43a64ef0307b6b230e411f79c1d0f2ff62c6b4d0d5d42e473a1870924"
+      "source": "public/images/agent-permission-station-960.webp",
+      "focalX": 0.61,
+      "sourceHash": "f48f56d9ab7db999c871f0cb7c948c6ed8ffcee0e1a341a8fb2e86850ab7af5a",
+      "pngHash": "2e3e451c1d0357e8185d4457adc3e6877a3106dcf44d396a03a9a61a8b1896ac"
     },
     {
       "id": "ai-data-boundaries",
@@ -69,9 +68,9 @@
       "fontSize": 64,
       "theme": "AIに渡す情報",
       "source": "public/images/data-sorting-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "dd03c6d01921bd02c4596f15066f2cdc4791b6c7b1d516f4332112bea557c6bb",
-      "pngHash": "4445dfee06823c2f9fb8d5450d28bc2bc8c3a3c357ffb873824563c5b7c6905f"
+      "pngHash": "bd743c04f03c4aad259f46f291ac8cfc958437a483c243e4619d13727fcdb0b7"
     },
     {
       "id": "ai-review-trust",
@@ -84,9 +83,9 @@
       "fontSize": 64,
       "theme": "公開前の確認",
       "source": "public/images/review-workbench-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "12b4686dc0c320fd5326ef88166a4898fedc742eb4fe2fc4616a0ae62ddc9da2",
-      "pngHash": "0fdbf1dc037ba9264253560cea3434491849efb8a914e82e1e29f7417367c198"
+      "pngHash": "6bba42962b5dc553be5fedc40dff29bc56259275aa4233b51dea36b83620f570"
     },
     {
       "id": "ai-work-logs",
@@ -98,9 +97,9 @@
       "fontSize": 64,
       "theme": "APIキー・会話・データ",
       "source": "public/images/ai-log-copies-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "e22e7da6cf435addbd55182954ed553bc2eb656cc2fb14193a39ccdf3b86bd25",
-      "pngHash": "b1e1ac4e7ee5bc4508f492777cb9e8c8428453dcd8006b24d20a28fec618a414"
+      "pngHash": "33cc2e9c93e263192db2fcd0485fbb98237a69af9915d2117ab75f78e5d9b5f6"
     },
     {
       "id": "api-keys",
@@ -112,9 +111,9 @@
       "fontSize": 64,
       "theme": "APIキー・会話・データ",
       "source": "public/images/api-key-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "5f72436b17895da29e54f8598b097315c22dc6a46ad89f7da50a95e947481a7f",
-      "pngHash": "3568d740a90c9192aeb44f7109bf711a6f319b6730031b858baa2da6bc828b53"
+      "pngHash": "2ff0a8138f902b99dec0d88be981810b0e556df1ffd821f087499a112ae6252d"
     },
     {
       "id": "app-architecture",
@@ -127,9 +126,9 @@
       "fontSize": 64,
       "theme": "アプリの仕組み",
       "source": "public/images/connection-map-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "6849580ef6989f6232b4252158e9315d2490b0bb6eef11462f6b00690e50f72a",
-      "pngHash": "6cdd2a7c0cfd658b8cda72dfb03f738994d8c1b35246a991bd5598780c4444eb"
+      "pngHash": "9041fab547f6c5f165c752e7d161481233173735aeebdf29f6a1c81dd4dbba65"
     },
     {
       "id": "approved-ai-data",
@@ -142,9 +141,9 @@
       "fontSize": 64,
       "theme": "AIに渡す情報",
       "source": "public/images/approved-ai-data-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "cad02490f8c0e2876ac7ceb9aab82fdc6c9498dcbde81e9db70ed86d33bb1fe6",
-      "pngHash": "9a0a530bbcafee47f77e276b11e58fae75ba31e8cce8ef70d9c1fab3dba6fb6b"
+      "pngHash": "799f853f282bb3647b6bdcdaec256df196feecd6a8ec2d8860fd5dd11dba4c34"
     },
     {
       "id": "basics",
@@ -156,10 +155,10 @@
       ],
       "fontSize": 64,
       "theme": "アプリの仕組み",
-      "source": "public/images/node-runtime-scene-960.webp",
-      "position": "left",
-      "sourceHash": "6474846d87401ce0a6079ba828b06a4717e9052e3ec7df9a88bf46f7d2b59fb4",
-      "pngHash": "1edbf22a6800b713632ef1b532c8c4fd1f8262c460dde9373aa183c7936ad85d"
+      "source": "public/images/runtime-field-guide-960.webp",
+      "focalX": 0.35,
+      "sourceHash": "ad0d8ca65cd014fbb146c543d13860f11df05a81c4b0c0c7a28850abf1e26fe7",
+      "pngHash": "a0f53e1e34636596ec95eeab978c25ffaed06d8014809121efb275bbdf90c705"
     },
     {
       "id": "checklist",
@@ -172,10 +171,10 @@
       ],
       "fontSize": 64,
       "theme": "更新・公開後の運用",
-      "source": "public/images/release-preparation-scene-960.webp",
-      "position": "centre",
-      "sourceHash": "8db28518087b5fba9f4aab3f1ec5f1812dafe26d845d8779f840d019d1e51560",
-      "pngHash": "dd9eeab33b40fc09322d5e5e494f4edbe1c5d0f8364f494d66f5d6e2d2358479"
+      "source": "public/images/update-checklist-stations-960.webp",
+      "focalX": 0.68,
+      "sourceHash": "3cca7a027c047c82ae8c36ab792e11d9032401428e8a946b2d5d6965cbcb114c",
+      "pngHash": "f81ed23f30d0fe06c6584ff153c0aa0efa2c43c965b1dfaefd7c9ad364ab17d6"
     },
     {
       "id": "cloud-account-safety",
@@ -188,9 +187,9 @@
       "fontSize": 64,
       "theme": "ログインと権限",
       "source": "public/images/cloud-account-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "54bf8419f011f213a8fd8720138aee886a34b289b6de11278882d418d51ece7e",
-      "pngHash": "af6b60a8b752ee90db1f31c679f13f627f7bd1fbfde05e0ec2dd350fb50c0e94"
+      "pngHash": "b34378aa6893fefd0cfd8088e407a747b41a592d53cdbcd77b21f9947abd3994"
     },
     {
       "id": "commands",
@@ -202,10 +201,10 @@
       ],
       "fontSize": 64,
       "theme": "更新・公開後の運用",
-      "source": "public/images/node-runtime-scene-960.webp",
-      "position": "left",
-      "sourceHash": "6474846d87401ce0a6079ba828b06a4717e9052e3ec7df9a88bf46f7d2b59fb4",
-      "pngHash": "1c147b95d68241895747d3e7ece0550f9ac701f50f608493ca0c927d34fe8bac"
+      "source": "public/images/command-observation-960.webp",
+      "focalX": 0.66,
+      "sourceHash": "323fab3223c04e77a9f80f3e1f0b660293454d25f8a176ed27a340d29fa89088",
+      "pngHash": "e90763b951bfd04f516af961d158fbed2fb91af385f324ddb74d17c800dcd6d5"
     },
     {
       "id": "dependency-updates",
@@ -218,9 +217,9 @@
       "fontSize": 64,
       "theme": "更新・公開後の運用",
       "source": "public/images/dependency-update-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "28b9955b93467d92a1ca1e4342098dccfa4b8ef049a30d37e2a9dd41db2e3a5e",
-      "pngHash": "adca72a817fc0e0a675acc9fc8004145fa11a05c8b83a136c91623c2ae0013aa"
+      "pngHash": "b31bb3eda9b86f9091e759fa0ea019a226336fbfd682fb0c439a95269e648fb9"
     },
     {
       "id": "developer-privacy",
@@ -233,9 +232,9 @@
       "fontSize": 64,
       "theme": "公開前の確認",
       "source": "public/images/developer-privacy-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "cef6e23a62c76f4556a407966f99372c004251c01b83773d69d0f8f4ae0aab73",
-      "pngHash": "db2f0b3ee2f4a0c8cf5b457f6b8e9039fb762a06cfba6280bcd74697b4666ec8"
+      "pngHash": "55823917da8b436b4a4d40f97ee534c2a8afb907e201f927bf010c84c1db9927"
     },
     {
       "id": "external-service-failures",
@@ -248,9 +247,9 @@
       "fontSize": 64,
       "theme": "更新・公開後の運用",
       "source": "public/images/service-fallback-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "eec6c98f9965709cc4afb12d54f4bd953e295c18cedc8bbb700cf0ea2ed116c3",
-      "pngHash": "6ccb7a660a007a5f1f6a96f047727f0e7f9968293411fd453e57a6c44615baba"
+      "pngHash": "711d6b9c1248ca530555ff3b9b8acead058bf723c5046b056b138ba7e4792db0"
     },
     {
       "id": "github-guards",
@@ -263,9 +262,9 @@
       "fontSize": 64,
       "theme": "アプリの仕組み",
       "source": "public/images/github-gate-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "0a6ca8dcd62981327295dfb148266a9a29e01737ecf96660088add2dd720c462",
-      "pngHash": "42021e0fe84904a579296dd8f9e16bca20cd98f36ce92fdb009edbdb5306957d"
+      "pngHash": "e99bd01b4038ce4997b003cfa25c8fe0e8829e41eaf40aec3c8045fa0d055007"
     },
     {
       "id": "incident-response",
@@ -279,9 +278,9 @@
       "fontSize": 64,
       "theme": "異常に気づいたら",
       "source": "public/images/incident-notes-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "22cf274b6ce42f092a7a7bb1a16aced8adb5b89dcc99dfb33ed90368688fdea7",
-      "pngHash": "43b6a202abc84f9e941216ba676710db37c880b457d5bb70d5197a03f1ef199d"
+      "pngHash": "708835fc4cc24f87c09c14a26cf3866daae6839252b8b2cd5ca074dd5ff57036"
     },
     {
       "id": "launch-checklist",
@@ -295,9 +294,9 @@
       "fontSize": 64,
       "theme": "公開前の確認",
       "source": "public/images/release-preparation-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "8db28518087b5fba9f4aab3f1ec5f1812dafe26d845d8779f840d019d1e51560",
-      "pngHash": "14df0ee4a3e97452157cb5ac8ed3bb02ec612537cce756318f2930f17678a8a7"
+      "pngHash": "ca00b77f34afee72c4c1fd9ad0e46dc27b2f2b683b06e61dc66df1f52d304dd0"
     },
     {
       "id": "mcp-permissions",
@@ -310,10 +309,10 @@
       ],
       "fontSize": 64,
       "theme": "AIに任せる操作",
-      "source": "public/images/connection-map-scene-960.webp",
-      "position": "centre",
-      "sourceHash": "6849580ef6989f6232b4252158e9315d2490b0bb6eef11462f6b00690e50f72a",
-      "pngHash": "822c4e608e73f93239bd531987f18ebf116cf1517a3cb12ae389da540ce68e3a"
+      "source": "public/images/mcp-connection-station-960.webp",
+      "focalX": 0.27,
+      "sourceHash": "593a08ffad544ad3aa9912d9cea81d96433c73d34f18a3e07e4c91e27d5c483d",
+      "pngHash": "0dd8e420befcb94deba4b644b526cd865d501100c355689922270f7f34ccf131"
     },
     {
       "id": "node-october-2026",
@@ -327,9 +326,9 @@
       "fontSize": 64,
       "theme": "更新・公開後の運用",
       "source": "public/images/node-runtime-scene-960.webp",
-      "position": "left",
+      "focalX": 0,
       "sourceHash": "6474846d87401ce0a6079ba828b06a4717e9052e3ec7df9a88bf46f7d2b59fb4",
-      "pngHash": "4c67093d360f1e16f944d456fb10f8854d63cd066a71f66cd027f80841bb7504"
+      "pngHash": "6c1ab63523802302d3b892881e5bae29eb22c1b08b97aa345b6ae2cb3b3f9f1f"
     },
     {
       "id": "operations",
@@ -341,10 +340,10 @@
       ],
       "fontSize": 64,
       "theme": "更新・公開後の運用",
-      "source": "public/images/review-workbench-scene-960.webp",
-      "position": "centre",
-      "sourceHash": "12b4686dc0c320fd5326ef88166a4898fedc742eb4fe2fc4616a0ae62ddc9da2",
-      "pngHash": "a6a6a9b760cf27cc2d776d42d759b4c8b0cb6a0c8631dd09b3b986a936143b15"
+      "source": "public/images/operations-observation-960.webp",
+      "focalX": 0.75,
+      "sourceHash": "d7855d0cac14ae100d74d9c91d19f5e2718f33d353732f041fd004e71afacfd1",
+      "pngHash": "2ea4605e348bdd4e5eb3b4b933ccf364939781ae1fe363cfd04b31eeb7d0bae0"
     },
     {
       "id": "php-october-2026",
@@ -357,10 +356,10 @@
       ],
       "fontSize": 64,
       "theme": "更新・公開後の運用",
-      "source": "public/images/review-workbench-scene-960.webp",
-      "position": "centre",
-      "sourceHash": "12b4686dc0c320fd5326ef88166a4898fedc742eb4fe2fc4616a0ae62ddc9da2",
-      "pngHash": "8b7ac99cdec98a58bd4989be28d95a618fc41598d1017376333bd784300f48e9"
+      "source": "public/images/php-hosting-inspection-960.webp",
+      "focalX": 0.32,
+      "sourceHash": "e865a8ff2ebf40e95b53382c173f6e46ba0dc09feba857b73192369ac622468b",
+      "pngHash": "7c4e881602d628900827542f6730f1242238da9cfe82e85ec051670371722305"
     },
     {
       "id": "release-artifacts",
@@ -373,9 +372,9 @@
       "fontSize": 64,
       "theme": "公開前の確認",
       "source": "public/images/release-package-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "af4459cfe49d679e58b1ae210528042e635f0c25cb70ad6d6f2bb653d9585245",
-      "pngHash": "ce12c348c7fd121df76896cd84658cdcae4a1ecc27ad13d534c8f3d0d6ffbf4a"
+      "pngHash": "96841d6f9d31375fffa60535ae450083d6a2db0f2be364801080d71f629da437"
     },
     {
       "id": "secret-rotation",
@@ -388,9 +387,9 @@
       "fontSize": 64,
       "theme": "APIキー・会話・データ",
       "source": "public/images/secret-rotation-scene-960.webp",
-      "position": "centre",
+      "focalX": 0.5,
       "sourceHash": "5949dc67cfb8f2d596bafc685988b03692fce50975ddb29b68f86b929318c1cf",
-      "pngHash": "5a3b46ba50251a1bbc3cf63011a2cf64a4131f6aee3cc7d5bbbd95ff27f2050c"
+      "pngHash": "c43d5822762480398e2ab377e12f3df9d6fcc227a755353e462b24b59044aa00"
     }
   ]
 }

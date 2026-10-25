@@ -4,13 +4,13 @@ Issue #36。画面のCSS・本文・書体トークンを変えず、共有時�
 
 ## 生成
 
-`npm run ogp:generate`（`npm run build` / `build:design`からも実行）。ネットワーク、OSフォント、ブラウザーは不要。`tsx`で既存の`lesson-visuals.ts` / `catalog.ts`を読み、YAML frontmatterのtitle/shortTitleと分野名を使う。画像にsummaryは入れない。
+`npm run ogp:generate`（`npm run build` / `build:design`からも実行）。ネットワーク、OSフォント、ブラウザーは不要。`tsx`で`card-art.ts`のlessonCardSource / `catalog.ts`を読み、YAML frontmatterのtitle/shortTitleと分野名を使う。画像にsummaryは入れない。
 
 - 1200×630 PNG。左720pxが文字、右480pxが承認済みの挿絵。
 - paper / ink / muted / orange / sansの指定は`src/styles/tokens.css`から読む。色を別に定義しない。帯は上端12pxのみ。挿絵とロゴは紙・墨の濃淡へ機械変換し、絵を新しく作らない。
 - 正式ロゴA、AI Security Playbook、Tsukinekoを表示。大事な要素はx100–1100 / y65–565へ置く。
 - 見出し64px固定、3行まで。3行になる長い題名では既存shortTitleを優先し、なお収まらなければ生成を失敗させる。文字を縮めたり省略記号で切らない。
-- 原図は`LessonScene` / `LessonArt`の正本`lesson-visuals.ts`と同じ。Node.jsの場面は左寄せで切り抜き、猫の顔を保つ。ほかは中央。小さな番号入り見本シートを使わない。
+- 原図は教材カードと同じlessonCardSourceを使う。24教材は24種類の場面画。OGPの縦長挿絵枠にはlessonCardFocalXの焦点を使い、顔や道具が切れないことを全件目視する。本文のLessonSceneの割り当ては維持。小さな番号入り見本シートを使わない。
 - 挿絵のないページは共通の`default.png`を使う。正式ロゴAを大きく表示し、案内役Cと入れ替えない。将来、挿絵未割り当ての教材にも共通画像を使う。
 
 ## 書体と再現性
