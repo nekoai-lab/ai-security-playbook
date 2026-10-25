@@ -1,0 +1,30 @@
+[
+  {
+    "width": 320,
+    "githubLinks": 0,
+    "mainLinks": 3,
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 375,
+    "githubLinks": 0,
+    "mainLinks": 3,
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "githubLinks": 0,
+    "mainLinks": 3,
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "githubLinks": 0,
+    "mainLinks": 3,
+    "keyboard": true,
+    "overflow": false
+  }
+]

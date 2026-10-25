@@ -261,3 +261,6 @@ User approved outputs/site-design-proposal.html and its journey map, then explic
 - すべてのテーマの教材/検索用データを維持。重複する汎用CTAを削り、テーマ見出しと代表教材を入口とする。1教材のテーマや絞り込み結果1件はその記事へ直接移動。
 - 学習ルート3入口は3ポーズと場面固有リンク1つ。段階リンクは移動先のページで1組だけ提示。
 - 機械証拠: `scripts/reader-navigation.test.mjs`。検証/目視記録は `design/UX_REVIEW.md` と `design/audit/2026-10-25/card-composition-*`。
+
+## 2026-10-25 ヘッダーのGitHubボタンを削除
+読者の主要な回遊に不要な右上のGitHubロゴ/リンクを共通Shellから削除。専用CSSを取り除き、サイト名とメインナビだけの配置へ。OGP・フッターのMIT License・記事の一次資料リンクは維持。全公開ルートと制作見本を最新ビルドで検証する。

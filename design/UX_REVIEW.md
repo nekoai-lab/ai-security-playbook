@@ -230,3 +230,12 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 
 ### OGP公開版との統合確認
 作業中にmainへ入った#39（8df7fff）を取り込み、SPEC_TRACEとUX_REVIEWの双方の追記を保持して競合解消。OGP生成とその4テストを含めてcheck/build/test、制作専用build/checkを再実行。公開FULL 3196 passed/error 0/warning 4、GUIDE FULL 60 passed/error 0/warning 4、204画面のaxe/実行エラー/はみ出し0と全ページ文字200%、検索/段階/ページ送り/履歴/JSなしも統合後に再確認。OGP画像・本文の仕様変更なし。UIの実装プレビューも統合後に更新。
+
+## 2026-10-25 ヘッダーのGitHubボタン削除
+- 右上のGitHubロゴ/リンクを全ページ共通のShellから削除し、使わなくなる専用CSSを削除。デスクトップのメインナビにmargin-left:autoを移し、ロゴとサイト内ナビの配置へ。
+- フッターのMIT License、記事のGitHub参照、OGPを維持。全50ページのヘッダーにGitHubリンクがないこと、各メインナビが3リンク、ロゴが1リンクであることを確認。
+- 320/375/768/1280でスキップ→ロゴ→教材を探す→学習ルート→新着・更新のTab移動、はみ出しなしを確認。375/1280の通常表示スクリーンショットを目視。
+- check:108ファイル、error/warning/hint 0。build:50ページ。npm test成功（OGP4テスト含む）。制作専用build:51ページ/check成功。
+- 今回の最終ビルドで公開FULL 3196 passed/error 0/warning 4、GUIDE FULL 60 passed/error 0/warning 4。既存のcommands/見本の色数警告は維持。基準の変更・検査対象の除外なし。
+- 全204画面でaxe/実行エラー/横はみ出し0。375pxで全50ページと制作見本の文字200%を確認。機械検査のmanual reviewは公開400/見本8であり、自動合格とは区別する。
+- 証拠:design/audit/2026-10-25/header-cleanup-*。画像:design/previews/card-composition/header-{desktop,mobile}.png。PR #41へ追加、未マージ・未公開。
