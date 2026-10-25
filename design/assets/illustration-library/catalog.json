@@ -982,6 +982,34 @@
       "height": 907,
       "hasAlpha": false,
       "bytes": 3774201
+    },
+    {
+      "id": "alpine-panorama",
+      "title": "LP固定背景：山岳パノラマ",
+      "status": "derived-from-approved-background-concept",
+      "source": "design/assets/illustration-library/sources/alpine-panorama.png",
+      "preview": "public/images/alpine-panorama-1920.webp",
+      "deliveries": [
+        {
+          "path": "public/images/alpine-panorama-1920.webp",
+          "width": 1920,
+          "height": 800,
+          "bytes": 319812
+        },
+        {
+          "path": "public/images/alpine-panorama-2560.webp",
+          "width": 2560,
+          "height": 1066,
+          "bytes": 423322
+        }
+      ],
+      "usage": "トップのPC背景専用。左右は一枚の連続した風景。スマホでは読み込まない装飾。キャラクターや安全性の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーが山岳背景のイメージを承認し公開を依頼。承認案から背景単体として派生。",
+      "sha256": "8531b0e46290f83d7b8b905d359db54310adbb0815adc04845cbe2024980f110",
+      "width": 1942,
+      "height": 809,
+      "hasAlpha": false,
+      "bytes": 3209717
     }
   ]
 }

@@ -1,0 +1,122 @@
+[
+  {
+    "width": 320,
+    "frameWidth": 0,
+    "left": 0,
+    "frameDisplay": "contents",
+    "bgDisplay": "none",
+    "bgPosition": "static",
+    "overflow": false,
+    "currentSrc": "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
+    "loaded": false,
+    "bgY": 0,
+    "h1Height": 89.59375,
+    "backgroundRequests": []
+  },
+  {
+    "width": 375,
+    "frameWidth": 0,
+    "left": 0,
+    "frameDisplay": "contents",
+    "bgDisplay": "none",
+    "bgPosition": "static",
+    "overflow": false,
+    "currentSrc": "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
+    "loaded": false,
+    "bgY": 0,
+    "h1Height": 89.59375,
+    "backgroundRequests": []
+  },
+  {
+    "width": 768,
+    "frameWidth": 0,
+    "left": 0,
+    "frameDisplay": "contents",
+    "bgDisplay": "none",
+    "bgPosition": "static",
+    "overflow": false,
+    "currentSrc": "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
+    "loaded": false,
+    "bgY": 0,
+    "h1Height": 118.25,
+    "backgroundRequests": []
+  },
+  {
+    "width": 1279,
+    "frameWidth": 0,
+    "left": 0,
+    "frameDisplay": "contents",
+    "bgDisplay": "none",
+    "bgPosition": "static",
+    "overflow": false,
+    "currentSrc": "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
+    "loaded": false,
+    "bgY": 0,
+    "h1Height": 200.53125,
+    "backgroundRequests": []
+  },
+  {
+    "width": 1280,
+    "frameWidth": 1200,
+    "left": 40,
+    "frameDisplay": "flow-root",
+    "bgDisplay": "block",
+    "bgPosition": "fixed",
+    "overflow": false,
+    "currentSrc": "http://127.0.0.1:60640/ai-security-playbook/images/alpine-panorama-1920.webp",
+    "loaded": true,
+    "bgY": 0,
+    "h1Height": 179.1875,
+    "backgroundRequests": [
+      "http://127.0.0.1:60640/ai-security-playbook/images/alpine-panorama-1920.webp"
+    ]
+  },
+  {
+    "width": 1440,
+    "frameWidth": 1200,
+    "left": 120,
+    "frameDisplay": "flow-root",
+    "bgDisplay": "block",
+    "bgPosition": "fixed",
+    "overflow": false,
+    "currentSrc": "http://127.0.0.1:60640/ai-security-playbook/images/alpine-panorama-1920.webp",
+    "loaded": true,
+    "bgY": 0,
+    "h1Height": 179.1875,
+    "backgroundRequests": [
+      "http://127.0.0.1:60640/ai-security-playbook/images/alpine-panorama-1920.webp"
+    ]
+  },
+  {
+    "width": 1920,
+    "frameWidth": 1200,
+    "left": 360,
+    "frameDisplay": "flow-root",
+    "bgDisplay": "block",
+    "bgPosition": "fixed",
+    "overflow": false,
+    "currentSrc": "http://127.0.0.1:60640/ai-security-playbook/images/alpine-panorama-1920.webp",
+    "loaded": true,
+    "bgY": 0,
+    "h1Height": 179.1875,
+    "backgroundRequests": [
+      "http://127.0.0.1:60640/ai-security-playbook/images/alpine-panorama-1920.webp"
+    ]
+  },
+  {
+    "width": 2560,
+    "frameWidth": 1200,
+    "left": 680,
+    "frameDisplay": "flow-root",
+    "bgDisplay": "block",
+    "bgPosition": "fixed",
+    "overflow": false,
+    "currentSrc": "http://127.0.0.1:60640/ai-security-playbook/images/alpine-panorama-2560.webp",
+    "loaded": true,
+    "bgY": 0,
+    "h1Height": 179.1875,
+    "backgroundRequests": [
+      "http://127.0.0.1:60640/ai-security-playbook/images/alpine-panorama-2560.webp"
+    ]
+  }
+]
