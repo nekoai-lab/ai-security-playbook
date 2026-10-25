@@ -1,6 +1,7 @@
 import { readFile, readdir, mkdir, writeFile } from "node:fs/promises";
 import { parse } from "yaml";
 import { lessonVisuals } from "../src/data/lesson-visuals.ts";
+import { lessonCardSource, lessonCardFocalX } from "../src/data/card-art.ts";
 import { topicTitle } from "../src/data/catalog.ts";
 import {
   TITLE_SIZE,
@@ -19,14 +20,15 @@ const logoPath = "design/assets/cat-compass-logo-source.png",
 const records = [];
 const fallbacks = [];
 async function generate(id, data, visual) {
-  const source = visual ? `public/images/${visual.image}-960.webp` : logoPath;
+  const source = visual ? lessonCardSource(id) : logoPath;
+  const focalX = visual ? lessonCardFocalX(id) : undefined;
   const scene = visual ? await read(source) : undefined;
   const { output, selected } = await renderCard({
     tokens,
     fonts,
     logo,
     scene,
-    position: visual?.image === "node-runtime-scene" ? "left" : "centre",
+    focalX,
     title: { text: data.title, shortTitle: data.shortTitle },
     theme: data.topic ? topicTitle(data.topic) : "FIELD NOTES",
   });
@@ -40,7 +42,7 @@ async function generate(id, data, visual) {
     fontSize: TITLE_SIZE,
     theme: data.topic ? topicTitle(data.topic) : "FIELD NOTES",
     source,
-    position: visual?.image === "node-runtime-scene" ? "left" : "centre",
+    focalX,
     sourceHash: hash(scene ?? logo),
     pngHash: hash(output),
   });

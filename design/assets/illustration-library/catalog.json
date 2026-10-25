@@ -800,6 +800,188 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 4328613
+    },
+    {
+      "id": "runtime-field-guide",
+      "title": "basics専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/runtime-field-guide.png",
+      "preview": "public/images/runtime-field-guide-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/runtime-field-guide-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/runtime-field-guide-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "basicsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "b2547c204b24f0b8968b2a74b95e4fe5dd12cff7e26791e59181f9381cca1cbc",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4010687
+    },
+    {
+      "id": "agent-permission-station",
+      "title": "agent-permissions専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/agent-permission-station.png",
+      "preview": "public/images/agent-permission-station-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/agent-permission-station-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/agent-permission-station-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "agent-permissionsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "6a1d3106ce785172bb6288098a9d1c07196e2e5e573691f53ac52c61e6ba64a9",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4255511
+    },
+    {
+      "id": "php-hosting-inspection",
+      "title": "php-october-2026専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/php-hosting-inspection.png",
+      "preview": "public/images/php-hosting-inspection-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/php-hosting-inspection-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/php-hosting-inspection-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "php-october-2026のカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "8fdc589b5c218aeb4ddbef2638cc4feeb52d184c05d0bd9386a41decc9286ca6",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4210389
+    },
+    {
+      "id": "command-observation",
+      "title": "commands専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/command-observation.png",
+      "preview": "public/images/command-observation-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/command-observation-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/command-observation-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "commandsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "3c36e8553701a90b68b13fac064e5ee57b269d45466f1730ce3cfd56e4246ec1",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4249433
+    },
+    {
+      "id": "mcp-connection-station",
+      "title": "mcp-permissions専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/mcp-connection-station.png",
+      "preview": "public/images/mcp-connection-station-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/mcp-connection-station-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/mcp-connection-station-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "mcp-permissionsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "a7cd61a0527fce34f66fbeedaaa22b20c866f72dd73ab25576857d83aa74e7ad",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4551022
+    },
+    {
+      "id": "update-checklist-stations",
+      "title": "checklist専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/update-checklist-stations.png",
+      "preview": "public/images/update-checklist-stations-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/update-checklist-stations-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/update-checklist-stations-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "checklistのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "49b3dfbb4ca79564a3f892965f82dadf0ee391aa1a9fc8e9d8c680c6e7e8f768",
+      "width": 1733,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4005344
+    },
+    {
+      "id": "operations-observation",
+      "title": "operations専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/operations-observation.png",
+      "preview": "public/images/operations-observation-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/operations-observation-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/operations-observation-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "operationsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "34957ddca307751fa13ba8d050f28fe8c0e78dddb9053ad117488e033aaf0743",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 3774201
     }
   ]
 }

@@ -219,16 +219,6 @@
   outline: var(--focus-ring);
   outline-offset: 4px;
 }
-.prose .related-card {
-  display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
-  gap: 16px;
-  align-items: center;
-  padding: 16px;
-  background: var(--color-paper-light);
-  text-decoration: none;
-  margin-top: 16px;
-}
 .related-card strong {
   display: block;
   font-size: 16px;
@@ -293,9 +283,6 @@
   }
   .lesson-scene figcaption strong {
     font-size: 16px;
-  }
-  .prose .related-card {
-    grid-template-columns: 80px minmax(0, 1fr);
   }
 }
 @media (max-width: 375px) {

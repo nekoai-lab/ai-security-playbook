@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "width": 320,
+      "stageLinks": true,
+      "pagination": true,
+      "history": true,
+      "keyboard": true,
+      "themeImages": 8,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "stageLinks": true,
+      "pagination": true,
+      "history": true,
+      "keyboard": true,
+      "themeImages": 8,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "stageLinks": true,
+      "pagination": true,
+      "history": true,
+      "keyboard": true,
+      "themeImages": 8,
+      "overflow": false
+    },
+    {
+      "width": 1280,
+      "stageLinks": true,
+      "pagination": true,
+      "history": true,
+      "keyboard": true,
+      "themeImages": 8,
+      "overflow": false
+    }
+  ],
+  "noJs": {
+    "lessons": 24,
+    "themes": 8
+  }
+}
