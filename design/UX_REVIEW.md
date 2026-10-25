@@ -283,3 +283,10 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - checkは110ファイルでerror/warning/hint 0、50ページbuild、npm test、制作見本build/check成功。最終公開FULLは3196 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存警告のみで規則・しきい値・除外は変更なし。manual review 400/8件は自動合格と表現しない。
 - 全204画面でaxe・実行エラー・横はみ出し0、全50ページの375px文字200%を確認。4幅で記事リンクの16px・下線・44px操作領域とキーボード遷移を確認。「次に読む」は4幅×17組、計68組でリンク先・肉球・原画像・寸法・共通比率を検査した。
 - 証拠:article-affordance-public-full、article-affordance-guide-full、article-affordance-browser.json、article-affordance-links.json、article-affordance-next.json、design/previews/article-links。画像原本や教材の事実、OGPの内容は変更なし。
+
+## 2026-10-25 フッターロゴからトップへ戻る
+
+- 共通Shellのフッターブランドをトップへのリンクに変更。baseを含むURL、明確な読み上げ名、44px以上の領域、既存フォーカス表示を使用。紙面の構成やロゴは維持する。
+- check/build/test、制作見本build/check成功。今回の最終ビルドで公開FULLは3196 passed/error 0/warning 4、見本FULLは60 passed/error 0/warning 4。既存警告のみで規則変更なし。manual review 400/8件は自動合格扱いしない。
+- 全50ページ×4幅でリンク先と操作領域、全204画面でaxe/横はみ出し/実行エラー0、375pxで文字200%を確認。記事の末尾からEnterでトップへ戻る動作を4幅で確認。スマホのフォーカス枠とロゴ・運営表記の配置を目視。
+- 証拠:footer-public-full、footer-guide-full、footer-browser.json、design/previews/footer/home-mobile.png。山岳背景案の本番実装は含まない。
