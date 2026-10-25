@@ -1,4 +1,5 @@
 ---
+import CreatorProfile from "../components/CreatorProfile.astro";
 import Shell from "../layouts/Shell.astro";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
@@ -10,6 +11,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       <h1>AIの安全を、確かめながら学ぶ。</h1>
       <p>AIを使う人と作る人のための、日本語の実践ガイドです。</p>
     </header>
+    <CreatorProfile id="creator" />
     <div class="prose about-copy">
       <h2>探す・学ぶ・実践する</h2>
       <p>
@@ -23,6 +25,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       <p>
         過去の事例に載った版番号は、その更新の基準です。現在の対応は公式の最新情報と自分の環境を確認して判断してください。チェック項目や猫のマークは、安全性や対応完了を保証する表示ではありません。
       </p>
+      <h2>著作権・利用条件</h2>
+      <p>実装コードと、教材本文・図解・ブランド素材では利用条件が異なります。</p>
+      <p><a href={`${base}/terms/`}>利用条件を確認する →</a></p>
       <h2>訂正・改善</h2>
       <p>
         教材末尾の「ソース・修正提案」から、出典を添えて改善を提案できます。

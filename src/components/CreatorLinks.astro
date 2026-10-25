@@ -1,0 +1,21 @@
+---
+import { creator } from "../data/creator";
+interface Props { descriptions?: boolean; label?: string; }
+const { descriptions = false, label = "Tsukinekoの発信先・お問い合わせ" } = Astro.props;
+---
+<nav class:list={["creator-links", { "creator-links--detailed": descriptions }]} aria-label={label}>
+  {creator.links.map((link) => (
+    <a href={link.href}>
+      <span>{link.label} ↗</span>
+      {descriptions && <small>{link.detail}</small>}
+    </a>
+  ))}
+</nav>
+<style>
+  .creator-links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  .creator-links a { display: flex; flex-direction: column; justify-content: center; min-height: 44px; min-width: 44px; padding-block: 8px; font-size: 16px; line-height: 1.6; }
+  .creator-links a > span { text-decoration: underline; text-underline-offset: 4px; }
+  .creator-links small { color: var(--color-muted); font-size: 12px; line-height: 1.6; }
+  .creator-links--detailed { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 24px; }
+  @media (max-width: 480px) { .creator-links--detailed { grid-template-columns: 1fr; } }
+</style>

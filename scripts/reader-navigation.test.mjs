@@ -360,3 +360,36 @@ test("individual article links carry a decorative paw without marking theme navi
       route,
     );
 });
+
+test("creator links and content terms are shared across every published page", () => {
+  const map = JSON.parse(readFileSync("design/review-map.json", "utf8"));
+  assert(map.pages.includes("terms/"));
+  const links = ["https://note.com/nekoai_lab", "https://zenn.dev/nekoai_lab", "https://x.com/nekoai_lab", "https://marcrevix.com/contact/"];
+  for (const route of map.pages) {
+    const html = readFileSync(`dist/${route}index.html`, "utf8");
+    const footer = /<footer[ >][\s\S]*?<\/footer>/.exec(html)?.[0];
+    assert(footer, route);
+    for (const url of links) assert(footer.includes(`href="${url}"`), `${route}: ${url}`);
+    assert(footer.includes('href="/ai-security-playbook/terms/"'), route);
+    assert(!footer.includes('>MIT License<'), route);
+    if (route.startsWith("learn/")) {
+      assert(html.includes('rel="author"'), route);
+      assert(html.includes("data-creator-profile"), route);
+      assert(html.includes(`href="https://nekoai-lab.github.io/ai-security-playbook/${route}"`), route);
+      assert(html.includes('name="author" content="月ねこ｜Tsukineko"'), route);
+    }
+  }
+});
+
+test("MIT text is retained while editorial scope, third-party terms and prior grants stay explicit", () => {
+  const mit = readFileSync("LICENSE", "utf8");
+  assert(mit.startsWith("MIT License\n\nCopyright (c) 2026 Tsukineko\n"));
+  assert(mit.includes("Permission is hereby granted, free of charge"));
+  assert(mit.includes("THE SOFTWARE IS PROVIDED \"AS IS\""));
+  assert(mit.includes("LICENSE-CONTENT.md"));
+  const rights = readFileSync("LICENSE-CONTENT.md", "utf8");
+  for (const required of ["法令で認められる引用", "第三者", "オリジナルのサンプルコード", "遡って取り消すものではありません", "旧版の許諾", "著作物性や独占権が一律", "529f7b7ed8f5440db21a2b05f1d3dbbf5b1dba25"]) assert(rights.includes(required), required);
+  const terms = readFileSync("dist/terms/index.html", "utf8");
+  assert(terms.includes("旧版の許諾"));
+  assert(terms.includes("https://marcrevix.com/contact/"));
+});
