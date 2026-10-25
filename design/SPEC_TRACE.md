@@ -276,3 +276,9 @@ User approved outputs/site-design-proposal.html and its journey map, then explic
 - 範囲: TopicCards、テーマ割り当て、回帰検査、素材ガイド。本文・検索レコード・OGP・出版社表記は維持。
 - 検証: check/build/test、4幅の実ブラウザ配置・画像表示・絞り込み、公開FULL/GUIDE FULL。見た目の採用確認までは公開しない。
 - 記録時点: カードのマークアップ初稿の作成後に追記。実装前記録の順序を守れなかったため、以後の割り当て・検証前に要件を固定。
+
+## 2026-10-25 承認済み世界観イラストへの差し替え
+- ユーザーがcard-world-previewを承認。development/secrets/connections/operationsのポーズ＋ラベルを新規承認の場面画4枚へ差し替える。8テーマ、3/2/1列、文章とリンクは維持。
+- 原本PNGと生成記録、承認日、用途を素材台帳へ保存。Web用480/960 WebPを作成し、既存の本文/OGPの画像割り当ては変更しない。
+- ラベル用DOM/CSSと不要なレイアウト指定を削除。場面はcontainで全体表示。新しいCardArtの種別はテーマの独立画像を指定し、他のカードへ波及させない。
+- check/build/test、画像寸法/台帳/割り当てテスト、公開/見本FULL、4幅の画像/絞り込み/文字200%を実施する。

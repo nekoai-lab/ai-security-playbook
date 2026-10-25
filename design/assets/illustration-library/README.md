@@ -196,3 +196,31 @@ Node.jsカードと実行中の版の話題。機械の歯車は実行環境の�
 [原本](./sources/cat-concern.png)
 
 会話ログ・配布物の場面2点を追加。正本はcatalog.json、指示はlog-release-prompts.json。既存素材と顔を維持した記事用派生として保存。
+
+## テーマカードの世界観イラスト（2026-10-25承認）
+
+### 森の工房を歩く：アプリの仕組み
+
+![森の工房を歩く：アプリの仕組み](../../../public/images/app-workshop-480.webp)
+
+[原本PNG](./sources/app-workshop.png) · `approved-scene`
+
+### 棚からのぞく：APIキー・会話・データ
+
+![棚からのぞく：APIキー・会話・データ](../../../public/images/keys-and-records-480.webp)
+
+[原本PNG](./sources/keys-and-records.png) · `approved-scene`
+
+### 地図と道具：AIに任せる操作
+
+![地図と道具：AIに任せる操作](../../../public/images/agent-field-tools-480.webp)
+
+[原本PNG](./sources/agent-field-tools.png) · `approved-scene`
+
+### ルーペで調べる：更新・公開後の運用
+
+![ルーペで調べる：更新・公開後の運用](../../../public/images/maintenance-lookout-480.webp)
+
+[原本PNG](./sources/maintenance-lookout.png) · `approved-scene`
+
+[生成記録](./card-world-scenes-prompts.json)。場面を伝える概念画であり、技術構成や安全性の証拠ではない。

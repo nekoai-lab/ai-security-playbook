@@ -27,7 +27,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         : `${base}/topics/${topic.id}/`;
     return (
       <article
-        class:list={["discovery-topic", `composition--${composition.layout}`]}
+        class="discovery-topic"
         data-discovery-topic={topic.id}
         data-topic-url={`${base}/topics/${topic.id}/`}
       >
@@ -36,13 +36,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             art={composition.art}
             sizes="(max-width:760px) 100vw,(max-width:1100px) 50vw,33vw"
           />
-          {"cues" in composition && (
-            <ul class="topic-visual-cues" aria-hidden="true">
-              {composition.cues.map((cue) => (
-                <li>{cue}</li>
-              ))}
-            </ul>
-          )}
         </div>
         <div class="topic-copy">
           <div class="topic-heading">
@@ -173,47 +166,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   }
   .topic-examples span {
     color: var(--color-orange-ink);
-  }
-  .topic-visual:has(.topic-visual-cues) {
-    aspect-ratio: auto;
-    max-height: none;
-    min-height: 224px;
-  }
-  .topic-visual:has(.topic-visual-cues) > :global(.card-art) {
-    height: 192px;
-    align-self: center;
-  }
-  .topic-visual-cues {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    align-self: center;
-    display: grid;
-    gap: 12px;
-    color: var(--color-muted);
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  .topic-visual-cues li {
-    background: var(--color-paper);
-    padding: 8px 12px;
-  }
-  .composition--map .topic-visual,
-  .composition--inspect .topic-visual {
-    grid-template-columns: 56% 44%;
-  }
-  .composition--map :global(.card-art),
-  .composition--inspect :global(.card-art) {
-    padding: 16px 8px 16px 0;
-  }
-  .composition--boundary .topic-visual,
-  .composition--desk .topic-visual {
-    grid-template-columns: 52% 48%;
-  }
-  .composition--boundary :global(.card-art),
-  .composition--desk :global(.card-art) {
-    order: 2;
-    padding: 16px 0 16px 8px;
   }
   .discovery-topics :global([hidden]) {
     display: none !important;
