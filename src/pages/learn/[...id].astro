@@ -40,7 +40,7 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
 );
 ---
 
-<Shell title={lesson.data.title} description={lesson.data.summary}>
+<Shell title={lesson.data.title} description={lesson.data.summary} articleId={lesson.id}>
   <div class="wrap article-wrap">
     <nav class="crumbs" aria-label="パンくず">
       <a href={`${base}/library/`}>教材一覧</a>
