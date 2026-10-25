@@ -7,11 +7,18 @@ interface Props {
   sizes?: string;
 }
 const { art, sizes = "(max-width:760px) 160px,240px" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <div
   class:list={["card-art", `card-art--${art.kind}`]}
-  data-card-art={art.kind === "pose" ? art.pose : art.lesson}
+  data-card-art={
+    art.kind === "pose"
+      ? art.pose
+      : art.kind === "scene"
+        ? art.lesson
+        : art.image
+  }
   style={
     art.kind === "scene" ? `--card-art-position:${art.position}` : undefined
   }
@@ -19,8 +26,19 @@ const { art, sizes = "(max-width:760px) 160px,240px" } = Astro.props;
 >
   {art.kind === "scene" ? (
     <LessonArt id={art.lesson} sizes={sizes} />
-  ) : (
+  ) : art.kind === "pose" ? (
     <CatPose pose={art.pose} />
+  ) : (
+    <img
+      src={`${base}/images/${art.image}-480.webp`}
+      srcset={`${base}/images/${art.image}-480.webp 480w, ${base}/images/${art.image}-960.webp 960w`}
+      sizes={sizes}
+      width="960"
+      height="640"
+      loading="lazy"
+      decoding="async"
+      alt=""
+    />
   )}
 </div>
 <style>
@@ -36,7 +54,8 @@ const { art, sizes = "(max-width:760px) 160px,240px" } = Astro.props;
     margin: 0;
     float: none;
   }
-  .card-art--pose :global(img) {
+  .card-art--pose :global(img),
+  .card-art--illustration :global(img) {
     object-fit: contain;
   }
   .card-art--scene :global(img) {

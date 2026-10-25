@@ -133,17 +133,28 @@ test("the publisher is identified in the shared footer, not repeated in topic ca
     assert(!card.includes("Tsukineko"));
 });
 
-test("theme compositions mix scenes and approved poses without repeating a single template", () => {
+test("theme cards show eight complete approved worlds without pose-only placeholders", () => {
   const html = readFileSync("dist/index.html", "utf8");
   const cards = [
     ...html.matchAll(/<article[^>]*data-discovery-topic[\s\S]*?<\/article>/g),
   ].map((m) => m[0]);
   assert.equal(cards.length, 8);
-  const layouts = cards.map((c) => /composition--([a-z-]+)/.exec(c)?.[1]);
-  assert(new Set(layouts).size >= 5);
   const arts = cards.map((c) => /data-card-art="([^"]+)"/.exec(c)?.[1]);
   assert.equal(new Set(arts).size, 8);
-  assert.equal(cards.filter((c) => c.includes("data-cat-pose=")).length, 5);
+  assert.equal(cards.filter((c) => c.includes("data-cat-pose=")).length, 0);
+  assert(!html.includes("topic-visual-cues"));
+  for (const id of [
+    "app-workshop",
+    "keys-and-records",
+    "agent-field-tools",
+    "maintenance-lookout",
+  ])
+    assert(arts.includes(id), id);
+  const source = readFileSync("src/components/TopicCards.astro", "utf8");
+  assert(source.includes("repeat(3, minmax(0, 1fr))"));
+  assert(source.includes("object-fit: contain"));
+  assert(!source.includes("object-fit: cover"));
+  assert(!source.includes("position: absolute"));
   for (const card of cards) {
     assert(!card.includes("data-topic-action"));
     assert.equal((card.match(/data-topic-destination/g) || []).length, 1);
@@ -221,5 +232,35 @@ test("all built pages use one shared header/footer and reader hubs keep the rout
           ? ["新着・更新"]
           : [];
     assert.deepEqual(selected, expected, route);
+  }
+});
+
+test("new world illustrations retain approved originals and responsive deliveries", async () => {
+  const { default: sharp } = await import("sharp");
+  const { createHash } = await import("node:crypto");
+  const catalog = JSON.parse(
+    readFileSync("design/assets/illustration-library/catalog.json", "utf8"),
+  );
+  for (const id of [
+    "app-workshop",
+    "keys-and-records",
+    "agent-field-tools",
+    "maintenance-lookout",
+  ]) {
+    const entry = catalog.assets.find((a) => a.id === id);
+    assert(entry, id);
+    assert.equal(entry.status, "approved-scene");
+    assert.equal(entry.approvedAt, "2026-10-25");
+    const original = readFileSync(entry.source);
+    assert.equal(
+      createHash("sha256").update(original).digest("hex"),
+      entry.sha256,
+    );
+    for (const width of [480, 960]) {
+      const meta = await sharp(`public/images/${id}-${width}.webp`).metadata();
+      assert.equal(meta.width, width);
+      assert.equal(meta.height, (width * 2) / 3);
+      assert.equal(meta.format, "webp");
+    }
   }
 });

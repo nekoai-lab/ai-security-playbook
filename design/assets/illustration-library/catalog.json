@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "generator": "built-in image_gen",
   "guide": "docs/ILLUSTRATION_GUIDE.md",
   "characterReference": [
@@ -692,6 +692,114 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3385130
+    },
+    {
+      "id": "app-workshop",
+      "title": "森の工房を歩いてアプリの構成をたどる",
+      "status": "approved-scene",
+      "approvedAt": "2026-10-25",
+      "approval": "ユーザーがcard-world-preview.htmlを確認し「いいね差し替えて」と承認。",
+      "source": "design/assets/illustration-library/sources/app-workshop.png",
+      "preview": "public/images/app-workshop-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/app-workshop-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/app-workshop-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "developmentテーマカードの概念的な挿絵。技術構成や安全性の証拠として扱わない。",
+      "sha256": "08fe15fc48eeb7bcf7bac76f2cb63f88cafc7bb1a10b8d0d21447dedca6af0ea",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4036715
+    },
+    {
+      "id": "keys-and-records",
+      "title": "山小屋の棚からキーと記録を見渡す",
+      "status": "approved-scene",
+      "approvedAt": "2026-10-25",
+      "approval": "ユーザーがcard-world-preview.htmlを確認し「いいね差し替えて」と承認。",
+      "source": "design/assets/illustration-library/sources/keys-and-records.png",
+      "preview": "public/images/keys-and-records-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/keys-and-records-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/keys-and-records-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "secretsテーマカードの概念的な挿絵。技術構成や安全性の証拠として扱わない。",
+      "sha256": "27dd72f2de965ee06ba59c7e1f351c01f8a7feaec0f1601a4f20a5b06971b7b2",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4264502
+    },
+    {
+      "id": "agent-field-tools",
+      "title": "地図と道具を広げて任せる操作を考える",
+      "status": "approved-scene",
+      "approvedAt": "2026-10-25",
+      "approval": "ユーザーがcard-world-preview.htmlを確認し「いいね差し替えて」と承認。",
+      "source": "design/assets/illustration-library/sources/agent-field-tools.png",
+      "preview": "public/images/agent-field-tools-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/agent-field-tools-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/agent-field-tools-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "connectionsテーマカードの概念的な挿絵。技術構成や安全性の証拠として扱わない。",
+      "sha256": "51a95ae08ca04395f527c73d0fdee54c124835f6354e9230267cd01927e0abf1",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4240319
+    },
+    {
+      "id": "maintenance-lookout",
+      "title": "森の見張り台で部品をルーペで調べる",
+      "status": "approved-scene",
+      "approvedAt": "2026-10-25",
+      "approval": "ユーザーがcard-world-preview.htmlを確認し「いいね差し替えて」と承認。",
+      "source": "design/assets/illustration-library/sources/maintenance-lookout.png",
+      "preview": "public/images/maintenance-lookout-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/maintenance-lookout-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/maintenance-lookout-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "operationsテーマカードの概念的な挿絵。技術構成や安全性の証拠として扱わない。",
+      "sha256": "d912ee2b1047032618aeb791d384f83a2b7d68b3cd238172f7704b4766190e4d",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4328613
     }
   ]
 }

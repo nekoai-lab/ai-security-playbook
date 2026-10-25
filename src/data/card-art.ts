@@ -3,26 +3,34 @@ import { lessonVisuals, type LessonVisualId } from "./lesson-visuals";
 import type { TopicId } from "./topic-guides";
 export type CardArt =
   | { kind: "scene"; lesson: LessonVisualId; position: string }
-  | { kind: "pose"; pose: CatPoseName };
+  | { kind: "pose"; pose: CatPoseName }
+  | {
+      kind: "illustration";
+      image:
+        | "app-workshop"
+        | "keys-and-records"
+        | "agent-field-tools"
+        | "maintenance-lookout";
+    };
+// Theme scenes are independent of article and OGP image assignments.
 export const topicCompositions = {
   "ai-tools": {
-    layout: "scene-side",
-    art: { kind: "scene", lesson: "ai-data-boundaries", position: "38% 50%" },
+    art: { kind: "scene", lesson: "ai-data-boundaries", position: "center" },
   },
-  development: { layout: "walk", art: { kind: "pose", pose: "walk-right" } },
-  secrets: { layout: "peek", art: { kind: "pose", pose: "peek-side" } },
+  development: { art: { kind: "illustration", image: "app-workshop" } },
+  secrets: { art: { kind: "illustration", image: "keys-and-records" } },
   access: {
-    layout: "scene-bottom",
-    art: { kind: "scene", lesson: "access-control", position: "50% 10%" },
+    art: { kind: "scene", lesson: "access-control", position: "center" },
   },
-  connections: { layout: "desk", art: { kind: "pose", pose: "laptop" } },
+  connections: { art: { kind: "illustration", image: "agent-field-tools" } },
   release: {
-    layout: "scene-bottom",
-    art: { kind: "scene", lesson: "release-artifacts", position: "50% 10%" },
+    art: { kind: "scene", lesson: "release-artifacts", position: "center" },
   },
-  operations: { layout: "walk", art: { kind: "pose", pose: "investigate" } },
-  response: { layout: "peek", art: { kind: "pose", pose: "concern" } },
-} as const satisfies Record<TopicId, { layout: string; art: CardArt }>;
+  operations: { art: { kind: "illustration", image: "maintenance-lookout" } },
+  response: {
+    art: { kind: "scene", lesson: "incident-response", position: "center" },
+  },
+} as const satisfies Record<TopicId, { art: CardArt }>;
 // Cards have their own composition; article scenes and OGP assignments stay intact.
 const poses = {
   "ai-review-trust": "investigate",
