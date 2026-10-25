@@ -15,7 +15,7 @@ const lessons = group.ids.map((id) => all.find((l) => l.id === id)!);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<Shell title={group.title} description={group.summary}>
+<Shell title={`${group.title}：シリーズ教材`} description={group.summary} breadcrumbs={[{name:"教材一覧",path:`${base}/library/`},{name:"シリーズ",path:`${base}/series/${group.id}/`}]}>
   <div class="wrap hub-page">
     <nav class="crumbs" aria-label="パンくず">
       <a href={`${base}/library/`}>教材一覧</a>

@@ -4,6 +4,7 @@ import "../styles/library.css";
 import "../styles/article-illustrations.css";
 import "../styles/card-system.css";
 import "../styles/mountain-backdrop.css";
+import { structuredData, serializeStructuredData, type ArticleMetadata, type Breadcrumb } from "../data/seo";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import CreatorLinks from "../components/CreatorLinks.astro";
 import { creator } from "../data/creator";
@@ -14,11 +15,15 @@ interface Props {
   title: string;
   description?: string;
   articleId?: string;
+  articleMetadata?: ArticleMetadata;
+  breadcrumbs?: Breadcrumb[];
   mountainBackdrop?: boolean;
 }
 const {
   title,
   articleId,
+  articleMetadata,
+  breadcrumbs = [],
   mountainBackdrop = false,
   description = "AIを使う人と作る人のための、日本語セキュリティ実践ガイド。",
 } = Astro.props;
@@ -31,6 +36,8 @@ const socialImage = new URL(
   `${base}/ogp/${articleId && Object.hasOwn(lessonVisuals, articleId) ? articleId : "default"}.png`,
   Astro.site,
 ).href;
+const jsonLd = serializeStructuredData(structuredData({ site: Astro.site, base, canonical: canonicalURL,
+  title, description, image: socialImage, article: articleMetadata, breadcrumbs }));
 const socialAlt = articleId
   ? `${title} — AI Security Playbookの教材カード`
   : "AIの安全を、解き明かそう。羅針盤と猫のロゴ：AI Security Playbook";
@@ -46,6 +53,9 @@ const socialAlt = articleId
     <meta name="description" content={description} />
     <meta name="author" content={creator.name} />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" type="application/xml" href={new URL(`${base}/sitemap.xml`, Astro.site).href} />
+    <meta name="robots" content="max-image-preview:large" />
+    <script type="application/ld+json" is:inline set:html={jsonLd} />
     <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />

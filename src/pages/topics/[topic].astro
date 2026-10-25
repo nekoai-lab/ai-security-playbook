@@ -22,7 +22,7 @@ const neighbors = guide.related.map((id) => topics.find((t) => t.id === id)!);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<Shell title={topic.title} description={topic.summary}>
+<Shell title={topic.title} description={topic.summary} breadcrumbs={[{name:"ホーム",path:`${base}/`},{name:"テーマ",path:`${base}/topics/`},{name:topic.title,path:`${base}/topics/${topic.id}/`}]}>
   <div class="wrap hub-page topic-guide">
     <nav class="crumbs" aria-label="パンくず">
       <a href={`${base}/`}>ホーム</a>

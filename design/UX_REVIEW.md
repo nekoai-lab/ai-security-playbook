@@ -321,3 +321,12 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - 全212画面でaxe/実行エラー/横はみ出し0、52ページ375px文字200%を確認。解析案内へのキーボード遷移を4幅で確認、スマホ/PCの案内とフッターを目視。
 - 本番URLをローカル成果物に結び実Googleタグで検証。初期page_viewは1回、UTM維持、URL訪問の検索語MCP、トップ確定PHP/一覧EnterのAPIキーは各1回。collectは途中で遮断し公開前のテストを実集計へ送らない。local/guide/opt-out通信0、タグ遮断時も本文表示と操作を維持。GA管理画面の受信・レポート表示は未確認で、タグ通信検証と区別する。
 - 証拠:ga4-final-public-full、ga4-final-guide-full、ga4-functional.json、ga4-browser.json、design/previews/ga4。
+
+## 2026-10-26 SEO・AI検索への公開情報
+
+- 全52ページの公開DOMで固有メタ情報・canonical/H1・本文SSR・内部リンクを監査。description5ページ共通とtitle1組重複、JSON-LDなし、sitemap404を確認。メタ情報を固有化し、表示中の著者・記事日付・階層をJSON-LDへ。実ルート52件のsitemapに記事の内容更新日だけを出す。特別なAIファイルで掲載を保証せず、root robots404をクロール拒否と扱わない。
+- 承認済み58画像へ元WebPより小さいAVIF配信版を追加。PNG/WebP/OGP、構図、全幅フレームは保持。heroのsizesと動的な次記事sourceを整合。派生全体は7,311,110→6,330,536bytes（約13.4%削減、各訪問の総通信量とは異なる）。新依存なし。
+- checkは120ファイルerror/warning/hint0、build52ページ、npm test成功（新SEO回帰4・既存読者導線19・OGP5を含む）。制作見本build/check成功。公開FULL3324 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存commands/見本の色数警告を維持、規則・対象・しきい値の変更なし。manual review416/8件を自動合格とは扱わない。
+- 全212画面でaxe/実行エラー/横はみ出し0、52ページ375px文字200%、4幅のスキップ後TabとフッターからトップへのEnter、68組の次記事画像・肉球・フルブリードを確認。スマホ/PCのトップ、記事冒頭、カードを目視し構図・余白を維持。検証スクリプトの引用符とビルド中の404は修正/完了後に全対象を再検査し、失敗結果を合格の証拠にしていない。
+- 改善前モバイルLighthouseはトップ89/LCP3.8秒、代表教材100/LCP1.0秒。SEO自動点数100でも今回の不足は検出しない。単発ラボと実ユーザーCWVを分け、Search Console/Bingのインデックス・順位・AI引用は未確認。運用規則と所有権確認/サイトマップ送信はdocs/SEO.md。
+- 証拠: search-public-full、search-guide-full、search-discovery.json、search-browser.json、search-keyboard.json、search-next-card.json。原本スクリーンショットは制作環境に保存。

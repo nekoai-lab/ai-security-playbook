@@ -1,4 +1,5 @@
 ---
+import { avifSrcset } from "../data/avif";
 import CatPose from "./CatPose.astro";
 import LessonArt from "./LessonArt.astro";
 import type { CardArt } from "../data/card-art";
@@ -49,6 +50,8 @@ if (art.kind === "illustration" && !delivery)
   ) : art.kind === "pose" ? (
     <CatPose pose={art.pose} />
   ) : (
+    <picture class="card-art-picture">
+      <source type="image/avif" data-next-avif={trackNext ? true : undefined} srcset={avifSrcset(art.image,base) ?? undefined} sizes={sizes} />
     <img
       src={`${base}/images/${art.image}-480.webp`}
       srcset={`${base}/images/${art.image}-480.webp 480w, ${base}/images/${art.image}-960.webp 960w`}
@@ -60,9 +63,11 @@ if (art.kind === "illustration" && !delivery)
       data-next-art={trackNext ? true : undefined}
       alt=""
     />
+    </picture>
   )}
 </div>
 <style>
+  .card-art-picture { display: contents; }
   .card-art {
     display: block;
     width: 100%;

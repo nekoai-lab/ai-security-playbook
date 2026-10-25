@@ -23,6 +23,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 <Shell
   title={`${journey.label}：知識に合わせて読む`}
   description={journey.summary}
+  breadcrumbs={[{name:"トップ",path:`${base}/`},{name:journey.label,path:`${base}/start/${journey.id}/`}]}
 >
   <div class="wrap hub-page reader-hub" data-reader-hub={journey.id}>
     <nav class="crumbs" aria-label="パンくず">

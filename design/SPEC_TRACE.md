@@ -325,3 +325,10 @@ User approved outputs/site-design-proposal.html and its journey map, then explic
 - IDの存在だけで受信完了と扱わず、タグ初期化・通信・検索語・拒否機能/通信失敗時のサイト動作を確認。GA管理画面の集計は閲覧権限がないため別途確認。
 
 - 実タグ検証でURL訪問のview_search_resultsは取れるが、画面内検索の履歴更新では検索語イベントが取れないことを確認。トップ/一覧の検索確定時だけplaybook-searchを発火し、標準のsearchイベントで補完する。手動page_view/view_search_resultsは送らず、確定検索(search)と結果URL閲覧(view_search_results)を別集計とする。
+
+## 2026-10-26 SEO・AI検索監査
+- 全52ページの実DOM監査で説明文5ページ共通・タイトル1組重複・JSON-LD全ページなし・サイトマップ404を確認。canonical/H1/本文SSR/内部リンクは維持。root robots404は遮断ではない。Search Console/実ユーザーCWVは未確認。
+- 著者/発行者・記事の公開/内容更新日・パンくずを、表示中の情報と一致する構造化データへ。説明文と検索結果用タイトルを固有化。ビルドに基づくsitemapを追加し日付の水増しをしない。
+- モバイルラボのトップLCP3.8秒・画像配信量を改善。元PNG/WebP/OGP・絵の構図を維持し、AVIFと対応ブラウザ向けsourceを追加。動的な次記事も同じ画像を保持する。
+- 特別なAIファイルや構造化データで掲載を保証しない。公開URLや著作権の方針、GAの本番限定・検索イベントを維持する。
+- 最終検証: check/build/test・制作見本成功、公開FULL3324/0error/4warning・見本60/0error/4warning。全212画面/文字200%/キーボード4幅/次記事68組を確認。証拠はdesign/audit/2026-10-26/search-*、運用はdocs/SEO.md。

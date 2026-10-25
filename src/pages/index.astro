@@ -1,4 +1,5 @@
 ---
+import { avifSrcset } from "../data/avif";
 import CreatorProfile from "../components/CreatorProfile.astro";
 import Shell from "../layouts/Shell.astro";
 import LessonDiscovery from "../components/LessonDiscovery.astro";
@@ -33,7 +34,7 @@ const recommended = [...new Set(Object.values(picks).flat())].map((id) => {
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<Shell title="AIの安全を、解き明かそう。" mountainBackdrop>
+<Shell title="AIセキュリティを図解で学ぶ" description="AIを仕事で使う人、AIでアプリを作る人のための実践ガイド。個人情報、APIキー、ログインと権限、MCP・AIエージェント、公開前の確認と運用を、図解・コード・チェックリストで学べます。" mountainBackdrop>
   <section class="hero wrap">
     <div class="hero-copy">
       <p class="eyebrow hero-kicker">AI SECURITY PLAYBOOK</p>
@@ -52,15 +53,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       <FieldButton href="#catalog">気になることから探す</FieldButton>
     </div>
     <figure class="hero-art">
+      <picture>
+        <source type="image/avif" srcset={avifSrcset("field-notes-hero", base, [768,1536]) ?? undefined} sizes="(min-width:1280px) 680px, (max-width:760px) 100vw,62vw" />
       <img
         src={`${base}/images/field-notes-hero-1536.webp`}
         srcset={`${base}/images/field-notes-hero-768.webp 768w, ${base}/images/field-notes-hero-1536.webp 1536w`}
-        sizes="(max-width:760px) 100vw,62vw"
+        sizes="(min-width:1280px) 680px, (max-width:760px) 100vw,62vw"
         width="1536"
         height="1024"
         alt="道具や情報のつながりを見渡す、黒猫の探検家"
         fetchpriority="high"
       />
+      </picture>
       <figcaption>
         <span>OBSERVE / VERIFY / PROTECT</span>
         <span>仕組みを見渡す、最初の一歩。</span>

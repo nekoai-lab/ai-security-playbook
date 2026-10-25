@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
 import CatPose from "./CatPose.astro";
+import { avifSrcset } from "../data/avif";
 import CardArt from "./CardArt.astro";
 import ArticleLabel from "./ArticleLabel.astro";
 import { lessonCardArt, lessonCardSource } from "../data/card-art";
@@ -44,6 +45,7 @@ const visual = (key: string) => {
       ? asset.deliveries?.find((d) => d.width === 960)
       : undefined;
   return {
+    avif: avifSrcset(image,base),
     image,
     artKey: art.kind === "illustration" ? art.image : id,
     width: 960,
@@ -169,6 +171,7 @@ const catalog = Object.fromEntries(
           title: string;
           summary: string;
           image: string;
+          avif: string | null;
           width: number;
           height: number;
           artKey: string;
@@ -228,6 +231,8 @@ const catalog = Object.fromEntries(
       const image = items[target ?? id].image;
       art.srcset = `${base}/images/${image}-480.webp 480w, ${base}/images/${image}-960.webp 960w`;
       art.src = `${base}/images/${image}-480.webp`;
+      const avif = context.querySelector<HTMLSourceElement>("[data-next-avif]");
+      if (avif) avif.srcset = items[target ?? id].avif ?? "";
       context.querySelector("[data-next-reason]")!.textContent = target
         ? items[target].summary
         : "テーマや検索から、次に確かめたいことを選べます。";
