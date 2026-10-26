@@ -348,3 +348,11 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - check/build53ページ/test（更新情報4検査含む）・制作見本build/check成功。最終公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存色数警告のみ。閾値・対象除外なし、manual review424/8件は自動合格と区別。
 - 全216画面axe/横はみ出し/実行エラー0、53ページ375px文字200%。375/768/1280/1920pxの比較で両記事の外枠・ヘッダー・本文位置/幅・タイトル文字サイズ一致、PCとスマホの目次アンカーとキーボード、更新一覧の導線と猫の非重複を確認。PCとスマホを目視。
 - 証拠:article-frame-public、article-frame-guide、article-frame-compare.json、article-frame-browser.json。原本スクリーンショットは制作環境に保存。内容更新日や記事の事実、自動公開基盤は変更しない。
+
+## 2026-10-26 承認済み更新記事デザインを反映
+- ユーザーがプレビューを承認。ArticleFrameのupdate variantでPCの目次160px/間隔32px/修正表928px、コンパクトな冒頭、発表・最終更新の主表示を実装。掲載・情報確認はネイティブdetailsへ。通常教材の本文640px・タイトル48pxは維持。
+- スマホは修正1件ずつを読み、対象系列と説明を確認できる配置。実際のtable/row/columnheader/rowheader/cellを保つ。猫・山・紙色、事実・一次資料・日付は維持。表以外の説明と対応手順を読みやすい幅へ制限。
+- 初回診断でスマホの補足が画面左へ出る問題、非表示見出しの折り返しと本文末尾の孤立、広げすぎた説明の行長を検出。補足の左位置、隠し見出しのnowrap、本文折り返しと読む幅を修正。規則や対象を緩めず最終版で全幅を再確認。
+- check/build53ページ/test（更新情報5検査含む）・制作見本build/check成功。最終公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存色数警告のみ。manual review424/8件は自動合格と区別。
+- 全216画面axe/横はみ出し/実行エラー0、53ページ375px文字200%、4幅の更新導線・補足・猫の位置を確認。320/375/768/1280/1920pxで表幅、スマホ行の見出し幅、日付補足の画面内配置とEnter操作、通常教材の維持を実測。承認案とPC/スマホを目視比較。
+- 証拠:update-reading-public、update-reading-guide、update-reading-layout.json、update-reading-browser.json。スクリーンショット原本は制作環境。自動公開基盤・新素材は変更しない。

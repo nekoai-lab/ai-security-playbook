@@ -11,3 +11,9 @@ test('nested fields cannot bypass secret detection',async()=>{
 });
 
 test('updates and lessons share the article frame and both table-of-contents modes',async()=>{for(const route of ['updates/python-2026-10','learn/ai-review-trust']){const html=await readFile(`dist/${route}/index.html`,'utf8');for(const marker of ['wrap article-wrap','article-header','article-grid','article-toc-optional','article-mobile-toc'])assert(html.includes(marker),`${route}: ${marker}`);}});
+
+test('approved update variant exposes dates and retains accessible table semantics',async()=>{
+ const html=await readFile('dist/updates/python-2026-10/index.html','utf8');
+ for(const value of ['article-wrap--update','update-date-detail','最終更新','role="table"','role="rowheader"','role="cell"'])assert(html.includes(value),value);
+ const lesson=await readFile('dist/learn/ai-review-trust/index.html','utf8');assert(!lesson.includes('article-wrap--update'));
+});

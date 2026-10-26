@@ -59,3 +59,66 @@
 .article-header .update-dates{max-width:none;align-items:center}
 .article-header .update-dates>span{white-space:nowrap}
 .article-header .update-dates>a{display:inline-flex;align-items:center;min-height:44px;padding-block:8px}
+
+/* Approved update-reading variant; standard lessons retain their layout. */
+.article-wrap--update{padding-top:16px}
+.article-wrap--update .article-header{max-width:none;margin:12px 0 24px;padding:0;border:0}
+.article-wrap--update .article-header h1{font-size:40px;line-height:1.4;max-width:1040px;margin:12px 0 16px;text-wrap:balance}
+.article-wrap--update .article-header>p{margin:0 0 8px}
+.article-wrap--update .article-header>p:not(.eyebrow){max-width:44em;line-height:1.9}
+.article-wrap--update .article-header .eyebrow{margin:0}
+.article-wrap--update .update-metabar{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:8px}
+.article-wrap--update .update-metabar .metadata{margin:0;font:12px/1.6 var(--font-mono);gap:8px 16px;max-width:none}
+.article-wrap--update .update-date-detail{position:relative;font-size:12px;color:var(--color-muted)}
+.article-wrap--update .update-date-detail summary{min-height:44px;display:flex;align-items:center;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.article-wrap--update .update-date-detail[open] p{position:absolute;top:44px;right:0;width:240px;padding:16px;background:var(--color-paper-light);border:1px solid var(--color-line);z-index:3;font-size:12px}
+.article-wrap--update .article-toc-optional nav{padding:0;top:24px}
+.article-wrap--update .article-toc-optional a{font-size:14px;line-height:1.6}
+.article-wrap--update .article-toc-optional .eyebrow{letter-spacing:0;font-family:var(--font-sans);font-weight:700}
+.article-wrap--update .security-update{max-width:none}
+.article-wrap--update .security-update>section>p:not(.update-caption){max-width:40em}
+.article-wrap--update .security-update .fixes-heading{margin-top:0;min-height:64px}
+.article-wrap--update .security-update .table-peek{width:112px}
+.article-wrap--update .security-update table{font-size:16px;line-height:1.6}
+.article-wrap--update .security-update table th,.article-wrap--update .security-update table td{padding:16px 24px}
+.article-wrap--update .security-update table th:first-child{width:28%}
+.article-wrap--update .security-update table th:last-child{width:120px}
+.article-wrap--update .security-update table thead{font-size:14px}
+.article-wrap--update .security-update .update-caption{max-width:none;margin-top:12px;line-height:1.6}
+@media(min-width:1000px){.article-wrap--update .article-grid{grid-template-columns:160px minmax(0,1fr);gap:32px}}
+@media(max-width:760px){
+.article-wrap--update .article-header{margin-top:8px;margin-bottom:24px}
+.article-wrap--update .article-header h1{font-size:28px;line-height:1.4;margin:8px 0 12px}
+.article-wrap--update .update-metabar{gap:0 16px;margin-top:4px}
+.article-wrap--update .update-metabar .metadata{gap:0 16px}
+.article-wrap--update .article-mobile-toc{margin-bottom:16px}
+.article-wrap--update .security-update .fixes-heading{min-height:64px}
+.article-wrap--update .security-update .table-peek{width:96px}
+.article-wrap--update .fix-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.article-wrap--update .fix-table tbody{display:block}
+.article-wrap--update .fix-table tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;padding:16px;border-bottom:1px solid var(--color-line)}
+.article-wrap--update .security-update .fix-table th,.article-wrap--update .security-update .fix-table td{width:auto;padding:0;border:0}
+.article-wrap--update .fix-table tbody th{font-size:16px;grid-column:1;grid-row:1;line-height:1.6}
+.article-wrap--update .fix-table td:nth-child(2){grid-column:1/-1;grid-row:2;font-size:14px;line-height:1.9}
+.article-wrap--update .fix-table td:last-child{grid-column:2;grid-row:1;font-size:12px;color:var(--color-muted);white-space:nowrap;padding-top:4px}
+.article-wrap--update .fix-table td:last-child:before{content:'対象 ';}
+}
+@media(max-width:760px){
+.article-wrap--update .security-update .fix-table th:first-child,
+.article-wrap--update .security-update .fix-table th:last-child{width:auto}
+}
+/* Keep prose readable while the comparison table uses the wider column. */
+.article-wrap--update .article-header>p:not(.eyebrow),
+.article-wrap--update .security-update p,
+.article-wrap--update .security-update .update-caption,
+.article-wrap--update .security-update .takeaway,
+.article-wrap--update .security-update .aside,
+.article-wrap--update .security-update .more{max-width:40em}
+.article-wrap--update .security-update blockquote{max-width:32em}
+.article-wrap--update .security-update .fix-table td:last-child{white-space:nowrap}
+@media(max-width:760px){
+.article-wrap--update .update-date-detail[open] p{left:0;right:auto}
+.article-wrap--update .fix-table thead th{white-space:nowrap}
+.article-wrap--update .fix-table td:nth-child(2){text-wrap:balance}
+}
+.article-wrap--update .security-update .action-list{max-width:40em}
