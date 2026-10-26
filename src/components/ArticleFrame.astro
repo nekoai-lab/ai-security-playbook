@@ -3,15 +3,16 @@ interface Props {
   headings: {slug:string;text:string}[];
   bodyClass?: string;
   headerClass?: string;
+  variant?: "standard" | "update";
 }
-const {headings,bodyClass="prose",headerClass=""}=Astro.props;
+const {headings,bodyClass="prose",headerClass="",variant="standard"}=Astro.props;
 ---
-<div class="wrap article-wrap">
+<div class:list={["wrap article-wrap",{"article-wrap--update":variant==="update"}]}>
   <slot name="breadcrumbs" />
   <header class:list={["article-header",headerClass]}><slot name="header" /></header>
   <div class="article-grid">
     <aside class="article-toc-optional">
-      <nav aria-label="この記事の目次"><p class="eyebrow">ON THIS PAGE</p>
+      <nav aria-label="この記事の目次"><p class="eyebrow">{variant==="update"?"このページの内容":"ON THIS PAGE"}</p>
         {headings.map(h=><a href={`#${h.slug}`}>{h.text}</a>)}
       </nav>
     </aside>
