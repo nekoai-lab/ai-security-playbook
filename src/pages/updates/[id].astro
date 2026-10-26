@@ -1,6 +1,7 @@
 ---
 import Shell from "../../layouts/Shell.astro";
 import ArticleFrame from "../../components/ArticleFrame.astro";
+import TailwormCheck from "../../components/TailwormCheck.astro";
 import UpdateRuntimeCheck from "../../components/UpdateRuntimeCheck.astro";
 import { securityUpdates } from "../../data/security-updates";
 import { getCollection } from "astro:content";
@@ -11,7 +12,7 @@ const base=import.meta.env.BASE_URL.replace(/\/$/, "");
 const lessons=await getCollection("lessons");
 const related=update.related.map(id=>lessons.find(l=>l.id===id));
 if(related.some(l=>!l))throw Error("Unknown update related lesson");
-const headings=[{slug:"fixes-title",text:"主な修正"},{slug:"scope-title",text:"自分にも関係する？"},{slug:"actions-title",text:"必要な対応"},{slug:"related-title",text:"詳しい手順"},{slug:"official",text:"公式情報"}];
+const headings=[{slug:"fixes-title",text:update.id==="tailworm-2026-10"?"報告と確認の状況":"主な修正"},{slug:"scope-title",text:"自分にも関係する？"},{slug:"actions-title",text:"必要な対応"},{slug:"related-title",text:"詳しい手順"},{slug:"official",text:"公式情報"}];
 ---
 <Shell title={update.title} description={update.summary} articleId={`update-${update.id}`} articleMetadata={{published:update.published,updated:update.updated}} breadcrumbs={[{name:"新着・更新",path:`${base}/updates/`},{name:update.product,path:`${base}/updates/${update.id}/`}] }>
 <ArticleFrame variant="update" headings={headings} bodyClass="security-update" headerClass="article-header--narrative">
@@ -25,9 +26,9 @@ const headings=[{slug:"fixes-title",text:"主な修正"},{slug:"scope-title",tex
 <details class="update-date-detail"><summary>掲載・確認日</summary><p>掲載：<time datetime={update.published}>{update.published}</time><br/>情報確認：<time datetime={update.reviewed}>{update.reviewed}</time></p></details>
 </div>
 </Fragment>
-<section aria-labelledby="fixes-title"><div class="fixes-heading"><h2 id="fixes-title">主な修正は、ここ。</h2><img class="table-peek" src={`${base}/brand/cat-peek-320.webp`} alt="" width="320" height="213"/></div>
-<div class="fix-table"><table role="table"><thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">修正された場所</th><th scope="col" role="columnheader">何が変わった？</th><th scope="col" role="columnheader">今回の対象系列</th></tr></thead><tbody role="rowgroup">{update.fixes.map(f=><tr role="row"><th scope="row" role="rowheader">{f.area}</th><td role="cell">{f.detail}</td><td role="cell">{f.versions}</td></tr>)}</tbody></table></div><p class="update-caption">{update.limitations} <a href="#official">公式情報へ ↓</a></p></section>
-<section class="update-section"><h2 id="scope-title">自分にも関係する？</h2><p>{update.scope}</p>{update.checker==="python"&&<UpdateRuntimeCheck/>}</section>
+<section aria-labelledby="fixes-title"><div class="fixes-heading"><h2 id="fixes-title">{update.id === "tailworm-2026-10" ? "何が報告された？" : "主な修正は、ここ。"}</h2><img class="table-peek" src={`${base}/brand/cat-peek-320.webp`} alt="" width="320" height="213"/></div>
+<div class="fix-table"><table role="table"><thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">{update.id === "tailworm-2026-10" ? "報告された機能" : "修正された場所"}</th><th scope="col" role="columnheader">{update.id === "tailworm-2026-10" ? "確認の状況" : "何が変わった？"}</th><th scope="col" role="columnheader">{update.id === "tailworm-2026-10" ? "確認条件" : "今回の対象系列"}</th></tr></thead><tbody role="rowgroup">{update.fixes.map(f=><tr role="row"><th scope="row" role="rowheader">{f.area}</th><td role="cell">{f.detail}</td><td role="cell">{f.versions}</td></tr>)}</tbody></table></div><p class="update-caption">{update.limitations} <a href="#official">公式情報へ ↓</a></p></section>
+<section class="update-section"><h2 id="scope-title">自分にも関係する？</h2><p>{update.scope}</p>{update.checker==="python"&&<UpdateRuntimeCheck/>}{update.id==="tailworm-2026-10"&&<TailwormCheck/>}</section>
 <section class="update-section"><h2 id="actions-title">対応は、この{update.actions.length}つ。</h2><ol class="action-list">{update.actions.map(a=><li><b>{a.title}</b><span>{a.detail}</span></li>)}</ol></section>
 <section class="update-section"><h2 id="related-title">手順を詳しく知りたいときは。</h2>{related.map(l=><p><a class="update-related" href={`${base}/learn/${l!.id}/`}>{l!.data.title} →</a></p>)}</section>
 <section class="update-section"><h2 id="official">公式情報</h2><ul>{update.sources.map(s=><li><a href={s.url}>{s.title}</a></li>)}</ul><p class="update-caption">一次資料の確認日：{update.reviewed}。更新作業の完了を保証するものではありません。</p><a class="update-related" href={`${base}/updates/`}>新着・更新へ戻る →</a></section>
