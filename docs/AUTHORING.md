@@ -70,4 +70,4 @@ ReadingArtはreading-highlights.tsの2つの場面をsrcset付きで表示する
 
 `src/data/security-updates/<id>.json` に公開用の確認済み情報を置く。正本はsecurity-update-schema.tsと既存のPython掲載例。修正箇所/変更内容/対象系列の表を冒頭に置き、対象→対応→一次資料/既存教材へつなぐ。本文のJSや未承認素材を追加しない。同じ事象の続報は既存IDを更新する。新URLはreview-mapへ。日付・一次資料・未確認事項・既存教材参照はテストで検査する。
 
-この更新情報は速報の判断ガイドであり、長い教材の品質ルールを回避する入口ではない。深掘りが必要なら別途CONTENT_STANDARDに沿う教材を作る。自動公開の範囲と停止条件はscripts/publishing/RUNBOOK.md。
+この更新情報は速報の判断ガイドであり、長い教材の品質ルールを回避する入口ではない。深掘りが必要なら別途CONTENT_STANDARDに沿う教材を作る。この段階は記事の検証と公開のみを行い、日報取得・自動マージは含めない。
