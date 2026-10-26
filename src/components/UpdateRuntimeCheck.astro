@@ -1,0 +1,11 @@
+---
+const base=import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<div class="check-intro"><p>Pythonを使っているか分からなくても大丈夫。<br>まずは手元のPCで確認してみましょう。</p><img class="intro-walker" src={`${base}/brand/cat-walk-right-320.webp`} alt="" aria-hidden="true" width="320" height="320"></div>
+<div class="takeaway walk-card"><h3>① ターミナルを開く</h3><ul><li><b>Mac：</b>⌘＋スペースで「ターミナル」と検索して開く。</li><li><b>Windows：</b>スタートメニューで「PowerShell」と検索して開く。</li><li><b>VS Code：</b>メニューの「ターミナル」→「新しいターミナル」を開く。</li></ul>
+<h3 style="margin-top:24px">② この1行を貼り付けて、Enter</h3><p>バージョンを表示するだけのコマンドです。更新や削除はしません。</p><div class="code">python3 --version</div>
+<p class="caption">「見つかりません」などと出た場合は、代わりに <code>python --version</code> を試してください。Windowsでは <code>py --version</code> で確認できることもあります。インストール画面が出たら閉じて構いません。確認のために新しく入れる必要はありません。</p>
+<h3 style="margin-top:24px">③ 出てきた数字を見る</h3><div class="result-guide"><p><code>Python 3.12.15</code><br><b>3.12系列で、今回の修正版より前。</b><br>使っているアプリとの関係を確認します。</p><p><code>Python 3.12.16</code><br><b>このPythonには、今回の修正が含まれます。</b><br>別の環境のPythonは、それぞれ確認が必要です。</p></div>
+<p class="caption" style="margin-top:16px">3.11系列の今回の修正版は3.11.18です。他系列は公式発表を確認してください。エラーになっても「Pythonを使っていない」「影響なし」とは判断できません。結果の例は今回のリリースに対するものです。</p></div>
+<div class="aside"><img src={`${base}/brand/cat-investigate-320.webp`} alt=""><p><b>ここで分かるのは、コマンドを実行した環境の版です。</b><br>手元のPCと、公開中のアプリのサーバーは別の場合があります。アプリ専用の環境に別のPythonが入っていることもあります。</p></div>
+<details class="more"><summary>公開中のアプリは？</summary><p>アプリを作ったAIや、管理している人に、次の文面で確認を頼めます。</p><blockquote style="margin:16px 0;padding:24px;background:var(--color-paper-light)">このアプリはPythonを使っていますか？ 使っている場合、ローカル開発・ビルド・本番で実際に使うPythonのバージョンと、確認した根拠を教えてください。Dockerfileの指定と、稼働中の版は分けてください。確認だけ行い、更新・設定変更・デプロイはしないでください。確認できないものは未確認としてください。</blockquote><p class="caption">AIの回答でも、設定に書かれた版と実際の稼働版を区別します。ホスティング側が環境を管理している場合は、そのサービスの管理画面や公式案内で確認します。</p></details>
