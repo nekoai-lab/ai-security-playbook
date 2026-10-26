@@ -330,3 +330,8 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - 全212画面でaxe/実行エラー/横はみ出し0、52ページ375px文字200%、4幅のスキップ後TabとフッターからトップへのEnter、68組の次記事画像・肉球・フルブリードを確認。スマホ/PCのトップ、記事冒頭、カードを目視し構図・余白を維持。検証スクリプトの引用符とビルド中の404は修正/完了後に全対象を再検査し、失敗結果を合格の証拠にしていない。
 - 改善前モバイルLighthouseはトップ89/LCP3.8秒、代表教材100/LCP1.0秒。SEO自動点数100でも今回の不足は検出しない。単発ラボと実ユーザーCWVを分け、Search Console/Bingのインデックス・順位・AI引用は未確認。運用規則と所有権確認/サイトマップ送信はdocs/SEO.md。
 - 証拠: search-public-full、search-guide-full、search-discovery.json、search-browser.json、search-keyboard.json、search-next-card.json。原本スクリーンショットは制作環境に保存。
+
+## 2026-10-26 セキュリティ更新記事（自動公開基盤と分離）
+- 記事・一覧・トップ導線・metadata・sitemapのみ公開。日報取り込み、公開ゲート、台帳処理は別ブランチに保持する。
+- 承認済みの表・歩く猫・のぞき猫は保持。先行監査は履歴であり、分離後の成果物を再検証して公開判断する。
+- 分離後の現在のビルドでcheck/build53ページ/test・制作見本build/check成功。公開FULL3388 passed/error0/warning4、見本60 passed/error0/warning4。既存色数警告のみ、閾値・対象は維持。全216画面axe/横はみ出し/実行エラー0、53ページ文字200%、4幅の切替・遷移・キーボード・猫と本文の位置を再確認。manual review424/8件は自動合格と区別する。証拠はupdates-public-full/updates-guide-full/updates-browser.json/updates-interactions.json。

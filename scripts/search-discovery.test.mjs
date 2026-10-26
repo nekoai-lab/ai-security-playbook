@@ -52,6 +52,7 @@ test("every emitted public page has unique metadata and matching structured data
     assert.equal(node("WebSite").url, root.href);
     const id = /^learn\/([^/]+)\/$/.exec(route)?.[1],
       article = node("Article");
+    const updateId = /^updates\/([^/]+)\/$/.exec(route)?.[1];
     if (id) {
       const raw = await readFile(`src/content/lessons/${id}.mdx`, "utf8"),
         front = parse(raw.split(/^---\s*$/m)[1]);
@@ -63,6 +64,11 @@ test("every emitted public page has unique metadata and matching structured data
       assert.equal(article.image.url, meta.get("og:image"));
       assert.equal(article.image.width, 1200);
       assert.equal(article.image.height, 630);
+    } else if (updateId) {
+      const u=JSON.parse(await readFile(`src/data/security-updates/${updateId}.json`,"utf8"));
+      assert.equal(article.headline,u.title);assert.equal(article.description,u.summary);
+      assert.equal(article.datePublished,u.published);assert.equal(article.dateModified,u.updated);
+      assert.equal(article.author["@id"],person["@id"]);
     } else assert(!article, route);
     const crumbs = node("BreadcrumbList");
     if (crumbs) {
@@ -96,7 +102,11 @@ test("sitemap contains exactly emitted canonical pages and only factual article 
     if (id) {
       const raw = await readFile(`src/content/lessons/${id}.mdx`, "utf8");
       assert.equal(date, parse(raw.split(/^---\s*$/m)[1]).updated);
-    } else assert.equal(date, undefined);
+    } else {
+      const updateId=/\/updates\/([^/]+)\/$/.exec(url)?.[1];
+      if(updateId)assert.equal(date,JSON.parse(await readFile(`src/data/security-updates/${updateId}.json`,"utf8")).updated);
+      else assert.equal(date,undefined);
+    }
   }
 });
 test("JSON-LD serialization prevents script termination", () => {
