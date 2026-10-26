@@ -356,3 +356,9 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - check/build53ページ/test（更新情報5検査含む）・制作見本build/check成功。最終公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存色数警告のみ。manual review424/8件は自動合格と区別。
 - 全216画面axe/横はみ出し/実行エラー0、53ページ375px文字200%、4幅の更新導線・補足・猫の位置を確認。320/375/768/1280/1920pxで表幅、スマホ行の見出し幅、日付補足の画面内配置とEnter操作、通常教材の維持を実測。承認案とPC/スマホを目視比較。
 - 証拠:update-reading-public、update-reading-guide、update-reading-layout.json、update-reading-browser.json。スクリーンショット原本は制作環境。自動公開基盤・新素材は変更しない。
+
+## 2026-10-27 Tailworm更新記事
+
+新規記事を共通update枠へ追加。PC1280・スマホ375で機能表、比較図、歩く猫、確認カードを目視。320/375/768/1280でキーボード開閉と文字200%の横はみ出しなしを確認。初回200%検査で条件ラベルが広がり表がはみ出したため、新記事限定の折り返しを追加。初回FULLの320px孤立行も修正対象とし再実行。既存commandsと制作ガイドの色数警告は既知だが今回も検査対象を維持。FULLの最終集計はPR本文へ記録。閾値変更・対象除外なし。
+
+内容は公式10/26調査続報、SSH公式資料、研究者原報、TS-2026-013を照合。修正予定を公開済みにしない。提供元と研究者の指摘、接続先と接続元を区別。PoC・端末の設定変更は実施していない。

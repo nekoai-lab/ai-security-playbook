@@ -15,7 +15,7 @@ if(related.some(l=>!l))throw Error("Unknown update related lesson");
 const headings=[{slug:"fixes-title",text:update.id==="tailworm-2026-10"?"報告と確認の状況":"主な修正"},{slug:"scope-title",text:"自分にも関係する？"},{slug:"actions-title",text:"必要な対応"},{slug:"related-title",text:"詳しい手順"},{slug:"official",text:"公式情報"}];
 ---
 <Shell title={update.title} description={update.summary} articleId={`update-${update.id}`} articleMetadata={{published:update.published,updated:update.updated}} breadcrumbs={[{name:"新着・更新",path:`${base}/updates/`},{name:update.product,path:`${base}/updates/${update.id}/`}] }>
-<ArticleFrame variant="update" headings={headings} bodyClass="security-update" headerClass="article-header--narrative">
+<ArticleFrame variant="update" headings={headings} bodyClass={`security-update${update.id === "tailworm-2026-10" ? " security-update--tailworm" : ""}`} headerClass="article-header--narrative">
 <nav slot="breadcrumbs" class="crumbs" aria-label="パンくず"><a href={`${base}/updates/`}>新着・更新</a><span aria-hidden="true">/</span><span aria-current="page">{update.product}</span></nav>
 <Fragment slot="header">
 <p class="eyebrow">SECURITY UPDATE / {update.product}</p>

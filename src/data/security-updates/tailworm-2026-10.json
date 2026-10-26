@@ -12,12 +12,12 @@
     {
       "area": "Tailscale SSH",
       "detail": "公式は許可された接続からOSユーザーの権限を超える可能性を調査中。影響する構成の全体は確認中です。",
-      "versions": "機能・許可・構成で判断"
+      "versions": "有効設定"
     },
     {
       "area": "Serve・Funnel／app connector／headscale",
       "detail": "研究者はSSH以外にも指摘を報告。SSHが無効でも報告全体の対象外とは限りません。",
-      "versions": "各機能の利用を確認"
+      "versions": "利用あり"
     }
   ],
   "scope": "Tailscaleで自宅PCやサーバーへSSH接続する人が対象です。接続元ではなく接続される端末を確認します。IPや端末名だけではSSHの種類は判断できません。",
