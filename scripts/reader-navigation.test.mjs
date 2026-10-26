@@ -442,3 +442,13 @@ test("GA4 runs only on the production origin and base and respects the standard 
     assert.equal(result.calls.length, 0);
   }
 });
+
+ test("every public page shares the desktop mountain frame", async () => {
+ const {readFile}=await import("node:fs/promises");
+ const {pages}=JSON.parse(await readFile("design/review-map.json","utf8"));
+ for(const route of pages){
+  const html=await readFile(`dist/${route}index.html`,"utf8");
+  assert.equal((html.match(/<picture class="mountain-backdrop"/g)||[]).length,1,route||"home");
+  assert(html.includes("site-frame--mountain"),route||"home");
+ }
+ });

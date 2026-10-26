@@ -335,3 +335,9 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - 記事・一覧・トップ導線・metadata・sitemapのみ公開。日報取り込み、公開ゲート、台帳処理は別ブランチに保持する。
 - 承認済みの表・歩く猫・のぞき猫は保持。先行監査は履歴であり、分離後の成果物を再検証して公開判断する。
 - 分離後の現在のビルドでcheck/build53ページ/test・制作見本build/check成功。公開FULL3388 passed/error0/warning4、見本60 passed/error0/warning4。既存色数警告のみ、閾値・対象は維持。全216画面axe/横はみ出し/実行エラー0、53ページ文字200%、4幅の切替・遷移・キーボード・猫と本文の位置を再確認。manual review424/8件は自動合格と区別する。証拠はupdates-public-full/updates-guide-full/updates-browser.json/updates-interactions.json。
+
+## 2026-10-26 全ページ共通のPC山岳背景
+- トップ限定だった背景をShellの既定でONにし、ページごとの指定を不要にした。CSS・画像・本文の読み幅は維持。スマホ全幅、1280px未満の画像通信なし、印刷時非表示を維持する。
+- check/build53ページ/test（全公開ページの背景回帰を追加）・制作見本build/check成功。公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存色数警告のみ、規則・閾値・対象除外なし。manual review424/8件は自動合格と区別。
+- 全216画面axe/実行エラー/横はみ出し0、53ページ375px文字200%、更新一覧の4幅キーボード導線を再確認。375/768/1279/1280/1920/2560pxの73組で1920px全ページを含め中央1200px、背景のスクロール固定、モバイルの山岳画像リクエスト0、印刷時非表示を実測。PC記事/一覧とスマホの紙面を目視。
+- 証拠:shared-mountain-public、shared-mountain-guide、shared-mountain-layout.json、shared-mountain-browser.json。原本スクリーンショットは制作環境に保存。
