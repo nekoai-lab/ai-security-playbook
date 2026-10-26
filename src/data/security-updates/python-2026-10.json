@@ -1,0 +1,67 @@
+{
+  "id": "python-2026-10",
+  "title": "Python 3.11.18・3.12.16：何が修正された？",
+  "summary": "証明書・Cookie・tar展開などの修正箇所を一覧で確認し、実際に使うPythonの版と更新対応を確かめます。",
+  "product": "Python",
+  "announced": "2026-10-25",
+  "published": "2026-10-26",
+  "updated": "2026-10-26",
+  "reviewed": "2026-10-26",
+  "image": "maintenance-lookout",
+  "fixes": [
+    {
+      "area": "HTTPSの証明書 / ssl",
+      "detail": "侵害されたeMudhra中間CAの鍵を使う証明書チェーンを拒否。",
+      "versions": "3.11・3.12"
+    },
+    {
+      "area": "Cookieの受け入れ / http.cookiejar",
+      "detail": "ドメイン検証の回避につながる、負のバージョン値のCookieを拒否。",
+      "versions": "3.11・3.12"
+    },
+    {
+      "area": "tarファイルの展開 / tarfile.tar_filter",
+      "detail": "展開先そのものを置き換えるリンクを拒否。",
+      "versions": "3.11・3.12"
+    },
+    {
+      "area": "一時フォルダの後片付け / TemporaryDirectory",
+      "detail": "後片付け処理の競合を修正。",
+      "versions": "3.12"
+    }
+  ],
+  "scope": "Python 3.11・3.12を使う環境は、実際の版を確認してください。今回の修正版は3.11.18・3.12.16です。他系列にも更新があります。対象系列の利用だけでは、すべての問題の影響が成立するとは限りません。",
+  "limitations": "主な修正の抜粋です。Expat・WindowsのMIME設定・メールヘッダー処理などの修正も含まれます。全項目と他系列は公式情報へ。公式Dockerイメージの提供状況と個別サービスへの影響は未確認です。",
+  "checker": "python",
+  "actions": [
+    {
+      "title": "稼働中の版を確認",
+      "detail": "手元のPCと、公開中のアプリを取り違えない。"
+    },
+    {
+      "title": "修正版を取り込む",
+      "detail": "Dockerなら修正版イメージを確認し、必要なビルド・デプロイを行う。"
+    },
+    {
+      "title": "反映と動作を確認",
+      "detail": "更新作業をしたことと、稼働環境に反映されたことを分けて確かめる。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Python 3.11.18：全修正項目",
+      "url": "https://www.python.org/downloads/release/python-31118/"
+    },
+    {
+      "title": "Python 3.12.16：全修正項目",
+      "url": "https://www.python.org/downloads/release/python-31216/"
+    },
+    {
+      "title": "他系列を含むPython公式発表",
+      "url": "https://blog.python.org/2026/10/python-3152-31410-31318-31216-31118/"
+    }
+  ],
+  "related": [
+    "dependency-updates"
+  ]
+}

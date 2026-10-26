@@ -1,4 +1,5 @@
 ---
+import { securityUpdates } from "../data/security-updates";
 import Shell from "../layouts/Shell.astro";
 import { getCollection } from "astro:content";
 const all = await getCollection("lessons");
@@ -31,9 +32,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <header class="hub-header">
       <p class="eyebrow">FIELD UPDATES</p>
       <h1>新着・更新</h1>
-      <p>新しい教材と、読み直したい変更を。</p>
+      <p>新しい教材と、いま確認しておきたい変更を。</p>
     </header>
-    <ol class="update-list">
+    <div class="update-filters" role="group" aria-label="更新情報の種類"><button data-update-filter="all" aria-pressed="true">すべて</button><button data-update-filter="security" aria-pressed="false">セキュリティ更新</button><button data-update-filter="lesson" aria-pressed="false">教材の公開・更新</button></div>
+    <p data-update-status aria-live="polite" class="catalog-meta">{securityUpdates.length + events.length}件</p>
+    <div data-update-kind="security">{securityUpdates.map(u=><article class="security-update-card"><img src={`${base}/images/${u.image}-480.webp`} srcset={`${base}/images/${u.image}-480.webp 480w, ${base}/images/${u.image}-960.webp 960w`} sizes="(max-width:760px) 100vw, 560px" alt="" width="960" height="640" loading="lazy"/><div><p class="catalog-meta">セキュリティ更新 · {u.product} · {u.updated}</p><h2><a href={`${base}/updates/${u.id}/`}>{u.title} →</a></h2><p>{u.summary}</p><a class="update-cta" href={`${base}/updates/${u.id}/`}>修正内容を見る →</a></div></article>)}</div>
+    <ol class="update-list" data-update-kind="lesson">
       {events.map((event) => (
         <li>
           <p class="catalog-meta">
@@ -50,3 +54,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </ol>
   </div>
 </Shell>
+
+<script>
+const controls=document.querySelectorAll<HTMLButtonElement>("[data-update-filter]");
+controls.forEach(button=>button.addEventListener("click",()=>{const value=button.dataset.updateFilter;controls.forEach(b=>b.setAttribute("aria-pressed",String(b===button)));document.querySelectorAll<HTMLElement>("[data-update-kind]").forEach(el=>el.hidden=value!=="all"&&el.dataset.updateKind!==value);const count=value==="security"?document.querySelectorAll(".security-update-card").length:value==="lesson"?document.querySelectorAll(".update-list li").length:document.querySelectorAll(".security-update-card,.update-list li").length;document.querySelector("[data-update-status]")!.textContent=`${count}件`;}));
+</script>
+<style>
+.update-filters{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.update-filters button{min-height:44px;border:1px solid var(--color-line);background:transparent;color:var(--color-ink);padding:8px 16px;font:inherit;font-size:14px;cursor:pointer}.update-filters button[aria-pressed=true]{background:var(--color-ink);color:var(--color-paper)}.security-update-card{display:grid;grid-template-columns:1fr 1fr;background:var(--color-paper-light);margin:24px 0 32px}.security-update-card img{width:100%;height:100%;object-fit:cover}.security-update-card>div{padding:24px}.security-update-card h2{font-size:24px;line-height:1.6;margin:16px 0}.security-update-card p{font-size:16px;line-height:1.9;margin-bottom:16px}.security-update-card .catalog-meta{font-size:12px;line-height:1.6}.update-cta{display:inline-block;min-height:44px;padding-block:8px}[hidden]{display:none!important}@media(max-width:760px){.security-update-card{grid-template-columns:1fr}.security-update-card img{aspect-ratio:1280/670;height:auto}.security-update-card>div{padding:16px}}
+</style>

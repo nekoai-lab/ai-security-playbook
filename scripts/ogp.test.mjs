@@ -32,10 +32,11 @@ test("every built page has exact OGP values, absolute base URLs and a real 1200Ã
   for (const route of routes) {
     const html = await readFile(`dist/${route}index.html`, "utf8");
     const id = /^learn\/([^/]+)\/$/.exec(route)?.[1];
-    const data = id ? await lesson(id) : undefined;
+    const updateId = /^updates\/([^/]+)\/$/.exec(route)?.[1];
+    const data = id ? await lesson(id) : updateId ? JSON.parse(await readFile(`src/data/security-updates/${updateId}.json`,"utf8")) : undefined;
     const meta = validateMetadata(html, {
       url: new URL(route, base).href,
-      article: !!id,
+      article: !!id || !!updateId,
       title: data?.title,
       summary: data?.summary,
     });

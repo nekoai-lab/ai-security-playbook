@@ -38,6 +38,12 @@ export default function searchSitemap() {
             throw new Error(`Invalid update date: ${name}`);
           dates.set(`learn/${name.slice(0, -4)}/`, updated);
         }
+        for (const name of await readdir("src/data/security-updates")) {
+          if (!name.endsWith(".json")) continue;
+          const data = JSON.parse(await readFile(`src/data/security-updates/${name}`,"utf8"));
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(data.updated)) throw Error(`Invalid update date: ${name}`);
+          dates.set(`updates/${data.id}/`,data.updated);
+        }
         const urls = new Map();
         for (const page of pages) {
           let route = page.pathname.replace(/^\//, "");

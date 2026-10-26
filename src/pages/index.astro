@@ -1,4 +1,5 @@
 ---
+import { securityUpdates } from "../data/security-updates";
 import { avifSrcset } from "../data/avif";
 import CreatorProfile from "../components/CreatorProfile.astro";
 import Shell from "../layouts/Shell.astro";
@@ -130,6 +131,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <p class="eyebrow">UPDATES</p>
     <h2 id="updates-title">新着・更新</h2>
     <ul class="news-list">
+{securityUpdates.slice(0,1).map(u=><li><time datetime={u.updated}>{u.updated}</time><div><a href={`${base}/updates/${u.id}/`}>セキュリティ更新：{u.title} →</a><p>{u.summary}</p></div></li>)}
       {recent.map((lesson) => (
         <li data-home-update>
           <time datetime={lesson.data.updated}>{lesson.data.updated}</time>

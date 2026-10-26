@@ -245,7 +245,7 @@ test("all built pages use one shared header/footer and reader hubs keep the rout
       ? ["学習ルート"]
       : /^(library|topics|series|learn)\//.test(route)
         ? ["教材を探す"]
-        : route === "updates/"
+        : route.startsWith("updates/")
           ? ["新着・更新"]
           : [];
     assert.deepEqual(selected, expected, route);

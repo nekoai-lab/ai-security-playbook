@@ -330,3 +330,13 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - 全212画面でaxe/実行エラー/横はみ出し0、52ページ375px文字200%、4幅のスキップ後TabとフッターからトップへのEnter、68組の次記事画像・肉球・フルブリードを確認。スマホ/PCのトップ、記事冒頭、カードを目視し構図・余白を維持。検証スクリプトの引用符とビルド中の404は修正/完了後に全対象を再検査し、失敗結果を合格の証拠にしていない。
 - 改善前モバイルLighthouseはトップ89/LCP3.8秒、代表教材100/LCP1.0秒。SEO自動点数100でも今回の不足は検出しない。単発ラボと実ユーザーCWVを分け、Search Console/Bingのインデックス・順位・AI引用は未確認。運用規則と所有権確認/サイトマップ送信はdocs/SEO.md。
 - 証拠: search-public-full、search-guide-full、search-discovery.json、search-browser.json、search-keyboard.json、search-next-card.json。原本スクリーンショットは制作環境に保存。
+
+## 2026-10-26 更新情報・事後通知の自動公開
+- 承認プレビューの「修正一覧→対象→対応」を共通ページへ。既存ののぞき猫と歩く猫を配置し、短い導入とカードの上辺を揃える。新着・更新の種類切替、トップの更新枠、関連教材・一次資料・記事metadata・sitemapへ接続。非公開の日報はサイトへ含めず、公開用JSONだけを描画。
+- 初回のPython 3.11.18/3.12.16は公式リリースを再確認。対象条件と未確認のDocker配布/個別環境を分離。published/updated/reviewedは実際の掲載・確認日、announcedは一次発表日。内部アラート件数やサービス名は掲載しない。
+- 初回の18error（リンク42px/20px余白/左端の差/折り返し/文字段階）を修正し、最終公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存の色数警告のみ。規則・しきい値・対象除外なし。manual review424/8件は自動合格と扱わない。
+- 全216画面でaxe/実行エラー/横はみ出し0、53ページ375px文字200%、更新一覧の3種類切替・詳細遷移・detailsのEnter・フッターのトップ遷移・猫と本文の非重複を4幅で確認。PC/スマホの表と歩く猫カードを目視。
+- check/build/test（新データ2・日報取得4・公開ポリシー2を含む）・制作見本build/check成功。日報は実APIで取得成功だが日付付き記事0件。将来の日報からの自動公開を実行済みとは扱わない。runbook/状態台帳/定期実行で処理し、本人の事前確認を省くが独立QA・CI・公開URL確認を省略しない。
+- 証拠:updates-public-full、updates-guide-full、updates-browser.json、updates-interactions.json。原本スクリーンショットは制作環境のみ。
+- 独立QAの指摘2件を修正: 入れ子の本文/出典名も再帰的に秘密文字列を検査し、同じ日報を複数PRが触る場合はGitHub更新時刻/番号の最新を採用。回帰テストを追加。表示用HTMLの内容は変わらない。公開ゲートはmainより遅れた枝も停止。修正後の最新SHAへQAを再依頼。
+- 再QAの指摘に対応: check-pr自身が独立QAを新規実行し、その実行が返したコメントIDと最新判定のみ採用。古いpassと新しいblocking、自己作成コメントは拒否。日報はmainより遅れたPRを採用せず、同一パスの競合PRは停止。追加の回帰テストで検証。
