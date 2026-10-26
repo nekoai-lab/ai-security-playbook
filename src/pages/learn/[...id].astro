@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import CreatorProfile from "../../components/CreatorProfile.astro";
 import Shell from "../../layouts/Shell.astro";
+import ArticleFrame from "../../components/ArticleFrame.astro";
 import ExplorerNote from "../../components/ExplorerNote.astro";
 import DataTable from "../../components/DataTable.astro";
 import LearningContext from "../../components/LearningContext.astro";
@@ -55,8 +56,8 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
     {name: lesson.data.shortTitle ?? lesson.data.title, path: `${base}/learn/${lesson.id}/`},
   ]}
 >
-  <div class="wrap article-wrap">
-    <nav class="crumbs" aria-label="パンくず">
+  <ArticleFrame headings={headings.filter(h=>h.depth===2)} bodyClass={lesson.data.qualityVersion===2?"prose article-narrative":"prose"} headerClass={lesson.data.qualityVersion===2?"article-header--narrative":""}>
+    <nav slot="breadcrumbs" class="crumbs" aria-label="パンくず">
       <a href={`${base}/library/`}>教材一覧</a>
       <span aria-hidden="true">/</span>
       <a href={`${base}/topics/${lesson.data.topic}/`}>
@@ -67,12 +68,7 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
         {lesson.data.shortTitle ?? lesson.data.title}
       </span>
     </nav>
-    <header
-      class:list={[
-        "article-header",
-        { "article-header--narrative": lesson.data.qualityVersion === 2 },
-      ]}
-    >
+    <Fragment slot="header">
       <p class="eyebrow">
         {lesson.data.format} / 約{lesson.data.minutes}分
       </p>
@@ -114,40 +110,7 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
           <time datetime={lesson.data.reviewed}>{lesson.data.reviewed}</time>
         </span>
       </p>
-    </header>
-    <div class="article-grid">
-      <aside
-        class:list={{
-          "article-toc-optional": true,
-        }}
-      >
-        <nav aria-label="この教材の目次">
-          <p class="eyebrow">ON THIS PAGE</p>
-          {headings
-            .filter((h) => h.depth === 2)
-            .map((h) => (
-              <a href={`#${h.slug}`}>{h.text}</a>
-            ))}
-        </nav>
-      </aside>
-      <article
-        class:list={[
-          "prose",
-          { "article-narrative": lesson.data.qualityVersion === 2 },
-        ]}
-      >
-        {
-          <details class="article-mobile-toc">
-            <summary>この記事の目次</summary>
-            <nav aria-label="この教材の目次">
-              {headings
-                .filter((h) => h.depth === 2)
-                .map((h) => (
-                  <a href={`#${h.slug}`}>{h.text}</a>
-                ))}
-            </nav>
-          </details>
-        }
+    </Fragment>
         <Content components={{ table: DataTable }} />
         {lesson.data.qualityVersion !== 2 && (
           <ExplorerNote title="読んだことを、ひとつ確かめよう。" compact>
@@ -195,9 +158,7 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
             この教材のソース・修正提案 ↗
           </a>
         </p>
-      </article>
-    </div>
-  </div>
+  </ArticleFrame>
 </Shell>
 
 <style>

@@ -1,4 +1,4 @@
-.security-update{max-width:calc(40em + 48px);padding:32px 24px 64px}
+.security-update{min-width:0;max-width:var(--reading-width)}
 .security-update h1{font-size:32px;line-height:1.4;margin:16px 0;text-wrap:balance}
 .security-update h2{font-size:24px;line-height:1.6;margin:0 0 16px;text-wrap:balance}
 .security-update h3{font-size:20px;line-height:1.6;margin:0;text-wrap:balance}
@@ -32,7 +32,7 @@
 .security-update .more[open] summary:before{content:'▾'}
 .security-update .more[open] summary{margin-bottom:16px}
 .security-update blockquote{margin:16px 0;padding:24px;background:var(--color-paper-light);font-size:14px;line-height:1.9}
-.security-update .fixes-heading{position:relative;min-height:104px;display:flex;align-items:flex-end;margin-top:24px;padding-bottom:16px}
+.security-update .fixes-heading{position:relative;min-height:64px;display:flex;align-items:flex-end;margin-top:0;padding-bottom:16px}
 .security-update .fixes-heading #fixes-title{margin:0;max-width:calc(100% - 144px)}
 .security-update .table-peek{position:absolute;right:8px;bottom:-13px;width:128px;height:auto;pointer-events:none;z-index:1}
 .security-update .result-guide{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
@@ -42,7 +42,6 @@
 .security-update .check-intro p{margin:0}
 .security-update .intro-walker{position:absolute;right:16px;bottom:-27px;width:128px;height:128px;pointer-events:none}
 @media(max-width:760px){
-.security-update{padding:24px 16px 48px}
 .security-update th,.security-update td{padding:12px 8px;font-size:12px}
 .security-update h1{font-size:28px}
 .security-update .fixes-heading{min-height:80px}
@@ -56,3 +55,7 @@
 .security-update .aside img{width:64px;height:88px}
 .security-update .more{padding:16px}
 }
+
+.article-header .update-dates{max-width:none;align-items:center}
+.article-header .update-dates>span{white-space:nowrap}
+.article-header .update-dates>a{display:inline-flex;align-items:center;min-height:44px;padding-block:8px}

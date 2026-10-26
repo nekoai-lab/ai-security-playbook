@@ -1,0 +1,25 @@
+---
+interface Props {
+  headings: {slug:string;text:string}[];
+  bodyClass?: string;
+  headerClass?: string;
+}
+const {headings,bodyClass="prose",headerClass=""}=Astro.props;
+---
+<div class="wrap article-wrap">
+  <slot name="breadcrumbs" />
+  <header class:list={["article-header",headerClass]}><slot name="header" /></header>
+  <div class="article-grid">
+    <aside class="article-toc-optional">
+      <nav aria-label="この記事の目次"><p class="eyebrow">ON THIS PAGE</p>
+        {headings.map(h=><a href={`#${h.slug}`}>{h.text}</a>)}
+      </nav>
+    </aside>
+    <article class={bodyClass}>
+      <details class="article-mobile-toc"><summary>この記事の目次</summary>
+        <nav aria-label="この記事の目次">{headings.map(h=><a href={`#${h.slug}`}>{h.text}</a>)}</nav>
+      </details>
+      <slot />
+    </article>
+  </div>
+</div>

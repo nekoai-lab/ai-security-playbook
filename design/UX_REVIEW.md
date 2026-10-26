@@ -341,3 +341,10 @@ ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5�
 - check/build53ページ/test（全公開ページの背景回帰を追加）・制作見本build/check成功。公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存色数警告のみ、規則・閾値・対象除外なし。manual review424/8件は自動合格と区別。
 - 全216画面axe/実行エラー/横はみ出し0、53ページ375px文字200%、更新一覧の4幅キーボード導線を再確認。375/768/1279/1280/1920/2560pxの73組で1920px全ページを含め中央1200px、背景のスクロール固定、モバイルの山岳画像リクエスト0、印刷時非表示を実測。PC記事/一覧とスマホの紙面を目視。
 - 証拠:shared-mountain-public、shared-mountain-guide、shared-mountain-layout.json、shared-mountain-browser.json。原本スクリーンショットは制作環境に保存。
+
+## 2026-10-26 更新記事と教材の共通骨格
+- ArticleFrameへ外枠・ヘッダー・PC目次/スマホ折りたたみ目次・本文位置を抽出。既存教材の本文構造を保持し、更新記事の狭い独自外枠を廃止。タイトル48pxと左端・外枠1120px・本文640pxを既存教材に揃える。更新の修正表→対象→対応・猫・一次資料・日付は保持。
+- 初回目視で日付のラベルが分離し、表の上が空きすぎる問題を確認。日付をspanのまとまりにし、操作領域44pxを確保。修正見出しの余白を詰め、猫がのぞく配置を維持。初回の操作領域4エラーを修正し最終成果物で全幅を再検査。
+- check/build53ページ/test（更新情報4検査含む）・制作見本build/check成功。最終公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存色数警告のみ。閾値・対象除外なし、manual review424/8件は自動合格と区別。
+- 全216画面axe/横はみ出し/実行エラー0、53ページ375px文字200%。375/768/1280/1920pxの比較で両記事の外枠・ヘッダー・本文位置/幅・タイトル文字サイズ一致、PCとスマホの目次アンカーとキーボード、更新一覧の導線と猫の非重複を確認。PCとスマホを目視。
+- 証拠:article-frame-public、article-frame-guide、article-frame-compare.json、article-frame-browser.json。原本スクリーンショットは制作環境に保存。内容更新日や記事の事実、自動公開基盤は変更しない。
