@@ -1,0 +1,501 @@
+[
+  {
+    "width": 375,
+    "route": "",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 375,
+    "route": "library/",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 375,
+    "route": "learn/api-keys/",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 375,
+    "route": "updates/python-2026-10/",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 768,
+    "route": "",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 768,
+    "route": "library/",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 768,
+    "route": "learn/api-keys/",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 768,
+    "route": "updates/python-2026-10/",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 1279,
+    "route": "",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 1279,
+    "route": "library/",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 1279,
+    "route": "learn/api-keys/",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 1279,
+    "route": "updates/python-2026-10/",
+    "fixedBackground": false,
+    "mobileImageRequests": 0
+  },
+  {
+    "width": 1280,
+    "route": "",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1280,
+    "route": "library/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1280,
+    "route": "learn/api-keys/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1280,
+    "route": "updates/python-2026-10/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/basics/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/node-october-2026/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/commands/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/checklist/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/operations/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "library/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "topics/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "topics/development/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "topics/operations/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "paths/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "paths/environment/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "paths/node-update/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "paths/update-operations/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "series/node-security/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "updates/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "about/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/ai-data-boundaries/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/app-architecture/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/api-keys/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/access-control/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/mcp-permissions/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/agent-permissions/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/launch-checklist/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/php-october-2026/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/incident-response/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "topics/ai-tools/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "topics/secrets/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "topics/access/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "topics/connections/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "topics/release/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "topics/response/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "paths/solo-development/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "paths/before-launch/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "paths/ai-connections/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "series/solo-development/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "series/ai-connections/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/ai-work-logs/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/release-artifacts/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/external-service-failures/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/dependency-updates/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/github-guards/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/secret-rotation/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/developer-privacy/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/approved-ai-data/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/cloud-account-safety/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "start/use-ai/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "start/build-apps/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "start/operate-services/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "learn/ai-review-trust/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "terms/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "privacy/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 1920,
+    "route": "updates/python-2026-10/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 2560,
+    "route": "",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 2560,
+    "route": "library/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 2560,
+    "route": "learn/api-keys/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  },
+  {
+    "width": 2560,
+    "route": "updates/python-2026-10/",
+    "fixedBackground": true,
+    "frameWidth": 1200,
+    "mobileImageRequests": null
+  }
+]
