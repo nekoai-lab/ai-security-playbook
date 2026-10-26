@@ -1,0 +1,194 @@
+[
+  {
+    "width": 375,
+    "route": "updates/python-2026-10/",
+    "outer": {
+      "x": 16,
+      "width": 343,
+      "font": "16px"
+    },
+    "header": {
+      "x": 16,
+      "width": 343,
+      "font": "16px"
+    },
+    "h1": {
+      "x": 16,
+      "width": 343,
+      "font": "32px"
+    },
+    "body": {
+      "x": 16,
+      "width": 343,
+      "font": "16px"
+    }
+  },
+  {
+    "width": 375,
+    "route": "learn/ai-review-trust/",
+    "outer": {
+      "x": 16,
+      "width": 343,
+      "font": "16px"
+    },
+    "header": {
+      "x": 16,
+      "width": 343,
+      "font": "16px"
+    },
+    "h1": {
+      "x": 16,
+      "width": 343,
+      "font": "32px"
+    },
+    "body": {
+      "x": 16,
+      "width": 343,
+      "font": "16px"
+    }
+  },
+  {
+    "width": 768,
+    "route": "updates/python-2026-10/",
+    "outer": {
+      "x": 40,
+      "width": 688,
+      "font": "16px"
+    },
+    "header": {
+      "x": 40,
+      "width": 688,
+      "font": "16px"
+    },
+    "h1": {
+      "x": 40,
+      "width": 688,
+      "font": "32px"
+    },
+    "body": {
+      "x": 40,
+      "width": 640,
+      "font": "16px"
+    }
+  },
+  {
+    "width": 768,
+    "route": "learn/ai-review-trust/",
+    "outer": {
+      "x": 40,
+      "width": 688,
+      "font": "16px"
+    },
+    "header": {
+      "x": 40,
+      "width": 688,
+      "font": "16px"
+    },
+    "h1": {
+      "x": 40,
+      "width": 688,
+      "font": "32px"
+    },
+    "body": {
+      "x": 40,
+      "width": 640,
+      "font": "16px"
+    }
+  },
+  {
+    "width": 1280,
+    "route": "updates/python-2026-10/",
+    "outer": {
+      "x": 80,
+      "width": 1120,
+      "font": "16px"
+    },
+    "header": {
+      "x": 80,
+      "width": 980,
+      "font": "16px"
+    },
+    "h1": {
+      "x": 80,
+      "width": 980,
+      "font": "48px"
+    },
+    "body": {
+      "x": 364,
+      "width": 640,
+      "font": "16px"
+    }
+  },
+  {
+    "width": 1280,
+    "route": "learn/ai-review-trust/",
+    "outer": {
+      "x": 80,
+      "width": 1120,
+      "font": "16px"
+    },
+    "header": {
+      "x": 80,
+      "width": 980,
+      "font": "16px"
+    },
+    "h1": {
+      "x": 80,
+      "width": 980,
+      "font": "48px"
+    },
+    "body": {
+      "x": 364,
+      "width": 640,
+      "font": "16px"
+    }
+  },
+  {
+    "width": 1920,
+    "route": "updates/python-2026-10/",
+    "outer": {
+      "x": 400,
+      "width": 1120,
+      "font": "16px"
+    },
+    "header": {
+      "x": 400,
+      "width": 980,
+      "font": "16px"
+    },
+    "h1": {
+      "x": 400,
+      "width": 980,
+      "font": "48px"
+    },
+    "body": {
+      "x": 684,
+      "width": 640,
+      "font": "16px"
+    }
+  },
+  {
+    "width": 1920,
+    "route": "learn/ai-review-trust/",
+    "outer": {
+      "x": 400,
+      "width": 1120,
+      "font": "16px"
+    },
+    "header": {
+      "x": 400,
+      "width": 980,
+      "font": "16px"
+    },
+    "h1": {
+      "x": 400,
+      "width": 980,
+      "font": "48px"
+    },
+    "body": {
+      "x": 684,
+      "width": 640,
+      "font": "16px"
+    }
+  }
+]

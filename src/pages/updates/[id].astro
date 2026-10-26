@@ -1,5 +1,6 @@
 ---
 import Shell from "../../layouts/Shell.astro";
+import ArticleFrame from "../../components/ArticleFrame.astro";
 import UpdateRuntimeCheck from "../../components/UpdateRuntimeCheck.astro";
 import { securityUpdates } from "../../data/security-updates";
 import { getCollection } from "astro:content";
@@ -10,18 +11,27 @@ const base=import.meta.env.BASE_URL.replace(/\/$/, "");
 const lessons=await getCollection("lessons");
 const related=update.related.map(id=>lessons.find(l=>l.id===id));
 if(related.some(l=>!l))throw Error("Unknown update related lesson");
+const headings=[{slug:"fixes-title",text:"主な修正"},{slug:"scope-title",text:"自分にも関係する？"},{slug:"actions-title",text:"必要な対応"},{slug:"related-title",text:"詳しい手順"},{slug:"official",text:"公式情報"}];
 ---
 <Shell title={update.title} description={update.summary} articleId={`update-${update.id}`} articleMetadata={{published:update.published,updated:update.updated}} breadcrumbs={[{name:"新着・更新",path:`${base}/updates/`},{name:update.product,path:`${base}/updates/${update.id}/`}] }>
-<article class="security-update wrap">
-<p class="crumb"><a href={`${base}/updates/`}>新着・更新</a> ／ {update.product}</p>
+<ArticleFrame headings={headings} bodyClass="security-update" headerClass="article-header--narrative">
+<nav slot="breadcrumbs" class="crumbs" aria-label="パンくず"><a href={`${base}/updates/`}>新着・更新</a><span aria-hidden="true">/</span><span aria-current="page">{update.product}</span></nav>
+<Fragment slot="header">
 <p class="eyebrow">SECURITY UPDATE / {update.product}</p>
 <h1>{update.title}</h1>
-<p class="update-meta">発表：<time datetime={update.announced}>{update.announced}</time> ／ 掲載：<time datetime={update.published}>{update.published}</time><br/>内容更新：<time datetime={update.updated}>{update.updated}</time> ／ 確認：{update.reviewed} ／ <a href={`${base}/about/#creator`}>Tsukineko</a></p>
-<p class="update-lead">{update.summary}</p>
+<p>{update.summary}</p>
+<p class="metadata update-dates">
+<span>発表 <time datetime={update.announced}>{update.announced}</time></span>
+<span>掲載 <time datetime={update.published}>{update.published}</time></span>
+<span>内容更新 <time datetime={update.updated}>{update.updated}</time></span>
+<span>情報確認 <time datetime={update.reviewed}>{update.reviewed}</time></span>
+<a href={`${base}/about/#creator`}>Tsukineko</a>
+</p>
+</Fragment>
 <section aria-labelledby="fixes-title"><div class="fixes-heading"><h2 id="fixes-title">主な修正は、ここ。</h2><img class="table-peek" src={`${base}/brand/cat-peek-320.webp`} alt="" width="320" height="213"/></div>
 <div class="fix-table"><table><thead><tr><th scope="col">修正された場所</th><th scope="col">何が変わった？</th><th scope="col">今回の対象系列</th></tr></thead><tbody>{update.fixes.map(f=><tr><th scope="row">{f.area}</th><td>{f.detail}</td><td>{f.versions}</td></tr>)}</tbody></table></div><p class="update-caption">{update.limitations} <a href="#official">公式情報へ ↓</a></p></section>
-<section class="update-section"><h2>自分にも関係する？</h2><p>{update.scope}</p>{update.checker==="python"&&<UpdateRuntimeCheck/>}</section>
-<section class="update-section"><h2>対応は、この{update.actions.length}つ。</h2><ol class="action-list">{update.actions.map(a=><li><b>{a.title}</b><span>{a.detail}</span></li>)}</ol></section>
-<section class="update-section"><h2>手順を詳しく知りたいときは。</h2>{related.map(l=><p><a class="update-related" href={`${base}/learn/${l!.id}/`}>{l!.data.title} →</a></p>)}</section>
-<section class="update-section" id="official"><h2>公式情報</h2><ul>{update.sources.map(s=><li><a href={s.url}>{s.title}</a></li>)}</ul><p class="update-caption">一次資料の確認日：{update.reviewed}。更新作業の完了を保証するものではありません。</p><a class="update-related" href={`${base}/updates/`}>新着・更新へ戻る →</a></section>
-</article></Shell>
+<section class="update-section"><h2 id="scope-title">自分にも関係する？</h2><p>{update.scope}</p>{update.checker==="python"&&<UpdateRuntimeCheck/>}</section>
+<section class="update-section"><h2 id="actions-title">対応は、この{update.actions.length}つ。</h2><ol class="action-list">{update.actions.map(a=><li><b>{a.title}</b><span>{a.detail}</span></li>)}</ol></section>
+<section class="update-section"><h2 id="related-title">手順を詳しく知りたいときは。</h2>{related.map(l=><p><a class="update-related" href={`${base}/learn/${l!.id}/`}>{l!.data.title} →</a></p>)}</section>
+<section class="update-section"><h2 id="official">公式情報</h2><ul>{update.sources.map(s=><li><a href={s.url}>{s.title}</a></li>)}</ul><p class="update-caption">一次資料の確認日：{update.reviewed}。更新作業の完了を保証するものではありません。</p><a class="update-related" href={`${base}/updates/`}>新着・更新へ戻る →</a></section>
+</ArticleFrame></Shell>
