@@ -17,3 +17,10 @@ test('approved update variant exposes dates and retains accessible table semanti
  for(const value of ['article-wrap--update','update-date-detail','最終更新','role="table"','role="rowheader"','role="cell"'])assert(html.includes(value),value);
  const lesson=await readFile('dist/learn/ai-review-trust/index.html','utf8');assert(!lesson.includes('article-wrap--update'));
 });
+
+
+test('Tailworm distinguishes reported findings, read-only checking and unrelated fixes',async()=>{
+ const html=await readFile('dist/updates/tailworm-2026-10/index.html','utf8');
+ for(const text of ['何が報告された？','通常のSSH','RunSSH','tailscale debug prefs','TS_SSH_DISABLE_FORWARDING=1','TS-2026-013','公開済みとは限りません','https://tailscale.com/ssh-investigation-update'])assert(html.includes(text),text);
+ assert(!html.includes('tailscale set --ssh'));
+});

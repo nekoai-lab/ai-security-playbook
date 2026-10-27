@@ -1,0 +1,66 @@
+{
+  "id": "tailworm-2026-10",
+  "title": "Tailworm：自分のTailscaleも確認が必要？",
+  "summary": "通常のSSHとTailscale SSHを図で整理。接続先の設定とアクセス範囲から、必要な確認を選びます。",
+  "product": "Tailscale",
+  "announced": "2026-10-26",
+  "published": "2026-10-27",
+  "updated": "2026-10-27",
+  "reviewed": "2026-10-27",
+  "image": "maintenance-lookout",
+  "fixes": [
+    {
+      "area": "Tailscale SSH",
+      "detail": "公式は許可された接続からOSユーザーの権限を超える可能性を調査中。影響する構成の全体は確認中です。",
+      "versions": "有効設定"
+    },
+    {
+      "area": "Serve・Funnel／app connector／headscale",
+      "detail": "研究者はSSH以外にも指摘を報告。SSHが無効でも報告全体の対象外とは限りません。",
+      "versions": "利用あり"
+    }
+  ],
+  "scope": "Tailscaleで自宅PCやサーバーへSSH接続する人が対象です。接続元ではなく接続される端末を確認します。IPや端末名だけではSSHの種類は判断できません。",
+  "limitations": "研究者の検証環境はTailscale 1.104.2・headscale 0.29.5。影響する全バージョンの一覧ではありません。公式10月26日付の案内は修正版をテスト中で番号未掲載。研究上の実証と実環境での被害は区別します。",
+  "checker": "none",
+  "actions": [
+    {
+      "title": "利用者：接続先と機能を確認",
+      "detail": "どの端末へ接続し、どの機能を使うか整理。不明は対象外と数えず管理者へ確認します。"
+    },
+    {
+      "title": "管理者：許可と転送を見直す",
+      "detail": "必要な利用者・端末へアクセスを絞ります。変更前に別の管理経路と復旧方法を確保します。"
+    },
+    {
+      "title": "公式の修正版と反映を確認",
+      "detail": "公式はテスト完了を条件に10月27日中の公開を目標としています（タイムゾーン記載なし）。公開済みとは限りません。更新後は実際の版と接続動作を確認します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Tailscale公式：SSHの調査と対応",
+      "url": "https://tailscale.com/ssh-investigation-update"
+    },
+    {
+      "title": "Tailscale公式：SSHの仕組み",
+      "url": "https://tailscale.com/docs/features/tailscale-ssh"
+    },
+    {
+      "title": "研究者の報告：Tailworm",
+      "url": "https://tailworm.com/"
+    },
+    {
+      "title": "Tailscale公式：セキュリティ情報",
+      "url": "https://tailscale.com/security-bulletins"
+    },
+    {
+      "title": "Tailscale公式：更新履歴",
+      "url": "https://tailscale.com/changelog"
+    }
+  ],
+  "related": [
+    "access-control",
+    "incident-response"
+  ]
+}

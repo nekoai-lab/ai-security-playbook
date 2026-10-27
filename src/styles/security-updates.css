@@ -122,3 +122,11 @@
 .article-wrap--update .fix-table td:nth-child(2){text-wrap:balance}
 }
 .article-wrap--update .security-update .action-list{max-width:40em}
+
+/* Report conditions can be longer than version numbers; keep them reflowable. */
+.security-update--tailworm .update-related{display:inline-block;text-wrap:balance}
+@media(max-width:760px){
+.article-wrap--update .security-update--tailworm .fix-table tr{grid-template-columns:minmax(0,1fr) minmax(0,30%)}
+.article-wrap--update .security-update--tailworm .fix-table td:last-child{white-space:normal;overflow-wrap:anywhere}
+.article-wrap--update .security-update--tailworm .fix-table tbody th{text-wrap:balance}
+}

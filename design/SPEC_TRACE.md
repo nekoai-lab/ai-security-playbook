@@ -351,3 +351,6 @@ User approved outputs/site-design-proposal.html and its journey map, then explic
 - ユーザー承認: PCは細い目次160px/間隔32px/表約928px、コンパクトな冒頭、発表・最終更新を主表示。掲載・確認日は補足へ。
 - スマホは修正1件ずつの表示、対象と説明を読みやすく配置。猫・山・紙の世界観、本文の事実と日付を維持。
 - ArticleFrameのupdate variantで適用し、通常教材はstandardを維持。自動公開や新素材は対象外。
+
+## 2026-10-27 Tailworm
+承認済み更新記事構成。共通枠・機能表・SSH比較図・接続先確認・役割別対応。研究者と公式、未確認を区別。既存猫を再利用。FULL・独立QA・CI・本番確認後公開。
