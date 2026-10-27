@@ -38,7 +38,7 @@
 .security-update .result-guide{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
 .security-update .result-guide p{background:var(--color-paper);padding:16px;font-size:14px}
 .security-update .result-guide code{font-weight:700}
-.security-update .check-intro{position:relative;display:flex;align-items:center;min-height:104px;padding:8px 144px 16px 0}
+.security-update .check-intro{max-width:40em;position:relative;display:flex;align-items:center;min-height:104px;padding:8px 144px 16px 0}
 .security-update .check-intro p{margin:0}
 .security-update .intro-walker{position:absolute;right:16px;bottom:-27px;width:128px;height:128px;pointer-events:none}
 @media(max-width:760px){

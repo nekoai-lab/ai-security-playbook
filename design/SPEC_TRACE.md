@@ -354,3 +354,6 @@ User approved outputs/site-design-proposal.html and its journey map, then explic
 
 ## 2026-10-27 Tailworm
 承認済み更新記事構成。共通枠・機能表・SSH比較図・接続先確認・役割別対応。研究者と公式、未確認を区別。既存猫を再利用。FULL・独立QA・CI・本番確認後公開。
+
+## 2026-10-27 歩く猫の接地
+猫を置くcheck-introをカードと同じ40em幅へ制限。PCの広い記事列右端へ猫が離れる問題を修正。既存歩行画像と足元のオフセットは維持。320/375/768/1280/1920でカード幅・右端・足元・文字重なりを確認。
