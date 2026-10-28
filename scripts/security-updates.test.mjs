@@ -24,3 +24,10 @@ test('Tailworm distinguishes reported findings, read-only checking and unrelated
  for(const text of ['何が報告された？','通常のSSH','RunSSH','tailscale debug prefs','TS_SSH_DISABLE_FORWARDING=1','TS-2026-013','公開済みとは限りません','https://tailscale.com/ssh-investigation-update'])assert(html.includes(text),text);
  assert(!html.includes('tailscale set --ssh'));
 });
+
+
+test('Warp guide separates unverified incident news from official product controls',async()=>{
+const h=await readFile('dist/updates/warp-logs-2026-10/index.html','utf8');
+for(const text of ['一次発表を直接取得できず','三つの話','Help improve Warp','Session Sharing','今回の侵入経路の図ではありません','https://docs.warp.dev/support-and-community/privacy-and-security/privacy/'])assert(h.includes(text),text);
+assert(!h.includes('naomi'));assert(!h.includes('1,700'));
+});

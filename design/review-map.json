@@ -60,7 +60,8 @@
     "terms/",
     "privacy/",
     "updates/python-2026-10/",
-    "updates/tailworm-2026-10/"
+    "updates/tailworm-2026-10/",
+    "updates/warp-logs-2026-10/"
   ],
   "representatives": [
     "",

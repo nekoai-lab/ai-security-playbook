@@ -1,0 +1,72 @@
+{
+  "id": "warp-logs-2026-10",
+  "title": "「学習に使わない」なら、AIの作業ログも残らない？",
+  "summary": "Warpの報道をきっかけに、モデルの学習・会話保存・テレメトリを分けて確認。AI開発ツールの履歴と共有先を見直します。",
+  "product": "Warp・AIの作業ログ",
+  "announced": "2026-10-27",
+  "published": "2026-10-28",
+  "updated": "2026-10-28",
+  "reviewed": "2026-10-28",
+  "image": "runtime-field-guide",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "モデルの学習と保持",
+      "detail": "公式資料はモデル提供者とのZDRと、製品の機能に必要な保存を別に説明。一部モデルには例外の説明もあります。",
+      "versions": "契約・機能"
+    },
+    {
+      "area": "会話・クラウド実行",
+      "detail": "公式は、一部のクラウド機能には会話データの保存が必要と説明。学習利用の有無だけでは保存先を判断できません。",
+      "versions": "利用機能"
+    },
+    {
+      "area": "テレメトリと伏せ字",
+      "detail": "利用分析の収集、秘密の伏せ字、セッション共有は別に確認。プラン別の説明には公式資料間で差があります。",
+      "versions": "設定・共有"
+    }
+  ],
+  "scope": "AI付きターミナルや開発エージェントを使う人、会社の利用条件を確認する人向けです。使う機能を一つ選び、送信・保存・共有を分けて調べます。個別アカウントへの被害判定はできません。",
+  "limitations": "10月27日付の報道がきっかけです。事故の一次発表を直接取得できず、被害データ・対象プランは独立確認未完了。以下は通常の公式仕様であり、事故の侵入経路や修正状況を確定するものではありません。",
+  "actions": [
+    {
+      "title": "利用者：保存と共有を確認",
+      "detail": "使うプラン・機能と、履歴・共有先を整理。いまの設定だけで過去の送信や削除済みを判断しません。"
+    },
+    {
+      "title": "管理者：契約と設定を照合",
+      "detail": "学習利用、機能保存、テレメトリを分けて照合。資料の不一致は未確認として提供元へ確認します。"
+    },
+    {
+      "title": "通知を受けたら対象と対応を確認",
+      "detail": "普段の公式経路や管理者から案内を確認。キーへの影響の根拠や提供元の指示がある場合、発行元で失効・再発行と利用履歴を確認します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Warp公式：Security overview",
+      "url": "https://docs.warp.dev/enterprise/security-and-compliance/security-overview"
+    },
+    {
+      "title": "Warp公式：Privacy and data control",
+      "url": "https://docs.warp.dev/support-and-community/privacy-and-security/privacy/"
+    },
+    {
+      "title": "Warp公式：Secret Redaction",
+      "url": "https://docs.warp.dev/support-and-community/privacy-and-security/secret-redaction/"
+    },
+    {
+      "title": "Warp公式：Security",
+      "url": "https://www.warp.dev/legal/security"
+    },
+    {
+      "title": "BleepingComputerの報道（事故の一次照合は未完了）",
+      "url": "https://www.bleepingcomputer.com/news/security/warp-discloses-breach-exposing-ai-agent-logs-user-telemetry-data/"
+    }
+  ],
+  "related": [
+    "ai-work-logs",
+    "approved-ai-data",
+    "secret-rotation"
+  ]
+}
