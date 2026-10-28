@@ -26,7 +26,7 @@ APIキーの流出や、報道に登場する攻撃手法を、確認済みの�
 | 製品の履歴・共有 | 会話を再開したり共有したりするために保存するか |
 | 運用・解析の記録 | 障害調査や利用分析のために何を記録するか |
 
-<figure className="warp-map"><p><strong>入力・ファイル・コマンド結果 → AI開発ツール</strong></p><div className="warp-branches"><p><strong>モデルへの送信</strong><br />学習と保持の条件</p><p><strong>会話履歴・共有</strong><br />保存期間と閲覧権限</p><p><strong>利用分析・障害調査</strong><br />収集項目と設定</p></div><figcaption>用途ごとに確認する概念図。今回の侵入経路の図ではありません。</figcaption></figure>
+<figure className="warp-map"><p><strong>入力・ファイル・出力<br />↓<br />AI開発ツール</strong></p><div className="warp-branches"><p><strong>モデルへの送信</strong><br />学習と保持の条件</p><p><strong>会話履歴・共有</strong><br />保存期間と閲覧権限</p><p><strong>利用分析・障害調査</strong><br />収集項目と設定</p></div><figcaption>用途ごとに確認する概念図。今回の侵入経路の図ではありません。</figcaption></figure>
 
 これは確認箇所を分けるための概念図です。今回の侵入経路や、すべての製品の内部構成を示したものではありません。
 
@@ -66,7 +66,10 @@ Warpには送受信を確認するNetwork Logや、収集内容の説明があ�
 
 公式Privacy資料には、FreeプランのAI機能ではテレメトリが必要との説明があります。一方、企業向けSecurity overviewにはFree利用者も収集を無効化できるとの説明があります。一般向けSecurityページにも異なる説明がありました。
 
-今回の確認では、この差の理由を確定できていません。[Privacy資料](https://docs.warp.dev/support-and-community/privacy-and-security/privacy/)、[企業向け資料](https://docs.warp.dev/enterprise/security-and-compliance/security-overview)
+今回の確認では、この差の理由を確定できていません。
+
+- [公式Privacy資料](https://docs.warp.dev/support-and-community/privacy-and-security/privacy/)
+- [公式の企業向け資料](https://docs.warp.dev/enterprise/security-and-compliance/security-overview)
 
 そのため、プラン名だけで「オフにできる」「使い続けられる」「事故の対象外」とは案内しません。
 
@@ -119,10 +122,10 @@ APIキーを伏せた後にも、顧客名、社内URL、ファイル名、未�
 
 ## 今日の確認は、この四つ
 
-- [ ] 使う製品・プラン・ワークスペースと、履歴・共有・クラウド実行の利用を整理した。
-- [ ] 学習利用、機能のための保存、テレメトリを別々に確認した。不明は未確認として残した。
-- [ ] 伏せ字が適用される機能と、共有するときの例外を確認した。
-- [ ] 通知が来たときの相談先と、認証情報の管理担当を確認した。
+- 使う製品・プラン・ワークスペースと、履歴・共有・クラウド実行の利用を整理した。
+- 学習利用、機能のための保存、テレメトリを別々に確認した。不明は未確認として残した。
+- 伏せ字が適用される機能と、共有するときの例外を確認した。
+- 通知が来たときの相談先と、認証情報の管理担当を確認した。
 
 「コードを公開しない」だけで終わらず、そのコードを扱うAIの会話・出力・共有先も見直す。
 

@@ -29,5 +29,5 @@ test('Tailworm distinguishes reported findings, read-only checking and unrelated
 test('Warp guide separates unverified incident news from official product controls',async()=>{
 const h=await readFile('dist/updates/warp-logs-2026-10/index.html','utf8');
 for(const text of ['一次発表を直接取得できず','三つの話','Help improve Warp','Session Sharing','今回の侵入経路の図ではありません','https://docs.warp.dev/support-and-community/privacy-and-security/privacy/'])assert(h.includes(text),text);
-assert(!h.includes('naomi'));assert(!h.includes('1,700'));
+assert(!h.includes('naomi'));assert(!h.includes('1,700'));assert(!h.includes('task-list-item'));
 });
