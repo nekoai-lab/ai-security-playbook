@@ -34,6 +34,13 @@ assert(!h.includes('naomi'));assert(!h.includes('1,700'));assert(!h.includes('ta
 
 test('Cursor notice limits distribution scope and does not equate missing evidence with safety',async()=>{
  const h=await readFile('dist/updates/cursor-extension-2026-10/index.html','utf8');
- for(const text of ['何が起きて、誰が対象？','2.1.312','2.1.313','Anthropic.claude-code','macOS・Windows','10月29日18:27〜10月30日05:35','インストール済み','過去の版や導入元が不明','未確認','svc-telemetry','侵害なしの証拠にはしません','https://cursor.com/blog/claude-code-extension-security-notice'])assert(h.includes(text),text);
+ for(const text of ['何が起きた？','2.1.312','2.1.313','Anthropic.claude-code','macOS または Windows','10月29日18:27〜10月30日05:35','インストール済み','過去の版や導入元が不明','未確認','svc-telemetry','侵害なしの証拠にはしません','https://cursor.com/blog/claude-code-extension-security-notice'])assert(h.includes(text),text);
  for(const text of ['curl |','No key found; machine not impacted','ExecutionPolicy Bypass','ssh-ed25519 AAAA'])assert(!h.includes(text),text);
+});
+
+test('Cursor reader guidance shows scope before checking, labels the schematic and exposes help',async()=>{
+ const h=await readFile('dist/updates/cursor-extension-2026-10/index.html','utf8');
+ assert(h.indexOf('この4条件')<h.indexOf('id="scope-title"'));
+ for(const text of ['macOS または Windows','確認する情報の模式図','実画面のスクリーンショットではありません','拡張IDと版：表示を記入','分からない欄は','個人利用で管理者がいない場合','外部への接続を切り離すこと','使えなくすること'])assert(h.includes(text),text);
+ assert(!/<details[^>]*>[\s\S]*?id="cursor-help"[\s\S]*?<\/details>/.test(h));
 });
