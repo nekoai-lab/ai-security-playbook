@@ -1,0 +1,60 @@
+{
+  "id": "cursor-extension-2026-10",
+  "title": "CursorのClaude Code拡張、自分も確認が必要？",
+  "summary": "不正な拡張が配布された件で、対象の版・配布元・期間を確認。現在の表示だけで過去を判断せず、必要な対応につなげます。",
+  "product": "Cursor・拡張",
+  "announced": "2026-10-29",
+  "published": "2026-10-31",
+  "updated": "2026-10-31",
+  "reviewed": "2026-10-31",
+  "image": "dependency-update-scene",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "対象の拡張",
+      "detail": "Cursorのマーケットプレイスで配布されたAnthropic.claude-codeの2.1.312／2.1.313。公式はmacOS・Windows向けを対象としています。",
+      "versions": "2つの版"
+    },
+    {
+      "area": "起きたこと",
+      "detail": "ホスト情報の収集と、SSHの不正な接続経路を残す処理。管理者権限がなく接続に失敗しても、痕跡や情報送信は残りえます。",
+      "versions": "端末"
+    },
+    {
+      "area": "提供元の対応",
+      "detail": "公式は不正な拡張の配布停止と攻撃先サーバーの停止を案内。拡張の削除だけでは、端末側に残る処理を取り除けない場合があります。",
+      "versions": "配布元"
+    }
+  ],
+  "scope": "CursorでClaude Code拡張を使う人と、その端末の管理者向けです。対象期間に対象の配布元からインストール・更新したかを確認します。いま別の版でも、過去の利用が不明なら未確認です。",
+  "limitations": "10月30日付の公式追記まで確認。この記事では不正な拡張を実行していません。個別端末の侵害や、ほかの配布経路まで判定するものではありません。",
+  "actions": [
+    {
+      "title": "利用者：導入の記録を確認",
+      "detail": "拡張ID・版・導入元・更新時期を記録。対象や不審な痕跡がある場合は管理者へ連絡し、その端末での通常作業を止めます。"
+    },
+    {
+      "title": "管理者：対象端末を調査",
+      "detail": "公式の検知情報と記録を照合し、実行や不正な接続経路の痕跡がある端末を隔離。証拠を保全し、残る処理の除去と再構築の必要性を判断します。"
+    },
+    {
+      "title": "認証担当：失効と再発行",
+      "detail": "影響端末から利用できた認証情報・セッションを特定し、公式案内に沿って失効・再発行。サービスへの影響と利用履歴も確認します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cursor公式：事故と対応",
+      "url": "https://cursor.com/blog/claude-code-extension-security-notice"
+    },
+    {
+      "title": "Cursor公式：拡張の管理",
+      "url": "https://cursor.com/help/customization/extensions"
+    }
+  ],
+  "related": [
+    "incident-response",
+    "secret-rotation",
+    "agent-permissions"
+  ]
+}

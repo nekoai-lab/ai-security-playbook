@@ -1,0 +1,33 @@
+---
+const base=import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<div class="takeaway">
+<h3>いつの導入・更新が対象？</h3>
+<p>公式が示す配布時間は、10月29日の午前2:27〜午後1:35（米太平洋時間）。日本時間では<b>10月29日18:27〜10月30日05:35ごろ</b>です。</p>
+<p>この時間帯の導入・更新を、上の拡張ID・版・配布元と合わせて確認します。<a href="https://cursor.com/blog/claude-code-extension-security-notice">公式の対象条件</a></p>
+</div>
+<h3>名前が同じでも、入手先を分ける</h3>
+<figure class="cursor-path">
+<p><b>Claude Codeという名前</b></p>
+<div class="result-guide"><p><b>今回の公式案内</b><br/>Cursor側の配布経路<br/>対象の拡張・版・OSを照合</p><p><b>ほかの入手経路</b><br/>CLI・別のマーケットプレイス<br/>同じ名前だけで影響を広げない</p></div>
+<figcaption>調べる入口の図です。すべての配布元の安全を保証する図ではありません。</figcaption>
+</figure>
+<p>Cursor公式は、ほかの版や公式の配布経路が影響した証拠はないと説明しています。「Claude Codeを使っている」だけで今回の対象とは判断しません。</p>
+<div class="check-intro"><p>まずは表示を確認。<br/>記録を消す前に相談先を決めます。</p><img class="intro-walker" src={`${base}/brand/cat-walk-right-320.webp`} alt="" width="320" height="320"/></div>
+<div class="takeaway walk-card">
+<h3>① インストール済みの拡張を見る</h3>
+<p>Cursorのサイドバーから「拡張機能」を開き、インストール済みのClaude Codeを選びます。表示名に加え、拡張IDとインストール済みの版を確認してください。</p>
+<p><b>検索結果の最新版と、自分の端末に入っている版を取り違えない</b>ようにします。何もインストールし直す必要はありません。操作が分からなければ、<a href="https://cursor.com/help/customization/extensions">公式の拡張管理案内</a>か管理者へ確認します。</p>
+<h3>② 過去の利用を確認する</h3>
+<p>自動更新や再インストールで、表示は変わります。現在の版だけで終わらず、対象期間の通知・管理記録・保存済みログなどを管理者と確認します。表示だけで導入元や過去の版が分からないときは、推測で埋めません。</p>
+<h3>③ 結果に合わせて進む</h3>
+<ul class="cursor-results"><li><b>対象の導入・更新が確認できた：</b>管理者と公式の調査・対応へ。</li><li><b>過去の版や導入元が不明：</b>「未確認」として記録を調べる。</li><li><b>別経路だけの利用を記録で確認：</b>今回の配布条件と区別。端末全体の安全確認が終わったという意味ではありません。</li></ul>
+</div>
+<h3>「見つからない」だけで、確認を終わらせない</h3>
+<p>公式には、SSHの接続を許可するファイルに追加される目印<code>svc-telemetry</code>などの検知情報があります。ただし、一つの目印がないことや、ファイルを読めなかったことを、侵害なしの証拠にはしません。</p>
+<p>コマンドの意味が分からない場合は、その場で削除や設定変更をせず管理者へ。設定ファイルやログの全文には、内部情報が含まれる可能性があります。公開の質問欄へ貼らないでください。</p>
+<details class="more"><summary>一人で管理している場合</summary><p>「利用者」「管理者」「認証情報の担当」は、一人で兼ねることもあります。対象の疑いがあれば、別の信頼できる端末から公式案内を確認し、組織の相談先やセキュリティ対応を支援する専門家へ相談します。</p><p>公式の除去手順には端末を変更する操作が含まれます。証拠の保全と復旧方法を確認してから進めてください。遠隔管理に使う端末なら、隔離で接続が切れることも含めて手順を決めます。</p></details>
+<h3>確認の記録は、この四つ</h3>
+<ul class="cursor-results"><li>端末のOS、インストール済みの拡張ID・版。</li><li>対象期間の導入元と更新履歴。不明な項目は未確認。</li><li>管理者が照合した公式の検知情報と、その結果。</li><li>対応した内容と、認証情報・復旧の確認結果。</li></ul>
+<p>公式案内の更新時や、新しい通知が届いたときに再確認します。今回は、拡張を消したかではなく、<b>影響を調べ、端末と認証情報の両方に対応できたか</b>までが確認の対象です。</p>
+<style>.cursor-path{max-width:40em;margin:24px 0;background:var(--color-paper-light);padding:24px}.cursor-path>p{text-align:center}.cursor-path figcaption{font-size:14px;line-height:1.6;margin-top:16px}.cursor-results{max-width:40em;padding-left:24px;line-height:1.9;margin:16px 0 24px}.cursor-results li{margin:8px 0}.security-update h3{margin-top:24px}.takeaway h3:first-child{margin-top:0}@media(max-width:760px){.cursor-path{padding:16px}}</style>
