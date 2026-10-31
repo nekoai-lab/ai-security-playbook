@@ -31,3 +31,9 @@ const h=await readFile('dist/updates/warp-logs-2026-10/index.html','utf8');
 for(const text of ['一次発表を直接取得できず','三つの話','Help improve Warp','Session Sharing','今回の侵入経路の図ではありません','https://docs.warp.dev/support-and-community/privacy-and-security/privacy/'])assert(h.includes(text),text);
 assert(!h.includes('naomi'));assert(!h.includes('1,700'));assert(!h.includes('task-list-item'));
 });
+
+test('Cursor notice limits distribution scope and does not equate missing evidence with safety',async()=>{
+ const h=await readFile('dist/updates/cursor-extension-2026-10/index.html','utf8');
+ for(const text of ['何が起きて、誰が対象？','2.1.312','2.1.313','Anthropic.claude-code','macOS・Windows','10月29日18:27〜10月30日05:35','インストール済み','過去の版や導入元が不明','未確認','svc-telemetry','侵害なしの証拠にはしません','https://cursor.com/blog/claude-code-extension-security-notice'])assert(h.includes(text),text);
+ for(const text of ['curl |','No key found; machine not impacted','ExecutionPolicy Bypass','ssh-ed25519 AAAA'])assert(!h.includes(text),text);
+});
