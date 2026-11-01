@@ -1,0 +1,64 @@
+{
+  "id": "model-remote-code-2026-11",
+  "title": "AIモデルの読み込みで、配布元のコードも動く？",
+  "summary": "PlutoはHugging Face上の悪性モデルを報告。trust_remote_codeの意味を知り、モデルの入手先・設定・実行環境を分けて確認します。",
+  "product": "AIモデルと実行権限",
+  "announced": "2026-10-29",
+  "published": "2026-11-02",
+  "updated": "2026-11-02",
+  "reviewed": "2026-11-02",
+  "image": "dependency-update-scene",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "報告された事例",
+      "detail": "Plutoは、モデルの読み込みに伴って不正なコードを動かし、GPUで暗号資産の採掘や不正な接続を行う配布物を調査しました。",
+      "versions": "調査報告"
+    },
+    {
+      "area": "コード実行の許可",
+      "detail": "Transformersのtrust_remote_code=Trueは、モデルの配布元が用意した独自コードを使う設定です。モデルのデータだけを読む操作とは区別します。",
+      "versions": "設定"
+    },
+    {
+      "area": "別々の確認",
+      "detail": "重みの形式と、配布元コードの信頼は別。ダウンロード数や、設定の一項目だけで個別環境の安全や被害を判定しません。",
+      "versions": "形式"
+    }
+  ],
+  "scope": "Pythonやノートブック、自分で運用するAIサーバーなどでモデルを読み込む人向けです。外部サービスの画面から会話しているだけの場合、サーバーの設定は提供元の確認範囲になります。",
+  "limitations": "Plutoの分析とHugging Faceの公式仕様を照合。悪性モデルの取得・実行や個別端末の被害確認は行っていません。ダウンロード数は感染数ではないため、被害人数として紹介しません。",
+  "actions": [
+    {
+      "title": "利用者：モデルと担当を確認",
+      "detail": "どのモデルをどの環境で動かすかを整理。外部サービスなら提供元へ、自分の環境なら設定を管理する人へ確認します。"
+    },
+    {
+      "title": "開発者：独自コードを確認",
+      "detail": "設定を有効にする必要性と、配布元のコード・確認した版を照合。秘密のない制限した環境を用意し、AIの自己判断だけで許可を広げません。"
+    },
+    {
+      "title": "管理者：実行記録から判断",
+      "detail": "不審な配布物を実行した疑いがあれば、稼働環境とログを保全して調査。プロセスの停止だけで復旧済みとせず、残る処理と認証情報も確認します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Pluto Research：Load/Mineの調査",
+      "url": "https://pluto.security/blog/hugging-face-malware-campaign-load-mine/"
+    },
+    {
+      "title": "Hugging Face公式：独自モデル",
+      "url": "https://huggingface.co/docs/transformers/custom_models"
+    },
+    {
+      "title": "Transformers公式：方針",
+      "url": "https://github.com/huggingface/transformers/security/policy"
+    }
+  ],
+  "related": [
+    "agent-permissions",
+    "cloud-account-safety",
+    "incident-response"
+  ]
+}

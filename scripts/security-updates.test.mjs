@@ -44,3 +44,13 @@ test('Cursor reader guidance shows scope before checking, labels the schematic a
  for(const text of ['macOS または Windows','確認する情報の模式図','実画面のスクリーンショットではありません','拡張IDと版：表示を記入','分からない欄は','個人利用で管理者がいない場合','外部への接続を切り離すこと','使えなくすること'])assert(h.includes(text),text);
  assert(!/<details[^>]*>[\s\S]*?id="cursor-help"[\s\S]*?<\/details>/.test(h));
 });
+
+test('external-code guides distinguish researcher reports, permission and execution evidence',async()=>{
+for(const id of ['fake-readme-2026-11','model-remote-code-2026-11']){
+ const h=await readFile(`dist/updates/${id}/index.html`,'utf8');
+ for(const text of ['何が報告された？','出典と確認範囲','実行したか不明','相談用の例です','未確認は完了と数えない','確認の証拠を残す'])assert(h.includes(text),`${id}: ${text}`);
+ for(const text of ['developer-update.app','maxwintodaybtc.com','Invoke-Expression','SolanaUpdateTools/solana-starter-kit'])assert(!h.includes(text),`${id}: ${text}`);
+}
+const readme=await readFile('dist/updates/fake-readme-2026-11/index.html','utf8');assert(readme.includes('この指示だけで権限は制限されません'));assert(readme.includes('https://www.air.security/blog-posts/solanacry'));
+const model=await readFile('dist/updates/model-remote-code-2026-11/index.html','utf8');for(const text of ['trust_remote_code=True','safetensors','コード自体が安全になるわけではありません','ダウンロード数は感染数ではない'])assert(model.includes(text),text);
+});
