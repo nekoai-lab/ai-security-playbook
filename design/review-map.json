@@ -62,7 +62,9 @@
     "updates/python-2026-10/",
     "updates/tailworm-2026-10/",
     "updates/warp-logs-2026-10/",
-    "updates/cursor-extension-2026-10/"
+    "updates/cursor-extension-2026-10/",
+    "updates/fake-readme-2026-11/",
+    "updates/model-remote-code-2026-11/"
   ],
   "representatives": [
     "",
