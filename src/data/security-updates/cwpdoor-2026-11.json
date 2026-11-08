@@ -3,7 +3,7 @@
   "title": "CWPの管理画面を動かす偽更新。Linuxで確認する場所",
   "summary": "CWPを使ってLinux上でウェブサイトやメールを運用する人が対象です。管理画面が開くかどうかに加え、更新元と実際に置かれたファイルを確認します。",
   "product": "Control Web Panel",
-  "announced": "2026-11-04",
+  "announced": "2026-11-05",
   "published": "2026-11-08",
   "updated": "2026-11-08",
   "reviewed": "2026-11-08",

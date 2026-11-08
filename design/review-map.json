@@ -79,7 +79,9 @@
     "updates/chainalysis-2026-11/",
     "updates/artex-crowdstrike-2026-11/",
     "updates/python-fips-2026-11/",
-    "updates/browser-agent-2026-11/"
+    "updates/browser-agent-2026-11/",
+    "updates/nikke-launcher-2026-11/",
+    "updates/vercel-dbsc-2026-11/"
   ],
   "representatives": [
     "",
