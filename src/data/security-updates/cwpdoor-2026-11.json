@@ -1,0 +1,38 @@
+{
+  "id": "cwpdoor-2026-11",
+  "title": "CWPの管理画面を動かす偽更新。Linuxで確認する場所",
+  "summary": "CWPを使ってLinux上でウェブサイトやメールを運用する人が対象です。管理画面が開くかどうかに加え、更新元と実際に置かれたファイルを確認します。",
+  "product": "Control Web Panel",
+  "announced": "2026-11-04",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "maintenance-lookout",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "偽の更新処理",
+      "detail": "XLabは、Control Web Panel（CWP）の管理画面を提供する cwpsrv を、不正なファイルに置き換える偽更新を報告しました。置き換えられたプログラムは、特定のリクエストを受けたときに隠れた操作を受け付けると分析しています。",
+      "versions": "CWPサーバー"
+    }
+  ],
+  "scope": "導入時の記録や更新履歴を開き、管理画面の更新をどこから行ったかを確認します。管理者は、信頼できる公式配布物との整合性や研究元の検知情報と照合します。管理を委託していれば、CWPの有無と検知情報を照合済みかを事業者に聞きます。",
+  "limitations": "XLabの解析に基づきます。個別サーバーは配布元と更新の履歴を確認してください。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "不審な差分があれば、証跡を保全したうえで隔離し、管理者と復旧方針を決めます。利用者の接続やメールへの影響も考え、信頼できる構成からの再構築と関連キーの更新を検討します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "XLabのCWPdoor解析",
+      "url": "https://blog.xlab.qianxin.com/cwpdoor-the-invisible-backdoor-living-inside-control-web-panel/"
+    }
+  ],
+  "related": [
+    "incident-response",
+    "dependency-updates"
+  ]
+}

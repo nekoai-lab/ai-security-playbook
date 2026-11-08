@@ -1,0 +1,38 @@
+{
+  "id": "northflank-2026-11",
+  "title": "Northflank利用者のAIキーが無断使用。確認する設定と請求",
+  "summary": "Northflankのプロジェクトや外部連携にキーを保存していた人が対象です。稼働画面が正常でも、キーは発行元で別に確認します。",
+  "product": "Northflank",
+  "announced": "2026-10-30",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "dependency-update-scene",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "管理基盤の認証情報",
+      "detail": "Northflankは、10月30日の不正アクセスで管理基盤に保存された認証情報が狙われ、一部の顧客からAI用の認証情報の無断使用が報告されたと説明しました。11月6日の続報では、稼働中のサービスやそのデータにアクセスされた証拠は見つかっていないとしています。",
+      "versions": "対象の顧客"
+    }
+  ],
+  "scope": "Northflankで各プロジェクトの環境変数と連携の一覧を見て、発行元と利用先を控えます。AI事業者の管理画面では時刻別の利用量と請求を確認します。キーの値は一覧に転記しません。",
+  "limitations": "Northflankが報告した範囲です。個別の利用状況は発行元の記録で確認してください。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "公式の対象案内を照合し、対象のプロジェクト・連携の認証情報を更新します。優先するのはAI、クラウド、決済、データベースなどのキーです。新しいキーを設定して動作を確認し、古いキーを失効させます。異常な使用や請求がある場合は、発行元へ時刻・キーID・使用量を伝えます。適用範囲が不明ならNorthflankのサポートに構成を伝えます。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Northflank公式の障害履歴と対応",
+      "url": "https://status.northflank.com/history/1"
+    }
+  ],
+  "related": [
+    "secret-rotation",
+    "external-service-failures"
+  ]
+}

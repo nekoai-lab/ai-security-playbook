@@ -1,0 +1,38 @@
+{
+  "id": "calendar-phishing-2026-11",
+  "title": "Googleカレンダーの招待から偽ログインへ。認証後に何を確認する？",
+  "summary": "仕事で外部から届く会議招待を開く人が対象です。予定を見ただけ、リンクを開いた、ログインして認証を完了した、のどこまで進んだかで対応を分けます。",
+  "product": "Googleカレンダー",
+  "announced": "2026-10-01",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "maintenance-lookout",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "認証の中継",
+      "detail": "Material Securityは、カレンダー招待のリンクから利用者を偽のログイン画面へ誘導し、Googleへの認証を中継する攻撃を報告しました。攻撃者が狙うのは、ログイン済みの状態を示すセッション情報です。",
+      "versions": "Googleアカウント"
+    }
+  ],
+  "scope": "招待の件名・主催者・時刻を控え、通常の連絡経路で主催者に確認します。仕事のGoogleアカウントなら、管理者にサインインの記録とログイン中の端末を調べてもらいます。個人ではGoogleアカウントのセキュリティ画面から最近のアクティビティと端末を確認します。",
+  "limitations": "読者個人への影響は、サインインや端末の記録を照合して判断します。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "予定を見ただけなら、組織の手順に沿って報告します。認証を完了した、または判断できない場合は、記録を残して速やかに相談します。個人では信頼できる端末からアカウント保護手順を開き、不審なログインを終了し、認証情報を見直します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Material Securityの調査",
+      "url": "https://material.security/resources/reputation-says-its-fine-how-calendar-invites-and-a-live-mfa-proxy-steal-google-sessions"
+    }
+  ],
+  "related": [
+    "cloud-account-safety",
+    "incident-response"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "fake-ai-events-2026-11",
+  "title": "OpenAIやSpaceXの偽イベント。登録前に主催者を確認する",
+  "summary": "イベントや先行利用の案内を受け取った人が対象です。ログイン先が公式でも、他者から渡されたコードを入力すると、そのコードを発行した側にアクセスを許可してしまう場合があります。",
+  "product": "フィッシング",
+  "announced": "2026-11-05",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "maintenance-lookout",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "偽のイベント招待",
+      "detail": "Push Securityは、OpenAI、SpaceX、Anthropicのイベントを装い、AIサービスの利用特典などを理由に仕事アカウントでの認証を求める偽ページを確認しました。Microsoftでは端末を認可するコードの入力、Googleではログインを中継する偽ページが使われました。",
+      "versions": "仕事アカウント"
+    }
+  ],
+  "scope": "招待リンクから登録を始める前に、主催者の公式イベント一覧を別に開き、同じ開催名と登録先が載っているか確認します。登録の途中で知らない端末コードや仕事アカウントの権限承認を求められたら、入力を中断します。",
+  "limitations": "Push Securityが観測したキャンペーンに基づきます。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "認証や承認を済ませた場合は、案内の件名・実行時刻・対象アカウントを記録し、管理者に連絡してセッションと承認の記録を確認します。個人アカウントでは別の信頼できる端末から、事業者のアカウント保護手順を開きます。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Push Securityの調査",
+      "url": "https://pushsecurity.com/blog/ai-themed-fake-event-campaign-analysis"
+    }
+  ],
+  "related": [
+    "cloud-account-safety",
+    "access-control"
+  ]
+}

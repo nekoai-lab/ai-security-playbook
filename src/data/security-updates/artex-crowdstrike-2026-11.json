@@ -1,0 +1,38 @@
+{
+  "id": "artex-crowdstrike-2026-11",
+  "title": "AI診断ツールが複数組織への侵入に利用。見るべきログは？",
+  "summary": "外部から使えるログイン画面や管理用メール、クラウド環境を運用する人に関係します。実際に見るべきなのは、ツール名より、広い範囲のアカウントで生じる認証試行と、その後の権限変更です。",
+  "product": "ARTEX",
+  "announced": "2026-11-02",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "maintenance-lookout",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "並行した侵入活動",
+      "detail": "CrowdStrikeは、VAPOR PANDAと呼ぶ攻撃グループが、AIを組み込んだ侵入テストの枠組みARTEXを使い、複数の組織を並行して狙ったと報告しました。調査では人間の操作者が重要な判断に関与していたとしています。",
+      "versions": "認証・権限ログ"
+    }
+  ],
+  "scope": "認証ログから、短時間に多数のアカウントで失敗が続いた時刻を探します。その前後に成功したログイン、管理権限の追加、通常と異なるメールやAPIへのアクセスがないか確認します。使わなくなった管理アカウントと古い連携キーも確認します。",
+  "limitations": "CrowdStrikeが観測した攻撃活動の報告です。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "異常が見つかった場合は、関連ログを保存してセキュリティ担当へ共有します。小規模運用で記録が見られない場合は、契約中の認証サービスやホスティング事業者に調査可能なログと保存期間を聞きます。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "CrowdStrikeの調査",
+      "url": "https://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign/"
+    }
+  ],
+  "related": [
+    "access-control",
+    "incident-response"
+  ]
+}

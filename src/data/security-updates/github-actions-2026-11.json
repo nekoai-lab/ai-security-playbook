@@ -1,0 +1,42 @@
+{
+  "id": "github-actions-2026-11",
+  "title": "公開リポジトリの外部PR。GitHub Actionsで止まる処理は？",
+  "summary": "公開リポジトリで、外部の人からプルリクエストが来たときにテストやラベル付けを自動化している管理者が対象です。公式案内では非公開・内部リポジトリとGitHub Enterprise Serverはこの変更の対象外です。",
+  "product": "GitHub Actions",
+  "announced": "2026-11-02",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "maintenance-lookout",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "対象イベント",
+      "detail": "GitHubは、公開リポジトリで pull_request_target をきっかけに動く自動処理を、適用されるポリシーで明示的に許可している場合を除いて止める予定です。公式発表では既定のブロック開始は12月2日。事前の一時適用は日本時間11月10日・17日の各1時から3時です。",
+      "versions": "公開リポジトリ"
+    }
+  ],
+  "scope": "GitHub上で .github/workflows/ のファイルを開き、on: の中に pull_request_target があるか確認します。GitHubが案内するInsightsの評価結果も見て、ブロック候補になった処理を特定します。特に、外部PRのコードを取り出してビルドやテストを実行する箇所と、そのジョブに渡る書き込み権限や秘密情報を確認します。",
+  "limitations": "適用日時や例外ポリシーはGitHubの最新発表を確認してください。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "ラベルやコメントなどに必要な処理は、外部コードを実行しないようにし、必要な権限だけを残します。外部コードのテストと権限付きの処理が一緒なら分離を検討し、変更後はテストとコメントの両方を確認します。例外許可が必要な場合は対象ファイルを絞り、理由と確認担当を残します。設定の管理者が分からなければ、ワークフロー名とInsightsの表示をリポジトリ所有者に共有します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub公式の予定・対象",
+      "url": "https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2/"
+    },
+    {
+      "title": "GitHub公式の安全な利用方法",
+      "url": "https://docs.github.com/en/actions/reference/security/securely-using-pull_request_target"
+    }
+  ],
+  "related": [
+    "github-guards",
+    "agent-permissions"
+  ]
+}
