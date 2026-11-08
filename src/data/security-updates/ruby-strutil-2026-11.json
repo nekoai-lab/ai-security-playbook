@@ -1,0 +1,38 @@
+{
+  "id": "ruby-strutil-2026-11",
+  "title": "悪性RubyパッケージがAIの設定も改ざん。導入履歴を確認する",
+  "summary": "Rubyの依存パッケージを追加した人や、Rubyを使うプロジェクトをAIで準備した人は、作業端末とCIの両方を確認します。",
+  "product": "RubyGems",
+  "announced": "2026-11-06",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "maintenance-lookout",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "不正な導入処理",
+      "detail": "Socketは、RubyGemsの strutil-core 1.0.1が、導入時に認証情報を収集するプログラムを動かすと報告しました。AIコーディングツールの設定や起動時に実行する処理を書き換える挙動も確認しています。",
+      "versions": "1.0.1"
+    }
+  ],
+  "scope": "Gemfile.lock で strutil-core (1.0.1) を探し、過去の差分とCIの導入ログも確認します。見つかった場合はどこで導入したかを記録します。AIツールの設定は実行せず、信頼できる履歴と比べて知らないMCPサーバーや起動処理が増えていないか見ます。",
+  "limitations": "Socketが解析したのはstrutil-core 1.0.1です。環境ごとの実行有無は導入履歴で確認します。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "対象版がインストールされた可能性があれば、その環境で通常作業を止め、設定とログを保全します。別の信頼できる環境から、当時その端末やCIが使えたキーの失効・再発行と利用履歴の調査を進めます。設定を見ただけで判断できない場合は、プロジェクト・版・日時・実行環境を添えて相談します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Socket Threat Researchの解析",
+      "url": "https://socket.dev/blog/shai-hulud-descendant-malicious-ruby-gem"
+    }
+  ],
+  "related": [
+    "dependency-updates",
+    "mcp-permissions"
+  ]
+}

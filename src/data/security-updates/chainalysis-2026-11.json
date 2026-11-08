@@ -1,0 +1,38 @@
+{
+  "id": "chainalysis-2026-11",
+  "title": "Chainalysisが認証情報の露出を公表。再接続前に何を確認する？",
+  "summary": "Chainalysisへログインする人と、KYTなどのAPIをアプリにつないでいる人が対象です。画面で使うパスワードとアプリに保存したAPIキーを別々に確認します。",
+  "product": "Chainalysis",
+  "announced": "2026-10-30",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "dependency-update-scene",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "顧客の認証情報",
+      "detail": "Chainalysisは、全利用者に関する氏名・ユーザー名・パスワードのハッシュ（変換した値）・有効なトークン（アクセスに使える認証情報）が攻撃者に露出したと続報で説明しました。一部の顧客にはKYTへの不正アクセスの可能性も連絡しています。11月7日付の続報ではReactor、KYT、Address Screeningの再開を発表しました。",
+      "versions": "利用者"
+    }
+  ],
+  "scope": "普段のブックマークから公式の案内を開き、契約中の製品、再開状況、通知された再接続の条件を確認します。API利用者は、どのジョブ・連携がそのキーを使うか洗い出し、切り替え担当を決めます。",
+  "limitations": "復旧と再接続の条件は、公式の最新案内を確認してください。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "公式手順に従いパスワードをリセットし、該当するAPIキーを更新します。更新後は接続を確認し、停止中に溜まった処理や重複がないかも見ます。使い回していたパスワードは他サービスでも変更します。利用製品やアクセス状態が不明なら、普段の担当窓口へ確認します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Chainalysis公式の時系列・復旧案内",
+      "url": "https://www.chainalysis.com/blog/security-incident-october-30/"
+    }
+  ],
+  "related": [
+    "secret-rotation",
+    "external-service-failures"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "python-fips-2026-11",
+  "title": "Python 3.14.10のFIPS設定に不具合。対象はどの環境？",
+  "summary": "組織の暗号ポリシーに従い、FIPSモードでPythonを動かしている人が確認する更新です。対象を判断するにはPythonの版とOpenSSLの実行構成が必要です。",
+  "product": "CPython",
+  "announced": "2026-11-06",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "dependency-update-scene",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "hashlibのFIPS制約",
+      "detail": "Pythonのセキュリティチームは11月6日、CPython 3.14.10の hashlib でFIPSの制約が想定どおりに適用されない不具合を公表しました。FIPSモードでOpenSSLを使用する構成が今回の対象です。",
+      "versions": "3.14.10"
+    }
+  ],
+  "scope": "管理対象の環境で python --version または python3 --version を確認します。本番コンテナやジョブが別の実行環境なら、そこで動く版を調べます。FIPSモードの有無はOS、コンテナ、OpenSSLの設定を管理担当と照合します。",
+  "limitations": "配布元によって修正の提供時期が異なるため、公式の告知と配布元情報を照合してください。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "3.14.10かつOpenSSLのFIPSモードに該当すれば、配布元の修正版または修正の取り込み状況を確認し、組織の検証手順を経て更新します。構成が不明ならFIPSの運用担当に環境名とPythonの版を伝えます。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Pythonセキュリティチームの告知",
+      "url": "https://mail.python.org/archives/list/security-announce@python.org/thread/PXVTTOBPUMFJSSUXN6XCS7FC5DZOSZXK/"
+    },
+    {
+      "title": "CPythonの修正差分",
+      "url": "https://github.com/python/cpython/pull/160984"
+    }
+  ],
+  "related": [
+    "dependency-updates",
+    "operations"
+  ]
+}

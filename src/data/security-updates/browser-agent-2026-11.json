@@ -1,0 +1,42 @@
+{
+  "id": "browser-agent-2026-11",
+  "title": "ブラウザーを操作するAIは、どの画面まで触れる？",
+  "summary": "AIにフォーム入力、調査、社内サイトの確認を任せる人は、AIがどのタブやアカウントを使い、どの操作を実行できるかを確認できます。",
+  "product": "ブラウザーAI",
+  "announced": "2026-11-08",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "maintenance-lookout",
+  "format": "guide",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "ブラウザーの接続方式",
+      "detail": "ChromeのWebMCPでは、ウェブページがAIに呼び出してほしい操作を登録できます。ブラウザーをAIに操作させる仕組みには、拡張機能やブラウザーのデバッグ用接続を使うものもあり、渡る権限は接続方法と設定によって変わります。",
+      "versions": "権限"
+    }
+  ],
+  "scope": "拡張機能ならブラウザー設定からサイトへのアクセス範囲を、ブラウザー操作ツールなら接続先のプロファイルを確認します。WebMCPを使うサイトでは、登録されている操作と渡す入力を確認します。特に、読むだけの操作と、送信・更新・削除を分けます。",
+  "limitations": "接続方式を比べる解説です。WebMCPの利用条件はChromeの資料で確認してください。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "権限が広い場合は利用サイトを絞り、用途別のブラウザープロファイルを使います。送信や削除の前に人が確認する運用を決め、まず機密情報のないテスト画面で試します。設定が見つからなければ、使用ツール名と接続方法を控えて提供元に確認します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Chrome公式のWebMCP解説",
+      "url": "https://developer.chrome.com/docs/ai/webmcp/"
+    },
+    {
+      "title": "Cloudflare公式のWebMCPとCDP接続の説明",
+      "url": "https://developers.cloudflare.com/browser-run/features/webmcp/"
+    }
+  ],
+  "related": [
+    "agent-permissions",
+    "mcp-permissions"
+  ]
+}

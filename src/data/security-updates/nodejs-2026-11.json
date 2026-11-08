@@ -1,0 +1,42 @@
+{
+  "id": "nodejs-2026-11",
+  "title": "Node.jsの更新予告。いま動いている版を確認する",
+  "summary": "Node.jsでウェブサイトやAPIを動かす人に加え、ビルドや自動化にNode.jsを使う人も、自分が管理する環境でどの版が使われているかを先に押さえておくと、修正版が出たときに対応先を絞れます。",
+  "product": "Node.js",
+  "announced": "2026-11-03",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "dependency-update-scene",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "更新予告",
+      "detail": "Node.jsプロジェクトは、11月11日ごろに22・24・26系のセキュリティ更新を出すと予告しました。予告時点で公表された最大深刻度はHIGHです。11月8日時点では予告段階です。",
+      "versions": "22 / 24 / 26"
+    }
+  ],
+  "scope": "手元のターミナルで node --version を実行すると、その端末で使う版が表示されます。本番はホスティング管理画面のランタイム設定、Dockerfileの FROM、デプロイ時のログから確認します。CIも使うならワークフローのNode.js設定を別に見ます。たとえば手元がv24でも、本番がv22なら両方を記録します。",
+  "limitations": "11月8日時点は予告段階です。影響条件と修正版は正式なリリース情報を確認してください。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "対象系列を使う場合は、正式発表で影響条件と修正版を確認し、検証環境から更新します。コンテナでは修正版を含むイメージを作り直し、再デプロイ後に稼働中の版と主要機能を確認します。版を特定できなければホスティング事業者に利用中の版と更新予定を聞きます。サポートが終わった系列は、移行計画を立てます。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Node.js公式の更新予告",
+      "url": "https://nodejs.org/en/blog/vulnerability/november-2026-security-releases"
+    },
+    {
+      "title": "Node.js公式のリリース一覧",
+      "url": "https://nodejs.org/dist/index.json"
+    }
+  ],
+  "related": [
+    "node-october-2026",
+    "dependency-updates"
+  ]
+}

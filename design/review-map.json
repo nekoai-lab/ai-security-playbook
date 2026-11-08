@@ -64,7 +64,22 @@
     "updates/warp-logs-2026-10/",
     "updates/cursor-extension-2026-10/",
     "updates/fake-readme-2026-11/",
-    "updates/model-remote-code-2026-11/"
+    "updates/model-remote-code-2026-11/",
+    "updates/github-actions-2026-11/",
+    "updates/nodejs-2026-11/",
+    "updates/workos-2026-11/",
+    "updates/truffle-secrets-2026-11/",
+    "updates/calendar-phishing-2026-11/",
+    "updates/northflank-2026-11/",
+    "updates/ruby-strutil-2026-11/",
+    "updates/fake-security-tools-2026-11/",
+    "updates/fake-ai-events-2026-11/",
+    "updates/cpguard-2026-11/",
+    "updates/cwpdoor-2026-11/",
+    "updates/chainalysis-2026-11/",
+    "updates/artex-crowdstrike-2026-11/",
+    "updates/python-fips-2026-11/",
+    "updates/browser-agent-2026-11/"
   ],
   "representatives": [
     "",

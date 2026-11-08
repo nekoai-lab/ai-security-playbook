@@ -1,0 +1,38 @@
+{
+  "id": "cpguard-2026-11",
+  "title": "cPGuardの更新経路から不正コード。過去の更新履歴を確認する",
+  "summary": "cPGuardを導入しているサーバー管理者と、ホスティング事業者がcPGuardを管理している利用者が対象です。現在のバージョンに加え、問題の版を経由したかが判断材料になります。",
+  "product": "cPGuard",
+  "announced": "2026-11-03",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "dependency-update-scene",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "更新配布経路",
+      "detail": "OPSSHIELDは11月2日、cPGuardの更新配布基盤への不正アクセスがあり、5.88.12〜5.88.19に関係する更新経路で不正スクリプトが配布されたと公表しました。既知のバックドアとスクリプトが準備したファイルを除去する更新は5.88.25以降です。",
+      "versions": "5.88.12〜5.88.19"
+    }
+  ],
+  "scope": "公式の手順で更新履歴を確認し、対象版と時刻を記録します。ホスティングを借りている場合は、事業者にcPGuardの有無と対象版の導入履歴、対応状況を聞きます。対象更新が入ったという記録と、不正コードの実行・情報送信の記録は分けて調べます。",
+  "limitations": "対象版の導入履歴だけで、実行や情報送信の有無は判定できません。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "対象の更新が入っていれば、公式手順で是正更新を適用し、証跡を保全して実行痕跡を確認します。認証情報への影響が疑われる場合は、信頼できる環境から更新し、利用記録も確認します。履歴が取れなければ、管理者または提供元に調査を依頼します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "OPSSHIELD公式の勧告・確認手順",
+      "url": "https://opsshield.com/notice/cpguard-update-channel-compromise.html"
+    }
+  ],
+  "related": [
+    "dependency-updates",
+    "incident-response"
+  ]
+}

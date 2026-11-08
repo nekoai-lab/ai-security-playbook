@@ -1,0 +1,38 @@
+{
+  "id": "fake-security-tools-2026-11",
+  "title": "GitHubの偽セキュリティツール。診断用でも実行前に配布元を確認",
+  "summary": "検索やAIの提案で見つけた診断ツールを、普段の開発端末や顧客環境で実行する人に関係します。診断用という名前でも、実行するファイルには作業端末へのアクセス権限が渡ります。",
+  "product": "GitHub",
+  "announced": "2026-11-05",
+  "published": "2026-11-08",
+  "updated": "2026-11-08",
+  "reviewed": "2026-11-08",
+  "image": "dependency-update-scene",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "偽の診断ツール",
+      "detail": "Doctor Webは、診断やログ整形などのセキュリティツールを装うGitHubプロジェクトを調べ、不正プログラムがWindowsに導入される事例を報告しました。攻撃者が端末に入り直すための仕組みや、認証情報を盗むソフトが含まれていました。",
+      "versions": "Windows"
+    }
+  ],
+  "scope": "公式サイトが案内するGitHubアカウントと配布物を照合し、READMEのコマンドが取得するファイルの配布元を確認します。ダウンロードと実行を分け、実行前に中身と要求する権限を確認します。",
+  "limitations": "Doctor Webの調査で確認された事例です。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "配布元を照合できない場合は、公式の方法や既に管理している道具で診断します。実行した場合は、実行時刻・ファイル名・権限を記録し、端末での作業を止めて相談します。個人では別の端末から公式サポートや調査窓口に連絡します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Doctor Webの調査",
+      "url": "https://news.drweb.com/show/?i=15311&lng=en"
+    }
+  ],
+  "related": [
+    "commands",
+    "incident-response"
+  ]
+}
