@@ -1,3 +1,5 @@
+import { createHash } from "node:crypto";
+import sharp from "sharp";
 import{test}from'node:test';import assert from'node:assert/strict';import{readFile,readdir,access}from'node:fs/promises';import{updateSchema}from'../src/data/security-update-schema';
 const files=(await readdir('src/data/security-updates')).filter(f=>f.endsWith('.json'));
 test('published updates have valid data, factual date fields, sources, related lessons and first-position fixes',async()=>{assert(files.length);for(const f of files){const u=updateSchema.parse(JSON.parse(await readFile('src/data/security-updates/'+f,'utf8')));assert.equal(f,u.id+'.json');for(const id of u.related)await access(`src/content/lessons/${id}.mdx`);await access(`public/images/${u.image}-480.webp`);const html=await readFile(`dist/updates/${u.id}/index.html`,'utf8');assert(html.indexOf('id="fixes-title"')<html.indexOf('id="scope-title"'));for(const fix of u.fixes)assert(html.includes(fix.detail));for(const source of u.sources)assert(html.includes(`href="${source.url.replaceAll("&", "&amp;")}"`), source.url);assert(!html.includes('ai-business-architecture-playbook'));}});
@@ -53,4 +55,27 @@ for(const id of ['fake-readme-2026-11','model-remote-code-2026-11']){
 }
 const readme=await readFile('dist/updates/fake-readme-2026-11/index.html','utf8');assert(readme.includes('この指示だけで権限は制限されません'));assert(readme.includes('https://www.air.security/blog-posts/solanacry'));
 const model=await readFile('dist/updates/model-remote-code-2026-11/index.html','utf8');for(const text of ['trust_remote_code=True','safetensors','コード自体が安全になるわけではありません','ダウンロード数は感染数ではない'])assert(model.includes(text),text);
+});
+
+test("each update card uses its own illustration at both delivery sizes", async () => {
+  const listing = await readFile("dist/updates/index.html", "utf8");
+  const cards = listing.match(/<article\b[^>]*\bclass="security-update-card"[^>]*>[\s\S]*?<\/article>/g) ?? [];
+  assert.equal(cards.length, files.length);
+  const digests = new Set();
+  for (const file of files) {
+    const { id, image } = updateSchema.parse(JSON.parse(await readFile("src/data/security-updates/" + file, "utf8")));
+    const card = cards.find((item) => item.includes(`/updates/${id}/"`));
+    assert(card, `Missing card for ${id}`);
+    for (const width of [480, 960]) {
+      const name = `${image}-${width}.webp`;
+      const bytes = await readFile(`dist/images/${name}`);
+      assert(card.includes(`/images/${name}`), `Incorrect image for ${id}`);
+      const meta = await sharp(bytes).metadata();
+      assert.equal(meta.width, width, name);
+      assert.equal(meta.height, width * 2 / 3, name);
+      const digest = createHash("sha256").update(bytes).digest("hex");
+      assert(!digests.has(digest), `Duplicate artwork: ${name}`);
+      digests.add(digest);
+    }
+  }
 });

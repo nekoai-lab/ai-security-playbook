@@ -7,7 +7,7 @@
   "published": "2026-10-26",
   "updated": "2026-10-26",
   "reviewed": "2026-10-26",
-  "image": "maintenance-lookout",
+  "image": "update-python-2026-10",
   "fixes": [
     {
       "area": "HTTPSの証明書 / ssl",
