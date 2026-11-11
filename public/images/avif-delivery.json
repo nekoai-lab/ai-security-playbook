@@ -511,6 +511,78 @@
       "sourceHash": "eec6c98f9965709cc4afb12d54f4bd953e295c18cedc8bbb700cf0ea2ed116c3",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-artex-crowdstrike-2026-11-480.webp": {
+      "path": "update-artex-crowdstrike-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 49011,
+      "sha256": "679ad8bb07e168241c0276c8d207bc9c4f856aceb7be00ea741f910794f5ddd8",
+      "sourceHash": "6a00108a328da7bd0f6fe45a513a06fd77886430bd85747bdf60faa5706b640c",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-artex-crowdstrike-2026-11-960.webp": {
+      "path": "update-artex-crowdstrike-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 205762,
+      "sha256": "86103235ba1ff096a66492770b63a94db715333d43050eb049695908dc362c28",
+      "sourceHash": "69edfb48978fdcc9fbee1b9333ada4f5799498fcbb896f790b5e8e6808582816",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-browser-agent-2026-11-480.webp": {
+      "path": "update-browser-agent-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 35721,
+      "sha256": "87f0b64459cdf7c470d17e48e0e26417a104539916b262bffe73b5cbb8e44487",
+      "sourceHash": "c98d0501d63e51a5cc009f4385b83b890c96832cc37e729f246de20812456374",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-browser-agent-2026-11-960.webp": {
+      "path": "update-browser-agent-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 159950,
+      "sha256": "0495939430ef12d1ab519359dffc110cdafa5eab03346581f859302972eaeee3",
+      "sourceHash": "569a94012c08722063886ffdc75fdfa64342b8f56374cd503226bb2c2f9c297b",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-calendar-phishing-2026-11-480.webp": {
+      "path": "update-calendar-phishing-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 45814,
+      "sha256": "72b10c95b19e8d24c4d196db091b5baddbf0255cdfbc5cc84aacbf4f58eda359",
+      "sourceHash": "87028956f8075fb9f076adaaf9cbfbc9c6f684770ee2ace8766f040d3afb0b9a",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-calendar-phishing-2026-11-960.webp": {
+      "path": "update-calendar-phishing-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 187705,
+      "sha256": "45f270829b1a7c0017ebf5a10ddc8e0001348b42e86e9ce38bcd84b0a6e4a7bf",
+      "sourceHash": "f4605d316c4388b52b53e55efea6a1767cb1d7a6eda2d74193f9f1c3bf80d5b7",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-chainalysis-2026-11-480.webp": {
+      "path": "update-chainalysis-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 46407,
+      "sha256": "ef48807f50f4d6bce6d4df30b750c5a5afd00a1e302d1ab2659807ad41587830",
+      "sourceHash": "c3f20699f3f2446c5b2686e715908f40ac2775f298d92fdfeb627d9f8381fe6b",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-chainalysis-2026-11-960.webp": {
+      "path": "update-chainalysis-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 206435,
+      "sha256": "2f472b4888d99a56a696fa97256aa5366a11f3ff0a6bb4ef0208799de68d5c31",
+      "sourceHash": "4d45d335e2f2d04390346450fcf172cbcc857a9b1c84fcde678cebc7f4adc803",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-checklist-stations-480.webp": {
       "path": "update-checklist-stations-480.avif",
       "width": 480,
@@ -527,6 +599,312 @@
       "bytes": 157391,
       "sha256": "4293b4c1311d1434f8da16a1df03a5d70e25f3a2b08a3f5cc816252d5a6d899f",
       "sourceHash": "3cca7a027c047c82ae8c36ab792e11d9032401428e8a946b2d5d6965cbcb114c",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-cpguard-2026-11-480.webp": {
+      "path": "update-cpguard-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 38827,
+      "sha256": "be1ca36894403beec35bc6af8c4d3625c3d7f253f010803896cefb4f875c3d14",
+      "sourceHash": "11f1ac554c49cf3afbd7ccae7aefb50e684b3c8a7cd0b082fabe928fea7a50c8",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-cpguard-2026-11-960.webp": {
+      "path": "update-cpguard-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 156794,
+      "sha256": "55eb9c888668dc56ed2ab1e0ff9c8444557a453b548a4ec500263ae3619a7e70",
+      "sourceHash": "b210b0cc7c665bf67010837f2c2d99ddca04de514c622f1ca495d26320c144a6",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-cursor-extension-2026-10-480.webp": {
+      "path": "update-cursor-extension-2026-10-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 52613,
+      "sha256": "6ca6cb49577bbafd1782b3d1e1fddb5d04d901c53a8de19db9963641244a8225",
+      "sourceHash": "2d22eb8b1cd3c31fa0ca3dec080830f62c57aa93744b5cb362ffacd3e1c590bc",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-cursor-extension-2026-10-960.webp": {
+      "path": "update-cursor-extension-2026-10-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 220876,
+      "sha256": "023db7bba23d6418bad405a0ba6a7a293f4895fbcf33045cb763015796352089",
+      "sourceHash": "750121896f1c0caee4be8d80098b4792b69f0ba07989b8b6f824cae97bb8481a",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-cwpdoor-2026-11-480.webp": {
+      "path": "update-cwpdoor-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 53902,
+      "sha256": "4a9c6e7772c9b68d23343f30c3ee5bd4347ab8d6ec17691d948c0b3a94e2bf64",
+      "sourceHash": "b45d362170d3dbf3ad02867b57cbe7f502fa37d9a8cd2b243abcd7b73c47126d",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-cwpdoor-2026-11-960.webp": {
+      "path": "update-cwpdoor-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 223917,
+      "sha256": "38a874d138be3f6bff561a388461a6d23f8ed3efc60110a8ca15f37e949d1805",
+      "sourceHash": "5599213305e225a05207d39a6ee9b1241d0d1729d8a7cea5773c960a48cf34e7",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-fake-ai-events-2026-11-480.webp": {
+      "path": "update-fake-ai-events-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 52651,
+      "sha256": "bbe144f34009d6fd9153fc3676ac0c206515ed8216616adb2a62dabc7ee84af9",
+      "sourceHash": "28d619afbad4b8fd3b8b14fc253e273e5fe9f10d3a8d21cca53fdaf577744141",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-fake-ai-events-2026-11-960.webp": {
+      "path": "update-fake-ai-events-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 208873,
+      "sha256": "9fa7adfe453a45205a2403057d534f2d36bdebce0478d20cf60d90318351058f",
+      "sourceHash": "b080436cc3cbf1cbe1173410dfa227d4d0b17ad9bf203c7c6585ad433e5545e3",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-fake-readme-2026-11-480.webp": {
+      "path": "update-fake-readme-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 54995,
+      "sha256": "4e94f1d68a21d95c72c3ee9ac6d066b2ca7a17bdf80071bd1c775622497b34a4",
+      "sourceHash": "958fe70a52dbf5203a5714d1bc076c6f8c74d07d23e380cce7bc330a4e4cd0b2",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-fake-readme-2026-11-960.webp": {
+      "path": "update-fake-readme-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 218064,
+      "sha256": "30109c713962041633a0c049f54254cec5997220a7f58081ab2f8275e89419f4",
+      "sourceHash": "10e25ac1e523052b05847cd389bf4bfc7fa01bc2cee34a1054ccd9b5539edc82",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-fake-security-tools-2026-11-480.webp": {
+      "path": "update-fake-security-tools-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 54780,
+      "sha256": "56c5c171962df71b144c9bcb38ad92ff5b93d41dbcefa6f6dece351f7e7b46d0",
+      "sourceHash": "fe8a0c2f38d71befa4e3fcaf5276edce3223c1265fb2c2f0eedd30e8644ea9ba",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-fake-security-tools-2026-11-960.webp": {
+      "path": "update-fake-security-tools-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 220795,
+      "sha256": "7bdbe41b3eb96f344464a95f1c0f8feeb38b87fb88bdae92a2d4cc3d41a8270a",
+      "sourceHash": "8a4658a1f1587419de12fbee29f9079c689f7763a8989b2c38eec40ab0258943",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-github-actions-2026-11-480.webp": {
+      "path": "update-github-actions-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 56839,
+      "sha256": "36ae75dd8ebc1018b69920cb8c53352dd652e88cb9848218e7279b0f289a4b33",
+      "sourceHash": "b0eed4f99d7c81537ad4ae8f0df23454bbc27a012e18990bbf4575120d88a491",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-github-actions-2026-11-960.webp": {
+      "path": "update-github-actions-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 234544,
+      "sha256": "0233474b22e16dee4dd37a977dd021bce5da3da5525b1d9e44c9cf722c3b4f0b",
+      "sourceHash": "121dccac667e0cae1fdac2c3d0af4f360d027a47d530495c9ea479881bc15990",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-model-remote-code-2026-11-480.webp": {
+      "path": "update-model-remote-code-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 55199,
+      "sha256": "d972a6120f7e0eb7bae6670fe03643b59ba2efd76f4cf03dba8f2563e2bd0f51",
+      "sourceHash": "60e38357df281c6b6ea58562336b5816c425e4103d73c9f3906abea22fac302d",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-model-remote-code-2026-11-960.webp": {
+      "path": "update-model-remote-code-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 223801,
+      "sha256": "e5b0c4aa0bb8b77d5dcc0cd889d2758d2b78885c2dd7597872fd3b1304be20ee",
+      "sourceHash": "60ee10f767f1d1b4736a7f1fdaca16fc801d9e4307a48746107a9face3efa402",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-nodejs-2026-11-480.webp": {
+      "path": "update-nodejs-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 51925,
+      "sha256": "a4e6f5268347775cbd973d46458f4eaec9279308015cfd1e26e2544bd933cad0",
+      "sourceHash": "a81210235efb059cc027cb5fa5df632e004c64af1cb36c61a8d3e9b341f6ab1a",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-nodejs-2026-11-960.webp": {
+      "path": "update-nodejs-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 209579,
+      "sha256": "c368aa1b510cc1764dbfc10374299b123a1161e747c27c678a5003f5f0d9abf3",
+      "sourceHash": "e69bd7eb5cca6b005845dc0626c7b72dead2bfc95d56a3b58897ee5ebd262c02",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-northflank-2026-11-480.webp": {
+      "path": "update-northflank-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 56038,
+      "sha256": "3c31215a07d2db4a3d42cc2b00e42d096224218c6a44976644df1b0f638dc74e",
+      "sourceHash": "c3bbc2aba3dc71f6a3b9ee1471524e37113578d1e26e29460fdd6261efae8c60",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-northflank-2026-11-960.webp": {
+      "path": "update-northflank-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 225981,
+      "sha256": "f40d9599f4655486ae2a9d51c42284b2cbee0cd0d6972dc3eda7b42e9ff0f37f",
+      "sourceHash": "71877c82f7cbd63ce8d2353c4e2d1d2f26627eb27ae2cee2b225acf0449a4ad2",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-python-2026-10-480.webp": {
+      "path": "update-python-2026-10-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 52471,
+      "sha256": "817ef31bc2a371dd5ac64a74b86d95a6b99b3da8ea873a0396591317d7722703",
+      "sourceHash": "2dc6288aea7125916beb29c6cac7a24b868587655d74018a6d789ab1d571f1a3",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-python-2026-10-960.webp": {
+      "path": "update-python-2026-10-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 214971,
+      "sha256": "2fe54751f3e1faa188434637894a20f84c8f1e5524d33f807394ee782aefa3c2",
+      "sourceHash": "f0a5ee7dc73b02c79e10c1cb67367754810c9b0afde351853aa3d94b4f2b34f9",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-python-fips-2026-11-480.webp": {
+      "path": "update-python-fips-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 50334,
+      "sha256": "ce8f4686a9e145ed65092d37874774ad3f2baaf6d798435c9dbeada50ea84f37",
+      "sourceHash": "13d41f167149c7fb266785962a80d25aa9ed46e6fe729fd8cba93b301de93721",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-python-fips-2026-11-960.webp": {
+      "path": "update-python-fips-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 214922,
+      "sha256": "18f42b023742e61e2ba99ea72b8ed9e6294e7ce7136a50fd8ca1a782f743da20",
+      "sourceHash": "aa19b88f4acf2349743fafd3e158c1d3903500a06068eb59b2381a342ef960b6",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-ruby-strutil-2026-11-480.webp": {
+      "path": "update-ruby-strutil-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 51899,
+      "sha256": "a99afee3bd83f982b88c6b50a1463e0517fed62fc469fa338aec04ffe3bf9834",
+      "sourceHash": "55a59d72472056677a21b81b0ea36ffeb4cec417d7ba40ec162d3853529a9c26",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-ruby-strutil-2026-11-960.webp": {
+      "path": "update-ruby-strutil-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 205516,
+      "sha256": "f3d4012b01bb5e726c9cafa3f7c292a7759532ccc0472a86811142dff8a5fa2a",
+      "sourceHash": "2c721549895e03b9edf84c9cca7dc2c0d2fc0540792c71426440411eeaa8934a",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-tailworm-2026-10-480.webp": {
+      "path": "update-tailworm-2026-10-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 51959,
+      "sha256": "d07438bf5c2351cadb02c7102ee31536682e766b2e7c594da71d2f6a07573c57",
+      "sourceHash": "0fb4b0785268c4a22b2a44c9878891280d4c9c8c3e8a25fa941193addc19e11b",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-tailworm-2026-10-960.webp": {
+      "path": "update-tailworm-2026-10-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 204652,
+      "sha256": "24110db8d1c85394f18e732b6c37bd9cbc2dd7b29c9ac1a53db551bda816405e",
+      "sourceHash": "301906216b3e03e904fc7f192db1b4aea313df40dbf50be46567e9f668076484",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-truffle-secrets-2026-11-480.webp": {
+      "path": "update-truffle-secrets-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 54099,
+      "sha256": "5045c5dc4e7defc5c9341c8789bbb00f6f9790370f501176a9e4a9b81340df31",
+      "sourceHash": "c3e49fcada8a68595beea19e4bfa0d2e2ff1c59d356e766e924fc0e0b5544b36",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-truffle-secrets-2026-11-960.webp": {
+      "path": "update-truffle-secrets-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 216404,
+      "sha256": "c3a2364895e24cd85938fae0396564434428414e606688827f9219cc599f7bfd",
+      "sourceHash": "54fd1325bcc87cc759e6c65c061edf99efd991fbdbe91d512b69d65c36ca93fc",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-warp-logs-2026-10-480.webp": {
+      "path": "update-warp-logs-2026-10-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 53057,
+      "sha256": "a1e066ddda1b63a40ba2599c6e44492ef6f598aa9d36cf75cc5157d0afa5b691",
+      "sourceHash": "421de00910554ae5cf657a710f608486b39dc92ed17716b45312ed5aa289405d",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-warp-logs-2026-10-960.webp": {
+      "path": "update-warp-logs-2026-10-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 221550,
+      "sha256": "9f31da8d36b3154d770b31046f8b8d965ab53f72fac5c333606006ecb2c32954",
+      "sourceHash": "174249eecf91898309ac99a8ca6e6a581bc2a3fae39203239c5cba89477b3367",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-workos-2026-11-480.webp": {
+      "path": "update-workos-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 53351,
+      "sha256": "3b996c53da1bcf7d2ffbe43ad875d1c6d7f33e1dce8c6a72f027cc0deb13405a",
+      "sourceHash": "ff7bc00a005e95d994d7eb4f79f5e91e22a6418fc6c8880785782cbf2556e495",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-workos-2026-11-960.webp": {
+      "path": "update-workos-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 216602,
+      "sha256": "9daaa222c3290e1e5976ce9ff38a0e894e839f14fb4f57b4ea5e7a220ff5075d",
+      "sourceHash": "d6d6e1081c07c3a56b255cef884c28660f71fee7128792edf50f2deec98d5256",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     }
   }
