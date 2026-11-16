@@ -5,7 +5,7 @@
 | 分野 | 今回の入口教材 | 次に深掘りする内容 |
 | --- | --- | --- |
 | AIを使う前に | ai-data-boundaries / approved-ai-data | 企業向けと個人向け、承認用途・保存・共有の判断を追加済み。回答の根拠と誤りは後続 |
-| アプリの仕組み | app-architecture | 開発/本番の分離、外部APIとデータの流れ、依存の選び方 |
+| アプリの仕組み | app-architecture / uploads-and-input | アップロードの受付/解析/保存/公開を追加。開発/本番の分離、外部APIの具体設定は後続 |
 | 秘密とデータ | api-keys | サービス別の秘密設定、ログの秘匿、鍵の交換と漏えい検知 |
 | ログインと権限 | access-control / cloud-account-safety | AWSの管理/実行主体・MFA・復旧を追加。DB/ストレージの具体設定、退会と権限失効は後続 |
 | MCPとエージェント | mcp-permissions / agent-permissions | 接続元の検証、ツール更新、隔離、承認・送信境界の製品別確認 |

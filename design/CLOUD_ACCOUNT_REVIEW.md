@@ -13,3 +13,5 @@ DOJ2022-06-17の有罪評決公表と2019年の摘発を区別。設定不備の
 記事4幅で図6/比較3/猫3/画像復号/axe/overflow/キーボード/全展開文字200%/JSなし/検索/テーマ/github-guards→本記事→launch-checklistと画像を確認。375比較と1280権限図を目視し、罫線を積み重ねず、操作と文字の重なりなし。全ページbrowser/200%とFULLは完了後に追記。既存色数warning8、旧5教材の品質契約導入前という区分を維持。CI/Pages/公開URL後に公開済みへ更新する。
 
 最終FULL cloud-account-full: 3000passed/error0/既存warning8/manual376。全47×4幅axe/pageerror/overflow、全47ページ375px文字200%成功。旧5教材と警告の区分を維持。
+
+公開完了: PR28、Pages40097603826（5aba6c9a4a8e72a4404e91c23e2619439945e4c6）。公開47ルート、記事6図/比較/猫/画像/検索/テーマ/次画像を確認。並行PR26/27はresearch配下のみで公開実装変更なし。

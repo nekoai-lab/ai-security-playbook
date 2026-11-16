@@ -692,6 +692,19 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3385130
+    },
+    {
+      "id": "upload-processing-scene",
+      "title": "受け取る画像を検査と保存へつなぐ探検猫",
+      "status": "derived-for-approved-article-expansion",
+      "source": "design/assets/illustration-library/sources/upload-processing-scene.png",
+      "preview": "public/images/upload-processing-scene-480.webp",
+      "usage": "uploads-and-inputの導入と回遊。解析と保存の違いを表す架空の場面。",
+      "sha256": "9e808fbfe25925ae57617ee7f6f5c05586672feda9d1db1f689b5577436efd9c",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 3438449
     }
   ]
 }

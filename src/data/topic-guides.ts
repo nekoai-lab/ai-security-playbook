@@ -50,10 +50,9 @@ export const topicGuides = {
         anchor: "roles",
       },
       {
-        title: "保存できたように見えるけれど、どこにある？",
-        text: "要求と応答、画面内の記録、端末内の保存、DBの違いから確かめます。",
-        lesson: "app-architecture",
-        anchor: "request",
+        title: "送った画像は、誰が開ける？",
+        text: "形式の検査、解析する部品、保存先と元画像・派生物の取得を分けて確認します。",
+        lesson: "uploads-and-input",
       },
       {
         title: "緑のチェックがあれば、公開していい？",

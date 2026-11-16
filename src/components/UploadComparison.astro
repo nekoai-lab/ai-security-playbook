@@ -1,0 +1,37 @@
+---
+const cases = [
+  {
+    title: "画面に画像が表示できた",
+    result: "表示できた範囲の確認",
+    detail:
+      "保存先の公開範囲や、解析部品の更新まで確認した結果ではありません。",
+  },
+  {
+    title: "先頭の形式が一致",
+    result: "画像の検証は未完了",
+    detail:
+      "残りの内容が壊れている場合もあります。必要な解析と検査を別に確認します。",
+  },
+  {
+    title: "検査が時間切れ",
+    result: "問題なしに置き換えない",
+    detail: "失敗や未確認を分け、必要な確認を飛ばして公開しません。",
+  },
+];
+---
+
+<figure class="lesson-diagram failure-comparison" data-upload-comparison>
+  <p class="diagram-title">成功に見える表示は、どの段階？</p>
+  {cases.map((c, i) => (
+    <details open={i === 0}>
+      <summary>{c.title}</summary>
+      <p>
+        <strong>{c.result}</strong>
+      </p>
+      <p>{c.detail}</p>
+    </details>
+  ))}
+  <figcaption>
+    処理状態の比較です。ファイルの安全性を自動判定する機能ではありません。
+  </figcaption>
+</figure>

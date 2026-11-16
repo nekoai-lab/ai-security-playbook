@@ -82,3 +82,5 @@ GitHub保護の記事: github-gate-sceneは変更を公開前に点検する概�
 企業向けAIの記事: approved-ai-data-sceneは用途別に必要情報を選ぶ概念的な場面。原本/prompt/catalogと480/960WebPを保存。6図/比較はHTML、point/think/peek-sideを本文に配置。
 
 クラウド権限の記事: cloud-account-sceneは所有者・人・アプリの分離を描く概念場面。原本/prompt/catalogと480/960WebPを保存。6図/比較はHTML、point/concern/peek-sideを配置。
+
+アップロードの記事: upload-processing-sceneは送信/検査/解析/保存の概念場面。原本/prompt/catalogと480/960WebPを保存。6図/比較はHTML、think/point/peek-sideを配置。

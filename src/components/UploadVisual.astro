@@ -1,0 +1,13 @@
+---
+import LessonDiagram from "./LessonDiagram.astro";
+import {
+  uploadDiagrams,
+  type UploadDiagramKind,
+} from "../data/upload-diagrams";
+interface Props {
+  kind: UploadDiagramKind;
+}
+const { kind } = Astro.props;
+---
+
+<LessonDiagram spec={uploadDiagrams[kind]} name={`upload-${kind}`} />

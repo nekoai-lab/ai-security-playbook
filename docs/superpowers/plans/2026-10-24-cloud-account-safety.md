@@ -8,4 +8,4 @@ Tech Stack: Astro/MDX/TypeScript。既存FIELD NOTES、design-rules.jsonを維�
 - [x] 6図/比較3/専用場面/猫3、架空の主体確認と結果・境界テスト。
 - [x] access/series/related/review-map/backlog、原本/prompt/catalogを追加。
 - [x] 型/build/test/CUSTOM/FULL/全browserと200%、記事操作/画像/JSなし/回遊/目視、内容レビュー。
-- [ ] PR/CI/Pages/public。先の記事の公開記録と後続候補を更新。
+- [x] PR/CI/Pages/public。先の記事の公開記録と後続候補を更新。

@@ -1,0 +1,9 @@
+{
+  "id": "upload-processing-scene",
+  "title": "受け取る画像を検査と保存へつなぐ探検猫",
+  "usage": "uploads-and-inputの導入と回遊。解析と保存の違いを表す架空の場面。",
+  "prompt": "New 3:2 wide editorial illustration for AI Security Playbook. Reference only for established character/style: same black explorer cat, tapered muzzle, natural eyes, detailed black engraved fur, orange backpack and rolled mat. Warm ivory field notes paper, fine pen hatching, orange accents only. Cat at wooden workbench guides a small photo card through a transparent inspection frame into a closed document tray; a separate little gear box for image processing is beside it, and a laptop displays a simple photo thumbnail. Clear separate upload, inspection, storage objects, no crowded diagram. Light outdoor mountain landscape, breathing room. Friendly inquisitive mature cat, not round baby kitten. No text, letters/numbers, no real photos of people, no safety shields or green check marks, no brain/hacker. Illustration is a conceptual scene, technical labels will be HTML outside.",
+  "referenceRoles": {
+    "reference": "api-key-setting-illustration.png：画風と造形の正本"
+  }
+}

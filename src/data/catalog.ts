@@ -80,6 +80,7 @@ export const series = [
       "api-keys",
       "secret-rotation",
       "access-control",
+      "uploads-and-input",
       "release-artifacts",
       "developer-privacy",
       "github-guards",

@@ -1,3 +1,4 @@
+import { uploadDiagrams } from "./upload-diagrams";
 import { cloudAccountDiagrams } from "./cloud-account-diagrams";
 import { enterpriseDiagrams } from "./enterprise-diagrams";
 import { privacyDiagrams } from "./privacy-diagrams";
@@ -49,6 +50,13 @@ const d = (
   caption: string,
 ): DiagramSpec => ({ title, layout, nodes, caption });
 export const lessonVisuals = {
+  "uploads-and-input": {
+    image: "upload-processing-scene",
+    question: "届いた画像は、どこで読み、誰が開ける？",
+    situation: "画像や資料を受け取る機能を付けたら",
+    pose: "think",
+    diagrams: [uploadDiagrams.flow, uploadDiagrams.storage],
+  },
   "cloud-account-safety": {
     image: "cloud-account-scene",
     question: "公開に使った認証は、どの範囲を動かせる？",
