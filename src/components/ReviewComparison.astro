@@ -1,0 +1,38 @@
+---
+const cases = [
+  {
+    title: "1回のレビューが合格した",
+    result: "その回が照らした範囲の結果",
+    detail:
+      "照らさなかった観点には、何も言っていません。合格を、欠陥がないことの証明として扱いません。",
+  },
+  {
+    title: "同じ版で、結論が回ごとに割れた",
+    result: "ぶれが見えた。合格の回を選ばない",
+    detail:
+      "指摘の中身を確かめます。一度でも出た指摘は、他の回の合格で打ち消しません。",
+  },
+  {
+    title: "確認項目で、毎回拾えた",
+    result: "その項目の観点がそろった",
+    detail:
+      "項目にない種類の欠陥まで見つかるとは限りません。新しく出た穴を項目へ足し続けます。",
+  },
+];
+---
+
+<figure class="lesson-diagram failure-comparison" data-review-comparison>
+  <p class="diagram-title">同じ「合格」でも、分かることは違う</p>
+  {cases.map((c, i) => (
+    <details open={i === 0}>
+      <summary>{c.title}</summary>
+      <p>
+        <strong>{c.result}</strong>
+      </p>
+      <p>{c.detail}</p>
+    </details>
+  ))}
+  <figcaption>
+    レビュー結果の読み方の比較です。実際のレビューの品質や、コードの安全性を判定する機能ではありません。
+  </figcaption>
+</figure>

@@ -1,10 +1,14 @@
 ---
 import { getCollection, render } from "astro:content";
+import CreatorProfile from "../../components/CreatorProfile.astro";
 import Shell from "../../layouts/Shell.astro";
+import ArticleFrame from "../../components/ArticleFrame.astro";
 import ExplorerNote from "../../components/ExplorerNote.astro";
 import DataTable from "../../components/DataTable.astro";
 import LearningContext from "../../components/LearningContext.astro";
-import LessonArt from "../../components/LessonArt.astro";
+import CardArt from "../../components/CardArt.astro";
+import ArticleLabel from "../../components/ArticleLabel.astro";
+import { lessonCardArt } from "../../data/card-art";
 import type { LessonVisualId } from "../../data/lesson-visuals";
 import { topicTitle, seriesFor } from "../../data/catalog";
 export async function getStaticPaths() {
@@ -16,6 +20,7 @@ export async function getStaticPaths() {
 const { lesson } = Astro.props;
 const { Content, headings } = await render(lesson);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const originalURL = new URL(Astro.url.pathname, Astro.site).href;
 const all = await getCollection("lessons");
 const group = seriesFor(lesson.id);
 const nextId = group
@@ -40,9 +45,19 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
 );
 ---
 
-<Shell title={lesson.data.title} description={lesson.data.summary}>
-  <div class="wrap article-wrap">
-    <nav class="crumbs" aria-label="パンくず">
+<Shell
+  title={lesson.data.title}
+  description={lesson.data.summary}
+  articleId={lesson.id}
+  articleMetadata={{published: lesson.data.published, updated: lesson.data.updated}}
+  breadcrumbs={[
+    {name: "教材一覧", path: `${base}/library/`},
+    {name: topicTitle(lesson.data.topic), path: `${base}/topics/${lesson.data.topic}/`},
+    {name: lesson.data.shortTitle ?? lesson.data.title, path: `${base}/learn/${lesson.id}/`},
+  ]}
+>
+  <ArticleFrame headings={headings.filter(h=>h.depth===2)} bodyClass={lesson.data.qualityVersion===2?"prose article-narrative":"prose"} headerClass={lesson.data.qualityVersion===2?"article-header--narrative":""}>
+    <nav slot="breadcrumbs" class="crumbs" aria-label="パンくず">
       <a href={`${base}/library/`}>教材一覧</a>
       <span aria-hidden="true">/</span>
       <a href={`${base}/topics/${lesson.data.topic}/`}>
@@ -53,20 +68,18 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
         {lesson.data.shortTitle ?? lesson.data.title}
       </span>
     </nav>
-    <header
-      class:list={[
-        "article-header",
-        { "article-header--narrative": lesson.data.qualityVersion === 2 },
-      ]}
-    >
+    <Fragment slot="header">
       <p class="eyebrow">
         {lesson.data.format} / 約{lesson.data.minutes}分
       </p>
       <h1>{lesson.data.title}</h1>
       <p>{lesson.data.summary}</p>
+      <p class="reading-readiness" data-reading-readiness>
+        <strong>{lesson.data.level}</strong> · {lesson.data.prerequisiteNote}
+      </p>
       <details class="article-preparation">
         <summary>読む前の補足</summary>
-        <p>前提知識：{lesson.data.level}。</p>
+
         {lesson.data.outcomes && (
           <ul>
             {lesson.data.outcomes.map((goal) => (
@@ -97,61 +110,40 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
           <time datetime={lesson.data.reviewed}>{lesson.data.reviewed}</time>
         </span>
       </p>
-    </header>
-    <div class="article-grid">
-      <aside
-        class:list={{
-          "article-toc-optional": true,
-        }}
-      >
-        <nav aria-label="この教材の目次">
-          <p class="eyebrow">ON THIS PAGE</p>
-          {headings
-            .filter((h) => h.depth === 2)
-            .map((h) => (
-              <a href={`#${h.slug}`}>{h.text}</a>
-            ))}
-        </nav>
-      </aside>
-      <article
-        class:list={[
-          "prose",
-          { "article-narrative": lesson.data.qualityVersion === 2 },
-        ]}
-      >
-        {
-          <details class="article-mobile-toc">
-            <summary>この記事の目次</summary>
-            <nav aria-label="この教材の目次">
-              {headings
-                .filter((h) => h.depth === 2)
-                .map((h) => (
-                  <a href={`#${h.slug}`}>{h.text}</a>
-                ))}
-            </nav>
-          </details>
-        }
+    </Fragment>
         <Content components={{ table: DataTable }} />
         {lesson.data.qualityVersion !== 2 && (
           <ExplorerNote title="読んだことを、ひとつ確かめよう。" compact>
             気になった項目を実際の環境で確認し、分かったことと未確認のことを分けて残しましょう。
           </ExplorerNote>
         )}
+        <CreatorProfile compact />
+        <p class="article-original" data-original-url>この記事のURL：<a href={originalURL}>{originalURL}</a></p>
         <LearningContext id={lesson.id} />
         {related.length > 0 && (
           <section class="related-lessons">
             <h2>関連する教材</h2>
-            {related.map((l) => (
-              <a class="related-card" href={`${base}/learn/${l.id}/`}>
-                <LessonArt id={l.id as LessonVisualId} sizes="112px" />
-                <div>
-                  <strong>{l.data.title} →</strong>
-                  <span>
-                    約{l.data.minutes}分 · {l.data.format}
-                  </span>
-                </div>
-              </a>
-            ))}
+            <div class="related-grid">
+              {related.map((l) => (
+                <a
+                  class="related-card image-card"
+                  href={`${base}/learn/${l.id}/`}
+                >
+                  <CardArt
+                    art={lessonCardArt(l.id as LessonVisualId)}
+                    sizes="(max-width:760px) calc(100vw - 32px),320px"
+                  />
+                  <div class="card-copy">
+                    <strong>
+                      <ArticleLabel>{l.data.title} →</ArticleLabel>
+                    </strong>
+                    <span>
+                      約{l.data.minutes}分 · {l.data.format}
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </section>
         )}
         <p class="hub-action">
@@ -166,7 +158,16 @@ const prerequisites = lesson.data.prerequisites.map((id: string) =>
             この教材のソース・修正提案 ↗
           </a>
         </p>
-      </article>
-    </div>
-  </div>
+  </ArticleFrame>
 </Shell>
+
+<style>
+  .article-original { font-size: 12px; max-width: 32em; overflow-wrap: anywhere; }
+  .article-original a { display: inline-block; min-height: 44px; padding-block: 8px; max-width: 100%; }
+  .reading-readiness {
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 40em;
+    text-wrap: balance;
+  }
+</style>

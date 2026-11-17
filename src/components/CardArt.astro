@@ -1,0 +1,94 @@
+---
+import { avifSrcset } from "../data/avif";
+import CatPose from "./CatPose.astro";
+import LessonArt from "./LessonArt.astro";
+import type { CardArt } from "../data/card-art";
+import illustrationCatalog from "../../design/assets/illustration-library/catalog.json";
+interface Props {
+  art: CardArt;
+  sizes?: string;
+  trackNext?: boolean;
+}
+const {
+  art,
+  sizes = "(max-width:760px) 160px,240px",
+  trackNext = false,
+} = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const assets = illustrationCatalog.assets as {
+  id: string;
+  deliveries?: { width: number; height: number }[];
+}[];
+const delivery =
+  art.kind === "illustration"
+    ? assets
+        .find((a) => a.id === art.image)
+        ?.deliveries?.find((d) => d.width === 960)
+    : undefined;
+if (art.kind === "illustration" && !delivery)
+  throw new Error(`Missing image dimensions: ${art.image}`);
+---
+
+<div
+  class:list={["card-art", `card-art--${art.kind}`]}
+  data-card-art={
+    art.kind === "pose"
+      ? art.pose
+      : art.kind === "scene"
+        ? art.lesson
+        : art.image
+  }
+  style={
+    art.kind === "scene" ? `--card-art-position:${art.position}` : undefined
+  }
+  data-next-media={trackNext ? true : undefined}
+  data-card-media
+  aria-hidden="true"
+>
+  {art.kind === "scene" ? (
+    <LessonArt id={art.lesson} sizes={sizes} trackNext={trackNext} />
+  ) : art.kind === "pose" ? (
+    <CatPose pose={art.pose} />
+  ) : (
+    <picture class="card-art-picture">
+      <source type="image/avif" data-next-avif={trackNext ? true : undefined} srcset={avifSrcset(art.image,base) ?? undefined} sizes={sizes} />
+    <img
+      src={`${base}/images/${art.image}-480.webp`}
+      srcset={`${base}/images/${art.image}-480.webp 480w, ${base}/images/${art.image}-960.webp 960w`}
+      sizes={sizes}
+      width={delivery!.width}
+      height={delivery!.height}
+      loading="lazy"
+      decoding="async"
+      data-next-art={trackNext ? true : undefined}
+      alt=""
+    />
+    </picture>
+  )}
+</div>
+<style>
+  .card-art-picture { display: contents; }
+  .card-art {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1280 / 670;
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+  }
+  .card-art :global(img) {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    float: none;
+    object-fit: cover;
+    object-position: var(--card-art-position, 50% 0%);
+  }
+</style>

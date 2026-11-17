@@ -1,0 +1,22 @@
+[
+  {
+    "width": 320,
+    "skip": true,
+    "footerHome": true
+  },
+  {
+    "width": 375,
+    "skip": true,
+    "footerHome": true
+  },
+  {
+    "width": 768,
+    "skip": true,
+    "footerHome": true
+  },
+  {
+    "width": 1280,
+    "skip": true,
+    "footerHome": true
+  }
+]

@@ -1,0 +1,270 @@
+{
+  "base": "https://nekoai-lab.github.io/ai-security-playbook/",
+  "results": [
+    {
+      "width": 320,
+      "metrics": {
+        "height": 6576,
+        "start": 850,
+        "recommended": 2168
+      },
+      "entries": 3,
+      "recommendations": 8,
+      "stages": 3,
+      "oldLevelBookmark": true,
+      "keyboard": true,
+      "text200": true,
+      "guideAbsent": true
+    },
+    {
+      "width": 375,
+      "metrics": {
+        "height": 6152,
+        "start": 887,
+        "recommended": 2086
+      },
+      "entries": 3,
+      "recommendations": 8,
+      "stages": 3,
+      "oldLevelBookmark": true,
+      "keyboard": true,
+      "text200": true,
+      "guideAbsent": true
+    },
+    {
+      "width": 768,
+      "metrics": {
+        "height": 4453,
+        "start": 759,
+        "recommended": 1884
+      },
+      "entries": 3,
+      "recommendations": 8,
+      "stages": 3,
+      "oldLevelBookmark": true,
+      "keyboard": true,
+      "text200": true,
+      "guideAbsent": true
+    },
+    {
+      "width": 1280,
+      "metrics": {
+        "height": 3524,
+        "start": 784,
+        "recommended": 1354
+      },
+      "entries": 3,
+      "recommendations": 8,
+      "stages": 3,
+      "oldLevelBookmark": true,
+      "keyboard": true,
+      "text200": true,
+      "guideAbsent": true
+    }
+  ],
+  "noJavaScript": true,
+  "routes": [
+    {
+      "route": "",
+      "status": 200
+    },
+    {
+      "route": "learn/basics/",
+      "status": 200
+    },
+    {
+      "route": "learn/node-october-2026/",
+      "status": 200
+    },
+    {
+      "route": "learn/commands/",
+      "status": 200
+    },
+    {
+      "route": "learn/checklist/",
+      "status": 200
+    },
+    {
+      "route": "learn/operations/",
+      "status": 200
+    },
+    {
+      "route": "library/",
+      "status": 200
+    },
+    {
+      "route": "topics/",
+      "status": 200
+    },
+    {
+      "route": "topics/development/",
+      "status": 200
+    },
+    {
+      "route": "topics/operations/",
+      "status": 200
+    },
+    {
+      "route": "paths/",
+      "status": 200
+    },
+    {
+      "route": "paths/environment/",
+      "status": 200
+    },
+    {
+      "route": "paths/node-update/",
+      "status": 200
+    },
+    {
+      "route": "paths/update-operations/",
+      "status": 200
+    },
+    {
+      "route": "series/node-security/",
+      "status": 200
+    },
+    {
+      "route": "updates/",
+      "status": 200
+    },
+    {
+      "route": "about/",
+      "status": 200
+    },
+    {
+      "route": "learn/ai-data-boundaries/",
+      "status": 200
+    },
+    {
+      "route": "learn/app-architecture/",
+      "status": 200
+    },
+    {
+      "route": "learn/api-keys/",
+      "status": 200
+    },
+    {
+      "route": "learn/access-control/",
+      "status": 200
+    },
+    {
+      "route": "learn/mcp-permissions/",
+      "status": 200
+    },
+    {
+      "route": "learn/agent-permissions/",
+      "status": 200
+    },
+    {
+      "route": "learn/launch-checklist/",
+      "status": 200
+    },
+    {
+      "route": "learn/php-october-2026/",
+      "status": 200
+    },
+    {
+      "route": "learn/incident-response/",
+      "status": 200
+    },
+    {
+      "route": "topics/ai-tools/",
+      "status": 200
+    },
+    {
+      "route": "topics/secrets/",
+      "status": 200
+    },
+    {
+      "route": "topics/access/",
+      "status": 200
+    },
+    {
+      "route": "topics/connections/",
+      "status": 200
+    },
+    {
+      "route": "topics/release/",
+      "status": 200
+    },
+    {
+      "route": "topics/response/",
+      "status": 200
+    },
+    {
+      "route": "paths/solo-development/",
+      "status": 200
+    },
+    {
+      "route": "paths/before-launch/",
+      "status": 200
+    },
+    {
+      "route": "paths/ai-connections/",
+      "status": 200
+    },
+    {
+      "route": "series/solo-development/",
+      "status": 200
+    },
+    {
+      "route": "series/ai-connections/",
+      "status": 200
+    },
+    {
+      "route": "learn/ai-work-logs/",
+      "status": 200
+    },
+    {
+      "route": "learn/release-artifacts/",
+      "status": 200
+    },
+    {
+      "route": "learn/external-service-failures/",
+      "status": 200
+    },
+    {
+      "route": "learn/dependency-updates/",
+      "status": 200
+    },
+    {
+      "route": "learn/github-guards/",
+      "status": 200
+    },
+    {
+      "route": "learn/secret-rotation/",
+      "status": 200
+    },
+    {
+      "route": "learn/developer-privacy/",
+      "status": 200
+    },
+    {
+      "route": "learn/approved-ai-data/",
+      "status": 200
+    },
+    {
+      "route": "learn/cloud-account-safety/",
+      "status": 200
+    },
+    {
+      "route": "start/use-ai/",
+      "status": 200
+    },
+    {
+      "route": "start/build-apps/",
+      "status": 200
+    },
+    {
+      "route": "start/operate-services/",
+      "status": 200
+    }
+  ],
+  "dateJST": "2026-10-25",
+  "pullRequest": "https://github.com/nekoai-lab/ai-security-playbook/pull/34",
+  "mergeCommit": "f7ba4fc99d662ae6366b43f88402aa7a5eeec125",
+  "ciRun": 40140283928,
+  "pagesRun": 40140345680,
+  "pagesConclusion": "success"
+}

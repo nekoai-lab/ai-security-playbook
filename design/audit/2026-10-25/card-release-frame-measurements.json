@@ -1,0 +1,142 @@
+[
+  {
+    "width": 320,
+    "route": "",
+    "cards": 11
+  },
+  {
+    "width": 320,
+    "route": "library/",
+    "cards": 12
+  },
+  {
+    "width": 320,
+    "route": "topics/operations/",
+    "cards": 7
+  },
+  {
+    "width": 320,
+    "route": "start/use-ai/",
+    "cards": 5
+  },
+  {
+    "width": 320,
+    "route": "series/node-security/",
+    "cards": 5
+  },
+  {
+    "width": 320,
+    "route": "paths/node-update/",
+    "cards": 3
+  },
+  {
+    "width": 320,
+    "route": "learn/api-keys/",
+    "cards": 3
+  },
+  {
+    "width": 375,
+    "route": "",
+    "cards": 11
+  },
+  {
+    "width": 375,
+    "route": "library/",
+    "cards": 12
+  },
+  {
+    "width": 375,
+    "route": "topics/operations/",
+    "cards": 7
+  },
+  {
+    "width": 375,
+    "route": "start/use-ai/",
+    "cards": 5
+  },
+  {
+    "width": 375,
+    "route": "series/node-security/",
+    "cards": 5
+  },
+  {
+    "width": 375,
+    "route": "paths/node-update/",
+    "cards": 3
+  },
+  {
+    "width": 375,
+    "route": "learn/api-keys/",
+    "cards": 3
+  },
+  {
+    "width": 768,
+    "route": "",
+    "cards": 11
+  },
+  {
+    "width": 768,
+    "route": "library/",
+    "cards": 12
+  },
+  {
+    "width": 768,
+    "route": "topics/operations/",
+    "cards": 7
+  },
+  {
+    "width": 768,
+    "route": "start/use-ai/",
+    "cards": 5
+  },
+  {
+    "width": 768,
+    "route": "series/node-security/",
+    "cards": 5
+  },
+  {
+    "width": 768,
+    "route": "paths/node-update/",
+    "cards": 3
+  },
+  {
+    "width": 768,
+    "route": "learn/api-keys/",
+    "cards": 3
+  },
+  {
+    "width": 1280,
+    "route": "",
+    "cards": 11
+  },
+  {
+    "width": 1280,
+    "route": "library/",
+    "cards": 12
+  },
+  {
+    "width": 1280,
+    "route": "topics/operations/",
+    "cards": 7
+  },
+  {
+    "width": 1280,
+    "route": "start/use-ai/",
+    "cards": 5
+  },
+  {
+    "width": 1280,
+    "route": "series/node-security/",
+    "cards": 5
+  },
+  {
+    "width": 1280,
+    "route": "paths/node-update/",
+    "cards": 3
+  },
+  {
+    "width": 1280,
+    "route": "learn/api-keys/",
+    "cards": 3
+  }
+]

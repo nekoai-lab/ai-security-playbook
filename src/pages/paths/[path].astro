@@ -16,7 +16,7 @@ const lessons = path.ids.map((id) => all.find((l) => l.id === id)!);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<Shell title={path.label} description={path.text}>
+<Shell title={path.label} description={path.text} breadcrumbs={[{name:"学習ルート",path:`${base}/paths/`},{name:path.label,path:`${base}/paths/${path.id}/`}]}>
   <div class="wrap hub-page">
     <nav class="crumbs" aria-label="パンくず">
       <a href={`${base}/paths/`}>学習ルート</a>

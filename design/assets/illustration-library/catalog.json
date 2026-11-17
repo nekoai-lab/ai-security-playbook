@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "generator": "built-in image_gen",
   "guide": "docs/ILLUSTRATION_GUIDE.md",
   "characterReference": [
@@ -692,6 +692,325 @@
       "height": 1024,
       "hasAlpha": false,
       "bytes": 3385130
+    },
+    {
+      "id": "app-workshop",
+      "title": "森の工房を歩いてアプリの構成をたどる",
+      "status": "approved-scene",
+      "approvedAt": "2026-10-25",
+      "approval": "ユーザーがcard-world-preview.htmlを確認し「いいね差し替えて」と承認。",
+      "source": "design/assets/illustration-library/sources/app-workshop.png",
+      "preview": "public/images/app-workshop-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/app-workshop-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/app-workshop-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "developmentテーマカードの概念的な挿絵。技術構成や安全性の証拠として扱わない。",
+      "sha256": "08fe15fc48eeb7bcf7bac76f2cb63f88cafc7bb1a10b8d0d21447dedca6af0ea",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4036715
+    },
+    {
+      "id": "keys-and-records",
+      "title": "山小屋の棚からキーと記録を見渡す",
+      "status": "approved-scene",
+      "approvedAt": "2026-10-25",
+      "approval": "ユーザーがcard-world-preview.htmlを確認し「いいね差し替えて」と承認。",
+      "source": "design/assets/illustration-library/sources/keys-and-records.png",
+      "preview": "public/images/keys-and-records-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/keys-and-records-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/keys-and-records-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "secretsテーマカードの概念的な挿絵。技術構成や安全性の証拠として扱わない。",
+      "sha256": "27dd72f2de965ee06ba59c7e1f351c01f8a7feaec0f1601a4f20a5b06971b7b2",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4264502
+    },
+    {
+      "id": "agent-field-tools",
+      "title": "地図と道具を広げて任せる操作を考える",
+      "status": "approved-scene",
+      "approvedAt": "2026-10-25",
+      "approval": "ユーザーがcard-world-preview.htmlを確認し「いいね差し替えて」と承認。",
+      "source": "design/assets/illustration-library/sources/agent-field-tools.png",
+      "preview": "public/images/agent-field-tools-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/agent-field-tools-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/agent-field-tools-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "connectionsテーマカードの概念的な挿絵。技術構成や安全性の証拠として扱わない。",
+      "sha256": "51a95ae08ca04395f527c73d0fdee54c124835f6354e9230267cd01927e0abf1",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4240319
+    },
+    {
+      "id": "maintenance-lookout",
+      "title": "森の見張り台で部品をルーペで調べる",
+      "status": "approved-scene",
+      "approvedAt": "2026-10-25",
+      "approval": "ユーザーがcard-world-preview.htmlを確認し「いいね差し替えて」と承認。",
+      "source": "design/assets/illustration-library/sources/maintenance-lookout.png",
+      "preview": "public/images/maintenance-lookout-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/maintenance-lookout-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/maintenance-lookout-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "operationsテーマカードの概念的な挿絵。技術構成や安全性の証拠として扱わない。",
+      "sha256": "d912ee2b1047032618aeb791d384f83a2b7d68b3cd238172f7704b4766190e4d",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4328613
+    },
+    {
+      "id": "runtime-field-guide",
+      "title": "basics専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/runtime-field-guide.png",
+      "preview": "public/images/runtime-field-guide-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/runtime-field-guide-480.webp",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "path": "public/images/runtime-field-guide-960.webp",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "usage": "basicsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "b2547c204b24f0b8968b2a74b95e4fe5dd12cff7e26791e59181f9381cca1cbc",
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "bytes": 4010687
+    },
+    {
+      "id": "agent-permission-station",
+      "title": "agent-permissions専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/agent-permission-station.png",
+      "preview": "public/images/agent-permission-station-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/agent-permission-station-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/agent-permission-station-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "agent-permissionsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "6a1d3106ce785172bb6288098a9d1c07196e2e5e573691f53ac52c61e6ba64a9",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4255511
+    },
+    {
+      "id": "php-hosting-inspection",
+      "title": "php-october-2026専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/php-hosting-inspection.png",
+      "preview": "public/images/php-hosting-inspection-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/php-hosting-inspection-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/php-hosting-inspection-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "php-october-2026のカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "8fdc589b5c218aeb4ddbef2638cc4feeb52d184c05d0bd9386a41decc9286ca6",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4210389
+    },
+    {
+      "id": "command-observation",
+      "title": "commands専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/command-observation.png",
+      "preview": "public/images/command-observation-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/command-observation-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/command-observation-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "commandsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "3c36e8553701a90b68b13fac064e5ee57b269d45466f1730ce3cfd56e4246ec1",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4249433
+    },
+    {
+      "id": "mcp-connection-station",
+      "title": "mcp-permissions専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/mcp-connection-station.png",
+      "preview": "public/images/mcp-connection-station-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/mcp-connection-station-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/mcp-connection-station-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "mcp-permissionsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "a7cd61a0527fce34f66fbeedaaa22b20c866f72dd73ab25576857d83aa74e7ad",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4551022
+    },
+    {
+      "id": "update-checklist-stations",
+      "title": "checklist専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/update-checklist-stations.png",
+      "preview": "public/images/update-checklist-stations-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/update-checklist-stations-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/update-checklist-stations-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "checklistのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "49b3dfbb4ca79564a3f892965f82dadf0ee391aa1a9fc8e9d8c680c6e7e8f768",
+      "width": 1733,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 4005344
+    },
+    {
+      "id": "operations-observation",
+      "title": "operations専用の世界観イラスト",
+      "status": "derived-for-authorized-card-expansion",
+      "source": "design/assets/illustration-library/sources/operations-observation.png",
+      "preview": "public/images/operations-observation-480.webp",
+      "deliveries": [
+        {
+          "path": "public/images/operations-observation-480.webp",
+          "width": 480,
+          "height": 251
+        },
+        {
+          "path": "public/images/operations-observation-960.webp",
+          "width": 960,
+          "height": 502
+        }
+      ],
+      "usage": "operationsのカード専用。本文やOGPの画像は維持。技術や安全の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーの「カードは１つ１つ別物」「足りてないなら作って」の指示で制作・採用。",
+      "sha256": "34957ddca307751fa13ba8d050f28fe8c0e78dddb9053ad117488e033aaf0743",
+      "width": 1734,
+      "height": 907,
+      "hasAlpha": false,
+      "bytes": 3774201
+    },
+    {
+      "id": "alpine-panorama",
+      "title": "LP固定背景：山岳パノラマ",
+      "status": "derived-from-approved-background-concept",
+      "source": "design/assets/illustration-library/sources/alpine-panorama.png",
+      "preview": "public/images/alpine-panorama-1920.webp",
+      "deliveries": [
+        {
+          "path": "public/images/alpine-panorama-1920.webp",
+          "width": 1920,
+          "height": 800,
+          "bytes": 319812
+        },
+        {
+          "path": "public/images/alpine-panorama-2560.webp",
+          "width": 2560,
+          "height": 1066,
+          "bytes": 423322
+        }
+      ],
+      "usage": "トップのPC背景専用。左右は一枚の連続した風景。スマホでは読み込まない装飾。キャラクターや安全性の証拠ではない。",
+      "authorization": "2026-10-25 ユーザーが山岳背景のイメージを承認し公開を依頼。承認案から背景単体として派生。",
+      "sha256": "8531b0e46290f83d7b8b905d359db54310adbb0815adc04845cbe2024980f110",
+      "width": 1942,
+      "height": 809,
+      "hasAlpha": false,
+      "bytes": 3209717
     }
-  ]
+  ],
+  "deliveryManifest": "public/images/avif-delivery.json"
 }

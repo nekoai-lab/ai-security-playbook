@@ -1,0 +1,66 @@
+{
+  "base": "http://127.0.0.1:63102/ai-security-playbook/",
+  "results": [
+    {
+      "width": 320,
+      "metrics": {
+        "height": 6576,
+        "start": 850,
+        "recommended": 2168
+      },
+      "entries": 3,
+      "recommendations": 8,
+      "stages": 3,
+      "oldLevelBookmark": true,
+      "keyboard": true,
+      "text200": true,
+      "guideAbsent": true
+    },
+    {
+      "width": 375,
+      "metrics": {
+        "height": 6152,
+        "start": 887,
+        "recommended": 2086
+      },
+      "entries": 3,
+      "recommendations": 8,
+      "stages": 3,
+      "oldLevelBookmark": true,
+      "keyboard": true,
+      "text200": true,
+      "guideAbsent": true
+    },
+    {
+      "width": 768,
+      "metrics": {
+        "height": 4453,
+        "start": 759,
+        "recommended": 1884
+      },
+      "entries": 3,
+      "recommendations": 8,
+      "stages": 3,
+      "oldLevelBookmark": true,
+      "keyboard": true,
+      "text200": true,
+      "guideAbsent": true
+    },
+    {
+      "width": 1280,
+      "metrics": {
+        "height": 3524,
+        "start": 784,
+        "recommended": 1354
+      },
+      "entries": 3,
+      "recommendations": 8,
+      "stages": 3,
+      "oldLevelBookmark": true,
+      "keyboard": true,
+      "text200": true,
+      "guideAbsent": true
+    }
+  ],
+  "noJavaScript": true
+}

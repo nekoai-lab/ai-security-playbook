@@ -37,6 +37,19 @@ test("full and quick coverage stay distinct, and failures are propagated", () =>
       JSON.parse(readFileSync("design/review-map.json", "utf8")).pages.length,
     );
     assert(!fullArgs.includes("--widths"));
+    const guide = run(["--guide"]);
+    assert.equal(guide.status, 0);
+    assert.match(guide.stdout, /GUIDE FULL:/);
+    const guideArgs = JSON.parse(guide.stdout.trim().split("\n").at(-1));
+    assert.equal(guideArgs.filter((a) => a.startsWith("http")).length, 1);
+    assert(
+      guideArgs.some(
+        (a) =>
+          a === "http://127.0.0.1:4392/ai-security-playbook/design-system/",
+      ),
+    );
+    assert(!guideArgs.includes("--widths"));
+    assert.equal(run(["--guide"], "1").status, 1);
     const quick = run(["--quick"]);
     assert.equal(quick.status, 0);
     assert.match(quick.stdout, /diagnostics only; not a release approval/);

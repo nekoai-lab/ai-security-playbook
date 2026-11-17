@@ -1,0 +1,530 @@
+[
+  {
+    "width": 320,
+    "enlarged": false,
+    "cards": [
+      {
+        "id": "ai-tools",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 1791.203125,
+        "copyTop": 1791.203125
+      },
+      {
+        "id": "development",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 2292.75,
+        "cuesBottom": 2256.328125,
+        "copyTop": 2292.75
+      },
+      {
+        "id": "secrets",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 2794.296875,
+        "cuesBottom": 2732.6875,
+        "copyTop": 2794.296875
+      },
+      {
+        "id": "access",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 3302.234375,
+        "copyTop": 3302.234375
+      },
+      {
+        "id": "connections",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 3826.171875,
+        "cuesBottom": 3764.5625,
+        "copyTop": 3826.171875
+      },
+      {
+        "id": "release",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 4340.5,
+        "copyTop": 4340.5
+      },
+      {
+        "id": "operations",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 4842.046875,
+        "cuesBottom": 4780.4375,
+        "copyTop": 4842.046875
+      },
+      {
+        "id": "response",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 5356.375,
+        "copyTop": 5356.375
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "enlarged": true,
+    "cards": [
+      {
+        "id": "ai-tools",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 3680.46875,
+        "copyTop": 3680.46875
+      },
+      {
+        "id": "development",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 4643.578125,
+        "cuesBottom": 4643.578125,
+        "copyTop": 4643.578125
+      },
+      {
+        "id": "secrets",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 5612.296875,
+        "cuesBottom": 5595.484375,
+        "copyTop": 5612.296875
+      },
+      {
+        "id": "access",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 6536.21875,
+        "copyTop": 6536.21875
+      },
+      {
+        "id": "connections",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 7560.921875,
+        "cuesBottom": 7560.921875,
+        "copyTop": 7560.921875
+      },
+      {
+        "id": "release",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 8542.4375,
+        "copyTop": 8542.4375
+      },
+      {
+        "id": "operations",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 9477.546875,
+        "cuesBottom": 9477.546875,
+        "copyTop": 9477.546875
+      },
+      {
+        "id": "response",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 10535.859375,
+        "copyTop": 10535.859375
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "enlarged": false,
+    "cards": [
+      {
+        "id": "ai-tools",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 1810.296875,
+        "copyTop": 1810.296875
+      },
+      {
+        "id": "development",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 2311.84375,
+        "cuesBottom": 2275.421875,
+        "copyTop": 2311.84375
+      },
+      {
+        "id": "secrets",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 2813.390625,
+        "cuesBottom": 2751.78125,
+        "copyTop": 2813.390625
+      },
+      {
+        "id": "access",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 3314.9375,
+        "copyTop": 3314.9375
+      },
+      {
+        "id": "connections",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 3816.484375,
+        "cuesBottom": 3754.875,
+        "copyTop": 3816.484375
+      },
+      {
+        "id": "release",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 4318.03125,
+        "copyTop": 4318.03125
+      },
+      {
+        "id": "operations",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 4819.578125,
+        "cuesBottom": 4757.96875,
+        "copyTop": 4819.578125
+      },
+      {
+        "id": "response",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 5343.515625,
+        "copyTop": 5343.515625
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "enlarged": true,
+    "cards": [
+      {
+        "id": "ai-tools",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 3558.375,
+        "copyTop": 3558.375
+      },
+      {
+        "id": "development",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 4482.296875,
+        "cuesBottom": 4479.484375,
+        "copyTop": 4482.296875
+      },
+      {
+        "id": "secrets",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 5406.21875,
+        "cuesBottom": 5367.015625,
+        "copyTop": 5406.21875
+      },
+      {
+        "id": "access",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 6317.34375,
+        "copyTop": 6317.34375
+      },
+      {
+        "id": "connections",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 7252.453125,
+        "cuesBottom": 7252.453125,
+        "copyTop": 7252.453125
+      },
+      {
+        "id": "release",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 8125.1875,
+        "copyTop": 8125.1875
+      },
+      {
+        "id": "operations",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 9060.296875,
+        "cuesBottom": 9060.296875,
+        "copyTop": 9060.296875
+      },
+      {
+        "id": "response",
+        "columns": 1,
+        "fit": "contain",
+        "stageBottom": 10105.8125,
+        "copyTop": 10105.8125
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "enlarged": false,
+    "cards": [
+      {
+        "id": "ai-tools",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 1506.234375,
+        "copyTop": 1506.234375
+      },
+      {
+        "id": "development",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 1508.90625,
+        "cuesBottom": 1472.484375,
+        "copyTop": 1508.90625
+      },
+      {
+        "id": "secrets",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 2026.453125,
+        "cuesBottom": 1964.84375,
+        "copyTop": 2026.453125
+      },
+      {
+        "id": "access",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 2023.78125,
+        "copyTop": 2023.78125
+      },
+      {
+        "id": "connections",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 2544,
+        "cuesBottom": 2482.390625,
+        "copyTop": 2544
+      },
+      {
+        "id": "release",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 2541.328125,
+        "copyTop": 2541.328125
+      },
+      {
+        "id": "operations",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 3061.546875,
+        "cuesBottom": 2999.9375,
+        "copyTop": 3061.546875
+      },
+      {
+        "id": "response",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 3058.875,
+        "copyTop": 3058.875
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "enlarged": true,
+    "cards": [
+      {
+        "id": "ai-tools",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 2837.140625,
+        "copyTop": 2837.140625
+      },
+      {
+        "id": "development",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 2879,
+        "cuesBottom": 2879,
+        "copyTop": 2879
+      },
+      {
+        "id": "secrets",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 3818.921875,
+        "cuesBottom": 3779.71875,
+        "copyTop": 3818.921875
+      },
+      {
+        "id": "access",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 3816.25,
+        "copyTop": 3816.25
+      },
+      {
+        "id": "connections",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 4767.359375,
+        "cuesBottom": 4767.359375,
+        "copyTop": 4767.359375
+      },
+      {
+        "id": "release",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 4753.5,
+        "copyTop": 4753.5
+      },
+      {
+        "id": "operations",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 5718.46875,
+        "cuesBottom": 5718.46875,
+        "copyTop": 5718.46875
+      },
+      {
+        "id": "response",
+        "columns": 2,
+        "fit": "contain",
+        "stageBottom": 5704.609375,
+        "copyTop": 5704.609375
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "enlarged": false,
+    "cards": [
+      {
+        "id": "ai-tools",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 1533.90625,
+        "copyTop": 1533.90625
+      },
+      {
+        "id": "development",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 1533.90625,
+        "cuesBottom": 1497.484375,
+        "copyTop": 1533.90625
+      },
+      {
+        "id": "secrets",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 1533.90625,
+        "cuesBottom": 1472.296875,
+        "copyTop": 1533.90625
+      },
+      {
+        "id": "access",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 2051.453125,
+        "copyTop": 2051.453125
+      },
+      {
+        "id": "connections",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 2051.453125,
+        "cuesBottom": 1989.84375,
+        "copyTop": 2051.453125
+      },
+      {
+        "id": "release",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 2051.453125,
+        "copyTop": 2051.453125
+      },
+      {
+        "id": "operations",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 2569,
+        "cuesBottom": 2507.390625,
+        "copyTop": 2569
+      },
+      {
+        "id": "response",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 2569,
+        "copyTop": 2569
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "enlarged": true,
+    "cards": [
+      {
+        "id": "ai-tools",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 2541.5,
+        "copyTop": 2541.5
+      },
+      {
+        "id": "development",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 2541.5,
+        "cuesBottom": 2538.6875,
+        "copyTop": 2541.5
+      },
+      {
+        "id": "secrets",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 2541.5,
+        "cuesBottom": 2502.296875,
+        "copyTop": 2541.5
+      },
+      {
+        "id": "access",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 3430.234375,
+        "copyTop": 3430.234375
+      },
+      {
+        "id": "connections",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 3430.234375,
+        "cuesBottom": 3413.421875,
+        "copyTop": 3430.234375
+      },
+      {
+        "id": "release",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 3430.234375,
+        "copyTop": 3430.234375
+      },
+      {
+        "id": "operations",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 4330.15625,
+        "cuesBottom": 4330.15625,
+        "copyTop": 4330.15625
+      },
+      {
+        "id": "response",
+        "columns": 3,
+        "fit": "contain",
+        "stageBottom": 4318.96875,
+        "copyTop": 4318.96875
+      }
+    ]
+  }
+]

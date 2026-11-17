@@ -1,0 +1,38 @@
+/* Approved desktop LP: a fixed panorama behind a scrolling paper page. */
+.site-frame { display: contents; }
+.mountain-backdrop { display: none; }
+@media (min-width: 1280px) {
+  .mountain-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+  }
+  .mountain-backdrop img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .site-frame--mountain {
+    display: flow-root;
+    position: relative;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin-inline: auto;
+    background-color: var(--color-paper);
+    background-image: radial-gradient(#19191909 0.5px, transparent 0.6px);
+    background-size: 5px 5px;
+  }
+  .site-frame--mountain .hero h1 {
+    font-size: 64px;
+  }
+  .site-frame--mountain .hero-art {
+    width: calc(100% + 40px);
+  }
+}
+@media print {
+  .mountain-backdrop { display: none; }
+  .site-frame--mountain { display: contents; }
+}

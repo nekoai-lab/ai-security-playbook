@@ -1,0 +1,34 @@
+[
+  {
+    "width": 320,
+    "route": "design-system/",
+    "scope": "authoring",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 375,
+    "route": "design-system/",
+    "scope": "authoring",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 768,
+    "route": "design-system/",
+    "scope": "authoring",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "route": "design-system/",
+    "scope": "authoring",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  }
+]

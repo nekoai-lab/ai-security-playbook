@@ -1,50 +1,50 @@
 export const topics = [
   {
     id: "ai-tools",
-    title: "AIを使う前に",
-    summary: "入力する情報と、AIに任せる範囲を決める。",
+    title: "AIに渡す情報",
+    summary: "個人情報・添付資料・会社のAI。入力してよい範囲を整理する。",
     kind: "book",
   },
   {
     id: "development",
     title: "アプリの仕組み",
-    summary: "画面・処理・保存先・実行環境を分けて理解する。",
+    summary: "画面・サーバー・保存先・実行環境。どこを確認するかが分かる。",
     kind: "terminal",
   },
   {
     id: "secrets",
-    title: "秘密とデータ",
-    summary: "APIキーや個人情報を、必要な範囲で扱う。",
+    title: "APIキー・会話・データ",
+    summary: "キーの置き場所、会話の保存と共有、交換後の反映を確かめる。",
     kind: "book",
   },
   {
     id: "access",
     title: "ログインと権限",
-    summary: "本人確認と、データを使える権限を分ける。",
+    summary: "本人確認とアクセス権限を分け、誰が何を使えるかを確かめる。",
     kind: "layers",
   },
   {
     id: "connections",
-    title: "MCPとエージェント",
-    summary: "接続先と、読む・変える・送る権限を確かめる。",
+    title: "AIに任せる操作",
+    summary: "MCPとエージェントの、読む・変える・送る範囲を決める。",
     kind: "compass",
   },
   {
     id: "release",
     title: "公開前の確認",
-    summary: "公開範囲・料金・復旧を、実際の設定で確かめる。",
+    summary: "配布するファイル、公開範囲、復旧の備えを具体例で確かめる。",
     kind: "layers",
   },
   {
     id: "operations",
-    title: "公開後の運用",
-    summary: "更新、監視、通知を日々の確認につなげる。",
+    title: "更新・公開後の運用",
+    summary: "Node.js・PHP・依存部品の更新から、外部APIの失敗への備えまで。",
     kind: "terminal",
   },
   {
     id: "response",
-    title: "困ったとき",
-    summary: "漏えい・異常・消失への初動と復旧を分ける。",
+    title: "異常に気づいたら",
+    summary: "状況の記録、相談、初動・復旧を、担当と操作に分けて考える。",
     kind: "compass",
   },
 ] as const;
@@ -58,7 +58,7 @@ export const topicIds = [
   "operations",
   "response",
 ] as const;
-export const levels = ["入門", "基本知識が必要", "実務経験が必要"] as const;
+export const levels = ["入門", "実践", "発展"] as const;
 export const formats = [
   "解説",
   "手順",
@@ -83,6 +83,7 @@ export const series = [
       "release-artifacts",
       "developer-privacy",
       "github-guards",
+      "ai-review-trust",
       "cloud-account-safety",
       "launch-checklist",
       "external-service-failures",
@@ -105,7 +106,11 @@ export const series = [
 ];
 export const seriesFor = (id: string) => series.find((s) => s.ids.includes(id));
 export const normalizeSearch = (s: string) =>
-  s.normalize("NFKC").toLocaleLowerCase("ja");
+  s
+    .normalize("NFKC")
+    .toLocaleLowerCase("ja")
+    .replace(/\bmpc\b/g, "mcp")
+    .replace(/エムシーピー/g, "mcp");
 export function matchesSearch(text: string, query: string) {
   const normalized = normalizeSearch(text);
   return normalizeSearch(query)
@@ -113,4 +118,30 @@ export function matchesSearch(text: string, query: string) {
     .split(/\s+/)
     .filter(Boolean)
     .every((word) => normalized.includes(word));
+}
+
+export const levelDetails = {
+  入門: {
+    label: "仕組みを知る",
+    prerequisite: "専門知識なしで、用語やリスク、確認する場所を知る。",
+  },
+  実践: {
+    label: "自分の環境で確かめる",
+    prerequisite: "基本の仕組みを知ったら、管理する設定や結果を確認する。",
+  },
+  発展: {
+    label: "設計・運用を見直す",
+    prerequisite:
+      "実装や業務の管理を担う方が、権限・契約・失敗時の備えを掘り下げる。",
+  },
+} as const;
+export function normalizeLevel(value: string): string {
+  return (
+    (
+      { 基本知識が必要: "実践", 実務経験が必要: "発展" } as Record<
+        string,
+        string
+      >
+    )[value] ?? value
+  );
 }

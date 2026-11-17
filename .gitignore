@@ -5,3 +5,6 @@ dist/
 
 # Full screenshots remain on the authoring machine; reports are versioned.
 design/audit/**/screenshots/
+
+# Authoring-only guide build; never deploy this directory.
+.design-preview/

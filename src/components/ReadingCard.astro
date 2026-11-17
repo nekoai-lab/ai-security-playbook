@@ -1,6 +1,8 @@
 ---
+import ArticleLabel from "./ArticleLabel.astro";
 import { getEntry } from "astro:content";
-import ReadingArt from "./ReadingArt.astro";
+import CardArt from "./CardArt.astro";
+import { lessonCardArt } from "../data/card-art";
 import {
   readingHighlights,
   type ReadingHighlightId,
@@ -16,11 +18,20 @@ const highlight = readingHighlights[id];
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<a class="reading-card" data-reading-card={id} href={`${base}/learn/${id}/`}>
-  <ReadingArt id={id} sizes="(max-width: 760px) 100vw, 320px" />
-  <div class="reading-card-copy">
+<a
+  class="reading-card image-card"
+  data-reading-card={id}
+  href={`${base}/learn/${id}/`}
+>
+  <CardArt
+    art={lessonCardArt(id)}
+    sizes="(max-width:760px) calc(100vw - 32px),640px"
+  />
+  <div class="reading-card-copy card-copy">
     <p class="reading-card-situation">{highlight.situation}</p>
-    <Heading>{highlight.title}</Heading>
+    <Heading>
+      <ArticleLabel>{highlight.title}</ArticleLabel>
+    </Heading>
     <p class="reading-card-description">{highlight.description}</p>
     <p class="catalog-meta">
       {id === "node-october-2026" ? "2026年10月の更新事例 · " : ""}約

@@ -1,0 +1,237 @@
+{
+  "pages": [
+    {
+      "route": "",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/basics/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/node-october-2026/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/commands/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/checklist/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/operations/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "library/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "topics/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "topics/development/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "topics/operations/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "paths/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "paths/environment/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "paths/node-update/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "paths/update-operations/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "series/node-security/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "updates/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "about/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/ai-data-boundaries/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/app-architecture/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/api-keys/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/access-control/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/mcp-permissions/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/agent-permissions/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/launch-checklist/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/php-october-2026/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/incident-response/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "topics/ai-tools/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "topics/secrets/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "topics/access/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "topics/connections/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "topics/release/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "topics/response/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "paths/solo-development/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "paths/before-launch/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "paths/ai-connections/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "series/solo-development/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "series/ai-connections/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/ai-work-logs/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/release-artifacts/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/external-service-failures/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/dependency-updates/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/github-guards/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/secret-rotation/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/developer-privacy/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/approved-ai-data/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/cloud-account-safety/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "start/use-ai/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "start/build-apps/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "start/operate-services/",
+      "bodyIdentical": true
+    },
+    {
+      "route": "learn/ai-review-trust/",
+      "bodyIdentical": true
+    }
+  ],
+  "localImageHTTP200": 25,
+  "examples": {
+    "home": [
+      "<meta property=\"og:title\" content=\"AIの安全を、解き明かそう。 | AI Security Playbook\">",
+      "<meta property=\"og:description\" content=\"AIを使う人と作る人のための、日本語セキュリティ実践ガイド。\">",
+      "<meta property=\"og:url\" content=\"https://nekoai-lab.github.io/ai-security-playbook/\">",
+      "<meta property=\"og:site_name\" content=\"AI Security Playbook\">",
+      "<meta property=\"og:locale\" content=\"ja_JP\">",
+      "<meta property=\"og:type\" content=\"website\">",
+      "<meta property=\"og:image\" content=\"https://nekoai-lab.github.io/ai-security-playbook/ogp/default.png\">",
+      "<meta property=\"og:image:width\" content=\"1200\">",
+      "<meta property=\"og:image:height\" content=\"630\">",
+      "<meta property=\"og:image:alt\" content=\"AIの安全を、解き明かそう。羅針盤と猫のロゴ：AI Security Playbook\">",
+      "<meta name=\"twitter:card\" content=\"summary_large_image\">"
+    ],
+    "learn/ai-review-trust/": [
+      "<meta property=\"og:title\" content=\"AIレビューが合格した。その結果を、どこまで信じていい？\">",
+      "<meta property=\"og:description\" content=\"AIに書かせたコードを別のAIにレビューさせ、合格でマージを決めている人へ。1回の合格が保証しないこと、ぶれの確かめ方、確認項目と使い回しのルールを、再現実験の数字で考える。\">",
+      "<meta property=\"og:url\" content=\"https://nekoai-lab.github.io/ai-security-playbook/learn/ai-review-trust/\">",
+      "<meta property=\"og:site_name\" content=\"AI Security Playbook\">",
+      "<meta property=\"og:locale\" content=\"ja_JP\">",
+      "<meta property=\"og:type\" content=\"article\">",
+      "<meta property=\"og:image\" content=\"https://nekoai-lab.github.io/ai-security-playbook/ogp/ai-review-trust.png\">",
+      "<meta property=\"og:image:width\" content=\"1200\">",
+      "<meta property=\"og:image:height\" content=\"630\">",
+      "<meta property=\"og:image:alt\" content=\"AIレビューが合格した。その結果を、どこまで信じていい？ — AI Security Playbookの教材カード\">",
+      "<meta name=\"twitter:card\" content=\"summary_large_image\">"
+    ]
+  },
+  "keyboard": true,
+  "publicGuide404": true,
+  "localGuide200": true,
+  "publishedCheck": "Pending request-qa review and merge; not published by Codex."
+}

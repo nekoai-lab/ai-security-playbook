@@ -8,7 +8,6 @@
   "basePath": "/ai-security-playbook/",
   "pages": [
     "",
-    "design-system/",
     "learn/basics/",
     "learn/node-october-2026/",
     "learn/commands/",
@@ -53,7 +52,34 @@
     "learn/secret-rotation/",
     "learn/developer-privacy/",
     "learn/approved-ai-data/",
-    "learn/cloud-account-safety/"
+    "learn/cloud-account-safety/",
+    "start/use-ai/",
+    "start/build-apps/",
+    "start/operate-services/",
+    "learn/ai-review-trust/",
+    "terms/",
+    "privacy/",
+    "updates/python-2026-10/",
+    "updates/tailworm-2026-10/",
+    "updates/warp-logs-2026-10/",
+    "updates/cursor-extension-2026-10/",
+    "updates/fake-readme-2026-11/",
+    "updates/model-remote-code-2026-11/",
+    "updates/github-actions-2026-11/",
+    "updates/nodejs-2026-11/",
+    "updates/workos-2026-11/",
+    "updates/truffle-secrets-2026-11/",
+    "updates/calendar-phishing-2026-11/",
+    "updates/northflank-2026-11/",
+    "updates/ruby-strutil-2026-11/",
+    "updates/fake-security-tools-2026-11/",
+    "updates/fake-ai-events-2026-11/",
+    "updates/cpguard-2026-11/",
+    "updates/cwpdoor-2026-11/",
+    "updates/chainalysis-2026-11/",
+    "updates/artex-crowdstrike-2026-11/",
+    "updates/python-fips-2026-11/",
+    "updates/browser-agent-2026-11/"
   ],
   "representatives": [
     "",
@@ -66,7 +92,8 @@
       "prefixes": [
         "public/brand/",
         "src/components/BrandMark.astro",
-        "src/components/Explorer"
+        "src/components/Explorer",
+        "src/pages/start/"
       ],
       "anchors": [
         "identity",
@@ -114,15 +141,16 @@
     {
       "name": "guide",
       "prefixes": [
-        "src/pages/design-system.astro",
-        "docs/DESIGN_SYSTEM.md"
+        "src/design/",
+        "docs/DESIGN_SYSTEM.md",
+        "src/pages/[...designPreview].astro"
       ],
       "anchors": [
         "authoring",
         "quality"
       ],
       "references": [
-        "src/pages/design-system.astro",
+        "src/design/DesignSystem.astro",
         "docs/DESIGN_SYSTEM.md"
       ]
     },
@@ -143,5 +171,15 @@
         "src/components/DataTable.astro"
       ]
     }
-  ]
+  ],
+  "guidePreview": {
+    "source": "src/design/DesignSystem.astro",
+    "baseUrl": "http://127.0.0.1:4392/ai-security-playbook/",
+    "pages": [
+      "design-system/"
+    ],
+    "buildCommand": "npm run build:design",
+    "previewCommand": "npm run preview:design",
+    "auditCommand": "npm run design:audit:guide"
+  }
 }

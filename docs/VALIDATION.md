@@ -46,3 +46,10 @@ Pagesのbuild_typeはworkflow。base付きURLで公開できている。
 - 教材本文と既存LICENSEの内容は変更なし
 
 見た目の修正のみ。画像は概念図であり、実際のアーキテクチャの証拠としては使用しない。
+
+## 2026-10-27 非公開の日報下書き準備
+- scripts/report-draftsのみ追加。GitHub GETでcommit/tree/blobを固定し、話題別の未確認下書きをminiの非公開領域へ保存。サイトへの投稿/マージ/デプロイ機能は含めない。
+- 型検査error/warning/hint0、build53ページ、npm test成功。追加18テストで取得の境界・引用・内部項目除外・訂正・重複・権限・lock・symlink・保存先を確認。
+- 変更前後の全53ページHTMLはSHA256で完全一致。UI/CSS/教材本文/画像の変更がないため新しい画面デザイン監査は対象外。以前の監査を今回の実施結果とは扱わない。
+- 実APIの非公開入力に接続成功、日付付き日報0件。下書き生成成功はsynthetic fixtureでの検証であり、実日報の記事作成/一次資料確認/自動公開が完了したとは主張しない。
+- 運用と停止条件はscripts/report-drafts/README.md。

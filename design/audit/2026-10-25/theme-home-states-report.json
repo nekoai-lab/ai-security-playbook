@@ -1,0 +1,106 @@
+[
+  {
+    "width": 320,
+    "level": "入門",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "level": "実践",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "level": "発展",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 320,
+    "search": "API",
+    "axe": 0
+  },
+  {
+    "width": 375,
+    "level": "入門",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "level": "実践",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "level": "発展",
+    "axe": 0,
+    "overflow": false,
+    "text200": true
+  },
+  {
+    "width": 375,
+    "search": "API",
+    "axe": 0
+  },
+  {
+    "width": 768,
+    "level": "入門",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "level": "実践",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "level": "発展",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 768,
+    "search": "API",
+    "axe": 0
+  },
+  {
+    "width": 1280,
+    "level": "入門",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "level": "実践",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "level": "発展",
+    "axe": 0,
+    "overflow": false,
+    "text200": false
+  },
+  {
+    "width": 1280,
+    "search": "API",
+    "axe": 0
+  }
+]

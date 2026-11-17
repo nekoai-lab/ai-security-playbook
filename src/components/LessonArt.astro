@@ -1,22 +1,28 @@
 ---
+import { avifSrcset } from "../data/avif";
 import { lessonVisuals, type LessonVisualId } from "../data/lesson-visuals";
 interface Props {
   id: LessonVisualId;
   sizes?: string;
   class?: string;
+  trackNext?: boolean;
 }
 const {
   id,
   sizes = "(max-width: 760px) 100vw, 640px",
   class: className,
+  trackNext = false,
 } = Astro.props;
 const stem = lessonVisuals[id].image;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
+<picture class="lesson-art-picture">
+<source type="image/avif" data-next-avif={trackNext ? true : undefined} srcset={avifSrcset(stem,base) ?? undefined} sizes={sizes} />
 <img
   class:list={["lesson-art", className]}
   data-lesson-art={id}
+  data-next-art={trackNext ? true : undefined}
   src={`${base}/images/${stem}-480.webp`}
   srcset={`${base}/images/${stem}-480.webp 480w, ${base}/images/${stem}-960.webp 960w`}
   sizes={sizes}
@@ -26,3 +32,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   decoding="async"
   alt=""
 />
+
+</picture>
+<style>.lesson-art-picture { display: contents; }</style>

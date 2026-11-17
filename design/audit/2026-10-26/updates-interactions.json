@@ -1,0 +1,30 @@
+[
+  {
+    "width": 320,
+    "filters": true,
+    "detail": true,
+    "keyboard": true,
+    "walkCardAligned": true
+  },
+  {
+    "width": 375,
+    "filters": true,
+    "detail": true,
+    "keyboard": true,
+    "walkCardAligned": true
+  },
+  {
+    "width": 768,
+    "filters": true,
+    "detail": true,
+    "keyboard": true,
+    "walkCardAligned": true
+  },
+  {
+    "width": 1280,
+    "filters": true,
+    "detail": true,
+    "keyboard": true,
+    "walkCardAligned": true
+  }
+]

@@ -1,0 +1,13 @@
+---
+const base=import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<p>SSHの指摘は、攻撃者が許可された接続の足場を持つことなどが前提です。「インストールしている全員が外から直ちに侵入される」という報告ではありません。Serveやheadscaleなどは別の前提があるため、SSHの条件を一律に当てはめません。<a href="https://tailworm.com/">研究者の報告</a>は研究者の主張として読み、開発元が確認した範囲とは分けます。</p>
+<div class="takeaway"><h3>同じ回線でも、応答するサーバーが違う</h3><figure><p><b>スマートフォン・PC → Tailscaleのネットワーク → 接続先</b></p><div class="result-guide"><p><b>通常のSSH</b><br/>OSのSSHサーバーへ</p><p><b>Tailscale SSH</b><br/>TailscaleのSSHサーバーへ</p></div><figcaption>接続先の名前やSSHアプリだけでは判断できません。</figcaption></figure><p>公式ではサーバー機能はLinuxとmacOSのオープンソース版構成が対象です。GUI版Macの利用だけで、別端末まで判断しません。<a href="https://tailscale.com/docs/features/tailscale-ssh">公式の機能説明</a></p></div>
+<div class="check-intro"><p>普段つなぐ端末を一つ選びましょう。<br/>自分が管理する接続先で設定を確認。</p><img class="intro-walker" src={`${base}/brand/cat-walk-right-320.webp`} alt="" width="320" height="320"/></div>
+<div class="takeaway walk-card"><h3>① 接続先のターミナルで確認</h3><p>自分が管理する端末で実行します。Macは「ターミナル」、Linuxは端末アプリを開きます。手元のPCと接続先サーバーを取り違えないでください。</p><pre class="code"><code>tailscale version
+tailscale debug prefs</code></pre><p>版と設定を表示します。更新・有効化はしません。導入方式でCLIの場所や権限は異なります。見つからない・エラーなら無効と決めず管理者へ確認します。</p><h3>② RunSSH の値を見る</h3><div class="result-guide"><p><code>"RunSSH": true</code><br/><b>有効設定</b><br/>利用形態・許可と公式対応を確認。</p><p><code>"RunSSH": false</code><br/><b>その設定では無効</b><br/>応答するサーバーも確認。ほかの機能は別判断。</p></div><p class="caption">表示例です。導入形態・プロセスと合わせて判断します。出力全文は内部情報を含む可能性があるため公開しないでください。確認のためにSSHを有効にする必要はありません。</p></div>
+<div class="aside"><img src={`${base}/brand/cat-investigate-320.webp`} alt=""/><p><b>接続元だけでは、接続先の状態は分かりません。</b><br/>MacからLinuxへ接続するなら、Linux側も確認します。</p></div>
+<details class="more"><summary>管理者向け：転送停止と復旧経路</summary><p>公式10月26日付の暫定案内は、不要なSSH転送を止める場合、tailscaledのサービス環境へ<code>TS_SSH_DISABLE_FORWARDING=1</code>を設定して再起動する方法です。一部の深刻な指摘の緩和であり、全問題の修正ではありません。</p><p>導入方式に合う設定方法と接続切断への影響を確認し、現地操作や別経路を確保してから実施します。アクセス設定を一律削除したり、代わりにSSHをインターネットへ公開したりしないでください。</p><p>公式は全員へのSSH無効化を勧めていません。<a href="https://tailscale.com/ssh-investigation-update">最新の公式対応</a>を確認。</p></details>
+<div class="takeaway"><h3>1.104.2ならTailwormも修正済み？</h3><p><b>別の更新案内と混ぜないでください。</b>TS-2026-013の1.104.2以降への更新はeMudhraの証明書問題への対応です。Tailwormの修正済み判定には使いません。<a href="https://tailscale.com/security-bulletins">公式セキュリティ情報</a></p></div>
+<h3>確認の証拠は、この4つ</h3><ul><li>接続先端末・導入方式・確認した版。</li><li>RunSSHと応答するサーバー。不明なら未確認。</li><li>管理者が確認した許可範囲と、ほかの機能の利用有無。</li><li>対応後の実際の版・設定・接続結果。</li></ul>
+<style>figure{margin:16px 0}figcaption{font-size:14px;margin-top:16px}.code{white-space:pre-wrap;overflow-wrap:anywhere}</style>

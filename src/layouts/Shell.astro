@@ -2,27 +2,71 @@
 import "../styles/global.css";
 import "../styles/library.css";
 import "../styles/article-illustrations.css";
-import FieldIcon from "../components/FieldIcon.astro";
+import "../styles/card-system.css";
+import "../styles/mountain-backdrop.css";
+import { structuredData, serializeStructuredData, type ArticleMetadata, type Breadcrumb } from "../data/seo";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import CreatorLinks from "../components/CreatorLinks.astro";
+import { creator } from "../data/creator";
 import BrandMark from "../components/BrandMark.astro";
+import { mainNavigation, isNavigationCurrent } from "../data/site-navigation";
+import { lessonVisuals } from "../data/lesson-visuals";
 interface Props {
   title: string;
   description?: string;
+  articleId?: string;
+  articleMetadata?: ArticleMetadata;
+  breadcrumbs?: Breadcrumb[];
+  mountainBackdrop?: boolean;
 }
 const {
   title,
+  articleId,
+  articleMetadata,
+  breadcrumbs = [],
+  mountainBackdrop = true,
   description = "AIを使う人と作る人のための、日本語セキュリティ実践ガイド。",
 } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+if (!Astro.site) throw new Error("OGP requires astro.config site");
+const pageTitle = `${title} | AI Security Playbook`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const socialTitle = articleId ? title : pageTitle;
+const socialImage = new URL(
+  `${base}/ogp/${articleId && Object.hasOwn(lessonVisuals, articleId) ? articleId : "default"}.png`,
+  Astro.site,
+).href;
+const jsonLd = serializeStructuredData(structuredData({ site: Astro.site, base, canonical: canonicalURL,
+  title, description, image: socialImage, article: articleMetadata, breadcrumbs }));
+const socialAlt = articleId
+  ? `${title} — AI Security Playbookの教材カード`
+  : "AIの安全を、解き明かそう。羅針盤と猫のロゴ：AI Security Playbook";
 ---
 
 <!doctype html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
+    <GoogleAnalytics />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{title} | AI Security Playbook</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta name="author" content={creator.name} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" type="application/xml" href={new URL(`${base}/sitemap.xml`, Astro.site).href} />
+    <meta name="robots" content="max-image-preview:large" />
+    <script type="application/ld+json" is:inline set:html={jsonLd} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="AI Security Playbook" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content={articleId ? "article" : "website"} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={socialAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link
       rel="icon"
       type="image/png"
@@ -32,6 +76,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <meta name="theme-color" content="#f5f1e6" />
   </head>
   <body>
+    {mountainBackdrop && (
+      <picture class="mountain-backdrop" aria-hidden="true">
+        <source media="(min-width: 1280px)" srcset={`${base}/images/alpine-panorama-1920.webp 1920w, ${base}/images/alpine-panorama-2560.webp 2560w`} sizes="100vw" />
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" width="2560" height="1066" decoding="async" />
+      </picture>
+    )}
+    <div class:list={["site-frame", {"site-frame--mountain": mountainBackdrop}]}>
     <a class="skip" href="#main">
       本文へスキップ
     </a>
@@ -43,73 +94,50 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         </span>
       </a>
       <nav aria-label="メイン">
-        <a
-          href={`${base}/library/`}
-          aria-current={
-            Astro.url.pathname.startsWith(`${base}/library/`) ||
-            Astro.url.pathname.startsWith(`${base}/topics/`) ||
-            Astro.url.pathname.startsWith(`${base}/series/`) ||
-            Astro.url.pathname.startsWith(`${base}/learn/`)
-              ? "page"
-              : undefined
-          }
-        >
-          教材を探す
-        </a>
-        <a
-          href={`${base}/paths/`}
-          aria-current={
-            Astro.url.pathname.startsWith(`${base}/paths/`) ? "page" : undefined
-          }
-        >
-          学習ルート
-        </a>
-        <a
-          href={`${base}/updates/`}
-          aria-current={
-            Astro.url.pathname.startsWith(`${base}/updates/`)
-              ? "page"
-              : undefined
-          }
-        >
-          新着・更新
-        </a>
+        {mainNavigation.map((item) => (
+          <a
+            href={`${base}${item.path}`}
+            aria-current={
+              isNavigationCurrent(Astro.url.pathname, base, item.sections)
+                ? "page"
+                : undefined
+            }
+          >
+            {item.label}
+          </a>
+        ))}
       </nav>
-      <a
-        class="header-github"
-        aria-label="GitHubでソースを見る"
-        title="GitHubでソースを見る"
-        href="https://github.com/nekoai-lab/ai-security-playbook"
-      >
-        <span class="github-label">GitHub</span>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.07-1.15 3.07-1.15.62 1.55.23 2.7.12 2.98.72.79 1.15 1.79 1.15 3.02 0 4.33-2.63 5.28-5.14 5.56.4.35.76 1.03.76 2.08v3.11c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z" />
-        </svg>
-      </a>
     </header>
     <main id="main">
       <slot />
     </main>
     <footer>
-      <div class="footer-brand">
-        <FieldIcon kind="compass" />
+      <a class="footer-brand" href={`${base}/`}>
+        <BrandMark size={48} />
         <p>
           AI SECURITY PLAYBOOK<small>仕組みを知ることが、守る力になる。</small>
+          <small data-site-publisher>制作・運営：Tsukineko</small>
         </p>
-      </div>
+      </a>
       <div class="footer-links">
         <a href={`${base}/about/`}>このサイトについて</a>
-        <a href={`${base}/design-system/`}>デザインガイド</a>
-        <a href="https://github.com/nekoai-lab/ai-security-playbook/blob/main/LICENSE">
-          MIT License
-        </a>
+        <a href={`${base}/terms/`}>著作権・利用条件</a>
+        <a href={`${base}/privacy/`}>プライバシー</a>
+        <CreatorLinks label="フッターの発信先・お問い合わせ" />
+        <small class="copyright">© 2026 Tsukineko</small>
       </div>
     </footer>
+    </div>
   </body>
 </html>
+
+<style>
+  .copyright { font-size: 12px; color: var(--color-muted); }
+  .footer-brand {
+    gap: 12px;
+    min-height: 44px;
+    width: fit-content;
+    color: inherit;
+    text-decoration: none;
+  }
+</style>

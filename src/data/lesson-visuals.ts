@@ -6,6 +6,7 @@ import { guardDiagrams } from "./guard-diagrams";
 import { updateDiagrams } from "./update-diagrams";
 import { serviceFailureDiagrams } from "./service-failure-diagrams";
 import { practiceDiagrams } from "./practice-diagrams";
+import { reviewDiagrams } from "./review-diagrams";
 export type DiagramIcon =
   | "screen"
   | "server"
@@ -86,6 +87,13 @@ export const lessonVisuals = {
     situation: "AIの修正をGitHubから公開する前に",
     pose: "think",
     diagrams: [guardDiagrams.flow, guardDiagrams.permissions],
+  },
+  "ai-review-trust": {
+    image: "review-workbench-scene",
+    question: "その合格は、どこまで照らした結果？",
+    situation: "AIのレビューの合格で、マージを決める前に",
+    pose: "think",
+    diagrams: [reviewDiagrams.variance, reviewDiagrams["reuse-rule"]],
   },
   "dependency-updates": {
     image: "dependency-update-scene",

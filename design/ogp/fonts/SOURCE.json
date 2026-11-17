@@ -1,0 +1,9 @@
+{
+  "family": "Noto Sans JP",
+  "source": "https://github.com/google/fonts/tree/66a36c8c94b1a5d992ee4e7f392fccfe4945767c/ofl/notosansjp",
+  "upstreamCommit": "66a36c8c94b1a5d992ee4e7f392fccfe4945767c",
+  "file": "NotoSansJP.ttf",
+  "sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+  "license": "SIL Open Font License 1.1",
+  "licenseFile": "OFL.txt"
+}

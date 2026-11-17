@@ -1,6 +1,17 @@
 # FIELD NOTES v1.1 公開前の確認記録
 
-確認日 2026-10-24。mini上で実装・確認。技術面の公開前条件を満たし、利用者が承認したAのロゴとCの案内役を維持した。実際の公開状態はGitHub Actionsを正本とする。
+
+## A案カード・教材検索・運営者フッター（2026-10-25）
+
+ユーザーがA（PC・スマホとも上部に大きな横長の絵）を承認。トップ/テーマ一覧の8カードを拡大。教材一覧は2本だけだった画像表示を24本へ。既存のLessonScene正本からLessonArtを使用し、新しい絵・書体・色は作らない。画像は2:1・object-position40%、PC3列/中幅2列/スマホ1列。縦長になる分、既存の12件ページングと絞り込みを維持。ルート/シリーズ等は既存のLessonCard表示を保つ。
+
+TsukinekoはOGP #39と共通フッターに限定。サイト内カードへ名前/マークを反復せず、フッターのロゴAと「制作・運営：Tsukineko」で運営主体を示す。リポジトリ内で別のTsukineko名の素材は見つからず、ユーザーが確認した正式ロゴAを使用する。
+
+MPC/全角/エムシーピーをMCPとして照合。AMPC等の無関係な部分文字列は同義化しない。4表記とも同じ5件・MCP教材リンクあり。語に合う教材があるのに条件で0件の場合、語を残してテーマ/段階/種類（トップは段階）を解除できる。0件時のaxeで見つかった結果領域のARIA不備はregion roleで修正。
+
+check（102ファイル0件）/build（50ページ）/test、制作見本build/check成功。公開FULL3196passed/error0/既存warning4、GUIDE FULL60passed/error0/既存warning4。全204画面のaxe・実行エラー・はみ出し0、375px全ページ文字200%。4幅で検索4表記、条件解除と語の維持、戻る、キーボード、検索状態のaxeと文字拡大を確認。0件状態のCUSTOMもerror0。画像上部・比率2:1と実幅（320pxで288px、1280pxのテーマで588px）、全24画像デコード、ページ2、no-JS全24件、カード内署名なしと全50ページのfooter publisherを確認。PC/スマホとフッターを目視。
+
+旧5教材の編集基準移行と、commands/制作見本の計8件の色数注意は別課題として維持。検査基準の緩和・失敗の除外なし。画像と検査記録はdesign/previews/library-discoveryと同日のcatalog-search-* / library-poster-report。OGP #39と別PR、マージ・公開は未実施。
 
 ## 要件と証拠
 
@@ -170,3 +181,214 @@ The first focused 320px/200% run exposed an existing home-paths ExplorerNote ove
 README/LICENSE, lesson facts and article bodies unchanged. The separate uploads-and-input working tree was not altered or published. Five legacy lessons are not newly certified against the newer editorial contract. Automated accessibility and screenshots do not establish complete assistive-technology coverage. The final reports use the isolated mini preview on port 4389; earlier diagnostics are not release evidence.
 
 Publication: pending CI, exact-head merge, Pages and public six-card/link smoke verification.
+
+## 2026-10-25 / Reader navigation
+
+Three purpose/audience entries with explicit prerequisite stages; recommendations unified. See READER_NAVIGATION_REVIEW.md. Public FULL errors 0/warnings4; separate GUIDE FULL errors0/warnings4. Browser200 route/width cases and focused keyboard/no-JS/text200 pass. Eight existing warnings remain across both scopes; no rules changed. 375px first guided choice y4309→887, document9693→6152; layout metrics are not user-test evidence. Article bodies and main #30/#31 preserved.
+
+## 2026-10-25 / Reader navigation release confirmation
+
+Release completed 2026-10-25: PR #34, merge f7ba4fc99d662ae6366b43f88402aa7a5eeec125, CI 40140283928 and Pages 40140345680 succeeded. Live smoke passed all 49 public routes, all 23 prerequisite headers, 3 audience hubs / all stages, eight recommendations, four-width keyboard/text200/old-query checks and no-JS stage links. The public design-system URL returned HTTP404; its source, preview build, link checks and GUIDE FULL remain. See navigation-public-full/public-report.json.
+## AIレビューの合格と確認項目（2026-10-25）
+24教材48ルート。6図・3比較・表・場面（既存review-workbench-sceneを再利用）・猫3。内容と根拠・限界はAI_REVIEW_TRUST_REVIEW.md。型93ファイル0件/build48/51テスト成功（examples 37）。CUSTOM初回 ai-review-diagnostic-initial は320pxの孤立文字3箇所（本文2・比較の見出し1）をerrorとして指摘。文言を整え、再診断4幅でerror0。表の見出しも短くした。FULL ai-review-full は最終版で3064passed/error0/既存色数warning8（design-system・commandsの各4幅、従来と同じ）/manual-review384。しきい値変更・除外なし。 公開前の内容確認で、猫の見出しと使い回しの1文の言い切りを弱めた（記録と合わない強さ）。この worktree で preview を別ポート（4395）に立ててFULLを再実行し、3064passed/error0/既存warning8で同じ。既定ポート4387に残っていた別作業の古い preview で測ると新記事が404になり誤判定するため、DESIGN_PREVIEW_URL で自分のpreviewを指す。 main の読者導線（#34・#35）の後に載せ直し：level を「発展」、prerequisiteNote を追加、reader-journeys の build-apps に github-guards の次として登録。check/build/test 成功、FULL（自分の preview）3196passed/error0/既存warning4。
+全48×4幅のaxe（WCAG 2.0/2.1 A・AA）/pageerror/横はみ出しなし、全48ページ375px文字200%成功（browser-report.json）。新記事は4幅で図8（6図+比較+場面）・猫3・全画像デコード、Tab/Enterで比較の開閉とフォーカス表示位置、320/375pxでdetails全展開200%、JSなしで比較・表・結果が読める、URLのqによる検索、releaseテーマの疑問、シリーズ前後の次カードと画像（article-report.json）。320px・320px文字200%・1280pxの全体と各図を目視。表とコードは既存の横スクロール領域で、320pxでは3列目・長い行がスクロール先になる（既存教材と同じ挙動）。
+ブラウザ検査は私的ハーネスと別に、作業用の Playwright + axe-core スクリプトで実施（公開repoには入れていない）。自動検査とスクリーンショットは支援技術での完全な確認を意味しない。公開はCI/Pages/URL確認後。
+
+
+## Issue #36 / OGP共有カード（2026-10-25）
+
+本体のpreflightは未コミット28件・レーン記載なし・main先行の注意。ユーザー指定どおり本体を修復/変更せず、origin/main 4b24d2dからfeat/ogp-cardsの指定worktreeで作業。.envファイルは開いていない。
+
+Shell headと教材のarticle指定を追加。50ページで全OGP・twitter:card、frontmatter/既存titleとdescriptionの一致、絶対URL/site/base、PNG/JPEG・1200×630を検査。25 PNGを承認済みの正式ロゴA / LessonSceneから生成。見出し64px、3行まで・長い場合shortTitle、summaryなし。ロゴA＋Tsukineko、中央1000×500に重要要素。紙・墨の濃淡と上端12pxの橙色だけ。Node.jsの場面は左へ寄せて顔を保つ。全25枚の猫と文字を目視、トップ・AIレビュー・共通一覧用をPRで提示。
+
+日本語ゴシックfallbackをOFLのNoto Sans JPへ固定し、字形pathへ変換してPNG化。画面用CSS/トークンは変えない。OSフォントへの黙った代替・新しいイラスト生成・原稿/README/LICENSEの変更なし。取得commit/hash/ライセンスと再生成手順はdesign/ogp。
+
+check（105ファイル0件）/build（50ページ）/test成功。制作見本build/check成功。公開FULL3196passed/error0/既存color warning4/manual400、GUIDE FULL60passed/error0/既存color warning4/manual8。全204画面のaxe・横はみ出し・実行エラー0、375pxの全50ページ＋見本文字200%成功。キーボードでトップ段階・一覧検索を確認。変更前後の全50ページbodyが完全一致。ローカルHTTPで25画像200、公開用ビルドの見本404・制作見本200。しきい値変更・検査除外なし。
+
+ogp-metadata-report.json / ogp-browser-report.json / ogp-*-fullを参照。旧5教材の編集基準移行未了と既存8件の色数注意は今回解消した扱いにしない。マージ・公開はしていない。request-qaレビュー後の公開画像URL200と各共有サービスでの表示/キャッシュ確認は未実施。Issueの公開後条件はそこで確認する。
+
+## 2026-10-25 カードの密度・構図の再設計
+
+### 変更と意図
+- ユーザーは全面の大きな猫の反復を指摘。小さな図記号だけの案も余白が大きく魅力が下がるため不採用。最終承認は、場面画/のぞく/歩く/下部の場面画を混ぜる案。
+- トップとテーマ一覧8件に5構図。24教材とテーマ内教材は場面画と8種以上の既存ポーズ。おすすめ先頭3枚は指さす/APIキー場面/歩く。複数ポーズの使用を実際の配置まで確認した。
+- テーマの重複CTAを削除し、見出しと教材リンクを入口へ。段階で1教材なら直接記事へ。学習入口の汎用段階リンク3回反復も整理し、遷移先で段階を1組提示。
+
+### 最終ビルドの機械検査
+- check:108ファイル、error/warning/hint 0。build:50ページ。npm test:成功（reader-navigation 10項目含む）。GUIDE build:51ページ、専用check成功。
+- 公開FULL:3196 passed、error 0、色数warning 4、manual review 400。GUIDE FULL:60 passed、error 0、色数warning 4、manual review 8。基準・除外・検査対象を変更していない。
+- 既存warning:commandsの色数15と制作見本の色数14を4幅で検出。今回のカード由来の色数増加ではない。5本の旧教材の内容品質を、このUI検査で再認定したものではない。
+- 公開50ページ×320/375/768/1280＋制作見本4幅の204画面。axe、実行エラー、横はみ出し0。375pxで全50ページ＋制作見本の文字200%を確認。
+- MCP/MPC/ＭＰＣ/エムシーピー、0件から検索語を残して条件解除、履歴・キーボード、段階別の見出し遷移先、12件ページ送り、JSなしの24教材/8テーマを4幅で確認。
+- 最初に見つかった矢印のサイズ差と語尾の折り返し9件は修正。3ページCUSTOM診断と、その後の全件FULLで再確認。初回指摘はinitial-findings.jsonに残した。
+
+### 目視と実用面
+- topics-desktop/mobile、featured-desktop/mobile、library-desktop/mobile、entriesのPC/スマホを確認。原画と照合して最初の場面画の顔の位置を38%へ調整。本文と画像の間に空欄を増やすおすすめの行サイズも修正。
+- 顔・見出し・記事リンクの重なり、猫のポーズ/視線/構図の連続、白地の量と教材の密度を一覧で確認。これらは自動監査のmanual review項目とは別の目視記録であり、400件すべてを自動合格と表現しない。
+- 場面画とポーズを混ぜるため画面のリズムが変わる。画像を全カード上部へ統一する規則は採らず、IDごとの構図を維持し、追加時は検索後の並びも確認する。
+- 記録:design/audit/2026-10-25/card-composition-*。実装プレビュー:design/previews/card-composition/。本文・技術図・OGP・README/LICENSEは変更なし。公開はPRレビュー後。
+
+### OGP公開版との統合確認
+作業中にmainへ入った#39（8df7fff）を取り込み、SPEC_TRACEとUX_REVIEWの双方の追記を保持して競合解消。OGP生成とその4テストを含めてcheck/build/test、制作専用build/checkを再実行。公開FULL 3196 passed/error 0/warning 4、GUIDE FULL 60 passed/error 0/warning 4、204画面のaxe/実行エラー/はみ出し0と全ページ文字200%、検索/段階/ページ送り/履歴/JSなしも統合後に再確認。OGP画像・本文の仕様変更なし。UIの実装プレビューも統合後に更新。
+
+## 2026-10-25 ヘッダーのGitHubボタン削除
+- 右上のGitHubロゴ/リンクを全ページ共通のShellから削除し、使わなくなる専用CSSを削除。デスクトップのメインナビにmargin-left:autoを移し、ロゴとサイト内ナビの配置へ。
+- フッターのMIT License、記事のGitHub参照、OGPを維持。全50ページのヘッダーにGitHubリンクがないこと、各メインナビが3リンク、ロゴが1リンクであることを確認。
+- 320/375/768/1280でスキップ→ロゴ→教材を探す→学習ルート→新着・更新のTab移動、はみ出しなしを確認。375/1280の通常表示スクリーンショットを目視。
+- check:108ファイル、error/warning/hint 0。build:50ページ。npm test成功（OGP4テスト含む）。制作専用build:51ページ/check成功。
+- 今回の最終ビルドで公開FULL 3196 passed/error 0/warning 4、GUIDE FULL 60 passed/error 0/warning 4。既存のcommands/見本の色数警告は維持。基準の変更・検査対象の除外なし。
+- 全204画面でaxe/実行エラー/横はみ出し0。375pxで全50ページと制作見本の文字200%を確認。機械検査のmanual reviewは公開400/見本8であり、自動合格とは区別する。
+- 証拠:design/audit/2026-10-25/header-cleanup-*。画像:design/previews/card-composition/header-{desktop,mobile}.png。PR #41へ追加、未マージ・未公開。
+
+## 2026-10-25 共通枠・サイト構造の確認
+全50ページと制作見本は共通Shellを通ることを確認。ナビ定義をsite-navigation.tsへ集約し、start/3ページの学習ルート選択漏れを修正。109ファイルのcheck/build/testと公開/見本FULL、全204画面・文字200%を最新ビルドで再確認。新規error 0、既存色数warningのみ。構造・保守上の注意・検証範囲はSITE_STRUCTURE_REVIEW.md。
+
+## 2026-10-25 テーマカードを3列で見渡す
+
+- 要求はPCの3列化、テーマに合う絵、顔の切れの解消。8テーマを保持して3・3・2、768pxは2列、320/375pxは1列。空カードで数合わせしない。
+- 構成は絵→教材数→見出し→説明→実記事リンク。絵を4場面と4ポーズ＋HTMLのテーマ手掛かりに分ける。人物・猫の頭を帯で切り取らず、承認済み画像の全体をcontainで見せる。
+- 代案の2列継続は一覧が長くなる。全カードを大きな場面画にする案は以前の反復感が再発する。採用案は共通の読み順を保ちつつ絵の内容を変える。3列では折り返しが増えるが、本文16px・操作44pxを維持し、タイトルやリンクを省略しない。
+- 初稿の文字200%で3枚の図ラベルが見出し領域へ出ることを実測。図領域の固定上限を外し、ポーズ寸法を保持しながらラベルに応じて高さが伸びるよう修正した。全4幅の100%/200%でラベルと本文の境界を再測定して解消。
+- checkは109ファイルでerror/warning/hint 0。buildは50ページ、npm test成功、制作見本のbuild/checkも成功。
+- 今回の最終ビルドの公開FULLは3196 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存のcommandsと制作見本の色数警告のみ。規則や検査範囲は変更していない。
+- 段階別リンク・12件ページ送り・履歴・キーボード・画像デコード・JSなしの24教材/8テーマを4幅で再確認。3/2/1列、全画像contain、100%/200%のラベル領域も実測。
+- 目視はPCとスマホの8枚全体で、顔/耳/尻尾・道具の表示、文章順、リンク配置を確認。公開FULLの400件と見本8件のmanual review全件を自動合格と表現しない。最終のデザイン採用はユーザー確認へ。
+- 証拠はthree-column-final-{public,guide}-full、three-column-layout.json、three-column-interactions.jsonとdesign/previews/three-column-cards。教材の事実・OGP・正式ロゴ・README/LICENSEは変更なし。
+
+## 2026-10-25 承認済み世界観イラストの採用
+
+- ユーザーの「いいね差し替えて」を受け、テーマ4枚をapp-workshop / keys-and-records / agent-field-tools / maintenance-lookoutへ差し替え。8テーマすべてが背景と道具のある場面となり、補助ラベルと専用レイアウトの残骸を削除した。
+- CardArtに独立したillustration種別を追加し、本文とOGPの画像割り当ては維持。新作4枚は原本PNG・生成記録・承認日・SHA256と480/960 WebPを台帳へ保存。配信用8ファイル合計約1.2MiBで、実際の配信はsrcsetで選ぶ。
+- check:109ファイル、error/warning/hint 0。build:50ページ、npm test成功（新規4素材の寸法/形式/SHA/承認と全8カード割り当てテストを含む）。制作専用build/check成功。
+- 新しい最終ビルドで公開FULL 3196 passed/error 0/warning 4、GUIDE FULL 60 passed/error 0/warning 4。既存commands/制作見本の色数警告のみで、規則や対象除外は変更なし。
+- 全204画面のaxe/実行エラー/横はみ出し0。375pxで全ページの文字200%、加えてテーマは全4幅の100%/200%で3/2/1列と画像contain、段階別のリンク、ページ送り、履歴、キーボード、JSなし24教材/8テーマを確認。
+- PC/スマホの実装スクリーンショットを承認済みのcard-world-previewと比較。耳/顔の切れ、本文との重なりがなく、歩く/のぞく/背中越し/ルーペの場面が割り当てられることを目視。公開400/見本8のmanual review項目は自動合格と表現しない。
+- 証拠:design/audit/2026-10-25/world-swap-*、design/previews/world-swap/。今回の要件はユーザー承認済み、PR #42を更新して別AIレビュー後に公開する。
+
+## 2026-10-25 全教材カードとOGPの統一
+
+- ユーザーの「全教材カード」「余白なし」「教材ごとに別物」「noteを参考」「OGPも同じ画像」を反映。画像枠をCardArtの1280:670へ、カードと文章余白をcard-system.cssへ集約した。テーマ、おすすめ、教材一覧、テーマ内/検索結果、学習ルート/シリーズ、関連記事、本文内ReadingCardと入口カードを対象とする。
+- 画像は上端・左右に余白なし。128/144px固定高、小さな単体ポーズ枠、画像の外側padding、横並び配置を削除。PC3列/中間2列/スマホ1列、本文幅の関連記事は2列/1列。画像を全幅の巨大な単列にしない。
+- 24教材の原図は17種類だったため7場面を制作。森の道、橋の接続箱、棚の道具、サーバー小屋、観察机、対象別の確認台、観測台。黒猫の胸の白い斑が出た1枚は、正本の黒い毛へ修正。生成指示・原本・寸法・SHA・Web用480/960を台帳へ保存。同じ教材は同じ絵、異なる教材は24種類の別の絵とする。本文内の案内ポーズと本文の場面割り当ては維持。
+- OGPはlessonCardSourceで同じ24枚を参照。1200x630 PNG、固定フォントとタイトル、ロゴA＋Tsukineko、帯のみオレンジの仕様を維持。右側挿絵の焦点を教材ごとに指定し、顔が枠外に落ちないことを全25枚の比較画像で目視した。
+- check:109ファイル、error/warning/hint 0。build:50ページ、npm test成功。制作見本build/check成功。reader-navigationは14テスト、OGPは5テスト。画像ファイル名だけでなく内容ハッシュでも24教材の重複を検査。寸法属性と配信ファイル、台帳、OGP参照元も照合。
+- 最終版の公開FULLは3196 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存のcommands/制作見本の色数警告のみ。規則・しきい値・検査対象の除外なし。
+- 全204画面でaxe/実行エラー/横はみ出し0、375pxで全ページの文字200%を確認。全カード種別を7代表ページ×4幅で実測し、画像幅=カード幅、上端/左右の内側余白0、1280:670比率を確認。検索表記揺れ・段階別遷移・キーボード・ページ送り・履歴・JSなしも4幅で確認。
+- PCの24教材（12件×2ページ）、8テーマ、おすすめ3件、スマホの関連記事、全OGPを比較して目視。公開400/見本8のmanual reviewを自動合格と表現しない。証拠:card-release-*、design/previews/card-standard。本文の事実・README/LICENSE・デザインガイド非公開は維持。
+
+## 2026-10-25 個別記事リンクを肉球で明示
+
+- 個別記事の見出しに承認済み肉球を添えるArticleLabelを共通化。テーマカードの記事リンクは16pxと下線を併用する。テーマ・一覧へのリンクには付けず、肉球を安全判定や完了表示に使わない。装飾画像は空altとaria-hiddenで読み上げの重複を防ぐ。
+- 教材一覧・おすすめ・関連記事も共通マークを使用。読了後の「次に読む」に旧画像枠が残っていたためCardArtへ統一し、ルート変更時も記事名・画像・肉球の表示が保持されるよう更新した。
+- checkは110ファイルでerror/warning/hint 0、50ページbuild、npm test、制作見本build/check成功。最終公開FULLは3196 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存警告のみで規則・しきい値・除外は変更なし。manual review 400/8件は自動合格と表現しない。
+- 全204画面でaxe・実行エラー・横はみ出し0、全50ページの375px文字200%を確認。4幅で記事リンクの16px・下線・44px操作領域とキーボード遷移を確認。「次に読む」は4幅×17組、計68組でリンク先・肉球・原画像・寸法・共通比率を検査した。
+- 証拠:article-affordance-public-full、article-affordance-guide-full、article-affordance-browser.json、article-affordance-links.json、article-affordance-next.json、design/previews/article-links。画像原本や教材の事実、OGPの内容は変更なし。
+
+## 2026-10-25 フッターロゴからトップへ戻る
+
+- 共通Shellのフッターブランドをトップへのリンクに変更。baseを含むURL、明確な読み上げ名、44px以上の領域、既存フォーカス表示を使用。紙面の構成やロゴは維持する。
+- check/build/test、制作見本build/check成功。今回の最終ビルドで公開FULLは3196 passed/error 0/warning 4、見本FULLは60 passed/error 0/warning 4。既存警告のみで規則変更なし。manual review 400/8件は自動合格扱いしない。
+- 全50ページ×4幅でリンク先と操作領域、全204画面でaxe/横はみ出し/実行エラー0、375pxで文字200%を確認。記事の末尾からEnterでトップへ戻る動作を4幅で確認。スマホのフォーカス枠とロゴ・運営表記の配置を目視。
+- 証拠:footer-public-full、footer-guide-full、footer-browser.json、design/previews/footer/home-mobile.png。山岳背景案の本番実装は含まない。
+
+## 2026-10-25 PCのLP背面に固定山岳パノラマ
+
+- 承認された山岳背景の案を、トップ限定のmountainBackdrop propと専用CSSで実装。1280px以上は最大1200pxの不透明な紙面、背面の連続パノラマは画面固定。documentの通常スクロールを保ち、独立スクロールや追従JSは使わない。
+- 1280px未満はsite-frameをdisplay:contentsに戻して全幅の紙面を維持。picture/sourceのmediaで山岳画像の通信自体を止め、装飾は空alt・aria-hidden。記事/一覧には背景を出さない。
+- 最初のPC実画面で見出しが3行に折れたため、中央幅に合わせPCの見出しを64pxとし、承認案の2行へ修正。ヒーロー画像の拡張幅を紙面内に収めた。スマホのタイトル・本文・カードの幅は維持。
+- 原本PNGと生成指示を保存し、1920/2560 WebPは約320/423KB。台帳にSHA・寸法・派生の由来を記録。背景案そのもののユーザー承認と、背景単体の派生生成を区別する。既存カード・本文の絵・OGP・ロゴは変更しない。
+- check/build/test、制作見本build/check成功。今回の最終ビルドで公開FULLは3196 passed/error 0/warning 4、見本FULLは60 passed/error 0/warning 4。既存警告のみでしきい値や対象除外は変更なし。manual review 400/8件を自動合格と表現しない。
+- 全204画面でaxe/実行エラー/横はみ出し0、全50ページの375px文字200%を確認。8幅でPC中央1200px・左右中央配置・スクロール後の背景座標固定・スマホ画像リクエスト0・一覧に背景なしを実測。ホームは7幅の文字200%とスキップリンク操作も確認。PC上部/スクロール後とスマホを目視し、本文背後に山が透けず、左右が同一の風景として残ることを確認。
+- 証拠:mountain-public-full、mountain-guide-full、mountain-layout.json、mountain-browser.json、design/previews/mountain-backdrop。
+
+## 2026-10-25 発行者紹介・発信先・利用条件
+
+- ユーザー承認の案を実装。creator.tsを正本として、トップ末尾とaboutに紹介、全教材末尾に小さな著者欄・元記事URLを追加。共通フッターからnote/Zenn/X/問い合わせへ進め、トップへ戻る既存リンクも維持する。新しいロゴや外部送信・コピー制限は追加しない。
+- termsとLICENSE-CONTENTを追加。MIT本文は保持し、コード・自作サンプルと教材本文・独自図解・ブランド素材の適用範囲を区別。旧版の許諾を遡って取り消さず、第三者条件・法令上の引用・AI利用素材の権利範囲を明記。READMEは該当の一文だけ整合させ、AUTHORINGに共通管理のルールを追加。ドメインや公開範囲、教材の事実と日付、画像・OGPは変更しない。
+- 初回FULLでXリンクが27×44px、元記事URLの行が長い、about案内の末尾だけ折り返す問題を検出。Xを幅44px以上へ、URLを32emへ、案内リンクを独立段落へ修正し、最終ビルドで再検査した。初回結果を公開可の証拠として流用していない。
+- checkは114ファイルでerror/warning/hint 0。buildは51ページ、npm test成功（reader-navigation17テスト・OGP5テストを含む）。制作見本build/checkも成功。
+- 最終公開FULLは3260 passed/error 0/warning 4、GUIDE FULLは60 passed/error 0/warning 4。既存commands/見本の色数警告のみ、しきい値・規則・対象除外なし。manual review 408/8件は自動合格と表現しない。
+- 全208画面でaxe/実行エラー/横はみ出し0、全51ページの375px文字200%を確認。320/375/768/1280/1920で4外部リンクの正確な行き先・縦横44px・キーボードフォーカス、記事からプロフィール/利用条件へのEnter遷移、元記事URLとauthor metadata、選択可能な本文を確認。PCの紹介・利用条件、スマホの紹介・記事著者欄・フッターを目視。
+- 証拠:creator-final-public-full、creator-final-guide-full、creator-links.json、creator-browser.json、design/previews/creator-rights。
+
+## 2026-10-26 GA4の流入・閲覧・検索語
+
+- ユーザー提供のG-Q83DQP6PS5を共通Shellに1回設置。本番buildかつAstro.siteのorigin/baseに一致するときだけasyncタグを読む。開発/localhost/別origin/制作見本と標準オプトアウトでは通信しない。Googleシグナル・広告パーソナライズ向けシグナルはfalse。検索計測はユーザー指定でONを維持する。
+- 実タグで、q付きURLの初期訪問はview_search_resultsが届くが、画面内検索の履歴変更では検索語イベントが届かないことを確認。トップ/一覧の検索ボタン・Enterで確定した非空の語だけを推奨searchイベントで補完。手動page_view/view_search_resultsは重ねず、searchとview_search_resultsは別に集計する。空/型不正/200字上限も検査。
+- privacyページとフッター/紹介からのリンクを追加し、目的・Cookie・URL/参照元/検索語/端末情報・Googleでの処理・オプトアウト方法を表示。ユーザーが無効化を望まない検索機能やストリーム設定は変更しない。教材・画像・OGP・ライセンスは維持。
+- 最初の型検査でAstro内のprocess参照を検出しimport.meta.envへ修正。初回FULLのprivacyリンク末尾の折り返しを短い表示名へ修正。失敗を除外せず最終ビルドを再検査した。
+- checkは116ファイルerror/warning/hint 0。build52ページ、npm test成功（読者導線19・OGP5を含む）、制作見本build/check成功。最終公開FULL3324 passed/error 0/warning 4、GUIDE FULL60 passed/error 0/warning 4。既存色数警告のみ、規則・しきい値・対象除外の変更なし。manual review416/8件は自動合格と表現しない。
+- 全212画面でaxe/実行エラー/横はみ出し0、52ページ375px文字200%を確認。解析案内へのキーボード遷移を4幅で確認、スマホ/PCの案内とフッターを目視。
+- 本番URLをローカル成果物に結び実Googleタグで検証。初期page_viewは1回、UTM維持、URL訪問の検索語MCP、トップ確定PHP/一覧EnterのAPIキーは各1回。collectは途中で遮断し公開前のテストを実集計へ送らない。local/guide/opt-out通信0、タグ遮断時も本文表示と操作を維持。GA管理画面の受信・レポート表示は未確認で、タグ通信検証と区別する。
+- 証拠:ga4-final-public-full、ga4-final-guide-full、ga4-functional.json、ga4-browser.json、design/previews/ga4。
+
+## 2026-10-26 SEO・AI検索への公開情報
+
+- 全52ページの公開DOMで固有メタ情報・canonical/H1・本文SSR・内部リンクを監査。description5ページ共通とtitle1組重複、JSON-LDなし、sitemap404を確認。メタ情報を固有化し、表示中の著者・記事日付・階層をJSON-LDへ。実ルート52件のsitemapに記事の内容更新日だけを出す。特別なAIファイルで掲載を保証せず、root robots404をクロール拒否と扱わない。
+- 承認済み58画像へ元WebPより小さいAVIF配信版を追加。PNG/WebP/OGP、構図、全幅フレームは保持。heroのsizesと動的な次記事sourceを整合。派生全体は7,311,110→6,330,536bytes（約13.4%削減、各訪問の総通信量とは異なる）。新依存なし。
+- checkは120ファイルerror/warning/hint0、build52ページ、npm test成功（新SEO回帰4・既存読者導線19・OGP5を含む）。制作見本build/check成功。公開FULL3324 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存commands/見本の色数警告を維持、規則・対象・しきい値の変更なし。manual review416/8件を自動合格とは扱わない。
+- 全212画面でaxe/実行エラー/横はみ出し0、52ページ375px文字200%、4幅のスキップ後TabとフッターからトップへのEnter、68組の次記事画像・肉球・フルブリードを確認。スマホ/PCのトップ、記事冒頭、カードを目視し構図・余白を維持。検証スクリプトの引用符とビルド中の404は修正/完了後に全対象を再検査し、失敗結果を合格の証拠にしていない。
+- 改善前モバイルLighthouseはトップ89/LCP3.8秒、代表教材100/LCP1.0秒。SEO自動点数100でも今回の不足は検出しない。単発ラボと実ユーザーCWVを分け、Search Console/Bingのインデックス・順位・AI引用は未確認。運用規則と所有権確認/サイトマップ送信はdocs/SEO.md。
+- 証拠: search-public-full、search-guide-full、search-discovery.json、search-browser.json、search-keyboard.json、search-next-card.json。原本スクリーンショットは制作環境に保存。
+
+## 2026-10-26 セキュリティ更新記事（自動公開基盤と分離）
+- 記事・一覧・トップ導線・metadata・sitemapのみ公開。日報取り込み、公開ゲート、台帳処理は別ブランチに保持する。
+- 承認済みの表・歩く猫・のぞき猫は保持。先行監査は履歴であり、分離後の成果物を再検証して公開判断する。
+- 分離後の現在のビルドでcheck/build53ページ/test・制作見本build/check成功。公開FULL3388 passed/error0/warning4、見本60 passed/error0/warning4。既存色数警告のみ、閾値・対象は維持。全216画面axe/横はみ出し/実行エラー0、53ページ文字200%、4幅の切替・遷移・キーボード・猫と本文の位置を再確認。manual review424/8件は自動合格と区別する。証拠はupdates-public-full/updates-guide-full/updates-browser.json/updates-interactions.json。
+
+## 2026-10-26 全ページ共通のPC山岳背景
+- トップ限定だった背景をShellの既定でONにし、ページごとの指定を不要にした。CSS・画像・本文の読み幅は維持。スマホ全幅、1280px未満の画像通信なし、印刷時非表示を維持する。
+- check/build53ページ/test（全公開ページの背景回帰を追加）・制作見本build/check成功。公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存色数警告のみ、規則・閾値・対象除外なし。manual review424/8件は自動合格と区別。
+- 全216画面axe/実行エラー/横はみ出し0、53ページ375px文字200%、更新一覧の4幅キーボード導線を再確認。375/768/1279/1280/1920/2560pxの73組で1920px全ページを含め中央1200px、背景のスクロール固定、モバイルの山岳画像リクエスト0、印刷時非表示を実測。PC記事/一覧とスマホの紙面を目視。
+- 証拠:shared-mountain-public、shared-mountain-guide、shared-mountain-layout.json、shared-mountain-browser.json。原本スクリーンショットは制作環境に保存。
+
+## 2026-10-26 更新記事と教材の共通骨格
+- ArticleFrameへ外枠・ヘッダー・PC目次/スマホ折りたたみ目次・本文位置を抽出。既存教材の本文構造を保持し、更新記事の狭い独自外枠を廃止。タイトル48pxと左端・外枠1120px・本文640pxを既存教材に揃える。更新の修正表→対象→対応・猫・一次資料・日付は保持。
+- 初回目視で日付のラベルが分離し、表の上が空きすぎる問題を確認。日付をspanのまとまりにし、操作領域44pxを確保。修正見出しの余白を詰め、猫がのぞく配置を維持。初回の操作領域4エラーを修正し最終成果物で全幅を再検査。
+- check/build53ページ/test（更新情報4検査含む）・制作見本build/check成功。最終公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存色数警告のみ。閾値・対象除外なし、manual review424/8件は自動合格と区別。
+- 全216画面axe/横はみ出し/実行エラー0、53ページ375px文字200%。375/768/1280/1920pxの比較で両記事の外枠・ヘッダー・本文位置/幅・タイトル文字サイズ一致、PCとスマホの目次アンカーとキーボード、更新一覧の導線と猫の非重複を確認。PCとスマホを目視。
+- 証拠:article-frame-public、article-frame-guide、article-frame-compare.json、article-frame-browser.json。原本スクリーンショットは制作環境に保存。内容更新日や記事の事実、自動公開基盤は変更しない。
+
+## 2026-10-26 承認済み更新記事デザインを反映
+- ユーザーがプレビューを承認。ArticleFrameのupdate variantでPCの目次160px/間隔32px/修正表928px、コンパクトな冒頭、発表・最終更新の主表示を実装。掲載・情報確認はネイティブdetailsへ。通常教材の本文640px・タイトル48pxは維持。
+- スマホは修正1件ずつを読み、対象系列と説明を確認できる配置。実際のtable/row/columnheader/rowheader/cellを保つ。猫・山・紙色、事実・一次資料・日付は維持。表以外の説明と対応手順を読みやすい幅へ制限。
+- 初回診断でスマホの補足が画面左へ出る問題、非表示見出しの折り返しと本文末尾の孤立、広げすぎた説明の行長を検出。補足の左位置、隠し見出しのnowrap、本文折り返しと読む幅を修正。規則や対象を緩めず最終版で全幅を再確認。
+- check/build53ページ/test（更新情報5検査含む）・制作見本build/check成功。最終公開FULL3388 passed/error0/warning4、GUIDE FULL60 passed/error0/warning4。既存色数警告のみ。manual review424/8件は自動合格と区別。
+- 全216画面axe/横はみ出し/実行エラー0、53ページ375px文字200%、4幅の更新導線・補足・猫の位置を確認。320/375/768/1280/1920pxで表幅、スマホ行の見出し幅、日付補足の画面内配置とEnter操作、通常教材の維持を実測。承認案とPC/スマホを目視比較。
+- 証拠:update-reading-public、update-reading-guide、update-reading-layout.json、update-reading-browser.json。スクリーンショット原本は制作環境。自動公開基盤・新素材は変更しない。
+
+## 2026-10-27 Tailworm更新記事
+
+新規記事を共通update枠へ追加。PC1280・スマホ375で機能表、比較図、歩く猫、確認カードを目視。320/375/768/1280でキーボード開閉と文字200%の横はみ出しなしを確認。初回200%検査で条件ラベルが広がり表がはみ出したため、新記事限定の折り返しを追加。初回FULLの320px孤立行も修正対象とし再実行。既存commandsと制作ガイドの色数警告は既知だが今回も検査対象を維持。FULLの最終集計はPR本文へ記録。閾値変更・対象除外なし。
+
+内容は公式10/26調査続報、SSH公式資料、研究者原報、TS-2026-013を照合。修正予定を公開済みにしない。提供元と研究者の指摘、接続先と接続元を区別。PoC・端末の設定変更は実施していない。
+
+## 2026-10-27 歩く猫の配置修正
+check-introと直後カードの幅・右端が一致するよう40em上限を共通化。Python/Tailworm各320/375/768/1280/1920の10ケースで猫右端がカード内、足元オフセット20/27px、文字との重なりなし。1280画像でカード上への接地を目視。本文・設定・出典の変更なし。全ページ検査の結果はPR本文へ記録。
+
+## 2026-10-28 Warpログ確認ガイド
+共通update枠に独立記事追加。通常仕様と事故の報道を分け、一次照合未完了を冒頭表で明示。3分岐の実テキスト図、機能別確認表、架空ログ例、既存猫think/investigateを配置。320/375/768/1280の文字200%・日付のキーボード開閉は合格。1280全体画像で表・図・説明の配置を確認。全ページFULL/ブラウザとガイドFULLの集計はPR本文へ残す。
+
+追加確認：Markdownのtask listがラベルなしinputへ変換されたため、操作を求めない通常リストへ変更。4幅のtap target/spacing違反の原因を除去。スマホの孤立行は文言と図の分岐見出しを調整して再検査。閾値変更や対象除外なし。
+
+## 2026-10-31 Cursor拡張の確認ガイド
+共通update枠、冒頭の対象表、入手経路の比較図、GUI確認と3分岐、既存歩行猫を追加。PC1280とスマホ375で構成・猫の接地・説明を目視。4幅のキーボード開閉と文字200%の横はみ出しなし。操作検査は開閉状態を待機し、非表示のモバイル目次とPC目次を区別して検証。製品側の操作不具合は検出されていない。
+初回FULLで375px対応見出し末尾2字、320px対象ラベル末尾1字の孤立を検出。意味を保って文言を短縮し再検査。既存commands/制作見本の色数警告を除外せず記録する。最終の全画面集計・独立QA・CIはPR本文へ残す。事故の再現、端末設定の変更、日報原文の公開は行わない。
+
+## 2026-10-31 Cursor記事の読者案内改善
+読者レビューで、対象条件の分散、確認項目の抽象性、不明時の停滞、専門用語を検出。対象4条件/模式図/相談文/用語説明で修正。実画面を模造した画像とは扱わず、概念図と明示。最終の全幅・文字200%・キーボード・目視・独立QAはPR本文へ記録する。
+
+初回FULLで320pxの文末・相談文項目の孤立と、模式図注記の行長を検出。リンク文を独立させ、相談欄の表現を短縮し、注記の読む幅を調整。対象条件の重複行を削り、覗く猫を表へ戻した最終版で再検査する。
+
+## 2026-11-02 外部の手順・モデルコード
+事実の紹介を冒頭に置き、対象→流れ図→読むだけの確認→結果と相談→証拠へ。2本で異なる問いを扱い、読み込みの許可を安全保証としない。最終の全幅・文字200%・目視と独立QAはPR本文に記録。
+
+初回の新記事診断では320/375pxの対象ラベル・相談文・出典名と768pxの猫案内に孤立行があった。短いラベル・相談項目に整理し、閾値を変更せず修正。PC1280/スマホ375の表・4段階図・異なる猫ポーズ・確認と相談の順を目視。新記事2本×4幅のキーボード・axe・文字200%を検査し、最終の全画面集計はPRへ残す。
+
+最終FULLで375pxの猫案内に2文字の孤立行が残ったため「許可する処理を先に確認。」へ短縮。判定を緩和せず最新版でFULLとブラウザを再実行する。
+
+## 2026-11-08 セキュリティ更新15本
+
+共通の更新記事枠に発表内容・読者の対象・確認箇所・結果別の対応を追加。月猫Article基準で自己編集レビューを実施。一次資料で公表日、適用範囲、予告と修正済みの区別を照合。初回のブラウザー検査では共通フッターの表示文と読み上げ名の不一致が既存記事でも再現したため、リンクの表示文をそのまま読み上げに使用する。最終の検査結果はPRに記録する。
+
+初回の全幅監査で対象ラベルと表の補足リンクに短い末尾行を検出。対象ラベルを短縮し、出典への移動は共通目次に集約。対応欄の行長も調整して全幅を再確認する。

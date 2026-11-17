@@ -1,0 +1,32 @@
+---
+const base=import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<div class="check-intro"><p>まずはインストール済みの表示を確認。<br/>追加や更新の操作は不要です。</p><img class="intro-walker" src={`${base}/brand/cat-walk-right-320.webp`} alt="" width="320" height="320"/></div>
+<div class="takeaway walk-card">
+<h3>① 自分の端末に入っている版を見る</h3>
+<ol class="cursor-steps"><li>Cursorのサイドバーで<b>「拡張機能」</b>を開きます。</li><li><b>インストール済み</b>の中からClaude Codeを選びます。</li><li>詳細の<b>拡張IDとバージョン</b>を確認し、控えます。</li></ol>
+<figure class="cursor-screen">
+<p class="screen-label">確認する情報の模式図</p>
+<div class="screen-panels"><div><b>① インストール済み</b><p>Claude Code<br/>↓ 選んで詳細へ</p></div><div><b>② 選んだ拡張の詳細</b><dl><dt>名前</dt><dd>Claude Code</dd><dt>拡張ID</dt><dd><code translate="no">Anthropic.claude-code</code></dd><dt>バージョン</dt><dd>自分の端末に入っている版</dd></dl></div></div>
+<figcaption>実画面のスクリーンショットではありません。配置や項目名は版で異なります。検索結果に出る最新版と、インストール済みの版を区別してください。</figcaption>
+</figure>
+<p>項目が見つからなければ、<a href="#cursor-help">相談文の例へ</a>。問題の版を入れたり、インストールし直したりする必要はありません。</p><p><a href="https://cursor.com/help/customization/extensions">公式の拡張管理案内</a></p>
+<h3>② 対象期間に使ったかを確認する</h3>
+<p>今は新しい版でも、以前に対象の版を使った可能性があります。対象期間の通知・更新記録などで、<b>いつ・どこから・どの版を入れたか</b>を確認します。表示から過去の利用が分からなければ、「未確認」のまま次へ進んで大丈夫です。</p>
+</div>
+<h3>結果ごとに、次の行動を選ぶ</h3>
+<ul class="cursor-results"><li><b>対象の導入・更新が確認できた</b><br/>その端末での通常作業を止め、管理者へ連絡。<a href="#actions-title">必要な対応へ</a>進みます。</li><li><b>過去の版や導入元が不明</b><br/>安全とも被害ありとも決めず、下の相談文で確認を依頼します。</li><li><b>別経路だけの利用を記録で確認</b><br/>今回の配布条件とは区別します。同じ名前だけで、ターミナル版などへ影響を広げません。</li></ul>
+<p>公式は、ほかの版や公式の配布経路が影響した証拠はないと説明しています。これは、個別端末の安全を保証する説明ではありません。</p>
+<div class="takeaway cursor-help" aria-labelledby="cursor-help">
+<h3 id="cursor-help">分からないときは、この内容で相談</h3>
+<p>会社の端末ならIT担当へ。個人利用で管理者がいない場合は、別の信頼できる端末からCursor公式窓口へ問い合わせ、端末の調査・復旧が必要なら専門家へ相談してください。</p>
+<blockquote class="cursor-message"><p>CursorのClaude Code拡張について、対象の版を使ったか確認したいです。</p><ul><li>OS：確認できた名前</li><li>拡張IDと版：表示を記入</li><li>対象期間の導入元・更新履歴：不明、または確認できた内容</li></ul><p>どの記録を確認すればよいかと、次の対応を教えてください。</p></blockquote>
+<p>記入例です。分からない欄は「不明」で構いません。ログ・設定の全文、キーやパスワードは貼らず、承認された相談先だけに送ります。<a href="https://cursor.com/blog/claude-code-extension-security-notice">公式案内の末尾に連絡先があります</a>。</p>
+</div>
+<h3>詳しい調査は、痕跡と記録を合わせて</h3>
+<p>公式には、不正な接続の目印<code>svc-telemetry</code>などの検知情報があります。ただし、一つの目印がないことや、ファイルを読めなかったことを、侵害なしの証拠にはしません。</p>
+<p>管理者は公式の検知情報と端末の記録を照合します。自己判断で痕跡を削除せず、残る処理・認証情報・復旧をまとめて確認してください。</p>
+<h3>確認の記録は、この四つ</h3>
+<ul class="cursor-results"><li>端末のOS、現在の拡張IDと版。</li><li>対象期間の入手先と更新履歴。不明なら未確認。</li><li>相談先と、確認を依頼した内容。</li><li>管理者の調査・対応結果。対応中は完了と数えません。</li></ul>
+<p>公式の続報や新しい通知が届いたら、確認結果を見直します。</p>
+<style>.cursor-results,.cursor-steps{max-width:40em;padding-left:24px;line-height:1.9;margin:16px 0 24px}.cursor-results li,.cursor-steps li{margin:8px 0}.cursor-screen{margin:24px 0}.screen-label{font-weight:700}.screen-panels{display:grid;grid-template-columns:1fr 2fr;gap:16px}.screen-panels>div{background:var(--color-paper);padding:16px;min-width:0}.screen-panels dl{margin:16px 0 0;line-height:1.9}.screen-panels dt{font-size:14px;color:var(--color-muted)}.screen-panels dd{margin:0 0 8px;overflow-wrap:anywhere}.screen-panels code{font-size:14px}.cursor-screen figcaption{max-width:36em;font-size:14px;line-height:1.6;margin-top:16px}.security-update h3{margin-top:24px}.takeaway h3:first-child{margin-top:0}.cursor-help h3{scroll-margin-top:24px}.cursor-help blockquote{padding:16px;margin:16px 0;background:var(--color-paper);max-width:none}.cursor-message ul{padding-left:24px;line-height:1.9}.cursor-message p:last-child{margin-bottom:0}@media(max-width:760px){.screen-panels{grid-template-columns:1fr}}</style>

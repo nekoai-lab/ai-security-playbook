@@ -1,0 +1,32 @@
+[
+  {
+    "width": 320,
+    "tableWidth": 288,
+    "rows": 4,
+    "dateDetailsKeyboard": true
+  },
+  {
+    "width": 375,
+    "tableWidth": 343,
+    "rows": 4,
+    "dateDetailsKeyboard": true
+  },
+  {
+    "width": 768,
+    "tableWidth": 688,
+    "rows": 4,
+    "dateDetailsKeyboard": true
+  },
+  {
+    "width": 1280,
+    "tableWidth": 928,
+    "rows": 4,
+    "dateDetailsKeyboard": true
+  },
+  {
+    "width": 1920,
+    "tableWidth": 928,
+    "rows": 4,
+    "dateDetailsKeyboard": true
+  }
+]

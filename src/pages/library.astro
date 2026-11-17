@@ -28,12 +28,13 @@ const lessons = (await getCollection("lessons")).sort(
     </h2>
     <div
       id="catalog-results"
+      role="region"
       class="catalog-list"
       tabindex="-1"
       aria-label="教材の検索結果"
     >
       {lessons.map((lesson) => (
-        <LessonCard headingLevel="h3" lesson={lesson} />
+        <LessonCard headingLevel="h3" lesson={lesson} poster />
       ))}
     </div>
     <nav
@@ -44,3 +45,9 @@ const lessons = (await getCollection("lessons")).sort(
     ></nav>
   </div>
 </Shell>
+
+<style>
+  #catalog-results :global([hidden]) {
+    display: none !important;
+  }
+</style>

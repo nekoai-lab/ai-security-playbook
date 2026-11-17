@@ -1,0 +1,35 @@
+---
+import BrandMark from "./BrandMark.astro";
+import CreatorLinks from "./CreatorLinks.astro";
+import { creator } from "../data/creator";
+interface Props { compact?: boolean; id?: string; }
+const { compact = false, id } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<section id={id} class:list={["creator-profile", { "creator-profile--compact": compact }]} aria-label="このプレイブックをつくっている人" data-creator-profile>
+  <p class="creator-eyebrow">{compact ? "書いた人" : "つくっている人"}</p>
+  <div class="creator-heading">
+    <BrandMark size={48} />
+    <h2><a href={`${base}/about/#creator`} rel="author">{creator.name}</a></h2>
+  </div>
+  <p class="creator-intro">{creator.intro}</p>
+  {!compact && <p class="creator-intro">{creator.message}</p>}
+  {compact ? (
+    <div class="creator-actions">
+      <a href={`${base}/about/#creator`}>プロフィール・発信先 →</a>
+      <a href={`${base}/terms/`}>著作権・利用条件 →</a>
+    </div>
+  ) : <CreatorLinks descriptions />}
+</section>
+<style>
+  .creator-profile { padding-block: 40px; max-width: 48em; }
+  .creator-eyebrow { margin: 0 0 16px; font-size: 12px; line-height: 1.6; color: var(--color-muted); }
+  .creator-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .creator-heading h2 { font-size: 24px; line-height: 1.4; margin: 0; padding: 0; border: 0; }
+  .creator-heading a { display: inline-flex; align-items: center; min-height: 44px; }
+  .creator-intro { max-width: 40em; margin: 0 0 16px; font-size: 16px; line-height: 1.9; }
+  .creator-actions { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  .creator-actions a { display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; }
+  .creator-profile--compact { margin-top: 32px; padding: 24px; background: var(--color-paper-light); }
+  @media (max-width: 760px) { .creator-profile { padding-block: 24px; } .creator-profile--compact { padding: 16px; } }
+</style>

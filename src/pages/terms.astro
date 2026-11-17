@@ -1,0 +1,38 @@
+---
+import Shell from "../layouts/Shell.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<Shell title="著作権・利用条件" description="AI Security Playbookの教材・図解・ブランド素材と実装コードの利用条件、引用や掲載の相談先。">
+  <div class="wrap hub-page">
+    <header class="hub-header"><p class="eyebrow">CONTENT &amp; CODE</p><h1>著作権・利用条件</h1><p>学んだことを使うこと、記事を紹介することを歓迎します。転載や素材の利用は、対象ごとの条件をご確認ください。</p></header>
+    <div class="prose terms-copy">
+      <p>制定：2026年10月25日 · 制作・運営：Tsukineko</p>
+      <h2>まず、何を使いたいですか？</h2>
+      <ul>
+        <li><strong>記事を紹介したい：</strong>元記事へのリンクでご紹介ください。</li>
+        <li><strong>一部を引用したい：</strong>著者名と元記事URLなどの出典を示し、法令上の引用の要件を満たしてください。出典の記載だけで全文転載が認められるわけではありません。</li>
+        <li><strong>本文・図・イラストを転載したい：</strong>法令で認められる利用や個別の許諾がある場合を除き、事前にご相談ください。</li>
+        <li><strong>実装コードを使いたい：</strong>自作の実装・サンプルコードは、別の指定がなければMITライセンスで利用できます。</li>
+      </ul>
+      <h2>教材・図解・ブランド素材</h2>
+      <p>オリジナルの教材本文、独自図解、イラスト、ロゴ、キャラクターは、Tsukinekoが権利を有する範囲で保護・管理しています。コードと同じMIT条件で一括配布するものではありません。</p>
+      <p>法令上の例外や個別の許諾がある場合を除き、転載・再配布・改変しての再公開は事前の許諾が必要です。自分が書いた記事・作った素材であるかのような再公開や、公式・提携と誤認させる利用は許諾していません。</p>
+      <h2>コードと第三者素材</h2>
+      <p>オリジナルのサイト実装・ビルドや検査のスクリプト・実行例のサンプルコードには、別の指定がなければMITを適用します。利用時は著作権表示とライセンス表示などの条件に従ってください。本文や図を含めてMIT対象にするものではありません。</p>
+      <p>引用、フォント、外部サービスの画面、ライブラリ、第三者のコードなどには、それぞれの権利者の条件が適用されます。AI利用素材も、法令上認められる権利の範囲で扱い、個々の生成物の著作物性を一律に保証するものではありません。</p>
+      <h2>以前の版について</h2>
+      <p>この方針は、以前の版で既に適法に付与されたMITなどの許諾を遡って取り消すものではありません。旧版の本文や画像を旧版の許諾で利用できる場合、同じ内容が現行版にあることによって、その権利が失われるものではありません。</p>
+      <h2>掲載・利用について相談する</h2>
+      <p>使いたい記事や画像のURL、掲載先、利用する範囲を添えてお知らせください。</p>
+      <p><a class="terms-contact" href="https://marcrevix.com/contact/">お問い合わせ（MARCREVIX）↗</a></p>
+      <p><a href="https://github.com/nekoai-lab/ai-security-playbook/blob/main/LICENSE">MITライセンス原文 ↗</a> ／ <a href="https://github.com/nekoai-lab/ai-security-playbook/blob/main/LICENSE-CONTENT.md">教材・素材の利用条件全文 ↗</a></p>
+      <p><a href="https://www.bunka.go.jp/seisaku/bunka_gyosei/kibankyoka/faq/index.html">引用について：文化庁の解説 ↗</a></p>
+    </div>
+    <p class="hub-action"><a href={`${base}/about/#creator`}>つくっている人を見る →</a></p>
+  </div>
+</Shell>
+<style>
+  .hub-header > p:not(.eyebrow) { max-width: 40em; }
+  .terms-copy { max-width: var(--reading-width); }
+  .terms-contact { display: inline-flex; align-items: center; min-height: 44px; }
+</style>

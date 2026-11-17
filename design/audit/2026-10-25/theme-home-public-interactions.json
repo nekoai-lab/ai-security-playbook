@@ -1,0 +1,59 @@
+{
+  "base": "https://nekoai-lab.github.io/ai-security-playbook/",
+  "results": [
+    {
+      "width": 320,
+      "themeCards": 8,
+      "recommendations": 3,
+      "updates": 5,
+      "levels": true,
+      "search": true,
+      "history": true,
+      "directLinks": true,
+      "topicArticlesFirst": true,
+      "zeroStagesDisabled": true,
+      "keyboard": true
+    },
+    {
+      "width": 375,
+      "themeCards": 8,
+      "recommendations": 3,
+      "updates": 5,
+      "levels": true,
+      "search": true,
+      "history": true,
+      "directLinks": true,
+      "topicArticlesFirst": true,
+      "zeroStagesDisabled": true,
+      "keyboard": true
+    },
+    {
+      "width": 768,
+      "themeCards": 8,
+      "recommendations": 3,
+      "updates": 5,
+      "levels": true,
+      "search": true,
+      "history": true,
+      "directLinks": true,
+      "topicArticlesFirst": true,
+      "zeroStagesDisabled": true,
+      "keyboard": true
+    },
+    {
+      "width": 1280,
+      "themeCards": 8,
+      "recommendations": 3,
+      "updates": 5,
+      "levels": true,
+      "search": true,
+      "history": true,
+      "directLinks": true,
+      "topicArticlesFirst": true,
+      "zeroStagesDisabled": true,
+      "keyboard": true
+    }
+  ],
+  "noJS": true,
+  "guide404": true
+}

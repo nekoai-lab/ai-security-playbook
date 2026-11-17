@@ -42,3 +42,7 @@ GitHubの共通ハーネス origin/main `839e06f` を確認し、同じ版を一
 古い合格結果のキャッシュで現在の変更を承認しない。参照量と検査範囲は削減できるが、AIの判断時間や精度の改善率は実測まで断定しない。
 
 生成したmeasure.jsonは保存したまま、.gitattributesで通常のソース差分から外す。合否・警告のVALIDATION.mdは差分に残し、結果を隠さない。大量の生測定値を毎回AIへ入力するのを避け、必要な要素だけ取り出す。
+
+## 制作専用の見本 / 2026-10-25
+
+公開サイトにデザインガイドは出さない。正本はsrc/design/DesignSystem.astro。`npm run dev:design`でローカル表示。静的確認は`npm run build:design`（出力.design-preview）→`npm run check:design-preview`→`npm run preview:design`→`npm run design:audit:guide`。公開側は従来どおり`npm run build`でdistを作りFULL検査。CIは両方をビルド・リンク検証し、Pagesへはdistだけを配信する。公開サイト内と設計資料の旧URLリンクは混同しない。

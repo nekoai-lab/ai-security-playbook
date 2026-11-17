@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "status": "approved for theme cards on 2026-10-25",
+  "commonPrompt": "Use case: illustration-story. Create ONE finished landscape 3:2 illustration for a Japanese AI Security Playbook card, not a UI mockup. Reference 1 is the exact FIELD NOTES world and black cat identity: warm ivory paper #f5f1e6, very fine black etched crosshatching, detailed wooden objects, mountain-and-pine exploration landscape, tiny restrained orange accents on the backpack. Preserve this cat's natural slim face, ears, fur and small nose, do not inflate its cheeks or eyes. Reference 2 is pose inspiration only. Rich scene filling frame, substantial contextual objects and environment, no blank cutout look. Cat is only about 25% of composition. Keep ears and important objects safely inside frame. No text, captions, labels, panels, border, watermark, logos, security approval ticks, organs, photographic shading or gradients. Different composition from the reference: do not simply repeat a cat seated behind a laptop looking upper right. ",
+  "scenes": [
+    {
+      "file": "app-workshop.png",
+      "direction": "Outdoor timber workshop; left-facing walking cat between laptop, server and document storage. Full scene and mountain lake."
+    },
+    {
+      "file": "keys-and-records.png",
+      "direction": "Three-quarter overhead cabin desk; cat peeking from right of organizer toward left and down; physical key box, notebooks and separated document trays."
+    },
+    {
+      "file": "agent-field-tools.png",
+      "prompt": "Use case: illustration-story. Create ONE finished landscape 3:2 illustration for a Japanese AI Security Playbook card, not a UI mockup. Reference 1 is the exact FIELD NOTES world and black cat identity: warm ivory paper #f5f1e6, very fine black etched crosshatching, detailed wooden objects, mountain-and-pine exploration landscape, tiny restrained orange accents on the backpack. Preserve this cat's natural slim face, ears, fur and small nose, do not inflate its cheeks or eyes. Reference 2 is pose inspiration only. Rich scene filling frame, substantial contextual objects and environment, no blank cutout look. Cat is only about 25% of composition. Keep ears and important objects safely inside frame. No text, captions, labels, panels, border, watermark, logos, security approval ticks, organs, photographic shading or gradients. Different composition from the reference: do not simply repeat a cat seated behind a laptop looking upper right. Theme: boundaries of operations delegated to an AI agent. A wider diagonal view along a forest field station wooden desk. Cat on LEFT in three-quarter back view, looking DOWN and RIGHT at a large folded map and a small laptop; its complete head in profile is visible and identity matches reference 1. A small mechanical tool case is OPEN on the far RIGHT, with three separated compartments containing a magnifying glass, a pencil, and a small sealed envelope, connected by a few thin physical cords running across the map to the laptop. The tools are tangible objects representing inspecting, modifying and sending, NOT a technical architecture diagram, no arbitrary wires into paper. An open cabin door behind gives depth into pine forest and distant mountains. Rich ink hatching on maps, wood, backpack and ferns. Curious exploratory mood, not danger or safety certification. No labels or text. Composition favors the spread-out tools and map, cat smaller than reference."
+    },
+    {
+      "file": "maintenance-lookout.png",
+      "prompt": "Use case: illustration-story. Create ONE finished landscape 3:2 illustration for a Japanese AI Security Playbook card, not a UI mockup. Reference 1 is the exact FIELD NOTES world and black cat identity: warm ivory paper #f5f1e6, very fine black etched crosshatching, detailed wooden objects, mountain-and-pine exploration landscape, tiny restrained orange accents on the backpack. Preserve this cat's natural slim face, ears, fur and small nose, do not inflate its cheeks or eyes. Reference 2 is pose inspiration only. Rich scene filling frame, substantial contextual objects and environment, no blank cutout look. Cat is only about 25% of composition. Keep ears and important objects safely inside frame. No text, captions, labels, panels, border, watermark, logos, security approval ticks, organs, photographic shading or gradients. Different composition from the reference: do not simply repeat a cat seated behind a laptop looking upper right. Theme: keeping a service running, updates and maintenance. Low, close-to-workbench perspective at a rustic forest lookout maintenance shed. On the RIGHT of the scene the black explorer cat crouches facing LEFT, intently examining a small loose gear through a magnifying glass; full ears, paws and tail comfortably visible. LEFT foreground is an opened mechanical housing and carefully separated replacement parts on a cloth, a small closed field notebook and a compact server cabinet farther behind. A winding wooden boardwalk leads from the shed into distant pine forest, with mountains seen through open slats. Cat is smaller, about 25% of frame, and workshop objects tell the story. It is a conceptual maintenance metaphor, not actual instructions to disassemble equipment. Avoid the recurring upright sitting cat and laptop, do not include a laptop in this scene. No flames, danger signs or safety guarantee. Fine engraving, warm ivory, orange backpack only plus a tiny orange tool handle."
+    }
+  ],
+  "references": [
+    "design/assets/illustration-library/sources/data-sorting-scene.png",
+    "public/brand/cat-walk-right-640.webp",
+    "public/brand/cat-peek-side-640.webp",
+    "public/brand/cat-laptop-640.webp",
+    "public/brand/cat-investigate-640.webp"
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "mode": "local",
+    "collect": 0,
+    "loader": 0
+  },
+  {
+    "mode": "guide",
+    "collect": 0,
+    "loader": 0
+  },
+  {
+    "actualSearchTerm": "PHP",
+    "actualSearchEvents": 1,
+    "mode": "production",
+    "loader": true,
+    "pageViews": 1,
+    "search": [
+      {
+        "event": "view_search_results",
+        "term": "MCP"
+      }
+    ],
+    "collectIntercepted": true
+  },
+  {
+    "mode": "library-search",
+    "event": "search",
+    "term": "APIキー",
+    "events": 1
+  },
+  {
+    "mode": "optout",
+    "collect": 0,
+    "loader": 0
+  },
+  {
+    "mode": "blocked",
+    "collect": 0,
+    "loader": 1
+  }
+]

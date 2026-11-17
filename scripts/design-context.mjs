@@ -30,8 +30,9 @@ export function reviewContext(files, map) {
             if (map.pages.includes(index)) affected.add(index);
           references.add(file);
         } else fallback = true;
-      } else if (s.name === "guide") affected.add("design-system/");
-      else map.representatives.forEach((p) => affected.add(p));
+      } else if (s.name === "guide") {
+        /* Authoring preview is reported separately. */
+      } else map.representatives.forEach((p) => affected.add(p));
     }
   }
   if (fallback) map.pages.forEach((p) => affected.add(p));
@@ -41,8 +42,9 @@ export function reviewContext(files, map) {
     sections: [...sections],
     read: [...references],
     guideSections: [...anchors].map(
-      (a) => `${map.basePath}design-system/#${a}`,
+      (a) => `${map.guidePreview.baseUrl}design-system/#${a}`,
     ),
+    guidePreview: map.guidePreview,
     diagnostic: {
       coverage: fallback ? "full-fallback" : "selected",
       pages: [...affected].map((p) => map.basePath + p),

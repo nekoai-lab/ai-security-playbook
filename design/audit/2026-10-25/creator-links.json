@@ -1,0 +1,242 @@
+[
+  {
+    "width": 320,
+    "route": "",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "route": "about/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "route": "learn/api-keys/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "route": "terms/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 375,
+    "route": "",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 375,
+    "route": "about/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 375,
+    "route": "learn/api-keys/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 375,
+    "route": "terms/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "about/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "learn/api-keys/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "terms/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "route": "",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "route": "about/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "route": "learn/api-keys/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "route": "terms/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 1920,
+    "route": "",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 1920,
+    "route": "about/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 1920,
+    "route": "learn/api-keys/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  },
+  {
+    "width": 1920,
+    "route": "terms/",
+    "links": [
+      "https://note.com/nekoai_lab",
+      "https://zenn.dev/nekoai_lab",
+      "https://x.com/nekoai_lab",
+      "https://marcrevix.com/contact/"
+    ],
+    "keyboard": true,
+    "overflow": false
+  }
+]

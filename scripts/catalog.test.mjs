@@ -97,3 +97,11 @@ test("prerequisites and related lesson IDs resolve and prerequisites have no cyc
   };
   for (const id of links.keys()) visit(id);
 });
+
+test("MCP search accepts narrow spelling variants without changing unrelated words", () => {
+  assert(matchesSearch("MCPサーバーの権限", "MPC"));
+  assert(matchesSearch("MCPサーバーの権限", "ＭＰＣ 権限"));
+  assert(matchesSearch("MCPサーバーの権限", "エムシーピー"));
+  assert(!matchesSearch("AMPC", "MCP"));
+  assert(!matchesSearch("MCP", "MAC"));
+});

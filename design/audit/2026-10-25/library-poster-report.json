@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "width": 320,
+      "topicImages": 8,
+      "libraryImages": 24,
+      "ratio": 2,
+      "wideImage": true,
+      "publisherInFooterOnly": true,
+      "pagination": true
+    },
+    {
+      "width": 375,
+      "topicImages": 8,
+      "libraryImages": 24,
+      "ratio": 2,
+      "wideImage": true,
+      "publisherInFooterOnly": true,
+      "pagination": true
+    },
+    {
+      "width": 768,
+      "topicImages": 8,
+      "libraryImages": 24,
+      "ratio": 2,
+      "wideImage": true,
+      "publisherInFooterOnly": true,
+      "pagination": true
+    },
+    {
+      "width": 1280,
+      "topicImages": 8,
+      "libraryImages": 24,
+      "ratio": 2,
+      "wideImage": true,
+      "publisherInFooterOnly": true,
+      "pagination": true
+    }
+  ],
+  "noJS": true
+}
