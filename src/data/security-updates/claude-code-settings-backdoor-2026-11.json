@@ -1,0 +1,73 @@
+{
+  "id": "claude-code-settings-backdoor-2026-11",
+  "title": "Claude Codeを起動する前に確認したい、リポジトリの設定",
+  "summary": "Google Threat Intelligence Group（GTIG）は、暗号資産関連組織への侵入で、社内リポジトリのClaude Code設定が改変されたと報告しました。自分のリポジトリで確認する設定ファイルと、見覚えのない変更を見つけたときの対応をまとめます。",
+  "product": "Claude Code",
+  "announced": "2026-11-17",
+  "published": "2026-11-18",
+  "updated": "2026-11-18",
+  "reviewed": "2026-11-18",
+  "image": "github-gate-scene",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "社内リポジトリの設定改変",
+      "detail": "GTIGによると、攻撃者は暗号資産関連組織への侵入後、社内のコードリポジトリへアクセスし、.claude/settings.jsonを書き換えました。利用者がClaude Codeを起動すると、SOMBERMEMEというバックドアのダウンロードが始まる設定でした。GTIGは、この攻撃グループを北朝鮮との関係が疑われるMIDNIGHT NEPTUNEとみています。",
+      "versions": "GTIGの事例報告"
+    },
+    {
+      "area": "Copilotに似せたトークン名",
+      "detail": "GTIGは、攻撃者がMicrosoft Copilotにちなんだ名前のGitHub個人用アクセストークン（PAT）も作成したと報告しています。PATはGitHubへのアクセスに使う認証情報です。",
+      "versions": "GTIGの事例報告"
+    },
+    {
+      "area": "共有設定とフック",
+      "detail": "Claude Codeの公式文書によると、.claude/settings.jsonはプロジェクトの共有設定で、.claude/settings.local.jsonは同じプロジェクトで使う個人向けの設定です。フック（hooks）は、セッション中の決まったタイミングでコマンドなどを自動で実行する仕組みです。",
+      "versions": "Claude Codeの公式仕様"
+    }
+  ],
+  "scope": "Claude Codeを使ってリポジトリで作業する人と、そのリポジトリを管理する人が対象です。共同作業中のリポジトリで設定差分をレビューするときや、初めて開くリポジトリで作業を始める前に確認できます。",
+  "limitations": "GTIGが報告したのは、侵入後に攻撃者が社内リポジトリを書き換えられる状態で起きた設定の悪用です。Claude Codeそのものの脆弱性を報告した事例ではありません。改変された具体的な設定項目や、ダウンロード先URLなど本件の侵害指標（IOC）は報告に記載なし。MIDNIGHT NEPTUNEへの帰属はGTIGの推定です。",
+  "actions": [
+    {
+      "title": "起動前に設定ファイルを読む",
+      "detail": "Claude Codeを起動する前に、.claude/settings.jsonと、手元にあれば.claude/settings.local.jsonをテキストとして開きます。hooksなどに覚えのないコマンドやURLがあれば、実行・アクセスせず、共有設定の変更履歴や承認済みの差分と照らして管理者に確認します。"
+    },
+    {
+      "title": ".claude/の差分をPRでレビューする",
+      "detail": "管理者は、.claude/への変更をプルリクエスト（PR）で確認する運用にし、CODEOWNERSで担当を指定します。ブランチ保護などで担当者の承認を必須にし、承認前に変更を取り込めない設定か確認します。"
+    },
+    {
+      "title": "GitHubで覚えのないPATを確認する",
+      "detail": "自分のGitHubアカウント設定で個人用アクセストークンの一覧を開き、作った覚えのないものや用途を説明できないものがないか確認します。Copilotに似た名前だけで判断せず、身に覚えのないトークンは管理者に共有します。"
+    },
+    {
+      "title": "見知らぬフォルダの信頼は確認してから",
+      "detail": "Claude Codeが対話セッションでフォルダを信頼するか尋ねたら、配布元と設定を確認できるまで承認を保留します。公式文書では、非対話の実行やSDKでは信頼確認の画面が表示されないため、自動実行の前にも設定を確認します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Google Threat Intelligence Group — GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold（2026年11月17日）",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
+    },
+    {
+      "title": "Claude Code公式 — Settings files and precedence",
+      "url": "https://code.claude.com/docs/en/settings"
+    },
+    {
+      "title": "Claude Code公式 — Hooks reference",
+      "url": "https://code.claude.com/docs/en/hooks"
+    },
+    {
+      "title": "Claude Code公式 — Security",
+      "url": "https://code.claude.com/docs/en/security"
+    }
+  ],
+  "related": [
+    "github-guards",
+    "agent-permissions",
+    "incident-response"
+  ]
+}

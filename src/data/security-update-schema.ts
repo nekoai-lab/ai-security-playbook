@@ -1,10 +1,13 @@
 import { z } from "astro/zod";
 const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const text = z.string().trim().min(1);
+const reusedArtwork = new Map([
+ ["claude-code-settings-backdoor-2026-11", "github-gate-scene"],
+]);
 export const updateSchema = z.object({
  id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/), title:text, summary:text,
  product:text, announced:date, published:date, updated:date, reviewed:date,
- image:z.string().regex(/^update-[a-z0-9]+(?:-[a-z0-9]+)*$/),
+ image:text,
  fixes:z.array(z.object({area:text,detail:text,versions:text})).min(1).max(8),
  scope:text, limitations:text, format:z.enum(["brief","guide"]).optional(),
  checker:z.enum(["python","none"]),
@@ -18,7 +21,7 @@ export const updateSchema = z.object({
    else if(value && typeof value === "object")Object.entries(value).forEach(([key,item])=>inspect(item,`${path}.${key}`));
  };
  inspect(d,"update");
- if(d.image!==`update-${d.id}`)c.addIssue({code:"custom",path:["image"],message:"Use the card illustration for this update ID"});
+ if(d.image!==(reusedArtwork.get(d.id) ?? `update-${d.id}`))c.addIssue({code:"custom",path:["image"],message:"Use the card illustration for this update ID"});
  if(d.published>d.updated||d.reviewed>d.updated)c.addIssue({code:"custom",message:"Inconsistent content dates"});
 });
 export type SecurityUpdate = z.infer<typeof updateSchema>;
