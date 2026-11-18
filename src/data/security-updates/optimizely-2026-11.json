@@ -13,7 +13,7 @@
   "fixes": [
     {
       "area": "Web Experimentationの配信コード",
-      "detail": "11月16日（UTC）、Report URIはA/Bテスト用スクリプトを通じた不正コードの配信を確認しました。Optimizelyは、Web Experimentationの脆弱性が悪用され、一部顧客のプロジェクトに不正なJavaScriptが追加されたと報告しました。",
+      "detail": "11月16日（UTC）、Report URIはA/Bテスト用スクリプトを通じた不正コードの配信を確認しました。Optimizelyによると、脆弱性が悪用され、一部の顧客プロジェクトに不正なJavaScriptが追加されました。",
       "versions": "該当する顧客プロジェクト"
     }
   ],
