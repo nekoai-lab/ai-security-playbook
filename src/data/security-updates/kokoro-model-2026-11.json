@@ -1,7 +1,7 @@
 {
   "id": "kokoro-model-2026-11",
   "title": "Hugging FaceのKokoro。研究者が配布元アカウントへのアクセスを報告",
-  "summary": "Alon Hertzらは、Hugging Faceで音声合成モデルKokoro-82Mの配布元アカウントにアクセスできたと報告しました。Kokoroを自動取得するサービスでは、稼働中のモデルの版と更新方法を確認してください。",
+  "summary": "Kokoroを自動取得するサービスを運営している人は、稼働中のモデルの版と更新方法を確認してください。",
   "product": "Hugging Face",
   "announced": "2026-11-17",
   "published": "2026-11-18",

@@ -1,7 +1,7 @@
 {
   "id": "optimizely-2026-11",
   "title": "OptimizelyのA/Bテスト配信に不正なJavaScript。自分のサイトで何を見る？",
-  "summary": "11月16日（UTC）にReport URIはOptimizelyのA/Bテスト用スクリプトを通じた不正コードの配信を確認しました。Optimizelyは、Web Experimentationの脆弱性が悪用され、一部顧客のプロジェクトに不正なJavaScriptが追加されたと報告しました。Web Experimentationを使っているサイト運営者は、サイト本体の変更履歴に加え、A/Bテスト側から訪問者に配信したコードを調べます。",
+  "summary": "Optimizely Web ExperimentationでA/Bテストを配信するサイト運営者は、管理画面のプロジェクト設定と過去の配信履歴を確認してください。",
   "product": "Optimizely",
   "announced": "2026-11-16",
   "published": "2026-11-18",
@@ -13,7 +13,7 @@
   "fixes": [
     {
       "area": "Web Experimentationの配信コード",
-      "detail": "11月16日（UTC）に不正な配信が観測されました。Optimizelyは、Web Experimentationの脆弱性が悪用され、一部顧客のプロジェクトに不正なJavaScriptが追加されたと報告しました。",
+      "detail": "11月16日（UTC）、Report URIはA/Bテスト用スクリプトを通じた不正コードの配信を確認しました。Optimizelyは、Web Experimentationの脆弱性が悪用され、一部顧客のプロジェクトに不正なJavaScriptが追加されたと報告しました。",
       "versions": "該当する顧客プロジェクト"
     }
   ],
