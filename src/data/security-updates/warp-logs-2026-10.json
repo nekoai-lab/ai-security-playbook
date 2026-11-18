@@ -2,7 +2,7 @@
   "id": "warp-logs-2026-10",
   "title": "「学習に使わない」なら、AIの作業ログも残らない？",
   "summary": "Warpの報道をきっかけに、モデルの学習・会話保存・テレメトリを分けて確認。AI開発ツールの履歴と共有先を見直します。",
-  "product": "Warp・AIの作業ログ",
+  "product": "Warp",
   "announced": "2026-10-27",
   "published": "2026-10-28",
   "updated": "2026-10-28",

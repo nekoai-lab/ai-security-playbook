@@ -1,0 +1,41 @@
+{
+  "id": "kokoro-model-2026-11",
+  "title": "Hugging FaceのKokoro。研究者が配布元アカウントへのアクセスを報告",
+  "summary": "Kokoroを自動取得するサービスを運営している人は、稼働中のモデルの版と更新方法を確認してください。",
+  "product": "Hugging Face",
+  "announced": "2026-11-17",
+  "published": "2026-11-18",
+  "updated": "2026-11-18",
+  "reviewed": "2026-11-18",
+  "image": "update-kokoro-model-2026-11",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "配布元アカウントとモデルの重み",
+      "detail": "Alon Hertzらは、音声合成モデルKokoro-82MのHugging Face上の配布元アカウントを掌握できたと報告しました。研究者は手元でモデルの重み（生成する音声に影響する内部の値）を変更し、同じ入力でも異なる音声が出ることを確認しました。変更した重みは公開リポジトリへアップロードしていないと説明しています。",
+      "versions": "Kokoroを取得する環境"
+    }
+  ],
+  "scope": "Kokoroを組み込むアプリでは、起動時やビルド時に配布元の最新版を自動取得しているかを確認します。設定や実行ログから、配布元とモデルファイルのコミットIDを控えます。同じモデル名でも、参照先が最新版なら時間とともに中身が変わります。",
+  "limitations": "改変した重みの試験はローカルで実施され、研究者は公開リポジトリにアップロードしていないと説明しています。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "版が固定されていない場合は、動作を確認したコミットに固定（Hugging Face Hubを使う場合は revision を指定）し、変更時に代表的な文章を読み上げて期待どおりかを確認します。既に更新が入った可能性がある場合は、配布履歴と稼働中の版を照合します。版が分からない場合は、利用しているSDKや提供元の記録を確認します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Alon Hertzの調査報告",
+      "url": "https://medium.com/@alonhertz1/one-click-from-180-million-downloads-taking-over-the-hugging-face-account-behind-an-ai-model-ac61c16305b7"
+    },
+    {
+      "title": "Hugging Face Hubのダウンロード設定",
+      "url": "https://huggingface.co/docs/huggingface_hub/guides/download"
+    }
+  ],
+  "related": [
+    "dependency-updates"
+  ]
+}

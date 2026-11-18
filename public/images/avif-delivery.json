@@ -511,6 +511,24 @@
       "sourceHash": "eec6c98f9965709cc4afb12d54f4bd953e295c18cedc8bbb700cf0ea2ed116c3",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-agent-evaluation-2026-11-480.webp": {
+      "path": "update-agent-evaluation-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 43995,
+      "sha256": "38a285b3c42b31d375d18fc740cb36517387cf692aeea69ce9842d153ef812c7",
+      "sourceHash": "de40fade3dfedbcc6563b972de1414f08f50f7bd9082c1035505e26abbb5b08f",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-agent-evaluation-2026-11-960.webp": {
+      "path": "update-agent-evaluation-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 173349,
+      "sha256": "cbd37fe5790cfc517fcd798de80c5db026006a7acda5054085eb86659e7a55d0",
+      "sourceHash": "c56c5a62b7c8efc128eb0e24049686b93e0d91daea463c94d457c310ff6a1edc",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-artex-crowdstrike-2026-11-480.webp": {
       "path": "update-artex-crowdstrike-2026-11-480.avif",
       "width": 480,
@@ -655,6 +673,24 @@
       "sourceHash": "5599213305e225a05207d39a6ee9b1241d0d1729d8a7cea5773c960a48cf34e7",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-dockerhub-secrets-2026-11-480.webp": {
+      "path": "update-dockerhub-secrets-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 37681,
+      "sha256": "512e3acc4f15a2017d1a41859e1bfb72b7e7173fb8f1587809bb7e37e351f780",
+      "sourceHash": "22bc6556584021e5737118922c855feb8d9bfed8ba386cb486d4dd84437a0787",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-dockerhub-secrets-2026-11-960.webp": {
+      "path": "update-dockerhub-secrets-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 150667,
+      "sha256": "bc9235e6e5c1f743235a4182d94e7ed84018786c1fc503085d0f03b2158d0425",
+      "sourceHash": "5949dc67cfb8f2d596bafc685988b03692fce50975ddb29b68f86b929318c1cf",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-fake-ai-events-2026-11-480.webp": {
       "path": "update-fake-ai-events-2026-11-480.avif",
       "width": 480,
@@ -727,6 +763,24 @@
       "sourceHash": "121dccac667e0cae1fdac2c3d0af4f360d027a47d530495c9ea479881bc15990",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-kokoro-model-2026-11-480.webp": {
+      "path": "update-kokoro-model-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 35017,
+      "sha256": "5e15a24c7a88b06422cea65acdb0acf0bb00832c130a9f24a17e011d49689cbc",
+      "sourceHash": "89c4cc5c6cbe04372132ebdd279b228daf8ec08b213581bf860fe13206bf6cff",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-kokoro-model-2026-11-960.webp": {
+      "path": "update-kokoro-model-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 136929,
+      "sha256": "22e241919707a67c8ae6932ffd9a2b59eeeaf6b1b00b71de70af1e1c20f332f3",
+      "sourceHash": "cad02490f8c0e2876ac7ceb9aab82fdc6c9498dcbde81e9db70ed86d33bb1fe6",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-model-remote-code-2026-11-480.webp": {
       "path": "update-model-remote-code-2026-11-480.avif",
       "width": 480,
@@ -743,6 +797,24 @@
       "bytes": 223801,
       "sha256": "e5b0c4aa0bb8b77d5dcc0cd889d2758d2b78885c2dd7597872fd3b1304be20ee",
       "sourceHash": "60ee10f767f1d1b4736a7f1fdaca16fc801d9e4307a48746107a9face3efa402",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-nextjs-cache-2026-11-480.webp": {
+      "path": "update-nextjs-cache-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 38115,
+      "sha256": "26cf65c086f309dce691b02dcd1cd4e7f44dd0a302ae24a6009df819664ca4be",
+      "sourceHash": "dddc4fa0123413f5727c36e10cf9552145b08a5157fc7f553a4e95044caea1b9",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-nextjs-cache-2026-11-960.webp": {
+      "path": "update-nextjs-cache-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 153482,
+      "sha256": "28beb0132296f2674bd4abb815e16be0958b96d8d4b95f0a01a0ba2a812403ec",
+      "sourceHash": "28b9955b93467d92a1ca1e4342098dccfa4b8ef049a30d37e2a9dd41db2e3a5e",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
     "update-nodejs-2026-11-480.webp": {
@@ -779,6 +851,24 @@
       "bytes": 225981,
       "sha256": "f40d9599f4655486ae2a9d51c42284b2cbee0cd0d6972dc3eda7b42e9ff0f37f",
       "sourceHash": "71877c82f7cbd63ce8d2353c4e2d1d2f26627eb27ae2cee2b225acf0449a4ad2",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-optimizely-2026-11-480.webp": {
+      "path": "update-optimizely-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 38888,
+      "sha256": "fe75bad1fdc12390e10afe15ce87cc028f70f5c7d565fb50cb738b18a866f6eb",
+      "sourceHash": "51cde78aaaee6f54e265a3edd33338d740fd59c5fb8fa84b24c0f7d4e44f7a4a",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-optimizely-2026-11-960.webp": {
+      "path": "update-optimizely-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 155948,
+      "sha256": "e0ec5d4c1ee8432212fd64b815485ff988d26ca71a3f16d175a7e375420e1302",
+      "sourceHash": "22cf274b6ce42f092a7a7bb1a16aced8adb5b89dcc99dfb33ed90368688fdea7",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
     "update-python-2026-10-480.webp": {

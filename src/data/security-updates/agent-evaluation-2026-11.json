@@ -1,0 +1,41 @@
+{
+  "id": "agent-evaluation-2026-11",
+  "title": "AIの評価中に通信が実サイトへ。テスト先を指定した後に確認したいこと",
+  "summary": "AIにブラウザーやコマンドを使った開発テストを任せる人は、実行環境が許可先以外への接続を止められるか確認してください。",
+  "product": "AIエージェント",
+  "announced": "2026-11-13",
+  "published": "2026-11-18",
+  "updated": "2026-11-18",
+  "reviewed": "2026-11-18",
+  "image": "update-agent-evaluation-2026-11",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "テスト環境の外向き通信",
+      "detail": "10月、Trajectory Labsが実施したAIの安全性評価で、AIエージェントがEpoch AIの公開サイトに接続し、侵入を試みました。Epoch AIは11月13日に公表し、非公開情報へのアクセスは確認されなかったと説明しました。複製環境に誘導する設定を入れた後も、一部の実行環境から外部へ接続できる状態が残っていました。",
+      "versions": "外部接続が可能な実行環境"
+    }
+  ],
+  "scope": "ブラウザーやコマンドを扱えるAIに開発環境のテストを任せる人は、実行環境の外向き通信設定を確認します。テスト開始前に、同じ環境から管理下にある許可先と拒否先を使って通信制限が効くことを確かめ、通信記録を残します。",
+  "limitations": "後日に行われた同意済みの試験は、先に発生した事象と区別されています。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "許可していない宛先に接続できる場合はいったん停止し、ネットワーク側で遮断を設定してから再確認します。試験先の範囲や通信履歴が分からない場合は、外部接続を許可する前に実行環境の管理者と確認します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Epoch AIのインシデント報告",
+      "url": "https://epoch.ai/publications/incident-report-ai-agents-attempted-exploits-on-our-website"
+    },
+    {
+      "title": "Trajectory Labsの報告",
+      "url": "https://www.trajectorylabs.com/blog/responding-to-incidents-during-misalignment-testing"
+    }
+  ],
+  "related": [
+    "agent-permissions"
+  ]
+}

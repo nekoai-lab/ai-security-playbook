@@ -79,7 +79,12 @@
     "updates/chainalysis-2026-11/",
     "updates/artex-crowdstrike-2026-11/",
     "updates/python-fips-2026-11/",
-    "updates/browser-agent-2026-11/"
+    "updates/browser-agent-2026-11/",
+    "updates/agent-evaluation-2026-11/",
+    "updates/dockerhub-secrets-2026-11/",
+    "updates/kokoro-model-2026-11/",
+    "updates/nextjs-cache-2026-11/",
+    "updates/optimizely-2026-11/"
   ],
   "representatives": [
     "",
