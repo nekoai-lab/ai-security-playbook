@@ -1,0 +1,45 @@
+{
+  "id": "optimizely-2026-11",
+  "title": "OptimizelyのA/Bテスト配信に不正なJavaScript。自分のサイトで何を見る？",
+  "summary": "11月16日（UTC）にReport URIはOptimizelyのA/Bテスト用スクリプトを通じた不正コードの配信を確認しました。Optimizelyは、Web Experimentationの脆弱性が悪用され、一部顧客のプロジェクトに不正なJavaScriptが追加されたと報告しました。Web Experimentationを使っているサイト運営者は、サイト本体の変更履歴に加え、A/Bテスト側から訪問者に配信したコードを調べます。",
+  "product": "Optimizely",
+  "announced": "2026-11-16",
+  "published": "2026-11-18",
+  "updated": "2026-11-18",
+  "reviewed": "2026-11-18",
+  "image": "update-optimizely-2026-11",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "Web Experimentationの配信コード",
+      "detail": "11月16日（UTC）に不正な配信が観測されました。Optimizelyは、Web Experimentationの脆弱性が悪用され、一部顧客のプロジェクトに不正なJavaScriptが追加されたと報告しました。",
+      "versions": "該当する顧客プロジェクト"
+    }
+  ],
+  "scope": "タグ管理画面とサイトの設定から、Optimizelyを読み込むページとプロジェクトを特定します。管理画面の Settings → Implementation でスニペットを照合し、Settings → JavaScript の Project JavaScript を承認済みの内容と比較します。現在のコードに問題が見つからなくても、過去の配信は履歴から別途確認します。担当者はプロジェクトの変更履歴を、承認済みの配信設定や利用可能なブラウザーの通信記録と照合します。",
+  "limitations": "訪問者への影響はサイトごとの確認が必要です。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "不明な変更があれば時刻と履歴を保存し、影響する配信の停止を検討して提供元へ連絡します。履歴が残っていなければ、プロジェクトIDと対象ページを控えて提供元に調査範囲を確認します。Optimizelyは脆弱性の修正と注入されたコードの削除を報告しています。自サイトの訪問者への影響は個別の調査が必要です。 通信記録を共有する際は、トークンや個人情報を取り除きます。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Optimizelyの公式状況報告",
+      "url": "https://status.optimizely.com/incidents/ftw0fh9wx43z"
+    },
+    {
+      "title": "Optimizely公式のプロジェクト設定",
+      "url": "https://docs.optimizely.com/web-experimentation/docs/u04X-project-settings-jquery-and-project-javascript-settings"
+    },
+    {
+      "title": "Report URIによる配信の観測",
+      "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/"
+    }
+  ],
+  "related": [
+    "dependency-updates"
+  ]
+}
