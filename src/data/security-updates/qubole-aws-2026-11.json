@@ -1,0 +1,41 @@
+{
+  "id": "qubole-aws-2026-11",
+  "title": "Qubole連携のAWSロールが悪用。使い終わった権限も確認する",
+  "summary": "QuboleとAWSを連携したことがある管理者は、残っているロールと利用記録を確認してください。",
+  "product": "Qubole・AWS",
+  "announced": "2026-11-09",
+  "published": "2026-11-19",
+  "updated": "2026-11-19",
+  "reviewed": "2026-11-19",
+  "image": "update-qubole-aws-2026-11",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "報告されたこと",
+      "detail": "WizはSentra・Mandiantとの調査で、10月14〜26日にQubole関連AWSアカウントの認証情報から、顧客の連携用ロールへアクセスした事例を報告しました。設定や秘密情報、S3データへのアクセスも観測しています。",
+      "versions": "利用状況を確認"
+    }
+  ],
+  "scope": "IAMの信頼関係で誰がロールを使えるか、許可ポリシーで何ができるかを確認します。CloudTrailで該当期間のAssumeRoleと、その後のデータアクセスを照合します。Wizは正しいExternal IDを伴うアクセスも観測しました。 S3のオブジェクト読み取りはデータイベントやサーバーアクセスログも確認し、記録がない場合は未確認とします。",
+  "limitations": "External IDは顧客の取り違えを防ぐ識別子です。設定されていることだけでは今回のアクセスが防がれたと判断できません。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "不要な連携は稼働ジョブへの影響を確認して解除します。不審な利用があればログを保全し、連携の制限とアクセス可能だったデータや鍵の確認を進めます。記録が足りなければロール名と確認できた期間を控え、AWSの管理者かサポートに相談します。 不審なロール利用が確認された場合は、読み取り可能だった鍵の失効・再発行と該当ロールセッションの無効化を管理者と進めます。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wizの調査",
+      "url": "https://www.wiz.io/blog/qubole-cross-account-access-abused-in-the-wild"
+    },
+    {
+      "title": "AWSのExternal ID解説",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html"
+    }
+  ],
+  "related": [
+    "cloud-account-safety"
+  ]
+}

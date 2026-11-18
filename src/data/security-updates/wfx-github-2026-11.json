@@ -1,0 +1,37 @@
+{
+  "id": "wfx-github-2026-11",
+  "title": "GitHubに認証情報を盗む変更。不審なPRと実行履歴を確認する",
+  "summary": "GitHub Actionsでテストやデプロイを行う管理者は、変更と実行の有無を確認してください。",
+  "product": "GitHub Actions",
+  "announced": "2026-11-12",
+  "published": "2026-11-19",
+  "updated": "2026-11-19",
+  "reviewed": "2026-11-19",
+  "image": "update-wfx-github-2026-11",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "報告されたこと",
+      "detail": "11月12日、StepSecurityは、盗まれたGitHubの操作用トークンで不正な処理を差し込み、GitHub Actionsで実行して秘密情報を盗む活動を報告しました。変更の取り消しや実行履歴の削除も観測しています。",
+      "versions": "利用状況を確認"
+    }
+  ],
+  "scope": "PR（変更提案）の有無にかかわらず、11月10日以降の既定ブランチのコミットとActions履歴を確認します。調査の手がかりとして、wfx-docsブランチの docs: dependency audit notes というPRの例があります。ワークフローから呼ぶスクリプトや監査ログも照合し、記録がなければ実行不明と残します。",
+  "limitations": "PRが届いたことだけでは流出を判断できません。現在のコードが元に戻っていても過去の実行確認が必要です。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "PRだけなら変更と実行の有無まで調べます。不審な処理が実行された場合は、その実行で使えたトークンや鍵を失効・再発行し、クラウド側の新しい鍵や権限変更も調べます。判断できなければ時刻とコミットを控え、GitHubやクラウドの管理者・サポートへ相談します。共有するログの認証情報は伏せてください。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "StepSecurityの調査",
+      "url": "https://www.stepsecurity.io/blog/wfx-phantom-the-github-actions-secret-stealer"
+    }
+  ],
+  "related": [
+    "secret-rotation"
+  ]
+}
