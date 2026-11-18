@@ -1,0 +1,37 @@
+{
+  "id": "notion-fireworks-2026-11",
+  "title": "Notion AIの会話記録に影響。通知と会話に貼ったAPIキーを確認する",
+  "summary": "Notion AIを利用するワークスペースでは、対象の通知を確認し、該当する会話に含まれた情報に応じて対応します。",
+  "product": "Notion AI",
+  "announced": "2026-11-10",
+  "published": "2026-11-19",
+  "updated": "2026-11-19",
+  "reviewed": "2026-11-19",
+  "image": "update-notion-fireworks-2026-11",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "報告されたこと",
+      "detail": "Notionは、外部AI提供元Fireworks AIの侵害により、AIの利用状況を分類するInsights機能に使われた一部の会話記録が影響を受けたと発表しました。対象はワークスペースの1%未満です。",
+      "versions": "利用状況を確認"
+    }
+  ],
+  "scope": "対象者に送られたメールの案内から、ワークスペース内で対象会話を確認します。仕事用では管理者宛ての通知も確認します。Notionによれば会話記録にツールの呼び出し結果は含まれません。",
+  "limitations": "Notionは通知が届いていない場合、現時点で対応不要と案内しています。個別の影響は通知と対象会話から確認します。",
+  "actions": [
+    {
+      "title": "確認結果に応じた対応",
+      "detail": "対象会話に鍵やパスワードを貼っていたら発行元で失効・再発行し、利用アプリの設定を差し替えます。Notionは11月11日に発見したNotion APIキーを失効し、11月12日に外部サービスのキーを発行元へ報告しました。各サービスの対応状況も確認します。社内・顧客情報があれば管理者へ連絡します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Notion公式告知",
+      "url": "https://www.notion.com/en-gb/security/advisories/security-incident-involving-a-third-party-ai-vendor"
+    }
+  ],
+  "related": [
+    "secret-rotation"
+  ]
+}
