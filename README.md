@@ -8,7 +8,7 @@ Astro + MDXの静的サイトです。公開先は https://nekoai-lab.github.io/
 
 ### 開発・検証
 
-Node.js 22.23.4以降（CIは24.22.1）。
+Node.js 22.23.5以降（CIは24.22.3）。
 
 ```sh
 npm ci

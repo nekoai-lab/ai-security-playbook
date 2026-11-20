@@ -85,7 +85,12 @@
     "updates/dockerhub-secrets-2026-11/",
     "updates/kokoro-model-2026-11/",
     "updates/nextjs-cache-2026-11/",
-    "updates/optimizely-2026-11/"
+    "updates/optimizely-2026-11/",
+    "updates/wfx-github-2026-11/",
+    "updates/notion-fireworks-2026-11/",
+    "updates/ucc-line-2026-11/",
+    "updates/qubole-aws-2026-11/",
+    "updates/emp3r0r-mcp-2026-11/"
   ],
   "representatives": [
     "",

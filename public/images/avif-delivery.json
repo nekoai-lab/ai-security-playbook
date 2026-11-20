@@ -691,6 +691,24 @@
       "sourceHash": "5949dc67cfb8f2d596bafc685988b03692fce50975ddb29b68f86b929318c1cf",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-emp3r0r-mcp-2026-11-480.webp": {
+      "path": "update-emp3r0r-mcp-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 40328,
+      "sha256": "70951d2c87edb8f57f5e1f57c8f07908a619d51633453fad7cc78977a6577e30",
+      "sourceHash": "d85e53618caf469fd48e4bcf0d18f3481f2663b998041209f13ff8291249bb35",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-emp3r0r-mcp-2026-11-960.webp": {
+      "path": "update-emp3r0r-mcp-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 161503,
+      "sha256": "e44727dacf6d58fa887a8c9860c7f2f350d905a3ba5b65207f44ac614e5a13aa",
+      "sourceHash": "6849580ef6989f6232b4252158e9315d2490b0bb6eef11462f6b00690e50f72a",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-fake-ai-events-2026-11-480.webp": {
       "path": "update-fake-ai-events-2026-11-480.avif",
       "width": 480,
@@ -853,6 +871,24 @@
       "sourceHash": "71877c82f7cbd63ce8d2353c4e2d1d2f26627eb27ae2cee2b225acf0449a4ad2",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-notion-fireworks-2026-11-480.webp": {
+      "path": "update-notion-fireworks-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 42591,
+      "sha256": "3c6eac9a7a31f6fa25f279dc384c953b86f773900fe1695a27327b6d8b303902",
+      "sourceHash": "52c77dee577931cc32aaa94993437d30af80718bce9151b4e6230570ae1b1f67",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-notion-fireworks-2026-11-960.webp": {
+      "path": "update-notion-fireworks-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 174778,
+      "sha256": "e7f7f779102a015bf0ba1bf1a33ec960a3bad81ba2060c6d75a654aea728bf59",
+      "sourceHash": "e22e7da6cf435addbd55182954ed553bc2eb656cc2fb14193a39ccdf3b86bd25",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-optimizely-2026-11-480.webp": {
       "path": "update-optimizely-2026-11-480.avif",
       "width": 480,
@@ -905,6 +941,24 @@
       "bytes": 214922,
       "sha256": "18f42b023742e61e2ba99ea72b8ed9e6294e7ce7136a50fd8ca1a782f743da20",
       "sourceHash": "aa19b88f4acf2349743fafd3e158c1d3903500a06068eb59b2381a342ef960b6",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-qubole-aws-2026-11-480.webp": {
+      "path": "update-qubole-aws-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 37673,
+      "sha256": "f95c6758d53edbdc5d0a2a2c3c6948a00664cc5461bb346aff85d2e24a855549",
+      "sourceHash": "6076edc43a3e782ef02fa3dc987ca4046711fef317c8946192700efdbca3035f",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-qubole-aws-2026-11-960.webp": {
+      "path": "update-qubole-aws-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 149961,
+      "sha256": "2ec77fb27c8c3fe67085f37c2b989e5a208bf4974e8c6c841a15cac9ea789a78",
+      "sourceHash": "54bf8419f011f213a8fd8720138aee886a34b289b6de11278882d418d51ece7e",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
     "update-ruby-strutil-2026-11-480.webp": {
@@ -961,6 +1015,24 @@
       "sourceHash": "54fd1325bcc87cc759e6c65c061edf99efd991fbdbe91d512b69d65c36ca93fc",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-ucc-line-2026-11-480.webp": {
+      "path": "update-ucc-line-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 38369,
+      "sha256": "2a7ebf7eba9fca8bd5c8bc204a6496aabfa0188e016272a95fe928d697373ad4",
+      "sourceHash": "906dfc18baa17be16196f74c6bf263b1ff9af3ce65e7894a8f7126c159b3d9ba",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-ucc-line-2026-11-960.webp": {
+      "path": "update-ucc-line-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 151207,
+      "sha256": "26c2019b20af7a55bbd945d0793f431f0b118f7e9c2c16d5276d6db18788254c",
+      "sourceHash": "dd03c6d01921bd02c4596f15066f2cdc4791b6c7b1d516f4332112bea557c6bb",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-warp-logs-2026-10-480.webp": {
       "path": "update-warp-logs-2026-10-480.avif",
       "width": 480,
@@ -977,6 +1049,24 @@
       "bytes": 221550,
       "sha256": "9f31da8d36b3154d770b31046f8b8d965ab53f72fac5c333606006ecb2c32954",
       "sourceHash": "174249eecf91898309ac99a8ca6e6a581bc2a3fae39203239c5cba89477b3367",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-wfx-github-2026-11-480.webp": {
+      "path": "update-wfx-github-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 44304,
+      "sha256": "35cb87d25ee985070b7c8f4e7df40b035fdcc300b7294c41072d13ff520c55d5",
+      "sourceHash": "85bb786de259fb7276f29a8766747c536560634c4a004ae77470ddbc44991139",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-wfx-github-2026-11-960.webp": {
+      "path": "update-wfx-github-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 178794,
+      "sha256": "003f01f8e0d482919354efe44387ffbca3745ff10fad1cc94a5d7a3bc6074584",
+      "sourceHash": "0a6ca8dcd62981327295dfb148266a9a29e01737ecf96660088add2dd720c462",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
     "update-workos-2026-11-480.webp": {
