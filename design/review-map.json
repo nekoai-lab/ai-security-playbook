@@ -77,6 +77,7 @@
     "updates/cpguard-2026-11/",
     "updates/cwpdoor-2026-11/",
     "updates/chainalysis-2026-11/",
+    "updates/claude-code-settings-backdoor-2026-11/",
     "updates/artex-crowdstrike-2026-11/",
     "updates/python-fips-2026-11/",
     "updates/browser-agent-2026-11/",

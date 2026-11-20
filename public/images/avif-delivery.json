@@ -619,6 +619,15 @@
       "sourceHash": "3cca7a027c047c82ae8c36ab792e11d9032401428e8a946b2d5d6965cbcb114c",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-claude-code-settings-backdoor-2026-11-960.webp": {
+      "path": "update-claude-code-settings-backdoor-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 213005,
+      "sha256": "ce6afe87c51d57882d3fdeb12c16f7f4b09556300a2bcd673f5687690f4f43a4",
+      "sourceHash": "cff51ace8df31b0af766e6177641865af2eaeaa4532046b6a1d772c5f6b3e4d6",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-cpguard-2026-11-480.webp": {
       "path": "update-cpguard-2026-11-480.avif",
       "width": 480,
