@@ -1,12 +1,12 @@
 {
   "id": "python-2026-10",
-  "title": "Python 3.11.18・3.12.16：何が修正された？",
-  "summary": "証明書・Cookie・tar展開などの修正箇所を一覧で確認し、実際に使うPythonの版と更新対応を確かめます。",
+  "title": "Python 3.11.18・3.12.16の修正とpip 26.2.2の続報",
+  "summary": "Pythonの証明書・Cookie・tar展開などの修正と、pip 26.2.2に同梱されたcertifiの更新を確認します。",
   "product": "Python",
   "announced": "2026-10-25",
   "published": "2026-10-26",
-  "updated": "2026-10-26",
-  "reviewed": "2026-10-26",
+  "updated": "2026-11-22",
+  "reviewed": "2026-11-22",
   "image": "update-python-2026-10",
   "fixes": [
     {
@@ -28,10 +28,15 @@
       "area": "一時フォルダの後片付け / TemporaryDirectory",
       "detail": "後片付け処理の競合を修正。",
       "versions": "3.12"
+    },
+    {
+      "area": "続報：pipに同梱の証明書一覧 / certifi",
+      "detail": "Pythonの追加パッケージを入れるツール、pipは、接続先を確認するための証明書一覧（certifi）を同梱しています。pip 26.2.2では同梱版を2026.10.18に更新しました。pip 26.2.2は10月20日に公開され、CVE-2026-133949の勧告は11月20日（UTC）にGitHubで公開されました。",
+      "versions": "pip 26.2.2以上"
     }
   ],
-  "scope": "Python 3.11・3.12を使う環境は、実際の版を確認してください。今回の修正版は3.11.18・3.12.16です。他系列にも更新があります。対象系列の利用だけでは、すべての問題の影響が成立するとは限りません。",
-  "limitations": "主な修正の抜粋です。Expat・WindowsのMIME設定・メールヘッダー処理などの修正も含まれます。全項目と他系列は公式情報へ。公式Dockerイメージの提供状況と個別サービスへの影響は未確認です。",
+  "scope": "Python 3.11・3.12を使う環境は、実際の版を確認してください。今回の修正版は3.11.18・3.12.16です。他系列にも更新があります。対象系列の利用だけでは、すべての問題の影響が成立するとは限りません。26.2.2より前のpipに同梱されたcertifiには、侵害されたeMudhraの証明書が含まれます。修正版のPythonが問題の中間証明書を拒否する環境では、pipはこの問題の影響を受けません。certifi自体の対象は2019.03.09以上、2026.10.18未満で、2026.10.18で修正されました。",
+  "limitations": "主な修正の抜粋です。Expat・WindowsのMIME設定・メールヘッダー処理などの修正も含まれます。全項目と他系列は公式情報へ。公式Dockerイメージの提供状況と個別サービスへの影響は未確認です。Python Software Foundationの案内にあるChristian Heimesのコメントによると、pipは常に同梱のcertifiを読みます。同梱版を確実に直すにはpip自体の更新が必要です。",
   "checker": "python",
   "actions": [
     {
@@ -39,8 +44,12 @@
       "detail": "手元のPCと、公開中のアプリを取り違えない。"
     },
     {
+      "title": "pipを安全に更新",
+      "detail": "GitHubのpip勧告に沿って、問題の中間証明書を拒否する修正版のPythonを先に使うか、pip 26.2.2以上をハッシュ固定して入れます。ハッシュ固定は、配布ファイルが意図したものか照合する方法です。Python Software Foundationの案内の投稿にある手順を使ってください。"
+    },
+    {
       "title": "修正版を取り込む",
-      "detail": "Dockerなら修正版イメージを確認し、必要なビルド・デプロイを行う。"
+      "detail": "Python Software Foundationの案内に沿って、更新したpipでcertifi（推奨は2026.10.19）とuvを更新します。コンテナはキャッシュなしで作り直します。Pythonが未更新なら、その後3.12.16・3.11.18などの修正版に更新します。"
     },
     {
       "title": "反映と動作を確認",
@@ -59,6 +68,30 @@
     {
       "title": "他系列を含むPython公式発表",
       "url": "https://blog.python.org/2026/10/python-3152-31410-31318-31216-31118/"
+    },
+    {
+      "title": "Python Software Foundationの案内（10月20日、Seth Larson）",
+      "url": "https://discuss.python.org/t/information-for-python-users-regarding-emudhra-emsign-ca-certificate-security-incident/109576"
+    },
+    {
+      "title": "pip #14371：同梱のcertifiを2026.10.18へ更新（10月18日マージ）",
+      "url": "https://github.com/pypa/pip/pull/14371"
+    },
+    {
+      "title": "certifiの勧告 GHSA-6q48-6c7w-9gw2（10月20日公開）",
+      "url": "https://github.com/advisories/GHSA-6q48-6c7w-9gw2"
+    },
+    {
+      "title": "pipの勧告 GHSA-jg88-vh4g-v698（CVE-2026-133949）",
+      "url": "https://github.com/advisories/GHSA-jg88-vh4g-v698"
+    },
+    {
+      "title": "PyPI：pip 26.2.2（10月20日公開）",
+      "url": "https://pypi.org/project/pip/26.2.2/"
+    },
+    {
+      "title": "PyPI：certifi 2026.10.19（10月20日公開、UTC）",
+      "url": "https://pypi.org/project/certifi/2026.10.19/"
     }
   ],
   "related": [
