@@ -826,6 +826,15 @@
       "sourceHash": "60ee10f767f1d1b4736a7f1fdaca16fc801d9e4307a48746107a9face3efa402",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-monai-label-cairn-2026-11-960.webp": {
+      "path": "update-monai-label-cairn-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 120947,
+      "sha256": "c6db0de501b44157ef6acedaa0c9b7e8613845c6357610cacc8b31a03ea4708d",
+      "sourceHash": "b7d26937683a7dd4341ac7aa0e919e35675cd3e701a7834eb004fd6137ed1cac",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-nextjs-cache-2026-11-480.webp": {
       "path": "update-nextjs-cache-2026-11-480.avif",
       "width": 480,

@@ -1,0 +1,77 @@
+{
+  "id": "monai-label-cairn-2026-11",
+  "title": "MONAI Labelの更新と、アップロード機能で確認したい3つの設定",
+  "summary": "医用画像AIアプリのMONAI Labelでは、アップロード時のファイル名によって意図したフォルダの外にファイルを書き込める脆弱性が公表されました。利用中のバージョンと、自分で開発するアプリの保存先・実行権限・認証を確認します。",
+  "product": "MONAI Label",
+  "announced": "2026-11-18",
+  "published": "2026-11-22",
+  "updated": "2026-11-22",
+  "reviewed": "2026-11-22",
+  "image": "update-monai-label-cairn-2026-11",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "アップロード先の制限",
+      "detail": "11月18日のMONAI Labelの勧告（GHSA-qc22-rmgc-vg94、深刻度Critical）は、想定したフォルダの外に出られるパストラバーサルにより、任意の場所にファイルを書き込めるとしています。11月20日に公開されたCVE-2026-133968のGitHub勧告は、遠隔からコードを実行されるおそれを示しています。",
+      "versions": "monailabel 0.8.5以下"
+    },
+    {
+      "area": "保存先を制限する修正",
+      "detail": "MONAI Labelの勧告の修正版欄は空欄です。10月19日にマージされた修正PR #1915のコミットは、11月22日（UTC）にGitHubとPyPIで公開された0.8.6に含まれています。影響を受ける版を使っている場合は0.8.6以上に更新してください。",
+      "versions": "修正を含む版は0.8.6以降"
+    },
+    {
+      "area": "Amazonが報告したCairnの事例",
+      "detail": "Amazonによると、攻撃者は9月8日から約48時間、中国本土を除く東アジアの大学を狙いました。9月10日に認証なしで公開されていた攻撃者側のAIエージェント基盤CairnのサーバーをAmazonが発見し、事例が判明しました。医用画像AIアプリでは、APIの把握から任意のファイル書き込みまで約11分で、最終的に管理者権限（root）でコマンドを実行できる状態に至りました。Redisへの試みは約16時間・148手で失敗し、GPUサーバーへの試みも約80の実在ユーザー名で3万通り超を試して失敗しました。Amazonは、発見時点で未公表・未修正だった脆弱性（ゼロデイ）をAIエージェントが見つけたと高い確度で評価し、中国系の攻撃者への帰属は中程度の確度としています。防御策として、確度の高い検知に自動対応をつなぐことを勧めています。",
+      "versions": "Amazonの事例報告（11月20日）"
+    }
+  ],
+  "scope": "MONAI Labelの利用者と、ファイルのアップロード機能を持つアプリを自分で開発・運用する人が対象です。利用者はデプロイ先のバージョンを確認し、開発・運用する人は自分が管理する環境で保存先、実行ユーザー、認証を確認します。",
+  "limitations": "Amazonの報告にはアプリ名・CVE・修正版の記載がありません。公開されたMONAI Labelの勧告とAmazonの報告では、アップロードのパストラバーサルと任意のファイル書き込みという内容が一致します。",
+  "actions": [
+    {
+      "title": "アップロードの保存先を決める処理を確認する",
+      "detail": "受け取ったファイル名をそのまま保存先に使わず、アプリ側で保存名を割り当てます。書き込み前に実際の保存先が指定フォルダの内側に収まることを確かめ、外側になる場合は拒否します。"
+    },
+    {
+      "title": "アプリを動かすユーザーを確認する",
+      "detail": "デプロイ設定と実際のプロセスの実行ユーザーを確認します。rootで動かさず、アプリに必要な権限だけを持つユーザーで実行します。"
+    },
+    {
+      "title": "管理画面とAPIに認証をかける",
+      "detail": "管理画面とAPIを認証なしで公開しないよう設定します。自分が管理する環境で、ログインしていない状態から両方にアクセスし、操作やデータ取得が拒否されることを確かめます。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "CJ Moses（AWS Security Blog）— Chinese-nexus actors' Cairn AI agents found a zero-day on their own（2026年11月20日）",
+      "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/"
+    },
+    {
+      "title": "Project MONAI — GHSA-qc22-rmgc-vg94",
+      "url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
+    },
+    {
+      "title": "GitHub Advisory Database — CVE-2026-133968",
+      "url": "https://github.com/advisories/GHSA-2f43-rwqm-6h67"
+    },
+    {
+      "title": "Project MONAI — fix: confine datastore write paths（PR #1915）",
+      "url": "https://github.com/Project-MONAI/MONAILabel/pull/1915"
+    },
+    {
+      "title": "Project MONAI — MONAI Label 0.8.6",
+      "url": "https://github.com/Project-MONAI/MONAILabel/releases/tag/0.8.6"
+    },
+    {
+      "title": "PyPI — monailabel 0.8.6",
+      "url": "https://pypi.org/project/monailabel/0.8.6/"
+    }
+  ],
+  "related": [
+    "access-control",
+    "dependency-updates",
+    "launch-checklist"
+  ]
+}
