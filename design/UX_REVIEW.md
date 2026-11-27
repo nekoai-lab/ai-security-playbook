@@ -404,3 +404,5 @@ check-introと直後カードの幅・右端が一致するよう40em上限を�
 
 - 機械検査は `npm run check`、`npm run build`、`npm test` が成功。カード画像は480×320・960×640のWebPと、各サイズでWebPより小さいAVIFを配信台帳に登録した。
 - 公開前の確認対象は更新情報一覧と追加記事を含むreview-map全画面。FULL監査、キーボード操作、文字200%、目視、独立レビューは確認担当に引き継ぐ。
+- チェック側（Claude）が `design:audit --widths 375,1280` を全ルートで実行：2748 passed / 4 failed / error 0。失敗4件はどれも既存ページの警告（learn/commands の色数、claude-code-settings-backdoor・monai-label-cairn の出典の行の長さ）で、追加した記事は失敗なし。既定ポート4387に10/23から残っていた本体フォルダの古いプレビューは止め、この worktree の dist を4387で配って測った。
+- 目視で、リードが `fixes[0]` の「この版にバックドアが含まれます。」だけになる問題を見つけ、仕組みの項目を先頭に移して直した（Codex）。直したあと記事・更新一覧・トップを375/1280で再測定：96 passed / 0 failed。カードの絵（承認済みの review-workbench-scene）に文字・ロゴがなく、黒猫の脚と尾が正しいことを確認。キーボード操作・文字200%は未確認。
