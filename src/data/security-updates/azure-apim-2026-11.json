@@ -1,0 +1,55 @@
+{
+  "id": "azure-apim-2026-11",
+  "title": "Azure API Managementの脆弱性。修正を確認し、保管していた鍵を交換する",
+  "summary": "ノルウェーのNSMは、Azure API Managementに保管された認証情報が狙われたとして、利用組織に更新の確認と鍵の交換を求めました。",
+  "product": "Azure API Management",
+  "announced": "2026-11-20",
+  "published": "2026-11-27",
+  "updated": "2026-11-27",
+  "reviewed": "2026-11-27",
+  "image": "update-azure-apim-2026-11",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "認証情報を狙った活動",
+      "detail": "ノルウェー国家安全保障局（NSM）は11月20日、何者かがアクセストークン、シークレット、名前付きの値を狙ったと公表しました。名前付きの値は、APIの設定から共通の値や秘密情報を参照する仕組みです。",
+      "versions": "11月23日に告知を更新"
+    },
+    {
+      "area": "修正と鍵の交換",
+      "detail": "NSMは脆弱性が塞がれたと伝え、稼働中の環境が更新済みかの確認を求めています。すでに第三者に渡った鍵は、サービス側の修正後も有効な場合があるため、NSMはトークンとシークレットの交換も求めています。",
+      "versions": "修正状況は環境ごとに確認"
+    }
+  ],
+  "scope": "Azure API Management（APIM）でAPIの入口や接続先の認証を管理する担当者が対象です。NSMはClassic系の実行バージョンを確かめる基準を案内し、v2とConsumptionは今回の脆弱性の対象外としています。",
+  "limitations": "実際に取得された認証情報の全体像と悪用の規模は未確認です。個々の環境やその接続先への影響は、利用組織による調査が必要です。",
+  "actions": [
+    {
+      "title": "管理するAPIMを棚卸しする",
+      "detail": "環境ごとのティアと稼働バージョンを記録し、NSMの案内と照合します。更新が確認できない環境はMicrosoftのサポートへ相談します。"
+    },
+    {
+      "title": "鍵の発行元と利用先をたどる",
+      "detail": "APIMの管理者と接続先の担当者で、名前付きの値、APIの利用キー、接続先の認証情報を棚卸しします。鍵の値は作業記録に転記せず、発行元、参照先、担当者を記録します。"
+    },
+    {
+      "title": "鍵を交換し、接続先のログを調べる",
+      "detail": "認証情報の種類ごとにMicrosoftのガイドに沿って交換し、新しい認証情報での動作と旧認証情報の失効を確認します。接続先のログも確認し、不明な操作があれば組織のインシデント対応担当者に連絡します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "ノルウェーNSMの注意喚起",
+      "url": "https://nsm.no/fagomrader/digital-sikkerhet/digital-hendelseshandtering/varsler-fra-nsm/nsm-deler-tiltak-mot-sarbarhet-i-azure-api-management"
+    },
+    {
+      "title": "Microsoftの認証情報交換ガイド",
+      "url": "https://techcommunity.microsoft.com/blog/integrationsonazureblog/rotating-credentials-in-azure-api-management/4575478"
+    }
+  ],
+  "related": [
+    "secret-rotation",
+    "incident-response"
+  ]
+}

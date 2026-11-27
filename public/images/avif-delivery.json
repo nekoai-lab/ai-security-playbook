@@ -547,6 +547,24 @@
       "sourceHash": "69edfb48978fdcc9fbee1b9333ada4f5799498fcbb896f790b5e8e6808582816",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
+    "update-azure-apim-2026-11-480.webp": {
+      "path": "update-azure-apim-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 38304,
+      "sha256": "32fdaf1d296ef779224a87d4ffda2fbafbb78717a5c3c715e89a04fd405d365d",
+      "sourceHash": "d96c0360113c2384e04196deb187570dcf980bf20c2cc26c924d48cdab929261",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-azure-apim-2026-11-960.webp": {
+      "path": "update-azure-apim-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 149042,
+      "sha256": "d720e2df400d4078c5eedae6e26afebd6354bc253a68453a54ecd710985235b1",
+      "sourceHash": "7e4a5d7f94d6376d306abea1f0ba333299d1d8bb5e83007b4a9fc7efcc418101",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
     "update-browser-agent-2026-11-480.webp": {
       "path": "update-browser-agent-2026-11-480.avif",
       "width": 480,
@@ -788,6 +806,24 @@
       "bytes": 234544,
       "sha256": "0233474b22e16dee4dd37a977dd021bce5da3da5525b1d9e44c9cf722c3b4f0b",
       "sourceHash": "121dccac667e0cae1fdac2c3d0af4f360d027a47d530495c9ea479881bc15990",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-infratrust-2026-11-480.webp": {
+      "path": "update-infratrust-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 38488,
+      "sha256": "40ff576a6b9236a636d5e5fa34b82a77730629868e5f1c825c1bf9708fe0fc22",
+      "sourceHash": "f85c82f6c264c0400ea6e85e508f3824ddc6863a2cd3d6103c705aeebca6e7fc",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-infratrust-2026-11-960.webp": {
+      "path": "update-infratrust-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 151805,
+      "sha256": "c1adc7a41923d6e1f0141d92b08a72742a49227b469f91a192105cd40357a131",
+      "sourceHash": "61f6f624a524c8254b77417427b918f018a8b91323608578381e644cff550dd1",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     },
     "update-kokoro-model-2026-11-480.webp": {
