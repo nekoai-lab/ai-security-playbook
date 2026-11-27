@@ -1,0 +1,110 @@
+{
+  "id": "wp-connect-backdoor-2026-11",
+  "title": "WP connect製のWordPressプラグイン6本にバックドア。対象版を削除し、サイト全体を調べる",
+  "summary": "NotionやAirtableなどと連携するWP connect製のWordPressプラグイン6本で、外部からコードを実行できるバックドアが公表されました。修正版はありません。対象版を使ったことがあるか確かめ、該当する場合は削除とサイト全体のマルウェア検査を進めます。",
+  "product": "WP connect製WordPressプラグイン",
+  "announced": "2026-11-24",
+  "published": "2026-11-28",
+  "updated": "2026-11-28",
+  "reviewed": "2026-11-28",
+  "image": "update-wp-connect-backdoor-2026-11",
+  "format": "brief",
+  "checker": "none",
+  "fixes": [
+    {
+      "area": "Orders Sync to Airtable for WooCommerce",
+      "detail": "この版にバックドアが含まれます。",
+      "versions": "1.0.2"
+    },
+    {
+      "area": "Add-On for Contact Form 7 to Notion",
+      "detail": "この版にバックドアが含まれます。",
+      "versions": "1.6.4"
+    },
+    {
+      "area": "WP Sync for Notion – Notion to WordPress",
+      "detail": "この版にバックドアが含まれます。",
+      "versions": "1.7.4"
+    },
+    {
+      "area": "Add-On for Contact Form 7 to Airtable",
+      "detail": "この版にバックドアが含まれます。",
+      "versions": "2.5.4"
+    },
+    {
+      "area": "Add-on Brevo for Gravity Forms",
+      "detail": "この版にバックドアが含まれます。",
+      "versions": "2.6.3"
+    },
+    {
+      "area": "Air WP Sync – Airtable to WordPress",
+      "detail": "この範囲の版にバックドアが含まれます。",
+      "versions": "2.9.1〜2.9.4"
+    },
+    {
+      "area": "外部からコードを実行できる仕組み",
+      "detail": "Wordfenceが公表したCVE-2026-135202は、悪意のあるコードの埋め込み（CWE-506）に分類され、深刻度はCVSS 3.1で9.8です。対象版はWordPressの初期化時と30分ごとの予約処理（WP-Cron）でバックドアを動かします。サイトの情報を外部に送り、そこから返されたPHPコードを実行する仕組みです。外部からサイトのファイルを読み書き・削除したり、データベースから利用者情報やパスワードのハッシュを取得したりできると報告されています。",
+      "versions": "対象6製品の上記バージョン"
+    },
+    {
+      "area": "配布終了と修正版の有無",
+      "detail": "WordPress.orgのプラグインAPIでは6本とも配布終了で、終了日は2026年11月22日と記録されています。WordfenceとCVEレコードは修正版がないとして、対象プラグインの削除とサイト全体のマルウェア検査を勧めています。",
+      "versions": "修正版なし（2026年11月28日確認）"
+    }
+  ],
+  "scope": "WP connect製プラグインを導入したことがあるWordPressサイトの運用者が対象です。プラグイン一覧と過去の導入・更新記録を上の対象版と照合します。運用を委託している場合は、管理者やホスティング事業者に導入履歴と対応状況を確認してください。",
+  "limitations": "対象版を導入していたという記録だけでは、そのサイトで外部からコードが実行されたか、情報が持ち出されたかは判断できません。",
+  "actions": [
+    {
+      "title": "対象プラグインを削除し、サイト全体を検査する",
+      "detail": "対象版が入っていれば、管理者と削除を進め、サイト全体をマルウェア検査にかけます。過去に対象版を使っていた場合も検査の対象にします。導入履歴、対象版を使っていた期間、削除と検査の結果を記録します。"
+    },
+    {
+      "title": "ファイルと予約処理に残った痕跡を調べる",
+      "detail": "CVEレコードによると、バックドアはアップロード用フォルダ（uploads）に外部操作用のPHPファイルを置き、後からコードを実行する予定を登録できます。管理者はuploadsの見覚えのないPHPファイルとWP-Cronの不審な予定を調べ、判断がつかないものは調査担当に共有します。"
+    },
+    {
+      "title": "管理者アカウントと認証情報を確認する",
+      "detail": "対象版を使っていた場合は、侵害の可能性を前提に、管理者一覧に身に覚えのないアカウントや権限変更がないか調べます。管理者と影響範囲を確認し、対応の一環として信頼できる環境から関係するパスワードや鍵を交換します。"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wordfence — WP connect製プラグイン6本の脆弱性情報",
+      "url": "https://www.wordfence.com/threat-intel/vulnerabilities/detail/wp-connect-plugins-various-versions-unauthenticated-remote-code-execution-via-backdoored-software"
+    },
+    {
+      "title": "CVEレコード — CVE-2026-135202",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-135202"
+    },
+    {
+      "title": "WordPress.orgプラグインAPI — Orders Sync to Airtable for WooCommerceの配布状況",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bslug%5D=orders-sync-to-airtable-for-woocommerce"
+    },
+    {
+      "title": "WordPress.orgプラグインAPI — Add-On for Contact Form 7 to Notionの配布状況",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bslug%5D=add-on-cf7-for-notion"
+    },
+    {
+      "title": "WordPress.orgプラグインAPI — WP Sync for Notion – Notion to WordPressの配布状況",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bslug%5D=wp-sync-for-notion"
+    },
+    {
+      "title": "WordPress.orgプラグインAPI — Add-On for Contact Form 7 to Airtableの配布状況",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bslug%5D=add-on-cf7-for-airtable"
+    },
+    {
+      "title": "WordPress.orgプラグインAPI — Add-on Brevo for Gravity Formsの配布状況",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bslug%5D=addon-gravityforms-sendinblue-free"
+    },
+    {
+      "title": "WordPress.orgプラグインAPI — Air WP Sync – Airtable to WordPressの配布状況",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bslug%5D=air-wp-sync"
+    }
+  ],
+  "related": [
+    "dependency-updates",
+    "incident-response",
+    "secret-rotation"
+  ]
+}

@@ -1104,6 +1104,24 @@
       "sha256": "9daaa222c3290e1e5976ce9ff38a0e894e839f14fb4f57b4ea5e7a220ff5075d",
       "sourceHash": "d6d6e1081c07c3a56b255cef884c28660f71fee7128792edf50f2deec98d5256",
       "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-wp-connect-backdoor-2026-11-480.webp": {
+      "path": "update-wp-connect-backdoor-2026-11-480.avif",
+      "width": 480,
+      "height": 320,
+      "bytes": 44854,
+      "sha256": "6816f209aa635540c5804c2e3e1e6c7ca54fe5cf280d89beb1fb641c88f6373b",
+      "sourceHash": "951528b55aac7ec8a0454823d67ba386687732847f578fd9447edf2e426693a5",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
+    },
+    "update-wp-connect-backdoor-2026-11-960.webp": {
+      "path": "update-wp-connect-backdoor-2026-11-960.avif",
+      "width": 960,
+      "height": 640,
+      "bytes": 175701,
+      "sha256": "303dc12ac619d2f624f91631f17390c8028ce432ea3cccf940285a07aa10aeff",
+      "sourceHash": "764c0284cc21f83833f9cad0140c664e011ea8e08e20de86bab2affc82728af6",
+      "encoder": "{\"quality\":70,\"effort\":4,\"chromaSubsampling\":\"4:4:4\"}"
     }
   }
 }
